@@ -1,0 +1,61 @@
+.About {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 112px);
+  justify-content: center;
+  margin: 32px 0;
+}
+.Biography {
+  margin: 16px 0;
+  max-width: 100%;
+  text-align: center;
+  width: 300px;
+}
+.BiographyEmoji {
+  display: block;
+  flex-basis: 100%;
+}
+.BiographyLine {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.BiographyLink {
+  color: rgb(171, 128, 77);
+  display: inline-block;
+  overflow: hidden;
+  padding: 3px;
+  position: relative;
+  text-decoration: none;
+}
+.BiographyLink:after {
+  background-color: rgb(171, 128, 77);
+  bottom: 0;
+  content: "";
+  height: 3px;
+  left: -1px;
+  position: absolute;
+  right: -1px;
+  transform: translateX(-100%);
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+.BiographyLink:hover:after {
+  transform: translateX(0);
+}
+.BiographySkill {
+  display: inline-block;
+  padding: 3px;
+}
+.Social {
+  height: 32px;
+  margin: 16px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  width: 32px;
+}
+.Social:hover {
+  fill: rgb(171, 128, 77);
+}

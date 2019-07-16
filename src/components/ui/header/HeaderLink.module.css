@@ -1,0 +1,20 @@
+.HeaderLink {
+  align-items: center;
+  border-radius: 16px;
+  color: rgb(171, 128, 77);
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 500;
+  line-height: 32px;
+  padding: 0 16px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+.HeaderLink:hover {
+  background-color: rgb(171, 128, 77, 0.2);
+}
+.External {
+  fill: rgb(171, 128, 77);
+  height: 12px;
+  margin-right: 4px;
+  width: 12px;
+}

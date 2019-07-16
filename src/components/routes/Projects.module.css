@@ -1,0 +1,20 @@
+.Projects {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 32px auto 16px auto;
+  max-width: 100%;
+  width: 400px;
+}
+.Project {
+  color: #333333;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.Image {
+  border-radius: 4px;
+  max-width: 100%;
+}
+.Play {
+  width: 200px;
+}

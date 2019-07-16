@@ -1,0 +1,10 @@
+.Talks {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0;
+}
+.Talk {
+  margin: 16px 0;
+  max-width: 100%;
+}
