@@ -1,17 +1,61 @@
 .HeaderLink {
   align-items: center;
-  border-radius: 16px;
+  border-radius: 8px 8px 0 0;
   color: rgb(171, 128, 77);
   cursor: pointer;
   display: inline-flex;
   font-weight: 500;
-  line-height: 32px;
+  justify-content: center;
+  line-height: 40px;
+  margin: 0 1px;
+  outline: 0;
   padding: 0 16px;
+  position: relative;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
-.HeaderLink:hover {
-  background-color: rgb(171, 128, 77, 0.2);
+.HeaderLink:before,
+.HeaderLink:after {
+  bottom: 0;
+  content: "";
+  height: 8px;
+  position: absolute;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  width: 16px;
 }
+.HeaderLink:after {
+  border-radius: 0 0 0 8px;
+  box-shadow: -8px 0 0 0 rgba(255, 255, 255, 0);
+  right: -16px;
+}
+.HeaderLink:before {
+  border-radius: 0 0 8px 0;
+  box-shadow: 8px 0 0 0 rgba(255, 255, 255, 0);
+  left: -16px;
+}
+
+@media (hover: hover) {
+  .HeaderLink:hover {
+    background-color: rgb(171, 128, 77, 0.2);
+  }
+  .HeaderLinkActive:hover:after {
+    box-shadow: -8px 0 0 0 rgb(227, 213, 196);
+  }
+  .HeaderLinkActive:hover:before {
+    box-shadow: 8px 0 0 0 rgb(227, 213, 196);
+  }
+}
+
+.HeaderLink.HeaderLinkActive {
+  background-color: #ffffff;
+  cursor: initial;
+}
+.HeaderLink.HeaderLinkActive:after {
+  box-shadow: -8px 0 0 0 #ffffff;
+}
+.HeaderLink.HeaderLinkActive:before {
+  box-shadow: 8px 0 0 0 #ffffff;
+}
+
 .External {
   fill: rgb(171, 128, 77);
   height: 12px;

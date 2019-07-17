@@ -5,7 +5,7 @@ import { ReactComponent as OpenInNew } from "../../svg/open-in-new.svg";
 import styles from "./HeaderLink.module.css";
 
 const HeaderLink = ({ children, to, ...props }) => {
-  const { actions } = useContext(AppContext);
+  const { actions, values } = useContext(AppContext);
   const isExternal = to.indexOf("http") === 0;
   const onClick = () => {
     if (isExternal) {
@@ -16,7 +16,11 @@ const HeaderLink = ({ children, to, ...props }) => {
   };
 
   return (
-    <a {...props} className={styles.HeaderLink} onClick={onClick}>
+    <a
+      {...props}
+      className={styles.HeaderLink + " " + (to === values.page ? styles.HeaderLinkActive : "")}
+      onClick={onClick}
+    >
       {isExternal ? <OpenInNew className={styles.External} /> : null}
       {children}
     </a>

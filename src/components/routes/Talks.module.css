@@ -2,7 +2,8 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 16px 0;
+  margin: 32px 0;
+  padding: 0 16px;
 }
 .Talk {
   margin: 16px 0;

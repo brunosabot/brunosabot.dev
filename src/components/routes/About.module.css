@@ -1,32 +1,47 @@
 .About {
   align-items: center;
+  bottom: 64px;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 112px);
   justify-content: center;
-  margin: 32px 0;
+  left: 50%;
+  margin: auto;
+  max-width: 400px;
+  padding: 0 16px 0 16px;
+  position: absolute;
+  top: 88px;
+  transform: translateX(-50%);
+  width: 100%;
 }
+
 .Biography {
-  margin: 16px 0;
+  margin: 32px 0;
   max-width: 100%;
-  text-align: center;
-  width: 300px;
 }
+
 .BiographyEmoji {
   display: block;
-  flex-basis: 100%;
+  flex-basis: 48px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
+
 .BiographyLine {
   align-items: center;
+  border-bottom: 1px solid rgba(54, 48, 39, 0.1);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 16px 0;
+  justify-content: flex-start;
+  padding: 16px 0;
+}
+.BiographyLine:last-child {
+  border-bottom: 0;
 }
 
 .BiographyLink {
   color: rgb(171, 128, 77);
   display: inline-block;
+  line-height: 1.5;
+  margin-right: 16px;
   overflow: hidden;
   padding: 3px;
   position: relative;
@@ -46,16 +61,35 @@
 .BiographyLink:hover:after {
   transform: translateX(0);
 }
+
 .BiographySkill {
   display: inline-block;
+  line-height: 1.5;
+  margin-right: 16px;
   padding: 3px;
 }
+
+.SocialLinks {
+  background: rgb(171, 128, 77, 0.2);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
 .Social {
+  padding: 16px;
+}
+
+.SocialIcon {
+  display: block;
+  fill: #555555;
   height: 32px;
-  margin: 16px;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 32px;
 }
-.Social:hover {
+.SocialIcon:hover {
   fill: rgb(171, 128, 77);
 }
