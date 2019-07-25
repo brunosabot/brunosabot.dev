@@ -1,0 +1,31 @@
+.Articles {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 48px auto 16px auto;
+  max-width: 100%;
+  padding: 0 16px;
+  width: 600px;
+}
+.Article {
+  align-items: center;
+  border-bottom: 1px solid rgba(54, 48, 39, 0.1);
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  text-decoration: none;
+  width: 100%;
+}
+.Article:first-child {
+  border-top: 1px solid rgba(54, 48, 39, 0.1);
+}
+.Article:hover {
+  color: rgb(171, 128, 77);
+}
+.Date {
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 16px;
+  white-space: nowrap;
+}
