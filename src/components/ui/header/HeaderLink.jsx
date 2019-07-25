@@ -16,14 +16,16 @@ const HeaderLink = ({ children, to, ...props }) => {
   };
 
   return (
-    <a
-      {...props}
-      className={styles.HeaderLink + " " + (to === values.page ? styles.HeaderLinkActive : "")}
-      onClick={onClick}
-    >
-      {isExternal ? <OpenInNew className={styles.External} /> : null}
-      {children}
-    </a>
+    <span className={styles.Wrapper}>
+      <a
+        {...props}
+        className={styles.HeaderLink + " " + (to === values.page ? styles.HeaderLinkActive : "")}
+        onClick={onClick}
+      >
+        {isExternal ? <OpenInNew className={styles.External} /> : null}
+        {children}
+      </a>
+    </span>
   );
 };
 

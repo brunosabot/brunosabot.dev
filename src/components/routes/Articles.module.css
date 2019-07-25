@@ -2,9 +2,11 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 48px auto 16px auto;
+  left: 50%;
   max-width: 100%;
-  padding: 0 16px;
+  padding: 48px 16px 16px 16px;
+  position: absolute;
+  transform: translateX(-50%);
   width: 600px;
 }
 .Article {
@@ -26,6 +28,6 @@
 .Date {
   font-size: 12px;
   font-style: italic;
-  margin-left: 16px;
+  padding-left: 16px;
   white-space: nowrap;
 }

@@ -2,10 +2,9 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 32px 0;
-  padding: 0 16px;
+  padding: 32px 16px;
 }
 .Talk {
-  margin: 16px 0;
   max-width: 100%;
+  padding: 16px 0;
 }
