@@ -7,6 +7,12 @@ const Articles = () => {
 
   const articles = [
     {
+      title: "Learning expedition Zenika: Ce qu'en pensent les devs",
+      href:
+        "https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/",
+      date: "2019-07-30"
+    },
+    {
       title: "How I dropped Redux for the Context API",
       href: "https://medium.com/@brunosabot/how-i-dropped-redux-for-the-context-api-7338d481e179",
       date: "2019-07-25"

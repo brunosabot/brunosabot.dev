@@ -5,7 +5,7 @@
 .HeaderLink {
   align-items: center;
   border-radius: 8px 8px 0 0;
-  color: rgb(171, 128, 77);
+  color: rgb(118, 89, 53);
   cursor: pointer;
   display: inline-flex;
   font-weight: 500;
@@ -60,7 +60,7 @@
 }
 
 .External {
-  fill: rgb(171, 128, 77);
+  fill: rgb(118, 89, 53);
   height: 12px;
   padding-right: 4px;
   width: 16px;

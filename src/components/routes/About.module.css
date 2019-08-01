@@ -39,7 +39,7 @@
 }
 
 .BiographyLink {
-  color: rgb(171, 128, 77);
+  color: rgb(118, 89, 53);
   display: inline-block;
   line-height: 1.5;
   overflow: hidden;
@@ -48,7 +48,7 @@
   text-decoration: none;
 }
 .BiographyLink:after {
-  background-color: rgb(171, 128, 77);
+  background-color: rgb(118, 89, 53);
   bottom: 0;
   content: "";
   height: 3px;
@@ -96,5 +96,5 @@
   width: 32px;
 }
 .SocialIcon:hover {
-  fill: rgb(171, 128, 77);
+  fill: rgb(118, 89, 53);
 }
