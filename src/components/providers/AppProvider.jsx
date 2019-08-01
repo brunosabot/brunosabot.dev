@@ -3,8 +3,12 @@ import React, { createContext, memo, useCallback, useMemo, useState } from "reac
 export const AppContext = createContext();
 
 const AppProvider = memo(props => {
-  const defaultPage = window.location.pathname.replace(/^\//, "") || "about";
-  const [page, setPageState] = useState(defaultPage);
+  const urlPage = window.location.pathname.replace(/^\//, "");
+  const [page, setPageState] = useState(urlPage || "about");
+
+  if (urlPage === "") {
+    window.history.replaceState({}, undefined, "/" + page);
+  }
 
   const setPage = useCallback(
     page => {
