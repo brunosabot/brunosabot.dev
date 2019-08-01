@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import { AppContext } from "../providers/AppProvider";
+import React from "react";
+import useSeo from "../hooks/useSeo";
 import styles from "./Projects.module.css";
 
 const Projects = () => {
-  const { values } = useContext(AppContext);
+  useSeo("Projects - Bruno Sabot", "Projects imaginated and created by Bruno Sabot. Check it out!");
 
-  return values.page === "projects" ? (
+  return (
     <div className={styles.Projects}>
       <div className={styles.Project}>
         <a
@@ -43,7 +43,7 @@ const Projects = () => {
         </a>
       </div>
     </div>
-  ) : null;
+  );
 };
 
 Projects.propTypes = {};

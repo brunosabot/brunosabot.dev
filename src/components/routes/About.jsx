@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { AppContext } from "../providers/AppProvider";
+import React from "react";
+import useSeo from "../hooks/useSeo";
 import { ReactComponent as Codepen } from "../svg/codepen.svg";
 import { ReactComponent as GithubCircle } from "../svg/github-circle.svg";
 import { ReactComponent as Instagram } from "../svg/instagram.svg";
@@ -10,9 +10,12 @@ import Avatar from "../ui/images/Avatar";
 import styles from "./About.module.css";
 
 const About = () => {
-  const { values } = useContext(AppContext);
+  useSeo(
+    "About - Bruno Sabot",
+    "About Bruno Sabot, a FrontEnd Developer enjoying React, Vue.js, HTML, CSS, Performance and UX"
+  );
 
-  return values.page === "about" ? (
+  return (
     <>
       <div className={styles.About}>
         <Avatar src="/images/brunosabot.jpg" alt="Bruno Sabot" />
@@ -108,7 +111,7 @@ const About = () => {
         </div>
       </div>
     </>
-  ) : null;
+  );
 };
 
 About.propTypes = {};
