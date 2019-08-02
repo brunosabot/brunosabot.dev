@@ -1,0 +1,9 @@
+.Main {
+  display: flex;
+  justify-content: center;
+  left: 0;
+  min-height: calc(100vh - 160px);
+  position: absolute;
+  right: 0;
+  top: 160px;
+}

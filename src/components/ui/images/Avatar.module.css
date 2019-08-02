@@ -1,5 +1,11 @@
 .Avatar {
+  border: 3px solid;
+  border-color: transparent;
   border-radius: 75px;
   height: 150px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 150px;
+}
+.Avatar:hover {
+  border-color: rgb(26, 118, 64) rgb(32, 207, 121) rgb(78, 196, 128) rgba(0, 80, 0, 0.8);
 }

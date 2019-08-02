@@ -5,10 +5,11 @@
   padding: 32px 16px;
 }
 .Talk {
+  margin: 0 0 24px 0;
   max-width: 100%;
   padding: 16px 0;
 }
 .Title {
   font-weight: 400;
-  margin: 24px 0 0 0;
+  margin: 0;
 }

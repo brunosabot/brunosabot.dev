@@ -21,93 +21,81 @@ const About = () => {
         <Avatar src="/images/brunosabot.jpg" alt="Bruno Sabot" />
         <div className={styles.Biography}>
           <div className={styles.BiographyLine}>
-            <span className={styles.BiographyEmoji} role="img" aria-label="Skills">
-              🚀
-            </span>
-            <div>
-              <span className={styles.BiographySkill}>{` FrontEnd Developer `}</span>
-              <span className={styles.BiographySkill}>{` React `}</span>
-              <span className={styles.BiographySkill}>{` Vue.js `}</span>
-              <span className={styles.BiographySkill}>{` HTML `}</span>
-              <span className={styles.BiographySkill}>{` CSS `}</span>
-              <span className={styles.BiographySkill}>{` Performance `}</span>
-              <span className={styles.BiographySkill}>{` UX `}</span>
-            </div>
+            <span className={styles.BiographySkill}>{` FrontEnd Developer `}</span>
+            <span className={styles.BiographySkill}>{` React `}</span>
+            <span className={styles.BiographySkill}>{` Vue.js `}</span>
+            <span className={styles.BiographySkill}>{` HTML `}</span>
+            <span className={styles.BiographySkill}>{` CSS `}</span>
+            <span className={styles.BiographySkill}>{` Performance `}</span>
+            <span className={styles.BiographySkill}>{` UX `}</span>
           </div>
           <div className={styles.BiographyLine}>
-            <span className={styles.BiographyEmoji} role="img" aria-label="Skills">
-              🏡
-            </span>
-            <div>
-              <a className={styles.BiographyLink} href="https://www.zenika.com/">
-                {` Zenika `}
-              </a>
-              <a className={styles.BiographyLink} href="https://www.bdx.io/">
-                {` BDX I/O `}
-              </a>
-              <a className={styles.BiographyLink} href="https://gdgbordeaux.fr/">
-                {` GDG Bordeaux `}
-              </a>
-            </div>
+            <a className={styles.BiographyLink} href="https://www.zenika.com/">
+              {` Zenika `}
+            </a>
+            <a className={styles.BiographyLink} href="https://www.bdx.io/">
+              {` BDX I/O `}
+            </a>
+            <a className={styles.BiographyLink} href="https://gdgbordeaux.fr/">
+              {` GDG Bordeaux `}
+            </a>
           </div>
-        </div>
-      </div>
-      <div className={styles.SocialLinksWrapper}>
-        <div className={styles.SocialLinks}>
-          <a
-            className={styles.Social}
-            href="https://github.com/brunosabot"
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label="Bruno Sabot on Github"
-          >
-            <GithubCircle className={styles.SocialIcon} />
-          </a>
-          <a
-            className={styles.Social}
-            href="https://twitter.com/brunosabot"
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label="Bruno Sabot on Twitter"
-          >
-            <Twitter className={styles.SocialIcon} />
-          </a>
-          <a
-            className={styles.Social}
-            href="https://instagram.com/brunosabot"
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label="Bruno Sabot on Instagram"
-          >
-            <Instagram className={styles.SocialIcon} />
-          </a>
-          <a
-            className={styles.Social}
-            href="https://linkedin.com/in/brunosabot"
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label="Bruno Sabot on LinkedIn"
-          >
-            <LinkedinBox className={styles.SocialIcon} />
-          </a>
-          <a
-            className={styles.Social}
-            href="https://codepen.io/brunosabot/"
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label="Bruno Sabot on Codepen"
-          >
-            <Codepen className={styles.SocialIcon} />
-          </a>
-          <a
-            className={styles.Social}
-            href="https://medium.com/@brunosabot"
-            rel="noopener noreferrer"
-            target="_blank"
-            aria-label="Bruno Sabot on Medium"
-          >
-            <Medium className={styles.SocialIcon} />
-          </a>
+          <div className={styles.BiographyLine}>
+            <a
+              className={styles.Social}
+              href="https://github.com/brunosabot"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Bruno Sabot on Github"
+            >
+              <GithubCircle className={styles.SocialIcon} />
+            </a>
+            <a
+              className={styles.Social}
+              href="https://twitter.com/brunosabot"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Bruno Sabot on Twitter"
+            >
+              <Twitter className={styles.SocialIcon} />
+            </a>
+            <a
+              className={styles.Social}
+              href="https://instagram.com/brunosabot"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Bruno Sabot on Instagram"
+            >
+              <Instagram className={styles.SocialIcon} />
+            </a>
+            <a
+              className={styles.Social}
+              href="https://linkedin.com/in/brunosabot"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Bruno Sabot on LinkedIn"
+            >
+              <LinkedinBox className={styles.SocialIcon} />
+            </a>
+            <a
+              className={styles.Social}
+              href="https://codepen.io/brunosabot/"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Bruno Sabot on Codepen"
+            >
+              <Codepen className={styles.SocialIcon} />
+            </a>
+            <a
+              className={styles.Social}
+              href="https://medium.com/@brunosabot"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Bruno Sabot on Medium"
+            >
+              <Medium className={styles.SocialIcon} />
+            </a>
+          </div>
         </div>
       </div>
     </>

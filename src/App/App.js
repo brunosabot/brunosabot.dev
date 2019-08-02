@@ -9,9 +9,7 @@ function App() {
     <AppProvider>
       <div className={styles.App}>
         <Header></Header>
-        <main>
-          <Pages />
-        </main>
+        <Pages />
       </div>
     </AppProvider>
   );

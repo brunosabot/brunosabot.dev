@@ -1,14 +1,16 @@
 .Wrapper {
   display: inline-block;
-  padding: 0 1px;
+  height: 100px;
 }
 .HeaderLink {
   align-items: center;
-  border-radius: 8px 8px 0 0;
-  color: rgb(118, 89, 53);
+  border: solid transparent;
+  border-width: 1px;
+  color: rgb(0, 0, 0, 0.7);
   cursor: pointer;
   display: inline-flex;
   font-weight: 500;
+  height: 100%;
   justify-content: center;
   line-height: 40px;
   outline: 0;
@@ -16,51 +18,27 @@
   position: relative;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
-.HeaderLink:before,
-.HeaderLink:after {
-  bottom: 0;
-  content: "";
-  height: 8px;
-  position: absolute;
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
-  width: 16px;
-}
-.HeaderLink:after {
-  border-radius: 0 0 0 8px;
-  box-shadow: -8px 0 0 0 rgba(255, 255, 255, 0);
-  right: -16px;
-}
-.HeaderLink:before {
-  border-radius: 0 0 8px 0;
-  box-shadow: 8px 0 0 0 rgba(255, 255, 255, 0);
-  left: -16px;
-}
 
 @media (hover: hover) {
   .HeaderLink:hover {
-    background-color: rgb(171, 128, 77, 0.2);
-  }
-  .HeaderLinkActive:hover:after {
-    box-shadow: -8px 0 0 0 rgb(227, 213, 196);
-  }
-  .HeaderLinkActive:hover:before {
-    box-shadow: 8px 0 0 0 rgb(227, 213, 196);
+    background-color: rgb(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+    height: calc(100% - 32px);
+    margin-top: 16px;
   }
 }
 
 .HeaderLink.HeaderLinkActive {
-  background-color: #ffffff;
+  background-color: rgba(26, 118, 64, 0.7);
+  border-color: rgba(26, 118, 64, 0.7);
+  color: rgba(255, 255, 255, 0.9);
   cursor: initial;
-}
-.HeaderLink.HeaderLinkActive:after {
-  box-shadow: -8px 0 0 0 #ffffff;
-}
-.HeaderLink.HeaderLinkActive:before {
-  box-shadow: 8px 0 0 0 #ffffff;
+  height: calc(100% + 32px);
+  margin-top: -16px;
 }
 
 .External {
-  fill: rgb(118, 89, 53);
+  fill: rgb(0, 80, 0);
   height: 12px;
   padding-right: 4px;
   width: 16px;

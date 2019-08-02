@@ -2,16 +2,13 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  left: 50%;
   max-width: 100%;
-  padding: 48px 16px 16px 16px;
+  padding: 32px 16px 16px 16px;
   position: absolute;
-  transform: translateX(-50%);
-  width: 600px;
 }
 .Article {
   align-items: center;
-  border-bottom: 1px solid rgba(54, 48, 39, 0.1);
+  border-bottom: 1px solid rgba(0, 80, 0, 0.1);
   color: inherit;
   display: flex;
   justify-content: space-between;
@@ -20,10 +17,10 @@
   width: 100%;
 }
 .Article:first-child {
-  border-top: 1px solid rgba(54, 48, 39, 0.1);
+  border-top: 1px solid rgba(0, 80, 0, 0.1);
 }
 .Article:hover {
-  color: rgb(118, 89, 53);
+  color: rgb(0, 80, 0);
 }
 .Date {
   font-size: 12px;

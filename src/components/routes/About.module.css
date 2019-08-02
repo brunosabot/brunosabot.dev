@@ -1,13 +1,9 @@
 .About {
   align-items: center;
-  bottom: 64px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 16px 0 16px;
-  position: absolute;
-  top: 88px;
-  width: 100%;
+  justify-content: flex-start;
+  padding: 32px 16px 0 16px;
 }
 
 .Biography {
@@ -24,9 +20,9 @@
 
 .BiographyLine {
   align-items: center;
-  border-bottom: 1px solid rgba(54, 48, 39, 0.1);
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 16px 0;
 }
 .BiographyLine:first-child {
@@ -39,16 +35,17 @@
 }
 
 .BiographyLink {
-  color: rgb(118, 89, 53);
+  color: rgba(0, 80, 0, 0.8);
   display: inline-block;
   line-height: 1.5;
+  margin: 0 5px;
   overflow: hidden;
-  padding: 3px 19px 3px 3px;
+  padding: 3px 3px 3px 3px;
   position: relative;
   text-decoration: none;
 }
 .BiographyLink:after {
-  background-color: rgb(118, 89, 53);
+  background-color: rgba(0, 80, 0, 0.8);
   bottom: 0;
   content: "";
   height: 3px;
@@ -66,6 +63,7 @@
   display: inline-block;
   line-height: 1.5;
   padding: 3px 19px 3px 3px;
+  white-space: nowrap;
 }
 
 .SocialLinksWrapper {
@@ -85,7 +83,7 @@
 }
 
 .Social {
-  padding: 16px;
+  padding: 12px;
 }
 
 .SocialIcon {
@@ -96,5 +94,5 @@
   width: 32px;
 }
 .SocialIcon:hover {
-  fill: rgb(118, 89, 53);
+  fill: rgba(0, 80, 0, 0.8);
 }

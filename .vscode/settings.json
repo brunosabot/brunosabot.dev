@@ -2,25 +2,20 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
+  "stylelint.enable": true,
   "workbench.colorCustomizations": {
-    "list.activeSelectionForeground": "#FF7042",
-    "list.inactiveSelectionForeground": "#FF7042",
-    "list.highlightForeground": "#FF7042",
-    "scrollbarSlider.activeBackground": "#FF704250",
-    "editorSuggestWidget.highlightForeground": "#FF7042",
-    "textLink.foreground": "#FF7042",
-    "progressBar.background": "#FF7042",
-    "pickerGroup.foreground": "#FF7042",
-    "tab.activeBorder": "#FF7042",
-    "notificationLink.foreground": "#FF7042",
-    "activityBar.background": "#bd996d",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#d3ebe0",
-    "activityBarBadge.foreground": "#15202b",
-    "statusBar.background": "#ab804d",
-    "statusBarItem.hoverBackground": "#88663d",
-    "statusBar.foreground": "#15202b"
+    "activityBar.background": "#008300",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#0000df",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "titleBar.activeBackground": "#005000",
+    "titleBar.inactiveBackground": "#00500099",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "statusBar.background": "#005000",
+    "statusBarItem.hoverBackground": "#008300",
+    "statusBar.foreground": "#e7e7e7"
   },
-  "stylelint.enable": true
+  "peacock.color": "#005000"
 }

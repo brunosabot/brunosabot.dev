@@ -14,7 +14,7 @@ const Talks = () => {
   return (
     <div className={styles.Talks}>
       {talks.map(talk => (
-        <div>
+        <div key={talk.id}>
           <h3 className={styles.Title}>{talk.title}</h3>
           <iframe
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
