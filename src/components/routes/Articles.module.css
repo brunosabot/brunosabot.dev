@@ -4,7 +4,6 @@
   flex-direction: column;
   max-width: 100%;
   padding: 40px 16px 16px 16px;
-  position: absolute;
 }
 .Article {
   align-items: center;
