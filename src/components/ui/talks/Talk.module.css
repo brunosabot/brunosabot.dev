@@ -1,0 +1,35 @@
+.Date {
+  font-size: 12px;
+  font-style: italic;
+  padding-left: 16px;
+  white-space: nowrap;
+}
+.Talk {
+  border-bottom: 1px solid rgba(0, 80, 0, 0.1);
+  max-width: 100%;
+  width: 560px;
+}
+.Talk:first-child {
+  border-top: 1px solid rgba(0, 80, 0, 0.1);
+}
+.Talk:hover {
+  color: rgb(0, 80, 0);
+}
+.Head {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: inherit;
+  font-weight: 400;
+  justify-content: space-between;
+  margin: 0;
+  padding: 12px 0;
+}
+.Video {
+  display: block;
+  margin: 12px 0 24px 0;
+  max-width: 100%;
+}
+.Language {
+  margin-right: 4px;
+}

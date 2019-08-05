@@ -31,6 +31,7 @@
 .HeaderLink.HeaderLinkActive {
   background-color: rgba(26, 118, 64, 0.7);
   border-color: rgba(26, 118, 64, 0.7);
+  box-shadow: 0 0 0 1px inset rgb(32, 207, 121, 0.1);
   color: rgba(255, 255, 255, 0.9);
   cursor: initial;
   height: calc(100% + 32px);
