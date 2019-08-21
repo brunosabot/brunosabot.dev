@@ -10,6 +10,11 @@ const Articles = () => {
 
   const articles = [
     {
+      title: "🇺🇸 A Complete Pre-Commit Workflow",
+      href: "https://medium.com/better-programming/a-complete-pre-commit-workflow-cea6e34f0032",
+      date: "2019-08-21"
+    },
+    {
       title: "🇫🇷 Learning expedition Zenika: Ce qu'en pensent les devs",
       href:
         "https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/",
