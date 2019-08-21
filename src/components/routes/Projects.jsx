@@ -10,11 +10,16 @@ const Projects = () => {
       <div className={styles.Project}>
         <a
           className={styles.ProjectLink}
-          href="https://play.google.com/store/apps/details?id=com.answwr.android"
+          href="https://www.answwr.com"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <img src="/images/answwr.png" alt="Answwr" className={styles.Image} />
+          <img
+            src="/images/answwr.png"
+            alt="Answwr is a cool and modern decision maker, so cool that you’d think there is an AI
+          managing the thing."
+            className={styles.Image}
+          />
         </a>
         <p>
           Answwr is a cool and modern decision maker, so cool that you’d think there is an AI
