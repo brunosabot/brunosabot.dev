@@ -1,0 +1,13 @@
+name: Deploy to Google Cloud Storage
+on: [push]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: vsoch/gcloud-actions/gsutils@add/gsutil
+        env:
+          GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+        with:
+          args: ls gs://www.brunosabot.com
