@@ -6,7 +6,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: vsoch/gcloud-actions/gsutils@add/gsutil
+      - uses: vsoch/gcloud-actions/gsutil@add/gsutil
         env:
           GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
         with:
