@@ -6,8 +6,31 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build --if-present
       - uses: vsoch/gcloud-actions/gsutil@add/gsutil
         env:
           GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
         with:
           args: ls gs://www.brunosabot.com
+      - uses: vsoch/gcloud-actions/gsutil@add/gsutil
+        env:
+          GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+        with:
+          args: -m rm gs://www.brunosabot.com/**
+      - uses: vsoch/gcloud-actions/gsutil@add/gsutil
+        env:
+          GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+        with:
+          args: -m -h "Cache-Control:public,max-age=31536000" cp -a public-read -r build/* gs://www.brunosabot.com
+      - uses: vsoch/gcloud-actions/gsutil@add/gsutil
+        env:
+          GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+        with:
+          args: cp -a public-read build/index.html gs://www.brunosabot.com
