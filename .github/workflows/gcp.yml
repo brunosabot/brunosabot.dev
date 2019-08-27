@@ -6,26 +6,35 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Checkout the repository
+        uses: actions/checkout@v1
+
+      - name: Setup node.js 12
+        uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - name: npm install, build
+
+      - name: Install npm dependencies and build the app
         run: |
           npm install
           npm run build --if-present
-      - uses: actions/gcloud/auth@master
+
+      - name: Authenticated with Google Cloud
+        uses: actions/gcloud/auth@master
         env:
           GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
-      - uses: vsoch/gcloud-actions/gsutil@add/gsutil
-        with:
-          args: ls gs://www.brunosabot.com
-      - uses: vsoch/gcloud-actions/gsutil@add/gsutil
+
+      - name: Remove all current files
+        uses: vsoch/gcloud-actions/gsutil@add/gsutil
         with:
           args: -m rm gs://www.brunosabot.com/**
-      - uses: vsoch/gcloud-actions/gsutil@add/gsutil
+
+      - name: Copy new files with cache control header
+        uses: vsoch/gcloud-actions/gsutil@add/gsutil
         with:
           args: -m -h "Cache-Control:public,max-age=31536000" cp -a public-read -r build/* gs://www.brunosabot.com
-      - uses: vsoch/gcloud-actions/gsutil@add/gsutil
+
+      - name: Copy new index.html file
+        uses: vsoch/gcloud-actions/gsutil@add/gsutil
         with:
           args: cp -a public-read build/index.html gs://www.brunosabot.com
