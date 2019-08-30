@@ -1,44 +1,36 @@
 import React, { useContext } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import { animated, useTransition } from "react-spring";
 import { AppContext } from "../components/providers/AppProvider";
 import About from "../components/routes/About";
 import Articles from "../components/routes/Articles";
 import Projects from "../components/routes/Projects";
 import Talks from "../components/routes/Talks";
-import styles from "./Pages.module.css";
 
 const Pages = ({ Props }) => {
   const { values } = useContext(AppContext);
+  const transitions = useTransition(values.page, null, {
+    initial: { opacity: 1, transform: "scale3d(1, 1, 1) translate3d(0, 0, 0)" },
+    from: { opacity: 0, transform: "scale3d(0.9, 0.9, 0.9) translate3d(0, 0, 0)" },
+    enter: { opacity: 1, transform: "scale3d(1, 1, 1) translate3d(0, 0, 0)" },
+    leave: { opacity: 0, transform: "scale3d(1.75, 1.75, 1.75) translate3d(0, 25%, 0)" }
+  });
 
-  return (
-    <ReactCSSTransitionGroup
-      component={React.Fragment}
-      transitionName="page"
-      transitionEnterTimeout={300}
-      transitionLeaveTimeout={300}
+  return transitions.map(({ item, key, props, state }) => (
+    <animated.div
+      style={{
+        ...props,
+        position: state === "update" ? null : "absolute",
+        height: "100%",
+        width: "100%"
+      }}
+      key={key}
     >
-      {values.page === "about" ? (
-        <main className={styles.Main}>
-          <About />
-        </main>
-      ) : null}
-      {values.page === "articles" ? (
-        <main className={styles.Main}>
-          <Articles />
-        </main>
-      ) : null}
-      {values.page === "projects" ? (
-        <main className={styles.Main}>
-          <Projects />
-        </main>
-      ) : null}
-      {values.page === "talks" ? (
-        <main className={styles.Main}>
-          <Talks />
-        </main>
-      ) : null}
-    </ReactCSSTransitionGroup>
-  );
+      {item === "about" ? <About /> : null}
+      {item === "articles" ? <Articles /> : null}
+      {item === "projects" ? <Projects /> : null}
+      {item === "talks" ? <Talks /> : null}
+    </animated.div>
+  ));
 };
 
 Pages.propTypes = {};

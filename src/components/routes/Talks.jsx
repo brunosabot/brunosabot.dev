@@ -33,7 +33,7 @@ const Talks = () => {
   return (
     <div className={styles.Talks}>
       {talks.map(talk => (
-        <Talk talk={talk} />
+        <Talk key={talk.id} talk={talk} />
       ))}
     </div>
   );
