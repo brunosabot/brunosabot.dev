@@ -38,3 +38,18 @@ jobs:
         uses: vsoch/gcloud-actions/gsutil@add/gsutil
         with:
           args: cp -a public-read build/index.html gs://www.brunosabot.com
+
+      - name: Copy new manifest.json file
+        uses: vsoch/gcloud-actions/gsutil@add/gsutil
+        with:
+          args: cp -a public-read build/manifest.json gs://www.brunosabot.com
+
+      - name: Copy new robots.txt file
+        uses: vsoch/gcloud-actions/gsutil@add/gsutil
+        with:
+          args: cp -a public-read build/robots.txt gs://www.brunosabot.com
+
+      - name: Copy new sitemap.xml file
+        uses: vsoch/gcloud-actions/gsutil@add/gsutil
+        with:
+          args: cp -a public-read build/sitemap.xml gs://www.brunosabot.com
