@@ -12,7 +12,8 @@
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx .",
+    "lint": "eslint --fix --ext .js,.jsx .",
+    "stylelint": "stylelint --fix **/*.css",
     "start": "react-scripts start",
     "test:lint-staged": "cross-env CI=true react-scripts test --findRelatedTests",
     "test": "react-scripts test"
