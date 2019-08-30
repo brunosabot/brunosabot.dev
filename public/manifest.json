@@ -3,18 +3,21 @@
   "name": "Bruno Sabot, FrontEnd Developer, React, Vue.js, HTML, CSS, Performance, UX",
   "icons": [
     {
-      "src": "images/favicon-48.png",
+      "purpose": "maskable",
       "sizes": "48x48",
+      "src": "images/favicon-48.png",
       "type": "image/png"
     },
     {
-      "src": "images/favicon-192.png",
+      "purpose": "maskable",
       "sizes": "192x192",
+      "src": "images/favicon-192.png",
       "type": "image/png"
     },
     {
-      "src": "images/favicon-512.png",
+      "purpose": "maskable",
       "sizes": "512x512",
+      "src": "images/favicon-512.png",
       "type": "image/png"
     }
   ],
