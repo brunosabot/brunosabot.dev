@@ -6,7 +6,7 @@ import Articles from "../components/routes/Articles";
 import Projects from "../components/routes/Projects";
 import Talks from "../components/routes/Talks";
 
-const Pages = ({ Props }) => {
+const Pages = () => {
   const { values } = useContext(AppContext);
   const transitions = useTransition(values.page, null, {
     initial: { opacity: 1, transform: "scale3d(1, 1, 1) translate3d(0, 0, 0)" },
@@ -14,6 +14,10 @@ const Pages = ({ Props }) => {
     enter: { opacity: 1, transform: "scale3d(1, 1, 1) translate3d(0, 0, 0)" },
     leave: { opacity: 0, transform: "scale3d(1.75, 1.75, 1.75) translate3d(0, 25%, 0)" }
   });
+
+  if (["about", "articles", "projects", "talks"].indexOf(values.page) === -1) {
+    window.location.href = "/about";
+  }
 
   return transitions.map(({ item, key, props, state }) => (
     <animated.div
