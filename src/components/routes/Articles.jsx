@@ -10,8 +10,15 @@ const Articles = () => {
 
   const articles = [
     {
+      title: "🇺🇸 Publish your Cloud Run App with GitHub Actions",
+      href:
+        "https://medium.com/better-programming/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4",
+      date: "2019-09-23"
+    },
+    {
       title: "🇺🇸 Deploy Your ZEIT Now App With GitHub Actions",
-      href: "https://medium.com/better-programming/deploy-your-zeit-now-app-with-github-actions-ca3977806b40",
+      href:
+        "https://medium.com/better-programming/deploy-your-zeit-now-app-with-github-actions-ca3977806b40",
       date: "2019-09-02"
     },
     {
