@@ -52,7 +52,7 @@
     "react-test-renderer": "^16.9.0",
     "stylelint": "^10.1.0",
     "stylelint-config-css-modules": "^1.5.0",
-    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-order": "^3.1.1",
     "stylelint-prettier": "^1.1.1"
