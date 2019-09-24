@@ -6,7 +6,7 @@ const Projects = () => {
   useSeo("Projects - Bruno Sabot", "Projects imaginated and created by Bruno Sabot. Check it out!");
 
   return (
-    <div className={styles.Projects}>
+    <main className={styles.Projects}>
       <div className={styles.Project}>
         <a
           className={styles.ProjectLink}
@@ -47,7 +47,7 @@ const Projects = () => {
           />
         </a>
       </div>
-    </div>
+    </main>
   );
 };
 

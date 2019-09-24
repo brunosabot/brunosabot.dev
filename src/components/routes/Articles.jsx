@@ -40,7 +40,7 @@ const Articles = () => {
   ];
 
   return (
-    <div className={styles.Articles}>
+    <main className={styles.Articles}>
       {articles.map(article => (
         <a
           className={styles.Article}
@@ -53,7 +53,7 @@ const Articles = () => {
           <span className={styles.Date}>{article.date}</span>
         </a>
       ))}
-    </div>
+    </main>
   );
 };
 

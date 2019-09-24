@@ -31,11 +31,11 @@ const Talks = () => {
   ];
 
   return (
-    <div className={styles.Talks}>
+    <main className={styles.Talks}>
       {talks.map(talk => (
         <Talk key={talk.id} talk={talk} />
       ))}
-    </div>
+    </main>
   );
 };
 
