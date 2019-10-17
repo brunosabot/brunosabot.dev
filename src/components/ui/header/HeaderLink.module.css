@@ -19,6 +19,12 @@
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .HeaderLink {
+    transition: none;
+  }
+}
+
 @media (hover: hover) {
   .HeaderLink:hover {
     background-color: var(--background-dp2);
