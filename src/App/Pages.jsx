@@ -24,8 +24,9 @@ const Pages = () => {
       style={{
         ...props,
         position: state === "update" ? null : "absolute",
-        height: "100%",
-        width: "100%"
+        height: "calc(100% - 108px)",
+        width: "100%",
+        padding: "16px"
       }}
       key={key}
     >

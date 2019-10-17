@@ -1,13 +1,17 @@
 .Articles {
   align-items: center;
+  background: var(--background-dp1);
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  padding: 40px 16px 16px 16px;
+  margin: auto;
+  max-width: 600px;
+  padding: 8px 16px;
 }
 .Article {
   align-items: center;
-  border-bottom: 1px solid rgba(0, 80, 0, 0.1);
   color: inherit;
   display: flex;
   justify-content: space-between;
@@ -16,11 +20,8 @@
   text-decoration: none;
   width: 560px;
 }
-.Article:first-child {
-  border-top: 1px solid rgba(0, 80, 0, 0.1);
-}
 .Article:hover {
-  color: rgb(0, 80, 0);
+  color: var(--accent-color);
 }
 .Date {
   font-size: 12px;

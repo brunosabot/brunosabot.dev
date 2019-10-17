@@ -36,7 +36,7 @@
 }
 
 .BiographyLink {
-  color: rgba(0, 80, 0, 0.8);
+  color: var(--accent-color);
   display: inline-block;
   line-height: 1.5;
   margin: 0 5px;
@@ -46,7 +46,7 @@
   text-decoration: none;
 }
 .BiographyLink:after {
-  background-color: rgba(0, 80, 0, 0.8);
+  background-color: var(--accent-color);
   bottom: 0;
   content: "";
   height: 3px;
@@ -67,33 +67,17 @@
   white-space: nowrap;
 }
 
-.SocialLinksWrapper {
-  background: rgb(171, 128, 77, 0.2);
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  overflow: auto;
-  position: absolute;
-  right: 0;
-}
-.SocialLinks {
-  display: flex;
-  max-width: 100%;
-  width: 384px;
-}
-
 .Social {
   padding: 12px;
 }
 
 .SocialIcon {
   display: block;
-  fill: #555555;
+  fill: var(--text-medium-color);
   height: 32px;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 32px;
 }
 .SocialIcon:hover {
-  fill: rgba(0, 80, 0, 0.8);
+  fill: var(--accent-color);
 }
