@@ -1,7 +1,7 @@
 FROM node:alpine
 COPY package.json .
 COPY yarn.lock .
-RUN yarn
+RUN yarn install --frozen-lockfile
 COPY public ./public
 COPY src ./src
 RUN yarn build
