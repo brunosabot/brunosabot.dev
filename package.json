@@ -51,7 +51,7 @@
     "pretty-quick": "^2.0.1",
     "react-test-renderer": "^16.12.0",
     "stylelint": "^12.0.0",
-    "stylelint-config-css-modules": "^2.1.0",
+    "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-order": "^3.1.1",
