@@ -11,6 +11,9 @@
 .Talk:hover {
   color: var(--accent-color);
 }
+.TalkNoVideo:hover {
+  color: inherit;
+}
 .Head {
   align-items: center;
   cursor: pointer;
@@ -21,6 +24,14 @@
   margin: 0;
   padding: 12px 0;
 }
+.TalkNoVideo .Head {
+  cursor: initial;
+}
+.Name {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+}
 .Video {
   display: block;
   margin: 12px 0 24px 0;
@@ -28,4 +39,32 @@
 }
 .Language {
   margin-right: 4px;
+}
+.Icons {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 8px;
+  width: 64px;
+}
+.Icon {
+  display: block;
+  margin-left: 8px;
+}
+.SlidesIcon {
+  display: block;
+  height: 24px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  width: 24px;
+}
+.SlidesIcon:hover {
+  fill: #f4b400;
+}
+.VideoIcon {
+  display: block;
+  height: 24px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  width: 24px;
+}
+.VideoIcon:hover {
+  fill: #ff0000;
 }
