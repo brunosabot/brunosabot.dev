@@ -10,6 +10,11 @@ const Articles = () => {
 
   const articles = [
     {
+      title: "🇺🇸 New year resolutions the right way",
+      href: "https://medium.com/@brunosabot/new-year-resolutions-the-right-way-de4ba67627cc",
+      date: "2020-01-31"
+    },
+    {
       title: "🇺🇸 Publish your Cloud Run App with GitHub Actions",
       href:
         "https://medium.com/better-programming/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4",

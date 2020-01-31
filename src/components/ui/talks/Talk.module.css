@@ -5,14 +5,34 @@
   white-space: nowrap;
 }
 .Talk {
+  background-color: var(--background-dp1);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px var(--accent-color-light);
+  margin-bottom: 16px;
   max-width: 100%;
+  padding: 16px 8px 16px 16px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 560px;
 }
 .Talk:hover {
   color: var(--accent-color);
 }
+.Talk:focus {
+  box-shadow: 0px 0px 10px var(--accent-color);
+}
 .TalkNoVideo:hover {
   color: inherit;
+}
+.Conference {
+  color: var(--text-medium-color);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.Talk:hover .Conference {
+  color: inherit;
+}
+.TalkNoVideo.Talk:hover .Conference {
+  color: var(--text-medium-color);
 }
 .Head {
   align-items: center;
@@ -22,15 +42,15 @@
   font-weight: 400;
   justify-content: space-between;
   margin: 0;
-  padding: 12px 0;
 }
 .TalkNoVideo .Head {
   cursor: initial;
 }
 .Name {
-  align-items: center;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
+  justify-content: center;
 }
 .Video {
   display: block;
@@ -38,33 +58,43 @@
   max-width: 100%;
 }
 .Language {
-  margin-right: 4px;
+  margin-right: 8px;
 }
 .Icons {
   display: flex;
   justify-content: flex-end;
   margin-left: 8px;
-  width: 64px;
+  width: 80px;
 }
 .Icon {
+  border-radius: 20px;
   display: block;
-  margin-left: 8px;
+  padding: 8px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+.Icon:hover,
+.Icon:focus {
+  background-color: var(--accent-color-light);
+  outline: 0;
 }
 .SlidesIcon {
   display: block;
+  fill: var(--text-color);
   height: 24px;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 24px;
 }
-.SlidesIcon:hover {
+.Icon:focus .SlidesIcon,
+.Icon:hover .SlidesIcon {
   fill: #f4b400;
 }
 .VideoIcon {
   display: block;
+  fill: var(--text-color);
   height: 24px;
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 24px;
 }
-.VideoIcon:hover {
+.Icon:focus .VideoIcon,
+.Icon:hover .VideoIcon {
   fill: #ff0000;
 }

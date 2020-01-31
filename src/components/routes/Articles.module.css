@@ -1,27 +1,36 @@
 .Articles {
   align-items: center;
-  background: var(--background-dp1);
-  border-radius: 5px;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  /* background: var(--background-dp1); */
+  /* border-radius: 5px; */
+  /* box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12); */
   display: flex;
   flex-direction: column;
   margin: auto;
   max-width: 600px;
-  padding: 8px 16px;
+  /* padding: 8px 16px; */
 }
 .Article {
   align-items: center;
+  background-color: var(--background-dp1);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px var(--accent-color-light);
   color: inherit;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
   max-width: 100%;
-  padding: 12px 0;
+  padding: 16px;
   text-decoration: none;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 560px;
 }
 .Article:hover {
   color: var(--accent-color);
+}
+.Article:focus {
+  box-shadow: 0px 0px 10px var(--accent-color);
+  outline: 0;
 }
 .Date {
   font-size: 12px;

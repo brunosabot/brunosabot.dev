@@ -18,13 +18,14 @@ body {
 
 @media (prefers-color-scheme: light) {
   body {
-    --accent-color: #4caf4f;
-    --background: rgba(0, 0, 0, 0.05);
+    --accent-color: #27b67b;
+    --accent-color-light: rgba(39, 182, 123, 0.15);
+    --background: rgb(228, 238, 230);
     --text-color: rgba(0, 0, 0, 0.87);
     --text-medium-color: rgba(0, 0, 0, 0.6);
-    --text-reverse-color: rgba(255, 255, 255, 0.87);
-    --background-dp1: rgb(255, 255, 255, 1);
-    --background-dp2: rgb(0, 0, 0, 0.1);
+    --text-reverse-color: rgba(0, 66, 0, 1);
+    --background-dp1: rgba(255, 255, 255, 1);
+    --background-dp2: rgba(0, 0, 0, 0.1);
   }
 }
 
