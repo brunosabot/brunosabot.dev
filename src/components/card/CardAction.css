@@ -1,0 +1,16 @@
+.card-action {
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  fill: var(--text-color);
+  padding: 8px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+.card-action:hover,
+.card-action:focus {
+  background-color: var(--accent-color-light);
+  outline: 0;
+}
+.card-action > * {
+  display: block;
+}

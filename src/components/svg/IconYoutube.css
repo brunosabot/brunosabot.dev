@@ -1,0 +1,4 @@
+*:focus > .icon-youtube,
+*:hover > .icon-youtube {
+  fill: #ff0000;
+}

@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  overflow: auto;
+}
+.header__wrapper {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+.header__link {
+  align-items: flex-end;
+  display: flex;
+  height: 100%;
+  max-width: 100%;
+  padding: 16px 12px;
+}

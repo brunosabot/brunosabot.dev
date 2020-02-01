@@ -4,6 +4,8 @@
 .prettierrc
 .stylelintrc
 .vscode
+.cache
 build
+public
 node_modules
 README.md

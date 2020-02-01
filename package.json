@@ -1,43 +1,25 @@
 {
-  "name": "website",
-  "version": "0.1.0",
+  "name": "brunosabotcom",
   "private": true,
+  "description": "Bruno Sabot's personal website",
+  "version": "0.1.0",
+  "author": "Bruno Sabot <brunosabot@gmail.com>",
   "dependencies": {
+    "gatsby": "^2.19.7",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-sharp": "^2.3.13",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.1",
-    "react-spring": "^8.0.27"
-  },
-  "scripts": {
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "lint": "eslint --fix --ext .js,.jsx src/",
-    "stylelint": "stylelint --fix **/*.css",
-    "start": "react-scripts start",
-    "test:lint-staged": "cross-env CI=true react-scripts test --findRelatedTests",
-    "test": "react-scripts test"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.4",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb": "18.0.1",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.0",
@@ -45,11 +27,9 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "^4.2.1",
-    "jest-enzyme": "^7.1.2",
     "lint-staged": ">=10.0.7",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
-    "react-test-renderer": "^16.12.0",
     "stylelint": "^13.0.0",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.1",
@@ -57,10 +37,27 @@
     "stylelint-order": "^4.0.0",
     "stylelint-prettier": "^1.1.2"
   },
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "lint": "eslint --fix --ext .js,.jsx src/",
+    "stylelint": "stylelint --fix **/*.css",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "test:lint-staged": "cross-env CI=true react-scripts test --findRelatedTests",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunosabot/brunosabot.com"
+  },
+  "bugs": {
+    "url": "https://github.com/brunosabot/brunosabot.com/issues"
   },
   "lint-staged": {
     "*.css": [
@@ -69,7 +66,6 @@
       "git add"
     ],
     "*.{js,jsx}": [
-      "yarn run test:lint-staged",
       "eslint --ext .js,.jsx",
       "prettier --write",
       "git add"

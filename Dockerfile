@@ -2,11 +2,25 @@ FROM node:alpine
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile
-COPY public ./public
+COPY gatsby-browser.js .
+COPY gatsby-config.js .
+COPY gatsby-node.js .
+COPY gatsby-ssr.js .
+COPY static ./static
 COPY src ./src
 RUN yarn build
 
-FROM nginx:alpine
-COPY --from=0 build /usr/share/nginx/html
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY nginx/other.conf /etc/nginx/conf.d/other.conf
+FROM node:alpine
+WORKDIR /usr/share/brunosabot/
+RUN yarn global add gatsby
+COPY package.json .
+COPY yarn.lock .
+RUN yarn install --production=true --frozen-lockfile
+COPY gatsby-browser.js .
+COPY gatsby-config.js .
+COPY gatsby-node.js .
+COPY gatsby-ssr.js .
+COPY --from=0 public public
+COPY --from=0 .cache .cache
+EXPOSE 8080
+CMD yarn serve -p 8080 -H 0.0.0.0

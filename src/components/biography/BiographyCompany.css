@@ -1,0 +1,29 @@
+.biography-company {
+  color: var(--accent-color);
+  display: inline-block;
+  line-height: 1.5;
+  margin: 0 5px;
+  overflow: hidden;
+  padding: 3px 3px 3px 3px;
+  position: relative;
+  text-decoration: none;
+}
+.biography-company:after {
+  background-color: var(--accent-color);
+  bottom: 0;
+  content: "";
+  height: 3px;
+  left: -1px;
+  position: absolute;
+  right: -1px;
+  transform: translateX(-100%);
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .biography-company:after {
+    transition: none;
+  }
+}
+.biography-company:hover:after {
+  transform: translateX(0);
+}
