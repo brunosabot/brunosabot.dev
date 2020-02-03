@@ -1,6 +1,8 @@
 .biography-company {
-  color: var(--accent-color);
+  color: var(--accent-text-color);
   display: inline-block;
+  font-size: 1.1em;
+  font-weight: 700;
   line-height: 1.5;
   margin: 0 5px;
   overflow: hidden;
@@ -9,7 +11,7 @@
   text-decoration: none;
 }
 .biography-company:after {
-  background-color: var(--accent-color);
+  background-color: var(--accent-text-color);
   bottom: 0;
   content: "";
   height: 3px;

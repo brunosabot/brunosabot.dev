@@ -1,8 +1,8 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./CardAction.css";
-import PropTypes from "prop-types";
 
-const CardAction = ({ children, href, onClick }) => (
+const CardAction = ({ children, href, name, onClick }) => (
   <a
     href={href}
     className="card-action"
@@ -11,6 +11,7 @@ const CardAction = ({ children, href, onClick }) => (
     onClick={onClick}
     tabIndex="0"
     onKeyPress={e => e.key === "Enter" && onClick()}
+    aria-label={name}
   >
     {children}
   </a>
@@ -24,6 +25,7 @@ CardAction.defaultProps = {
 CardAction.propTypes = {
   href: PropTypes.string,
   children: PropTypes.node.isRequired,
+  name: PropTypes.string.isRequired,
   onClick: PropTypes.func
 };
 

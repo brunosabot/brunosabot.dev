@@ -1,10 +1,10 @@
-import React, { useState } from "react";
 import PropTypes from "prop-types";
-import Card from "./Card";
-import YoutubeVideo from "../video/YoutubeVideo";
-import CardAction from "./CardAction";
-import IconYoutube from "../svg/IconYoutube";
+import React, { useState } from "react";
 import IconFilePresentationBox from "../svg/IconFilePresentationBox";
+import IconYoutube from "../svg/IconYoutube";
+import YoutubeVideo from "../video/YoutubeVideo";
+import Card from "./Card";
+import CardAction from "./CardAction";
 
 const CardTalk = ({
   conferenceName,
@@ -20,12 +20,15 @@ const CardTalk = ({
   const actions = (
     <>
       {youtubeId ? (
-        <CardAction onClick={() => setShowVideo(!showVideo)}>
+        <CardAction
+          onClick={() => setShowVideo(!showVideo)}
+          name="Vidéo du talk"
+        >
           <IconYoutube />
         </CardAction>
       ) : null}
 
-      <CardAction href={slides}>
+      <CardAction href={slides} name="Slides du talk">
         <IconFilePresentationBox />
       </CardAction>
     </>

@@ -1,5 +1,6 @@
 body {
   --accent-color: #a5d6a7;
+  --accent-text-color: #a5d6a7;
   --accent-color-light: rgb(165, 214, 167, 0.15);
   --background: #121212;
   --text-color: rgba(255, 255, 255, 0.87);
@@ -21,6 +22,7 @@ body {
 @media (prefers-color-scheme: light) {
   body {
     --accent-color: #27b67b;
+    --accent-text-color: #19764f;
     --accent-color-light: rgba(39, 182, 123, 0.15);
     --background: rgb(228, 238, 230);
     --text-color: rgba(0, 0, 0, 0.87);
