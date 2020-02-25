@@ -63,17 +63,14 @@
   "lint-staged": {
     "*.css": [
       "prettier --write",
-      "stylelint --fix",
-      "git add"
+      "stylelint --fix"
     ],
     "*.{js,jsx}": [
       "eslint --ext .js,.jsx",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "husky": {
