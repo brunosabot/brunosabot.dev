@@ -22,13 +22,16 @@ module.exports = {
       options: {
         short_name: "Bruno Sabot",
         name: "Bruno Sabot's homepage",
+        description:
+          "Bruno Sabot's home on the web. Everything you need to know about him",
+        lang: "en",
         start_url: "/",
         background_color: "#ffffff",
         theme_color: "#005000",
         display: "fullscreen",
         icon: "static/images/favicon-maskable.png",
         icon_options: {
-          purpose: "maskable"
+          purpose: "maskable any"
         }
       }
     },
