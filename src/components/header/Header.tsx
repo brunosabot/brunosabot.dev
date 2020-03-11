@@ -10,6 +10,7 @@ const Header: React.FC<{}> = () => (
         <HeaderLink to="/talks/">Talks</HeaderLink>
         <HeaderLink to="/projects/">Projects</HeaderLink>
         <HeaderLink to="/articles/">Articles</HeaderLink>
+        <HeaderLink to="/videos/">Videos</HeaderLink>
         <HeaderLink to="/resume/en/">Resume</HeaderLink>
       </div>
     </div>

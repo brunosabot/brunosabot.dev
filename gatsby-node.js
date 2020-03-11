@@ -322,6 +322,14 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       subtitles: ["Scientific Baccalauréat"]
     }
   ];
+  const videos = [
+    {
+      date: "2020-03-09",
+      language: "🇫🇷",
+      title: "Un Café Avec Bruno & Manuel : CSS Flexbox",
+      youtubeId: "t9XFUI_qZ3g"
+    }
+  ];
 
   articles.forEach(article => {
     const node = {
@@ -442,6 +450,21 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       internal: {
         type: "trainings",
         contentDigest: createContentDigest(training)
+      }
+    };
+    actions.createNode(node);
+  });
+
+  videos.forEach(video => {
+    const node = {
+      date: video.date,
+      language: video.language,
+      title: video.title,
+      youtubeId: video.youtubeId,
+      id: createNodeId(`video-${video.title}`),
+      internal: {
+        type: "video",
+        contentDigest: createContentDigest(video)
       }
     };
     actions.createNode(node);
