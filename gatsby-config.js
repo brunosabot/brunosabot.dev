@@ -30,6 +30,28 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: "gatsby-plugin-humans-txt",
+      options: {
+        team: [
+          {
+            Developer: "Bruno Sabot",
+            Contact: "bruno [at] sabot [dot] me",
+            GitHub: "brunosabot",
+            Twitter: "@brunosabot",
+            Location: "Bordeaux, France"
+          }
+        ],
+        thanks: ["Gatsby", "Node"],
+        site: {
+          "Last update": "2020/03/11",
+          Standards: "HTML5, CSS3, JavaScript",
+          Components: "Google Fonts, Google Analytics, Gatsby",
+          Softwares: "Visual Studio Code"
+        },
+        note: "Made with love ❤️"
+      }
+    },
     "gatsby-plugin-offline",
     "gatsby-plugin-sitemap"
   ]

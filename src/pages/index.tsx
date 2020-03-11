@@ -4,7 +4,7 @@ import BiographyCompany from "../components/biography/BiographyCompany";
 import BiographyLine from "../components/biography/BiographyLine";
 import BiographySkill from "../components/biography/BiographySkill";
 import Social from "../components/biography/BiographySocial";
-import Layout from "../components/Layout";
+import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 import IconCodepen from "../components/svg/IconCodepen";
 import IconGithubCircle from "../components/svg/IconGithubCircle";

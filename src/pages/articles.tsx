@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Card from "../components/card/Card";
-import Layout from "../components/Layout";
+import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 
 interface Article {

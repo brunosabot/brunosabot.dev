@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import DetailCard from "../components/card/DetailCard";
-import Layout from "../components/Layout";
+import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 
 interface Project {
