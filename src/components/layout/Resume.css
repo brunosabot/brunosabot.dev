@@ -92,7 +92,7 @@
 }
 
 @media (max-width: 1024px) {
-  body {
+  .resume-body {
     display: block;
   }
   .resume,
@@ -108,7 +108,7 @@
   }
 }
 @media (max-width: 750px) {
-  body {
+  .resume-body {
     display: block;
   }
   .resume,
@@ -130,7 +130,7 @@
   }
 }
 @media print {
-  body {
+  .resume-body {
     display: block;
   }
   .resume,

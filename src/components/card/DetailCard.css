@@ -23,4 +23,5 @@
 .detail-card__image {
   border-radius: 8px 8px 0 0;
   margin: -16px 0 0 -16px;
+  max-width: calc(100% + 32px);
 }
