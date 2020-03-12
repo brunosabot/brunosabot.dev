@@ -8,20 +8,8 @@ exports.createPages = ({ actions }) => {
   const { createRedirect } = actions;
 
   createRedirect({
-    fromPath: "https://brunosabot.com/*",
-    toPath: "https://brunosabot.dev/:splat",
-    isPermanent: true,
-    force: true
-  });
-  createRedirect({
-    fromPath: "https://www.brunosabot.com/*",
-    toPath: "https://brunosabot.dev/:splat",
-    isPermanent: true,
-    force: true
-  });
-  createRedirect({
-    fromPath: "https://www.brunosabot.dev/*",
-    toPath: "https://brunosabot.dev/:splat",
+    fromPath: "/about",
+    toPath: "/",
     isPermanent: true,
     force: true
   });

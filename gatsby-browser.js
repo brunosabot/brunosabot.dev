@@ -5,3 +5,11 @@
  */
 
 // You can delete this file if you're not using it
+exports.onClientEntry = () => {
+  if (
+    window.location.hostname !== "brunosabot.dev" &&
+    window.location.hostname !== "localhost"
+  ) {
+    window.location.hostname = "brunosabot.dev";
+  }
+};

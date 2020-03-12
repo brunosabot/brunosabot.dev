@@ -53,6 +53,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-offline",
-    "gatsby-plugin-sitemap"
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-client-side-redirect" // keep it in last in list
   ]
 };
