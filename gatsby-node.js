@@ -4,6 +4,29 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+exports.createPages = ({ actions }) => {
+  const { createRedirect } = actions;
+
+  createRedirect({
+    fromPath: "https://brunosabot.com/*",
+    toPath: "https://brunosabot.dev/:splat",
+    isPermanent: true,
+    force: true
+  });
+  createRedirect({
+    fromPath: "https://www.brunosabot.com/*",
+    toPath: "https://brunosabot.dev/:splat",
+    isPermanent: true,
+    force: true
+  });
+  createRedirect({
+    fromPath: "https://www.brunosabot.dev/*",
+    toPath: "https://brunosabot.dev/:splat",
+    isPermanent: true,
+    force: true
+  });
+};
+
 // You can delete this file if you're not using it
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const articles = [
