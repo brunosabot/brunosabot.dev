@@ -11,6 +11,7 @@ import IconGithubCircle from "../components/svg/IconGithubCircle";
 import IconInstagram from "../components/svg/IconInstagram";
 import IconLinkedinBox from "../components/svg/IconLinkedinBox";
 import IconMedium from "../components/svg/IconMedium";
+import IconStrava from "../components/svg/IconStrava";
 import IconTwitter from "../components/svg/IconTwitter";
 
 const About: React.FC<{}> = () => {
@@ -61,6 +62,12 @@ const About: React.FC<{}> = () => {
             </Social>
             <Social href="https://medium.com/@brunosabot" name="Medium">
               <IconMedium />
+            </Social>
+            <Social
+              href="https://www.strava.com/athletes/15220263"
+              name="Strava"
+            >
+              <IconStrava />
             </Social>
           </BiographyLine>
         </div>
