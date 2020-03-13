@@ -8,6 +8,7 @@ body {
   --text-reverse-color: rgba(0, 0, 0, 0.87);
   --background-dp1: rgb(255, 255, 255, 0.05);
   --background-dp2: rgb(255, 255, 255, 0.1);
+  --white: rgba(0, 0, 0, 1);
 
   background-color: var(--background);
   color: var(--text-color);
@@ -30,6 +31,7 @@ body {
     --text-reverse-color: rgba(0, 66, 0, 1);
     --background-dp1: rgba(255, 255, 255, 1);
     --background-dp2: rgba(0, 0, 0, 0.1);
+    --white: rgba(255, 255, 255, 1);
   }
 }
 
@@ -57,6 +59,9 @@ code {
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.content {
+  padding: 0 16px;
 }
 
 .page-enter {

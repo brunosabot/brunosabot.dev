@@ -48,7 +48,7 @@ const Talks: React.FC<Props> = ({ data }) => (
       description="All the conference talks given by Bruno Sabot. Check it out!"
       title="Talks - Bruno Sabot"
     />
-    <main className="talk">
+    <main className="content">
       {data.allTalk.nodes.map(talk => (
         <CardTalk {...talk} key={talk.id} />
       ))}

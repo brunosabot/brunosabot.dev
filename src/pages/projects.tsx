@@ -44,7 +44,7 @@ const Projects: React.FC<Props> = ({ data }) => (
       description="Projects imaginated and created by Bruno Sabot. Check it out!"
       title="Projects - Bruno Sabot"
     />
-    <main className="project">
+    <main className="content">
       {data.allProject.nodes.map(project => (
         <DetailCard
           image={project.image}

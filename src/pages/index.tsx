@@ -21,7 +21,10 @@ const About: React.FC<{}> = () => {
         description="About Bruno Sabot, a FrontEnd Developer enjoying React, Vue.js, HTML, CSS, Performance and UX"
         title="About - Bruno Sabot"
       />
-      <main style={{ textAlign: "center", margin: "auto", maxWidth: "400px" }}>
+      <main
+        className="content"
+        style={{ textAlign: "center", margin: "auto", maxWidth: "400px" }}
+      >
         <BiographyAvatar src="/images/brunosabot.jpg" alt="Bruno Sabot" />
         <div>
           <BiographyLine>

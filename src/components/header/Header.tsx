@@ -5,6 +5,8 @@ import HeaderLink from "./HeaderLink";
 const Header: React.FC<{}> = () => (
   <header className="header">
     <div className="header__wrapper">
+      <input className="header__burger-checkbox" type="checkbox" />
+      <div className="header__burger"></div>
       <div className="header__link">
         <HeaderLink to="/">About</HeaderLink>
         <HeaderLink to="/talks/">Talks</HeaderLink>

@@ -49,3 +49,19 @@
   padding-right: 4px;
   width: 16px;
 }
+
+@media (max-width: 650px) {
+  .header-link__link {
+    border-left: 4px solid transparent;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .header-link__link.header-link__link--active {
+    background-color: transparent;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0;
+    color: var(--accent-text-color);
+    height: calc(100% - 16px);
+    margin-top: 8px;
+  }
+}

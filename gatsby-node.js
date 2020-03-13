@@ -287,7 +287,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [],
       endDate: "2008",
       startDate: "2005",
-      diploma: "DUT R&amp;T",
+      diploma: "DUT R&T",
       subtitles: ["Réseaux et Télécommunications"]
     },
     {
@@ -320,7 +320,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [],
       endDate: "2008",
       startDate: "2005",
-      diploma: "DUT R&amp;T",
+      diploma: "DUT R&T",
       subtitles: ["Network and Telecommunications"]
     },
     {
