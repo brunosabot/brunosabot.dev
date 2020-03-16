@@ -1,19 +1,22 @@
 .biography-social {
-  padding: 12px;
+  border-radius: 50%;
+  fill: var(--text-medium-color);
+  margin: 4px;
+  padding: 8px;
+}
+.biography-social:hover {
+  background-color: var(--background-dp2);
+  fill: var(--accent-color);
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 .biography-social > * {
   display: block;
-  fill: var(--text-medium-color);
   height: 32px;
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 32px;
 }
 @media (prefers-reduced-motion: reduce) {
   .biography-social > * {
     transition: none;
   }
-}
-.biography-social > *:hover {
-  fill: var(--accent-color);
 }

@@ -23,7 +23,12 @@ const About: React.FC<{}> = () => {
       />
       <main
         className="content"
-        style={{ textAlign: "center", margin: "auto", maxWidth: "400px" }}
+        style={{
+          textAlign: "center",
+          margin: "auto",
+          maxWidth: "400px",
+          paddingTop: "32px"
+        }}
       >
         <BiographyAvatar src="/images/brunosabot.jpg" alt="Bruno Sabot" />
         <div>

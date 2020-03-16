@@ -1,7 +1,7 @@
 body {
-  --accent-color: #a5d6a7;
-  --accent-text-color: #a5d6a7;
-  --accent-color-light: rgb(165, 214, 167, 0.15);
+  --accent-color: rgb(171, 128, 77);
+  --accent-text-color: hsl(33, 38%, 59%);
+  --accent-color-light: rgb(171, 128, 77, 0.1);
   --background: #121212;
   --text-color: rgba(255, 255, 255, 0.87);
   --text-medium-color: rgba(255, 255, 255, 0.6);
@@ -11,6 +11,11 @@ body {
   --white: rgba(0, 0, 0, 1);
 
   background-color: var(--background);
+  background-image: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    var(--accent-color) 1000%
+  );
   color: var(--text-color);
   fill: var(--text-color);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -22,16 +27,21 @@ body {
 
 @media (prefers-color-scheme: light) {
   body {
-    --accent-color: #27b67b;
-    --accent-text-color: #19764f;
-    --accent-color-light: rgba(39, 182, 123, 0.15);
-    --background: rgb(228, 238, 230);
+    --accent-color: #ab804d;
+    --accent-text-color: hsl(33, 38%, 39%);
+    --accent-color-light: rgb(171, 128, 77, 0.15);
+    --background: rgb(255, 255, 255);
     --text-color: rgba(0, 0, 0, 0.87);
     --text-medium-color: rgba(0, 0, 0, 0.6);
-    --text-reverse-color: rgba(0, 66, 0, 1);
+    --text-reverse-color: rgba(255, 255, 255, 1);
     --background-dp1: rgba(255, 255, 255, 1);
     --background-dp2: rgba(0, 0, 0, 0.1);
     --white: rgba(255, 255, 255, 1);
+    background-image: linear-gradient(
+      180deg,
+      var(--background) 0%,
+      var(--accent-color) 800%
+    );
   }
 }
 

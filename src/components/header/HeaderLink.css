@@ -1,6 +1,6 @@
 .header-link {
   display: inline-block;
-  height: 60px;
+  height: 40px;
 }
 .header-link__link {
   align-items: center;
@@ -32,8 +32,8 @@
 @media (hover: hover) {
   .header-link__link:hover {
     background-color: var(--background-dp2);
-    height: calc(100% - 16px);
-    margin-top: 8px;
+    height: calc(100% + 16px);
+    margin-top: -8px;
   }
 }
 
@@ -51,10 +51,20 @@
 }
 
 @media (max-width: 650px) {
+  .header-link {
+    height: auto;
+    margin: 4px;
+  }
   .header-link__link {
     border-left: 4px solid transparent;
     justify-content: flex-start;
+    margin: 0;
     width: 100%;
+  }
+  .header-link__link:hover {
+    background-color: var(--background-dp2);
+    height: 100%;
+    margin: 0;
   }
   .header-link__link.header-link__link--active {
     background-color: transparent;
