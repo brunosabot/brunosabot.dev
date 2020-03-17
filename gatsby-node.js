@@ -21,6 +21,14 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     {
       language: "🇺🇸",
       platform: "Medium",
+      title: "How to Debug a React Context API App",
+      href:
+        "https://medium.com/better-programming/how-to-debug-a-react-context-api-app-547b75818754",
+      date: "2020-03-17"
+    },
+    {
+      language: "🇺🇸",
+      platform: "Medium",
       title: "New year resolutions the right way",
       href:
         "https://medium.com/@brunosabot/new-year-resolutions-the-right-way-de4ba67627cc",
