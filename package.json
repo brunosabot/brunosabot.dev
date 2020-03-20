@@ -6,7 +6,7 @@
   "author": "Bruno Sabot <brunosabot@gmail.com>",
   "dependencies": {
     "@types/react-helmet": "^5.0.15",
-    "gatsby": "^2.19.28",
+    "gatsby": "^2.19.49",
     "gatsby-image": "^2.2.42",
     "gatsby-plugin-client-side-redirect": "^1.0.0",
     "gatsby-plugin-humans-txt": "^1.1.4",
