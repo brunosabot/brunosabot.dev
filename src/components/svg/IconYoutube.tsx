@@ -5,12 +5,12 @@ interface Props {
   className?: string;
 }
 
-const IconYoutube: React.FC<Props> = props => (
+const IconYoutube: React.FC<Props> = (props) => (
   <svg
     className="icon-youtube"
     style={{
       width: 24,
-      height: 24
+      height: 24,
     }}
     viewBox="0 0 24 24"
     {...props}

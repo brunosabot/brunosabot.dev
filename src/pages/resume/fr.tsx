@@ -133,7 +133,7 @@ const About: React.FC<Props> = ({ data }) => {
         <article className="resume-professional-experiences">
           <Title>Expériences professionnelles</Title>
 
-          {data.allJobs.nodes.map(job => (
+          {data.allJobs.nodes.map((job) => (
             <Job
               companyName={job.companyName}
               companyWebsite={job.companyWebsite}
@@ -150,7 +150,7 @@ const About: React.FC<Props> = ({ data }) => {
         <article className="training">
           <Title>Formation</Title>
 
-          {data.allTrainings.nodes.map(training => (
+          {data.allTrainings.nodes.map((training) => (
             <Job
               companyName={training.schoolName}
               companyWebsite={training.schoolWebsite}

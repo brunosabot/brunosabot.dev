@@ -17,7 +17,7 @@ const CardTalk: React.FC<Props> = ({
   id,
   language,
   title,
-  youtubeId
+  youtubeId,
 }) => {
   const [showVideo, setShowVideo] = useState(false);
 

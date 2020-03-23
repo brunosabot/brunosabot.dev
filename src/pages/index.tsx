@@ -27,7 +27,7 @@ const About: React.FC<{}> = () => {
           textAlign: "center",
           margin: "auto",
           maxWidth: "400px",
-          paddingTop: "32px"
+          paddingTop: "32px",
         }}
       >
         <BiographyAvatar src="/images/brunosabot.jpg" alt="Bruno Sabot" />

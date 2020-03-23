@@ -4,11 +4,11 @@ interface Props {
   className?: string;
 }
 
-const IconStrava: React.FC<Props> = props => (
+const IconStrava: React.FC<Props> = (props) => (
   <svg
     style={{
       width: 24,
-      height: 24
+      height: 24,
     }}
     viewBox="2 2 12 12"
     {...props}

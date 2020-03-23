@@ -22,7 +22,7 @@ const CardTalk: React.FC<Props> = ({
   language,
   slides,
   title,
-  youtubeId = null
+  youtubeId = null,
 }) => {
   const [showVideo, setShowVideo] = useState(false);
 

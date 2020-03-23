@@ -47,7 +47,7 @@ const Articles: React.FC<Props> = ({ data }) => (
       title="Articles - Bruno Sabot"
     />
     <main className="content">
-      {data.allArticle.nodes.map(article => (
+      {data.allArticle.nodes.map((article) => (
         <Card
           icon={article.language}
           title={article.title}

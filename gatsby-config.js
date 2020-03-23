@@ -4,7 +4,7 @@ module.exports = {
     description:
       "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
     author: "@brunosabot",
-    siteUrl: "https://brunosabot.com"
+    siteUrl: "https://brunosabot.com",
   },
   plugins: [
     "gatsby-plugin-typescript",
@@ -26,9 +26,9 @@ module.exports = {
         display: "fullscreen",
         icon: "static/images/favicon-maskable.png",
         icon_options: {
-          purpose: "maskable any"
-        }
-      }
+          purpose: "maskable any",
+        },
+      },
     },
     {
       resolve: "gatsby-plugin-humans-txt",
@@ -39,21 +39,21 @@ module.exports = {
             Contact: "bruno [at] sabot [dot] me",
             GitHub: "brunosabot",
             Twitter: "@brunosabot",
-            Location: "Bordeaux, France"
-          }
+            Location: "Bordeaux, France",
+          },
         ],
         thanks: ["Gatsby", "Node"],
         site: {
           "Last update": "2020/03/11",
           Standards: "HTML5, CSS3, JavaScript",
           Components: "Google Fonts, Google Analytics, Gatsby",
-          Softwares: "Visual Studio Code"
+          Softwares: "Visual Studio Code",
         },
-        note: "Made with love ❤️"
-      }
+        note: "Made with love ❤️",
+      },
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-client-side-redirect" // keep it in last in list
-  ]
+    "gatsby-plugin-client-side-redirect", // keep it in last in list
+  ],
 };

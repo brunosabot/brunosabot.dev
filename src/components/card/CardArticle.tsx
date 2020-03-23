@@ -16,7 +16,7 @@ const CardTalk: React.FC<Props> = ({
   id,
   language,
   platform,
-  title
+  title,
 }) => (
   <Card
     date={date}

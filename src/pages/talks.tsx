@@ -49,7 +49,7 @@ const Talks: React.FC<Props> = ({ data }) => (
       title="Talks - Bruno Sabot"
     />
     <main className="content">
-      {data.allTalk.nodes.map(talk => (
+      {data.allTalk.nodes.map((talk) => (
         <CardTalk {...talk} key={talk.id} />
       ))}
     </main>

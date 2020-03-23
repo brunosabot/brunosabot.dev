@@ -37,7 +37,7 @@ const SEO: React.FC<Props> = ({
   description = "",
   lang = "en",
   meta = [],
-  title
+  title,
 }) => {
   const { site } = useStaticQuery(query);
   const metaDescription = description || site.siteMetadata.description;
@@ -55,7 +55,7 @@ const SEO: React.FC<Props> = ({
         { name: `twitter:card`, content: `summary` },
         { name: `twitter:creator`, content: site.siteMetadata.author },
         { name: `twitter:title`, content: title },
-        { name: `twitter:description`, content: metaDescription }
+        { name: `twitter:description`, content: metaDescription },
       ].concat(meta)}
     />
   );

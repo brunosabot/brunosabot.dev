@@ -18,7 +18,7 @@ const Card: React.FC<Props> = ({
   icon,
   subtitle,
   title,
-  to
+  to,
 }) => {
   const Composant = to ? "a" : "div";
 

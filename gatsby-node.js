@@ -11,7 +11,7 @@ exports.createPages = ({ actions }) => {
     fromPath: "/about",
     toPath: "/",
     isPermanent: true,
-    force: true
+    force: true,
   });
 };
 
@@ -24,7 +24,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "How to Debug a React Context API App",
       href:
         "https://medium.com/better-programming/how-to-debug-a-react-context-api-app-547b75818754",
-      date: "2020-03-17"
+      date: "2020-03-17",
     },
     {
       language: "🇺🇸",
@@ -32,7 +32,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "New year resolutions the right way",
       href:
         "https://medium.com/@brunosabot/new-year-resolutions-the-right-way-de4ba67627cc",
-      date: "2020-01-31"
+      date: "2020-01-31",
     },
     {
       language: "🇺🇸",
@@ -40,7 +40,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "Publish your Cloud Run App with GitHub Actions",
       href:
         "https://medium.com/better-programming/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4",
-      date: "2019-09-23"
+      date: "2019-09-23",
     },
     {
       language: "🇺🇸",
@@ -48,7 +48,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "Deploy Your ZEIT Now App With GitHub Actions",
       href:
         "https://medium.com/better-programming/deploy-your-zeit-now-app-with-github-actions-ca3977806b40",
-      date: "2019-09-02"
+      date: "2019-09-02",
     },
     {
       language: "🇺🇸",
@@ -56,7 +56,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "A Complete Pre-Commit Workflow",
       href:
         "https://medium.com/better-programming/a-complete-pre-commit-workflow-cea6e34f0032",
-      date: "2019-08-21"
+      date: "2019-08-21",
     },
     {
       language: "🇫🇷",
@@ -64,7 +64,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "Learning expedition Zenika: Ce qu'en pensent les devs",
       href:
         "https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/",
-      date: "2019-07-30"
+      date: "2019-07-30",
     },
     {
       language: "🇺🇸",
@@ -72,8 +72,8 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "How I dropped Redux for the Context API",
       href:
         "https://medium.com/@brunosabot/how-i-dropped-redux-for-the-context-api-7338d481e179",
-      date: "2019-07-25"
-    }
+      date: "2019-07-25",
+    },
   ];
   const talks = [
     {
@@ -82,7 +82,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "L'intégration, ce purgatoire",
       date: "2020-01-23",
       slides:
-        "https://drive.google.com/open?id=18gLNemp9mcsmx-RIh2RMHWFjiv4uvXu54ouW05BjGQE"
+        "https://drive.google.com/open?id=18gLNemp9mcsmx-RIh2RMHWFjiv4uvXu54ouW05BjGQE",
     },
     {
       youtubeId: "jnxkdHo8OEk",
@@ -91,7 +91,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "UX : les formulaires",
       date: "2019-03-21",
       slides:
-        "https://drive.google.com/open?id=1tCwdzIdwu8jYX4Y0dej_u6pmc1oUx9Y4NPUaTBSWluA"
+        "https://drive.google.com/open?id=1tCwdzIdwu8jYX4Y0dej_u6pmc1oUx9Y4NPUaTBSWluA",
     },
     {
       youtubeId: "H2KWVDH64EY",
@@ -100,7 +100,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "UX : les formulaires",
       date: "2018-09-14",
       slides:
-        "https://drive.google.com/open?id=1S2RmcMKZ74Bhc4IQUMm7-xDjVwD-_UCFc5iWCEdy5S8"
+        "https://drive.google.com/open?id=1S2RmcMKZ74Bhc4IQUMm7-xDjVwD-_UCFc5iWCEdy5S8",
     },
     {
       youtubeId: "h0MAi-1GdZQ",
@@ -109,8 +109,8 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: "Les nouveautés de React 16 - Fiber",
       date: "2017-11-10",
       slides:
-        "https://drive.google.com/open?id=1aMy3Szz-A-6hoTFuGvdVqoTZOEhc07W6j8emIcNb3Po"
-    }
+        "https://drive.google.com/open?id=1aMy3Szz-A-6hoTFuGvdVqoTZOEhc07W6j8emIcNb3Po",
+    },
   ];
   const projects = [
     {
@@ -121,9 +121,9 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       description: [
         "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
         "With Answwr you’ll be able to decide between choices in the most elegant ways, meaning you’ll have to fill a bunch of forms, hit a green button and generate a totally fair and unbiased random result.",
-        "It's important to precise the result will be totally fair and unbiased, that's why we made the Redo button."
-      ]
-    }
+        "It's important to precise the result will be totally fair and unbiased, that's why we made the Redo button.",
+      ],
+    },
   ];
   const jobs = [
     {
@@ -132,11 +132,11 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Mission de consulting pour Banque Casino, Dotic, FATEC.",
         "Animation d'évènements Zenika (NightClazz React).",
-        "Développement Front-end, Conférences, Formations, IA."
+        "Développement Front-end, Conférences, Formations, IA.",
       ],
       endDate: "Actuellement",
       startDate: "Août 2017",
-      job: "Consultant"
+      job: "Consultant",
     },
     {
       companyName: "NETINTERACTIVE",
@@ -145,11 +145,11 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
         "Développement de la partie Front-office des produits de la société (Vanilla JS, CSS).",
         "Management des équipes Front-office locales et à l'étranger.",
         "Mise en place de l'administration sous React.",
-        "Conseils ergonomiques, Conseils expérience utilisateur."
+        "Conseils ergonomiques, Conseils expérience utilisateur.",
       ],
       endDate: "Février 2017",
       startDate: "Septembre 2013",
-      job: "Lead Front-end"
+      job: "Lead Front-end",
     },
     {
       companyName: "OWLIENT",
@@ -157,12 +157,12 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Mise en place et développement de la webapp du jeu Equideow (HTML5, CSS3, jQuery, jQuery mobile)",
         "Mise à jour de la partie Back-office pour supporter la webapp (PHP)..",
-        "Réflexions et concertation sur l'ergonomie mobile."
+        "Réflexions et concertation sur l'ergonomie mobile.",
       ],
       endDate: "Octobre 2011",
       startDate: "Juin 2013",
       job: "Développeur Webapp",
-      subtitles: ["Régie pour GLOBALIS media system"]
+      subtitles: ["Régie pour GLOBALIS media system"],
     },
     {
       companyName: "WEBEDIA",
@@ -170,24 +170,24 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Intégration des sites Puremedias et Pureshopping",
         "Mise en place de l'administration des sites Puremedias et Pureshopping",
-        "Conseils technologiques (migration prototypeJS vers jQuery)."
+        "Conseils technologiques (migration prototypeJS vers jQuery).",
       ],
       endDate: "Septembre 2011",
       startDate: "Mars 2011",
       job: "Développeur PHP, Intégrateur",
-      subtitles: ["Régie pour GLOBALIS media system"]
+      subtitles: ["Régie pour GLOBALIS media system"],
     },
     {
       companyName: "UBIQUS",
       companyWebsite: "http://www.ubiqus.fr/",
       details: [
         "Développements Back-office pour la société (PHP, MySQL).",
-        "Développements Front-office de sites événementiels pour la société (HTML, jQuery)."
+        "Développements Front-office de sites événementiels pour la société (HTML, jQuery).",
       ],
       endDate: "Octobre 2010",
       startDate: "Mars 2010",
       job: "Développeur PHP",
-      subtitles: ["Régie pour GLOBALIS media system"]
+      subtitles: ["Régie pour GLOBALIS media system"],
     },
     {
       companyName: "GLOBALIS media systems",
@@ -195,12 +195,12 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Régies pour : Institut Curie, Ubiqus (6 mois), Webedia (7 mois), Owlient (21 mois).",
         "Forfaits pour : Marketshot, CNRS, GUINOT.",
-        "Audits de performance pour : Owlient, Smart Agence, Solly Azar, Gaya, Reed Business Information."
+        "Audits de performance pour : Owlient, Smart Agence, Solly Azar, Gaya, Reed Business Information.",
       ],
       endDate: "Mai 2013",
       startDate: "Septembre 2009",
-      job: "Développeur web"
-    }
+      job: "Développeur web",
+    },
   ];
   const jobsEn = [
     {
@@ -209,11 +209,11 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Consulting missions for Banque Casino, Dotic, FATEC.",
         "Zenika events animation (NightClazz React).",
-        "Front-end development, conferences, training, AI."
+        "Front-end development, conferences, training, AI.",
       ],
       endDate: "Currently",
       startDate: "August 2017",
-      job: "Consultant"
+      job: "Consultant",
     },
     {
       companyName: "NETINTERACTIVE",
@@ -222,11 +222,11 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
         "Company Front-end product development (Vanilla JS, CSS)",
         "Local and offshore Front-office team management",
         "Administration implementation with React",
-        "Ergonomy advising, user experience advising"
+        "Ergonomy advising, user experience advising",
       ],
       endDate: "February 2017",
       startDate: "September 2013",
-      job: "Front-end Lead"
+      job: "Front-end Lead",
     },
     {
       companyName: "OWLIENT",
@@ -234,12 +234,12 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Webapp implementation and development for the game Equideow (HTML5, CSS3, jQuery, jQuery mobile)",
         "Back-office update to support the webapp needs (PHP)",
-        "Adiving and dialogue on the mobile ergonomy"
+        "Adiving and dialogue on the mobile ergonomy",
       ],
       endDate: "October 2011",
       startDate: "June 2013",
       job: "Webapp developer",
-      subtitles: ["Skill delegation for GLOBALIS media syste"]
+      subtitles: ["Skill delegation for GLOBALIS media syste"],
     },
     {
       companyName: "WEBEDIA",
@@ -247,24 +247,24 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Integration of the websites Puremedias and Pureshopping",
         "Administration implementation of the websites Puremedias and Pureshopping",
-        "Technological advising (prototypeJS to jQuery migration)"
+        "Technological advising (prototypeJS to jQuery migration)",
       ],
       endDate: "September 2011",
       startDate: "March 2011",
       job: "PHP developer, Integrator",
-      subtitles: ["Skill delegation for GLOBALIS media system"]
+      subtitles: ["Skill delegation for GLOBALIS media system"],
     },
     {
       companyName: "UBIQUS",
       companyWebsite: "http://www.ubiqus.fr/",
       details: [
         "Back-office developments for the company (PHP, MySQL)",
-        "Front-office developments for the event websites sold by the company (HTML, jQuery)"
+        "Front-office developments for the event websites sold by the company (HTML, jQuery)",
       ],
       endDate: "October 2010",
       startDate: "March 2010",
       job: "PHP developer",
-      subtitles: ["Skill delegation for GLOBALIS media system"]
+      subtitles: ["Skill delegation for GLOBALIS media system"],
     },
     {
       companyName: "GLOBALIS media systems",
@@ -272,12 +272,12 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Skill delegation for : Institut Curie, Ubiqus (6 month), Webedia (7 month), Owlient (21 month)",
         "Fixed-price contracts for : Marketshot, CNRS, GUINOT",
-        "Performance audits for : Owlient, Smart Agence, Solly Azar, Gaya, Reed Business Information"
+        "Performance audits for : Owlient, Smart Agence, Solly Azar, Gaya, Reed Business Information",
       ],
       endDate: "May 2013",
       startDate: "September 2009",
-      job: "Web developer"
-    }
+      job: "Web developer",
+    },
   ];
   const trainings = [
     {
@@ -287,7 +287,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       endDate: "2009",
       startDate: "2008",
       diploma: "Licence professionnelle CMSII",
-      subtitles: ["Conception et Maintenance de Service Intranet Internet"]
+      subtitles: ["Conception et Maintenance de Service Intranet Internet"],
     },
     {
       schoolName: "IUT Valence",
@@ -296,7 +296,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       endDate: "2008",
       startDate: "2005",
       diploma: "DUT R&T",
-      subtitles: ["Réseaux et Télécommunications"]
+      subtitles: ["Réseaux et Télécommunications"],
     },
     {
       schoolName: "Lycée Boissy D'Anglas",
@@ -304,13 +304,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Option Sciences de l'ingénieur",
         "Spécialité Mathématiques",
-        "Mention Assez Bien"
+        "Mention Assez Bien",
       ],
       endDate: "2005",
       startDate: "2003",
       diploma: "Baccalauréat",
-      subtitles: ["Baccalauréat Scientifique SI"]
-    }
+      subtitles: ["Baccalauréat Scientifique SI"],
+    },
   ];
   const trainingsEn = [
     {
@@ -320,7 +320,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       endDate: "2009",
       startDate: "2008",
       diploma: "Licence professionnelle CMSII",
-      subtitles: ["Intranet Internet service conception and maintenance"]
+      subtitles: ["Intranet Internet service conception and maintenance"],
     },
     {
       schoolName: "IUT Valence",
@@ -329,7 +329,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       endDate: "2008",
       startDate: "2005",
       diploma: "DUT R&T",
-      subtitles: ["Network and Telecommunications"]
+      subtitles: ["Network and Telecommunications"],
     },
     {
       schoolName: "Lycée Boissy D'Anglas",
@@ -338,19 +338,19 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       endDate: "2005",
       startDate: "2003",
       diploma: "Baccalauréat",
-      subtitles: ["Scientific Baccalauréat"]
-    }
+      subtitles: ["Scientific Baccalauréat"],
+    },
   ];
   const videos = [
     {
       date: "2020-03-09",
       language: "🇫🇷",
       title: "Un Café Avec Bruno & Manuel : CSS Flexbox",
-      youtubeId: "t9XFUI_qZ3g"
-    }
+      youtubeId: "t9XFUI_qZ3g",
+    },
   ];
 
-  articles.forEach(article => {
+  articles.forEach((article) => {
     const node = {
       date: article.date,
       href: article.href,
@@ -360,13 +360,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       id: createNodeId(`article-${article.title}`),
       internal: {
         type: "article",
-        contentDigest: createContentDigest(article)
-      }
+        contentDigest: createContentDigest(article),
+      },
     };
     actions.createNode(node);
   });
 
-  talks.forEach(talk => {
+  talks.forEach((talk) => {
     const node = {
       conferenceName: talk.conferenceName,
       date: talk.date,
@@ -377,13 +377,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       id: createNodeId(`talk-${talk.conferenceName}-${talk.title}`),
       internal: {
         type: "talk",
-        contentDigest: createContentDigest(talk)
-      }
+        contentDigest: createContentDigest(talk),
+      },
     };
     actions.createNode(node);
   });
 
-  projects.forEach(project => {
+  projects.forEach((project) => {
     const node = {
       url: project.url,
       image: project.image,
@@ -392,13 +392,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       id: createNodeId(`project-${project.title}`),
       internal: {
         type: "project",
-        contentDigest: createContentDigest(project)
-      }
+        contentDigest: createContentDigest(project),
+      },
     };
     actions.createNode(node);
   });
 
-  jobs.forEach(job => {
+  jobs.forEach((job) => {
     const node = {
       language: "fr",
       companyName: job.companyName,
@@ -411,13 +411,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       id: createNodeId(`job-${job.companyName}-fr`),
       internal: {
         type: "jobs",
-        contentDigest: createContentDigest(job)
-      }
+        contentDigest: createContentDigest(job),
+      },
     };
     actions.createNode(node);
   });
 
-  trainings.forEach(training => {
+  trainings.forEach((training) => {
     const node = {
       language: "fr",
       schoolName: training.schoolName,
@@ -430,13 +430,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       id: createNodeId(`training-${training.schoolName}-fr`),
       internal: {
         type: "trainings",
-        contentDigest: createContentDigest(training)
-      }
+        contentDigest: createContentDigest(training),
+      },
     };
     actions.createNode(node);
   });
 
-  jobsEn.forEach(job => {
+  jobsEn.forEach((job) => {
     const node = {
       language: "en",
       companyName: job.companyName,
@@ -449,13 +449,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       id: createNodeId(`job-${job.companyName}-en`),
       internal: {
         type: "jobs",
-        contentDigest: createContentDigest(job)
-      }
+        contentDigest: createContentDigest(job),
+      },
     };
     actions.createNode(node);
   });
 
-  trainingsEn.forEach(training => {
+  trainingsEn.forEach((training) => {
     const node = {
       language: "en",
       schoolName: training.schoolName,
@@ -468,13 +468,13 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       id: createNodeId(`training-${training.schoolName}-en`),
       internal: {
         type: "trainings",
-        contentDigest: createContentDigest(training)
-      }
+        contentDigest: createContentDigest(training),
+      },
     };
     actions.createNode(node);
   });
 
-  videos.forEach(video => {
+  videos.forEach((video) => {
     const node = {
       date: video.date,
       language: video.language,
@@ -483,8 +483,8 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       id: createNodeId(`video-${video.title}`),
       internal: {
         type: "video",
-        contentDigest: createContentDigest(video)
-      }
+        contentDigest: createContentDigest(video),
+      },
     };
     actions.createNode(node);
   });

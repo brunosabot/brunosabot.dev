@@ -47,7 +47,7 @@ const Videos: React.FC<Props> = ({ data }) => (
       title="Videos - Bruno Sabot"
     />
     <main className="content">
-      {data.allVideo.nodes.map(video => (
+      {data.allVideo.nodes.map((video) => (
         <CardVideo {...video} key={video.id} />
       ))}
     </main>

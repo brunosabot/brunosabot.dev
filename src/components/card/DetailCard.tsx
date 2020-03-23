@@ -17,7 +17,7 @@ const DetailCard: React.FC<Props> = ({ url, image, title, description }) => {
       target="_blank"
     >
       <img src={image} alt={title} className="detail-card__image" />
-      {description.map(d => (
+      {description.map((d) => (
         <p key={d}>{d}</p>
       ))}
     </a>

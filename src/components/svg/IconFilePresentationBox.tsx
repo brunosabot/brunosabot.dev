@@ -5,12 +5,12 @@ interface Props {
   className?: string;
 }
 
-const IconFilePresentationBox: React.FC<Props> = props => (
+const IconFilePresentationBox: React.FC<Props> = (props) => (
   <svg
     className="icon-file-presentation-box"
     style={{
       width: 24,
-      height: 24
+      height: 24,
     }}
     viewBox="0 0 24 24"
     {...props}

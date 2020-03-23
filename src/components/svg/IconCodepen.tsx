@@ -4,11 +4,11 @@ interface Props {
   className?: string;
 }
 
-const IconCodepen: React.FC<Props> = props => (
+const IconCodepen: React.FC<Props> = (props) => (
   <svg
     style={{
       width: 24,
-      height: 24
+      height: 24,
     }}
     viewBox="0 0 24 24"
     {...props}

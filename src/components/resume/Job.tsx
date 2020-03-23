@@ -18,7 +18,7 @@ const Job: React.FC<Props> = ({
   startDate,
   endDate,
   details = [],
-  subtitles = []
+  subtitles = [],
 }) => (
   <section className="resume-job">
     <h1 className="resume-job__name">
@@ -34,7 +34,7 @@ const Job: React.FC<Props> = ({
     </h1>
 
     {subtitles &&
-      subtitles.map(subtitle => (
+      subtitles.map((subtitle) => (
         <div className="resume-job__subtitle" key={subtitle}>
           {subtitle}
         </div>
@@ -48,7 +48,7 @@ const Job: React.FC<Props> = ({
 
     <ul className="resume-job__detail">
       {details &&
-        details.map(detail => (
+        details.map((detail) => (
           <li className="resume-job__detail-item" key={detail}>
             {detail}
           </li>
