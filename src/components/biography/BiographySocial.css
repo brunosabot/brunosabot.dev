@@ -1,6 +1,6 @@
 .biography-social {
   border-radius: 50%;
-  fill: var(--text-medium-color);
+  fill: var(--text-color);
   margin: 4px;
   padding: 8px;
 }

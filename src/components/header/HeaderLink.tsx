@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import React from "react";
 import OpenInNew from "../svg/IconOpenInNew";
 import "./HeaderLink.css";
@@ -24,13 +24,16 @@ const HeaderLink: React.FC<Props> = ({ children, to }) => {
           {children}
         </a>
       ) : (
-        <Link
+        <AniLink
+          paintDrip
+          hex="#AB804D"
+          duration={0.5}
           activeClassName="header-link__link--active"
           className="header-link__link"
           to={to}
         >
           {children}
-        </Link>
+        </AniLink>
       )}
     </span>
   );

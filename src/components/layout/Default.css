@@ -1,12 +1,12 @@
 body {
   --accent-color: rgb(171, 128, 77);
   --accent-text-color: hsl(33, 38%, 59%);
-  --accent-color-light: rgb(171, 128, 77, 0.1);
-  --background: #121212;
+  --accent-color-light: rgb(255, 255, 255, 0.04);
+  --background: #020202;
   --text-color: rgba(255, 255, 255, 0.87);
   --text-medium-color: rgba(255, 255, 255, 0.6);
   --text-reverse-color: rgba(0, 0, 0, 0.87);
-  --background-dp1: rgb(255, 255, 255, 0.05);
+  --background-dp1: rgb(255, 255, 255, 0.04);
   --background-dp2: rgb(255, 255, 255, 0.1);
   --white: rgba(0, 0, 0, 1);
 
@@ -23,6 +23,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
 }
 
 @media (prefers-color-scheme: light) {
