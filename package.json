@@ -11,7 +11,7 @@
     "gatsby-plugin-client-side-redirect": "^1.0.0",
     "gatsby-plugin-humans-txt": "^1.1.4",
     "gatsby-plugin-manifest": "^2.3.1",
-    "gatsby-plugin-offline": "^3.1.0",
+    "gatsby-plugin-offline": "^3.1.1",
     "gatsby-plugin-react-helmet": "^3.2.0",
     "gatsby-plugin-sharp": "^2.5.1",
     "gatsby-plugin-sitemap": "^2.3.0",
