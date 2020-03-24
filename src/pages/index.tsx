@@ -4,6 +4,7 @@ import BiographyCompany from "../components/biography/BiographyCompany";
 import BiographyLine from "../components/biography/BiographyLine";
 import BiographySkill from "../components/biography/BiographySkill";
 import Social from "../components/biography/BiographySocial";
+import BiographyTitle from "../components/biography/BiographyTitle";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 import IconCodepen from "../components/svg/IconCodepen";
@@ -26,12 +27,16 @@ const About: React.FC<{}> = () => {
         style={{
           textAlign: "center",
           margin: "auto",
-          maxWidth: "400px",
+          maxWidth: "500px",
           paddingTop: "32px",
         }}
       >
         <BiographyAvatar src="/images/brunosabot.jpg" alt="Bruno Sabot" />
         <div>
+          <BiographyTitle>
+            I am Bruno Sabot, a Front-end developer currently living in
+            Bordeaux, France.
+          </BiographyTitle>
           <BiographyLine>
             <BiographySkill>FrontEnd Developer</BiographySkill>
             <BiographySkill>React</BiographySkill>

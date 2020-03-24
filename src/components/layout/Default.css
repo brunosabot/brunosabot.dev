@@ -1,7 +1,8 @@
 body {
   --accent-color: rgb(171, 128, 77);
   --accent-text-color: hsl(33, 38%, 59%);
-  --accent-color-light: rgb(255, 255, 255, 0.04);
+  --accent-color-light: rgb(171, 128, 77, 0.15);
+  --accent-color-shadow: rgb(255, 255, 255, 0.1);
   --background: #020202;
   --text-color: rgba(255, 255, 255, 0.87);
   --text-medium-color: rgba(255, 255, 255, 0.6);
@@ -24,13 +25,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 500;
+  margin: 0;
+  padding: 0 0 16px 0;
 }
 
 @media (prefers-color-scheme: light) {
   body {
     --accent-color: #ab804d;
     --accent-text-color: hsl(33, 38%, 39%);
-    --accent-color-light: rgb(171, 128, 77, 0.15);
+    --accent-color-light: rgb(171, 128, 77, 0.2);
+    --accent-color-shadow: rgb(171, 128, 77, 0.35);
     --background: rgb(255, 255, 255);
     --text-color: rgba(0, 0, 0, 0.87);
     --text-medium-color: rgba(0, 0, 0, 0.6);
@@ -55,11 +59,9 @@ body {
   top: 0;
 }
 
-body,
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+html,
+body {
+  min-height: 100%;
 }
 
 code {
@@ -73,6 +75,16 @@ code {
 }
 .content {
   padding: 0 16px;
+}
+.content-cols {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fill, 350px);
+  justify-content: center;
+  margin: auto;
+  max-width: 1146px;
+  padding: 0 24px;
 }
 
 .page-enter {

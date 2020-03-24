@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import IconFilePresentationBox from "../svg/IconFilePresentationBox";
 import IconYoutube from "../svg/IconYoutube";
-import YoutubeVideo from "../video/YoutubeVideo";
 import Card from "./Card";
 import CardAction from "./CardAction";
 
@@ -9,6 +8,8 @@ interface Props {
   conferenceName: string;
   date: string;
   id: string;
+  image: string;
+  description: string;
   language: string;
   slides: string;
   title: string;
@@ -19,18 +20,18 @@ const CardTalk: React.FC<Props> = ({
   conferenceName,
   date,
   id,
+  image,
+  description,
   language,
   slides,
   title,
   youtubeId = null,
 }) => {
-  const [showVideo, setShowVideo] = useState(false);
-
   const actions = (
     <>
       {youtubeId ? (
         <CardAction
-          onClick={() => setShowVideo(!showVideo)}
+          href={`https://www.youtube.com/watch?v=${youtubeId}`}
           name="Vidéo du talk"
         >
           <IconYoutube />
@@ -47,15 +48,13 @@ const CardTalk: React.FC<Props> = ({
     <Card
       icon={language}
       title={title}
+      image={image}
+      description={description}
       subtitle={conferenceName}
       date={date}
       key={id}
       actions={actions}
-    >
-      {showVideo && youtubeId ? (
-        <YoutubeVideo id={youtubeId} title={title} />
-      ) : null}
-    </Card>
+    />
   );
 };
 

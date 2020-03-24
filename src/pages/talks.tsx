@@ -4,11 +4,25 @@ import CardTalk from "../components/card/CardTalk";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 
+interface FixedImage {
+  srcWebp: string;
+}
+
+interface ChildImageSharp {
+  fixed: FixedImage;
+}
+
+interface Image {
+  childImageSharp: ChildImageSharp;
+}
+
 interface Talk {
   id: string;
   conferenceName: string;
   date: string;
   language: string;
+  description: string;
+  image: Image;
   slides: string;
   title: string;
   youtubeId?: string;
@@ -33,6 +47,14 @@ export const query = graphql`
         id
         conferenceName
         date
+        image {
+          childImageSharp {
+            fixed(width: 348, webpQuality: 100) {
+              srcWebp
+            }
+          }
+        }
+        description
         language
         slides
         title
@@ -48,9 +70,20 @@ const Talks: React.FC<Props> = ({ data }) => (
       description="All the conference talks given by Bruno Sabot. Check it out!"
       title="Talks - Bruno Sabot"
     />
-    <main className="content">
+    <main className="content content-cols">
       {data.allTalk.nodes.map((talk) => (
-        <CardTalk {...talk} key={talk.id} />
+        <CardTalk
+          image={talk.image ? talk.image.childImageSharp.fixed.srcWebp : ""}
+          description={talk.description}
+          language={talk.language}
+          title={talk.title}
+          conferenceName={talk.conferenceName}
+          date={talk.date}
+          id={talk.id}
+          key={talk.id}
+          slides={talk.slides}
+          youtubeId={talk.youtubeId}
+        />
       ))}
     </main>
   </Layout>

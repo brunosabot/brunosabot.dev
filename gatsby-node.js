@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const { createRemoteFileNode } = require("gatsby-source-filesystem");
 
 exports.createPages = ({ actions }) => {
   const { createRedirect } = actions;
@@ -19,97 +20,134 @@ exports.createPages = ({ actions }) => {
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const articles = [
     {
-      language: "🇺🇸",
+      language: "en",
       platform: "Medium",
       title: "How to Debug a React Context API App",
       href:
         "https://medium.com/better-programming/how-to-debug-a-react-context-api-app-547b75818754",
       date: "2020-03-17",
+      image: "https://miro.medium.com/max/1200/0*fOZCyvfBcdHuXOQk",
+      description:
+        "Some time ago, I shared how I dropped Redux for the Context API when I’m creating a React application. The article got some great feedback, but I also had some people saying that it’s pretty hard to…",
     },
     {
-      language: "🇺🇸",
+      language: "en",
       platform: "Medium",
       title: "New year resolutions the right way",
       href:
         "https://medium.com/@brunosabot/new-year-resolutions-the-right-way-de4ba67627cc",
       date: "2020-01-31",
+      image: "https://miro.medium.com/max/2400/1*5X15ZdvuMGE9oQ26s6y8EA.jpeg",
+      description:
+        "We made new resolutions every year, but we usually fail them. In 2019, I was able to complete them. Here is a feedback on how I managed to do that.",
     },
     {
-      language: "🇺🇸",
+      language: "en",
       platform: "Medium",
       title: "Publish your Cloud Run App with GitHub Actions",
       href:
         "https://medium.com/better-programming/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4",
       date: "2019-09-23",
+      image: "https://miro.medium.com/max/7984/1*HmM_NqNjtCWw36t3Pr1DWA.jpeg",
+      description:
+        "Google recently announced Cloud Run, a new Google Cloud Platform (GCP) feature, to deploy your Docker applications fast and easily. This guide will explain how to build and deploy a simple static…",
     },
     {
-      language: "🇺🇸",
+      language: "en",
       platform: "Medium",
       title: "Deploy Your ZEIT Now App With GitHub Actions",
       href:
         "https://medium.com/better-programming/deploy-your-zeit-now-app-with-github-actions-ca3977806b40",
       date: "2019-09-02",
+      image: "https://miro.medium.com/max/2400/1*BZ_jv-xjX_FfJR5fQH_6UQ.png",
+      description:
+        "I recently got access to GitHub Actions and I decided to test it with a simple deployment in ZEIT Now. My first steps were to look at this wonderful article from Leonhard Melzer. It contains a lot…",
     },
     {
-      language: "🇺🇸",
+      language: "en",
       platform: "Medium",
       title: "A Complete Pre-Commit Workflow",
       href:
         "https://medium.com/better-programming/a-complete-pre-commit-workflow-cea6e34f0032",
       date: "2019-08-21",
+      image: "https://miro.medium.com/max/1300/1*AxYei5T1-heT9sc3Hka3xA.png",
+      description:
+        "I really like making perfect commits, and I particularly hate appending or creating a new commit because of a guideline mistake. So I needed a tool that would bark at me when I was about to make a…",
     },
     {
-      language: "🇫🇷",
+      language: "fr",
       platform: "Blog Zenika",
       title: "Learning expedition Zenika: Ce qu'en pensent les devs",
       href:
         "https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/",
       date: "2019-07-30",
+      image:
+        "https://i1.wp.com/blog.zenika.com/wp-content/uploads/2019/07/Blog-Zenika-Learning-expedition-par-les-devs-1.jpg?resize=800%2C445&ssl=1",
+      description:
+        "La Silicon Valley, c’est le rêve américain de tout développeur qui s’intéresse de près à tout ce qui se fait de nouveau dans le monde du high-tech, c’est l’endroit ou l’on retrouve les plus grands…",
     },
     {
-      language: "🇺🇸",
+      language: "en",
       platform: "Medium",
       title: "How I dropped Redux for the Context API",
       href:
         "https://medium.com/@brunosabot/how-i-dropped-redux-for-the-context-api-7338d481e179",
       date: "2019-07-25",
+      image: "https://miro.medium.com/max/2400/1*NyHpepOw2vFFKVFdeRvzWg.png",
+      description:
+        "React 16 introduced a new Context API to replace the deprecated one. OK, it’s been more than a year since the release of version 16.3, but it still seems fresh in the React ecosystem. This new API…",
     },
   ];
   const talks = [
     {
       conferenceName: "Snowcamp",
-      language: "🇫🇷",
+      language: "fr",
       title: "L'intégration, ce purgatoire",
       date: "2020-01-23",
       slides:
         "https://drive.google.com/open?id=18gLNemp9mcsmx-RIh2RMHWFjiv4uvXu54ouW05BjGQE",
+      description:
+        "Vous avez déjà connu cette situation où vous commencez à travailler sur votre CSS, vous vous sentez en totale maitrise et le chef de projet arrive avec plein d'écrans à intégrer avec son lot de…",
+      image:
+        "https://lh3.googleusercontent.com/oqNVvVVjAXfblJtAJpeSCxqS12yrkAKp7pouKfu99BMO5-OPhakNYEKN8sZEkLtr-_tco26MALvYWtM2luaSf_7fdGHYPVI7tGcpsBb_Bymgnrg4SbLMIZaQHFcVF8hmcQAYPeVYfJI=w800",
     },
     {
       youtubeId: "jnxkdHo8OEk",
       conferenceName: "Breizh Camp",
-      language: "🇫🇷",
+      language: "fr",
       title: "UX : les formulaires",
       date: "2019-03-21",
       slides:
         "https://drive.google.com/open?id=1tCwdzIdwu8jYX4Y0dej_u6pmc1oUx9Y4NPUaTBSWluA",
+      description:
+        "Et si on parlait d'UX ? Nos pages sont truffées de formulaires, pourtant, connaissons-nous les erreurs à éviter lorsque nous ajoutons un formulaire à une page ? La validation de mot de passes, les…",
+      image:
+        "https://dodgemsandfloss.com/wp-content/uploads/2018/06/Ketchup.png",
     },
     {
       youtubeId: "H2KWVDH64EY",
       conferenceName: "Jug Summer Camp",
-      language: "🇫🇷",
+      language: "fr",
       title: "UX : les formulaires",
       date: "2018-09-14",
       slides:
         "https://drive.google.com/open?id=1S2RmcMKZ74Bhc4IQUMm7-xDjVwD-_UCFc5iWCEdy5S8",
+      description:
+        "Et si on parlait d'UX ? Nos pages sont truffées de formulaires, pourtant, connaissons-nous les erreurs à éviter lorsque nous ajoutons un formulaire à une page ? La validation de mot de passes, les…",
+      image:
+        "https://preview.redd.it/6i8oiq3iyxd41.jpg?width=640&height=360&crop=smart&auto=webp&s=79ea73ed139da4c1227f8649213bc18711dd8c66",
     },
     {
       youtubeId: "h0MAi-1GdZQ",
       conferenceName: "BDX I/O",
-      language: "🇫🇷",
+      language: "fr",
       title: "Les nouveautés de React 16 - Fiber",
       date: "2017-11-10",
       slides:
         "https://drive.google.com/open?id=1aMy3Szz-A-6hoTFuGvdVqoTZOEhc07W6j8emIcNb3Po",
+      description:
+        "Tout le monde connait React, ce framework est de plus en plus utilisé dans le domaine professionnel. Après de longs mois, bloqués à la version 15, une nouvelle version majeure va bientôt arriver que…",
+      image: "http://i3.ytimg.com/vi/h0MAi-1GdZQ/maxresdefault.jpg",
     },
   ];
   const projects = [
@@ -344,9 +382,12 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const videos = [
     {
       date: "2020-03-09",
-      language: "🇫🇷",
+      language: "fr",
       title: "Un Café Avec Bruno & Manuel : CSS Flexbox",
       youtubeId: "t9XFUI_qZ3g",
+      description:
+        "Nous avons l'habitude de dire qu'aligner les éléments en CSS s'avère difficile.  Découvrez avec Manuel et Bruno que de nos jours cela est vraiment facile et à la portée de tous ! #flexbox",
+      image: "https://img.youtube.com/vi/t9XFUI_qZ3g/maxresdefault.jpg",
     },
   ];
 
@@ -357,6 +398,8 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: article.language,
       platform: article.platform,
       title: article.title,
+      description: article.description,
+      originalImage: article.image,
       id: createNodeId(`article-${article.title}`),
       internal: {
         type: "article",
@@ -374,6 +417,8 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       slides: talk.slides,
       title: talk.title,
       youtubeId: talk.youtubeId,
+      description: talk.description,
+      originalImage: talk.image,
       id: createNodeId(`talk-${talk.conferenceName}-${talk.title}`),
       internal: {
         type: "talk",
@@ -481,6 +526,8 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       title: video.title,
       youtubeId: video.youtubeId,
       id: createNodeId(`video-${video.title}`),
+      description: video.description,
+      originalImage: video.image,
       internal: {
         type: "video",
         contentDigest: createContentDigest(video),
@@ -488,4 +535,29 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     };
     actions.createNode(node);
   });
+};
+
+exports.onCreateNode = async ({
+  node,
+  actions: { createNode },
+  store,
+  cache,
+  createNodeId,
+}) => {
+  if (node.originalImage !== undefined) {
+    const fileNode = await createRemoteFileNode({
+      url: node.originalImage,
+      parentNodeId: node.id,
+      createNode,
+      createNodeId,
+      cache,
+      store,
+      name: node.id,
+    });
+
+    if (fileNode) {
+      // eslint-disable-next-line no-param-reassign
+      node.image___NODE = fileNode.id;
+    }
+  }
 };

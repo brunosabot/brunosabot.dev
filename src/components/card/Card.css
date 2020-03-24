@@ -2,17 +2,17 @@
   background-color: var(--background-dp1);
   border: 1px solid var(--accent-color-light);
   border-radius: 8px;
-  box-shadow: 0px 0px 10px var(--accent-color-light);
+  box-shadow: 0px 3px 6px var(--accent-color-shadow);
   color: inherit;
   cursor: unset;
-  display: block;
-  margin: 0 auto 16px auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 0 auto;
   max-width: 100%;
   outline: 0;
-  padding: 16px 16px 16px 16px;
   text-decoration: none;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
-  width: 560px;
+  width: 350px;
 }
 .card[href] {
   cursor: pointer;
@@ -28,21 +28,39 @@
   margin-right: 8px;
 }
 
+.card__image {
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px 8px 0 0;
+  height: 195px;
+  margin: 0;
+  opacity: 0.7;
+  width: 100%;
+}
+@media (prefers-color-scheme: light) {
+  .card__image {
+    opacity: 1;
+  }
+}
+
 .card__header {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   font-size: inherit;
   font-weight: 400;
   justify-content: space-between;
   margin: 0;
+  padding: 16px 16px 16px 16px;
 }
 
 .card__header-actions {
   display: flex;
   justify-content: flex-end;
-  margin-left: 8px;
   margin-right: -8px;
-  min-width: 80px;
+  margin-top: 8px;
+  width: 100%;
 }
 
 .card__header-date {
@@ -55,18 +73,32 @@
 .card__header-subtitle {
   font-style: italic;
   font-weight: 300;
-  margin-bottom: 4px;
+  margin-left: 16px;
 }
 
 .card__header-title {
+  font-size: 22px;
   font-weight: 500;
+  line-height: 1.25;
 }
 
 .card__header-title-wrapper {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   justify-content: center;
+  margin-bottom: 16px;
+}
+
+.card__description {
+  flex-grow: 1;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  opacity: 0.85;
+}
+
+.card__footer {
+  align-items: center;
+  display: flex;
 }
 
 .Head {

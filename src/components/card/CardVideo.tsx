@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import IconYoutube from "../svg/IconYoutube";
-import YoutubeVideo from "../video/YoutubeVideo";
 import Card from "./Card";
 import CardAction from "./CardAction";
 
@@ -10,20 +9,25 @@ interface Props {
   language: string;
   title: string;
   youtubeId: string;
+  image: string;
+  description: string;
 }
 
-const CardTalk: React.FC<Props> = ({
+const CardVideo: React.FC<Props> = ({
   date,
   id,
   language,
   title,
   youtubeId,
+  image,
+  description,
 }) => {
-  const [showVideo, setShowVideo] = useState(false);
-
   const actions = (
     <>
-      <CardAction onClick={() => setShowVideo(!showVideo)} name="Vidéo du talk">
+      <CardAction
+        href={`https://www.youtube.com/watch?v=${youtubeId}`}
+        name="Vidéo du talk"
+      >
         <IconYoutube />
       </CardAction>
     </>
@@ -31,16 +35,16 @@ const CardTalk: React.FC<Props> = ({
 
   return (
     <Card
+      image={image}
+      description={description}
       icon={language}
       title={title}
       subtitle={""}
       date={date}
       key={id}
       actions={actions}
-    >
-      {showVideo ? <YoutubeVideo id={youtubeId} title={title} /> : null}
-    </Card>
+    />
   );
 };
 
-export default CardTalk;
+export default CardVideo;

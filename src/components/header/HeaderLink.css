@@ -8,15 +8,17 @@
   color: var(--text-color);
   cursor: pointer;
   display: inline-flex;
+  font-size: 12px;
   font-weight: 700;
   height: 100%;
   justify-content: center;
+  letter-spacing: 0.1em;
   line-height: 40px;
   margin: 0 8px;
   outline: 0;
-  padding: 0 2px;
   position: relative;
   text-decoration: none;
+  text-transform: uppercase;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
 .header-link__link:focus {
