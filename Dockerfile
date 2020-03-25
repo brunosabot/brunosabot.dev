@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:12-buster
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --frozen-lockfile
