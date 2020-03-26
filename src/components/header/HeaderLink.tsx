@@ -25,8 +25,7 @@ const HeaderLink: React.FC<Props> = ({ children, to }) => {
         </a>
       ) : (
         <AniLink
-          paintDrip
-          hex="#AB804D"
+          fade
           duration={0.5}
           activeClassName="header-link__link--active"
           className="header-link__link"
