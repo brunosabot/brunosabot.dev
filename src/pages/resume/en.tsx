@@ -130,8 +130,7 @@ const About: React.FC<Props> = ({ data }) => {
 
       <section className="resume-life-experiences">
         <AniLink
-          paintDrip
-          hex="#AB804D"
+          fade
           duration={0.5}
           className="resume-language-tag"
           to="/resume/fr"

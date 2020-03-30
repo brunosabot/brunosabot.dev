@@ -22,13 +22,7 @@ const SocialLink: React.FC<Props> = ({ children, to }) => {
           {children}
         </a>
       ) : (
-        <AniLink
-          paintDrip
-          hex="#AB804D"
-          duration={0.5}
-          className="resume-social-link"
-          to={to}
-        >
+        <AniLink fade duration={0.5} className="resume-social-link" to={to}>
           {children}
         </AniLink>
       )}
