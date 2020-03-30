@@ -11,7 +11,6 @@ body {
   --background-dp2: rgb(255, 255, 255, 0.1);
   --white: rgba(0, 0, 0, 1);
 
-  background-color: var(--background);
   background-image: linear-gradient(
     180deg,
     var(--background) 0%,
@@ -26,7 +25,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 500;
   margin: 0;
+  min-height: 100%;
   padding: 0 0 16px 0;
+  position: relative;
+}
+
+body::after {
+  background-color: var(--background);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 @media (prefers-color-scheme: light) {
@@ -59,9 +70,8 @@ body {
   top: 0;
 }
 
-html,
-body {
-  min-height: 100%;
+html {
+  height: 100%;
 }
 
 code {
