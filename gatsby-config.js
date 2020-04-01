@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Bruno Sabot's website",
     description:
-      "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
+      "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
     author: "@brunosabot",
     siteUrl: "https://brunosabot.dev",
   },
@@ -18,11 +18,11 @@ module.exports = {
         short_name: "Bruno Sabot",
         name: "Bruno Sabot's homepage",
         description:
-          "Bruno Sabot's home on the web. Everything you need to know about him",
+          "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
         lang: "en",
         start_url: "/",
         background_color: "#ffffff",
-        theme_color: "#005000",
+        theme_color: "#ab804d",
         display: "fullscreen",
         icon: "static/images/favicon-maskable.png",
         icon_options: {
@@ -44,12 +44,18 @@ module.exports = {
         ],
         thanks: ["Gatsby", "Node"],
         site: {
-          "Last update": "2020/03/11",
+          "Last update": "2020/04/01",
           Standards: "HTML5, CSS3, JavaScript",
           Components: "Google Fonts, Google Analytics, Gatsby",
           Softwares: "Visual Studio Code",
         },
         note: "Made with love ❤️",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-2395369-1",
       },
     },
     "gatsby-plugin-transition-link",

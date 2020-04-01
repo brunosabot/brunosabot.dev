@@ -19,7 +19,7 @@ const About: React.FC<{}> = () => {
   return (
     <Layout>
       <SEO
-        description="About Bruno Sabot, a FrontEnd Developer enjoying React, Vue.js, HTML, CSS, Performance and UX"
+        description="I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France."
         title="About - Bruno Sabot"
       />
       <main
