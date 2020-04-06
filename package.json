@@ -39,7 +39,7 @@
     "eslint-plugin-react-hooks": "^3.0.0",
     "husky": "^4.2.3",
     "lint-staged": ">=10.0.10",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.3",
     "pretty-quick": "^2.0.1",
     "stylelint": "^13.2.0",
     "stylelint-config-css-modules": "^2.2.0",
