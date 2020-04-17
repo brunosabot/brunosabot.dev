@@ -22,7 +22,7 @@
     "gatsby-plugin-tslint": "^0.0.2",
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-source-filesystem": "^2.2.2",
-    "gatsby-transformer-sharp": "^2.4.4",
+    "gatsby-transformer-sharp": "^2.4.5",
     "gsap": "^3.2.6",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
