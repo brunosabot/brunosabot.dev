@@ -1,9 +1,14 @@
 .biography-avatar {
+  animation-delay: 0.2s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: opacity;
   border: 0 solid;
   border-radius: 80px;
   box-sizing: initial;
   height: 150px;
   margin: 0 0 32px 0;
+  opacity: 0;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 150px;
 }

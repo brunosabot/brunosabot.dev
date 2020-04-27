@@ -33,11 +33,11 @@ const About: React.FC<{}> = () => {
       >
         <BiographyAvatar src="/images/brunosabot.jpg" alt="Bruno Sabot" />
         <div>
-          <BiographyTitle>
+          <BiographyTitle style={{ animationDelay: `0.2s` }}>
             I am Bruno Sabot, a Front-end developer currently living in
             Bordeaux, France.
           </BiographyTitle>
-          <BiographyLine>
+          <BiographyLine style={{ animationDelay: `0.26s` }}>
             <BiographySkill>FrontEnd Developer</BiographySkill>
             <BiographySkill>React</BiographySkill>
             <BiographySkill>Vue.js</BiographySkill>
@@ -46,7 +46,7 @@ const About: React.FC<{}> = () => {
             <BiographySkill>Performance</BiographySkill>
             <BiographySkill>UX</BiographySkill>
           </BiographyLine>
-          <BiographyLine>
+          <BiographyLine style={{ animationDelay: `0.34s` }}>
             <BiographyCompany href="https://www.zenika.com/">
               Zenika
             </BiographyCompany>
@@ -57,7 +57,7 @@ const About: React.FC<{}> = () => {
               GDG Bordeaux
             </BiographyCompany>
           </BiographyLine>
-          <BiographyLine>
+          <BiographyLine style={{ animationDelay: `0.44s` }}>
             <Social href="https://github.com/brunosabot" name="Github">
               <IconGithubCircle />
             </Social>

@@ -85,6 +85,7 @@ const About: React.FC<Props> = ({ data }) => {
       <SEO
         description="Bruno Sabot, un développeur Front-end"
         title="Bruno Sabot, développeur Front-end"
+        lang="fr"
       />
 
       <aside className="resume">
@@ -108,8 +109,9 @@ const About: React.FC<Props> = ({ data }) => {
         </section>
 
         <section className="resume-heading__2">
-          J'ai eu le privilège de travailler avec des sociétés comme Webedia,
-          Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil.
+          J&apos;ai eu le privilège de travailler avec des sociétés comme
+          Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura
+          Brasil.
         </section>
 
         <section className="resume-heading__3">

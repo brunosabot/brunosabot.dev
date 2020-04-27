@@ -12,7 +12,7 @@ const CardAction: React.FC<Props> = ({
   children,
   href,
   name,
-  onClick = () => void 0,
+  onClick = () => undefined,
 }) => (
   <a
     href={href}
@@ -21,7 +21,11 @@ const CardAction: React.FC<Props> = ({
     rel="noopener noreferrer"
     onClick={onClick}
     tabIndex={0}
-    onKeyPress={(e) => e.key === "Enter" && onClick()}
+    onKeyPress={(e) => {
+      if (e.key === "Enter") {
+        onClick();
+      }
+    }}
     aria-label={name}
   >
     {children}

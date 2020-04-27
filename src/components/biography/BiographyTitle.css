@@ -1,6 +1,10 @@
 .biography-title {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: appearIn;
   font-size: 28px;
   font-weight: 700;
   line-height: 36px;
   margin-bottom: 16px;
+  opacity: 0;
 }

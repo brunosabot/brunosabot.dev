@@ -39,7 +39,7 @@ const Card: React.FC<Props> = ({
         </div>
         <div className="card__description">{description}</div>
         <div className="card__footer">
-          <Flag lang={icon}></Flag>
+          <Flag lang={icon} />
           <span className="card__header-subtitle">{subtitle}</span>
           <span className="card__header-date">{date}</span>
         </div>

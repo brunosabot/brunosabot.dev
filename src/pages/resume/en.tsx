@@ -85,6 +85,7 @@ const About: React.FC<Props> = ({ data }) => {
       <SEO
         description="Bruno Sabot, a Front-end developer"
         title="Bruno Sabot, Front-end developer"
+        lang="en"
       />
 
       <aside className="resume">
@@ -114,8 +115,8 @@ const About: React.FC<Props> = ({ data }) => {
         </section>
 
         <section className="resume-heading__3">
-          Former lead Front-end at Netinteractive group, I'm not looking for new
-          opportunities for now.
+          Former lead Front-end at Netinteractive group, I&apos;m not looking
+          for new opportunities for now.
         </section>
 
         <section className="resume-contact">

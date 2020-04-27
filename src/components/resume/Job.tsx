@@ -11,6 +11,13 @@ interface Props {
   subtitles?: string[];
 }
 
+function getCompany(companyName: string) {
+  return `@${companyName}`;
+}
+function getDate(startDate: string, endDate: string) {
+  return `${startDate} - ${endDate}`;
+}
+
 const Job: React.FC<Props> = ({
   companyName,
   companyWebsite,
@@ -22,14 +29,14 @@ const Job: React.FC<Props> = ({
 }) => (
   <section className="resume-job">
     <h1 className="resume-job__name">
-      {job} @&nbsp;
+      {job}
       <a
         className="resume-job__name-link"
         target="_blank"
         rel="noopener noreferrer"
         href={companyWebsite}
       >
-        {companyName}
+        {getCompany(companyName)}
       </a>
     </h1>
 
@@ -41,9 +48,7 @@ const Job: React.FC<Props> = ({
       ))}
 
     {startDate && endDate ? (
-      <div className="resume-job__subtitle">
-        {startDate} - {endDate}
-      </div>
+      <div className="resume-job__subtitle">{getDate(startDate, endDate)}</div>
     ) : null}
 
     <ul className="resume-job__detail">

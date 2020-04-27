@@ -1,8 +1,12 @@
 .biography-line {
   align-items: center;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: appearIn;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 0;
   padding: 16px 0;
 }
 .biography-line:first-child {

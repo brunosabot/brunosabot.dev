@@ -9,10 +9,10 @@ interface Props {
 
 const Flag: React.FC<Props> = ({ lang }) => {
   if (lang === "fr") {
-    return <img className="flag" src={france} />;
+    return <img className="flag" src={france} alt="Français" />;
   }
   if (lang === "en") {
-    return <img className="flag" src={usa} />;
+    return <img className="flag" src={usa} alt="English" />;
   }
 
   return null;
