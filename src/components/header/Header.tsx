@@ -10,6 +10,7 @@ const Header: React.FC<{}> = () => {
     <header className={classNames}>
       <div className="header__wrapper">
         <input
+          aria-label="Toggle menu"
           className="header__burger-checkbox"
           type="checkbox"
           checked={checked}
