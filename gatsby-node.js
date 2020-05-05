@@ -22,6 +22,17 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     {
       language: "en",
       platform: "Medium",
+      title: "An Opinionated Way to Structure React Apps",
+      href:
+        "https://medium.com/better-programming/an-opinionated-way-to-structure-react-apps-10f87bf29952",
+      date: "2020-05-05",
+      image: "https://miro.medium.com/max/10528/0*maZNyBAhbf1Ol2Uj",
+      description:
+        "When we first develop a React app, we can just put every component in a folder and it works. But when it comes to larger projects, it might be difficult to find our way between files if we keep using React this way.",
+    },
+    {
+      language: "en",
+      platform: "Medium",
       title: "How to Debug a React Context API App",
       href:
         "https://medium.com/better-programming/how-to-debug-a-react-context-api-app-547b75818754",
