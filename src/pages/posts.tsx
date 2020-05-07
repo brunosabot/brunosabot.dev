@@ -16,7 +16,7 @@ interface Image {
   childImageSharp: ChildImageSharp;
 }
 
-interface Article {
+interface Post {
   id: string;
   date: string;
   href: string;
@@ -28,11 +28,11 @@ interface Article {
 }
 
 interface Node {
-  nodes: Article[];
+  nodes: Post[];
 }
 
 interface Query {
-  allArticle: Node;
+  allPost: Node;
 }
 
 interface Props {
@@ -40,8 +40,8 @@ interface Props {
 }
 
 export const query = graphql`
-  query ArticleQuery {
-    allArticle {
+  query PostQuery {
+    allPost {
       nodes {
         id
         date
@@ -62,27 +62,27 @@ export const query = graphql`
   }
 `;
 
-const Articles: React.FC<Props> = ({ data }) => (
+const Posts: React.FC<Props> = ({ data }) => (
   <Layout>
     <SEO
-      description="All articles publicated by Bruno Sabot on various plateforms. Check it out!"
-      title="Articles - Bruno Sabot"
+      description="All posts publicated by Bruno Sabot on various plateforms. Check it out!"
+      title="Posts - Bruno Sabot"
     />
     <main className="content content-cols">
-      {data.allArticle.nodes.map((article) => (
+      {data.allPost.nodes.map((post) => (
         <Card
-          image={article.image.childImageSharp.fixed.srcWebp}
-          description={article.description}
-          icon={article.language}
-          title={article.title}
-          subtitle={article.platform}
-          date={article.date}
-          to={article.href}
-          key={article.id}
+          image={post.image.childImageSharp.fixed.srcWebp}
+          description={post.description}
+          icon={post.language}
+          title={post.title}
+          subtitle={post.platform}
+          date={post.date}
+          to={post.href}
+          key={post.id}
         />
       ))}
     </main>
   </Layout>
 );
 
-export default Articles;
+export default Posts;

@@ -3,9 +3,10 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const path = require(`path`);
 const { createRemoteFileNode } = require("gatsby-source-filesystem");
 
-exports.createPages = ({ actions }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
 
   createRedirect({
@@ -14,11 +15,47 @@ exports.createPages = ({ actions }) => {
     isPermanent: true,
     force: true,
   });
+  createRedirect({
+    fromPath: "/articles",
+    toPath: "/posts",
+    isPermanent: true,
+    force: true,
+  });
+
+  const blogPostTemplate = path.resolve(`src/templates/Posts.tsx`);
+  const result = await graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `);
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
+  }
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    actions.createPage({
+      path: node.frontmatter.path,
+      component: blogPostTemplate,
+      context: {}, // additional data can be passed via context
+    });
+  });
 };
 
 // You can delete this file if you're not using it
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
-  const articles = [
+  const posts = [
     {
       language: "en",
       platform: "Medium",
@@ -39,7 +76,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       date: "2020-03-17",
       image: "https://miro.medium.com/max/1200/0*fOZCyvfBcdHuXOQk",
       description:
-        "Some time ago, I shared how I dropped Redux for the Context API when I’m creating a React application. The article got some great feedback, but I also had some people saying that it’s pretty hard to…",
+        "Some time ago, I shared how I dropped Redux for the Context API when I’m creating a React application. The post got some great feedback, but I also had some people saying that it’s pretty hard to…",
     },
     {
       language: "en",
@@ -72,7 +109,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       date: "2019-09-02",
       image: "https://miro.medium.com/max/2400/1*BZ_jv-xjX_FfJR5fQH_6UQ.png",
       description:
-        "I recently got access to GitHub Actions and I decided to test it with a simple deployment in ZEIT Now. My first steps were to look at this wonderful article from Leonhard Melzer. It contains a lot…",
+        "I recently got access to GitHub Actions and I decided to test it with a simple deployment in ZEIT Now. My first steps were to look at this wonderful post from Leonhard Melzer. It contains a lot…",
     },
     {
       language: "en",
@@ -402,19 +439,19 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     },
   ];
 
-  articles.forEach((article) => {
+  posts.forEach((post) => {
     const node = {
-      date: article.date,
-      href: article.href,
-      language: article.language,
-      platform: article.platform,
-      title: article.title,
-      description: article.description,
-      originalImage: article.image,
-      id: createNodeId(`article-${article.title}`),
+      date: post.date,
+      href: post.href,
+      language: post.language,
+      platform: post.platform,
+      title: post.title,
+      description: post.description,
+      originalImage: post.image,
+      id: createNodeId(`post-${post.title}`),
       internal: {
-        type: "article",
-        contentDigest: createContentDigest(article),
+        type: "post",
+        contentDigest: createContentDigest(post),
       },
     };
     actions.createNode(node);

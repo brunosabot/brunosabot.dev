@@ -27,7 +27,7 @@ const Header: React.FC<{}> = () => {
         />
         <div className="header__link">
           <HeaderLink to="/">About</HeaderLink>
-          <HeaderLink to="/articles/">Articles</HeaderLink>
+          <HeaderLink to="/posts/">Posts</HeaderLink>
           <HeaderLink to="/talks/">Talks</HeaderLink>
           <HeaderLink to="/projects/">Projects</HeaderLink>
           <HeaderLink to="/videos/">Videos</HeaderLink>

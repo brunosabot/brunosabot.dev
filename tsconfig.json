@@ -63,6 +63,11 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "include": ["src/**/*", "gatsby-browser.js", "gatsby-node.js"],
+  "include": [
+    "src/**/*",
+    "gatsby-browser.js",
+    "gatsby-config.js",
+    "gatsby-node.js"
+  ],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

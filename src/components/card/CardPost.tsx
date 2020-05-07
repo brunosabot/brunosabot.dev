@@ -12,7 +12,7 @@ interface Props {
   description: string;
 }
 
-const CardArticle: React.FC<Props> = ({
+const CardPost: React.FC<Props> = ({
   date,
   href,
   id,
@@ -34,4 +34,4 @@ const CardArticle: React.FC<Props> = ({
   />
 );
 
-export default CardArticle;
+export default CardPost;

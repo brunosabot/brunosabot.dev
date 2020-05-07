@@ -58,6 +58,32 @@ module.exports = {
         trackingId: "UA-2395369-1",
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+          {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              includeDefaultCss: true,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    },
     "gatsby-plugin-transition-link",
     "gatsby-plugin-offline",
     "gatsby-plugin-sitemap",
