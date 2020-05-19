@@ -205,7 +205,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const projects = [
     {
       url: "https://www.answwr.com",
-      localImage: "./static/images/answwr.png",
+      image: "./static/images/answwr.png",
       title:
         "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
       description: [
@@ -483,7 +483,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   projects.forEach((project) => {
     const node = {
       url: project.url,
-      image: project.image,
+      localImage: project.image,
       title: project.title,
       description: project.description,
       id: createNodeId(`project-${project.title}`),
