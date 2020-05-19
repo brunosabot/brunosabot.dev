@@ -1,13 +1,25 @@
+import Img from "gatsby-image";
 import React from "react";
 import Flag from "../Flag";
 import "./Card.css";
+
+interface Fixed {
+  base64: string;
+  height: number;
+  src: string;
+  srcSet: string;
+  srcSetWebp: string;
+  srcWebp: string;
+  width: number;
+}
 
 interface Props {
   actions?: React.ReactNode;
   children?: React.ReactNode;
   date: string;
   icon: string;
-  image: string;
+  image?: string;
+  fixed?: Fixed;
   subtitle: string;
   title: string;
   description: string;
@@ -20,6 +32,7 @@ const Card: React.FC<Props> = ({
   date,
   icon,
   image,
+  fixed,
   description,
   subtitle,
   title,
@@ -29,10 +42,13 @@ const Card: React.FC<Props> = ({
 
   return (
     <Composant className="card" href={to}>
-      <div
-        style={{ backgroundImage: `url(${image})` }}
-        className="card__image"
-      />
+      {fixed ? <Img fixed={fixed} alt={title} className="card__image" /> : null}
+      {image ? (
+        <div
+          style={{ backgroundImage: `url(${image})` }}
+          className="card__image"
+        />
+      ) : null}
       <h3 className="card__header">
         <div className="card__header-title-wrapper">
           <span className="card__header-title">{title}</span>

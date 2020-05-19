@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     title: "Bruno Sabot's website",
@@ -7,6 +9,13 @@ module.exports = {
     siteUrl: "https://brunosabot.dev",
   },
   plugins: [
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: path.join(__dirname, "static", "images"),
+      },
+    },
     "gatsby-plugin-typescript",
     "gatsby-plugin-tslint",
     "gatsby-plugin-react-helmet",
@@ -59,11 +68,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 800,
             },
@@ -78,9 +87,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `posts`,
+        name: "posts",
         path: `${__dirname}/src/posts`,
       },
     },

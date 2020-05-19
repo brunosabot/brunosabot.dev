@@ -4,12 +4,18 @@ import CardTalk from "../components/card/CardTalk";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 
-interface FixedImage {
+interface Fixed {
+  base64: string;
+  height: number;
+  src: string;
+  srcSet: string;
+  srcSetWebp: string;
   srcWebp: string;
+  width: number;
 }
 
 interface ChildImageSharp {
-  fixed: FixedImage;
+  fixed: Fixed;
 }
 
 interface Image {
@@ -49,8 +55,8 @@ export const query = graphql`
         date
         image {
           childImageSharp {
-            fixed(width: 348, webpQuality: 100) {
-              srcWebp
+            fixed(width: 348, height: 196, webpQuality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
@@ -73,7 +79,7 @@ const Talks: React.FC<Props> = ({ data }) => (
     <main className="content content-cols">
       {data.allTalk.nodes.map((talk) => (
         <CardTalk
-          image={talk.image ? talk.image.childImageSharp.fixed.srcWebp : ""}
+          fixed={talk.image ? talk.image.childImageSharp.fixed : undefined}
           description={talk.description}
           language={talk.language}
           title={talk.title}

@@ -1,3 +1,4 @@
+import { graphql } from "gatsby";
 import React from "react";
 import BiographyAvatar from "../components/biography/BiographyAvatar";
 import BiographyCompany from "../components/biography/BiographyCompany";
@@ -15,7 +16,45 @@ import IconMedium from "../components/svg/IconMedium";
 import IconStrava from "../components/svg/IconStrava";
 import IconTwitter from "../components/svg/IconTwitter";
 
-const About: React.FC<{}> = () => {
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "brunosabot.jpg" }) {
+      childImageSharp {
+        fixed(width: 150, height: 150) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+  }
+`;
+
+interface Fixed {
+  base64: string;
+  height: number;
+  src: string;
+  srcSet: string;
+  srcSetWebp: string;
+  srcWebp: string;
+  width: number;
+}
+
+interface Image {
+  fixed: Fixed;
+}
+
+interface File {
+  childImageSharp: Image;
+}
+
+interface Data {
+  file: File;
+}
+
+interface Props {
+  data: Data;
+}
+
+const About: React.FC<Props> = ({ data }) => {
   return (
     <Layout>
       <SEO
@@ -31,7 +70,10 @@ const About: React.FC<{}> = () => {
           paddingTop: "32px",
         }}
       >
-        <BiographyAvatar src="/images/brunosabot.jpg" alt="Bruno Sabot" />
+        <BiographyAvatar
+          fixed={data.file.childImageSharp.fixed}
+          alt="Bruno Sabot"
+        />
         <div>
           <BiographyTitle style={{ animationDelay: `0.2s` }}>
             I am Bruno Sabot, a Front-end developer currently living in

@@ -4,7 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 const path = require(`path`);
-const { createRemoteFileNode } = require("gatsby-source-filesystem");
+const fs = require(`fs`);
+const {
+  createRemoteFileNode,
+  createFileNodeFromBuffer,
+} = require("gatsby-source-filesystem");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
@@ -201,7 +205,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   const projects = [
     {
       url: "https://www.answwr.com",
-      image: "/images/answwr.png",
+      localImage: "./static/images/answwr.png",
       title:
         "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
       description: [
@@ -585,16 +589,17 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   });
 };
 
-exports.onCreateNode = async ({
+const makeRemoteImage = async (
   node,
-  actions: { createNode },
-  store,
-  cache,
+  createNode,
   createNodeId,
-}) => {
-  if (node.originalImage !== undefined) {
+  cache,
+  store,
+  imageKey
+) => {
+  if (node[imageKey] !== undefined) {
     const fileNode = await createRemoteFileNode({
-      url: node.originalImage,
+      url: node[imageKey],
       parentNodeId: node.id,
       createNode,
       createNodeId,
@@ -608,4 +613,50 @@ exports.onCreateNode = async ({
       node.image___NODE = fileNode.id;
     }
   }
+};
+const makeImage = async (
+  node,
+  createNode,
+  createNodeId,
+  cache,
+  store,
+  imageKey
+) => {
+  if (node[imageKey] !== undefined) {
+    const value = fs.readFileSync(node[imageKey]);
+    const fileNode = await createFileNodeFromBuffer({
+      buffer: value,
+      parentNodeId: node.id,
+      createNode,
+      createNodeId,
+      cache,
+      store,
+      name: node.id,
+    });
+
+    if (fileNode) {
+      // eslint-disable-next-line no-param-reassign
+      node.image___NODE = fileNode.id;
+    }
+  }
+};
+
+exports.onCreateNode = async ({
+  node,
+  actions: { createNode },
+  store,
+  cache,
+  createNodeId,
+}) => {
+  // Posts
+  await makeRemoteImage(
+    node,
+    createNode,
+    createNodeId,
+    cache,
+    store,
+    "originalImage"
+  );
+  // Projects
+  await makeImage(node, createNode, createNodeId, cache, store, "localImage");
 };

@@ -4,10 +4,28 @@ import DetailCard from "../components/card/DetailCard";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 
+interface Fixed {
+  base64: string;
+  height: number;
+  src: string;
+  srcSet: string;
+  srcSetWebp: string;
+  srcWebp: string;
+  width: number;
+}
+
+interface Image {
+  fixed: Fixed;
+}
+
+interface File {
+  childImageSharp: Image;
+}
+
 interface Project {
   description: string[];
   id: string;
-  image: string;
+  image: File;
   title: string;
   url: string;
 }
@@ -30,7 +48,13 @@ export const query = graphql`
       nodes {
         id
         url
-        image
+        image {
+          childImageSharp {
+            fixed(width: 398) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
         title
         description
       }
@@ -47,7 +71,7 @@ const Projects: React.FC<Props> = ({ data }) => (
     <main className="content">
       {data.allProject.nodes.map((project) => (
         <DetailCard
-          image={project.image}
+          image={project.image.childImageSharp.fixed}
           title={project.title}
           description={project.description}
           url={project.url}

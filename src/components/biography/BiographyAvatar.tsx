@@ -1,13 +1,24 @@
+import Img from "gatsby-image";
 import React from "react";
 import "./BiographyAvatar.css";
 
-interface Props {
-  alt: string;
+interface Fixed {
+  base64: string;
+  height: number;
   src: string;
+  srcSet: string;
+  srcSetWebp: string;
+  srcWebp: string;
+  width: number;
 }
 
-const BiographyAvatar: React.FC<Props> = ({ alt, src }) => (
-  <img className="biography-avatar" src={src} alt={alt} />
+interface Props {
+  alt: string;
+  fixed: Fixed;
+}
+
+const BiographyAvatar: React.FC<Props> = ({ alt, fixed }) => (
+  <Img className="biography-avatar" fixed={fixed} alt={alt} />
 );
 
 export default BiographyAvatar;

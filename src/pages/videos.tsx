@@ -4,12 +4,18 @@ import CardVideo from "../components/card/CardVideo";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 
-interface FixedImage {
+interface Fixed {
+  base64: string;
+  height: number;
+  src: string;
+  srcSet: string;
+  srcSetWebp: string;
   srcWebp: string;
+  width: number;
 }
 
 interface ChildImageSharp {
-  fixed: FixedImage;
+  fixed: Fixed;
 }
 
 interface Image {
@@ -53,7 +59,7 @@ export const query = graphql`
         image {
           childImageSharp {
             fixed(width: 348, webpQuality: 100) {
-              srcWebp
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
@@ -71,7 +77,7 @@ const Videos: React.FC<Props> = ({ data }) => (
     <main className="content">
       {data.allVideo.nodes.map((video) => (
         <CardVideo
-          image={video.image ? video.image.childImageSharp.fixed.srcWebp : ""}
+          fixed={video.image ? video.image.childImageSharp.fixed : undefined}
           description={video.description}
           language={video.language}
           title={video.title}

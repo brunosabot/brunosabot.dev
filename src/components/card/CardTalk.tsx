@@ -4,11 +4,22 @@ import IconYoutube from "../svg/IconYoutube";
 import Card from "./Card";
 import CardAction from "./CardAction";
 
+interface Fixed {
+  base64: string;
+  height: number;
+  src: string;
+  srcSet: string;
+  srcSetWebp: string;
+  srcWebp: string;
+  width: number;
+}
+
 interface Props {
   conferenceName: string;
   date: string;
   id: string;
-  image: string;
+  image?: string;
+  fixed?: Fixed;
   description: string;
   language: string;
   slides: string;
@@ -21,6 +32,7 @@ const CardTalk: React.FC<Props> = ({
   date,
   id,
   image,
+  fixed,
   description,
   language,
   slides,
@@ -49,6 +61,7 @@ const CardTalk: React.FC<Props> = ({
       icon={language}
       title={title}
       image={image}
+      fixed={fixed}
       description={description}
       subtitle={conferenceName}
       date={date}

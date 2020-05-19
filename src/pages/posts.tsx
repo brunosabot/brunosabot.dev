@@ -4,12 +4,18 @@ import Card from "../components/card/Card";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 
-interface FixedImage {
+interface Fixed {
+  base64: string;
+  height: number;
+  src: string;
+  srcSet: string;
+  srcSetWebp: string;
   srcWebp: string;
+  width: number;
 }
 
 interface ChildImageSharp {
-  fixed: FixedImage;
+  fixed: Fixed;
 }
 
 interface Image {
@@ -48,8 +54,8 @@ export const query = graphql`
         href
         image {
           childImageSharp {
-            fixed(width: 348, webpQuality: 100) {
-              srcWebp
+            fixed(width: 348, height: 232, webpQuality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }
@@ -71,7 +77,7 @@ const Posts: React.FC<Props> = ({ data }) => (
     <main className="content content-cols">
       {data.allPost.nodes.map((post) => (
         <Card
-          image={post.image.childImageSharp.fixed.srcWebp}
+          fixed={post.image.childImageSharp.fixed}
           description={post.description}
           icon={post.language}
           title={post.title}
