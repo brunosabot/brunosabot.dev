@@ -87,6 +87,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-web-monetization",
+      options: {
+        paymentPointer: "$ilp.uphold.com/zbywBq9qy3pe",
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
