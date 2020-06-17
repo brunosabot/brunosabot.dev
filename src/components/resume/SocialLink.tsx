@@ -1,4 +1,4 @@
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby";
 import React from "react";
 import "./SocialLink.css";
 
@@ -22,9 +22,9 @@ const SocialLink: React.FC<Props> = ({ children, to }) => {
           {children}
         </a>
       ) : (
-        <AniLink fade duration={0.5} className="resume-social-link" to={to}>
+        <Link className="resume-social-link" to={to}>
           {children}
-        </AniLink>
+        </Link>
       )}
     </span>
   );

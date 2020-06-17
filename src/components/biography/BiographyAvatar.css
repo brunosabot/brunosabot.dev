@@ -1,8 +1,5 @@
 .biography-avatar {
-  animation-delay: 0.2s;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-name: opacity;
+  animation: 0.2s linear page forwards;
   border: 0 solid;
   border-radius: 80px;
   box-sizing: initial;
@@ -19,6 +16,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .biography-avatar {
+    opacity: 1;
     transition: none;
   }
 }

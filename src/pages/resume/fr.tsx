@@ -1,5 +1,4 @@
-import { graphql } from "gatsby";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { graphql, Link } from "gatsby";
 import React from "react";
 import Layout from "../../components/layout/Resume";
 import Job from "../../components/resume/Job";
@@ -130,14 +129,9 @@ const About: React.FC<Props> = ({ data }) => {
       </aside>
 
       <section className="resume-life-experiences">
-        <AniLink
-          fade
-          duration={0.5}
-          className="resume-language-tag"
-          to="/resume/en"
-        >
+        <Link className="resume-language-tag" to="/resume/en">
           EN
-        </AniLink>
+        </Link>
         <article className="resume-professional-experiences">
           <Title>Expériences professionnelles</Title>
 

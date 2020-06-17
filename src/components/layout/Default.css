@@ -43,6 +43,7 @@ body::after {
   position: absolute;
   right: 0;
   top: 0;
+  z-index: -1;
 }
 
 @media (prefers-color-scheme: light) {
@@ -104,29 +105,6 @@ code {
   padding: 0 24px;
 }
 
-.page-enter {
-  opacity: 0;
-  transform: scale3d(0.9, 0.9, 0.9);
-  will-change: opacity, transform, transition;
-}
-.page-enter.page-enter-active {
-  opacity: 1;
-  position: absolute;
-  transform: scale3d(1, 1, 1);
-  transition: all 150ms cubic-bezier(0, 0, 1, 1) 150ms;
-}
-.page-exit {
-  opacity: 1;
-  transform: scale3d(1, 1, 1);
-  will-change: opacity, transform;
-}
-.page-exit.page-exit-active {
-  opacity: 0;
-  position: absolute;
-  transform: scale3d(1.75, 1.75, 1.75) translate3d(0, 25%, 0);
-  transition: all 150ms cubic-bezier(0, 0, 1, 1);
-}
-
 a .icon-twitter {
   display: block;
   fill: var(--text-color);
@@ -145,12 +123,15 @@ a .icon-linkedin:hover {
   fill: #0e76a8;
 }
 
+.appear {
+  animation: 0.5s linear page forwards;
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .page-enter.page-enter-active,
-  .page-exit.page-exit-active {
+  .appear {
+    animation: none;
     opacity: 1;
-    transform: none;
-    transition: none;
   }
 }
 @keyframes appearIn {
@@ -164,7 +145,7 @@ a .icon-linkedin:hover {
   }
 }
 
-@keyframes opacity {
+@keyframes page {
   0% {
     opacity: 0;
   }

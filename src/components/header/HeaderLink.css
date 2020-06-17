@@ -28,6 +28,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .header-link__link {
+    opacity: 1;
     transition: none;
   }
 }

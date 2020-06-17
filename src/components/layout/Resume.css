@@ -1,5 +1,6 @@
 .resume-body {
   align-items: stretch;
+  animation: 0.5s linear page forwards;
   display: flex;
   height: 100vh;
 }

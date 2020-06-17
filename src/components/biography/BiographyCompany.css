@@ -23,6 +23,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .biography-company:after {
+    opacity: 1;
     transition: none;
   }
 }

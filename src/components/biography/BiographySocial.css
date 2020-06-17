@@ -17,6 +17,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .biography-social > * {
+    opacity: 1;
     transition: none;
   }
 }
