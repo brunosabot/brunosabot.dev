@@ -20,7 +20,7 @@
     "gatsby-plugin-sharp": "~2.6.12",
     "gatsby-plugin-sitemap": "~2.4.5",
     "gatsby-plugin-tslint": "~0.0.2",
-    "gatsby-plugin-typescript": "~2.4.6",
+    "gatsby-plugin-typescript": "~2.4.10",
     "gatsby-plugin-web-monetization": "~1.0.1",
     "gatsby-remark-embed-gist": "~1.1.9",
     "gatsby-remark-images": "~3.3.11",
