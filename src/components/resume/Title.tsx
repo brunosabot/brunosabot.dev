@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Title: React.FC<Props> = ({ children }) => {
-  return <h1 className="resume-title">{children}</h1>;
+  return <h2 className="resume-title">{children}</h2>;
 };
 
 export default Title;

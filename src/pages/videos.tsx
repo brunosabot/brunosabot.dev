@@ -3,6 +3,7 @@ import React from "react";
 import CardVideo from "../components/card/CardVideo";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
+import PageTitle from "../components/typography/PageTitle";
 
 interface Fixed {
   base64: string;
@@ -75,6 +76,7 @@ const Videos: React.FC<Props> = ({ data }) => (
       title="Videos - Bruno Sabot"
     />
     <main className="content">
+      <PageTitle>Video list</PageTitle>
       {data.allVideo.nodes.map((video) => (
         <CardVideo
           fixed={video.image ? video.image.childImageSharp.fixed : undefined}

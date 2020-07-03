@@ -28,7 +28,7 @@ const Job: React.FC<Props> = ({
   subtitles = [],
 }) => (
   <section className="resume-job">
-    <h1 className="resume-job__name">
+    <h3 className="resume-job__name">
       {job}
       <a
         className="resume-job__name-link"
@@ -38,7 +38,7 @@ const Job: React.FC<Props> = ({
       >
         {getCompany(companyName)}
       </a>
-    </h1>
+    </h3>
 
     {subtitles &&
       subtitles.map((subtitle) => (

@@ -102,10 +102,10 @@ const About: React.FC<Props> = ({ data }) => {
           </div>
         </section>
 
-        <section className="resume-heading__1">
+        <h1 className="resume-heading__1">
           Je suis Bruno Sabot, un développeur Front-end résidant à Bordeaux, en
           France.
-        </section>
+        </h1>
 
         <section className="resume-heading__2">
           J&apos;ai eu le privilège de travailler avec des sociétés comme

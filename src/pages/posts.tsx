@@ -3,6 +3,7 @@ import React from "react";
 import Card from "../components/card/Card";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
+import PageTitle from "../components/typography/PageTitle";
 
 interface Fixed {
   base64: string;
@@ -75,6 +76,7 @@ const Posts: React.FC<Props> = ({ data }) => (
       title="Posts - Bruno Sabot"
     />
     <main className="content content-cols">
+      <PageTitle>Post list</PageTitle>
       {data.allPost.nodes.map((post) => (
         <Card
           fixed={post.image.childImageSharp.fixed}

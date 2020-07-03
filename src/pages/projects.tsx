@@ -3,6 +3,7 @@ import React from "react";
 import DetailCard from "../components/card/DetailCard";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
+import PageTitle from "../components/typography/PageTitle";
 
 interface Fixed {
   base64: string;
@@ -69,6 +70,7 @@ const Projects: React.FC<Props> = ({ data }) => (
       title="Projects - Bruno Sabot"
     />
     <main className="content">
+      <PageTitle>Project list</PageTitle>
       {data.allProject.nodes.map((project) => (
         <DetailCard
           image={project.image.childImageSharp.fixed}

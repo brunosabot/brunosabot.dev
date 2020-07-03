@@ -7,9 +7,9 @@ interface Props {
 }
 
 const BiographyTitle: React.FC<Props> = ({ children, style }) => (
-  <div className="biography-title" style={style}>
+  <h1 className="biography-title" style={style}>
     {children}
-  </div>
+  </h1>
 );
 
 export default BiographyTitle;

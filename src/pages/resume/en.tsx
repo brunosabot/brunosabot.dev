@@ -102,10 +102,10 @@ const About: React.FC<Props> = ({ data }) => {
           </div>
         </section>
 
-        <section className="resume-heading__1">
+        <h1 className="resume-heading__1">
           I am Bruno Sabot, a Front-end developer currently living in Bordeaux,
           France.
-        </section>
+        </h1>
 
         <section className="resume-heading__2">
           I had the privilege of working with companies such as Webedia,

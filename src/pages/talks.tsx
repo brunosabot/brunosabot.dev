@@ -3,6 +3,7 @@ import React from "react";
 import CardTalk from "../components/card/CardTalk";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
+import PageTitle from "../components/typography/PageTitle";
 
 interface Fixed {
   base64: string;
@@ -77,6 +78,7 @@ const Talks: React.FC<Props> = ({ data }) => (
       title="Talks - Bruno Sabot"
     />
     <main className="content content-cols">
+      <PageTitle>Talk list</PageTitle>
       {data.allTalk.nodes.map((talk) => (
         <CardTalk
           fixed={talk.image ? talk.image.childImageSharp.fixed : undefined}
