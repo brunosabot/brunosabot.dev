@@ -80,7 +80,8 @@ module.exports = {
           {
             resolve: "gatsby-remark-embed-gist",
             options: {
-              includeDefaultCss: true,
+              gistDefaultCssInclude: true,
+              gistCssPreload: true,
             },
           },
         ],
