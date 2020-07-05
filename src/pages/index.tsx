@@ -75,11 +75,11 @@ const About: React.FC<Props> = ({ data }) => {
           alt="Bruno Sabot"
         />
         <div>
-          <BiographyTitle style={{ animationDelay: `0.2s` }}>
+          <BiographyTitle style={{ animationDelay: `0s` }}>
             I am Bruno Sabot, a Front-end developer currently living in
             Bordeaux, France.
           </BiographyTitle>
-          <BiographyLine style={{ animationDelay: `0.26s` }}>
+          <BiographyLine style={{ animationDelay: `0.06s` }}>
             <BiographySkill>FrontEnd Developer</BiographySkill>
             <BiographySkill>React</BiographySkill>
             <BiographySkill>Vue.js</BiographySkill>
@@ -88,7 +88,7 @@ const About: React.FC<Props> = ({ data }) => {
             <BiographySkill>Performance</BiographySkill>
             <BiographySkill>UX</BiographySkill>
           </BiographyLine>
-          <BiographyLine style={{ animationDelay: `0.34s` }}>
+          <BiographyLine style={{ animationDelay: `0.14s` }}>
             <BiographyCompany href="https://www.zenika.com/">
               Zenika
             </BiographyCompany>
@@ -99,7 +99,7 @@ const About: React.FC<Props> = ({ data }) => {
               GDG Bordeaux
             </BiographyCompany>
           </BiographyLine>
-          <BiographyLine style={{ animationDelay: `0.44s` }}>
+          <BiographyLine style={{ animationDelay: `0.24s` }}>
             <Social href="https://github.com/brunosabot" name="Github">
               <IconGithubCircle />
             </Social>
