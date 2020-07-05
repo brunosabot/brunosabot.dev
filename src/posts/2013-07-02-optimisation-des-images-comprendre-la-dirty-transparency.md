@@ -4,8 +4,15 @@ date: 2013-07-02
 title: "Optimisation des images: comprendre la « dirty transparency »"
 subtitle: Lorsque l'on travaille sur une image de type PNG-24, avec de la semi-transparence, on se retrouve confronté à un gros surplus d'informations causés par la transparence, appelé « dirty transparency » par les anglophones.
 creator: Bruno Sabot
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/tomas-sobek-plwud_FPvwU-unsplash.jpg
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/tomas-sobek-plwud_FPvwU-unsplash.jpg
+lang: fr
+platform: Blog
 ---
+
+<figure>
+  <img src="https://storage.googleapis.com/brunosabot.dev/img/tomas-sobek-plwud_FPvwU-unsplash.jpg" alt="Photo by Tomas Sobek on Unsplash."/>
+  <figcaption>Photo by <a href="https://unsplash.com/@tomas_nz">Tomas Sobek</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
+</figure>
 
 Les consignes webperf un peu partout vous recommanderont de réduire la taille de vos images. Pour cela, il suffit d'utiliser des logiciels appropriés afin de supprimer toutes les méta-données qui pourrait alourdir le composant graphique.
 

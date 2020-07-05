@@ -4,11 +4,13 @@ date: 2019-09-02
 title: Deploy Your ZEIT Now App With GitHub Actions
 subtitle: Implement custom logic without having to create an app to perform a task
 creator: Bruno Sabot
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
 canonical: https://medium.com/better-programming/deploy-your-zeit-now-app-with-github-actions-ca3977806b40
+lang: en
+platform: Medium
 ---
 
-![](https://storage.cloud.google.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png)
+![](https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png)
 
 I recently got access to [GitHub Actions](https://github.com/features/actions) and I decided to test it with a simple deployment in [ZEIT Now](https://zeit.co/home). My first steps were to look at [this wonderful post](https://medium.com/peerigon/how-to-continuously-deploy-a-cra-using-github-actions-and-zeit-f7bbd3b60da3) from [Leonhard Melzer](https://medium.com/@leomelzer).
 
@@ -70,7 +72,7 @@ Now, let’s analyze what we wrote in the file:
 - `on`: When the workflow should be executed. [There are a lot of events we can pick](https://help.github.com/en/articles/events-that-trigger-workflows).
 - `jobs`: The list of jobs to execute.
 
-![The jobs list in the GitHub interface](https://storage.cloud.google.com/brunosabot.dev/img/1__AQRdaWkdiS5gB4uakwD6fg.png)
+![The jobs list in the GitHub interface](https://storage.googleapis.com/brunosabot.dev/img/1__AQRdaWkdiS5gB4uakwD6fg.png)
 The jobs list in the GitHub interface
 
 The jobs look almost the same. I will only present the _publish_ one that contains more information than the others.
@@ -87,14 +89,14 @@ Once again, let’s dive in to see how steps are configured:
 - `env`: The environment variables stored within the GitHub interface.
 - `with`: Allows the configuration of actions with some variables. In this example, we just want to add the `--prod` args to the `now` command that will be executed.
 
-![With the jobs on the left and the steps on the right](https://storage.cloud.google.com/brunosabot.dev/img/1__Tb____ZlqkA42Z6dtscs1cew.png)
+![With the jobs on the left and the steps on the right](https://storage.googleapis.com/brunosabot.dev/img/1__Tb____ZlqkA42Z6dtscs1cew.png)
 With the jobs on the left and the steps on the right
 
 #### Storing secrets
 
 In the YAML file, we use a `ZEIT_TOKEN` secret. You can set it in the _Settings_ menu, where we can find a _Secrets_ menu. Once you add a secret, you will not be able to get the value again.
 
-![](https://storage.cloud.google.com/brunosabot.dev/img/1__Ix__D9z26HYO0D8Qtt3V99g.png)
+![](https://storage.googleapis.com/brunosabot.dev/img/1__Ix__D9z26HYO0D8Qtt3V99g.png)
 
 ### Conclusion
 

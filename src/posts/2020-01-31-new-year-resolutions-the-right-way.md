@@ -4,12 +4,14 @@ date: 2020-01-31
 title: New year resolutions the right way
 subtitle: My experience on how to succeed them
 creator: Bruno Sabot
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg
 canonical: https://medium.com/@brunosabot/new-year-resolutions-the-right-way-de4ba67627cc
+lang: en
+platform: Medium
 ---
 
 <figure>
-  <img src="https://storage.cloud.google.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg" alt="Congratulations on completed new year resolutions — Photo by me"/>
+  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg" alt="Congratulations on completed new year resolutions — Photo by me"/>
   <figcaption>Congratulations on completed new year resolutions — Photo by me</figcaption>
 </figure>
 

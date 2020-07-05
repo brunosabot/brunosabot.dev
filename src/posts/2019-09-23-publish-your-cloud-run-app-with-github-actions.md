@@ -4,12 +4,14 @@ date: 2019-09-23
 title: Publish your Cloud Run App with GitHub Actions
 subtitle: A very fast way to deploy your application with GitHub
 creator: Bruno Sabot
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/1__HmM_NqNjtCWw36t3Pr1DWA.jpeg
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__HmM__NqNjtCWw36t3Pr1DWA.jpeg
 canonical: https://medium.com/better-programming/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4
+lang: en
+platform: Medium
 ---
 
 <figure>
-  <img src="https://storage.cloud.google.com/brunosabot.dev/img/1__HmM__NqNjtCWw36t3Pr1DWA.jpeg" alt="Photo by Allan Nygren on Unsplash."/>
+  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__HmM__NqNjtCWw36t3Pr1DWA.jpeg" alt="Photo by Allan Nygren on Unsplash."/>
   <figcaption>Photo by <a href="https://unsplash.com/@coloradohiker">Allan Nygren</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
 </figure>
 
@@ -116,7 +118,7 @@ The final step is actually two commands. Here, the result of the first is not av
 
 #### Declaring GitHub secrets
 
-![Secrets interface for GitHub Actions](https://storage.cloud.google.com/brunosabot.dev/img/1__CLhcjP8t9IfEEtwJ1fwH8Q.png)
+![Secrets interface for GitHub Actions](https://storage.googleapis.com/brunosabot.dev/img/1__CLhcjP8t9IfEEtwJ1fwH8Q.png)
 Secrets interface for GitHub Actions
 
 In our YAML file, we reference three secret keys:

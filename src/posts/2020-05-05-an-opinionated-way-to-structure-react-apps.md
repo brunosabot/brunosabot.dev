@@ -3,13 +3,15 @@ path: /posts/2020/an-opinionated-way-to-structure-react-apps
 date: 2020-05-05
 title: An Opinionated Way to Structure React Apps
 subtitle: Based on my experience acquired building several big projects
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg
 creator: Bruno Sabot
 canonical: https://medium.com/p/an-opinionated-way-to-structure-react-apps-10f87bf29952
+lang: en
+platform: Medium
 ---
 
 <figure>
-  <img src="https://storage.cloud.google.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg" alt="Photo by Dayne Topkin on Unsplash."/>
+  <img src="https://storage.googleapis.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg" alt="Photo by Dayne Topkin on Unsplash."/>
   <figcaption>Photo by <a href="https://unsplash.com/@dtopkin1">Dayne Topkin</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
 </figure>
 

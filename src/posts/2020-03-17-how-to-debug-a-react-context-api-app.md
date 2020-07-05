@@ -3,13 +3,15 @@ path: /posts/2020/how-to-debug-a-react-context-api-app
 date: 2020-03-17
 title: How to Debug a React Context API App
 subtitle: Using the Redux DevTools extension
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg
 creator: Bruno Sabot
 canonical: https://medium.com/better-programming/how-to-debug-a-react-context-api-app-547b75818754
+lang: en
+platform: Medium
 ---
 
 <figure>
-  <img src="https://storage.cloud.google.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg" alt="Photo by Barn Images on Unsplash."/>
+  <img src="https://storage.googleapis.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg" alt="Photo by Barn Images on Unsplash."/>
   <figcaption>Photo by <a href="https://unsplash.com/@barnimages">Barn Images</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
 </figure>
 
@@ -48,7 +50,7 @@ To make the session permanent when you are developing your app, you will need a 
 If you add this piece of code at the very top of your application, you will see the startup session in the Redux DevTools that you can identify with the `@@INIT` event that pops in.
 
 <figure>
-  <img src="https://storage.cloud.google.com/brunosabot.dev/img/1__1__Ee__Cxvnmx1bAgstmX3jA.png" alt="The INIT event that pops in."/>
+  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__1__Ee__Cxvnmx1bAgstmX3jA.png" alt="The INIT event that pops in."/>
   <figcaption>The INIT event that pops in.</figcaption>
 </figure>
 
@@ -78,7 +80,7 @@ The usage is now pretty simple in the application. We need to call the `useRedux
 <figcaption>Look how useReduxDevtools is called on line 10.</figcaption>
 
 <figure>
-  <img src="https://storage.cloud.google.com/brunosabot.dev/img/1__ZRD7PZ36M__dTOFaRBU6aRQ.png" alt="And voilà, our Context API inside Redux DevTools!"/>
+  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__ZRD7PZ36M__dTOFaRBU6aRQ.png" alt="And voilà, our Context API inside Redux DevTools!"/>
   <figcaption>And voilà, our Context API inside Redux DevTools!</figcaption>
 </figure>
 

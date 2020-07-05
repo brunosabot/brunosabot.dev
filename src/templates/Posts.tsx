@@ -19,6 +19,7 @@ interface Post {
 interface Node {
   frontmatter: Post;
   html: string;
+  timeToRead: number;
 }
 
 interface Query {
@@ -31,7 +32,7 @@ interface Props {
 
 const BlogTemplate: React.FC<Props> = ({ data }) => {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark;
+  const { frontmatter, html, timeToRead } = markdownRemark;
 
   const encodedUrl = encodeURI(`https://brunosabot.dev${frontmatter.path}`);
   const encodedTitle = encodeURI(`${frontmatter.title} by @brunosabot`);
@@ -59,7 +60,10 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
                 <div className="blog-post-author-name">
                   {frontmatter.creator}
                 </div>
-                <div className="blog-post-author-date">{frontmatter.date}</div>
+                <div className="blog-post-author-date">
+                  <span>{frontmatter.date}</span>
+                  {timeToRead ? ` · ${timeToRead} min read` : null}
+                </div>
               </div>
             </div>
             <div className="blog-post-social">
@@ -107,6 +111,7 @@ export const pageQuery = graphql`
         canonical
         creator
       }
+      timeToRead
     }
   }
 `;

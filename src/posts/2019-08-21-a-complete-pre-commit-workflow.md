@@ -4,12 +4,14 @@ date: 2019-08-21
 title: A Complete Pre-Commit Workflow
 subtitle: Using Husky to make an awesome git workflow
 creator: Bruno Sabot
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/1__AxYei5T1__heT9sc3Hka3xA.png
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__AxYei5T1__heT9sc3Hka3xA.png
 canonical: https://medium.com/better-programming/a-complete-pre-commit-workflow-cea6e34f0032
+lang: en
+platform: Medium
 ---
 
 <figure>
-  <img src="https://storage.cloud.google.com/brunosabot.dev/img/1__AxYei5T1__heT9sc3Hka3xA.png" alt="A practical guide to Git hooks using Husky"/>
+  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__AxYei5T1__heT9sc3Hka3xA.png" alt="A practical guide to Git hooks using Husky"/>
   <figcaption>A practical guide to Git hooks using Husky</figcaption>
 </figure>
 
@@ -23,7 +25,7 @@ The first library focused on workflow automation is [Husky](https://github.com/t
 
 Using Husky is really simple. We just need to add a new `husky` key into the `package.json` file. This new entry contains a key/value object, `hooks` which represents our Git hooks, and the script we want to execute:
 
-![Here is a very simple `package.json` file with the husky hooks. For simplicity sake and because the husky version might change, it didn’t include the `devDependencies`.](https://storage.cloud.google.com/brunosabot.dev/img/1__JUYFGIOYiHTMvgPzLE72ig.png)
+![Here is a very simple `package.json` file with the husky hooks. For simplicity sake and because the husky version might change, it didn’t include the `devDependencies`.](https://storage.googleapis.com/brunosabot.dev/img/1__JUYFGIOYiHTMvgPzLE72ig.png)
 Here is a very simple `package.json` file with the husky hooks. For simplicity sake and because the husky version might change, it didn’t include the `devDependencies`.
 
 ### Clarifying Our Needs
@@ -45,7 +47,7 @@ lint-staged is awesome because it executes the needed scripts only on modified f
 
 Same as Husky, lint-staged is a new key/value object in our `package.json` file that represents the scripts to execute.
 
-![Same as before, I have only included the interesting part of my package.json file](https://storage.cloud.google.com/brunosabot.dev/img/1__FsOI8QuZx28kau15BLGUkQ.png)
+![Same as before, I have only included the interesting part of my package.json file](https://storage.googleapis.com/brunosabot.dev/img/1__FsOI8QuZx28kau15BLGUkQ.png)
 Same as before, I have only included the interesting part of my package.json file
 
 Now, everything just looks so simple. I just need to tell Husky to use lint-staged and tell lint-staged what I need to do on my files.
@@ -68,7 +70,7 @@ And here we are, not messing with our commits anymore. 💪
 
 There are a lot of other checks we can do before any commits and also other Git hooks that we could use to improve the versioning system workflow, I’d like to hear your needs and I’d also like to see you making improvements on my workflow!
 
-![Ascending to more robust development workflow. Photo credit to me.](https://storage.cloud.google.com/brunosabot.dev/img/1__tohTAyB2gOTzOl8mmHm36Q.jpeg)
+![Ascending to more robust development workflow. Photo credit to me.](https://storage.googleapis.com/brunosabot.dev/img/1__tohTAyB2gOTzOl8mmHm36Q.jpeg)
 Ascending to more robust development workflow. Photo credit to me.
 
 ### Bonus

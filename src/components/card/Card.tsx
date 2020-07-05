@@ -24,6 +24,7 @@ interface Props {
   title: string;
   description: string;
   to?: string;
+  timeToRead?: number;
 }
 
 const Card: React.FC<Props> = ({
@@ -37,6 +38,7 @@ const Card: React.FC<Props> = ({
   subtitle,
   title,
   to,
+  timeToRead,
 }) => {
   const Composant = to ? "a" : "div";
 

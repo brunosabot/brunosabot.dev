@@ -4,17 +4,19 @@ date: 2019-07-25
 title: "Learning expedition Zenika: Ce qu'en pensent les devs"
 subtitle: La Silicon Valley, c’est le rêve américain de beaucoup de développeurs. Zenika y est allé.
 creator: Bruno Sabot
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg
 canonical: https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/
+lang: fr
+platform: Zenika
 ---
 
-![](https://storage.cloud.google.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg)
+![](https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg)
 
 La Silicon Valley, c’est le rêve américain de tout développeur qui s’intéresse de près à tout ce qui se fait de nouveau dans le monde du high-tech, c’est l’endroit ou l’on retrouve les plus grands groupes tels que Google, Apple, Facebook, Amazon, Microsoft, Netflix, Mozilla, Pivotal, etc..
 
 Grâce à la Learning Expedition de [Zenika](https://zenika.com), nous avons pu y passer une semaine et nous rendre compte par nous-mêmes de la manière dont se passent les choses dans cette partie de la Californie.
 
-![](https://storage.cloud.google.com/brunosabot.dev/img/2019-07-25-zle19-1.jpg)
+![](https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-1.jpg)
 
 ### Les inconvénients
 
@@ -31,7 +33,7 @@ En plus de cela, les jours de congés non pris lors d’un départ ne sont pas p
 
 Pour autant, les quelques Français que nous avons croisés dérogent un peu à cette règle, par habitude de nos 5 semaines et pour les périodes d’acclimatation lorsqu’ils retournent en France voir leurs familles et leurs amis.
 
-![](https://storage.cloud.google.com/brunosabot.dev/img/2019-07-25-zle19-2.jpeg)
+![](https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-2.jpeg)
 
 #### Le repas du midi vous sera offert.
 
@@ -69,7 +71,7 @@ L’endroit où l’on va passer une grande partie de notre temps lorsque l’on
 
 Slack a décidé de mettre en place trois concepts pour améliorer leur fonctionnement. Tout d’abord, un projet commence par un pre-mortem, qui consiste à faire une réunion initiale de lancement où l’équipe va définir tout ce qui pourrait mal se passer afin de mieux voir venir les problèmes et être moins impacté par les échecs. Ensuite, leurs réunions sont parfois dynamisées par un disagree & commit, où, lorsque des gens d’une même équipe ne sont pas d’accord, l’un décide de conclure la réunion en acceptant la solution de l’autre et clos la conversation en interdisant de rouvrir la discussion ; de cette manière, Slack évite les réunions aux débats stériles. Enfin, afin d’encourager les équipes à être positives, ils ajoutent le seul mot yet lorsque les collaborateurs font part de leur manque de connaissances, pour les encourager à développer leur curiosité (I don’t know how to develop a Java application YET).
 
-![](https://storage.cloud.google.com/brunosabot.dev/img/2019-07-25-zle19-3.jpg)
+![](https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-3.jpg)
 
 ### Les petits plus
 
@@ -102,7 +104,7 @@ Chez Netflix, les grabinettes sont des armoires en libre-service où l’on peut
 
 Chaque entreprise possède une zone où les employés peuvent se détendre : de la salle de sieste aux canapés, du baby foot à la salle de diffusion de séries, toutes ont leurs spécificités qui donneront un moyen de relâcher la pression.
 
-![](https://storage.cloud.google.com/brunosabot.dev/img/2019-07-25-zle19-4.jpg)
+![](https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-4.jpg)
 
 ### Conclusion
 

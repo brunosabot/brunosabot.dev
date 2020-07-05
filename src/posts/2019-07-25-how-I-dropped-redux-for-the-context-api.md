@@ -4,11 +4,13 @@ date: 2019-07-25
 title: How I dropped Redux for the Context API
 subtitle: React 16 introduced a new Context API to replace the deprecated one… Here is my way to replace Redux with this new API.
 creator: Bruno Sabot
-thumbnail: https://storage.cloud.google.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png
 canonical: https://medium.com/@brunosabot/how-i-dropped-redux-for-the-context-api-7338d481e179
+lang: en
+platform: Medium
 ---
 
-![](https://storage.cloud.google.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png)
+![](https://storage.googleapis.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png)
 
 React 16 introduced a new Context API to replace the deprecated one. OK, it’s been more than a year since the release of version 16.3, but it still seems fresh in the React ecosystem.
 
@@ -76,7 +78,7 @@ Then we’ll use the `useMemo` hook to encapsulate the `value` object. This hook
 
 And that’s all, folks! We no longer have Redux in our application and have a clean Context usage. I hope you give the Context API a try!
 
-![A new way for my React projects. Photo credit to me.](https://storage.cloud.google.com/brunosabot.dev/img/1__ucBcf14roFs8__c4Nc9Dp9Q.jpeg)
+![A new way for my React projects. Photo credit to me.](https://storage.googleapis.com/brunosabot.dev/img/1__ucBcf14roFs8__c4Nc9Dp9Q.jpeg)
 A new way for my React projects. Photo credit to me.
 
 ### **References**

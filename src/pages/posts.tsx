@@ -23,15 +23,20 @@ interface Image {
   childImageSharp: ChildImageSharp;
 }
 
-interface Post {
-  id: string;
-  date: string;
-  href: string;
-  title: string;
-  description: string;
-  image: Image;
-  language: string;
+interface Frontmatter {
+  lang: string;
   platform: string;
+  title: string;
+  path: string;
+  date: string;
+}
+
+interface Post {
+  excerpt: string;
+  image: Image;
+  id: string;
+  timeToRead: number;
+  frontmatter: Frontmatter;
 }
 
 interface Node {
@@ -39,7 +44,7 @@ interface Node {
 }
 
 interface Query {
-  allPost: Node;
+  allMarkdownRemark: Node;
 }
 
 interface Props {
@@ -48,22 +53,32 @@ interface Props {
 
 export const query = graphql`
   query PostQuery {
-    allPost {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
       nodes {
+        excerpt
+        frontmatter {
+          lang
+          platform
+          date(fromNow: true)
+          canonical
+          path
+          title
+        }
         id
-        date
-        href
+        timeToRead
         image {
           childImageSharp {
             fixed(width: 348, height: 232, webpQuality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
+              base64
+              height
+              src
+              srcSet
+              srcSetWebp
+              srcWebp
+              width
             }
           }
         }
-        language
-        platform
-        title
-        description
       }
     }
   }
@@ -77,15 +92,15 @@ const Posts: React.FC<Props> = ({ data }) => (
     />
     <main className="content content-cols">
       <PageTitle>Post list</PageTitle>
-      {data.allPost.nodes.map((post) => (
+      {data.allMarkdownRemark.nodes.map((post) => (
         <Card
           fixed={post.image.childImageSharp.fixed}
-          description={post.description}
-          icon={post.language}
-          title={post.title}
-          subtitle={post.platform}
-          date={post.date}
-          to={post.href}
+          description={post.excerpt}
+          icon={post.frontmatter.lang}
+          title={post.frontmatter.title}
+          subtitle={post.frontmatter.platform}
+          date={post.frontmatter.date}
+          to={post.frontmatter.path}
           key={post.id}
         />
       ))}

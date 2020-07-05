@@ -597,9 +597,14 @@ const makeRemoteImage = async (
   store,
   imageKey
 ) => {
-  if (node[imageKey] !== undefined) {
+  let url = node.originalImage;
+  if (url === undefined && node.frontmatter !== undefined) {
+    url = node.frontmatter.originalImage;
+  }
+
+  if (url !== undefined) {
     const fileNode = await createRemoteFileNode({
-      url: node[imageKey],
+      url,
       parentNodeId: node.id,
       createNode,
       createNodeId,
@@ -649,14 +654,7 @@ exports.onCreateNode = async ({
   createNodeId,
 }) => {
   // Posts
-  await makeRemoteImage(
-    node,
-    createNode,
-    createNodeId,
-    cache,
-    store,
-    "originalImage"
-  );
+  await makeRemoteImage(node, createNode, createNodeId, cache, store);
   // Projects
   await makeImage(node, createNode, createNodeId, cache, store, "localImage");
 };
