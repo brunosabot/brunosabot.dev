@@ -26,7 +26,7 @@
     "gatsby-remark-embed-gist": "~1.2.0",
     "gatsby-remark-images": "~3.3.19",
     "gatsby-source-filesystem": "~2.3.20",
-    "gatsby-transformer-remark": "~2.8.25",
+    "gatsby-transformer-remark": "~2.8.26",
     "gatsby-transformer-sharp": "~2.5.11",
     "prop-types": "~15.7.2",
     "react": "~16.13.1",
