@@ -37,8 +37,8 @@
   letter-spacing: -0.01em;
   line-height: 1.5;
   margin: auto;
-  max-width: 680px;
-  padding-bottom: 64px;
+  max-width: 712px;
+  padding: 0 16px 64px 16px;
 }
 .blog-post img {
   max-width: 100%;
@@ -167,4 +167,14 @@
   margin-bottom: -0.46em;
   margin-top: 2.75em;
   padding-left: 30px;
+}
+
+@media (max-width: 750px) {
+  .blog-post h1 {
+    font-size: 32px;
+  }
+  .blog-post h2 {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
