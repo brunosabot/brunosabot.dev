@@ -13,6 +13,7 @@ import IconGithubCircle from "../components/svg/IconGithubCircle";
 import IconInstagram from "../components/svg/IconInstagram";
 import IconLinkedinBox from "../components/svg/IconLinkedinBox";
 import IconMedium from "../components/svg/IconMedium";
+import IconRss from "../components/svg/IconRss";
 import IconStrava from "../components/svg/IconStrava";
 import IconTwitter from "../components/svg/IconTwitter";
 
@@ -123,6 +124,9 @@ const About: React.FC<Props> = ({ data }) => {
               name="Strava"
             >
               <IconStrava />
+            </Social>
+            <Social href="https://brunosabot.dev/rss.xml" name="RSS">
+              <IconRss />
             </Social>
           </BiographyLine>
         </div>
