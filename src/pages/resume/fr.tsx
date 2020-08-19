@@ -114,8 +114,9 @@ const About: React.FC<Props> = ({ data }) => {
         </section>
 
         <section className="resume-heading__3">
-          Je suis actuellement consultant chez Zenika Bordeaux et ne suis pas à
-          la recherche de nouvelles opportunités.
+          Consultant chez Zenika, anciennement lead Front-end chez
+          Netinteractive group, je ne suis pas à la recherche de nouvelles
+          opportunités.
         </section>
 
         <section className="resume-contact">

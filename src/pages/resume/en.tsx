@@ -114,8 +114,8 @@ const About: React.FC<Props> = ({ data }) => {
         </section>
 
         <section className="resume-heading__3">
-          Former lead Front-end at Netinteractive group, I&apos;m not looking
-          for new opportunities for now.
+          IT Consultant at Zenika, former lead Front-end at Netinteractive
+          group, I&apos;m not looking for new opportunities for now.
         </section>
 
         <section className="resume-contact">
