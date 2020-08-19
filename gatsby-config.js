@@ -17,7 +17,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-typescript",
-    "gatsby-plugin-tslint",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",

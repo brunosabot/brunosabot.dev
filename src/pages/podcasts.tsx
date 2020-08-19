@@ -1,6 +1,6 @@
 import { graphql } from "gatsby";
 import React from "react";
-import CardVideo from "../components/card/CardVideo";
+import CardPodcast from "../components/card/CardPodcast";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 import PageTitle from "../components/typography/PageTitle";
@@ -23,24 +23,24 @@ interface Image {
   childImageSharp: ChildImageSharp;
 }
 
-interface Video {
+interface Podcast {
   id: string;
   conferenceName: string;
   date: string;
   language: string;
   slides: string;
   title: string;
-  youtubeId: string;
+  url: string;
   description: string;
   image: Image;
 }
 
 interface Node {
-  nodes: Video[];
+  nodes: Podcast[];
 }
 
 interface Query {
-  allVideo: Node;
+  allPodcast: Node;
 }
 
 interface Props {
@@ -48,15 +48,16 @@ interface Props {
 }
 
 export const query = graphql`
-  query VideoQuery {
-    allVideo {
+  query PodcastQuery {
+    allPodcast {
       nodes {
         id
         date
         language
         title
-        youtubeId
+        url
         description
+        platform
         image {
           childImageSharp {
             fixed(width: 348, webpQuality: 100) {
@@ -69,28 +70,31 @@ export const query = graphql`
   }
 `;
 
-const Videos: React.FC<Props> = ({ data }) => (
+const Podcasts: React.FC<Props> = ({ data }) => (
   <Layout>
     <SEO
-      description="All the videos made by or with Bruno Sabot"
-      title="Videos - Bruno Sabot"
+      description="All the podcasts with Bruno Sabot"
+      title="Podcasts - Bruno Sabot"
     />
-    <main className="content">
-      <PageTitle>Video list</PageTitle>
-      {data.allVideo.nodes.map((video) => (
-        <CardVideo
-          fixed={video.image ? video.image.childImageSharp.fixed : undefined}
-          description={video.description}
-          language={video.language}
-          title={video.title}
-          date={video.date}
-          id={video.id}
-          key={video.id}
-          youtubeId={video.youtubeId}
+    <main className="content content-cols">
+      <PageTitle>Podcast list</PageTitle>
+      {data.allPodcast.nodes.map((podcast) => (
+        <CardPodcast
+          fixed={
+            podcast.image ? podcast.image.childImageSharp.fixed : undefined
+          }
+          description={podcast.description}
+          language={podcast.language}
+          title={podcast.title}
+          date={podcast.date}
+          id={podcast.id}
+          key={podcast.id}
+          url={podcast.url}
+          platform={podcast.platform}
         />
       ))}
     </main>
   </Layout>
 );
 
-export default Videos;
+export default Podcasts;
