@@ -25,7 +25,7 @@
     "gatsby-plugin-web-monetization": "~1.0.1",
     "gatsby-remark-embed-gist": "~1.2.0",
     "gatsby-remark-images": "~3.3.25",
-    "gatsby-source-filesystem": "~2.3.24",
+    "gatsby-source-filesystem": "~2.3.25",
     "gatsby-transformer-remark": "~2.8.28",
     "gatsby-transformer-sharp": "~2.5.13",
     "react": "~16.13.1",
