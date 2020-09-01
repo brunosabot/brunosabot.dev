@@ -10,11 +10,12 @@ COPY static ./static
 COPY src ./src
 RUN yarn build
 
-FROM node:alpine
+FROM node:12-alpine
 WORKDIR /usr/share/brunosabot/
 RUN yarn global add gatsby
 COPY package.json .
 COPY yarn.lock .
+RUN apk add --update autoconf automake file gcc jpeg libtool make musl-dev nasm pkgconf shadow tiff zlib zlib-dev
 RUN yarn install --production=true --frozen-lockfile
 COPY gatsby-browser.js .
 COPY gatsby-config.js .
