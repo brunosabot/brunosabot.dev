@@ -63,6 +63,17 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     {
       language: "en",
       platform: "Medium",
+      title: "My Journey From React to React Native",
+      href:
+        "https://medium.com/better-programming/my-journey-from-react-to-react-native-e876c31a46a4",
+      date: "2020-09-21",
+      image: "https://miro.medium.com/max/10368/0*LU6uhsVVbB9jS_o5",
+      description:
+        "I've recently started working on an Android application, and as a React developer, I made the easy choice to use and test React Native to do so because it helped me stay in my comfort zone and also gives me the opportunity to explore iOS someday.",
+    },
+    {
+      language: "en",
+      platform: "Medium",
       title: "An Opinionated Way to Structure React Apps",
       href:
         "https://medium.com/better-programming/an-opinionated-way-to-structure-react-apps-10f87bf29952",
