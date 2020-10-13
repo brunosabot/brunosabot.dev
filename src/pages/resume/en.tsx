@@ -108,9 +108,9 @@ const About: React.FC<Props> = ({ data }) => {
         </h1>
 
         <section className="resume-heading__2">
-          I had the privilege of working with companies such as Webedia,
-          Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil &amp;
-          more.
+          I had the privilege of working with companies such as Cdiscount,
+          Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil
+          &amp; more.
         </section>
 
         <section className="resume-heading__3">

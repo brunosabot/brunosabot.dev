@@ -109,8 +109,8 @@ const About: React.FC<Props> = ({ data }) => {
 
         <section className="resume-heading__2">
           J&apos;ai eu le privilège de travailler avec des sociétés comme
-          Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura
-          Brasil.
+          Cdiscount, Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain,
+          Natura Brasil.
         </section>
 
         <section className="resume-heading__3">
