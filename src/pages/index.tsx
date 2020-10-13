@@ -84,6 +84,7 @@ const About: React.FC<Props> = ({ data }) => {
             <BiographySkill>FrontEnd Developer</BiographySkill>
             <BiographySkill>React</BiographySkill>
             <BiographySkill>Vue.js</BiographySkill>
+            <BiographySkill>Node.js</BiographySkill>
             <BiographySkill>HTML</BiographySkill>
             <BiographySkill>CSS</BiographySkill>
             <BiographySkill>Performance</BiographySkill>
