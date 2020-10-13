@@ -233,7 +233,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Mission de consulting pour Banque Casino, Dotic, FATEC.",
         "Animation d'évènements Zenika (NightClazz React).",
-        "Développement Front-end, Conférences, Formations, IA.",
+        "Développement JavaScript, Conférences, Formations, IA.",
       ],
       endDate: "Actuellement",
       startDate: "Août 2017",
@@ -310,7 +310,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       details: [
         "Consulting missions for Banque Casino, Dotic, FATEC.",
         "Zenika events animation (NightClazz React).",
-        "Front-end development, conferences, training, AI.",
+        "JavaScript development, conferences, training, AI.",
       ],
       endDate: "Currently",
       startDate: "August 2017",
