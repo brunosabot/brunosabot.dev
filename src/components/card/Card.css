@@ -4,6 +4,7 @@
   border-radius: 8px;
   box-shadow: 0px 3px 6px var(--accent-color-shadow);
   color: inherit;
+  content-visibility: auto;
   cursor: unset;
   display: flex;
   flex-direction: column;

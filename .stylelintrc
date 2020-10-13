@@ -7,6 +7,9 @@
   "plugins": ["stylelint-prettier", "stylelint-order"],
   "rules": {
     "prettier/prettier": true,
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+    "property-no-unknown": [true, {
+      ignoreProperties: ["content-visibility"]
+    }]
   }
 }
