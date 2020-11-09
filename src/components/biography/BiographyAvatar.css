@@ -1,22 +1,13 @@
 .biography-avatar {
-  animation: 0.2s linear page forwards;
   border: 0 solid;
   border-radius: 80px;
   box-sizing: initial;
   height: 150px;
   margin: 0 0 32px 0;
-  opacity: 0;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 150px;
 }
 .biography-avatar:hover {
   box-shadow: 0px 0px 10px var(--accent-color);
   margin: 0 0 32px 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .biography-avatar {
-    opacity: 1;
-    transition: none;
-  }
 }

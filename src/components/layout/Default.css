@@ -124,32 +124,13 @@ a .icon-linkedin:hover {
 }
 
 .appear {
-  animation: 0.1s linear page forwards;
-  opacity: 0;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .appear {
-    animation: none;
-    opacity: 1;
-  }
-}
-@keyframes appearIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes page {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+  *,
+  *::after,
+  *::before {
+    transition: none !important;
   }
 }

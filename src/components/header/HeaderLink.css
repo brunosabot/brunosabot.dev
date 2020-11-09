@@ -26,13 +26,6 @@
   text-shadow: 0 0 3px var(--accent-color);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .header-link__link {
-    opacity: 1;
-    transition: none;
-  }
-}
-
 @media (hover: hover) {
   .header-link__link:hover {
     color: var(--accent-color);

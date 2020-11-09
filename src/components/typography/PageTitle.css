@@ -1,14 +1,10 @@
 .page-title {
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-name: appearIn;
   font-size: 28px;
   font-weight: 700;
   grid-column: 1 / -1;
   grid-row: 1;
   line-height: 36px;
   margin: 0 0 16px 0;
-  opacity: 0;
   text-align: center;
   width: 100%;
 }
