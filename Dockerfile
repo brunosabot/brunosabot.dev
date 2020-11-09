@@ -10,18 +10,8 @@ COPY static ./static
 COPY src ./src
 RUN yarn build
 
-FROM node:12-alpine
+FROM fholzer/nginx-brotli
 WORKDIR /usr/share/brunosabot/
-RUN yarn global add gatsby
-COPY package.json .
-COPY yarn.lock .
-RUN apk add --update autoconf automake file gcc jpeg libtool make musl-dev nasm pkgconf shadow tiff zlib zlib-dev
-RUN yarn install --production=true --frozen-lockfile
-COPY gatsby-browser.js .
-COPY gatsby-config.js .
-COPY gatsby-node.js .
-COPY gatsby-ssr.js .
-COPY --from=0 public public
-COPY --from=0 .cache .cache
-EXPOSE 8080
-CMD yarn serve -p 8080 -H 0.0.0.0
+COPY --from=0 public /usr/share/nginx/html
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/other.conf /etc/nginx/conf.d/other.conf

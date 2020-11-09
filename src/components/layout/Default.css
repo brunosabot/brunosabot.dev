@@ -124,7 +124,7 @@ a .icon-linkedin:hover {
 }
 
 .appear {
-  animation: 0.5s linear page forwards;
+  animation: 0.1s linear page forwards;
   opacity: 0;
 }
 

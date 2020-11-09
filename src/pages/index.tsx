@@ -76,7 +76,7 @@ const About: React.FC<Props> = ({ data }) => {
           alt="Bruno Sabot"
         />
         <div>
-          <BiographyTitle style={{ animationDelay: `0s` }}>
+          <BiographyTitle style={{ animation: `none`, opacity: 1 }}>
             I am Bruno Sabot, a Front-end developer currently living in
             Bordeaux, France.
           </BiographyTitle>

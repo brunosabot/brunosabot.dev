@@ -643,6 +643,14 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   });
 };
 
+exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
+  if (getConfig().mode === "production") {
+    actions.setWebpackConfig({
+      devtool: false,
+    });
+  }
+};
+
 const makeRemoteImage = async (
   node,
   createNode,

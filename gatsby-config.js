@@ -61,6 +61,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://brunosabot.dev/",
+        sitemap: "https://brunosabot.dev/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "UA-2395369-1",
