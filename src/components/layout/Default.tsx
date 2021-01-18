@@ -6,13 +6,11 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
-  return (
-    <div className="appear">
-      <Header />
-      <div>{children}</div>
-    </div>
-  );
-};
+const Layout: React.FC<Props> = ({ children }) => (
+  <div className="appear">
+    <Header />
+    <div>{children}</div>
+  </div>
+);
 
 export default Layout;

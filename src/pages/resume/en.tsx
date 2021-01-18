@@ -78,96 +78,94 @@ export const query = graphql`
   }
 `;
 
-const About: React.FC<Props> = ({ data }) => {
-  return (
-    <Layout>
-      <SEO
-        description="Bruno Sabot, a Front-end developer"
-        title="Bruno Sabot, Front-end developer"
-        lang="en"
-      />
+const About: React.FC<Props> = ({ data }) => (
+  <Layout>
+    <SEO
+      description="Bruno Sabot, a Front-end developer"
+      title="Bruno Sabot, Front-end developer"
+      lang="en"
+    />
 
-      <aside className="resume">
-        <section className="resume-social">
-          <div className="resume-social__heading">
-            Subscribe to these social medias for updates
-          </div>
-          <div className="resume-social__links">
-            <SocialLink to="https://twitter.com/brunosabot">Twitter</SocialLink>
-            <SocialLink to="https://github.com/brunosabot">Github</SocialLink>
-            <SocialLink to="https://www.linkedin.com/in/brunosabot">
-              LinkedIn
-            </SocialLink>
-            <SocialLink to="/">Website</SocialLink>
-          </div>
-        </section>
-
-        <h1 className="resume-heading__1">
-          I am Bruno Sabot, a Front-end developer currently living in Bordeaux,
-          France.
-        </h1>
-
-        <section className="resume-heading__2">
-          I had the privilege of working with companies such as Cdiscount,
-          Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil
-          &amp; more.
-        </section>
-
-        <section className="resume-heading__3">
-          IT Consultant at Zenika, former lead Front-end at Netinteractive
-          group, I&apos;m not looking for new opportunities for now.
-        </section>
-
-        <section className="resume-contact">
-          <a className="resume-contact__phone" href="tel:+33627918922">
-            (+33) 6 27 91 89 22
-          </a>
-          <a className="resume-contact__mail" href="mailto:bruno@sabot.me">
-            bruno@sabot.me
-          </a>
-        </section>
-      </aside>
-
-      <section className="resume-life-experiences">
-        <Link className="resume-language-tag" to="/resume/fr">
-          FR
-        </Link>
-        <article className="resume-professional-experiences">
-          <Title>Expériences professionnelles</Title>
-
-          {data.allJobs.nodes.map((job) => (
-            <Job
-              companyName={job.companyName}
-              companyWebsite={job.companyWebsite}
-              details={job.details}
-              endDate={job.endDate}
-              startDate={job.startDate}
-              job={job.job}
-              subtitles={job.subtitles}
-              key={job.id}
-            />
-          ))}
-        </article>
-
-        <article className="training">
-          <Title>Formation</Title>
-
-          {data.allTrainings.nodes.map((training) => (
-            <Job
-              companyName={training.schoolName}
-              companyWebsite={training.schoolWebsite}
-              details={training.details}
-              endDate={training.endDate}
-              startDate={training.startDate}
-              job={training.diploma}
-              subtitles={training.subtitles}
-              key={training.id}
-            />
-          ))}
-        </article>
+    <aside className="resume">
+      <section className="resume-social">
+        <div className="resume-social__heading">
+          Subscribe to these social medias for updates
+        </div>
+        <div className="resume-social__links">
+          <SocialLink to="https://twitter.com/brunosabot">Twitter</SocialLink>
+          <SocialLink to="https://github.com/brunosabot">Github</SocialLink>
+          <SocialLink to="https://www.linkedin.com/in/brunosabot">
+            LinkedIn
+          </SocialLink>
+          <SocialLink to="/">Website</SocialLink>
+        </div>
       </section>
-    </Layout>
-  );
-};
+
+      <h1 className="resume-heading__1">
+        I am Bruno Sabot, a Front-end developer currently living in Bordeaux,
+        France.
+      </h1>
+
+      <section className="resume-heading__2">
+        I had the privilege of working with companies such as Cdiscount,
+        Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil
+        &amp; more.
+      </section>
+
+      <section className="resume-heading__3">
+        IT Consultant at Zenika, former lead Front-end at Netinteractive group,
+        I&apos;m not looking for new opportunities for now.
+      </section>
+
+      <section className="resume-contact">
+        <a className="resume-contact__phone" href="tel:+33627918922">
+          (+33) 6 27 91 89 22
+        </a>
+        <a className="resume-contact__mail" href="mailto:bruno@sabot.me">
+          bruno@sabot.me
+        </a>
+      </section>
+    </aside>
+
+    <section className="resume-life-experiences">
+      <Link className="resume-language-tag" to="/resume/fr">
+        FR
+      </Link>
+      <article className="resume-professional-experiences">
+        <Title>Expériences professionnelles</Title>
+
+        {data.allJobs.nodes.map((job) => (
+          <Job
+            companyName={job.companyName}
+            companyWebsite={job.companyWebsite}
+            details={job.details}
+            endDate={job.endDate}
+            startDate={job.startDate}
+            job={job.job}
+            subtitles={job.subtitles}
+            key={job.id}
+          />
+        ))}
+      </article>
+
+      <article className="training">
+        <Title>Formation</Title>
+
+        {data.allTrainings.nodes.map((training) => (
+          <Job
+            companyName={training.schoolName}
+            companyWebsite={training.schoolWebsite}
+            details={training.details}
+            endDate={training.endDate}
+            startDate={training.startDate}
+            job={training.diploma}
+            subtitles={training.subtitles}
+            key={training.id}
+          />
+        ))}
+      </article>
+    </section>
+  </Layout>
+);
 
 export default About;

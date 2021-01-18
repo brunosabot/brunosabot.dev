@@ -19,20 +19,18 @@ interface Props {
   description: string[];
 }
 
-const DetailCard: React.FC<Props> = ({ url, image, title, description }) => {
-  return (
-    <a
-      className="detail-card"
-      href={url}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <Img fixed={image} alt={title} className="detail-card__image" />
-      {description.map((d) => (
-        <p key={d}>{d}</p>
-      ))}
-    </a>
-  );
-};
+const DetailCard: React.FC<Props> = ({ url, image, title, description }) => (
+  <a
+    className="detail-card"
+    href={url}
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <Img fixed={image} alt={title} className="detail-card__image" />
+    {description.map((d) => (
+      <p key={d}>{d}</p>
+    ))}
+  </a>
+);
 
 export default DetailCard;
