@@ -47,28 +47,25 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`
-  query TalkQuery {
-    allTalk {
-      nodes {
-        id
-        conferenceName
-        date
-        image {
-          childImageSharp {
-            fixed(width: 348, height: 196, webpQuality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
+export const query = graphql`query TalkQuery {
+  allTalk {
+    nodes {
+      id
+      conferenceName
+      date
+      image {
+        childImageSharp {
+          gatsbyImageData(width: 348, height: 196, quality: 100, layout: FIXED)
         }
-        description
-        language
-        slides
-        title
-        youtubeId
       }
+      description
+      language
+      slides
+      title
+      youtubeId
     }
   }
+}
 `;
 
 const Talks: React.FC<Props> = ({ data }) => (
@@ -81,7 +78,7 @@ const Talks: React.FC<Props> = ({ data }) => (
       <PageTitle>Talk list</PageTitle>
       {data.allTalk.nodes.map((talk) => (
         <CardTalk
-          fixed={talk.image ? talk.image.childImageSharp.fixed : undefined}
+          fixed={talk.image ? talk.image.childImageSharp.gatsbyImageData : undefined}
           description={talk.description}
           language={talk.language}
           title={talk.title}

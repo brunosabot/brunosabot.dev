@@ -47,26 +47,23 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`
-  query VideoQuery {
-    allVideo {
-      nodes {
-        id
-        date
-        language
-        title
-        youtubeId
-        description
-        image {
-          childImageSharp {
-            fixed(width: 348, webpQuality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
+export const query = graphql`query VideoQuery {
+  allVideo {
+    nodes {
+      id
+      date
+      language
+      title
+      youtubeId
+      description
+      image {
+        childImageSharp {
+          gatsbyImageData(width: 348, quality: 100, layout: FIXED)
         }
       }
     }
   }
+}
 `;
 
 const Videos: React.FC<Props> = ({ data }) => (
@@ -79,7 +76,7 @@ const Videos: React.FC<Props> = ({ data }) => (
       <PageTitle>Video list</PageTitle>
       {data.allVideo.nodes.map((video) => (
         <CardVideo
-          fixed={video.image ? video.image.childImageSharp.fixed : undefined}
+          fixed={video.image ? video.image.childImageSharp.gatsbyImageData : undefined}
           description={video.description}
           language={video.language}
           title={video.title}

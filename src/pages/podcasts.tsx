@@ -47,27 +47,24 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`
-  query PodcastQuery {
-    allPodcast {
-      nodes {
-        id
-        date
-        language
-        title
-        url
-        description
-        platform
-        image {
-          childImageSharp {
-            fixed(width: 348, webpQuality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
+export const query = graphql`query PodcastQuery {
+  allPodcast {
+    nodes {
+      id
+      date
+      language
+      title
+      url
+      description
+      platform
+      image {
+        childImageSharp {
+          gatsbyImageData(width: 348, quality: 100, layout: FIXED)
         }
       }
     }
   }
+}
 `;
 
 const Podcasts: React.FC<Props> = ({ data }) => (
@@ -81,7 +78,7 @@ const Podcasts: React.FC<Props> = ({ data }) => (
       {data.allPodcast.nodes.map((podcast) => (
         <CardPodcast
           fixed={
-            podcast.image ? podcast.image.childImageSharp.fixed : undefined
+            podcast.image ? podcast.image.childImageSharp.gatsbyImageData : undefined
           }
           description={podcast.description}
           language={podcast.language}

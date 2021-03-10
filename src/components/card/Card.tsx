@@ -1,4 +1,4 @@
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Flag from "../Flag";
 import "./Card.css";
@@ -44,7 +44,7 @@ const Card: React.FC<Props> = ({
 
   return (
     <Composant className="card" href={to}>
-      {fixed ? <Img fixed={fixed} alt={title} className="card__image" /> : null}
+      {fixed ? <GatsbyImage image={fixed} alt={title} className="card__image" /> : null}
       {image ? (
         <div
           style={{ backgroundImage: `url(${image})` }}

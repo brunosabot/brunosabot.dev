@@ -51,37 +51,34 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`
-  query PostQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
-      nodes {
-        excerpt
-        frontmatter {
-          lang
-          platform
-          date(fromNow: true)
-          canonical
-          path
-          title
-        }
-        id
-        timeToRead
-        image {
-          childImageSharp {
-            fixed(width: 348, height: 232, webpQuality: 100) {
-              base64
-              height
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-              width
-            }
-          }
+export const query = graphql`query PostQuery {
+  allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
+    nodes {
+      excerpt
+      frontmatter {
+        lang
+        platform
+        date(fromNow: true)
+        canonical
+        path
+        title
+      }
+      id
+      timeToRead
+      image {
+        childImageSharp {
+          gatsbyImageData(
+            width: 348
+            height: 232
+            quality: 100
+            placeholder: BLURRED
+            layout: FIXED
+          )
         }
       }
     }
   }
+}
 `;
 
 const Posts: React.FC<Props> = ({ data }) => (
@@ -94,7 +91,7 @@ const Posts: React.FC<Props> = ({ data }) => (
       <PageTitle>Post list</PageTitle>
       {data.allMarkdownRemark.nodes.map((post) => (
         <Card
-          fixed={post.image.childImageSharp.fixed}
+          fixed={post.image.childImageSharp.gatsbyImageData}
           description={post.excerpt}
           icon={post.frontmatter.lang}
           title={post.frontmatter.title}

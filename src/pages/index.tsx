@@ -17,16 +17,13 @@ import IconRss from "../components/svg/IconRss";
 import IconStrava from "../components/svg/IconStrava";
 import IconTwitter from "../components/svg/IconTwitter";
 
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "brunosabot.jpg" }) {
-      childImageSharp {
-        fixed(width: 150, height: 150) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
-      }
+export const query = graphql`{
+  file(relativePath: {eq: "brunosabot.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 150, height: 150, layout: FIXED)
     }
   }
+}
 `;
 
 interface Fixed {
@@ -71,7 +68,7 @@ const About: React.FC<Props> = ({ data }) => (
       }}
     >
       <BiographyAvatar
-        fixed={data.file.childImageSharp.fixed}
+        fixed={data.file.childImageSharp.gatsbyImageData}
         alt="Bruno Sabot"
       />
       <div>

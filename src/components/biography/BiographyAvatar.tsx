@@ -1,4 +1,4 @@
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import "./BiographyAvatar.css";
 
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const BiographyAvatar: React.FC<Props> = ({ alt, fixed }) => (
-  <Img className="biography-avatar" fixed={fixed} alt={alt} />
+  <GatsbyImage image={fixed} className="biography-avatar" alt={alt} />
 );
 
 export default BiographyAvatar;

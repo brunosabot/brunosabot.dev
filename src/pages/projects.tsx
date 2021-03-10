@@ -43,24 +43,21 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`
-  query ProjectQuery {
-    allProject {
-      nodes {
-        id
-        url
-        image {
-          childImageSharp {
-            fixed(width: 398) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
+export const query = graphql`query ProjectQuery {
+  allProject {
+    nodes {
+      id
+      url
+      image {
+        childImageSharp {
+          gatsbyImageData(width: 398, layout: FIXED)
         }
-        title
-        description
       }
+      title
+      description
     }
   }
+}
 `;
 
 const Projects: React.FC<Props> = ({ data }) => (
@@ -73,7 +70,7 @@ const Projects: React.FC<Props> = ({ data }) => (
       <PageTitle>Project list</PageTitle>
       {data.allProject.nodes.map((project) => (
         <DetailCard
-          image={project.image.childImageSharp.fixed}
+          image={project.image.childImageSharp.gatsbyImageData}
           title={project.title}
           description={project.description}
           url={project.url}

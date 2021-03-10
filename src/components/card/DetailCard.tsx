@@ -1,4 +1,4 @@
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import "./DetailCard.css";
 
@@ -26,7 +26,7 @@ const DetailCard: React.FC<Props> = ({ url, image, title, description }) => (
     rel="noopener noreferrer"
     target="_blank"
   >
-    <Img fixed={image} alt={title} className="detail-card__image" />
+    <GatsbyImage image={image} alt={title} className="detail-card__image" />
     {description.map((d) => (
       <p key={d}>{d}</p>
     ))}
