@@ -51,7 +51,7 @@
   width: 16px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 665px) {
   .header-link {
     height: auto;
     margin: 4px;

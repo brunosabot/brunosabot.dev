@@ -29,6 +29,7 @@ const Header: React.FC<{}> = () => {
           <HeaderLink to="/">About</HeaderLink>
           <HeaderLink to="/posts/">Posts</HeaderLink>
           <HeaderLink to="/talks/">Talks</HeaderLink>
+          <HeaderLink to="/opensource/">Open source</HeaderLink>
           <HeaderLink to="/projects/">Projects</HeaderLink>
           <HeaderLink to="/podcasts/">Podcasts</HeaderLink>
           <HeaderLink to="/videos/">Videos</HeaderLink>
