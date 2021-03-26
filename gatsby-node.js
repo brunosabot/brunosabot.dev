@@ -453,6 +453,32 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       image: "https://img.youtube.com/vi/t9XFUI_qZ3g/maxresdefault.jpg",
     },
   ];
+  const openSourceProjects = [
+    {
+      name: "brunosabot/lovelace-nonow-calendar",
+      url: "https://github.com/brunosabot/lovelace-nonow-calendar",
+    },
+    {
+      name: "brunosabot/lovelace-nonow-aqi",
+      url: "https://github.com/brunosabot/lovelace-nonow-aqi",
+    },
+    {
+      name: "brunosabot/lovelace-nonow-age",
+      url: "https://github.com/brunosabot/lovelace-nonow-age",
+    },
+    {
+      name: "brunosabot/afkalc",
+      url: "https://github.com/brunosabot/afkalc",
+    },
+    {
+      name: "brunosabot/pkdb",
+      url: "https://github.com/brunosabot/pkdb",
+    },
+    {
+      name: "brunosabot/tools-for-front",
+      url: "https://github.com/brunosabot/tools-for-front",
+    },
+  ];
 
   const podcasts = [
     {
@@ -637,6 +663,19 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       internal: {
         type: "podcast",
         contentDigest: createContentDigest(podcast),
+      },
+    };
+    actions.createNode(node);
+  });
+
+  openSourceProjects.forEach((openSourceProject) => {
+    const node = {
+      name: openSourceProject.name,
+      url: openSourceProject.url,
+      id: createNodeId(`openSourceProject-${openSourceProject.name}`),
+      internal: {
+        type: "openSourceProject",
+        contentDigest: createContentDigest(openSourceProject),
       },
     };
     actions.createNode(node);
