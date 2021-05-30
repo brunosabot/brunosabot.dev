@@ -9,5 +9,4 @@
 }
 .biography-avatar:hover {
   box-shadow: 0px 0px 10px var(--accent-color);
-  margin: 0 0 32px 0;
 }
