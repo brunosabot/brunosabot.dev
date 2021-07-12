@@ -10,7 +10,7 @@
     "@typescript-eslint/parser": "~4.25.0",
     "eslint-config-react-app": "~6.0.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "gatsby": "~3.6.0",
+    "gatsby": "~3.9.1",
     "gatsby-image": "~3.6.0",
     "gatsby-plugin-client-side-redirect": "~1.1.0",
     "gatsby-plugin-feed": "^3.6.0",
