@@ -64,8 +64,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "en",
       platform: "Medium",
       title: "My Journey From React to React Native",
-      href:
-        "https://medium.com/better-programming/my-journey-from-react-to-react-native-e876c31a46a4",
+      href: "https://medium.com/better-programming/my-journey-from-react-to-react-native-e876c31a46a4",
       date: "2020-09-21",
       image: "https://miro.medium.com/max/10368/0*LU6uhsVVbB9jS_o5",
       description:
@@ -75,8 +74,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "en",
       platform: "Medium",
       title: "An Opinionated Way to Structure React Apps",
-      href:
-        "https://medium.com/better-programming/an-opinionated-way-to-structure-react-apps-10f87bf29952",
+      href: "https://medium.com/better-programming/an-opinionated-way-to-structure-react-apps-10f87bf29952",
       date: "2020-05-05",
       image: "https://miro.medium.com/max/10528/0*maZNyBAhbf1Ol2Uj",
       description:
@@ -86,8 +84,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "en",
       platform: "Medium",
       title: "How to Debug a React Context API App",
-      href:
-        "https://medium.com/better-programming/how-to-debug-a-react-context-api-app-547b75818754",
+      href: "https://medium.com/better-programming/how-to-debug-a-react-context-api-app-547b75818754",
       date: "2020-03-17",
       image: "https://miro.medium.com/max/1200/0*fOZCyvfBcdHuXOQk",
       description:
@@ -97,8 +94,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "en",
       platform: "Medium",
       title: "New year resolutions the right way",
-      href:
-        "https://medium.com/@brunosabot/new-year-resolutions-the-right-way-de4ba67627cc",
+      href: "https://medium.com/@brunosabot/new-year-resolutions-the-right-way-de4ba67627cc",
       date: "2020-01-31",
       image: "https://miro.medium.com/max/2400/1*5X15ZdvuMGE9oQ26s6y8EA.jpeg",
       description:
@@ -108,8 +104,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "en",
       platform: "Medium",
       title: "Publish your Cloud Run App with GitHub Actions",
-      href:
-        "https://medium.com/better-programming/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4",
+      href: "https://medium.com/better-programming/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4",
       date: "2019-09-23",
       image: "https://miro.medium.com/max/7984/1*HmM_NqNjtCWw36t3Pr1DWA.jpeg",
       description:
@@ -119,8 +114,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "en",
       platform: "Medium",
       title: "Deploy Your ZEIT Now App With GitHub Actions",
-      href:
-        "https://medium.com/better-programming/deploy-your-zeit-now-app-with-github-actions-ca3977806b40",
+      href: "https://medium.com/better-programming/deploy-your-zeit-now-app-with-github-actions-ca3977806b40",
       date: "2019-09-02",
       image: "https://miro.medium.com/max/2400/1*BZ_jv-xjX_FfJR5fQH_6UQ.png",
       description:
@@ -130,8 +124,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "en",
       platform: "Medium",
       title: "A Complete Pre-Commit Workflow",
-      href:
-        "https://medium.com/better-programming/a-complete-pre-commit-workflow-cea6e34f0032",
+      href: "https://medium.com/better-programming/a-complete-pre-commit-workflow-cea6e34f0032",
       date: "2019-08-21",
       image: "https://miro.medium.com/max/1300/1*AxYei5T1-heT9sc3Hka3xA.png",
       description:
@@ -141,8 +134,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "fr",
       platform: "Blog Zenika",
       title: "Learning expedition Zenika: Ce qu'en pensent les devs",
-      href:
-        "https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/",
+      href: "https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/",
       date: "2019-07-30",
       image:
         "https://i1.wp.com/blog.zenika.com/wp-content/uploads/2019/07/Blog-Zenika-Learning-expedition-par-les-devs-1.jpg?resize=800%2C445&ssl=1",
@@ -153,8 +145,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "en",
       platform: "Medium",
       title: "How I dropped Redux for the Context API",
-      href:
-        "https://medium.com/@brunosabot/how-i-dropped-redux-for-the-context-api-7338d481e179",
+      href: "https://medium.com/@brunosabot/how-i-dropped-redux-for-the-context-api-7338d481e179",
       date: "2019-07-25",
       image: "https://miro.medium.com/max/2400/1*NyHpepOw2vFFKVFdeRvzWg.png",
       description:
@@ -227,6 +218,18 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     },
   ];
   const jobs = [
+    {
+      companyName: "Cdiscount",
+      companyWebsite: "https://www.cdiscount.com/",
+      details: [
+        "Suivi et analyse des performances du site",
+        "Support aux équipes sur les sujets web performance",
+        "Développement de produits internes (TypeScript, React)",
+      ],
+      endDate: "Actuellement",
+      startDate: "Septembre 2020",
+      job: "Consultant",
+    },
     {
       companyName: "Zenika Bordeaux",
       companyWebsite: "http://bordeaux.zenika.com",
@@ -304,6 +307,18 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
     },
   ];
   const jobsEn = [
+    {
+      companyName: "Cdiscount",
+      companyWebsite: "https://www.cdiscount.com/",
+      details: [
+        "Website performance monitoring and analysis",
+        "Team support on the web performance topics",
+        "Internal tool development (TypeScript, React)",
+      ],
+      endDate: "Currently",
+      startDate: "September 2020",
+      job: "Consultant",
+    },
     {
       companyName: "Zenika Bordeaux",
       companyWebsite: "http://bordeaux.zenika.com",
@@ -496,8 +511,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
       language: "fr",
       title:
         "Arrêter le “script” de javascript pour améliorer les performances",
-      url:
-        "https://ifttd.io/54-arreter-le-script-de-javascript-pour-ameliorer-les-performances-anthony-le-goas-et-bruno-sabot/",
+      url: "https://ifttd.io/54-arreter-le-script-de-javascript-pour-ameliorer-les-performances-anthony-le-goas-et-bruno-sabot/",
       description:
         "Javascript a connu jQuery, puis AngularJS, puis node, puis vue et react. Autrement dit le petit langage de scripting pour “animer un peu de texte” sur une page a beaucoup changé !",
       image: "https://ifttd.io/wp-content/uploads/2020/08/IFTTD-54.jpg",
