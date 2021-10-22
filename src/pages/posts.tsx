@@ -1,22 +1,13 @@
 import { graphql } from "gatsby";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import Card from "../components/card/Card";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 import PageTitle from "../components/typography/PageTitle";
 
-interface Fixed {
-  base64: string;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcSetWebp: string;
-  srcWebp: string;
-  width: number;
-}
-
 interface ChildImageSharp {
-  fixed: Fixed;
+  gatsbyImageData: IGatsbyImageData;
 }
 
 interface Image {
@@ -51,34 +42,35 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`query PostQuery {
-  allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
-    nodes {
-      excerpt
-      frontmatter {
-        lang
-        platform
-        date(fromNow: true)
-        canonical
-        path
-        title
-      }
-      id
-      timeToRead
-      image {
-        childImageSharp {
-          gatsbyImageData(
-            width: 348
-            height: 232
-            quality: 100
-            placeholder: BLURRED
-            layout: FIXED
-          )
+export const query = graphql`
+  query PostQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+      nodes {
+        excerpt
+        frontmatter {
+          lang
+          platform
+          date(fromNow: true)
+          canonical
+          path
+          title
+        }
+        id
+        timeToRead
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              width: 348
+              height: 232
+              quality: 100
+              placeholder: BLURRED
+              layout: FIXED
+            )
+          }
         }
       }
     }
   }
-}
 `;
 
 const Posts: React.FC<Props> = ({ data }) => (

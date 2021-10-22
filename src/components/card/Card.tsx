@@ -1,17 +1,7 @@
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import Flag from "../Flag";
 import "./Card.css";
-
-interface Fixed {
-  base64: string;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcSetWebp: string;
-  srcWebp: string;
-  width: number;
-}
 
 interface Props {
   actions?: React.ReactNode;
@@ -19,12 +9,11 @@ interface Props {
   date: string;
   icon: string;
   image?: string;
-  fixed?: Fixed;
+  fixed?: IGatsbyImageData;
   subtitle: string;
   title: string;
   description: string;
   to?: string;
-  timeToRead?: number;
 }
 
 const Card: React.FC<Props> = ({
@@ -38,13 +27,14 @@ const Card: React.FC<Props> = ({
   subtitle,
   title,
   to,
-  timeToRead,
 }) => {
   const Composant = to ? "a" : "div";
 
   return (
     <Composant className="card" href={to}>
-      {fixed ? <GatsbyImage image={fixed} alt={title} className="card__image" /> : null}
+      {fixed ? (
+        <GatsbyImage image={fixed} alt={title} className="card__image" />
+      ) : null}
       {image ? (
         <div
           style={{ backgroundImage: `url(${image})` }}

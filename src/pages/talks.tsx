@@ -1,22 +1,13 @@
 import { graphql } from "gatsby";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import CardTalk from "../components/card/CardTalk";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 import PageTitle from "../components/typography/PageTitle";
 
-interface Fixed {
-  base64: string;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcSetWebp: string;
-  srcWebp: string;
-  width: number;
-}
-
 interface ChildImageSharp {
-  fixed: Fixed;
+  gatsbyImageData: IGatsbyImageData;
 }
 
 interface Image {
@@ -47,25 +38,31 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`query TalkQuery {
-  allTalk {
-    nodes {
-      id
-      conferenceName
-      date
-      image {
-        childImageSharp {
-          gatsbyImageData(width: 348, height: 196, quality: 100, layout: FIXED)
+export const query = graphql`
+  query TalkQuery {
+    allTalk {
+      nodes {
+        id
+        conferenceName
+        date
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              width: 348
+              height: 196
+              quality: 100
+              layout: FIXED
+            )
+          }
         }
+        description
+        language
+        slides
+        title
+        youtubeId
       }
-      description
-      language
-      slides
-      title
-      youtubeId
     }
   }
-}
 `;
 
 const Talks: React.FC<Props> = ({ data }) => (
@@ -78,7 +75,9 @@ const Talks: React.FC<Props> = ({ data }) => (
       <PageTitle>Talk list</PageTitle>
       {data.allTalk.nodes.map((talk) => (
         <CardTalk
-          fixed={talk.image ? talk.image.childImageSharp.gatsbyImageData : undefined}
+          fixed={
+            talk.image ? talk.image.childImageSharp.gatsbyImageData : undefined
+          }
           description={talk.description}
           language={talk.language}
           title={talk.title}

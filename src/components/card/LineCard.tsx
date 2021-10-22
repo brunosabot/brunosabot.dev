@@ -7,15 +7,15 @@ interface Props {
   to?: string;
 }
 
-const LineCard: React.FC<Props> = ({
-  icon,
-  title,
-  to,
-}) => {
+const LineCard: React.FC<Props> = ({ icon, title, to }) => {
   const Composant = to ? "a" : "div";
 
   return (
-    <Composant className="line-card" href={to} target={to ? "_blank": undefined}>
+    <Composant
+      className="line-card"
+      href={to}
+      target={to ? "_blank" : undefined}
+    >
       {icon}
       {title}
     </Composant>

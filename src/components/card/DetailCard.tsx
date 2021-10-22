@@ -1,20 +1,10 @@
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import "./DetailCard.css";
 
-interface Fixed {
-  base64: string;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcSetWebp: string;
-  srcWebp: string;
-  width: number;
-}
-
 interface Props {
   url: string;
-  image: Fixed;
+  image: IGatsbyImageData;
   title: string;
   description: string[];
 }

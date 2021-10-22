@@ -23,15 +23,16 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`query OpenSourceQuery {
-  allOpenSourceProject {
-    nodes {
-      id
-      name
-      url
+export const query = graphql`
+  query OpenSourceQuery {
+    allOpenSourceProject {
+      nodes {
+        id
+        name
+        url
+      }
     }
   }
-}
 `;
 
 const OpenSources: React.FC<Props> = ({ data }) => (

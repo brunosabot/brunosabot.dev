@@ -100,7 +100,7 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
 export default BlogTemplate;
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {

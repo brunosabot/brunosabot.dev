@@ -1,22 +1,13 @@
 import { graphql } from "gatsby";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import DetailCard from "../components/card/DetailCard";
 import Layout from "../components/layout/Default";
 import SEO from "../components/Seo";
 import PageTitle from "../components/typography/PageTitle";
 
-interface Fixed {
-  base64: string;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcSetWebp: string;
-  srcWebp: string;
-  width: number;
-}
-
 interface Image {
-  fixed: Fixed;
+  gatsbyImageData: IGatsbyImageData;
 }
 
 interface File {
@@ -43,21 +34,22 @@ interface Props {
   data: Query;
 }
 
-export const query = graphql`query ProjectQuery {
-  allProject {
-    nodes {
-      id
-      url
-      image {
-        childImageSharp {
-          gatsbyImageData(width: 398, layout: FIXED)
+export const query = graphql`
+  query ProjectQuery {
+    allProject {
+      nodes {
+        id
+        url
+        image {
+          childImageSharp {
+            gatsbyImageData(width: 398, layout: FIXED)
+          }
         }
+        title
+        description
       }
-      title
-      description
     }
   }
-}
 `;
 
 const Projects: React.FC<Props> = ({ data }) => (

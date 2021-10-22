@@ -7,15 +7,8 @@ interface Props {
   url: string;
 }
 
-const CardOpensource: React.FC<Props> = ({
-  name,
-  url,
-}) => (
-  <LineCard
-    icon={<IconGithubCircle />}
-    title={name}
-    to={url}
-  />
+const CardOpensource: React.FC<Props> = ({ name, url }) => (
+  <LineCard icon={<IconGithubCircle />} title={name} to={url} />
 );
 
 export default CardOpensource;

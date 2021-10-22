@@ -709,8 +709,7 @@ const makeRemoteImage = async (
   createNode,
   createNodeId,
   cache,
-  store,
-  imageKey
+  store
 ) => {
   let url = node.originalImage;
   if (url === undefined && node.frontmatter !== undefined) {

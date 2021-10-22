@@ -1,4 +1,5 @@
 import { graphql } from "gatsby";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import BiographyAvatar from "../components/biography/BiographyAvatar";
 import BiographyCompany from "../components/biography/BiographyCompany";
@@ -17,27 +18,18 @@ import IconRss from "../components/svg/IconRss";
 import IconStrava from "../components/svg/IconStrava";
 import IconTwitter from "../components/svg/IconTwitter";
 
-export const query = graphql`{
-  file(relativePath: {eq: "brunosabot.jpg"}) {
-    childImageSharp {
-      gatsbyImageData(width: 150, height: 150, layout: FIXED)
+export const query = graphql`
+  {
+    file(relativePath: { eq: "brunosabot.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 150, height: 150, layout: FIXED)
+      }
     }
   }
-}
 `;
 
-interface Fixed {
-  base64: string;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcSetWebp: string;
-  srcWebp: string;
-  width: number;
-}
-
 interface Image {
-  fixed: Fixed;
+  gatsbyImageData: IGatsbyImageData;
 }
 
 interface File {

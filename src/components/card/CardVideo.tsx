@@ -1,17 +1,8 @@
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import IconYoutube from "../svg/IconYoutube";
 import Card from "./Card";
 import CardAction from "./CardAction";
-
-interface Fixed {
-  base64: string;
-  height: number;
-  src: string;
-  srcSet: string;
-  srcSetWebp: string;
-  srcWebp: string;
-  width: number;
-}
 
 interface Props {
   date: string;
@@ -20,7 +11,7 @@ interface Props {
   title: string;
   youtubeId: string;
   image?: string;
-  fixed?: Fixed;
+  fixed?: IGatsbyImageData;
   description: string;
 }
 
