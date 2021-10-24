@@ -6,6 +6,7 @@
   content-visibility: auto;
   cursor: unset;
   display: flex;
+  fill: var(--text-color);
   gap: 16px;
   margin: 0 auto 16px auto;
   max-width: 100%;
