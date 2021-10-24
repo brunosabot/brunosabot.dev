@@ -1,0 +1,7 @@
+.resume-title {
+  color: var(--text-reverse-color);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  margin: -6px 0;
+}

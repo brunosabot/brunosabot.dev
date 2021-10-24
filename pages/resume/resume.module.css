@@ -1,0 +1,182 @@
+.resume-body {
+  align-items: stretch;
+  display: flex;
+  height: 100vh;
+}
+
+.resume {
+  background-color: var(--background);
+  background-position: right top;
+  background-size: cover;
+  flex-basis: 40%;
+  height: 100%;
+  overflow: auto;
+  padding: 74px 80px 80px 80px;
+  position: relative;
+  width: 40%;
+}
+.resume__image {
+  background-image: url(/images/me.jpg);
+  background-position: right top;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  opacity: 0.25;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+@media (prefers-color-scheme: light) {
+  .resume__image {
+    opacity: 0.1;
+  }
+}
+.resume-language-tag {
+  border: 1px solid var(--text-reverse-color);
+  border-radius: 3px;
+  color: var(--text-reverse-color);
+  font-size: 14px;
+  line-height: 1em;
+  margin-top: -3px;
+  opacity: 0.5;
+  padding: 7px 12px;
+  position: absolute;
+  right: 80px;
+  text-decoration: none;
+  top: 80px;
+}
+.resume-social {
+  color: var(--text-medium-color);
+  font-size: 12px;
+  line-height: 24px;
+}
+.resume-social__links {
+  line-height: 24px;
+}
+.resume-heading__1 {
+  color: var(--text-color);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  margin-top: 38px;
+}
+.resume-heading__2 {
+  color: var(--text-medium-color);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-top: 28px;
+}
+.resume-heading__3 {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-top: 28px;
+}
+.resume-contact {
+  display: flex;
+  margin-top: 36px;
+}
+.resume-contact__phone {
+  color: var(--text-color);
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-right: 48px;
+  text-decoration: none;
+}
+.resume-contact__mail {
+  color: var(--accent-color);
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 48px;
+  text-decoration: none;
+}
+
+.resume-life-experiences {
+  background: var(--background-reverse);
+  flex-basis: 60%;
+  height: 100%;
+  overflow: auto;
+  padding: 80px;
+  width: 60%;
+}
+.resume-professional-experiences {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 1024px) {
+  .resume-body {
+    display: block;
+  }
+  .resume,
+  .resume-life-experiences {
+    height: auto;
+    padding-left: 140px;
+    padding-right: 140px;
+    width: 100%;
+  }
+  .resume-language-tag {
+    margin-top: -3px;
+    right: 140px;
+  }
+}
+@media (max-width: 750px) {
+  .resume-body {
+    display: block;
+  }
+  .resume,
+  .resume-life-experiences {
+    height: auto;
+    padding: 50px 20px;
+    width: 100%;
+  }
+  .resume-language-tag {
+    margin-top: 0;
+    right: 20px;
+    top: 20px;
+  }
+  .resume-heading__2 {
+    font-size: 16px;
+  }
+  .resume-heading__3 {
+    display: none;
+  }
+}
+@media print {
+  .resume-body {
+    display: block;
+  }
+  .resume,
+  .resume-life-experiences {
+    height: auto;
+    padding: 20px;
+    width: 100%;
+  }
+  .resume {
+    background-image: none;
+  }
+  .resume-language-tag {
+    display: none;
+  }
+  .resume-social {
+    display: none;
+  }
+  .resume-heading__1 {
+    color: (--text-color);
+    margin-top: 0;
+  }
+  .resume-heading__3 {
+    color: (--text-color);
+  }
+  .resume-contact__phone {
+    color: (--text-color);
+  }
+  .resume-professional-experiences {
+    margin-bottom: 40px;
+  }
+}

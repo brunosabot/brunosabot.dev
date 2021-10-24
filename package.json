@@ -1,86 +1,46 @@
 {
-  "name": "brunosabotcom",
-  "private": true,
-  "description": "Bruno Sabot's personal website",
+  "name": "brunosabot.dev",
   "version": "0.1.0",
-  "author": "Bruno Sabot <brunosabot@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 8080",
+    "lint": "next lint",
+    "lint:format": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx}\"",
+    "lint:css": "stylelint --fix components/**/*.css styles/**/*.css",
+    "lint:ts": "eslint --fix \"components/**/*.tsx\" \"lib/**/*.ts\" \"pages/**/*.tsx\""
+  },
   "dependencies": {
-    "@types/react-helmet": "~6.1.4",
-    "@typescript-eslint/eslint-plugin": "~5.1.0",
-    "@typescript-eslint/parser": "~5.1.0",
-    "eslint-config-react-app": "~6.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "gatsby": "~4.0.0",
-    "gatsby-image": "~3.11.0",
-    "gatsby-plugin-client-side-redirect": "~1.1.0",
-    "gatsby-plugin-feed": "^4.0.0",
-    "gatsby-plugin-google-analytics": "~4.0.0",
-    "gatsby-plugin-humans-txt": "~1.1.4",
-    "gatsby-plugin-image": "^2.0.0",
-    "gatsby-plugin-manifest": "~4.0.0",
-    "gatsby-plugin-offline": "~5.0.0",
-    "gatsby-plugin-react-helmet": "~5.0.0",
-    "gatsby-plugin-robots-txt": "^1.6.13",
-    "gatsby-plugin-sharp": "~4.0.0",
-    "gatsby-plugin-sitemap": "~5.0.0",
-    "gatsby-plugin-typescript": "~4.0.0",
-    "gatsby-plugin-web-monetization": "~1.2.0",
-    "gatsby-remark-embed-gist": "~1.2.1",
-    "gatsby-remark-images": "~6.0.0",
-    "gatsby-source-filesystem": "~4.0.0",
-    "gatsby-transformer-remark": "~5.0.0",
-    "gatsby-transformer-sharp": "~4.0.0",
-    "react": "~17.0.2",
-    "react-dom": "~17.0.2",
-    "react-helmet": "~6.1.0"
+    "@mdx-js/react": "^1.6.22",
+    "async-unist-util-visit": "^1.0.0",
+    "cheerio": "^1.0.0-rc.10",
+    "date-fns": "^2.25.0",
+    "gray-matter": "^4.0.3",
+    "next": "11.1.2",
+    "next-mdx-remote": "^3.0.6",
+    "next-pwa": "^5.4.0",
+    "node-fetch": "^3.0.0",
+    "parse-numeric-range": "^1.3.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sharp": "^0.29.2"
   },
   "devDependencies": {
-    "@types/react": "~17.0.31",
-    "@types/react-dom": "~17.0.10",
-    "eslint": "~8.0.1",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "~8.3.0",
-    "eslint-plugin-flowtype": "~6.1.1",
-    "eslint-plugin-import": "~2.25.2",
-    "eslint-plugin-jsx-a11y": "~6.4.1",
-    "eslint-plugin-react": "~7.26.1",
-    "eslint-plugin-react-hooks": "~4.2.0",
-    "husky": "~7.0.4",
-    "lint-staged": "~11.2.3",
-    "prettier": "~2.4.1",
-    "pretty-quick": "~3.1.1",
-    "stylelint": "~14.0.0",
-    "stylelint-config-css-modules": "~2.2.0",
-    "stylelint-config-prettier": "~9.0.3",
-    "stylelint-config-recommended": "~6.0.0",
-    "stylelint-order": "~5.0.0",
-    "stylelint-prettier": "~1.2.0",
-    "typescript": "~4.4.4"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "develop": "gatsby develop",
-    "lint:format": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx}\"",
-    "lint:css": "stylelint --fix src/**/*.css",
-    "lint:ts": "eslint --fix \"src/**/*.tsx\"",
-    "serve": "gatsby serve",
-    "start": "npm run develop",
-    "test": "react-scripts test",
-    "test:lint-staged": "cross-env CI=true react-scripts test --findRelatedTests",
-    "type-check": "tsc --noEmit",
-    "prepare": "husky install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/brunosabot/brunosabot.com"
-  },
-  "bugs": {
-    "url": "https://github.com/brunosabot/brunosabot.com/issues"
+    "@types/mdx-js__react": "^1.5.4",
+    "@types/react": "17.0.31",
+    "eslint": "8.0.1",
+    "eslint-config-next": "11.1.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.4",
+    "prettier": "^2.4.1",
+    "stylelint": "^14.0.0",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^1.2.0",
+    "typescript": "4.4.4"
   },
   "lint-staged": {
     "*.css": [
@@ -94,10 +54,5 @@
     "*.{json,md}": [
       "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

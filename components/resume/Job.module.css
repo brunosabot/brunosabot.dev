@@ -1,0 +1,29 @@
+.resume-job {
+  padding-top: 24px;
+}
+.resume-job__name {
+  color: var(--accent-reverse-text-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 34px;
+  margin: 0;
+}
+.resume-job__name-link {
+  color: inherit;
+}
+.resume-job__subtitle {
+  color: var(--text-reverse-medium-color);
+  font-size: 13px;
+  line-height: 24px;
+}
+.resume-job__detail {
+  list-style-type: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.resume-job__detail-item {
+  color: var(--text-reverse-color);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+}

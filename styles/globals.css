@@ -1,0 +1,160 @@
+body {
+  --accent-color: rgb(82, 151, 255);
+  --accent-text-color: rgb(82, 151, 255);
+  --accent-reverse-text-color: rgba(0, 80, 199);
+  --accent-color-light: rgb(82, 151, 255, 0.15);
+  --accent-color-shadow: rgb(255, 255, 255, 0.1);
+  --background: #020202;
+  --background-reverse: rgba(255, 255, 255);
+  --text-color: rgba(255, 255, 255, 0.87);
+  --text-medium-color: rgba(255, 255, 255, 0.6);
+  --text-reverse-color: rgba(0, 0, 0, 0.87);
+  --text-reverse-medium-color: rgba(0, 0, 0, 0.6);
+  --background-dp1: rgb(255, 255, 255, 0.15);
+  --background-dp2: rgb(255, 255, 255, 0.1);
+  --white: rgba(0, 0, 0, 1);
+  --code-background: rgba(255, 255, 255, 0.2);
+
+  --sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --serif: Georgia, Cambria, Times, serif;
+  --monospace: Menlo, Monaco, "Courier New", Courier, monospace;
+
+  background-image: linear-gradient(
+    180deg,
+    var(--background) 0%,
+    var(--accent-color) 1000%
+  );
+  color: var(--text-color);
+  fill: var(--text-color);
+  font-family: var(--sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+  margin: 0;
+  min-height: 100%;
+  padding: 0 0 16px 0;
+  position: relative;
+}
+body.spring {
+  --accent-color: rgb(125, 185, 54);
+  --accent-text-color: rgb(125, 185, 54);
+  --accent-reverse-text-color: rgba(63, 98, 40);
+  --accent-color-light: rgb(125, 185, 54, 0.15);
+}
+body.summer {
+  --accent-color: rgb(194, 178, 128);
+  --accent-text-color: rgb(194, 178, 128);
+  --accent-reverse-text-color: rgba(98, 86, 47);
+  --accent-color-light: rgb(194, 178, 128, 0.15);
+}
+body.fall {
+  --accent-color: rgb(233, 134, 4);
+  --accent-text-color: rgb(233, 134, 4);
+  --accent-reverse-text-color: rgba(167, 43, 5);
+  --accent-color-light: rgb(233, 134, 4, 0.15);
+}
+
+body::after {
+  background-color: var(--background);
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --accent-color: rgba(0, 80, 199);
+    --accent-text-color: rgba(0, 80, 199);
+    --accent-reverse-text-color: rgb(82, 151, 255);
+    --accent-color-light: rgb(0, 80, 199, 0.2);
+    --accent-color-shadow: rgb(0, 0, 0, 0.1);
+    --background: rgb(245, 245, 245);
+    --background-reverse: rgba(2, 2, 2);
+    --text-color: rgba(0, 0, 0, 0.87);
+    --text-medium-color: rgba(0, 0, 0, 0.6);
+    --text-reverse-color: rgba(255, 255, 255, 1);
+    --background-dp1: rgba(255, 255, 255, 1);
+    --background-dp2: rgba(0, 0, 0, 0.1);
+    --white: rgba(255, 255, 255, 1);
+    --code-background: rgba(0, 0, 0, 0.05);
+
+    background-image: linear-gradient(
+      180deg,
+      var(--background) 0%,
+      var(--accent-color) 800%
+    );
+  }
+  body.spring {
+    --accent-color: rgb(63, 98, 40);
+    --accent-text-color: rgb(63, 98, 40);
+    --accent-reverse-text-color: rgba(125, 185, 5);
+    --accent-color-light: rgb(63, 98, 40, 0.15);
+  }
+  body.summer {
+    --accent-color: rgb(98, 86, 47);
+    --accent-text-color: rgb(98, 86, 47);
+    --accent-reverse-text-color: rgba(194, 178, 128);
+    --accent-color-light: rgb(98, 86, 47, 0.15);
+  }
+  body.fall {
+    --accent-color: rgb(167, 43, 5);
+    --accent-text-color: rgb(167, 43, 5);
+    --accent-reverse-text-color: rgba(233, 134, 4);
+    --accent-color-light: rgb(167, 43, 5, 0.15);
+  }
+}
+
+html {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::after,
+  *::before {
+    transition: none !important;
+  }
+}
+
+a .icon-twitter {
+  display: block;
+  fill: var(--text-color);
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+a .icon-twitter:hover {
+  fill: #00acee;
+}
+
+a .icon-linkedin {
+  display: block;
+  fill: var(--text-color);
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+a .icon-linkedin:hover {
+  fill: #0e76a8;
+}
+
+#root {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

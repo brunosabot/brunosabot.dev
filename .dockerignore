@@ -1,11 +1,10 @@
 .git
 .github
 .gitignore
+.husky
+.next
 .prettierrc
 .stylelintrc
 .vscode
-.cache
-build
-public
 node_modules
 README.md

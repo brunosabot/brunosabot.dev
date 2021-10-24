@@ -1,0 +1,31 @@
+.detail-card {
+  background-color: var(--background-dp1);
+  border-radius: 8px;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 16px auto;
+  max-width: 100%;
+  outline: 0;
+  padding: 195px 16px 16px 16px;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  width: 400px;
+}
+.detail-card[href] {
+  cursor: pointer;
+}
+.detail-card:hover,
+.detail-card:focus {
+  box-shadow: 0 0 3px var(--accent-color);
+}
+
+.detail-card__image {
+  border-radius: 8px 8px 0 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

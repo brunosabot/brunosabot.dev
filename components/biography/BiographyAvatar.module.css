@@ -1,0 +1,9 @@
+.biography-avatar {
+  border: 0 solid;
+  border-radius: 80px;
+  box-sizing: initial;
+  height: 150px;
+  margin: 0 auto 32px auto;
+  overflow: hidden;
+  width: 150px;
+}

@@ -1,17 +1,17 @@
-FROM node:14-buster
-COPY package.json .
-COPY yarn.lock .
+FROM node:14-alpine as builder
+EXPOSE 8080
+WORKDIR /next
+COPY package.json /next
+COPY yarn.lock /next
 RUN yarn install --frozen-lockfile
-COPY gatsby-browser.js .
-COPY gatsby-config.js .
-COPY gatsby-node.js .
-COPY gatsby-ssr.js .
-COPY static ./static
-COPY src ./src
+COPY components /next/components
+COPY lib /next/lib
+COPY pages /next/pages
+COPY posts /next/posts
+COPY public /next/public
+COPY styles /next/styles
+COPY next-env.d.ts /next
+COPY next.config.js /next
+COPY tsconfig.json /next
 RUN yarn build
-
-FROM fholzer/nginx-brotli
-WORKDIR /usr/share/brunosabot/
-COPY --from=0 public /usr/share/nginx/html
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY nginx/other.conf /etc/nginx/conf.d/other.conf
+CMD yarn start
