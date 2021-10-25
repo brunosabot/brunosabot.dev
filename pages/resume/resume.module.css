@@ -16,16 +16,7 @@
   width: 40%;
 }
 .resume__image {
-  background-image: url(/images/me.jpg);
-  background-position: right top;
-  background-size: cover;
-  height: 100%;
-  left: 0;
-  opacity: 0.25;
   pointer-events: none;
-  position: absolute;
-  top: 0;
-  width: 100%;
 }
 @media (prefers-color-scheme: light) {
   .resume__image {

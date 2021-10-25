@@ -26,6 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       videos: [
         {
+          id: "1",
           date: "2020-03-09",
           language: "fr",
           title: "Un Café Avec Bruno & Manuel : CSS Flexbox",

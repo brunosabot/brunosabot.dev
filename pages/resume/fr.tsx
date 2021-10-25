@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { GetStaticProps } from "next";
 import React from "react";
 import Layout from "../../components/layout/ResumeLayout";
@@ -175,7 +176,13 @@ const Resume: React.FC<Props> = ({ jobs, trainings }) => (
     />
 
     <aside className={classes["resume"]}>
-      <div className={classes["resume__image"]}></div>
+      <Image
+        src="/images/me.jpg"
+        alt=""
+        layout="fill"
+        objectFit="cover"
+        className={classes["resume__image"]}
+      />
       <section className={classes["resume-social"]}>
         <div className={classes["resume-social__heading"]}>
           Suivez-moi sur ces réseaux sociaux

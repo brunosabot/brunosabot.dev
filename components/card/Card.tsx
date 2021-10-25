@@ -32,12 +32,12 @@ const Card: React.FC<Props> = ({
 
   return (
     <Composant className={classes["card"]} href={to}>
-      {fixed ? (
-        <Image src={fixed} alt={title} className={classes["card__image"]} />
-      ) : null}
       {image ? (
-        <div
-          style={{ backgroundImage: `url(${image})` }}
+        <Image
+          height={195}
+          width={350}
+          src={image}
+          alt={title}
           className={classes["card__image"]}
         />
       ) : null}
