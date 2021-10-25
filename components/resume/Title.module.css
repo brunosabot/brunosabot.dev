@@ -5,3 +5,8 @@
   line-height: 36px;
   margin: -6px 0;
 }
+@media print {
+  .resume-title {
+    color: var(--text-color);
+  }
+}

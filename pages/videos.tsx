@@ -46,22 +46,20 @@ const Videos: React.FC<Props> = ({ videos }) => (
       description="All the videos made by or with Bruno Sabot"
       title="Videos - Bruno Sabot"
     />
-    <main className="content">
-      <PageTitle>Video list</PageTitle>
-      {videos.map((video, index) => (
-        <CardVideo
-          image={video.image ? video.image : undefined}
-          description={video.description}
-          language={video.language}
-          title={video.title}
-          date={video.date}
-          id={video.id}
-          key={video.id}
-          youtubeId={video.youtubeId}
-          priority={index === 0}
-        />
-      ))}
-    </main>
+    <PageTitle>Video list</PageTitle>
+    {videos.map((video, index) => (
+      <CardVideo
+        image={video.image ? video.image : undefined}
+        description={video.description}
+        language={video.language}
+        title={video.title}
+        date={video.date}
+        id={video.id}
+        key={video.id}
+        youtubeId={video.youtubeId}
+        priority={index === 0}
+      />
+    ))}
   </DefaultLayout>
 );
 

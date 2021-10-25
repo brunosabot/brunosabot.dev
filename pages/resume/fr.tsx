@@ -53,6 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
           endDate: "Actuellement",
           startDate: "Septembre 2020",
           job: "Consultant",
+          subtitles: ["Régie pour Zenika"],
         },
         {
           companyName: "Zenika Bordeaux",

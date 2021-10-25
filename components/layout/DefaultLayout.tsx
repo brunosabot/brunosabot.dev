@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import classes from "./DefaultLayout.module.css";
 
@@ -7,21 +8,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<Props> = ({ type = "default", children }) => {
-  //   .content {
-  //   padding: 0 16px;
-  // }
-  // .content-cols {
-  //   display: grid;
-  //   grid-auto-rows: max-content;
-  //   grid-gap: 24px;
-  //   grid-template-columns: repeat(auto-fill, 350px);
-  //   justify-content: center;
-  //   margin: auto;
-  //   max-width: 1146px;
-  //   padding: 0 24px;
-  // }
-
+const DefaultLayout: React.FC<Props> = ({ type = "default", children }) => {
   const classNames = `${classes.content} ${
     type === "columns" ? classes["content-cols"] : ""
   }`;
@@ -30,8 +17,9 @@ const Layout: React.FC<Props> = ({ type = "default", children }) => {
     <>
       <Header />
       <main className={classNames}>{children}</main>
+      <Footer />
     </>
   );
 };
 
-export default Layout;
+export default DefaultLayout;

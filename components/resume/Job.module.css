@@ -1,5 +1,5 @@
 .resume-job {
-  padding-top: 24px;
+  padding-top: 16px;
 }
 .resume-job__name {
   color: var(--accent-reverse-text-color);
@@ -26,4 +26,15 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
+}
+@media print {
+  .resume-job__name {
+    color: var(--accent-text-color);
+  }
+  .resume-job__subtitle {
+    color: var(--text-medium-color);
+  }
+  .resume-job__detail-item {
+    color: var(--text-color);
+  }
 }

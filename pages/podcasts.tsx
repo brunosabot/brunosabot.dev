@@ -60,7 +60,7 @@ const Podcasts: React.FC<Props> = ({ podcasts }) => (
       title="Podcasts - Bruno Sabot"
     />
     <PageTitle>Podcast list</PageTitle>
-    {podcasts.map((podcast) => (
+    {podcasts.map((podcast, index) => (
       <CardPodcast
         image={podcast.image ? podcast.image : undefined}
         description={podcast.description}
@@ -71,6 +71,7 @@ const Podcasts: React.FC<Props> = ({ podcasts }) => (
         key={podcast.id}
         url={podcast.url}
         platform={podcast.platform}
+        priority={index === 0}
       />
     ))}
   </DefaultLayout>

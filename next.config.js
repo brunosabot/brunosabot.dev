@@ -3,14 +3,17 @@ const runtimeCaching = require("next-pwa/cache");
 
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({
+  poweredByHeader: false,
+  generateEtags: false,
+  reactStrictMode: true,
   pwa: {
     dest: "public",
     runtimeCaching,
     exclude: [/googletagmanager/],
     offlineGoogleAnalytics: false,
   },
-  reactStrictMode: true,
   images: {
+    minimumCacheTTL: 864000,
     domains: [
       "storage.googleapis.com",
       "lh3.googleusercontent.com",

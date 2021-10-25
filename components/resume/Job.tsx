@@ -53,14 +53,15 @@ const Job: React.FC<Props> = ({
       </div>
     ) : null}
 
-    <ul className={classes["resume-job__detail"]}>
-      {details &&
-        details.map((detail) => (
+    {details && details.length > 0 ? (
+      <ul className={classes["resume-job__detail"]}>
+        {details.map((detail) => (
           <li className={classes["resume-job__detail-item"]} key={detail}>
             {detail}
           </li>
         ))}
-    </ul>
+      </ul>
+    ) : null}
   </section>
 );
 

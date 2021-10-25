@@ -21,11 +21,6 @@ body {
   --serif: Georgia, Cambria, Times, serif;
   --monospace: Menlo, Monaco, "Courier New", Courier, monospace;
 
-  background-image: linear-gradient(
-    180deg,
-    var(--background) 0%,
-    var(--accent-color) 1000%
-  );
   color: var(--text-color);
   fill: var(--text-color);
   font-family: var(--sans-serif);
@@ -34,7 +29,6 @@ body {
   font-weight: 500;
   margin: 0;
   min-height: 100%;
-  padding: 0 0 16px 0;
   position: relative;
 }
 body.spring {
@@ -79,16 +73,11 @@ body::after {
     --text-color: rgba(0, 0, 0, 0.87);
     --text-medium-color: rgba(0, 0, 0, 0.6);
     --text-reverse-color: rgba(255, 255, 255, 1);
+    --text-reverse-medium-color: rgba(255, 255, 255, 0.6);
     --background-dp1: rgba(255, 255, 255, 1);
     --background-dp2: rgba(0, 0, 0, 0.1);
     --white: rgba(255, 255, 255, 1);
     --code-background: rgba(0, 0, 0, 0.05);
-
-    background-image: linear-gradient(
-      180deg,
-      var(--background) 0%,
-      var(--accent-color) 800%
-    );
   }
   body.spring {
     --accent-color: rgb(63, 98, 40);

@@ -54,16 +54,10 @@ const OpenSources: React.FC<Props> = ({ projects }) => (
       description="All the open sources project initiated by Bruno Sabot. Check it out!"
       title="Open Source - Bruno Sabot"
     />
-    <main className="content">
-      <PageTitle>Open source project list</PageTitle>
-      {projects.map((project) => (
-        <CardOpenSource
-          key={project.id}
-          name={project.name}
-          url={project.url}
-        />
-      ))}
-    </main>
+    <PageTitle>Open source project list</PageTitle>
+    {projects.map((project) => (
+      <CardOpenSource key={project.id} name={project.name} url={project.url} />
+    ))}
   </Layout>
 );
 

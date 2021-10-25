@@ -1,5 +1,6 @@
 .content {
-  padding: 0 16px;
+  min-height: calc(100vh - 92px - 328px);
+  padding: 0 16px 64px 16px;
 }
 .content-cols {
   display: grid;
@@ -9,5 +10,5 @@
   justify-content: center;
   margin: auto;
   max-width: 1146px;
-  padding: 0 24px;
+  padding: 0 24px 64px 24px;
 }

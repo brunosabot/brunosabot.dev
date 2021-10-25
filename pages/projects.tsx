@@ -44,19 +44,17 @@ const Projects: React.FC<Props> = ({ projects }) => (
       description="Projects imaginated and created by Bruno Sabot. Check it out!"
       title="Projects - Bruno Sabot"
     />
-    <main className="content">
-      <PageTitle>Project list</PageTitle>
-      {projects.map((project, index) => (
-        <DetailCard
-          image={project.image}
-          title={project.title}
-          description={project.description}
-          url={project.url}
-          key={project.id}
-          priority={index === 0}
-        />
-      ))}
-    </main>
+    <PageTitle>Project list</PageTitle>
+    {projects.map((project, index) => (
+      <DetailCard
+        image={project.image}
+        title={project.title}
+        description={project.description}
+        url={project.url}
+        key={project.id}
+        priority={index === 0}
+      />
+    ))}
   </DefaultLayout>
 );
 
