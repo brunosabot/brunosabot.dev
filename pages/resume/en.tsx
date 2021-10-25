@@ -172,13 +172,15 @@ const Resume: React.FC<Props> = ({ jobs, trainings }) => (
     />
 
     <aside className={classes["resume"]}>
-      <Image
-        src="/images/me.jpg"
-        alt=""
-        layout="fill"
-        objectFit="cover"
-        className={classes["resume__image"]}
-      />
+      <div className={classes["resume__image-wrapper"]}>
+        <Image
+          src="/images/me.jpg"
+          alt=""
+          layout="fill"
+          objectFit="cover"
+          className={classes["resume__image"]}
+        />
+      </div>
       <section className={classes["resume-social"]}>
         <div className={classes["resume-social__heading"]}>
           Subscribe to these social medias for updates
