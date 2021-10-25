@@ -15,6 +15,7 @@ const LineCard: React.FC<Props> = ({ icon, title, to }) => {
       className={classes["line-card"]}
       href={to}
       target={to ? "_blank" : undefined}
+      rel="noopener noreferrer"
     >
       {icon}
       {title}

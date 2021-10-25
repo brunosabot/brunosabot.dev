@@ -45,7 +45,7 @@ const Posts: React.FC<IPostsProps> = ({ posts }) => (
         title="Posts"
       />
       <PageTitle>Post list</PageTitle>
-      {posts.map((post) => (
+      {posts.map((post, index) => (
         <Card
           image={post.image}
           description={post.subtitle}
@@ -55,6 +55,7 @@ const Posts: React.FC<IPostsProps> = ({ posts }) => (
           date={formatDistanceToNow(new Date(post.date), { addSuffix: true })}
           to={post.path}
           key={post.id}
+          priority={index === 0}
         />
       ))}
     </DefaultLayout>

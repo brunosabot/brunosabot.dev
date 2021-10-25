@@ -179,6 +179,7 @@ const Resume: React.FC<Props> = ({ jobs, trainings }) => (
           layout="fill"
           objectFit="cover"
           className={classes["resume__image"]}
+          priority
         />
       </div>
       <section className={classes["resume-social"]}>

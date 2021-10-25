@@ -48,7 +48,7 @@ const Videos: React.FC<Props> = ({ videos }) => (
     />
     <main className="content">
       <PageTitle>Video list</PageTitle>
-      {videos.map((video) => (
+      {videos.map((video, index) => (
         <CardVideo
           image={video.image ? video.image : undefined}
           description={video.description}
@@ -58,6 +58,7 @@ const Videos: React.FC<Props> = ({ videos }) => (
           id={video.id}
           key={video.id}
           youtubeId={video.youtubeId}
+          priority={index === 0}
         />
       ))}
     </main>

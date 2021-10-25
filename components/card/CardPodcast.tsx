@@ -12,6 +12,7 @@ interface Props {
   image?: string;
   description: string;
   platform: string;
+  priority?: boolean;
 }
 
 const CardVideo: React.FC<Props> = ({
@@ -23,6 +24,7 @@ const CardVideo: React.FC<Props> = ({
   image,
   description,
   platform,
+  priority = false,
 }) => {
   const actions = (
     <>
@@ -42,6 +44,7 @@ const CardVideo: React.FC<Props> = ({
       date={date}
       key={id}
       actions={actions}
+      priority={priority}
     />
   );
 };

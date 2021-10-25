@@ -91,7 +91,7 @@ const Talks: React.FC<Props> = ({ talks }) => (
       title="Talks"
     />
     <PageTitle>Talk list</PageTitle>
-    {talks.map((talk) => (
+    {talks.map((talk, index) => (
       <CardTalk
         image={talk.image ? talk.image : undefined}
         description={talk.description}
@@ -103,6 +103,7 @@ const Talks: React.FC<Props> = ({ talks }) => (
         key={talk.id}
         slides={talk.slides}
         youtubeId={talk.youtubeId}
+        priority={index === 0}
       />
     ))}
   </DefaultLayout>

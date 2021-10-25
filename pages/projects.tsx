@@ -46,13 +46,14 @@ const Projects: React.FC<Props> = ({ projects }) => (
     />
     <main className="content">
       <PageTitle>Project list</PageTitle>
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <DetailCard
           image={project.image}
           title={project.title}
           description={project.description}
           url={project.url}
           key={project.id}
+          priority={index === 0}
         />
       ))}
     </main>

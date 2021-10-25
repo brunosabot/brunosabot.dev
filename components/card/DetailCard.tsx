@@ -7,9 +7,16 @@ interface Props {
   image: string;
   title: string;
   description: string[];
+  priority?: boolean;
 }
 
-const DetailCard: React.FC<Props> = ({ url, image, title, description }) => (
+const DetailCard: React.FC<Props> = ({
+  url,
+  image,
+  title,
+  description,
+  priority = false,
+}) => (
   <a
     className={classes["detail-card"]}
     href={url}
@@ -17,7 +24,13 @@ const DetailCard: React.FC<Props> = ({ url, image, title, description }) => (
     target="_blank"
   >
     <div className={classes["detail-card__image"]}>
-      <Image src={image} alt={title} height={195} width={400} />
+      <Image
+        src={image}
+        alt={title}
+        height={195}
+        width={400}
+        priority={priority}
+      />
     </div>
     {description.map((d) => (
       <p key={d}>{d}</p>

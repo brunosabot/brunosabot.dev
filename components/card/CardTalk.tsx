@@ -14,6 +14,7 @@ interface Props {
   slides: string;
   title: string;
   youtubeId?: string;
+  priority?: boolean;
 }
 
 const CardTalk: React.FC<Props> = ({
@@ -25,6 +26,7 @@ const CardTalk: React.FC<Props> = ({
   language,
   slides,
   title,
+  priority = false,
   youtubeId = null,
 }) => {
   const actions = (
@@ -54,6 +56,7 @@ const CardTalk: React.FC<Props> = ({
       date={date}
       key={id}
       actions={actions}
+      priority={priority}
     />
   );
 };
