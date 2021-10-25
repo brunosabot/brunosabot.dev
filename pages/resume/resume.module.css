@@ -19,6 +19,7 @@
   pointer-events: none;
 }
 .resume__image {
+  opacity: 0.2;
   pointer-events: none;
 }
 @media (prefers-color-scheme: light) {
