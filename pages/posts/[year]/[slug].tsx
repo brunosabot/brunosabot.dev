@@ -82,7 +82,12 @@ interface IPostsProps {
 const Posts: React.FC<IPostsProps> = ({ source, post }) => {
   return (
     <MDXProvider components={components}>
-      <SEO title={post.title} description={post.subtitle} />
+      <SEO
+        title={post.title}
+        description={post.subtitle}
+        image={post.image}
+        url={"https://brunosabot.dev/" + post.path}
+      />
       <Head>
         <link
           rel="stylesheet"

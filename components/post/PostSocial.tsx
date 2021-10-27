@@ -18,6 +18,7 @@ const Posts: React.FC<IPostsProps> = ({ title, path }) => {
         href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Share the article on Twitter"
       >
         <IconTwitter className="icon-twitter" />
       </a>
@@ -26,6 +27,7 @@ const Posts: React.FC<IPostsProps> = ({ title, path }) => {
         href={`http://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&source=brunosabot.dev`}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Share the article on LinkedIn"
       >
         <IconLinkedinBox className="icon-linkedin" />
       </a>

@@ -19,13 +19,16 @@ interface Props {
   lang?: string;
   meta?: Meta[];
   title: string;
+  image?: string;
+  url?: string;
 }
 
 const SEO: React.FC<Props> = ({
   description = "",
   lang = "en",
-  meta = [],
+  image = undefined,
   title,
+  url = undefined,
 }) => {
   const metaDescription = description || SITE_METADATA.description;
 
@@ -39,10 +42,15 @@ const SEO: React.FC<Props> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content={`website`} />
+      {url ? <meta property="og:url" content={url} /> : null}
+      <meta property="og:site_name" content="Bruno Sabot" />
+      {image ? <meta property="og:image" content={image} /> : null}
       <meta name="twitter:card" content={`summary`} />
       <meta name="twitter:creator" content={SITE_METADATA.author} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:site" content="@brunosabot" />
+      {image ? <meta name="twitter:image" content={image} /> : null}
     </Head>
   );
 };

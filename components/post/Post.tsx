@@ -1,5 +1,6 @@
 import { MDXRemote } from "next-mdx-remote";
 import React from "react";
+import readingTime from "reading-time";
 import PostAuthor from "../post/PostAuthor";
 import PostSocial from "../post/PostSocial";
 import classes from "./Post.module.css";
@@ -12,7 +13,13 @@ interface IPostProps {
 }
 
 const Post: React.FC<IPostProps> = ({ source, post }) => {
-  const timeToRead = 0;
+  const statCompiled = readingTime(source.compiledSource);
+  const statMarkdown = readingTime(post.content);
+
+  // Average to count gist time reading
+  const timeToRead = Math.round(
+    (statCompiled.minutes + statMarkdown.minutes) / 2
+  );
 
   return (
     <div className={classes["blog-post-container"]}>
