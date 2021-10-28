@@ -41,11 +41,14 @@ const SEO: React.FC<Props> = ({
       <meta property="og:locale" content={lang} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content={`website`} />
+      <meta property="og:type" content="website" />
       {url ? <meta property="og:url" content={url} /> : null}
       <meta property="og:site_name" content="Bruno Sabot" />
       {image ? <meta property="og:image" content={image} /> : null}
-      <meta name="twitter:card" content={`summary`} />
+      <meta
+        name="twitter:card"
+        content={image ? "summary_large_image" : "summary"}
+      />
       <meta name="twitter:creator" content={SITE_METADATA.author} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
