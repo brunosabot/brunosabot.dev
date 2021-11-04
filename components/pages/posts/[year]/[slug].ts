@@ -4,7 +4,7 @@ import path from "path";
 
 export const POSTS_PATH = path.join(process.cwd(), "posts");
 
-export const getStaticPaths = async () => {
+export const getPaths = async () => {
   const paths = fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path))

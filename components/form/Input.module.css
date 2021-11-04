@@ -1,0 +1,18 @@
+.Input {
+  background-color: var(--background-dp1);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-color);
+  font-size: inherit;
+  height: 48px;
+  outline: 0;
+  padding: 0 16px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+.Input:focus-visible {
+  border: 1px solid var(--accent-color);
+  box-shadow: 0 0 3px var(--accent-color);
+}
+.Input[aria-invalid="true"] {
+  border-color: var(--error-text-color);
+}

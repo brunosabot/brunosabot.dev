@@ -22,6 +22,7 @@ const Footer: React.FC<{}> = () => {
         <FooterLink to="/projects/">Projects</FooterLink>
         <FooterLink to="/podcasts/">Podcasts</FooterLink>
         <FooterLink to="/videos/">Videos</FooterLink>
+        <FooterLink to="/tools/">Tools</FooterLink>
         <FooterLink to="/resume/en/">Resume</FooterLink>
       </div>
       <div className={classes["footer__social"]}>

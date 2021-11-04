@@ -1,0 +1,18 @@
+.SvgButton {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: var(--text-reverse-color);
+  cursor: pointer;
+  display: flex;
+  font-size: inherit;
+  padding: 8px;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+}
+.SvgButton:hover {
+  background-color: var(--background-dp1);
+}
+.SvgButton svg {
+  height: 20px;
+  width: 20px;
+}

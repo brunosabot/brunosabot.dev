@@ -34,6 +34,7 @@ const Header: React.FC<{}> = () => {
           <HeaderLink to="/projects/">Projects</HeaderLink>
           <HeaderLink to="/podcasts/">Podcasts</HeaderLink>
           <HeaderLink to="/videos/">Videos</HeaderLink>
+          <HeaderLink to="/tools/">Tools</HeaderLink>
           <HeaderLink to="/resume/en/">Resume</HeaderLink>
         </div>
       </div>

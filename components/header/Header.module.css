@@ -25,7 +25,7 @@
 .header__burger-checkbox {
   display: none;
 }
-@media (max-width: 665px) {
+@media (max-width: 700px) {
   .header__burger {
     align-items: center;
     background-color: var(--accent-color);

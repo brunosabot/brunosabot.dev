@@ -1,6 +1,25 @@
 .biography-skill {
   display: inline-block;
   line-height: 1.5;
-  padding: 3px 19px 3px 3px;
+  padding: 3px 11px 3px 11px;
+  position: relative;
   white-space: nowrap;
+}
+
+.biography-skill::after {
+  color: var(--accent-color);
+  content: "·";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate3d(50%, -50%, 0);
+}
+
+.biography-skill:first-child:before {
+  color: var(--accent-color);
+  content: "·";
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
 }

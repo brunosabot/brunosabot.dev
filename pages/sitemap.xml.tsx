@@ -1,5 +1,5 @@
 import globby from "globby";
-import { getStaticPaths as PostsYearSlugResolver } from "../components/pages/posts/[year]/[slug]";
+import { getPaths as PostsYearSlugResolver } from "../components/pages/posts/[year]/[slug]";
 
 const now = new Date().toISOString();
 const DOMAIN = "https://brunosabot.dev";
@@ -60,9 +60,9 @@ async function createSitemap() {
       }
 
       const resolver = (resolvers as any)[routePath];
-      const getStaticPaths = await resolver();
+      const getPaths = await resolver();
 
-      return (getStaticPaths.paths as any[])
+      return (getPaths.paths as any[])
         .map((path) =>
           getUrlTemplate(getPathWithParams(routePath, path.params))
         )

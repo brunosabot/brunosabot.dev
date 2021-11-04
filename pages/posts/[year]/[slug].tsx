@@ -15,7 +15,7 @@ const POSTS_PATH = path.join(process.cwd(), "posts");
 
 const components = {};
 
-export { getStaticPaths } from "../../../components/pages/posts/[year]/[slug]";
+export { getPaths as getStaticPaths } from "../../../components/pages/posts/[year]/[slug]";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (

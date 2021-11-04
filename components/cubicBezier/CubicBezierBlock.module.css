@@ -1,0 +1,25 @@
+.CubicBezierBlock {
+  margin: 16px 0 0 0;
+  overflow: hidden;
+  padding: 24px;
+  position: relative;
+  text-align: center;
+}
+.Legend {
+  margin-top: 16px;
+}
+.Sample {
+  background: var(--accent-color);
+  bottom: 0;
+  height: 5px;
+  left: 0;
+  position: absolute;
+  transform: scale(0, 1);
+  transform-origin: 0 0;
+  transition-duration: 1s;
+  transition-property: "all";
+  width: 100%;
+}
+.CubicBezierBlock:hover .Sample {
+  transform: scale(1, 1);
+}
