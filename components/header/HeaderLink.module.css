@@ -70,6 +70,12 @@
     height: auto;
     margin: 4px;
   }
+  .header-link:first-child::before {
+    display: none;
+  }
+  .header-link::after {
+    display: none;
+  }
   .header-link__link {
     border-left: 4px solid transparent;
     justify-content: flex-start;
