@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import React from "react";
 import CardOpenSource from "../components/card/CardOpenSource";
-import Layout from "../components/layout/DefaultLayout";
+import DefaultLayout from "../components/layout/DefaultLayout";
 import SEO from "../components/Seo";
 import PageTitle from "../components/typography/PageTitle";
 
@@ -49,16 +49,22 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const OpenSources: React.FC<Props> = ({ projects }) => (
-  <Layout>
+  <DefaultLayout>
     <SEO
       description="All the open sources project initiated by Bruno Sabot. Check it out!"
       title="Open Source - Bruno Sabot"
     />
     <PageTitle>Open source project list</PageTitle>
-    {projects.map((project) => (
-      <CardOpenSource key={project.id} name={project.name} url={project.url} />
-    ))}
-  </Layout>
+    <div style={{ paddingTop: "24px" }}>
+      {projects.map((project) => (
+        <CardOpenSource
+          key={project.id}
+          name={project.name}
+          url={project.url}
+        />
+      ))}
+    </div>
+  </DefaultLayout>
 );
 
 export default OpenSources;

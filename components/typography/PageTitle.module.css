@@ -1,10 +1,12 @@
 .page-title {
-  font-size: 28px;
-  font-weight: 700;
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 400;
   grid-column: 1 / -1;
   grid-row: 1;
-  line-height: 36px;
-  margin: 0 0 32px 0;
+  letter-spacing: -0.01em;
+  line-height: normal;
+  margin: 8px 0;
   text-align: center;
   width: 100%;
 }

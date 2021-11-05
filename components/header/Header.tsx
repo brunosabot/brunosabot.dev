@@ -10,16 +10,15 @@ const Header: React.FC<{}> = () => {
   return (
     <header className={classNames}>
       <div className={classes["header__wrapper"]}>
-        <input
+        <div
           aria-label="Toggle menu"
           className={classes["header__burger-checkbox"]}
-          type="checkbox"
-          checked={checked}
-          onChange={() => {
+          onClick={() => {
             setChecked(!checked);
           }}
-        />
-        <div className={classes["header__burger"]} />
+        >
+          <div className={classes["header__burger"]} />
+        </div>
         <button
           aria-label="Close menu"
           className={classes["header__link-wrapper"]}

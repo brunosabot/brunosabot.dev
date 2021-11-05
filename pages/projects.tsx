@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Projects: React.FC<Props> = ({ projects }) => (
-  <DefaultLayout>
+  <DefaultLayout type="columns">
     <SEO
       description="Projects imaginated and created by Bruno Sabot. Check it out!"
       title="Projects - Bruno Sabot"

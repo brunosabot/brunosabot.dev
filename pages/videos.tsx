@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 const Videos: React.FC<Props> = ({ videos }) => (
-  <DefaultLayout>
+  <DefaultLayout type="columns">
     <SEO
       description="All the videos made by or with Bruno Sabot"
       title="Videos - Bruno Sabot"

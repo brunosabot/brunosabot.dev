@@ -17,7 +17,7 @@ function getTemplate(children: string) {
 function getUrlTemplate(path: string) {
   return `
     <url>
-      <loc>${DOMAIN}/${path}</loc>
+      <loc>${DOMAIN}${path}</loc>
       <lastmod>${now}</lastmod>
     </url>`;
 }
@@ -33,7 +33,7 @@ function getPathWithParams(path: string, params: any) {
 }
 
 const resolvers = {
-  "posts/[year]/[slug]": PostsYearSlugResolver,
+  "/posts/[year]/[slug]": PostsYearSlugResolver,
 };
 
 async function createSitemap() {
@@ -49,23 +49,20 @@ async function createSitemap() {
   const pagesData = await Promise.all(
     pages.map(async (page: string) => {
       const pagePath = page
-        .replace("./pages/", "")
+        .replace("./pages/", "/")
         .replace(".tsx", "")
-        .replace(/\/index/g, "");
+        .replace(/\/index/g, "")
+        .replace(/^index$/, "");
 
-      const routePath = pagePath === "index" ? "" : pagePath;
-
-      if (routePath.indexOf("[") === -1) {
-        return getUrlTemplate(routePath);
+      if (pagePath.indexOf("[") === -1) {
+        return getUrlTemplate(pagePath);
       }
 
-      const resolver = (resolvers as any)[routePath];
+      const resolver = (resolvers as any)[pagePath];
       const getPaths = await resolver();
 
       return (getPaths.paths as any[])
-        .map((path) =>
-          getUrlTemplate(getPathWithParams(routePath, path.params))
-        )
+        .map((path) => getUrlTemplate(getPathWithParams(pagePath, path.params)))
         .join("");
     })
   );
