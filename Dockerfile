@@ -1,4 +1,4 @@
-FROM node:14-alpine as builder
+FROM node:16-buster-slim as builder
 EXPOSE 8080
 WORKDIR /next
 COPY package.json /next
