@@ -5,7 +5,6 @@ title: Publish your Cloud Run App with GitHub Actions
 subtitle: A very fast way to deploy your application with GitHub
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__HmM__NqNjtCWw36t3Pr1DWA.jpeg
-canonical: https://medium.com/better-programming/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4
 lang: en
 platform: Medium
 ---

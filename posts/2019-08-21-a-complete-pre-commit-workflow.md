@@ -5,7 +5,6 @@ title: A Complete Pre-Commit Workflow
 subtitle: Using Husky to make an awesome git workflow
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__AxYei5T1__heT9sc3Hka3xA.png
-canonical: https://medium.com/better-programming/a-complete-pre-commit-workflow-cea6e34f0032
 lang: en
 platform: Medium
 ---

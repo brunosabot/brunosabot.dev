@@ -5,7 +5,6 @@ title: My Journey From React to React Native
 subtitle: The things that changed for me switching when from web applications to native applications
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0_LU6uhsVVbB9jS_o5.jpeg
 creator: Bruno Sabot
-canonical: https://medium.com/@brunosabot/my-journey-from-react-to-react-native-e876c31a46a4
 lang: en
 platform: Medium
 ---

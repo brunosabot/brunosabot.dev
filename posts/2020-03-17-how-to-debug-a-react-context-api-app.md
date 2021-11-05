@@ -5,7 +5,6 @@ title: How to Debug a React Context API App
 subtitle: Using the Redux DevTools extension
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg
 creator: Bruno Sabot
-canonical: https://medium.com/better-programming/how-to-debug-a-react-context-api-app-547b75818754
 lang: en
 platform: Medium
 ---

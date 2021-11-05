@@ -5,7 +5,6 @@ title: New year resolutions the right way
 subtitle: My experience on how to succeed them
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg
-canonical: https://medium.com/@brunosabot/new-year-resolutions-the-right-way-de4ba67627cc
 lang: en
 platform: Medium
 ---

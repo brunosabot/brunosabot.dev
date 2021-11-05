@@ -5,7 +5,6 @@ title: Deploy Your ZEIT Now App With GitHub Actions
 subtitle: Implement custom logic without having to create an app to perform a task
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
-canonical: https://medium.com/better-programming/deploy-your-zeit-now-app-with-github-actions-ca3977806b40
 lang: en
 platform: Medium
 ---

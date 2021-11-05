@@ -5,7 +5,6 @@ title: How I dropped Redux for the Context API
 subtitle: React 16 introduced a new Context API to replace the deprecated one… Here is my way to replace Redux with this new API.
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png
-canonical: https://medium.com/@brunosabot/how-i-dropped-redux-for-the-context-api-7338d481e179
 lang: en
 platform: Medium
 ---

@@ -5,7 +5,6 @@ title: An Opinionated Way to Structure React Apps
 subtitle: Based on my experience acquired building several big projects
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg
 creator: Bruno Sabot
-canonical: https://medium.com/p/an-opinionated-way-to-structure-react-apps-10f87bf29952
 lang: en
 platform: Medium
 ---
