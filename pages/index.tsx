@@ -9,7 +9,9 @@ import HomeLayout from "../components/layout/HomeLayout";
 import SEO from "../components/Seo";
 // import SEO from "../components/Seo";
 import IconCodepen from "../components/svg/IconCodepen";
+import IconDevTo from "../components/svg/IconDevTo";
 import IconGithubCircle from "../components/svg/IconGithubCircle";
+import IconHashnode from "../components/svg/IconHashnode";
 import IconInstagram from "../components/svg/IconInstagram";
 import IconLinkedinBox from "../components/svg/IconLinkedinBox";
 import IconMedium from "../components/svg/IconMedium";
@@ -70,6 +72,12 @@ const About: React.FC<Props> = () => (
         </Social>
         <Social href="https://medium.com/@brunosabot" name="Medium">
           <IconMedium />
+        </Social>
+        <Social href="https://dev.to/brunosabot" name="Dev.to">
+          <IconDevTo />
+        </Social>
+        <Social href="https://hashnode.com/@brunosabot" name="Hashnode">
+          <IconHashnode />
         </Social>
         <Social href="https://www.strava.com/athletes/15220263" name="Strava">
           <IconStrava />
