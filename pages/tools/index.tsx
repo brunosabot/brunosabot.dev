@@ -17,6 +17,7 @@ export default function Base64() {
         <LineCard to="/tools/bezier-curves" title="Bezier curves" />
         <LineCard to="/tools/rgb-convertor" title="Color converter" />
         <LineCard to="/tools/pretty" title="JSON prettifier" />
+        <LineCard to="/tools/photoshop-shadow" title="Photoshop shadow" />
         <LineCard to="/tools/sha" title="Sha generation" />
         <LineCard to="/tools/url-encode-decode" title="URL encode and decode" />
         <LineCard to="/tools/uuid" title="UUID and Nano ID generation" />

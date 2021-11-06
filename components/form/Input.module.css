@@ -16,3 +16,8 @@
 .Input[aria-invalid="true"] {
   border-color: var(--error-text-color);
 }
+.Input[type="checkbox"] {
+  margin: 0;
+  padding-right: 24px;
+  width: 24px;
+}
