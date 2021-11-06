@@ -91,6 +91,10 @@ export default function Timestamp() {
       />
       <PageTitle>Photoshop Shadow</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to convert shadows from the photoshop format into CSS
+        shadow, with a live visualization
+      </SimpleCard>
 
       <Columns cols={4}>
         <Label label="R">

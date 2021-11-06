@@ -146,6 +146,11 @@ export default function Timestamp() {
       />
       <PageTitle>Timestamp converter</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to convert timestamp into datetime values back and
+        forward
+      </SimpleCard>
+
       <Label label="Timestamp">
         <Input onChange={onTimestampChange} value={`${timestamp}`} />
       </Label>

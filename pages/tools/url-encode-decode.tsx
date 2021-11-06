@@ -5,6 +5,7 @@ import DefaultLayout from "../../components/layout/DefaultLayout";
 import SEO from "../../components/Seo";
 import PageTitle from "../../components/typography/PageTitle";
 import NavigationBack from "../../components/header/NavigationBack";
+import SimpleCard from "../../components/card/SimpleCard";
 
 export const encode = (value: string) =>
   encodeURIComponent(value).replace(/'/g, "%27").replace(/"/g, "%22");
@@ -40,6 +41,11 @@ export default function UrlEncodeDecode() {
       />
       <PageTitle>URL Tool</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to help you converting encoded URL strings to regular
+        strings and regular strings to encoded URL string
+      </SimpleCard>
+
       <Label label="Encoded String">
         <Input onChange={onChange(UrlType.ENCODED)} value={string} />
       </Label>

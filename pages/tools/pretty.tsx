@@ -32,6 +32,11 @@ export default function Pretty() {
       />
       <PageTitle>JSON pretty Tool</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to format JSON string into a prettier and readable
+        version of the string
+      </SimpleCard>
+
       <Label label="Unformatted string">
         <Textarea
           onChange={onChange}

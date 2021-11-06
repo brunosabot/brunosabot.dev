@@ -5,6 +5,7 @@ import DefaultLayout from "../../components/layout/DefaultLayout";
 import SEO from "../../components/Seo";
 import PageTitle from "../../components/typography/PageTitle";
 import NavigationBack from "../../components/header/NavigationBack";
+import SimpleCard from "../../components/card/SimpleCard";
 
 enum Base64Type {
   ENCODED,
@@ -41,6 +42,10 @@ export default function Base64() {
       />
       <PageTitle>Base 64 Tool</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to help you converting encoded base 64 strings to
+        regular strings and regular strings to encoded base 64 string
+      </SimpleCard>
       <Label label="Encoded String">
         <Input
           onChange={onChange(Base64Type.ENCODED)}

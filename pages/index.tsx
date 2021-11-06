@@ -10,6 +10,7 @@ import SEO from "../components/Seo";
 // import SEO from "../components/Seo";
 import IconCodepen from "../components/svg/IconCodepen";
 import IconDevTo from "../components/svg/IconDevTo";
+import IconDiscord from "../components/svg/IconDiscord";
 import IconGithubCircle from "../components/svg/IconGithubCircle";
 import IconHashnode from "../components/svg/IconHashnode";
 import IconInstagram from "../components/svg/IconInstagram";
@@ -44,6 +45,7 @@ const About: React.FC<Props> = () => (
         <BiographySkill>CSS</BiographySkill>
         <BiographySkill>Performance</BiographySkill>
         <BiographySkill>UX</BiographySkill>
+        <BiographySkill>Home automation</BiographySkill>
       </BiographyLine>
       <BiographyLine>
         <BiographyCompany href="https://www.zenika.com/">
@@ -78,6 +80,9 @@ const About: React.FC<Props> = () => (
         </Social>
         <Social href="https://hashnode.com/@brunosabot" name="Hashnode">
           <IconHashnode />
+        </Social>
+        <Social href="https://discord.gg/NSZFSdr9BW" name="Discord">
+          <IconDiscord />
         </Social>
         <Social href="https://www.strava.com/athletes/15220263" name="Strava">
           <IconStrava />

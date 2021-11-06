@@ -7,6 +7,7 @@ import PageTitle from "../../components/typography/PageTitle";
 import NavigationBack from "../../components/header/NavigationBack";
 import Columns from "../../components/Columns";
 import CubicBezierBlock from "../../components/cubicBezier/CubicBezierBlock";
+import SimpleCard from "../../components/card/SimpleCard";
 
 function enrich(value: string) {
   const intValue = parseInt(value, 10);
@@ -31,6 +32,10 @@ export default function Timestamp() {
       />
       <PageTitle>Bezier curves</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to help you try and visualize bezier curves behavior.
+        By hovering a card, you will see a live animation of the hovered curve
+      </SimpleCard>
 
       <Columns cols={2}>
         <Label label="X1">

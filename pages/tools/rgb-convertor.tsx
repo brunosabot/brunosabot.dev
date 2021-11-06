@@ -23,6 +23,7 @@ import Tr from "../../components/table/Tr";
 import Td from "../../components/table/Td";
 import SvgButton from "../../components/button/SvgButton";
 import Th from "../../components/table/Th";
+import SimpleCard from "../../components/card/SimpleCard";
 
 interface IState {
   r: string;
@@ -194,6 +195,12 @@ export default function RgbConvertor() {
       />
       <PageTitle>Color converter Tool</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to convert colors from and into the RGB, CYMK and hex
+        formats back and forward, with a saving system to keep your favorite
+        colors
+      </SimpleCard>
+
       <Columns cols={4}>
         <Label label="R">
           <Input onChange={onChange("r")} value={`${state.r}`} />
@@ -250,7 +257,6 @@ export default function RgbConvertor() {
           </thead>
           <tbody>
             {saves.map((h) => {
-              const name = hexToName(h);
               const [r, g, b] = hexToRGB(h);
               const [c, m, y, k] = hexToCMYK(h);
 

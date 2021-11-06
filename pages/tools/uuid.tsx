@@ -86,6 +86,10 @@ export default function Uuid() {
       />
       <PageTitle>UUID Tool</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to generate ids based on the UUID V1, UUID V4, UUID
+        V5 and Nano ID formats
+      </SimpleCard>
 
       <Label label="Algorithm">
         <Select onChange={onChangeType} value={uuidType}>

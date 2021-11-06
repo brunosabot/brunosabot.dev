@@ -45,6 +45,10 @@ export default function Sha() {
       />
       <PageTitle>Sha Tool</PageTitle>
       <NavigationBack />
+      <SimpleCard>
+        This tool is aimed to generate the SHA, SHA-1, SHA-224, SHA-256, SHA-384
+        and SHA-512 hash of a string
+      </SimpleCard>
 
       <Label label="Input">
         <Input onChange={onChangeInput} value={input} />
