@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import CubicBezierSvg from "./CubicBezierSvg";
 
@@ -31,12 +30,5 @@ const CubicBezierBlock: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => (
     />
   </SimpleCard>
 );
-
-CubicBezierBlock.propTypes = {
-  x1: PropTypes.number.isRequired,
-  y1: PropTypes.number.isRequired,
-  x2: PropTypes.number.isRequired,
-  y2: PropTypes.number.isRequired,
-};
 
 export default CubicBezierBlock;

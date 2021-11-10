@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const getPointX = (width: number, x: number) => x * width;
 

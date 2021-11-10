@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: https://brunosabot.dev/sitemap.xml
+
+# Host
 Host: https://brunosabot.dev
+
+# Sitemaps
+Sitemap: https://brunosabot.dev/sitemap.xml

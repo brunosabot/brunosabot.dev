@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start -p 8080",
     "lint": "next lint",
     "lint:format": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx}\"",
@@ -13,11 +14,15 @@
   },
   "dependencies": {
     "@mdx-js/react": "^1.6.22",
+    "@types/mdx-js__react": "^1.5.5",
+    "@types/react": "17.0.34",
+    "@types/sha.js": "^2.4.0",
+    "@types/uuid": "^8.3.1",
     "async-unist-util-visit": "^1.0.0",
     "cheerio": "^1.0.0-rc.10",
     "date-fns": "^2.25.0",
     "gray-matter": "^4.0.3",
-    "next": "12.0.2",
+    "next": "12.0.3",
     "next-mdx-remote": "^3.0.7",
     "next-pwa": "^5.4.0",
     "node-fetch": "^3.0.0",
@@ -27,25 +32,22 @@
     "reading-time": "^1.5.0",
     "sha.js": "^2.4.11",
     "sharp": "^0.29.2",
+    "typescript": "4.4.4",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/mdx-js__react": "^1.5.5",
-    "@types/react": "17.0.34",
-    "@types/sha.js": "^2.4.0",
-    "@types/uuid": "^8.3.1",
-    "eslint": "8.1.0",
-    "eslint-config-next": "12.0.2",
+    "eslint": "8.2.0",
+    "eslint-config-next": "12.0.3",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
+    "next-sitemap": "^1.6.203",
     "prettier": "^2.4.1",
     "stylelint": "^14.0.1",
     "stylelint-config-css-modules": "^2.3.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-order": "^5.0.0",
-    "stylelint-prettier": "^1.2.0",
-    "typescript": "4.4.4"
+    "stylelint-prettier": "^2.0.0"
   },
   "lint-staged": {
     "*.css": [
