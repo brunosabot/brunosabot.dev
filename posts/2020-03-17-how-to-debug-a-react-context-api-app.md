@@ -6,7 +6,7 @@ subtitle: Using the Redux DevTools extension
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg
 creator: Bruno Sabot
 lang: en
-platform: Medium
+platform: Blog
 ---
 
 <figure>

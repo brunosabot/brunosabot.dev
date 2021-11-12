@@ -6,7 +6,7 @@ subtitle: The things that changed for me switching when from web applications to
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0_LU6uhsVVbB9jS_o5.jpeg
 creator: Bruno Sabot
 lang: en
-platform: Medium
+platform: Blog
 ---
 
 <figure>

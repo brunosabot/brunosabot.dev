@@ -6,7 +6,7 @@ subtitle: My experience on how to succeed them
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg
 lang: en
-platform: Medium
+platform: Blog
 ---
 
 <figure>

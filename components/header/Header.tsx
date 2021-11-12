@@ -10,7 +10,7 @@ const Header: React.FC<{}> = () => {
   return (
     <header className={classNames}>
       <div className={classes["header__wrapper"]}>
-        <div
+        <button
           aria-label="Toggle menu"
           className={classes["header__burger-checkbox"]}
           onClick={() => {
@@ -18,7 +18,7 @@ const Header: React.FC<{}> = () => {
           }}
         >
           <div className={classes["header__burger"]} />
-        </div>
+        </button>
         <button
           aria-label="Close menu"
           className={classes["header__link-wrapper"]}

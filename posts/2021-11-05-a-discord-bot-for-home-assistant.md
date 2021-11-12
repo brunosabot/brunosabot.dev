@@ -6,7 +6,7 @@ subtitle: How to connect a Discord bot and Home Assistant to manage a connected 
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/linus-rogge-JAn_aeGk_TM-unsplash.jpeg
 creator: Bruno Sabot
 lang: en
-platform: Medium
+platform: Blog
 ---
 
 <figure>

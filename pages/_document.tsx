@@ -61,6 +61,7 @@ class MyDocument extends Document {
         <body className={seasonClass}>
           <Main />
           <NextScript />
+          <div id="modal-root" aria-live="assertive"></div>
         </body>
       </Html>
     );

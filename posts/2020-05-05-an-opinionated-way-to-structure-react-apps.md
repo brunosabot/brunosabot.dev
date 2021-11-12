@@ -6,7 +6,7 @@ subtitle: Based on my experience acquired building several big projects
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg
 creator: Bruno Sabot
 lang: en
-platform: Medium
+platform: Blog
 ---
 
 <figure>

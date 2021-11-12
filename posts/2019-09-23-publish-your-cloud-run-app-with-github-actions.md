@@ -6,7 +6,7 @@ subtitle: A very fast way to deploy your application with GitHub
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__HmM__NqNjtCWw36t3Pr1DWA.jpeg
 lang: en
-platform: Medium
+platform: Blog
 ---
 
 <figure>

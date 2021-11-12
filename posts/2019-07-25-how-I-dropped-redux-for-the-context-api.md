@@ -6,7 +6,7 @@ subtitle: React 16 introduced a new Context API to replace the deprecated one…
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png
 lang: en
-platform: Medium
+platform: Blog
 ---
 
 ![](https://storage.googleapis.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png)

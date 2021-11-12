@@ -22,6 +22,7 @@ module.exports = withPWA({
       "i3.ytimg.com",
       "ifttd.io",
       "img.youtube.com",
+      "images.unsplash.com",
     ],
   },
 });

@@ -7,7 +7,6 @@ import Social from "../components/biography/BiographySocial";
 import BiographyTitle from "../components/biography/BiographyTitle";
 import HomeLayout from "../components/layout/HomeLayout";
 import SEO from "../components/Seo";
-// import SEO from "../components/Seo";
 import IconCodepen from "../components/svg/IconCodepen";
 import IconDevTo from "../components/svg/IconDevTo";
 import IconDiscord from "../components/svg/IconDiscord";

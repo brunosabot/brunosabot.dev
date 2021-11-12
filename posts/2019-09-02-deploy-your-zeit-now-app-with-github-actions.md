@@ -6,7 +6,7 @@ subtitle: Implement custom logic without having to create an app to perform a ta
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
 lang: en
-platform: Medium
+platform: Blog
 ---
 
 ![](https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png)
