@@ -6,22 +6,29 @@ interface InputPropsCheckbox {
   "aria-invalid"?: boolean;
   type: "checkbox";
   checked: boolean;
+  className?: string;
 }
 
 interface InputPropsText {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
   "aria-invalid"?: boolean;
+  autoFocus?: boolean;
+  className?: string;
 }
 
 type IInputProps = InputPropsText | InputPropsCheckbox;
 
 const Input: React.FC<IInputProps> = (props) => {
+  const classNames = props.className
+    ? `${props.className} ${classes.Input}`
+    : classes.Input;
+
   if ("type" in props) {
-    return <input {...props} type={props.type} className={classes.Input} />;
+    return <input {...props} type={props.type} className={classNames} />;
   }
 
-  return <input {...props} className={classes.Input} />;
+  return <input {...props} className={classNames} />;
 };
 
 export default Input;

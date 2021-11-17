@@ -1,0 +1,12 @@
+.memory-table-game {
+  margin-top: 32px;
+}
+.memory-table-game-value {
+  color: var(--accent-color);
+}
+.memory-table-game-submit {
+  margin-top: 16px;
+}
+.memory-table-game-error {
+  border-color: var(--error-text-color);
+}

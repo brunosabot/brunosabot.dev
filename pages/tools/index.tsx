@@ -3,7 +3,7 @@ import DefaultLayout from "../../components/layout/DefaultLayout";
 import SEO from "../../components/Seo";
 import PageTitle from "../../components/typography/PageTitle";
 import LineCard from "../../components/card/LineCard";
-import { mdiCodeTags } from "@mdi/js";
+import { mdiBrain, mdiCodeTags } from "@mdi/js";
 import Svg from "../../components/svg/Svg";
 
 export default function Base64() {
@@ -34,6 +34,11 @@ export default function Base64() {
           icon={<Svg d={mdiCodeTags} />}
           to="/tools/pretty"
           title="JSON prettifier"
+        />
+        <LineCard
+          icon={<Svg d={mdiBrain} />}
+          to="/tools/memory-table"
+          title="Memory Table"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
