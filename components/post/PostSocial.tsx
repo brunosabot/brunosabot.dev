@@ -1,7 +1,7 @@
 import React from "react";
-import IconTwitter from "../svg/IconTwitter";
-import IconLinkedinBox from "../svg/IconLinkedinBox";
 import classes from "./PostSocial.module.css";
+import Svg from "../svg/Svg";
+import { mdiLinkedin, mdiTwitter } from "@mdi/js";
 
 interface IPostsProps {
   title: string;
@@ -19,8 +19,9 @@ const Posts: React.FC<IPostsProps> = ({ title, path }) => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Share the article on Twitter"
+        className={classes["blog-post-social-item"]}
       >
-        <IconTwitter className="icon-twitter" />
+        <Svg d={mdiTwitter} className="icon-twitter" />
       </a>
 
       <a
@@ -28,8 +29,9 @@ const Posts: React.FC<IPostsProps> = ({ title, path }) => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Share the article on LinkedIn"
+        className={classes["blog-post-social-item"]}
       >
-        <IconLinkedinBox className="icon-linkedin" />
+        <Svg d={mdiLinkedin} className="icon-linkedin" />
       </a>
     </div>
   );

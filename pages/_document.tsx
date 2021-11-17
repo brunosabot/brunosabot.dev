@@ -57,6 +57,7 @@ class MyDocument extends Document {
           />
           <link rel="apple-touch-icon" href="/icons/maskable_icon.png" />
           <meta name="theme-color" content={themeColor} />
+          <meta name="monetization" content="$ilp.uphold.com/zbywBq9qy3pe" />
         </Head>
         <body className={seasonClass}>
           <Main />

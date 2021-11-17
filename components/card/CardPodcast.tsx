@@ -1,5 +1,6 @@
+import { mdiPodcast } from "@mdi/js";
 import React from "react";
-import IconPodcast from "../svg/IconPodcast";
+import Svg from "../svg/Svg";
 import Card from "./Card";
 import CardAction from "./CardAction";
 
@@ -29,7 +30,7 @@ const CardVideo: React.FC<Props> = ({
   const actions = (
     <>
       <CardAction href={url} name="Podcast">
-        <IconPodcast />
+        <Svg d={mdiPodcast} />
       </CardAction>
     </>
   );

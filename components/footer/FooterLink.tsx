@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import React from "react";
-import OpenInNew from "../svg/IconOpenInNew";
 import classes from "./FooterLink.module.css";
+import { mdiOpenInNew } from "@mdi/js";
+import Svg from "../svg/Svg";
 
 interface Props {
   children: React.ReactNode;
@@ -21,7 +21,10 @@ const FooterLink: React.FC<Props> = ({ children, to }) => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <OpenInNew className={classes["footer-link__external-icon"]} />
+          <Svg
+            d={mdiOpenInNew}
+            className={classes["footer-link__external-icon"]}
+          />
           {children}
         </a>
       ) : (

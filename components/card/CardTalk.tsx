@@ -1,6 +1,6 @@
+import { mdiFilePresentationBox, mdiYoutube } from "@mdi/js";
 import React from "react";
-import IconFilePresentationBox from "../svg/IconFilePresentationBox";
-import IconYoutube from "../svg/IconYoutube";
+import Svg from "../svg/Svg";
 import Card from "./Card";
 import CardAction from "./CardAction";
 
@@ -36,12 +36,12 @@ const CardTalk: React.FC<Props> = ({
           href={`https://www.youtube.com/watch?v=${youtubeId}`}
           name="Vidéo du talk"
         >
-          <IconYoutube />
+          <Svg d={mdiYoutube} className="icon-youtube" />
         </CardAction>
       ) : null}
 
       <CardAction href={slides} name="Slides du talk">
-        <IconFilePresentationBox />
+        <Svg d={mdiFilePresentationBox} className="icon-slides" />
       </CardAction>
     </>
   );

@@ -4,3 +4,7 @@
   justify-content: space-between;
   width: 56px;
 }
+
+.blog-post-social-item svg {
+  display: block;
+}

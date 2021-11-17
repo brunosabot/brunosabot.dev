@@ -11,6 +11,7 @@ module.exports = withPWA({
     runtimeCaching,
     exclude: [/googletagmanager/],
     offlineGoogleAnalytics: false,
+    disable: process.env.NODE_ENV !== "production",
   },
   images: {
     minimumCacheTTL: 864000,

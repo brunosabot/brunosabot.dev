@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import React from "react";
-import OpenInNew from "../svg/IconOpenInNew";
 import classes from "./HeaderLink.module.css";
+import { mdiOpenInNew } from "@mdi/js";
+import Svg from "../svg/Svg";
 
 interface Props {
   children: React.ReactNode;
@@ -24,7 +25,10 @@ const HeaderLink: React.FC<Props> = ({ children, to }) => {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <OpenInNew className={classes["header-link__external-icon"]} />
+          <Svg
+            d={mdiOpenInNew}
+            className={classes["header-link__external-icon"]}
+          />
           {children}
         </a>
       ) : (

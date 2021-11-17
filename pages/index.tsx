@@ -1,3 +1,13 @@
+import {
+  mdiCodepen,
+  mdiDevTo,
+  mdiDiscord,
+  mdiGithub,
+  mdiInstagram,
+  mdiLinkedin,
+  mdiRss,
+  mdiTwitter,
+} from "@mdi/js";
 import React from "react";
 import BiographyAvatar from "../components/biography/BiographyAvatar";
 import BiographyCompany from "../components/biography/BiographyCompany";
@@ -7,17 +17,10 @@ import Social from "../components/biography/BiographySocial";
 import BiographyTitle from "../components/biography/BiographyTitle";
 import HomeLayout from "../components/layout/HomeLayout";
 import SEO from "../components/Seo";
-import IconCodepen from "../components/svg/IconCodepen";
-import IconDevTo from "../components/svg/IconDevTo";
-import IconDiscord from "../components/svg/IconDiscord";
-import IconGithubCircle from "../components/svg/IconGithubCircle";
-import IconHashnode from "../components/svg/IconHashnode";
-import IconInstagram from "../components/svg/IconInstagram";
-import IconLinkedinBox from "../components/svg/IconLinkedinBox";
-import IconMedium from "../components/svg/IconMedium";
-import IconRss from "../components/svg/IconRss";
-import IconStrava from "../components/svg/IconStrava";
-import IconTwitter from "../components/svg/IconTwitter";
+import svgHashnode from "../components/svg/hashnode";
+import svgMedium from "../components/svg/medium";
+import svgStrava from "../components/svg/strava";
+import Svg from "../components/svg/Svg";
 
 interface Props {
   [key: string]: never;
@@ -57,37 +60,40 @@ const About: React.FC<Props> = () => (
       </BiographyLine>
       <BiographyLine>
         <Social href="https://github.com/brunosabot" name="Github">
-          <IconGithubCircle />
+          <Svg d={mdiGithub} />
         </Social>
         <Social href="https://twitter.com/brunosabot" name="Twitter">
-          <IconTwitter />
+          <Svg d={mdiTwitter} />
         </Social>
         <Social href="https://instagram.com/brunosabot" name="Instagram">
-          <IconInstagram />
+          <Svg d={mdiInstagram} />
         </Social>
         <Social href="https://linkedin.com/in/brunosabot" name="LinkedIn">
-          <IconLinkedinBox />
+          <Svg d={mdiLinkedin} />
         </Social>
         <Social href="https://codepen.io/brunosabot/" name="Codepen">
-          <IconCodepen />
+          <Svg d={mdiCodepen} />
         </Social>
         <Social href="https://medium.com/@brunosabot" name="Medium">
-          <IconMedium />
+          <Svg d={svgMedium} />
         </Social>
         <Social href="https://dev.to/brunosabot" name="Dev.to">
-          <IconDevTo />
+          <Svg d={mdiDevTo} />
         </Social>
         <Social href="https://hashnode.com/@brunosabot" name="Hashnode">
-          <IconHashnode />
+          <Svg
+            d={svgHashnode}
+            pathAttributes={{ fillRule: "evenodd", clipRule: "evenodd" }}
+          />
         </Social>
         <Social href="https://discord.gg/NSZFSdr9BW" name="Discord">
-          <IconDiscord />
+          <Svg d={mdiDiscord} />
         </Social>
         <Social href="https://www.strava.com/athletes/15220263" name="Strava">
-          <IconStrava />
+          <Svg d={svgStrava} />
         </Social>
         <Social href="https://brunosabot.dev/rss.xml" name="RSS">
-          <IconRss />
+          <Svg d={mdiRss} />
         </Social>
       </BiographyLine>
     </div>

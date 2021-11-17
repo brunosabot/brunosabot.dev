@@ -1,5 +1,6 @@
+import { mdiYoutube } from "@mdi/js";
 import React from "react";
-import IconYoutube from "../svg/IconYoutube";
+import Svg from "../svg/Svg";
 import Card from "./Card";
 import CardAction from "./CardAction";
 
@@ -30,7 +31,7 @@ const CardVideo: React.FC<Props> = ({
         href={`https://www.youtube.com/watch?v=${youtubeId}`}
         name="Vidéo du talk"
       >
-        <IconYoutube />
+        <Svg d={mdiYoutube} className="icon-youtube" />
       </CardAction>
     </>
   );

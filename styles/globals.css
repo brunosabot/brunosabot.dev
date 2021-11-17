@@ -127,22 +127,24 @@ code {
   }
 }
 
-a .icon-twitter {
-  display: block;
-  fill: var(--text-color);
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
-}
-a .icon-twitter:hover {
+*:focus > .icon-twitter,
+*:hover > .icon-twitter {
   fill: #00acee;
 }
 
-a .icon-linkedin {
-  display: block;
-  fill: var(--text-color);
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
-}
-a .icon-linkedin:hover {
+*:focus > .icon-linkedin,
+*:hover > .icon-linkedin {
   fill: #0e76a8;
+}
+
+*:focus > .icon-slides,
+*:hover > .icon-slides {
+  fill: #f4b400;
+}
+
+*:focus > .icon-youtube,
+*:hover > .icon-youtube {
+  fill: #ff0000;
 }
 
 #root {
