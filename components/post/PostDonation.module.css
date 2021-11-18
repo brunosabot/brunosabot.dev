@@ -1,0 +1,7 @@
+.PostDonation {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--serif);
+  gap: 8px;
+  text-align: center;
+}

@@ -10,6 +10,10 @@ import Post from "../../../components/post/Post";
 import gist from "../../../lib/gist";
 import { GetStaticProps } from "next";
 import SEO from "../../../components/Seo";
+import Paypal from "../../../components/donate/Paypal";
+import PostDonation from "../../../components/post/PostDonation";
+import Patreon from "../../../components/donate/Patreon";
+import BuyMeACoffee from "../../../components/donate/BuyMeACoffee";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
 
@@ -101,6 +105,12 @@ const Posts: React.FC<IPostsProps> = ({ source, post }) => {
           </Head>
         ) : null}
         <Post post={post} source={source} />
+        <PostDonation>
+          You liked the post? Consider donating!
+          <Paypal />
+          <Patreon />
+          <BuyMeACoffee />
+        </PostDonation>
       </DefaultLayout>
     </MDXProvider>
   );

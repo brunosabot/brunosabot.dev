@@ -1,0 +1,22 @@
+.Pateron {
+  align-items: center;
+  background-color: #ff424d;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #ffffff;
+  font-family: var(--sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  gap: 8px;
+  padding: 8px 12px 8px 8px;
+  text-decoration: none;
+}
+.Pateron svg {
+  border-right: 1px solid #ffffff;
+  height: 16px;
+  padding-right: 8px;
+  width: 24px;
+}
