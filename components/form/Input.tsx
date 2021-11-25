@@ -17,7 +17,16 @@ interface InputPropsText {
   className?: string;
 }
 
-type IInputProps = InputPropsText | InputPropsCheckbox;
+interface InputPropsNumber {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  "aria-invalid"?: boolean;
+  autoFocus?: boolean;
+  className?: string;
+  type: "number";
+}
+
+type IInputProps = InputPropsText | InputPropsCheckbox | InputPropsNumber;
 
 const Input: React.FC<IInputProps> = (props) => {
   const classNames = props.className

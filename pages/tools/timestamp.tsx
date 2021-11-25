@@ -52,51 +52,54 @@ export default function Timestamp() {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
 
-      setTimestamp(parseInt(value, 10));
+      setTimestamp(parseInt(value || "0", 10));
     },
     []
   );
 
-  const onYearChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
+  const onYearChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = e.target;
 
-    const d = new Date(timestamp);
-    d.setUTCFullYear(parseInt(value, 10));
-
-    setTimestamp(d.getTime());
-  }, []);
+      const d = new Date(timestamp);
+      d.setUTCFullYear(parseInt(value || "1970", 10));
+      setTimestamp(d.getTime());
+    },
+    [timestamp]
+  );
 
   const onMonthChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
 
       const d = new Date(timestamp);
-      d.setUTCMonth(parseInt(value, 10) - 1);
+      d.setUTCMonth(parseInt(value || "1", 10) - 1);
 
       setTimestamp(d.getTime());
     },
-    []
+    [timestamp]
   );
 
-  const onDayChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
+  const onDayChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = e.target;
 
-    const d = new Date(timestamp);
-    d.setUTCDate(parseInt(value, 10));
-
-    setTimestamp(d.getTime());
-  }, []);
+      const d = new Date(timestamp);
+      d.setUTCDate(parseInt(value || "1", 10));
+      setTimestamp(d.getTime());
+    },
+    [timestamp]
+  );
 
   const onHoursChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
 
       const d = new Date(timestamp);
-      d.setUTCHours(parseInt(value, 10));
-
+      d.setUTCHours(parseInt(value || "0", 10));
       setTimestamp(d.getTime());
     },
-    []
+    [timestamp]
   );
 
   const onMinutesChange = useCallback(
@@ -104,11 +107,10 @@ export default function Timestamp() {
       const { value } = e.target;
 
       const d = new Date(timestamp);
-      d.setUTCMinutes(parseInt(value, 10));
-
+      d.setUTCMinutes(parseInt(value || "0", 10));
       setTimestamp(d.getTime());
     },
-    []
+    [timestamp]
   );
 
   const onSecondsChange = useCallback(
@@ -116,11 +118,10 @@ export default function Timestamp() {
       const { value } = e.target;
 
       const d = new Date(timestamp);
-      d.setUTCSeconds(parseInt(value, 10));
-
+      d.setUTCSeconds(parseInt(value || "0", 10));
       setTimestamp(d.getTime());
     },
-    []
+    [timestamp]
   );
 
   const onMillisecondsChange = useCallback(
@@ -128,11 +129,10 @@ export default function Timestamp() {
       const { value } = e.target;
 
       const d = new Date(timestamp);
-      d.setUTCMilliseconds(parseInt(value, 10));
-
+      d.setUTCMilliseconds(parseInt(value || "0", 10));
       setTimestamp(d.getTime());
     },
-    []
+    [timestamp]
   );
 
   const { year, month, day, hours, minutes, seconds, milliseconds } =
@@ -152,36 +152,52 @@ export default function Timestamp() {
       </SimpleCard>
 
       <Label label="Timestamp">
-        <Input onChange={onTimestampChange} value={`${timestamp}`} />
+        <Input
+          type="number"
+          onChange={onTimestampChange}
+          value={`${timestamp}`}
+        />
       </Label>
 
       <Columns cols={3}>
         <Label label="Year">
-          <Input onChange={onYearChange} value={`${year}`} />
+          <Input type="number" onChange={onYearChange} value={`${year}`} />
         </Label>
 
         <Label label="Month">
-          <Input onChange={onMonthChange} value={`${month}`} />
+          <Input type="number" onChange={onMonthChange} value={`${month}`} />
         </Label>
 
         <Label label="Day">
-          <Input onChange={onDayChange} value={`${day}`} />
+          <Input type="number" onChange={onDayChange} value={`${day}`} />
         </Label>
 
         <Label label="Hours">
-          <Input onChange={onHoursChange} value={`${hours}`} />
+          <Input type="number" onChange={onHoursChange} value={`${hours}`} />
         </Label>
 
         <Label label="Minutes">
-          <Input onChange={onMinutesChange} value={`${minutes}`} />
+          <Input
+            type="number"
+            onChange={onMinutesChange}
+            value={`${minutes}`}
+          />
         </Label>
 
         <Label label="Seconds">
-          <Input onChange={onSecondsChange} value={`${seconds}`} />
+          <Input
+            type="number"
+            onChange={onSecondsChange}
+            value={`${seconds}`}
+          />
         </Label>
 
         <Label label="Milliseconds">
-          <Input onChange={onMillisecondsChange} value={`${milliseconds}`} />
+          <Input
+            type="number"
+            onChange={onMillisecondsChange}
+            value={`${milliseconds}`}
+          />
         </Label>
       </Columns>
 
