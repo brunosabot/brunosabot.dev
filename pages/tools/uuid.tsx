@@ -48,35 +48,25 @@ export default function Uuid() {
 
   const onChangeType = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
-      const value = e.target.value as UuidType;
-
-      setUuidType(value);
-      console.log(value, namespace);
-      createUuid(value, name, namespace);
+      setUuidType(e.target.value as UuidType);
     },
     []
   );
 
   const onChangeName = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-
-    setName(value);
-    createUuid(uuidType, value, namespace);
+    setName(e.target.value);
   }, []);
 
   const onChangeNamespace = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value;
-
-      setNamespace(value);
-      createUuid(uuidType, name, value);
+      setNamespace(e.target.value);
     },
     []
   );
 
   useEffect(() => {
     createUuid(uuidType, name, namespace);
-  }, []);
+  }, [createUuid, name, namespace, uuidType]);
 
   return (
     <DefaultLayout type="short">

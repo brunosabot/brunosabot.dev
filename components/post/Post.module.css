@@ -93,6 +93,7 @@
   text-decoration-color: var(--accent-color);
 }
 .blog-post p {
+  content-visibility: auto;
   line-height: 32px;
 }
 .blog-post pre {
@@ -118,6 +119,7 @@
   padding: 2px 4px;
 }
 .blog-post ul {
+  content-visibility: auto;
   margin: 0;
   padding: 0;
 }
@@ -126,9 +128,8 @@
   letter-spacing: -0.003em;
   line-height: 32px;
   list-style-type: disc;
-  margin-bottom: -0.46em;
   margin-left: 30px;
-  margin-top: 1.05em;
+  margin-top: 0.59em;
   padding-left: 0px;
 }
 .blog-post blockquote {
@@ -142,6 +143,9 @@
   margin-bottom: -0.46em;
   margin-top: 2.75em;
   padding-left: 30px;
+}
+.blog-post :global(.gist) {
+  margin: 32px 0;
 }
 
 @media (max-width: 750px) {

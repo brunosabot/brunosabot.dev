@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
 import React from "react";
+import readingTime from "reading-time";
 import DefaultLayout from "../../../components/layout/DefaultLayout";
 import Post from "../../../components/post/Post";
 import gist from "../../../lib/gist";
@@ -59,11 +60,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     scope: postWithStringDate.data,
   });
 
+  const statCompiled = readingTime(mdxSource.compiledSource);
+  const statMarkdown = readingTime(post.content);
+
+  // Average to count gist time reading
+  const timeToRead = Math.round(
+    (statCompiled.minutes + statMarkdown.minutes) / 2
+  );
+
   return {
     props: {
       source: mdxSource,
       post: {
-        content: post.content,
         creator: post.data.creator,
         canonical: post.data.canonical ?? null,
         image: post.data.originalImage,
@@ -71,9 +79,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         title: post.data.title,
         date: post.data.date.toString(),
         subtitle: post.data.subtitle,
-        platform: post.data.platform,
         lang: post.data.lang,
         path: post.data.path,
+        timeToRead,
       },
     },
   };
