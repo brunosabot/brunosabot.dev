@@ -51,6 +51,7 @@ If you add this piece of code at the very top of your application, you will see 
 Now that we are able to start a session, the next step is to send an event to the DevTools, which is as simple as we can imagine: The `devTools` object that we have created also provides a `send` method, which takes a name and some data to illustrate the change.
 
 Basically, it looks like this:
+
 `gist:brunosabot/4fbaec5625c6bd0b77ce233a0be6836c`
 
 <figcaption>Simple Redux DevTools connection with a sent event.</figcaption>
