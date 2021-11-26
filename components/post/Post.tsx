@@ -1,11 +1,17 @@
 import { MDXRemote } from "next-mdx-remote";
 import React from "react";
+import Image from "next/image";
 import readingTime from "reading-time";
 import PostAuthor from "../post/PostAuthor";
 import PostSocial from "../post/PostSocial";
 import classes from "./Post.module.css";
 
-const components = {};
+const components = {
+  img: (props: { src: string; alt: string }) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img {...props} src={props.src} alt={props.alt} loading="lazy" />
+  ),
+};
 
 interface IPostProps {
   post: any;
@@ -35,6 +41,20 @@ const Post: React.FC<IPostProps> = ({ source, post }) => {
           />
           <PostSocial title={post.title} path={post.path} />
         </div>
+
+        <figure>
+          <Image
+            priority
+            src={post.image}
+            alt={post.imageAlt.replace(/<[^>]*>/g, "")}
+            layout="responsive"
+            objectFit="cover"
+            height="408"
+            width="680"
+          />
+          <figcaption dangerouslySetInnerHTML={{ __html: post.imageAlt }} />
+        </figure>
+
         <MDXRemote {...source} components={components} />
       </div>
     </div>

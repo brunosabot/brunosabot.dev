@@ -4,15 +4,11 @@ date: 2021-11-12
 title: Build an Easy Popup System With React
 subtitle: Demystifying the way to create a simple, customisable, and accessible popup system with React
 originalImage: https://images.unsplash.com/photo-1624571033882-bf93a56b6b2e
+originalImageAlt: Photo by <a href="https://unsplash.com/@windows">Windows</a> on <a href="https://unsplash.com">Unsplash</a>.
 creator: Bruno Sabot
 lang: en
 platform: Blog
 ---
-
-<figure>
-  <img src="https://images.unsplash.com/photo-1624571033882-bf93a56b6b2e" alt="Photo by Windows on Unsplash."/>
-  <figcaption>Photo by <a href="https://unsplash.com/@windows">Windows</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
-</figure>
 
 ### Concerns About Existing Systems
 

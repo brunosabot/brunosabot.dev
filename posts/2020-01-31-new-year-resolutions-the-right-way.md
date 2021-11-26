@@ -5,14 +5,10 @@ title: New year resolutions the right way
 subtitle: My experience on how to succeed them
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg
+originalImageAlt: Congratulations on completed new year resolutions  —  Photo by me
 lang: en
 platform: Blog
 ---
-
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg" alt="Congratulations on completed new year resolutions — Photo by me"/>
-  <figcaption>Congratulations on completed new year resolutions — Photo by me</figcaption>
-</figure>
 
 _tl;dr: Imagine your resolution for the next year, make little steps and start them whenever you feel ready._
 

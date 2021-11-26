@@ -20,13 +20,6 @@ const Paypal: React.FC<IPaypalProps> = () => {
         <Svg d={svgPaypal} />
         Donate with PayPal
       </button>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        alt=""
-        src="https://www.paypal.com/en_FR/i/scr/pixel.gif"
-        width="1"
-        height="1"
-      />
     </form>
   );
 };

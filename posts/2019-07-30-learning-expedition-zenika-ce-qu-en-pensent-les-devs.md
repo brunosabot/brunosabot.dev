@@ -10,8 +10,6 @@ lang: fr
 platform: Zenika
 ---
 
-![](https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg)
-
 La Silicon Valley, c’est le rêve américain de tout développeur qui s’intéresse de près à tout ce qui se fait de nouveau dans le monde du high-tech, c’est l’endroit ou l’on retrouve les plus grands groupes tels que Google, Apple, Facebook, Amazon, Microsoft, Netflix, Mozilla, Pivotal, etc..
 
 Grâce à la Learning Expedition de [Zenika](https://zenika.com), nous avons pu y passer une semaine et nous rendre compte par nous-mêmes de la manière dont se passent les choses dans cette partie de la Californie.

@@ -4,15 +4,11 @@ date: 2020-03-17
 title: How to Debug a React Context API App
 subtitle: Using the Redux DevTools extension
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg
+originalImageAlt: Photo by <a href="https://unsplash.com/@barnimages">Barn Images</a> on <a href="https://unsplash.com">Unsplash</a>.
 creator: Bruno Sabot
 lang: en
 platform: Blog
 ---
-
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg" alt="Photo by Barn Images on Unsplash."/>
-  <figcaption>Photo by <a href="https://unsplash.com/@barnimages">Barn Images</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
-</figure>
 
 Some time ago, I shared how [I dropped Redux for the Context API](https://medium.com/better-programming/how-i-dropped-redux-for-the-context-api-7338d481e179) when I’m creating a React application. The post got some great feedback, but I also had some people saying that it’s pretty hard to debug compared to the [Redux DevTools](https://github.com/reduxjs/redux-devtools) and asking me if there is an easy method to do it.
 
@@ -48,10 +44,7 @@ To make the session permanent when you are developing your app, you will need a 
 
 If you add this piece of code at the very top of your application, you will see the startup session in the Redux DevTools that you can identify with the `@@INIT` event that pops in.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__1__Ee__Cxvnmx1bAgstmX3jA.png" alt="The INIT event that pops in."/>
-  <figcaption>The INIT event that pops in.</figcaption>
-</figure>
+![The INIT event that pops in.](https://storage.googleapis.com/brunosabot.dev/img/1__1__Ee__Cxvnmx1bAgstmX3jA.png)
 
 ### Sending Events to the DevTools
 
@@ -78,10 +71,7 @@ The usage is now pretty simple in the application. We need to call the `useRedux
 
 <figcaption>Look how useReduxDevtools is called on line 10.</figcaption>
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__ZRD7PZ36M__dTOFaRBU6aRQ.png" alt="And voilà, our Context API inside Redux DevTools!"/>
-  <figcaption>And voilà, our Context API inside Redux DevTools!</figcaption>
-</figure>
+![And voilà, our Context API inside Redux DevTools!](https://storage.googleapis.com/brunosabot.dev/img/1__ZRD7PZ36M__dTOFaRBU6aRQ.png)
 
 Now when we are calling the `setTheme` method, it pops in the DevTools so you can inspect what is going on!
 

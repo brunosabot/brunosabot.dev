@@ -9,8 +9,6 @@ lang: en
 platform: Blog
 ---
 
-![](https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png)
-
 I recently got access to [GitHub Actions](https://github.com/features/actions) and I decided to test it with a simple deployment in [ZEIT Now](https://zeit.co/home). My first steps were to look at [this wonderful post](https://medium.com/peerigon/how-to-continuously-deploy-a-cra-using-github-actions-and-zeit-f7bbd3b60da3) from [Leonhard Melzer](https://medium.com/@leomelzer).
 
 It contains a lot of useful information but, unfortunately, it uses the old workflow syntax, which is now deprecated in favor of [YAML](https://yaml.org/). I spent a lot of time making the conversion, so here is an post on how I achieved it with a `yml` file.

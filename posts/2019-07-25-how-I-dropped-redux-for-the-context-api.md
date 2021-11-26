@@ -9,8 +9,6 @@ lang: en
 platform: Blog
 ---
 
-![](https://storage.googleapis.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png)
-
 React 16 introduced a new Context API to replace the deprecated one. OK, it’s been more than a year since the release of version 16.3, but it still seems fresh in the React ecosystem.
 
 This new API came with the promise to solve a lot of problems with the previous experimental way to use contexts. To me, it did a lot more; it changed the way I make React applications. This is the story of how I managed it.

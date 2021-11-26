@@ -67,6 +67,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         creator: post.data.creator,
         canonical: post.data.canonical ?? null,
         image: post.data.originalImage,
+        imageAlt: post.data.originalImageAlt ?? "",
         title: post.data.title,
         date: post.data.date.toString(),
         subtitle: post.data.subtitle,
@@ -94,9 +95,18 @@ const Posts: React.FC<IPostsProps> = ({ source, post }) => {
       />
       <Head>
         <link
-          rel="stylesheet"
+          rel="preload"
           href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css"
+          as="style"
+          // @ts-ignore
+          onLoad="this.onload=null;this.rel='stylesheet'"
         />
+        <noscript>
+          <link
+            rel="stylesheet"
+            href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css"
+          />
+        </noscript>
       </Head>
       <DefaultLayout>
         {post.canonical ? (

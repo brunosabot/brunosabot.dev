@@ -5,14 +5,10 @@ title: A Complete Pre-Commit Workflow
 subtitle: Using Husky to make an awesome git workflow
 creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__AxYei5T1__heT9sc3Hka3xA.png
+originalImageAlt: A practical guide to Git hooks using Husky
 lang: en
 platform: Blog
 ---
-
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__AxYei5T1__heT9sc3Hka3xA.png" alt="A practical guide to Git hooks using Husky"/>
-  <figcaption>A practical guide to Git hooks using Husky</figcaption>
-</figure>
 
 ### What Is This All About?
 

@@ -4,15 +4,11 @@ date: 2020-09-21
 title: My Journey From React to React Native
 subtitle: The things that changed for me switching when from web applications to native applications
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0_LU6uhsVVbB9jS_o5.jpeg
+originalImageAlt: Photo by <a href="https://unsplash.com/@mukukostudio">Mukuko Studio</a> on <a href="https://unsplash.com">Unsplash</a>.
 creator: Bruno Sabot
 lang: en
 platform: Blog
 ---
-
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/0_LU6uhsVVbB9jS_o5.jpeg" alt="Photo by Dayne Topkin on Unsplash."/>
-  <figcaption>Photo by <a href="https://unsplash.com/@mukukostudio">Mukuko Studio</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
-</figure>
 
 I’ve recently started working on an Android application, and as a React developer, I made the easy choice to use and test [React Native](https://reactnative.dev/) to do so because it helped me stay in my comfort zone and also gives me the opportunity to explore iOS someday.
 

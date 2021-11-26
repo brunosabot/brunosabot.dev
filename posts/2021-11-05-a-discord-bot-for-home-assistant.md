@@ -4,15 +4,11 @@ date: 2021-11-05
 title: A Discord bot for Home Assistant
 subtitle: How to connect a Discord bot and Home Assistant to manage a connected home
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/linus-rogge-JAn_aeGk_TM-unsplash.jpeg
+originalImageAlt: Photo by <a href="https://unsplash.com/@linuscodes">Linus Rogge</a> on <a href="https://unsplash.com">Unsplash</a>.
 creator: Bruno Sabot
 lang: en
 platform: Blog
 ---
-
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/linus-rogge-JAn_aeGk_TM-unsplash.jpeg" alt="Photo by Linus Rogge on Unsplash."/>
-  <figcaption>Photo by <a href="https://unsplash.com/@linuscodes">Linus Rogge</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
-</figure>
 
 ### A bit of context
 
@@ -37,43 +33,28 @@ First of all, I need a Home Assistant instance, which in my case is installed on
 
 To create a bot, you need to go to the [Discord developer dashboard](https://discord.com/developers/applications) and click on the _New Application_ button to create your bot. Choose a name, _Home Assistant_ for example, and click _Create_ .
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_0Zz1E4924H7u7ChJsANZqg.png" alt="Use the purple “New Application” button" />
-  <figcaption>Use the purple “New Application” button</figcaption>
-</figure>
+![Use the purple “New Application” button](https://storage.googleapis.com/brunosabot.dev/img/1_0Zz1E4924H7u7ChJsANZqg.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_ac-MpDUvhoJE4JUXsGhDrg.png" alt="Add the application name and click Create" />
-  <figcaption>Add the application name and click Create</figcaption>
-</figure>
+![Add the application name and click Create](https://storage.googleapis.com/brunosabot.dev/img/1_ac-MpDUvhoJE4JUXsGhDrg.png)
 
 In the application screen that follows next, feel free to change the name, the application icon or to fill the application description, then head to the _OAuth2_ menu on the left.
 
 In this menu, you need to get and save for later your App’s _client ID_ . This ID will be needed later to activate the bot on your server.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_i-vohVPcDmImtYijOAMtmg.png" alt="Gather your client ID for later usage" />
-  <figcaption>Gather your client ID for later usage</figcaption>
-</figure>
+![Gather your client ID for later usage](https://storage.googleapis.com/brunosabot.dev/img/1_i-vohVPcDmImtYijOAMtmg.png)
 
 Now you have your Client ID, we can head to the Bot menu to make the final configuration step of our application.
 
 Once you are on the page, just click on the _Add bot_ button and confirm the bot creation after having carefully read the consequences on the confirmation popup.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_ot9Na96nJhxfBgbF_V7mtg.png" alt="Click the left “Bot” menu, then click the “Add bot” button" />
-  <figcaption>Click the left “Bot” menu, then click the “Add bot” button</figcaption>
-</figure>
+![Click the left “Bot” menu, then click the “Add bot” button](https://storage.googleapis.com/brunosabot.dev/img/1_ot9Na96nJhxfBgbF_V7mtg.png)
 
 In the newly created bot, you will be able to customise its name and its picture, but the most important part is to gather the bot token and keep it somewhere. You should so far have saved two things : the application _Client ID_ and this _Token_.
 
 Keep in mind that this token needs to be absolutely secret.
 **Anyone that get yours will be able to collect and send messages on behalf of your bot.**
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_eaUdfCIte-eC07lYp4gsGg.png" alt="Click on “Copy” to get your bot token that will be used later, in Node Red" />
-  <figcaption>Click on “Copy” to get your bot token that will be used later, in Node Red</figcaption>
-</figure>
+![Click on “Copy” to get your bot token that will be used later, in Node Red](https://storage.googleapis.com/brunosabot.dev/img/1_eaUdfCIte-eC07lYp4gsGg.png)
 
 The final step is to activate your bot on your server. You only need to head to the following URL. Don’t forget to change the placeholder value with your previously recovered Client ID :
 
@@ -83,10 +64,7 @@ https://discord.com/oauth2/authorize?scope=bot&amp;permissions=0&amp;client_id=R
 
 Once the validation window checked the pop will jump on your server, and you will officially be done with this part.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_zSDdv_ZHnTsKIwii6uYJoQ.png" alt="Select a server then Authorize it and your bot will jump in." />
-  <figcaption>Select a server then Authorize it and your bot will jump in.</figcaption>
-</figure>
+![Select a server then Authorize it and your bot will jump in.](https://storage.googleapis.com/brunosabot.dev/img/1_zSDdv_ZHnTsKIwii6uYJoQ.png)
 
 ### The flow creation
 
@@ -94,10 +72,7 @@ The next part of the configuration will take place in the Node Red module on Hom
 
 Now that I’m considering you are correctly set up, we are going to install a required module: [Node-Red](https://nodered.org/. To do so, go to the _Supervisor_ menu, choose the _Add-ons_ tab, search _node-red_ and install it. I will take few minutes before you can head up to the add-on _configuration_ tab.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_IWDMy6N7TjWtb2v5CpR_hQ.png" alt="The Node RED add-on on Home Assistant" />
-  <figcaption>The Node RED add-on on Home Assistant</figcaption>
-</figure>
+![The Node RED add-on on Home Assistant](https://storage.googleapis.com/brunosabot.dev/img/1_IWDMy6N7TjWtb2v5CpR_hQ.png)
 
 In the configuration tab, set at least a _credential_secret_ to protec your data, then get back to info and start the add-on. I personally choose to activate the menu UI, so I can access it directly from the left menu, and the watchdog but it is a choice up to you.
 
@@ -107,22 +82,13 @@ Node RED come with a lot of integrated plugins. However, the Discord plugin is n
 
 Plugins are located in the Palette tab. Search for _node-red-contrib-discord_ and install it. Some other plugins might work, but it will be up to you to test them.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_HxNwyHJQW4Uhbz0i4lw2fw.png"/>
-  <figcaption>The Setting menu</figcaption>
-</figure>
+![The Setting menu](https://storage.googleapis.com/brunosabot.dev/img/1_HxNwyHJQW4Uhbz0i4lw2fw.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_FpsD0o0m2nXZD2qlkqck0Q.png" alt="The node-red-contrib-discord plugin" />
-  <figcaption>The node-red-contrib-discord plugin</figcaption>
-</figure>
+![The node-red-contrib-discord plugin](https://storage.googleapis.com/brunosabot.dev/img/1_FpsD0o0m2nXZD2qlkqck0Q.png)
 
 #### The base workflow
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_fSFOZLyZ_VdpOexxRnOTIQ.png" alt="The base workflow" />
-  <figcaption>The base workflow</figcaption>
-</figure>
+![The base workflow](https://storage.googleapis.com/brunosabot.dev/img/1_fSFOZLyZ_VdpOexxRnOTIQ.png)
 
 The base workflow is made with four blocks :
 
@@ -133,56 +99,29 @@ The base workflow is made with four blocks :
 
 You can check the config I set in every of these blocks below
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_QlWM5kd5ZRgCnDTb1icf-Q.png" alt="The discordMessage block configuration. Use the pencil button to add" />
-  <figcaption>The discordMessage block configuration. Use the pencil button to add  another token
-</figcaption>
-</figure>
+![The discordMessage block configuration. Use the pencil button to add](https://storage.googleapis.com/brunosabot.dev/img/1_QlWM5kd5ZRgCnDTb1icf-Q.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1__FKVFxxt6H__hnat79Gusw.png" alt="The switch block configuration. Stewjon -Star Wars fan will" />
-  <figcaption>The switch block configuration. Stewjon -Star Wars fan will  understand- is the role name from Discord</figcaption>
-</figure>
+![The switch block configuration. Stewjon -Star Wars fan will](https://storage.googleapis.com/brunosabot.dev/img/1__FKVFxxt6H__hnat79Gusw.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_VcJMpHBJFAgq1xXaLICXQw.png" alt="Lowercase, trim and split the playload for my use cases" />
-  <figcaption>Lowercase, trim and split the playload for my use cases</figcaption>
-</figure>
+![Lowercase, trim and split the playload for my use cases](https://storage.googleapis.com/brunosabot.dev/img/1_VcJMpHBJFAgq1xXaLICXQw.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_Oo1xwQ32t6utbJ8rV1NE9g.png" alt="Switch to the right flow depending on the requested namespace" />
-  <figcaption>Switch to the right flow depending on the requested namespace</figcaption>
-</figure>
+![Switch to the right flow depending on the requested namespace](https://storage.googleapis.com/brunosabot.dev/img/1_Oo1xwQ32t6utbJ8rV1NE9g.png)
 
 #### First flow: Calling a service
 
 The first scheme I have made is something that allows me to turn on and off lights directly from Discord. It is made of three basic steps.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_Wd9WY2Hoa9F91TwsTIwNgw.png" alt="The light management on Discord" />
-  <figcaption>The light management on Discord</figcaption>
-</figure>
+![The light management on Discord](https://storage.googleapis.com/brunosabot.dev/img/1_Wd9WY2Hoa9F91TwsTIwNgw.png)
 
 - **change**: This first block is aimed to make a translation between a word and Home Assistant entity. I need to transform a sentence lik _lumière bureau on _ into a call to the proper service. Basically, it means converting _lumière_ to _light (namespace), bureau_ to _light.lumieres_du_bureau_ (entity) and _on_ into _turn_on_ (some words are in french to be easier to understand for my family). Like I suggest on the base workflow, you might want to switch this block to a _function_ block to write plain JavaScript, which I will do someday.
 - **template**: This second block convert a Node Red data into a proper Home Assistant Data, which is an object composed with three keys: _domain_, _service_ and _data_
 - **call service**: This is the block that link our Node Red workflow with Home Assistant and make the proper call.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_x-SPnVHz2XlXBHBUQ0iGLA.png" alt="First scheme first block: changing Discord data into a Node" />
-  <figcaption>First scheme first block: changing Discord data into a Node  Red payload
-</figcaption>
-</figure>
+![First scheme first block: changing Discord data into a Node](https://storage.googleapis.com/brunosabot.dev/img/1_x-SPnVHz2XlXBHBUQ0iGLA.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_WHWMrOssUNdDka2NGeMmmg.png" alt="Second block: Formating the Node Red workflow for a Discord" />
-  <figcaption>Second block: Formating the Node Red workflow for a Discord  service call
-</figcaption>
-</figure>
+![Second block: Formating the Node Red workflow for a Discord](https://storage.googleapis.com/brunosabot.dev/img/1_WHWMrOssUNdDka2NGeMmmg.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_KOuniuzjolNRAtAInYpjXA.png" alt="Last block: Calling the Home Assistant service" />
-  <figcaption>Last block: Calling the Home Assistant service</figcaption>
-</figure>
+![Last block: Calling the Home Assistant service](https://storage.googleapis.com/brunosabot.dev/img/1_KOuniuzjolNRAtAInYpjXA.png)
 
 #### Second scheme: Getting a sensor data
 
@@ -192,40 +131,22 @@ I will only present the temperature since the behaviour will be exactly
 the same for humidity, just the “Get entity value” content will slightly
 differ.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_am7lKaocgozwgeu2bfsonA.png" alt="Temperature recovery from Discord" />
-  <figcaption>Temperature recovery from Discord</figcaption>
-</figure>
+![Temperature recovery from Discord](https://storage.googleapis.com/brunosabot.dev/img/1_am7lKaocgozwgeu2bfsonA.png)
 
 - **change**: Same as the previous scheme, allow to convert a word to the proper entity name.
 - **current state**: This allow Node Red to recover data directly from Home Assistant then continue the flow with the value provided
 - **template**: Template is this time used to format the data to be sent in Discord.
 - **discordSendMessage**: Making the actual call to Discord. A new message from the bot will appear in the proper channel.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_ON8jVlKrZlrxYQjG3QphUg.png" alt="First scheme first block: changing Discord data into a Node" />
-  <figcaption>First scheme first block: changing Discord data into a Node  Red payload</figcaption>
-</figure>
+![First scheme first block: changing Discord data into a Node](https://storage.googleapis.com/brunosabot.dev/img/1_ON8jVlKrZlrxYQjG3QphUg.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_cLTTMkHgc0qnqEtJaQ_gnw.png" alt="Recovering data from Home Assistant" />
-  <figcaption>Recovering data from Home Assistant</figcaption>
-</figure>
+![Recovering data from Home Assistant](https://storage.googleapis.com/brunosabot.dev/img/1_cLTTMkHgc0qnqEtJaQ_gnw.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_Bk1fE5NPJFe4IKVCwJg5dQ.png" alt="Simple message formatting" />
-  <figcaption>Simple message formatting</figcaption>
-</figure>
+![Simple message formatting](https://storage.googleapis.com/brunosabot.dev/img/1_Bk1fE5NPJFe4IKVCwJg5dQ.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_XNF2UJfyRrFaFFuPCiJquA.png" alt="Sending the message in the same channel we got the incoming message" />
-  <figcaption>Sending the message in the same channel we got the incoming message</figcaption>
-</figure>
+![Sending the message in the same channel we got the incoming message](https://storage.googleapis.com/brunosabot.dev/img/1_XNF2UJfyRrFaFFuPCiJquA.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_3zQiTWObeD0wS-7PP8A8dQ.png" alt="Result shown in Discord" />
-  <figcaption>Result shown in Discord</figcaption>
-</figure>
+![Result shown in Discord](https://storage.googleapis.com/brunosabot.dev/img/1_3zQiTWObeD0wS-7PP8A8dQ.png)
 
 #### Third scheme: A CLI-like help
 
@@ -233,10 +154,7 @@ Finally, I want to be able to show an help message to whoever can use Home Assis
 
 The system is just one big switch we are going to see together.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_e2tmco9dyZweKepD1K3N4w.png" alt="CLI-like help workflow" />
-  <figcaption>CLI-like help workflow</figcaption>
-</figure>
+![CLI-like help workflow](https://storage.googleapis.com/brunosabot.dev/img/1_e2tmco9dyZweKepD1K3N4w.png)
 
 To do so, we are going to need only three types of nodes:
 
@@ -244,20 +162,11 @@ To do so, we are going to need only three types of nodes:
 - **template**: There are a bunch of templates. Each one is just plain text corresponding to the help I want to show on screen
 - \*\*discordSendMessage: Sending the message to the Discord server so it may looks like the bot is answering me.
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_oIc9sryQvGaX0tfxt_CQqg.png" alt="Switching to a default help or a specific one" />
-  <figcaption>Switching to a default help or a specific one</figcaption>
-</figure>
+![Switching to a default help or a specific one](https://storage.googleapis.com/brunosabot.dev/img/1_oIc9sryQvGaX0tfxt_CQqg.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_gxReqCUM7iA2sraTHGxLVw.png" alt="An help template example" />
-  <figcaption>An help template example</figcaption>
-</figure>
+![An help template example](https://storage.googleapis.com/brunosabot.dev/img/1_gxReqCUM7iA2sraTHGxLVw.png)
 
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/1_MueLiDyLRzPTSEqItj9GhQ.png" alt="Finally sending the message to Discord" />
-  <figcaption>Finally sending the message to Discord</figcaption>
-</figure>
+![Finally sending the message to Discord](https://storage.googleapis.com/brunosabot.dev/img/1_MueLiDyLRzPTSEqItj9GhQ.png)
 
 ### Conclusion
 

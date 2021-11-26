@@ -31,7 +31,6 @@
   font-weight: 300;
   letter-spacing: -0.03em;
   line-height: 32px;
-  margin-bottom: -0.42em;
   margin-top: 24px;
 }
 .blog-post h3 {
@@ -64,6 +63,8 @@
 }
 .blog-post figure img {
   display: block;
+  margin: auto;
+  max-height: 600px;
 }
 
 .blog-post figcaption {

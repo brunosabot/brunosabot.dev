@@ -4,15 +4,11 @@ date: 2020-05-05
 title: An Opinionated Way to Structure React Apps
 subtitle: Based on my experience acquired building several big projects
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg
+originalImageAlt: Photo by <a href="https://unsplash.com/@dtopkin1">Dayne Topkin</a> on <a href="https://unsplash.com">Unsplash</a>.
 creator: Bruno Sabot
 lang: en
 platform: Blog
 ---
-
-<figure>
-  <img src="https://storage.googleapis.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg" alt="Photo by Dayne Topkin on Unsplash."/>
-  <figcaption>Photo by <a href="https://unsplash.com/@dtopkin1">Dayne Topkin</a> on <a href="https://unsplash.com">Unsplash</a>.</figcaption>
-</figure>
 
 When we first develop a React app, we can just put every component in a folder and it works. But when it comes to larger projects, it might be difficult to find our way between files if we keep using React this way.
 
