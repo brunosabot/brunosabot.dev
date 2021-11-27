@@ -164,20 +164,17 @@ export default function RgbConvertor() {
     window.localStorage.setItem("rgbConvertor", JSON.stringify(newArray));
   }, [state.hex]);
 
-  const setUnsave = useCallback(
-    (value) => {
-      const storageSaves = JSON.parse(
-        window.localStorage.getItem("rgbConvertor") || "[]"
-      );
-      const updatedSaves = new Set<string>(storageSaves);
-      updatedSaves.delete(value);
-      const newArray = Array.from(updatedSaves);
+  const setUnsave = useCallback((value) => {
+    const storageSaves = JSON.parse(
+      window.localStorage.getItem("rgbConvertor") || "[]"
+    );
+    const updatedSaves = new Set<string>(storageSaves);
+    updatedSaves.delete(value);
+    const newArray = Array.from(updatedSaves);
 
-      setLocalSaves(newArray);
-      window.localStorage.setItem("rgbConvertor", JSON.stringify(newArray));
-    },
-    [state.hex]
-  );
+    setLocalSaves(newArray);
+    window.localStorage.setItem("rgbConvertor", JSON.stringify(newArray));
+  }, []);
 
   const onChange = useCallback(
     (type) => (e: React.ChangeEvent<HTMLInputElement>) =>

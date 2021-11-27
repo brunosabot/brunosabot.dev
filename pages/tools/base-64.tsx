@@ -31,7 +31,7 @@ export default function Base64() {
         setValid(true);
       }
     },
-    []
+    [string]
   );
 
   return (
