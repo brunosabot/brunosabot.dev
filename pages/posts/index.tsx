@@ -54,7 +54,7 @@ const Posts: React.FC<IPostsProps> = ({ posts }) => (
           subtitle={post.platform}
           date={formatDistanceToNow(new Date(post.date), { addSuffix: true })}
           to={post.path}
-          key={post.id}
+          key={post.path}
           priority={index === 0}
         />
       ))}

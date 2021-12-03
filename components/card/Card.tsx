@@ -10,7 +10,7 @@ interface Props {
   icon: string;
   image?: string;
   priority?: boolean;
-  subtitle: string;
+  subtitle?: string;
   title: string;
   description: string;
   to?: string;

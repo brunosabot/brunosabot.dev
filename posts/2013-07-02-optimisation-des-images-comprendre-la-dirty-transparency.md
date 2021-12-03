@@ -8,6 +8,7 @@ originalImage: https://storage.googleapis.com/brunosabot.dev/img/tomas-sobek-plw
 originalImageAlt: Photo by <a href="https://unsplash.com/@tomas_nz">Tomas Sobek</a> on <a href="https://unsplash.com">Unsplash</a>.
 lang: fr
 platform: Blog
+tags: Webperf, PNG, PHP, Programming
 ---
 
 Les consignes webperf un peu partout vous recommanderont de réduire la taille de vos images. Pour cela, il suffit d'utiliser des logiciels appropriés afin de supprimer toutes les méta-données qui pourrait alourdir le composant graphique.

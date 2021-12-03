@@ -8,6 +8,7 @@ originalImageAlt: Photo by <a href="https://unsplash.com/@mukukostudio">Mukuko S
 creator: Bruno Sabot
 lang: en
 platform: Blog
+tags: Programming, React, React Native, JavaScript
 ---
 
 I’ve recently started working on an Android application, and as a React developer, I made the easy choice to use and test [React Native](https://reactnative.dev/) to do so because it helped me stay in my comfort zone and also gives me the opportunity to explore iOS someday.

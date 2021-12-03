@@ -8,6 +8,7 @@ originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__AxYei5T1__he
 originalImageAlt: A practical guide to Git hooks using Husky
 lang: en
 platform: Blog
+tags: JavaScript, Git, Hooks, Husky, Programming
 ---
 
 ### What Is This All About?

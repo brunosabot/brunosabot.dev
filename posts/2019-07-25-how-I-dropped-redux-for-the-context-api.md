@@ -7,6 +7,7 @@ creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png
 lang: en
 platform: Blog
+tags: React, Redux, Context API, Programming, JavaScript
 ---
 
 React 16 introduced a new Context API to replace the deprecated one. OK, it’s been more than a year since the release of version 16.3, but it still seems fresh in the React ecosystem.

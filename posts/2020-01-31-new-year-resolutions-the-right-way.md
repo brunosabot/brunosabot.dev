@@ -8,6 +8,7 @@ originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9
 originalImageAlt: Congratulations on completed new year resolutions  —  Photo by me
 lang: en
 platform: Blog
+tags: New Year Resolution, Lifestyle, Feedback, Health, Improvment
 ---
 
 _tl;dr: Imagine your resolution for the next year, make little steps and start them whenever you feel ready._

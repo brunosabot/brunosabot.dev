@@ -8,6 +8,7 @@ originalImageAlt: Photo by <a href="https://unsplash.com/@dtopkin1">Dayne Topkin
 creator: Bruno Sabot
 lang: en
 platform: Blog
+tags: React, Architecture, JavaScript, Programming
 ---
 
 When we first develop a React app, we can just put every component in a folder and it works. But when it comes to larger projects, it might be difficult to find our way between files if we keep using React this way.

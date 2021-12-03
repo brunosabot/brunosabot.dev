@@ -8,6 +8,7 @@ originalImage: https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle1
 canonical: https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/
 lang: fr
 platform: Zenika
+tags: Work, Zenika, Feedback, Improvment
 ---
 
 La Silicon Valley, c’est le rêve américain de tout développeur qui s’intéresse de près à tout ce qui se fait de nouveau dans le monde du high-tech, c’est l’endroit ou l’on retrouve les plus grands groupes tels que Google, Apple, Facebook, Amazon, Microsoft, Netflix, Mozilla, Pivotal, etc..

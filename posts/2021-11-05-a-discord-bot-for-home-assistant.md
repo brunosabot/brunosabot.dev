@@ -8,6 +8,7 @@ originalImageAlt: Photo by <a href="https://unsplash.com/@linuscodes">Linus Rogg
 creator: Bruno Sabot
 lang: en
 platform: Blog
+tags: Home Assistant, Discord, Discord Bot, Node Red, Home Automation
 ---
 
 ### A bit of context

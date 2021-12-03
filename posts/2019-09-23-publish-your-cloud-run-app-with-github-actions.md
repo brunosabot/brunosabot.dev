@@ -8,6 +8,7 @@ originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__HmM__NqNjtCW
 originalImageAlt: Photo by <a href="https://unsplash.com/@coloradohiker">Allan Nygren</a> on <a href="https://unsplash.com">Unsplash</a>.
 lang: en
 platform: Blog
+tags: Github Actions, Github, Google Cloud Run, Google Container Registry, Programming, CICD
 ---
 
 Google recently announced [Cloud Run](https://cloud.google.com/run/), a new [Google Cloud Platform](https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=na-US-all-en-dr-bkws-all-all-trial-p-dr-1007179&utm_content=text-ad-lpsitelinkCCexp2-any-DEV_c-CRE_113120493247-ADGP_Hybrid+%7C+AW+SEM+%7C+BKWS+%7C+US+%7C+en+%7C+Multi+~+Cloud+Platform-KWID_43700011014879364-kwd-10876442192&utm_term=KW_cloud%20platform-ST_cloud+platform&gclid=CjwKCAjw2qHsBRAGEiwAMbPoDG8AYhrx-uAWd-_A5PQbzTIHw7LCFPa1E54xXPqJj3nMh1K3Wt55ChoCNG4QAvD_BwE) (GCP) feature, to deploy your [Docker](https://www.docker.com/) applications fast and easily. This guide will explain how to build and deploy a simple static application using the new continuous integration/continuous delivery system provided by GitHub: [Actions](https://github.com/features/actions).

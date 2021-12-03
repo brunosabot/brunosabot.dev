@@ -1,6 +1,7 @@
 import { MDXProvider } from "@mdx-js/react";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
@@ -15,6 +16,8 @@ import Paypal from "../../../components/donate/Paypal";
 import PostDonation from "../../../components/post/PostDonation";
 import Patreon from "../../../components/donate/Patreon";
 import BuyMeACoffee from "../../../components/donate/BuyMeACoffee";
+import Related from "../../../components/post/Related";
+import { getRelatedPosts, RelatedPost } from "../../../lib/posts";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
 
@@ -31,18 +34,25 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true };
   }
 
-  const post = fs
+  const posts = fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path))
     .map((path) => fs.readFileSync(POSTS_PATH + "/" + path))
-    .map((source) => matter(source))
-    .find(
-      (post) => post.data.path === `/posts/${params?.year}/${params?.slug}`
-    );
+    .map((source) => matter(source));
+
+  const post = posts.find(
+    (post) => post.data.path === `/posts/${params?.year}/${params?.slug}`
+  );
 
   if (post === undefined) {
     return { notFound: true };
   }
+
+  const relatedPosts = getRelatedPosts(
+    posts,
+    `/posts/${params?.year}/${params?.slug}`,
+    post.data.tags
+  );
 
   const postWithStringDate = {
     ...post,
@@ -71,6 +81,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       source: mdxSource,
+      relatedPosts,
       post: {
         creator: post.data.creator,
         canonical: post.data.canonical ?? null,
@@ -90,9 +101,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 interface IPostsProps {
   post: any;
   source: any;
+  relatedPosts: RelatedPost[];
 }
 
-const Posts: React.FC<IPostsProps> = ({ source, post }) => {
+const Posts: React.FC<IPostsProps> = ({ source, relatedPosts = [], post }) => {
   return (
     <MDXProvider components={components}>
       <SEO
@@ -129,6 +141,7 @@ const Posts: React.FC<IPostsProps> = ({ source, post }) => {
           <Patreon />
           <BuyMeACoffee />
         </PostDonation>
+        <Related posts={relatedPosts} />
       </DefaultLayout>
     </MDXProvider>
   );

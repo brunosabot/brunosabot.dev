@@ -8,6 +8,7 @@ originalImageAlt: Photo by <a href="https://unsplash.com/@windows">Windows</a> o
 creator: Bruno Sabot
 lang: en
 platform: Blog
+tags: Programming, React, JavaScript, Web Development, Accessibility
 ---
 
 ### Concerns About Existing Systems

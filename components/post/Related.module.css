@@ -1,0 +1,23 @@
+.RelatedTitle {
+  color: var(--text-color);
+  font-family: var(--sans-serif);
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  margin: 1.25em 0;
+  text-align: center;
+}
+.RelatedWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: auto;
+  max-width: 1082px;
+}
+@media (max-width: 1128px) {
+  .RelatedWrapper {
+    flex-direction: column;
+  }
+}
