@@ -1,5 +1,6 @@
 import { mdiPodcast } from "@mdi/js";
 import React from "react";
+import { TooltipPosition } from "../modal/Tooltip";
 import Svg from "../svg/Svg";
 import Card from "./Card";
 import CardAction from "./CardAction";
@@ -29,7 +30,11 @@ const CardVideo: React.FC<Props> = ({
 }) => {
   const actions = (
     <>
-      <CardAction href={url} name="Podcast">
+      <CardAction
+        href={url}
+        label="Listen to the podcast"
+        position={TooltipPosition.LEFT}
+      >
         <Svg d={mdiPodcast} />
       </CardAction>
     </>

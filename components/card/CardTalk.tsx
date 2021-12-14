@@ -1,5 +1,6 @@
 import { mdiFilePresentationBox, mdiYoutube } from "@mdi/js";
 import React from "react";
+import { TooltipPosition } from "../modal/Tooltip";
 import Svg from "../svg/Svg";
 import Card from "./Card";
 import CardAction from "./CardAction";
@@ -34,13 +35,18 @@ const CardTalk: React.FC<Props> = ({
       {youtubeId ? (
         <CardAction
           href={`https://www.youtube.com/watch?v=${youtubeId}`}
-          name="Vidéo du talk"
+          label={title + " on YouTube"}
+          position={TooltipPosition.LEFT}
         >
           <Svg d={mdiYoutube} className="icon-youtube" />
         </CardAction>
       ) : null}
 
-      <CardAction href={slides} name="Slides du talk">
+      <CardAction
+        href={slides}
+        label={title + " on Google Slides"}
+        position={TooltipPosition.LEFT}
+      >
         <Svg d={mdiFilePresentationBox} className="icon-slides" />
       </CardAction>
     </>

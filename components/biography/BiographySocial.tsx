@@ -1,22 +1,23 @@
 import React from "react";
+import { withTooltip } from "../modal/withTooltip";
 import classes from "./BiographySocial.module.css";
 
 interface Props {
   children: React.ReactNode;
   href: string;
-  name: string;
+  label: string;
 }
 
-const Social: React.FC<Props> = ({ children, href, name }) => (
+const Social: React.FC<Props> = ({ children, href, label }) => (
   <a
     className={classes["biography-social"]}
     href={href}
     rel="noopener noreferrer"
     target="_blank"
-    aria-label={`Bruno Sabot on ${name}`}
+    aria-label={label}
   >
     {children}
   </a>
 );
 
-export default Social;
+export default withTooltip<Props>(Social);

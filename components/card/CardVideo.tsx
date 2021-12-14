@@ -1,5 +1,6 @@
 import { mdiYoutube } from "@mdi/js";
 import React from "react";
+import { TooltipPosition } from "../modal/Tooltip";
 import Svg from "../svg/Svg";
 import Card from "./Card";
 import CardAction from "./CardAction";
@@ -29,7 +30,8 @@ const CardVideo: React.FC<Props> = ({
     <>
       <CardAction
         href={`https://www.youtube.com/watch?v=${youtubeId}`}
-        name="Vidéo du talk"
+        label="View the video on YouTube"
+        position={TooltipPosition.LEFT}
       >
         <Svg d={mdiYoutube} className="icon-youtube" />
       </CardAction>

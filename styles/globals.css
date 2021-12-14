@@ -12,8 +12,8 @@ body {
   --text-reverse-medium-color: rgba(0, 0, 0, 0.6);
   --border-color: rgba(255, 255, 255, 0.3);
   --border-light-color: rgba(255, 255, 255, 0.15);
-  --background-dp1: rgb(255, 255, 255, 0.15);
-  --background-dp2: rgb(255, 255, 255, 0.1);
+  --background-dp1: #282828;
+  --background-dp2: #1c1c1c;
   --white: rgba(0, 0, 0, 1);
   --code-background: rgba(255, 255, 255, 0.2);
   --error-text-color: rgba(255, 0, 0, 0.87);
@@ -80,8 +80,8 @@ body::after {
     --border-light-color: rgba(0, 0, 0, 0.15);
     --text-reverse-color: rgba(255, 255, 255, 1);
     --text-reverse-medium-color: rgba(255, 255, 255, 0.6);
-    --background-dp1: rgba(255, 255, 255, 1);
-    --background-dp2: rgba(0, 0, 0, 0.1);
+    --background-dp1: #ffffff;
+    --background-dp2: #dcdcdc;
     --white: rgba(255, 255, 255, 1);
     --code-background: rgba(0, 0, 0, 0.05);
   }

@@ -28,22 +28,6 @@ class MyDocument extends Document {
     return (
       <Html lang={lang}>
         <Head>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=UA-2395369-1`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-2395369-1', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-          />
           <link
             rel="alternate"
             type="application/rss+xml"

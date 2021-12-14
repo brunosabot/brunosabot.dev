@@ -1,17 +1,18 @@
 import React from "react";
+import { withTooltip } from "../modal/withTooltip";
 import classes from "./CardAction.module.css";
 
 interface Props {
   children: React.ReactNode;
   href?: string;
-  name: string;
+  label: string;
   onClick?: () => void;
 }
 
 const CardAction: React.FC<Props> = ({
   children,
   href,
-  name,
+  label,
   onClick = () => undefined,
 }) => (
   <a
@@ -26,10 +27,10 @@ const CardAction: React.FC<Props> = ({
         onClick();
       }
     }}
-    aria-label={name}
+    aria-label={label}
   >
     {children}
   </a>
 );
 
-export default CardAction;
+export default withTooltip<Props>(CardAction);

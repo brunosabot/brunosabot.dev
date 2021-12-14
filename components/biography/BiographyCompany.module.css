@@ -5,12 +5,13 @@
   font-weight: 700;
   line-height: 1.5;
   margin: 0 5px;
+  outline: 0;
   overflow: hidden;
   padding: 3px 3px 3px 3px;
   position: relative;
   text-decoration: none;
 }
-.biography-company:after {
+.biography-company::after {
   background-color: var(--accent-text-color);
   bottom: 0;
   content: "";
@@ -21,6 +22,7 @@
   transform: translateX(-100%);
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
-.biography-company:hover:after {
+.biography-company:hover::after,
+.biography-company:focus-visible::after {
   transform: translateX(0);
 }

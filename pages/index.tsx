@@ -59,40 +59,70 @@ const About: React.FC<Props> = () => (
         </BiographyCompany>
       </BiographyLine>
       <BiographyLine>
-        <Social href="https://github.com/brunosabot" name="Github">
+        <Social
+          href="https://github.com/brunosabot"
+          label="Bruno Sabot on Github"
+        >
           <Svg d={mdiGithub} />
         </Social>
-        <Social href="https://twitter.com/brunosabot" name="Twitter">
+        <Social
+          href="https://twitter.com/brunosabot"
+          label="Bruno Sabot on Twitter"
+        >
           <Svg d={mdiTwitter} />
         </Social>
-        <Social href="https://instagram.com/brunosabot" name="Instagram">
+        <Social
+          href="https://instagram.com/brunosabot"
+          label="Bruno Sabot on Instagram"
+        >
           <Svg d={mdiInstagram} />
         </Social>
-        <Social href="https://linkedin.com/in/brunosabot" name="LinkedIn">
+        <Social
+          href="https://linkedin.com/in/brunosabot"
+          label="Bruno Sabot on LinkedIn"
+        >
           <Svg d={mdiLinkedin} />
         </Social>
-        <Social href="https://codepen.io/brunosabot/" name="Codepen">
+        <Social
+          href="https://codepen.io/brunosabot/"
+          label="Bruno Sabot on Codepen"
+        >
           <Svg d={mdiCodepen} />
         </Social>
-        <Social href="https://medium.com/@brunosabot" name="Medium">
+        <Social
+          href="https://medium.com/@brunosabot"
+          label="Bruno Sabot on Medium"
+        >
           <Svg d={svgMedium} />
         </Social>
-        <Social href="https://dev.to/brunosabot" name="Dev.to">
+        <Social href="https://dev.to/brunosabot" label="Bruno Sabot on Dev.to">
           <Svg d={mdiDevTo} />
         </Social>
-        <Social href="https://hashnode.com/@brunosabot" name="Hashnode">
+        <Social
+          href="https://hashnode.com/@brunosabot"
+          label="Bruno Sabot on Hashnode"
+        >
           <Svg
             d={svgHashnode}
             pathAttributes={{ fillRule: "evenodd", clipRule: "evenodd" }}
           />
         </Social>
-        <Social href="https://discord.gg/NSZFSdr9BW" name="Discord">
+        <Social
+          href="https://discord.gg/NSZFSdr9BW"
+          label="Bruno Sabot on Discord"
+        >
           <Svg d={mdiDiscord} />
         </Social>
-        <Social href="https://www.strava.com/athletes/15220263" name="Strava">
+        <Social
+          href="https://www.strava.com/athletes/15220263"
+          label="Bruno Sabot on Strava"
+        >
           <Svg d={svgStrava} />
         </Social>
-        <Social href="https://brunosabot.dev/rss.xml" name="RSS">
+        <Social
+          href="https://brunosabot.dev/rss.xml"
+          label="RSS Feed for Bruno Sabot's websitee"
+        >
           <Svg d={mdiRss} />
         </Social>
       </BiographyLine>

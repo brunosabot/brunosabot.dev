@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
           youtubeId: "jnxkdHo8OEk",
           conferenceName: "Breizh Camp",
           language: "fr",
-          title: "UX : les formulaires",
+          title: "UX : les formulaires (Breizh Camp)",
           date: "2019-03-21",
           slides:
             "https://drive.google.com/open?id=1tCwdzIdwu8jYX4Y0dej_u6pmc1oUx9Y4NPUaTBSWluA",
@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async () => {
           youtubeId: "H2KWVDH64EY",
           conferenceName: "Jug Summer Camp",
           language: "fr",
-          title: "UX : les formulaires",
+          title: "UX : les formulaires (Jug Summer Camp)",
           date: "2018-09-14",
           slides:
             "https://drive.google.com/open?id=1S2RmcMKZ74Bhc4IQUMm7-xDjVwD-_UCFc5iWCEdy5S8",
