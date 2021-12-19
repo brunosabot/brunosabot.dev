@@ -35,8 +35,9 @@ Once again, here is the code if you do not already have Google Analytics on the 
 There are two parts in the file to consider here:
 
 - a `reportWebVitals` method that is automatically used by Next.js when it gets a Core Web Vital metric. If you are not using Next.js, you should look at the [NPM web-vitals package](https://www.npmjs.com/package/web-vitals) to see the right method in your case.
-  a MyApp component that includes the `<Analytics>` component presented earlier and a (bonus) hook to track the page change in Analytics. This one is to be used only if your client does not already have Google Analytics installed or you might duplicate the page change events sent to the server.
-  You now just need to add your UA value to the `.env` file or as an environment variable `NEXT_PUBLIC_GOOGLE_ANALYTICS` and you are ready!
+- a MyApp component that includes the `<Analytics>` component presented earlier and a (bonus) hook to track the page change in Analytics. This one is to be used only if your client does not already have Google Analytics installed or you might duplicate the page change events sent to the server.
+
+You now just need to add your UA value to the `.env` file or as an environment variable `NEXT_PUBLIC_GOOGLE_ANALYTICS` and you are ready!
 
 ### Viewing data directly in Google Analytics
 
