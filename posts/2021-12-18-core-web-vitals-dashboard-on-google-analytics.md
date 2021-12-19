@@ -42,7 +42,7 @@ There are two parts in the file to consider here:
 
 After few days collecting, you will see the events (in green on the screenshot) appearing in Google Analytics in the Behavior (in blue) > Events (in purple) > Top Events (in red) > Event action (in orange) menu.
 
-Viewing Core Web Vitals Events On Google Analytics
+![Viewing Core Web Vitals Events On Google Analytics](https://calendar.perfplanet.com/images/2021/bruno/view-events-on-analytics.png)
 
 And voilà, now you can report the real performance usage to your client directly in Google Analytics.
 
@@ -58,7 +58,7 @@ Once in the creation page, we need to update three block on the page:
 - The filters (in red), to Include / Event Action / LCP
 - Then press the Save button and you are done for the first metric!
 
-Creating LCP Dashboard On Google Analytics
+![Creating LCP Dashboard On Google Analytics](https://calendar.perfplanet.com/images/2021/bruno/creating-lcp-dashboard-on-analytics.png)
 
 You now just need to reproduce the previous steps for FID and CLS and you will have 3 custom reports with the Realtime User Monitoring (RUM) for your users!
 
