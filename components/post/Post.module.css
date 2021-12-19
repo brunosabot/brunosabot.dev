@@ -86,6 +86,7 @@
 .blog-post a {
   color: inherit;
   text-decoration-color: var(--text-color);
+  text-decoration-thickness: 1px;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
 .blog-post a:hover {

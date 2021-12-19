@@ -1,30 +1,17 @@
 import React from "react";
 import classes from "./Tooltip.module.css";
+import { TooltipComponentType, TooltipPosition } from "./withTooltip";
 
-export enum TooltipPosition {
-  TOP = "top",
-  RIGHT = "right",
-  BOTTOM = "bottom",
-  LEFT = "left",
-}
-
-interface ITooltipProps {
-  children: React.ReactNode;
-  left: number;
-  top: number;
-  position: TooltipPosition;
-}
-
-const Tooltip: React.FC<ITooltipProps> = ({
+const TooltipView: TooltipComponentType = ({
   children,
   left,
   top,
-  position,
+  position = TooltipPosition.TOP,
 }) => {
   return (
     <div
       style={{ left, top }}
-      className={`${classes.TooltipWrapper}  ${classes["Tooltip-" + position]}`}
+      className={`${classes.TooltipWrapper} ${classes["Tooltip-" + position]}`}
     >
       <span className={`${classes.Tooltip}`}>{children}</span>
       <svg
@@ -39,4 +26,4 @@ const Tooltip: React.FC<ITooltipProps> = ({
   );
 };
 
-export default Tooltip;
+export default TooltipView;

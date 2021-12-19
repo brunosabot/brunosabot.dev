@@ -1,7 +1,6 @@
 import { MDXProvider } from "@mdx-js/react";
 import { serialize } from "next-mdx-remote/serialize";
 import Head from "next/head";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
@@ -85,6 +84,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       post: {
         creator: post.data.creator,
         canonical: post.data.canonical ?? null,
+        platform: post.data.platform ?? null,
         image: post.data.originalImage,
         imageAlt: post.data.originalImageAlt ?? "",
         title: post.data.title,

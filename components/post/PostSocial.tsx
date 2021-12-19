@@ -2,8 +2,7 @@ import React from "react";
 import classes from "./PostSocial.module.css";
 import Svg from "../svg/Svg";
 import { mdiLinkedin, mdiTwitter } from "@mdi/js";
-import { withTooltip } from "../modal/withTooltip";
-import { TooltipPosition } from "../modal/Tooltip";
+import { TooltipPosition, withTooltip } from "../modal/withTooltip";
 
 interface IPostsProps {
   title: string;

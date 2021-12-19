@@ -7,7 +7,7 @@ creator: Bruno Sabot
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg
 canonical: https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/
 lang: fr
-platform: Zenika
+platform: Zenika Blog
 tags: Work, Zenika, Feedback, Improvment
 ---
 

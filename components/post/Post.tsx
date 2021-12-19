@@ -29,6 +29,8 @@ const Post: React.FC<IPostProps> = ({ source, post }) => {
             creator={post.creator}
             date={post.date}
             timeToRead={post.timeToRead}
+            canonical={post.canonical}
+            canonicalName={post.platform}
           />
           <PostSocial title={post.title} path={post.path} />
         </div>

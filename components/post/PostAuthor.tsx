@@ -7,12 +7,16 @@ interface IPostAuthorProps {
   creator: string;
   date: string;
   timeToRead: number;
+  canonical: string | null;
+  canonicalName: string | null;
 }
 
 const PostAuthor: React.FC<IPostAuthorProps> = ({
   creator,
   date,
   timeToRead,
+  canonical,
+  canonicalName,
 }) => {
   return (
     <div className={classes["blog-post-author"]}>
@@ -32,6 +36,18 @@ const PostAuthor: React.FC<IPostAuthorProps> = ({
           </span>
           {timeToRead ? ` · ${timeToRead} min read` : null}
         </div>
+
+        {canonical === null || canonicalName === null ? null : (
+          <div className={classes["blog-post-author-canonical"]}>
+            First published on&nbsp;
+            <a
+              className={classes["blog-post-author-canonical-link"]}
+              href={canonical}
+            >
+              {canonicalName}
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
