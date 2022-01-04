@@ -8,6 +8,8 @@ import {
   mdiRss,
   mdiTwitter,
 } from "@mdi/js";
+import svgPatreon from "../components/svg/patreon";
+import svgBuyMeACoffee from "../components/svg/buymeacoffee";
 import React from "react";
 import BiographyAvatar from "../components/biography/BiographyAvatar";
 import BiographyCompany from "../components/biography/BiographyCompany";
@@ -82,6 +84,18 @@ const About: React.FC<Props> = () => (
           label="Bruno Sabot on LinkedIn"
         >
           <Svg d={mdiLinkedin} />
+        </Social>
+        <Social
+          href="https://www.buymeacoffee.com/brunosabot1"
+          label="Bruno Sabot on Buy Me A Coffee"
+        >
+          <Svg d={svgBuyMeACoffee} />
+        </Social>
+        <Social
+          href="https://www.patreon.com/brunosabot?fan_landing=true"
+          label="Bruno Sabot on Patreon"
+        >
+          <Svg d={svgPatreon} />
         </Social>
         <Social
           href="https://codepen.io/brunosabot/"
