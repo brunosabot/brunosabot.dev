@@ -3,7 +3,7 @@ import DefaultLayout from "../../components/layout/DefaultLayout";
 import SEO from "../../components/Seo";
 import PageTitle from "../../components/typography/PageTitle";
 import LineCard from "../../components/card/LineCard";
-import { mdiBrain, mdiCodeTags } from "@mdi/js";
+import { mdiBrain, mdiCodeTags, mdiHospitalBuilding } from "@mdi/js";
 import Svg from "../../components/svg/Svg";
 
 export default function Base64() {
@@ -15,6 +15,11 @@ export default function Base64() {
       />
       <PageTitle>Tool list</PageTitle>
       <div style={{ paddingTop: "24px" }}>
+        <LineCard
+          icon={<Svg d={mdiHospitalBuilding} />}
+          to="/tools/alcohol"
+          title="Alcohol quantity"
+        />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
           to="/tools/base-64"
