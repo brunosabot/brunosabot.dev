@@ -10,6 +10,7 @@ module.exports = withBundleAnalyzer(
     poweredByHeader: false,
     generateEtags: false,
     reactStrictMode: true,
+    trailingSlash: true,
     pwa: {
       dest: "public",
       runtimeCaching,
