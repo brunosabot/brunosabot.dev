@@ -4,7 +4,7 @@ import classes from "./NavigationBack.module.css";
 
 export default function NavigationBack() {
   return (
-    <Link href="/tools" passHref>
+    <Link href="/tools/" passHref>
       <a className={classes["NavigationBack"]}>
         <svg style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24">
           <path

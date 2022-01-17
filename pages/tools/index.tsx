@@ -17,57 +17,57 @@ export default function Base64() {
       <div style={{ paddingTop: "24px" }}>
         <LineCard
           icon={<Svg d={mdiHospitalBuilding} />}
-          to="/tools/alcohol"
+          to="/tools/alcohol/"
           title="Alcohol quantity"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/base-64"
+          to="/tools/base-64/"
           title="Base 64 encode and decode"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/bezier-curves"
+          to="/tools/bezier-curves/"
           title="Bezier curves"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/rgb-convertor"
+          to="/tools/rgb-convertor/"
           title="Color converter"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/pretty"
+          to="/tools/pretty/"
           title="JSON prettifier"
         />
         <LineCard
           icon={<Svg d={mdiBrain} />}
-          to="/tools/memory-table"
+          to="/tools/memory-table/"
           title="Memory Table"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/photoshop-shadow"
+          to="/tools/photoshop-shadow/"
           title="Photoshop shadow"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/sha"
+          to="/tools/sha/"
           title="Sha generation"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/url-encode-decode"
+          to="/tools/url-encode-decode/"
           title="URL encode and decode"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/uuid"
+          to="/tools/uuid/"
           title="UUID and Nano ID generation"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
-          to="/tools/timestamp"
+          to="/tools/timestamp/"
           title="Timestamp converter"
         />
       </div>
