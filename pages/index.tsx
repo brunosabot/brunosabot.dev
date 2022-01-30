@@ -135,7 +135,7 @@ const About: React.FC<Props> = () => (
         </Social>
         <Social
           href="https://brunosabot.dev/rss.xml"
-          label="RSS Feed for Bruno Sabot's websitee"
+          label="RSS Feed for Bruno Sabot's website"
         >
           <Svg d={mdiRss} />
         </Social>
