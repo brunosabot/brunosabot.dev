@@ -1,28 +1,9 @@
 import "../styles/globals.css";
-import type { AppProps, NextWebVitalsMetric } from "next/app";
-import Script from "next/script";
+import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import konami from "../lib/konami";
 import { useRouter } from "next/router";
 import Analytics from "../components/Analytics";
-
-export function reportWebVitals({
-  id,
-  name,
-  label,
-  value,
-}: NextWebVitalsMetric) {
-  if (typeof gtag === "undefined") return;
-  if (location.hostname === "localhost") return;
-
-  window.gtag("event", name, {
-    event_category:
-      label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
-    value: Math.round(name === "CLS" ? value * 1000 : value),
-    event_label: id,
-    non_interaction: true,
-  });
-}
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
