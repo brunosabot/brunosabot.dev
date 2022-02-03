@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import React from "react";
+import { getPlaiceholder } from "plaiceholder";
 import DetailCard from "../components/card/DetailCard";
 import DefaultLayout from "../components/layout/DefaultLayout";
 import SEO from "../components/Seo";
@@ -18,22 +19,39 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const projectPromises = [
+    {
+      id: "answwr",
+      url: "https://www.answwr.com",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/answwr.png",
+      title:
+        "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
+      description: [
+        "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
+        "With Answwr you’ll be able to decide between choices in the most elegant ways, meaning you’ll have to fill a bunch of forms, hit a green button and generate a totally fair and unbiased random result.",
+        "It's important to precise the result will be totally fair and unbiased, that's why we made the Redo button.",
+      ],
+    },
+  ].map(async (post) => {
+    const imageRes = await fetch(post.image);
+    const arrayBuffer = await imageRes.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    const { img, base64 } = await getPlaiceholder(buffer);
+    const imageHeight = (img.height * 680) / img.width;
+
+    return {
+      ...post,
+      imagePlaceholder: base64,
+      imageHeight,
+    };
+  });
+
+  const projects = await Promise.all(projectPromises);
+
   return {
     props: {
-      projects: [
-        {
-          id: "answwr",
-          url: "https://www.answwr.com",
-          image: "/images/answwr.png",
-          title:
-            "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
-          description: [
-            "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
-            "With Answwr you’ll be able to decide between choices in the most elegant ways, meaning you’ll have to fill a bunch of forms, hit a green button and generate a totally fair and unbiased random result.",
-            "It's important to precise the result will be totally fair and unbiased, that's why we made the Redo button.",
-          ],
-        },
-      ],
+      projects,
     },
   };
 };

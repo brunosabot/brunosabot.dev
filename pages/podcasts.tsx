@@ -33,7 +33,8 @@ export const getStaticProps: GetStaticProps = async () => {
       url: "https://ifttd.io/50-etre-dev-senior-et-senior-jacques-ducloy/",
       description:
         "Compilé de l'épisode 50 du podcast IFTTD, Etre dev sénior et sénior par Jacques Ducloy. Si vous avez peu de temps, je résume le contenu de l'épisodes en 10 minutes.",
-      image: "https://ifttd.io/wp-content/uploads/2020/07/11-2-1200x690.jpg",
+      image:
+        "https://storage.googleapis.com/brunosabot.dev/img/11-2-1200x690.jpeg",
       platform: "IFTTD",
     },
     {
@@ -44,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
       url: "https://ifttd.io/54-arreter-le-script-de-javascript-pour-ameliorer-les-performances-anthony-le-goas-et-bruno-sabot/",
       description:
         "Javascript a connu jQuery, puis AngularJS, puis node, puis vue et react. Autrement dit le petit langage de scripting pour “animer un peu de texte” sur une page a beaucoup changé !",
-      image: "https://ifttd.io/wp-content/uploads/2020/08/IFTTD-54.jpg",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/IFTTD-54.jpeg",
       platform: "IFTTD",
     },
   ].map(async (post) => {

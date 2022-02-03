@@ -21,16 +21,7 @@ module.exports = withBundleAnalyzer(
     images: {
       formats: ["image/avif", "image/webp"],
       minimumCacheTTL: 864000,
-      domains: [
-        "storage.googleapis.com",
-        "lh3.googleusercontent.com",
-        "dodgemsandfloss.com",
-        "preview.redd.it",
-        "i3.ytimg.com",
-        "ifttd.io",
-        "img.youtube.com",
-        "images.unsplash.com",
-      ],
+      domains: ["storage.googleapis.com"],
     },
   })
 );

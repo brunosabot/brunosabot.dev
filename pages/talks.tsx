@@ -34,8 +34,7 @@ export const getStaticProps: GetStaticProps = async () => {
         "https://drive.google.com/open?id=18gLNemp9mcsmx-RIh2RMHWFjiv4uvXu54ouW05BjGQE",
       description:
         "Vous avez déjà connu cette situation où vous commencez à travailler sur votre CSS, vous vous sentez en totale maitrise et le chef de projet arrive avec plein d'écrans à intégrer avec son lot de…",
-      image:
-        "https://lh3.googleusercontent.com/oqNVvVVjAXfblJtAJpeSCxqS12yrkAKp7pouKfu99BMO5-OPhakNYEKN8sZEkLtr-_tco26MALvYWtM2luaSf_7fdGHYPVI7tGcpsBb_Bymgnrg4SbLMIZaQHFcVF8hmcQAYPeVYfJI=w800",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/DSC_0887.jpeg",
     },
     {
       id: 3,
@@ -48,8 +47,7 @@ export const getStaticProps: GetStaticProps = async () => {
         "https://drive.google.com/open?id=1tCwdzIdwu8jYX4Y0dej_u6pmc1oUx9Y4NPUaTBSWluA",
       description:
         "Et si on parlait d'UX ? Nos pages sont truffées de formulaires, pourtant, connaissons-nous les erreurs à éviter lorsque nous ajoutons un formulaire à une page ? La validation de mot de passes, les…",
-      image:
-        "https://dodgemsandfloss.com/wp-content/uploads/2018/06/Ketchup.png",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/Ketchup.png",
     },
     {
       id: 2,
@@ -63,7 +61,7 @@ export const getStaticProps: GetStaticProps = async () => {
       description:
         "Et si on parlait d'UX ? Nos pages sont truffées de formulaires, pourtant, connaissons-nous les erreurs à éviter lorsque nous ajoutons un formulaire à une page ? La validation de mot de passes, les…",
       image:
-        "https://preview.redd.it/6i8oiq3iyxd41.jpg?width=640&height=360&crop=smart&auto=webp&s=79ea73ed139da4c1227f8649213bc18711dd8c66",
+        "https://storage.googleapis.com/brunosabot.dev/img/6i8oiq3iyxd41.jpeg",
     },
     {
       id: 1,
@@ -76,13 +74,14 @@ export const getStaticProps: GetStaticProps = async () => {
         "https://drive.google.com/open?id=1aMy3Szz-A-6hoTFuGvdVqoTZOEhc07W6j8emIcNb3Po",
       description:
         "Tout le monde connait React, ce framework est de plus en plus utilisé dans le domaine professionnel. Après de longs mois, bloqués à la version 15, une nouvelle version majeure va bientôt arriver que…",
-      image: "http://i3.ytimg.com/vi/h0MAi-1GdZQ/maxresdefault.jpg",
+      image:
+        "https://storage.googleapis.com/brunosabot.dev/img/h0MAi-1GdZQ.jpeg",
     },
   ].map(async (post) => {
     const imageRes = await fetch(post.image);
     const arrayBuffer = await imageRes.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
-
+    console.log(post.image);
     const { img, base64 } = await getPlaiceholder(buffer);
     const imageHeight = (img.height * 680) / img.width;
 

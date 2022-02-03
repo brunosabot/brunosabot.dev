@@ -4,7 +4,7 @@ date: 2021-12-18
 title: Core Web Vitals Dashboard On Google Analytics
 subtitle: Start a Core Web Vital Real User Monitoring on Google Analytics
 creator: Bruno Sabot
-originalImage: https://images.unsplash.com/photo-1599658880436-c61792e70672
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1599658880436-c61792e70672.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@mjessier">Myriam Jessier</a> on <a href="https://unsplash.com">Unsplash</a>.
 canonical: https://calendar.perfplanet.com/2021/core-web-vitals-dashboard-on-google-analytics/
 lang: en

@@ -32,7 +32,8 @@ export const getStaticProps: GetStaticProps = async () => {
       youtubeId: "t9XFUI_qZ3g",
       description:
         "Nous avons l'habitude de dire qu'aligner les éléments en CSS s'avère difficile.  Découvrez avec Manuel et Bruno que de nos jours cela est vraiment facile et à la portée de tous ! #flexbox",
-      image: "https://img.youtube.com/vi/t9XFUI_qZ3g/maxresdefault.jpg",
+      image:
+        "https://storage.googleapis.com/brunosabot.dev/img/t9XFUI_qZ3g.jpeg",
     },
   ].map(async (post) => {
     const imageRes = await fetch(post.image);
