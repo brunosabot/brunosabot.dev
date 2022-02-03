@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import classes from "./PostAuthor.module.css";
+import brunosabot from "../../public/images/brunosabot.jpg";
 
 interface IPostAuthorProps {
   creator: string;
@@ -24,8 +25,9 @@ const PostAuthor: React.FC<IPostAuthorProps> = ({
         <Image
           height={48}
           width={48}
-          src="/images/brunosabot.jpg"
+          src={brunosabot}
           alt="Bruno Sabot"
+          placeholder="blur"
         />
       </div>
       <div>

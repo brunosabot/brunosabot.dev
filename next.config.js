@@ -19,6 +19,7 @@ module.exports = withBundleAnalyzer(
       disable: process.env.NODE_ENV !== "production",
     },
     images: {
+      formats: ["image/avif", "image/webp"],
       minimumCacheTTL: 864000,
       domains: [
         "storage.googleapis.com",

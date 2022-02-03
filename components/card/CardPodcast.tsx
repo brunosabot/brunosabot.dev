@@ -15,6 +15,7 @@ interface Props {
   description: string;
   platform: string;
   priority?: boolean;
+  imagePlaceholder: string;
 }
 
 const CardVideo: React.FC<Props> = ({
@@ -27,6 +28,7 @@ const CardVideo: React.FC<Props> = ({
   description,
   platform,
   priority = false,
+  imagePlaceholder,
 }) => {
   const actions = (
     <>
@@ -51,6 +53,7 @@ const CardVideo: React.FC<Props> = ({
       key={id}
       actions={actions}
       priority={priority}
+      imagePlaceholder={imagePlaceholder}
     />
   );
 };

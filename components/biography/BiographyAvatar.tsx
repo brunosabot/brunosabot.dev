@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import classes from "./BiographyAvatar.module.css";
+import brunosabot from "../../public/images/brunosabot.jpg";
 
 interface Props {
   [key: string]: never;
@@ -9,10 +10,11 @@ interface Props {
 const BiographyAvatar: React.FC<Props> = () => (
   <div className={classes["biography-avatar"]}>
     <Image
-      src="/images/brunosabot.jpg"
+      src={brunosabot}
       alt="Bruno Sabot"
       height={150}
       width={150}
+      placeholder="blur"
     />
   </div>
 );

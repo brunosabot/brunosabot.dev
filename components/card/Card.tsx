@@ -9,6 +9,7 @@ interface Props {
   date: string;
   icon: string;
   image?: string;
+  imagePlaceholder?: string;
   priority?: boolean;
   subtitle?: string;
   title: string;
@@ -22,6 +23,7 @@ const Card: React.FC<Props> = ({
   date,
   icon,
   image,
+  imagePlaceholder = undefined,
   priority = false,
   description,
   subtitle,
@@ -41,6 +43,8 @@ const Card: React.FC<Props> = ({
           className={classes["card__image"]}
           objectFit="cover"
           priority={priority}
+          placeholder={imagePlaceholder ? "blur" : "empty"}
+          blurDataURL={imagePlaceholder}
         />
       ) : null}
       <h3 className={classes["card__header"]}>

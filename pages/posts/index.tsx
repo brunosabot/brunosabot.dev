@@ -1,5 +1,6 @@
 import { MDXProvider } from "@mdx-js/react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import { getPlaiceholder } from "plaiceholder";
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
@@ -14,7 +15,7 @@ const POSTS_PATH = path.join(process.cwd(), "posts");
 const components = {};
 
 export const getStaticProps = async () => {
-  const posts = fs
+  const postPromises = fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path))
     .map((path) => fs.readFileSync(POSTS_PATH + "/" + path))
@@ -28,7 +29,23 @@ export const getStaticProps = async () => {
       platform: post.data.platform,
       lang: post.data.lang,
       path: post.data.path,
-    }));
+    }))
+    .map(async (post) => {
+      const imageRes = await fetch(post.image);
+      const arrayBuffer = await imageRes.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+
+      const { img, base64 } = await getPlaiceholder(buffer);
+      const imageHeight = (img.height * 680) / img.width;
+
+      return {
+        ...post,
+        imagePlaceholder: base64,
+        imageHeight,
+      };
+    });
+
+  const posts = await Promise.all(postPromises);
 
   return { props: { posts } };
 };
@@ -48,6 +65,7 @@ const Posts: React.FC<IPostsProps> = ({ posts }) => (
       {posts.map((post, index) => (
         <Card
           image={post.image}
+          imagePlaceholder={post.imagePlaceholder}
           description={post.subtitle}
           icon={post.lang}
           title={post.title}

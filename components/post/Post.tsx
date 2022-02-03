@@ -42,8 +42,10 @@ const Post: React.FC<IPostProps> = ({ source, post }) => {
             alt={post.imageAlt.replace(/<[^>]*>/g, "")}
             layout="responsive"
             objectFit="cover"
-            height="408"
+            height={post.imageHeight}
             width="680"
+            placeholder="blur"
+            blurDataURL={post.imagePlaceholder}
           />
           <figcaption dangerouslySetInnerHTML={{ __html: post.imageAlt }} />
         </figure>

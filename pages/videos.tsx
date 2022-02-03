@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import React from "react";
+import { getPlaiceholder } from "plaiceholder";
 import CardVideo from "../components/card/CardVideo";
 import DefaultLayout from "../components/layout/DefaultLayout";
 import SEO from "../components/Seo";
@@ -22,20 +23,37 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const videoPromises = [
+    {
+      id: "1",
+      date: "2020-03-09",
+      language: "fr",
+      title: "Un Café Avec Bruno & Manuel : CSS Flexbox",
+      youtubeId: "t9XFUI_qZ3g",
+      description:
+        "Nous avons l'habitude de dire qu'aligner les éléments en CSS s'avère difficile.  Découvrez avec Manuel et Bruno que de nos jours cela est vraiment facile et à la portée de tous ! #flexbox",
+      image: "https://img.youtube.com/vi/t9XFUI_qZ3g/maxresdefault.jpg",
+    },
+  ].map(async (post) => {
+    const imageRes = await fetch(post.image);
+    const arrayBuffer = await imageRes.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    const { img, base64 } = await getPlaiceholder(buffer);
+    const imageHeight = (img.height * 680) / img.width;
+
+    return {
+      ...post,
+      imagePlaceholder: base64,
+      imageHeight,
+    };
+  });
+
+  const videos = await Promise.all(videoPromises);
+
   return {
     props: {
-      videos: [
-        {
-          id: "1",
-          date: "2020-03-09",
-          language: "fr",
-          title: "Un Café Avec Bruno & Manuel : CSS Flexbox",
-          youtubeId: "t9XFUI_qZ3g",
-          description:
-            "Nous avons l'habitude de dire qu'aligner les éléments en CSS s'avère difficile.  Découvrez avec Manuel et Bruno que de nos jours cela est vraiment facile et à la portée de tous ! #flexbox",
-          image: "https://img.youtube.com/vi/t9XFUI_qZ3g/maxresdefault.jpg",
-        },
-      ],
+      videos,
     },
   };
 };

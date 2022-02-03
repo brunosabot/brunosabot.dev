@@ -1,5 +1,6 @@
 import { MDXProvider } from "@mdx-js/react";
 import { serialize } from "next-mdx-remote/serialize";
+import { getPlaiceholder } from "plaiceholder";
 import Head from "next/head";
 import matter from "gray-matter";
 import fs from "fs";
@@ -77,6 +78,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     (statCompiled.minutes + statMarkdown.minutes) / 2
   );
 
+  const imageRes = await fetch(post.data.originalImage);
+  const arrayBuffer = await imageRes.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+
+  const { img, base64 } = await getPlaiceholder(buffer);
+  const imageHeight = (img.height * 680) / img.width;
+
   return {
     props: {
       source: mdxSource,
@@ -87,6 +95,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         platform: post.data.platform ?? null,
         image: post.data.originalImage,
         imageAlt: post.data.originalImageAlt ?? "",
+        imagePlaceholder: base64,
+        imageHeight,
         title: post.data.title,
         date: post.data.date.toString(),
         subtitle: post.data.subtitle,
