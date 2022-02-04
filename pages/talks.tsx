@@ -81,7 +81,6 @@ export const getStaticProps: GetStaticProps = async () => {
     const imageRes = await fetch(post.image);
     const arrayBuffer = await imageRes.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
-    console.log(post.image);
     const { img, base64 } = await getPlaiceholder(buffer);
     const imageHeight = (img.height * 680) / img.width;
 
