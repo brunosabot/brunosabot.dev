@@ -1,14 +1,15 @@
 ---
-path: /posts/2021/a-discord-bot-for-home-assistant
+canonical: https://brunosabot.medium.com/a-discord-bot-for-home-assistant-407b8c02ffb5
+creator: Bruno Sabot
 date: 2021-11-05
-title: A Discord bot for Home Assistant
-subtitle: How to connect a Discord bot and Home Assistant to manage a connected home
+lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/linus-rogge-JAn_aeGk_TM-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@linuscodes">Linus Rogge</a> on <a href="https://unsplash.com">Unsplash</a>.
-creator: Bruno Sabot
-lang: en
-platform: Blog
+path: /posts/2021/a-discord-bot-for-home-assistant
+platform: Medium
+subtitle: How to connect a Discord bot and Home Assistant to manage a connected home
 tags: Home Assistant, Discord, Discord Bot, Node Red, Home Automation
+title: A Discord bot for Home Assistant
 ---
 
 ### A bit of context

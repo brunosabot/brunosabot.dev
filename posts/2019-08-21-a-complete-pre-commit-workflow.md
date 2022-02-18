@@ -1,14 +1,15 @@
 ---
-path: /posts/2019/a-complete-pre-commit-workflow
-date: 2019-08-21
-title: A Complete Pre-Commit Workflow
-subtitle: Using Husky to make an awesome git workflow
+canonical: https://betterprogramming.pub/a-complete-pre-commit-workflow-cea6e34f0032
 creator: Bruno Sabot
+date: 2019-08-21
+lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__AxYei5T1__heT9sc3Hka3xA.png
 originalImageAlt: A practical guide to Git hooks using Husky
-lang: en
-platform: Blog
+path: /posts/2019/a-complete-pre-commit-workflow
+platform: Medium
+subtitle: Using Husky to make an awesome git workflow
 tags: JavaScript, Git, Hooks, Husky, Programming
+title: A Complete Pre-Commit Workflow
 ---
 
 ### What Is This All About?

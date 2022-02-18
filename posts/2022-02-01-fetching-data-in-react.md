@@ -1,15 +1,15 @@
 ---
-path: /posts/2022/fetching-data-in-react
+canonical: https://betterprogramming.pub/fetching-data-with-react-72df95683c70
+creator: Bruno Sabot
 date: 2022-01-27
-title: Fetching data with React
-subtitle: From custom made code to powerful libraries
+lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1543946602-8496af5aaa53.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@sanderweeteling">Sander Weeteling</a> on <a href="https://unsplash.com">Unsplash</a>.
-creator: Bruno Sabot
-canonical: https://betterprogramming.pub/fetching-data-with-react-72df95683c70
-lang: en
+path: /posts/2022/fetching-data-in-react
 platform: Medium
+subtitle: From custom made code to powerful libraries
 tags: Programming, React, JavaScript, Web Development, Software Engineering
+title: Fetching data with React
 ---
 
 # Introduction

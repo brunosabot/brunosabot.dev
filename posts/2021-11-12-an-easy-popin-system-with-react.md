@@ -1,14 +1,15 @@
 ---
-path: /posts/2021/build-an-easy-popup-system-with-react
+canonical: https://betterprogramming.pub/build-an-easy-popup-system-with-react-8858370cf700
+creator: Bruno Sabot
 date: 2021-11-12
-title: Build an Easy Popup System With React
-subtitle: Demystifying the way to create a simple, customisable, and accessible popup system with React
+lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1624571033882-bf93a56b6b2e.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@windows">Windows</a> on <a href="https://unsplash.com">Unsplash</a>.
-creator: Bruno Sabot
-lang: en
-platform: Blog
+path: /posts/2021/build-an-easy-popup-system-with-react
+platform: Medium
+subtitle: Demystifying the way to create a simple, customisable, and accessible popup system with React
 tags: Programming, React, JavaScript, Web Development, Accessibility
+title: Build an Easy Popup System With React
 ---
 
 ### Concerns About Existing Systems

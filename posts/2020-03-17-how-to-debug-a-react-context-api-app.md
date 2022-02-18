@@ -1,14 +1,15 @@
 ---
-path: /posts/2020/how-to-debug-a-react-context-api-app
+canonical: https://betterprogramming.pub/how-to-debug-a-react-context-api-app-547b75818754
+creator: Bruno Sabot
 date: 2020-03-17
-title: How to Debug a React Context API App
-subtitle: Using the Redux DevTools extension
+lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg
 originalImageAlt: Photo by <a href="https://unsplash.com/@barnimages">Barn Images</a> on <a href="https://unsplash.com">Unsplash</a>.
-creator: Bruno Sabot
-lang: en
-platform: Blog
+path: /posts/2020/how-to-debug-a-react-context-api-app
+platform: Medium
+subtitle: Using the Redux DevTools extension
 tags: React, Redux, Programming, JavaScript, Context API
+title: How to Debug a React Context API App
 ---
 
 Some time ago, I shared how [I dropped Redux for the Context API](https://medium.com/better-programming/how-i-dropped-redux-for-the-context-api-7338d481e179) when I’m creating a React application. The post got some great feedback, but I also had some people saying that it’s pretty hard to debug compared to the [Redux DevTools](https://github.com/reduxjs/redux-devtools) and asking me if there is an easy method to do it.

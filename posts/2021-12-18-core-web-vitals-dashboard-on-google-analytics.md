@@ -1,15 +1,15 @@
 ---
-path: /posts/2021/core-web-vitals-dashboard-on-google-analytics
-date: 2021-12-18
-title: Core Web Vitals Dashboard On Google Analytics
-subtitle: Start a Core Web Vital Real User Monitoring on Google Analytics
+canonical: https://calendar.perfplanet.com/2021/core-web-vitals-dashboard-on-google-analytics/
 creator: Bruno Sabot
+date: 2021-12-18
+lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1599658880436-c61792e70672.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@mjessier">Myriam Jessier</a> on <a href="https://unsplash.com">Unsplash</a>.
-canonical: https://calendar.perfplanet.com/2021/core-web-vitals-dashboard-on-google-analytics/
-lang: en
-tags: Core Web Vital, Performance, Next.JS, Google Analytics, React
+path: /posts/2021/core-web-vitals-dashboard-on-google-analytics
 platform: Web Performance Calendar
+subtitle: Start a Core Web Vital Real User Monitoring on Google Analytics
+tags: Core Web Vital, Performance, Next.JS, Google Analytics, React
+title: Core Web Vitals Dashboard On Google Analytics
 ---
 
 [Core Web Vitals](https://web.dev/vitals/) are a set of well-known metrics used to measure your website performance. It’s often the entry point to investigating what is wrong with someone’s website and measure the progress made optimizing the overall speed and stability.

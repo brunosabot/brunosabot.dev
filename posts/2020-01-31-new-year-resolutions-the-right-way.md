@@ -1,14 +1,15 @@
 ---
-path: /posts/2020/new-year-resolutions-the-right-way
-date: 2020-01-31
-title: New year resolutions the right way
-subtitle: My experience on how to succeed them
+canonical: https://brunosabot.medium.com/new-year-resolutions-the-right-way-de4ba67627cc
 creator: Bruno Sabot
+date: 2020-01-31
+lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg
 originalImageAlt: Congratulations on completed new year resolutions  —  Photo by me
-lang: en
-platform: Blog
+path: /posts/2020/new-year-resolutions-the-right-way
+platform: Medium
+subtitle: My experience on how to succeed them
 tags: New Year Resolution, Lifestyle, Feedback, Health, Improvment
+title: New year resolutions the right way
 ---
 
 _tl;dr: Imagine your resolution for the next year, make little steps and start them whenever you feel ready._

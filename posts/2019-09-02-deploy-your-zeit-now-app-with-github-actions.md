@@ -1,13 +1,14 @@
 ---
-path: /posts/2019/deploy-your-zeit-now-app-with-github-actions
-date: 2019-09-02
-title: Deploy Your ZEIT Now App With GitHub Actions
-subtitle: Implement custom logic without having to create an app to perform a task
+canonical: https://betterprogramming.pub/deploy-your-zeit-now-app-with-github-actions-ca3977806b40
 creator: Bruno Sabot
-originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
+date: 2019-09-02
 lang: en
-platform: Blog
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
+path: /posts/2019/deploy-your-zeit-now-app-with-github-actions
+platform: Medium
+subtitle: Implement custom logic without having to create an app to perform a task
 tags: Github Actions, React, Github, Zeit, Programming, CICD
+title: Deploy Your ZEIT Now App With GitHub Actions
 ---
 
 I recently got access to [GitHub Actions](https://github.com/features/actions) and I decided to test it with a simple deployment in [ZEIT Now](https://zeit.co/home). My first steps were to look at [this wonderful post](https://medium.com/peerigon/how-to-continuously-deploy-a-cra-using-github-actions-and-zeit-f7bbd3b60da3) from [Leonhard Melzer](https://medium.com/@leomelzer).

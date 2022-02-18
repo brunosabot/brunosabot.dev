@@ -1,14 +1,14 @@
 ---
-path: /posts/2019/learning-expedition-zenika-ce-qu-en-pensent-les-devs
-date: 2019-07-25
-title: "Learning expedition Zenika: Ce qu'en pensent les devs"
-subtitle: La Silicon Valley, c’est le rêve américain de beaucoup de développeurs. Zenika y est allé.
-creator: Bruno Sabot
-originalImage: https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg
 canonical: https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/
+creator: Bruno Sabot
+date: 2019-07-25
 lang: fr
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg
+path: /posts/2019/learning-expedition-zenika-ce-qu-en-pensent-les-devs
 platform: Zenika Blog
+subtitle: La Silicon Valley, c’est le rêve américain de beaucoup de développeurs. Zenika y est allé.
 tags: Work, Zenika, Feedback, Improvment
+title: "Learning expedition Zenika: Ce qu'en pensent les devs"
 ---
 
 La Silicon Valley, c’est le rêve américain de tout développeur qui s’intéresse de près à tout ce qui se fait de nouveau dans le monde du high-tech, c’est l’endroit ou l’on retrouve les plus grands groupes tels que Google, Apple, Facebook, Amazon, Microsoft, Netflix, Mozilla, Pivotal, etc..
