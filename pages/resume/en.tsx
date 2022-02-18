@@ -200,7 +200,7 @@ const Resume: React.FC<Props> = ({ jobs, trainings }) => (
 
       <section className={classes["resume-heading__3"]}>
         IT Consultant at Zenika, former lead Front-end at Netinteractive group,
-        I&apos;m not looking for new opportunities for now.
+        I&apos;m looking for new opportunities.
       </section>
 
       <section className={classes["resume-contact"]}>
