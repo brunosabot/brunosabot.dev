@@ -24,50 +24,85 @@ Il est néanmoins possible d’aller plus loin dans nos optimisations. En quoi �
 
 # Regrouper les mêmes règles
 
-```
-h1 { font-size:2em; }
-h2 { font-size:1.5em; }
-h1 { color: #369; }
+```css
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h1 {
+  color: #369;
+}
 ```
 
 Ici, on peut simplifier le code (de 9 octets) en
 
-```
-h1 { font-size:2em; color: #369; }
-h2 { font-size:1.5em; }
+```css
+h1 {
+  font-size: 2em;
+  color: #369;
+}
+h2 {
+  font-size: 1.5em;
+}
 ```
 
 Sans compter les répétitions éventuelles de certains attributs
 
 # Réécrire les règles CSS
 
-```
-h1 { margin-top:10px; margin-bottom:20px }
+```css
+h1 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 ```
 
 Dans cet exemple, regrouper les attributs peut faire gagner 17 octets :
 
-```
-h1 { margin:10px 0 20px }
+```css
+h1 {
+  margin: 10px 0 20px;
+}
 ```
 
 De même que pour le moyen précédent, les répétitions de certains attributs peuvent encore plus diminuer la taille de la feuille de style.
 
 # Décomposer les CSS
 
-```
-h1 { font-size:2em; color: #369; }
-h2 { font-size:1.5em; color: #369; }
-h3 { font-size:1.2em; color: #369; }
+```css
+h1 {
+  font-size: 2em;
+  color: #369;
+}
+h2 {
+  font-size: 1.5em;
+  color: #369;
+}
+h3 {
+  font-size: 1.2em;
+  color: #369;
+}
 ```
 
 En décomposant les règles on gagne 7 octets :
 
-```
-h1 { font-size:2em; }
-h2 { font-size:1.5em; }
-h3 { font-size:1.2em; }
-h1, h2, h3 { color: #369; }
+```css
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.2em;
+}
+h1,
+h2,
+h3 {
+  color: #369;
+}
 ```
 
 Certes le gain est moins important, mais reporté sur une feuille de style complète, il devient intéressant

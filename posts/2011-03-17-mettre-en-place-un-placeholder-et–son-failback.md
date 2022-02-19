@@ -23,36 +23,38 @@ Pour effectuer tout ceci, j’utiliserais jQuery. Le script peut bien entendu ê
 
 Si l’on veut faire simple et tout gérer en JavaScript, il suffit d’écrire un code tel que le suivant :
 
-```
-$('input[type="text"]').blur(function() {
-	if (this.value == '') {
-		this.value = this.defaultValue;
-	}
-}).focus(function() {
-	if (this.value == this.defaultValue) {
-		this.value = '';
-	}
-})
+```javascript
+$('input[type="text"]')
+  .blur(function () {
+    if (this.value == "") {
+      this.value = this.defaultValue;
+    }
+  })
+  .focus(function () {
+    if (this.value == this.defaultValue) {
+      this.value = "";
+    }
+  });
 ```
 
 Ce modèle présente une limitation, mais nous verons ça plus tard.
 
 Le premier point à mettre en place est la reconnaissance de la présence du placeholder. On va ici utiliser la même méthode que Modernizr :
 
-```
-var input = document.createElement('input');
-if (!('placeholder' in input)) {
-	// Faire ici le traitement pour les navigateurs ne reconnaissant pas le placeholder
-	// Il suffit d'y placer le code précédent par exemple !
+```javascript
+var input = document.createElement("input");
+if (!("placeholder" in input)) {
+  // Faire ici le traitement pour les navigateurs ne reconnaissant pas le placeholder
+  // Il suffit d'y placer le code précédent par exemple !
 } else {
-	// On supporte le placeholder : on vide la valeur par défaut
-	$('input[type="text"]').val('');
+  // On supporte le placeholder : on vide la valeur par défaut
+  $('input[type="text"]').val("");
 }
 ```
 
 Et voilà, le système est en place et il suffit de mettre en application le placeholder sur le champ input :
 
-```
+```html
 <input type="text" placeholder="Exemple" />
 ```
 
@@ -66,31 +68,42 @@ Les problèmes exposés, attaquons la première amélioration :
 
 Afin d’éviter les problèmes de valeurs par défaut, je vais utiliser la trop peu connue fonction de jQuery data.
 
-```
+```javascript
 $('input[type="text"]').each(function () {
-	var $this = $(this);
-	var $default = $this.data('placeholder');
-	if ($default === undefined) {
-		return;
-	}
-	$this.data('placeholderactive', true);
-	$this.focus(function () {
-		if ($this.data('placeholderactive') === true && $this.val() == $default) {
-			$this.val('').removeClass('placeholderactive').addClass('placeholderinactive');
-			$this.data('placeholderactive', false);
-		}
-	}).blur(function () {
-		if ($this.data('placeholderactive') === false && $this.val() == '') {
-			$this.val($default).removeClass('placeholderinactive').addClass('placeholderactive');
-			$this.data('placeholderactive', true);
-		}
-	}).val($default).removeClass('placeholderinactive').addClass('placeholderactive');
+  var $this = $(this);
+  var $default = $this.data("placeholder");
+  if ($default === undefined) {
+    return;
+  }
+  $this.data("placeholderactive", true);
+  $this
+    .focus(function () {
+      if ($this.data("placeholderactive") === true && $this.val() == $default) {
+        $this
+          .val("")
+          .removeClass("placeholderactive")
+          .addClass("placeholderinactive");
+        $this.data("placeholderactive", false);
+      }
+    })
+    .blur(function () {
+      if ($this.data("placeholderactive") === false && $this.val() == "") {
+        $this
+          .val($default)
+          .removeClass("placeholderinactive")
+          .addClass("placeholderactive");
+        $this.data("placeholderactive", true);
+      }
+    })
+    .val($default)
+    .removeClass("placeholderinactive")
+    .addClass("placeholderactive");
 });
 ```
 
 Et son nouveau champ input associé :
 
-```
+```html
 <input type="text" data-placeholder="Exemple" />
 ```
 

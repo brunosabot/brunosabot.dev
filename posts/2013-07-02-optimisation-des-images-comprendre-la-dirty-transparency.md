@@ -51,8 +51,6 @@ Ainsi, la compression de l'image sera bien meilleure, car le pattern le pattern 
 Pour arriver à ceci, j'utilise le code php suivant, que je vous recommande d'utiliser une seule fois, à la mise en production par exemple, puisqu'il est assez coûteux en ressources :
 
 ```php
-<?php
-
 $i = '/path/to/png/file';
 $o = '/path/to/output/file';
 

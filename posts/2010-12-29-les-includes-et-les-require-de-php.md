@@ -17,10 +17,8 @@ Si oui, vous êtes peut-être déjà tombés sur le problème suivant : lorsque 
 
 Le problème est principalement posé lors de l’inclusion dynamique d’un fichier. Imaginez un simple sur le site example.com :
 
-```
-<?php
+```php
 include $_GET['file'];
-?>
 ```
 
 Il suffit d’utiliser l’URL http://example.com/?file=.htaccess%00 pour accéder au contenu du fichier .htaccess, et éventuellement bien pire !

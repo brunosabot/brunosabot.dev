@@ -19,7 +19,7 @@ J’utilise personnellement un script pour effectuer le travail. Celui-ci, récu
 
 Pour l’utiliser, il suffit de placer les lignes suivantes dans le fichier .bashrc :
 
-```
+```bash
 extract () {
 	if [ -f $1 ] ; then
 		case $1 in
@@ -46,7 +46,7 @@ On peut bien entendu ajouter très facilement un nouveau format géré par le sc
 
 NB: Pour recharger le fichier .bashrc, il suffit de se reconnecter au compte, ou de faire :
 
-```
+```bash
 cd
 . .bashrc
 ```

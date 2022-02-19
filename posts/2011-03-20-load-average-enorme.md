@@ -23,7 +23,7 @@ Si vous voulez en apprendre un peu plus sur ce qu’est le load average, je vous
 
 Le script que j’utilise est le suivant :
 
-```
+```bash
 max_loadavg=1
 
 date=`date '+%d-%m-%Y'`
@@ -58,7 +58,7 @@ root@r00000:~$ uptime
 
 Le problème est bien toujours présent. Je commence ma recherche :
 
-```
+```bash
 top -b -n 1 | awk '{if (NR <=7) print; else if ($8 == "D") {print; count++} } END {print "Total status D: "count}'
 ```
 

@@ -17,7 +17,7 @@ Cependant, il manque sur ce script quelques informations importantes, facilement
 
 J’ai donc créé un nouveau bookmarklet avec des infomations un peu plus complètes :
 
-```
+```javascript
 (function() {
   var jsattribs = [
     'onbeforeunload',

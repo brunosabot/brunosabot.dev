@@ -17,7 +17,7 @@ Le choix des champs pour l’ordre de tri est important dans une requête SQL.
 
 Prennez par exemple la requête suivante :
 
-```
+```sql
 SELECT *
 FROM `ma_table_a` a
 INNER JOIN `ma_table_b` b ON (a.`aid` = b.`aid`)
@@ -38,7 +38,7 @@ Le tri est executé sur une table temporaire qui ne contient pas d’index, et d
 
 Si l’on choisit un index de la première table `ma_table_a`, celle de la close FROM, le tri sera effectué avant la jointure, et l’on peut ainsi bénéficier totalement de l’index de la table placé sur `aid` :
 
-```
+```sql
 SELECT *
 FROM `ma_table_a` a
 INNER JOIN `ma_table_b` b ON (a.`aid` = b.`aid`)

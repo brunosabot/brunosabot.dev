@@ -13,7 +13,7 @@ title: Hauteur d'un bloc de texte
 
 Piqûre de rappel pour certains, découverte pour d’autres, vous avez peut-être déjà remarqué que dans ce cas :
 
-```
+```css
 .bloc {
   font-size: 20px;
 }
@@ -36,7 +36,7 @@ Le ratio est donc un calcul approximatif, probablement avec des arrondis, pas é
 
 C’est là que l’on fait intervenir le line-height. Il suffit de le rajouter Pour résoudre le problème :
 
-```
+```css
 .bloc {
   font-size: 20px;
   line-height: 20px;

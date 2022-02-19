@@ -19,22 +19,22 @@ Malheureusement, dans l’exemple que je donne, cette méthode est buggée et ne
 
 Pour les personnes qui voudraient éventuellement analyser le code, le voici en version non minimifiée :
 
-```
-javascript:(function(){
+```javascript
+javascript: (function () {
   var windowLocationHref = window.location.href;
   var domainName = window.location.hostname;
   var myPathname = window.location.pathname;
-  var searchArray = windowLocationHref.split('&');
-  var mySearch = '';
+  var searchArray = windowLocationHref.split("&");
+  var mySearch = "";
 
-  for(myElement in searchArray){
-    if(searchArray[myElement].match(/^q=/)){
+  for (myElement in searchArray) {
+    if (searchArray[myElement].match(/^q=/)) {
       mySearch = searchArray[myElement];
     }
   }
 
-  var searchOnly = domainName + myPathname + '?' + mySearch;
+  var searchOnly = domainName + myPathname + "?" + mySearch;
 
-  self.location.href='http://' + searchOnly;
+  self.location.href = "http://" + searchOnly;
 })();
 ```

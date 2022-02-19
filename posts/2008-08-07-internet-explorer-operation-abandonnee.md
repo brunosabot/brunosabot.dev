@@ -21,9 +21,9 @@ Pour la première solution, je pars du principe que l’on utilise propotype.js 
 
 Il suffit de remplacer le code actuel par :
 
-```
-event.observe(window,'load',function () {
-// Insérer le script ici
+```javascript
+event.observe(window, "load", function () {
+  // Insérer le script ici
 });
 ```
 
@@ -31,18 +31,18 @@ Ainsi, la fonction faisant planter Internet Explorer ne s’exécute qu’après
 
 La deuxième manière consiste à modifier soi-même le load de la fonction.
 
-```
+```javascript
 window.onload = function () {
-// Insérer le script ici
-}
+  // Insérer le script ici
+};
 ```
 
 Afin de coder proprement et permettre des ajouts futurs simple, nous allons ajouter la fonction au chargement de la page et non la remplacer comme il est habituellement fait et comme je l’ai montré ci-dessus. A la première syntaxe, préférez :
 
-```
+```javascript
 window.onload += function () {
-// Insérer le script ici
-}
+  // Insérer le script ici
+};
 ```
 
 Nous faisons ici une concaténation et la fonction est ajoutée aux autres exécutés en cas de chargement de la page.

@@ -123,21 +123,6 @@ const Posts: React.FC<IPostsProps> = ({ source, relatedPosts = [], post }) => {
         image={post.image}
         url={"https://brunosabot.dev/" + post.path}
       />
-      <Head>
-        <link
-          rel="preload"
-          href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css"
-          as="style"
-          // @ts-ignore
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://github.githubassets.com/assets/gist-embed-b3b573358bfc66d89e1e95dbf8319c09.css"
-          />
-        </noscript>
-      </Head>
       <DefaultLayout>
         {post.canonical ? (
           <Head>

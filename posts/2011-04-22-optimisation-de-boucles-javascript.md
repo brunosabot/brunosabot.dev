@@ -21,10 +21,10 @@ En regardant les résutlats, nous avons remarqué qu’un script avait un temps 
 
 En fouillant dans le code on découvre (en réindenté) le code suivant :
 
-```
-var elts = target.getElementsByTagName('\*');
+```javascript
+var elts = target.getElementsByTagName("*");
 for (var i = 0; i < elts.length; i++) {
-...
+  //...
 }
 ```
 
@@ -52,10 +52,10 @@ Comment corriger le problème ? Pour le premier, il faut savoir si cette selecti
 
 Pour le second, il suffit de mettre en cache la taille du tableau, par exemple comme ceci :
 
-```
-var elts = target.getElementsByTagName('\*');
+```javascript
+var elts = target.getElementsByTagName("*");
 for (var i = 0, len = elts.length; i < len; i++) {
-...
+  //...
 }
 ```
 

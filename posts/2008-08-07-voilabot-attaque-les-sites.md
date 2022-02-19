@@ -66,7 +66,7 @@ Cette fois, VoilaBot ne peut plus accèder au serveur, le problème est réglé,
 
 On peut aussi créer un fichier de configuration pour exécuter automatiquement ces requêtes au démarrage du serveur qui, dans l’hypothèse de création d’un fichier de configuration /etc/init.d/firewall, peut ressembler à ceci :
 
-```
+```bash
 #!/bin/sh
 # chkconfig: 3 21 91
 # description: Firewall
