@@ -97,9 +97,25 @@
   content-visibility: auto;
   line-height: 32px;
 }
+.blog-post code {
+  background-color: var(--background-dp1);
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 4px 8px;
+}
 .blog-post pre {
   border-radius: 4px;
   font-size: 16px !important;
+}
+.blog-post pre pre {
+  padding: 16px 24px !important;
+}
+.blog-post pre code {
+  display: block;
+  padding: 0;
+}
+.blog-post pre code[data-type="simple"] {
+  padding: 16px 24px;
 }
 .blog-post ul {
   content-visibility: auto;

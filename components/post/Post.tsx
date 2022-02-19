@@ -61,15 +61,19 @@ const Code = (props: any) => {
           {props.metastring}
         </div>
       ) : null}
-      <PrismAsyncLight
-        language={language === "" ? "text" : language}
-        showLineNumbers
-        wrapLines
-        wrapLongLines={language === ""}
-        style={isDarkMode ? darkStyle : lightStyle}
-      >
-        {props.children}
-      </PrismAsyncLight>
+      {language ? (
+        <PrismAsyncLight
+          language={language === "" ? "text" : language}
+          showLineNumbers
+          wrapLines
+          wrapLongLines={language === ""}
+          style={isDarkMode ? darkStyle : lightStyle}
+        >
+          {props.children}
+        </PrismAsyncLight>
+      ) : (
+        <code data-type="simple">{props.children}</code>
+      )}
     </>
   );
 };
