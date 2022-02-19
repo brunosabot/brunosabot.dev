@@ -76,7 +76,9 @@ While writing this post, I realized that my boilerplate application is based on 
 
 So, first install the required packages:
 
-`yarn add --dev cross-env enzyme enzyme-adapter-react-16 eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks husky jest-enzyme lint-staged prettier stylelint stylelint-config-css-modules stylelint-config-prettier stylelint-config-recommended stylelint-order stylelint-prettier`
+```text
+yarn add --dev cross-env enzyme enzyme-adapter-react-16 eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks husky jest-enzyme lint-staged prettier stylelint stylelint-config-css-modules stylelint-config-prettier stylelint-config-recommended stylelint-order stylelint-prettier
+```
 
 Then, add the config files:
 

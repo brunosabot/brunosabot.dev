@@ -19,7 +19,7 @@ Vous trouverez ci-dessous la liste de commandes que j’ai utilisé afin d’arr
 Attention, si vous avez déjà poussé les modifications sur un autre dépôt, vous risquez d’avoir des problèmes.
 J’utilise par ailleurs le raccourci `git lg` que vous pourrez retrouver dans le dépot [dotfiles](https://github.com/brunosabot/dotfiles) de mon [github](https://github.com/brunosabot/).
 
-```
+```text
 [09:53] bruno@PC-Bruno:~/git/project[master]$ git lg
 * 034bcdf – (HEAD, master) Update on new functionality (Bruno Sabot 10 minutes ago)
 * d39bc5b – New functionality (Bruno Sabot 10 minutes ago)

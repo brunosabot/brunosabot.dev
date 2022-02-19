@@ -18,7 +18,7 @@ Le nombre de connexions devient vite excessif, et le serveur surchargé prend tr
 
 Les IP concernées par le VoilaBot sont les suivantes :
 
-```
+```text
 193.252.149.15
 193.252.149.16
 81.52.143.15
@@ -31,7 +31,7 @@ Les autres adresses de VoilaBot semblent être inactives depuis un moment.
 
 La première solution censée bloquer les bot des moteurs de recherche est de créer un fichier robots.txt, et d’interdire l’accès au site pour certains moteur. Il faut donc uploader un fichier nommé robots.txt à la racine du site qui contiendrait le code suivant :
 
-```
+```text
 User-agent: VoilaBot
 Disallow: /
 ```
@@ -40,7 +40,7 @@ Malheureusement, cette solution semble inutile puisque VoilaBot semble passer à
 
 La solution suivante serait de bloquer l’accès au niveau du fichier .htaccess, de la manière suivante :
 
-```
+```text
 deny from 193.252.149.15
 deny from 193.252.149.16
 deny from 81.52.143.15
@@ -55,7 +55,7 @@ La documentation pour le télécharger et l’installer est disponible sur netfi
 
 Une fois installé, on rejette les adresses de VoilaBot en entrant les commandes shell suivantes:
 
-```
+```text
 iptables -I INPUT -s 193.252.149.15 -j DROP
 iptables -I INPUT -s 193.252.149.16 -j DROP
 iptables -I INPUT -s 81.52.143.15 -j DROP

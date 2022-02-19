@@ -30,7 +30,7 @@ for (var i = 0; i < elts.length; i++) {
 
 Pourquoi est-ce un problème ? Avant de commencer à expliquer le problème, il est important de connaitre un point important. Pour celui-là, j’ai utilisé [statsy](/posts/2011/statsy-v2-quelques-ajouts).
 
-```
+```text
 JS in HTML attributes: 1351 bytes
 CSS in HTML attributes: 2790 bytes
 JS in SCRIPT tag: 4111 bytes

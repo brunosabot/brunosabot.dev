@@ -13,7 +13,7 @@ title: "PHP : Warning: include_once(1)"
 
 Lors de la créations de vos sites Internet, vous avez peut-être un jour obtenu l’erreur suivante :
 
-```
+```text
 Warning: include_once(1) [function.include-once]: failed to open stream: No such file or directory in Votre chemin
 ```
 

@@ -107,15 +107,9 @@
   border-radius: 4px;
   font-size: 16px !important;
 }
-.blog-post pre pre {
-  padding: 16px 24px !important;
-}
 .blog-post pre code {
   display: block;
   padding: 0;
-}
-.blog-post pre code[data-type="simple"] {
-  padding: 16px 24px;
 }
 .blog-post ul {
   content-visibility: auto;
@@ -160,6 +154,7 @@
   background-color: var(--background-dp1);
   border-radius: 4px;
   font-family: var(--sans-serif);
+  font-size: 16px;
   margin-bottom: calc(-0.5em - 2px);
   padding: 8px 16px 10px 16px;
 }

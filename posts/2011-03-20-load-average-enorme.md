@@ -45,13 +45,13 @@ exit
 
 Ce matin donc, je reçoit un mail pour me prévenir que la charge est trop importante. En effet, le message est le suivant:
 
-```
+```text
 Load Average : 29.28 on dimanche 20 mars 2011, 07:08:01 (UTC+0100)
 ```
 
 Je lance mon putty, et j’execute la commande suivante :
 
-```
+```text
 root@r00000:~$ uptime
 07:15:59 up 7:06, 2 users, load average: 26.09, 29.07, 31.01
 ```
