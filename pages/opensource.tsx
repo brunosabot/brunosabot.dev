@@ -58,7 +58,7 @@ const OpenSources: React.FC<Props> = ({ projects }) => (
     <div style={{ paddingTop: "24px" }}>
       {projects.map((project) => (
         <CardOpenSource
-          key={project.id}
+          key={project.name}
           name={project.name}
           url={project.url}
         />

@@ -6,7 +6,7 @@ interface Props {
 }
 
 const ResumeLayout: React.FC<Props> = ({ children }) => (
-  <div className={classes["resume-body"]}>{children}</div>
+  <main className={classes["resume-body"]}>{children}</main>
 );
 
 export default ResumeLayout;

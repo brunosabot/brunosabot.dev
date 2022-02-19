@@ -47,7 +47,7 @@ const Card: React.FC<Props> = ({
           blurDataURL={imagePlaceholder}
         />
       ) : null}
-      <h3 className={classes["card__header"]}>
+      <h2 className={classes["card__header"]}>
         <div className={classes["card__header-title-wrapper"]}>
           <span className={classes["card__header-title"]}>{title}</span>
         </div>
@@ -61,7 +61,7 @@ const Card: React.FC<Props> = ({
         {actions ? (
           <div className={classes["card__header-actions"]}>{actions}</div>
         ) : null}
-      </h3>
+      </h2>
 
       {children}
     </Composant>

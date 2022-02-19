@@ -232,7 +232,7 @@ const Resume: React.FC<Props> = ({ jobs, trainings }) => (
             startDate={job.startDate}
             job={job.job}
             subtitles={job.subtitles}
-            key={job.id}
+            key={job.companyName}
           />
         ))}
       </article>
@@ -249,7 +249,7 @@ const Resume: React.FC<Props> = ({ jobs, trainings }) => (
             startDate={training.startDate}
             job={training.diploma}
             subtitles={training.subtitles}
-            key={training.id}
+            key={training.diploma}
           />
         ))}
       </article>

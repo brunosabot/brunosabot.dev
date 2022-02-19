@@ -87,7 +87,7 @@ const Podcasts: React.FC<Props> = ({ podcasts }) => (
         title={podcast.title}
         date={podcast.date}
         id={podcast.id}
-        key={podcast.id}
+        key={podcast.title}
         url={podcast.url}
         platform={podcast.platform}
         priority={index === 0}

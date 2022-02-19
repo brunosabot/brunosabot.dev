@@ -1,6 +1,10 @@
 .NavigationBack {
+  align-items: center;
   color: inherit;
+  display: flex;
+  gap: 4px;
   left: 12px;
   position: absolute;
+  text-decoration: none;
   top: 6px;
 }

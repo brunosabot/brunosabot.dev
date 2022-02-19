@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import konami from "../lib/konami";
 import { useRouter } from "next/router";
 import Analytics from "../components/Analytics";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -24,6 +25,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      {process.env.NODE_ENV !== "production" ? (
+        <Script
+          src="https://cdn.accesslint.com/a11y-logger-0.1.0.js"
+          strategy="afterInteractive"
+        />
+      ) : null}
       <Analytics />
       <Component {...pageProps} />
     </>
