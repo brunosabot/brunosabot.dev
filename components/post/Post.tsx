@@ -36,13 +36,16 @@ const Code = (props: any) => {
   }, [props]);
 
   useEffect(() => {
-    import(
-      "react-syntax-highlighter/dist/cjs/languages/prism/" + language
-    ).then((importedLanguage) => {
-      console.log(language, importedLanguage);
-      PrismAsyncLight.registerLanguage(language, importedLanguage.default);
+    if (language === "") {
       setIsReady(true);
-    });
+    } else {
+      import(
+        "react-syntax-highlighter/dist/cjs/languages/prism/" + language
+      ).then((importedLanguage) => {
+        PrismAsyncLight.registerLanguage(language, importedLanguage.default);
+        setIsReady(true);
+      });
+    }
   }, [language]);
 
   useEffect(() => {
@@ -53,14 +56,16 @@ const Code = (props: any) => {
 
   return (
     <>
-      <div className={classes["blog-post-gist-filename"]}>
-        {props.metastring}
-      </div>
+      {props.metastring ? (
+        <div className={classes["blog-post-gist-filename"]}>
+          {props.metastring}
+        </div>
+      ) : null}
       <PrismAsyncLight
-        language={language}
+        language={language === "" ? "text" : language}
         showLineNumbers
         wrapLines
-        wrapLongLines={language === undefined}
+        wrapLongLines={language === ""}
         style={isDarkMode ? darkStyle : lightStyle}
       >
         {props.children}

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import classes from "./PostAuthor.module.css";
 import brunosabot from "../../public/images/brunosabot.jpg";
+import PostDate from "./PostDate";
 
 interface IPostAuthorProps {
   creator: string;
@@ -33,9 +33,14 @@ const PostAuthor: React.FC<IPostAuthorProps> = ({
       <div>
         <div className={classes["blog-post-author-name"]}>{creator}</div>
         <div className={classes["blog-post-author-date"]}>
-          <span>
-            {formatDistanceToNow(new Date(date), { addSuffix: true })}
-          </span>
+          {}
+          <PostDate
+            date={date}
+            label={new Intl.DateTimeFormat("en-US", {
+              dateStyle: "long",
+              timeStyle: "short",
+            }).format(new Date(date))}
+          />
           {timeToRead ? ` · ${timeToRead} min read` : null}
         </div>
 
