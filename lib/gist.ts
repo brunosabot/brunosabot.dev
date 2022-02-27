@@ -71,7 +71,7 @@ function getGistAST(file: string, value: string): IAST {
       {
         type: "mdxJsxAttribute",
         name: "lang",
-        value: getLanguage(file?.split(".").at(-1)),
+        value: getLanguage(file?.split(".")?.at(-1)),
       },
     ],
     children: [],
