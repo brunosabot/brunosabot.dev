@@ -1,4 +1,3 @@
-import { MDXProvider } from "@mdx-js/react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { getPlaiceholder } from "plaiceholder";
 import matter from "gray-matter";
@@ -9,10 +8,9 @@ import Card from "../../components/card/Card";
 import DefaultLayout from "../../components/layout/DefaultLayout";
 import SEO from "../../components/Seo";
 import PageTitle from "../../components/typography/PageTitle";
+import { MarkdownProvider } from "../../lib/markdown";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
-
-const components = {};
 
 export const getStaticProps = async () => {
   const postPromises = fs
@@ -55,7 +53,7 @@ interface IPostsProps {
 }
 
 const Posts: React.FC<IPostsProps> = ({ posts }) => (
-  <MDXProvider components={components}>
+  <MarkdownProvider>
     <DefaultLayout type="columns">
       <SEO
         description="All posts publicated by Bruno Sabot on various plateforms. Check it out!"
@@ -77,7 +75,7 @@ const Posts: React.FC<IPostsProps> = ({ posts }) => (
         />
       ))}
     </DefaultLayout>
-  </MDXProvider>
+  </MarkdownProvider>
 );
 
 export default Posts;

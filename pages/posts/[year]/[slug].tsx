@@ -1,4 +1,3 @@
-import { MDXProvider } from "@mdx-js/react";
 import { serialize } from "next-mdx-remote/serialize";
 import { getPlaiceholder } from "plaiceholder";
 import Head from "next/head";
@@ -18,10 +17,10 @@ import Patreon from "../../../components/donate/Patreon";
 import BuyMeACoffee from "../../../components/donate/BuyMeACoffee";
 import Related from "../../../components/post/Related";
 import { getRelatedPosts, RelatedPost } from "../../../lib/posts";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MarkdownProvider } from "../../../lib/markdown";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
-
-const components = {};
 
 export { getPaths as getStaticPaths } from "../../../components/pages/posts/[year]/[slug]";
 
@@ -110,13 +109,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 interface IPostsProps {
   post: any;
-  source: any;
+  source: MDXRemoteSerializeResult<Record<string, unknown>>;
   relatedPosts: RelatedPost[];
 }
 
 const Posts: React.FC<IPostsProps> = ({ source, relatedPosts = [], post }) => {
   return (
-    <MDXProvider components={components}>
+    <MarkdownProvider>
       <SEO
         title={post.title}
         description={post.subtitle}
@@ -138,7 +137,7 @@ const Posts: React.FC<IPostsProps> = ({ source, relatedPosts = [], post }) => {
         </PostDonation>
         <Related posts={relatedPosts} />
       </DefaultLayout>
-    </MDXProvider>
+    </MarkdownProvider>
   );
 };
 

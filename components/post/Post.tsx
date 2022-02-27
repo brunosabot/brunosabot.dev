@@ -5,21 +5,6 @@ import PostAuthor from "../post/PostAuthor";
 import PostSocial from "../post/PostSocial";
 import classes from "./Post.module.css";
 
-import Gist from "./Gist";
-
-const components = {
-  code: ({ className, children }: { className: string; children: any }) => {
-    if (className === undefined) return <code>{children}</code>;
-
-    return <Gist code={children} lang={className.replace("language-", "")} />;
-  },
-  Gist: Gist,
-  img: (props: { src: string; alt: string }) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img {...props} src={props.src} alt={props.alt} loading="lazy" />
-  ),
-};
-
 interface IPostProps {
   post: any;
   source: any;
@@ -58,7 +43,7 @@ const Post: React.FC<IPostProps> = ({ source, post }) => {
           <figcaption dangerouslySetInnerHTML={{ __html: post.imageAlt }} />
         </figure>
 
-        <MDXRemote {...source} lazy components={components} />
+        <MDXRemote {...source} lazy />
       </div>
     </div>
   );

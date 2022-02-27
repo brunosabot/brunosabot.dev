@@ -1,7 +1,7 @@
 ---
 canonical: https://betterprogramming.pub/fetching-data-with-react-72df95683c70
 creator: Bruno Sabot
-date: 2022-01-27
+date: 2022-02-01
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1543946602-8496af5aaa53.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@sanderweeteling">Sander Weeteling</a> on <a href="https://unsplash.com">Unsplash</a>.

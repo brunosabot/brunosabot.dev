@@ -1,26 +1,29 @@
 import fetch from "node-fetch";
 import visit from "async-unist-util-visit";
 
+interface IPosition {
+  line: number;
+  column: number;
+  offset: number;
+}
+
 interface IAST {
   children?: IAST[];
+  depth?: number;
+  meta?: string | null;
+  lang?: string;
   type: string;
   value?: string;
   name?: string;
   attributes?: IAST[];
+  position?: {
+    start: IPosition;
+    end: IPosition;
+  };
 }
 
 interface GistJsonResponse {
   files: string[];
-}
-
-function buildUrl(value: string) {
-  if (value.includes("/") === false) {
-    throw new Error("Invalid format");
-  }
-
-  const [username, id] = value.split("/");
-
-  return `https://gist.github.com/${username}/${id}`;
 }
 
 const MAP_LANGUAGE = {
@@ -31,7 +34,22 @@ const MAP_LANGUAGE = {
   ts: "typescript",
   stylelintrc: "json",
   prettierrc: "json",
+  md: "markdown",
 };
+
+async function loadGist(id: string): Promise<[string[], GistJsonResponse]> {
+  const url = `https://gist.github.com/${id}`;
+  const jsonResponse = await fetch(`${url}.json`);
+  const jsonData = await (jsonResponse.json() as Promise<GistJsonResponse>);
+
+  const data = await Promise.all(
+    jsonData.files.map((file) =>
+      fetch(`${url}/raw/?file=${file}`).then((r) => r.text())
+    )
+  );
+
+  return [data, jsonData];
+}
 
 function getLanguage(inputLanguage: string | undefined) {
   if (inputLanguage === undefined) return "text";
@@ -60,29 +78,20 @@ function getGistAST(file: string, value: string): IAST {
   };
 }
 
-async function parseGist(parent: IAST, item: IAST): Promise<IAST> {
+async function loadAndTransformGist(parent: IAST, item: IAST): Promise<IAST> {
   if (item.value === undefined) return item;
 
   const gist = item.value.substring(5).trim();
-  const url = buildUrl(gist);
-
-  const jsonResponse = await fetch(url + ".json");
-  const jsonContent = await (jsonResponse.json() as Promise<GistJsonResponse>);
-
-  const data = await Promise.all(
-    jsonContent.files.map((file) =>
-      fetch(url + "/raw/?file=" + file).then((r) => r.text())
-    )
-  );
+  const [data, jsonData] = await loadGist(gist);
 
   if (data.length === 1) {
-    return getGistAST(jsonContent.files[0], data[0]);
+    return getGistAST(jsonData.files[0], data[0]);
   }
 
   return {
     type: parent.type,
     children: data.map((file, index) =>
-      getGistAST(jsonContent.files[index], file)
+      getGistAST(jsonData.files[index], file)
     ),
   };
 }
@@ -95,17 +104,20 @@ const gist = () => async (ast: IAST) => {
     if (node.children.length === 0) return;
 
     const hasGist = node.children.some(
-      ({ type, value }) => type === "inlineCode" && value?.startsWith("gist")
+      ({ type, value }) =>
+        type === "inlineCode" && value?.startsWith("gist:") && value?.length > 5
     );
 
     if (hasGist) {
-      const promise = parseGist(node, node.children[0]).then((newNode) => {
-        Object.assign(node, newNode);
+      const promise = loadAndTransformGist(node, node.children[0]).then(
+        (newNode) => {
+          Object.assign(node, newNode);
 
-        if (node.children?.length === 0) {
-          delete node.children;
+          if (node.children?.length === 0) {
+            delete node.children;
+          }
         }
-      });
+      );
 
       promises.push(promise);
     }

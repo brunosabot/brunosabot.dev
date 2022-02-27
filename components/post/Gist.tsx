@@ -7,7 +7,7 @@ import lightStyle from "react-syntax-highlighter/dist/cjs/styles/prism/material-
 interface IGistProps {
   lang: string;
   file?: string;
-  code: string;
+  code?: React.ReactNode;
 }
 
 const Gist: React.FC<IGistProps> = ({ lang, file, code }) => {
