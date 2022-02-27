@@ -65,13 +65,8 @@ function getLanguage(inputLanguage: string | undefined) {
 function getGistAST(value: string, type: string, file?: string): IAST {
   if (file === undefined) return { type };
 
-  console.log("###", typeof file, file);
-  const extension = file?.split(".");
-  console.log("####", extension);
-  const language = getLanguage(
-    extension.length > 0 ? extension[extension.length - 1] : undefined
-  );
-  console.log("#####", language);
+  const ext = file?.split(".");
+  const language = getLanguage(ext.length ? ext[ext.length - 1] : undefined);
 
   return {
     type: "mdxJsxFlowElement",
