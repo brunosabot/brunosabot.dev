@@ -66,9 +66,11 @@ function getGistAST(value: string, type: string, file?: string): IAST {
   if (file === undefined) return { type };
 
   console.log("###", typeof file, file);
-  const extension = file.split(".").at(-1);
+  const extension = file?.split(".");
   console.log("####", extension);
-  const language = getLanguage(extension);
+  const language = getLanguage(
+    extension.length > 0 ? extension[extension.length - 1] : undefined
+  );
   console.log("#####", language);
 
   return {
