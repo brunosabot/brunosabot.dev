@@ -53,6 +53,7 @@ async function loadGist(id: string): Promise<[string[], GistJsonResponse]> {
 
 function getLanguage(inputLanguage: string | undefined) {
   if (inputLanguage === undefined) return "text";
+  if (inputLanguage === "") return "text";
 
   if (inputLanguage in MAP_LANGUAGE) {
     return MAP_LANGUAGE[inputLanguage as keyof typeof MAP_LANGUAGE];
@@ -61,7 +62,11 @@ function getLanguage(inputLanguage: string | undefined) {
   return inputLanguage;
 }
 
-function getGistAST(file: string, value: string): IAST {
+function getGistAST(value: string, type: string, file?: string): IAST {
+  if (file === undefined) return { type };
+
+  console.log(typeof file, file);
+
   return {
     type: "mdxJsxFlowElement",
     name: "Gist",
@@ -71,7 +76,7 @@ function getGistAST(file: string, value: string): IAST {
       {
         type: "mdxJsxAttribute",
         name: "lang",
-        value: getLanguage(file?.split(".")?.at(-1)),
+        value: getLanguage(file.split(".").at(-1)),
       },
     ],
     children: [],
@@ -85,13 +90,13 @@ async function loadAndTransformGist(parent: IAST, item: IAST): Promise<IAST> {
   const [data, jsonData] = await loadGist(gist);
 
   if (data.length === 1) {
-    return getGistAST(jsonData.files[0], data[0]);
+    return getGistAST(data[0], parent.type, jsonData.files[0]);
   }
 
   return {
     type: parent.type,
     children: data.map((file, index) =>
-      getGistAST(jsonData.files[index], file)
+      getGistAST(file, parent.type, jsonData.files[index])
     ),
   };
 }
