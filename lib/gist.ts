@@ -84,6 +84,8 @@ async function loadAndTransformGist(parent: IAST, item: IAST): Promise<IAST> {
   const gist = item.value.substring(5).trim();
   const [data, jsonData] = await loadGist(gist);
 
+  console.log(jsonData.files);
+
   if (data.length === 1) {
     return getGistAST(jsonData.files[0], data[0]);
   }
