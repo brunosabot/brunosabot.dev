@@ -6,8 +6,9 @@ import Layout from "../../components/layout/ResumeLayout";
 import Job from "../../components/resume/Job";
 import SocialLink from "../../components/resume/SocialLink";
 import Title from "../../components/resume/Title";
-import SEO from "../../components/Seo";
+import SEO, { SITE_METADATA } from "../../components/Seo";
 import classes from "./resume.module.css";
+import Head from "next/head";
 
 interface Job {
   id: string;
@@ -189,6 +190,19 @@ const Resume: React.FC<Props> = ({ jobs, trainings }) => (
       title="Bruno Sabot, développeur Front-end"
       lang="fr"
     />
+
+    <Head>
+      <link
+        rel="alternate"
+        hrefLang="en"
+        href={`${SITE_METADATA.siteUrl}/resume/en/`}
+      />
+      <link
+        rel="alternate"
+        hrefLang="x-default"
+        href={`${SITE_METADATA.siteUrl}/resume/en/`}
+      />
+    </Head>
 
     <aside className={classes["resume"]}>
       <section className={classes["resume-social"]}>

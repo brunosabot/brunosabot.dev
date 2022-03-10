@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-const SITE_METADATA = {
+export const SITE_METADATA = {
   title: "Bruno Sabot's website",
   description:
     "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
