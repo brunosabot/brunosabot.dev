@@ -44,10 +44,12 @@ export default function Pretty() {
   const [isPlayModeName, setIsPlayModeName] = useState<boolean>(false);
   const [userValue, setUserValue] = useState<string>("");
   const [isError, setIsError] = useState<boolean>(false);
+  const [isShowResult, setIsShowResult] = useState<boolean>(false);
 
   const pickSomething = useCallback(() => {
     const isNameMode = crypto.getRandomValues(new Uint8Array(1))[0] > 127;
 
+    setIsShowResult(false);
     setCurrentPlay(getFromMemoryTable(isNameMode, table));
     setIsPlayModeName(isNameMode);
     setUserValue("");
@@ -85,6 +87,14 @@ export default function Pretty() {
     },
     [currentPlay, isPlayModeName, pickSomething, table, userValue]
   );
+
+  const skipResult = useCallback(() => {
+    pickSomething();
+  }, [pickSomething]);
+
+  const showResult = useCallback(() => {
+    setIsShowResult(true);
+  }, []);
 
   const onChange = useCallback(
     (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
@@ -141,10 +151,23 @@ export default function Pretty() {
             />
           </Label>
           <div className={classes["memory-table-game-submit"]}>
+            <Button type="button" onClick={skipResult} outline>
+              Skip
+            </Button>
+            <Button type="button" onClick={showResult} outline>
+              Show Answer
+            </Button>
             <Button type="submit" onClick={checkResult}>
               Validate
             </Button>
           </div>
+          {isShowResult ? (
+            <SimpleCard>
+              {isPlayModeName
+                ? table.indexOf(currentPlay) + " ↔ " + currentPlay
+                : currentPlay + " ↔ " + table[+currentPlay]}
+            </SimpleCard>
+          ) : null}
         </form>
       )}
     </DefaultLayout>

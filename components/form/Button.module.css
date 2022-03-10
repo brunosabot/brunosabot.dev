@@ -11,3 +11,12 @@
   background-color: var(--background-dp1);
   color: var(--text-color);
 }
+
+.Outline {
+  background-color: transparent;
+  color: var(--background-reverse);
+}
+.Outline:hover {
+  background-color: var(--background-reverse);
+  color: var(--text-reverse-color);
+}

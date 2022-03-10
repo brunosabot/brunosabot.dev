@@ -5,6 +5,8 @@
   color: var(--accent-color);
 }
 .memory-table-game-submit {
+  display: flex;
+  gap: 16px;
   margin-top: 16px;
 }
 .memory-table-game-error {
