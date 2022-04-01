@@ -3,8 +3,8 @@ canonical: https://betterprogramming.pub/javascript-spread-and-rest-operators-wh
 creator: Bruno Sabot
 date: 2022-04-01
 lang: en
-originalImage: https://storage.googleapis.com/brunosabot.dev/img/roman-synkevych-wX2L8L-fGeA-unsplash.jpeg
-originalImageAlt: Photo by <a href="https://unsplash.com/@synkevych">Roman Synkevych</a> on <a href="https://unsplash.com">Unsplash</a>.
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/scott-webb-pdlZrtuy-Dw-unsplash.jpeg
+originalImageAlt: Photo by <a href="https://unsplash.com/@scottwebb">Scott Webb</a> on <a href="https://unsplash.com">Unsplash</a>.
 path: /posts/2022/javascript-spread-and-rest-operators-when-to-why-to-and-how-to-use-them
 platform: Medium
 subtitle: Understand two of the most useful JavaScript features
