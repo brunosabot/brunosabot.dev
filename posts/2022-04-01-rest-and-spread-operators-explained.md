@@ -9,7 +9,7 @@ path: /posts/2022/javascript-spread-and-rest-operators-when-to-why-to-and-how-to
 platform: Medium
 subtitle: Understand two of the most useful JavaScript features
 tags: JavaScript, Software Development, Software Engineeering, Web Development, Programming
-title: JavaScript Spread and Rest Operators: When To, Why To, and How to Use Them
+title: "JavaScript Spread and Rest Operators: When To, Why To, and How to Use Them"
 ---
 
 Ecmascript has introduced the rest and spread operators a few years ago. It is a powerful tool that helps a lot our code to be more concise and cleaner.
