@@ -37,7 +37,7 @@ function normalize(value: string) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-export default function Pretty() {
+export default function MemoryTable() {
   const [table, setTable] = useState<string[]>(getDefaultMemoryTable());
   const [play, setPlay] = useState<boolean>(false);
   const [currentPlay, setCurrentPlay] = useState<string>("");
