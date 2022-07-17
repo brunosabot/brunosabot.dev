@@ -5,6 +5,8 @@ interface ITextareaProps {
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   value: string;
   "aria-invalid"?: boolean;
+  rows: number;
+  id: string;
 }
 
 const Textarea: React.FC<ITextareaProps> = (props) => {

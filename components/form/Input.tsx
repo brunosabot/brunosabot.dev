@@ -1,32 +1,49 @@
 import React from "react";
 import classes from "./Input.module.css";
 
-interface InputPropsCheckbox {
+interface InputDefaultProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   "aria-invalid"?: boolean;
+  className?: string;
+  autoComplete?: string;
+  id?: string;
+  enterKeyHint?:
+    | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send";
+}
+
+type InputPropsCheckbox = InputDefaultProps & {
   type: "checkbox";
   checked: boolean;
-  className?: string;
-}
+};
 
-interface InputPropsText {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+type InputPropsText = InputDefaultProps & {
   value: string;
-  "aria-invalid"?: boolean;
   autoFocus?: boolean;
-  className?: string;
-}
+};
 
-interface InputPropsNumber {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+type InputPropsNumber = InputDefaultProps & {
   value: string;
-  "aria-invalid"?: boolean;
   autoFocus?: boolean;
-  className?: string;
   type: "number";
-}
+};
 
-type IInputProps = InputPropsText | InputPropsCheckbox | InputPropsNumber;
+type InputPropsEmail = InputDefaultProps & {
+  value: string;
+  autoFocus?: boolean;
+  type: "email";
+};
+
+type IInputProps =
+  | InputPropsText
+  | InputPropsCheckbox
+  | InputPropsNumber
+  | InputPropsEmail;
 
 const Input: React.FC<IInputProps> = (props) => {
   const classNames = props.className
