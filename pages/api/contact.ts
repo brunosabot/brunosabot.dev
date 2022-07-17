@@ -32,7 +32,7 @@ async function sendMail(sendSmtpEmail: SMTPData) {
   return res.json();
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
@@ -46,7 +46,7 @@ export default function handler(
     const { email = "", name = "", message = "" } = req.body;
     const subject = "Contact from brunosabot.dev";
 
-    sendMail({
+    await sendMail({
       sender: { name, email },
       to: [{ email: contactEmail, name: "Bruno Sabot" }],
       subject,
