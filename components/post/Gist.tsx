@@ -46,7 +46,7 @@ const Gist: React.FC<IGistProps> = ({ lang, file, code }) => {
         wrapLongLines={lang === "text"}
         style={isDarkMode ? darkStyle : lightStyle}
       >
-        {code}
+        {code as string}
       </PrismAsyncLight>
     </>
   );

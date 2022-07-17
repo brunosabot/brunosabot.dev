@@ -164,7 +164,7 @@ export default function RgbConvertor() {
     window.localStorage.setItem("rgbConvertor", JSON.stringify(newArray));
   }, [state.hex]);
 
-  const setUnsave = useCallback((value) => {
+  const setUnsave = useCallback((value: string) => {
     const storageSaves = JSON.parse(
       window.localStorage.getItem("rgbConvertor") || "[]"
     );
@@ -177,7 +177,7 @@ export default function RgbConvertor() {
   }, []);
 
   const onChange = useCallback(
-    (type) => (e: React.ChangeEvent<HTMLInputElement>) =>
+    (type: keyof IState) => (e: React.ChangeEvent<HTMLInputElement>) =>
       dispatch({ type, value: e.target.value }),
     []
   );

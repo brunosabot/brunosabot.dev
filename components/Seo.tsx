@@ -34,9 +34,7 @@ const SEO: React.FC<Props> = ({
 
   return (
     <Head>
-      <title>
-        {title} | {SITE_METADATA.title}
-      </title>
+      <title>{`${title} | ${SITE_METADATA.title}`}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:locale" content={lang} />
       <meta property="og:title" content={title} />

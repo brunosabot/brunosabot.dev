@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, {
+  FormEvent,
+  FormEventHandler,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import Input from "../../components/form/Input";
 import Label from "../../components/form/Label";
 import DefaultLayout from "../../components/layout/DefaultLayout";
@@ -67,7 +73,7 @@ export default function MemoryTable() {
   useEffect(pickSomething, [pickSomething]);
 
   const checkResult = useCallback(
-    (e) => {
+    (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
       if (isPlayModeName) {
@@ -157,7 +163,7 @@ export default function MemoryTable() {
             <Button type="button" onClick={showResult} outline>
               Show Answer
             </Button>
-            <Button type="submit" onClick={checkResult}>
+            <Button type="submit" onClick={() => {}}>
               Validate
             </Button>
           </div>

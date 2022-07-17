@@ -30,21 +30,24 @@ export default function Uuid() {
   const [name, setName] = useState<string>("");
   const [namespace, setNamespace] = useState<string>("");
 
-  const createUuid = useCallback((type, localName, localNamespace) => {
-    if (type === UuidType.V1) {
-      setUuid(uuidv1());
-    } else if (type === UuidType.V4) {
-      setUuid(uuidv4());
-    } else if (type === UuidType.V5) {
-      if (uuidValidate(localNamespace)) {
-        setUuid(uuidv5(localName, localNamespace));
-      } else {
-        setUuid("");
+  const createUuid = useCallback(
+    (type: UuidType, localName: string, localNamespace: string) => {
+      if (type === UuidType.V1) {
+        setUuid(uuidv1());
+      } else if (type === UuidType.V4) {
+        setUuid(uuidv4());
+      } else if (type === UuidType.V5) {
+        if (uuidValidate(localNamespace)) {
+          setUuid(uuidv5(localName, localNamespace));
+        } else {
+          setUuid("");
+        }
+      } else if (type === UuidType.NANOID) {
+        setUuid(nanoid());
       }
-    } else if (type === UuidType.NANOID) {
-      setUuid(nanoid());
-    }
-  }, []);
+    },
+    []
+  );
 
   const onChangeType = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {

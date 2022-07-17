@@ -59,7 +59,7 @@ function getLanguage(inputLanguage: string | undefined) {
     return MAP_LANGUAGE[inputLanguage as keyof typeof MAP_LANGUAGE];
   }
 
-  return inputLanguage;
+  return "text";
 }
 
 function getGistAST(value: string, type: string, file?: string): IAST {

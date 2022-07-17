@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 
 export default function useEscape(active: boolean, onClose: () => void) {
   const onEchap = useCallback(
-    (event) => {
+    (event: KeyboardEvent) => {
       if (event.keyCode === 27) {
         onClose();
       }

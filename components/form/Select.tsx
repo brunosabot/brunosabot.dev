@@ -5,6 +5,7 @@ interface ISelectProps {
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   value: string;
   "aria-invalid"?: boolean;
+  children: React.ReactNode;
 }
 
 const Select: React.FC<ISelectProps> = (props) => {
