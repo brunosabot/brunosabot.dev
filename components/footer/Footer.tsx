@@ -6,7 +6,6 @@ import Svg from "../svg/Svg";
 import {
   mdiCodepen,
   mdiDevTo,
-  mdiDiscord,
   mdiGithub,
   mdiInstagram,
   mdiLinkedin,
@@ -17,6 +16,7 @@ import svgStrava from "../svg/strava";
 import svgMedium from "../svg/medium";
 import svgHashnode from "../svg/hashnode";
 import svgPatreon from "../svg/patreon";
+import svgDiscord from "../svg/discord";
 import svgBuyMeACoffee from "../svg/buymeacoffee";
 
 const Footer: React.FC<{}> = () => {
@@ -75,7 +75,7 @@ const Footer: React.FC<{}> = () => {
           />
         </Social>
         <Social href="https://discord.gg/NSZFSdr9BW" name="Discord">
-          <Svg d={mdiDiscord} />
+          <Svg d={svgDiscord} />
         </Social>
         <Social href="https://www.strava.com/athletes/15220263" name="Strava">
           <Svg d={svgStrava} />

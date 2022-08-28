@@ -4,6 +4,8 @@ import Image from "next/image";
 import PostAuthor from "../post/PostAuthor";
 import PostSocial from "../post/PostSocial";
 import classes from "./Post.module.css";
+import Gist from "./Gist";
+import { components } from "../../lib/markdown";
 
 interface IPostProps {
   post: any;
@@ -43,7 +45,7 @@ const Post: React.FC<IPostProps> = ({ source, post }) => {
           <figcaption dangerouslySetInnerHTML={{ __html: post.imageAlt }} />
         </figure>
 
-        <MDXRemote {...source} lazy />
+        <MDXRemote {...source} components={components} lazy />
       </div>
     </div>
   );

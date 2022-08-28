@@ -1,7 +1,6 @@
 import {
   mdiCodepen,
   mdiDevTo,
-  mdiDiscord,
   mdiGithub,
   mdiInstagram,
   mdiLinkedin,
@@ -9,6 +8,7 @@ import {
   mdiTwitter,
 } from "@mdi/js";
 import svgPatreon from "../components/svg/patreon";
+import svgDiscord from "../components/svg/discord";
 import svgBuyMeACoffee from "../components/svg/buymeacoffee";
 import React from "react";
 import BiographyAvatar from "../components/biography/BiographyAvatar";
@@ -119,7 +119,7 @@ const About: React.FC<Props> = () => (
           href="https://discord.gg/NSZFSdr9BW"
           label="Bruno Sabot on Discord"
         >
-          <Svg d={mdiDiscord} />
+          <Svg d={svgDiscord} />
         </Social>
         <Social
           href="https://www.strava.com/athletes/15220263"
