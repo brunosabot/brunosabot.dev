@@ -4,20 +4,21 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
+const withPWAConfig = withPWA({
+  dest: "public",
+  runtimeCaching,
+  exclude: [/googletagmanager/],
+  offlineGoogleAnalytics: false,
+  disable: process.env.NODE_ENV !== "production",
+});
+
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer(
-  withPWA({
+  withPWAConfig({
     poweredByHeader: false,
     generateEtags: false,
     reactStrictMode: true,
     trailingSlash: true,
-    pwa: {
-      dest: "public",
-      runtimeCaching,
-      exclude: [/googletagmanager/],
-      offlineGoogleAnalytics: false,
-      disable: process.env.NODE_ENV !== "production",
-    },
     images: {
       formats: ["image/avif", "image/webp"],
       minimumCacheTTL: 864000,
