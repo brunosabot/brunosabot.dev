@@ -83,7 +83,7 @@ export default function SpeedConvertor() {
               return (
                 <Tr key={percentage}>
                   <Td>{percentage}%</Td>
-                  <Td>{round((speed * percentage) / 100)} km/h</Td>
+                  <Td>{round((speed * percentage) / 100, 2)} km/h</Td>
                   <Td>{speedToPace((speed * percentage) / 100)}</Td>
                 </Tr>
               );
