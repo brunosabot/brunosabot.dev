@@ -3,7 +3,12 @@ import DefaultLayout from "../../components/layout/DefaultLayout";
 import SEO from "../../components/Seo";
 import PageTitle from "../../components/typography/PageTitle";
 import LineCard from "../../components/card/LineCard";
-import { mdiBrain, mdiCodeTags, mdiHospitalBuilding } from "@mdi/js";
+import {
+  mdiBrain,
+  mdiCodeTags,
+  mdiHospitalBuilding,
+  mdiRunFast,
+} from "@mdi/js";
 import Svg from "../../components/svg/Svg";
 
 export default function Base64() {
@@ -54,6 +59,11 @@ export default function Base64() {
           icon={<Svg d={mdiCodeTags} />}
           to="/tools/sha/"
           title="Sha generation"
+        />
+        <LineCard
+          icon={<Svg d={mdiRunFast} />}
+          to="/tools/speed-convertor/"
+          title="Speed convertor"
         />
         <LineCard
           icon={<Svg d={mdiCodeTags} />}
