@@ -22,8 +22,8 @@ const SocialLink: React.FC<Props> = ({ children, to }) => {
           {children}
         </a>
       ) : (
-        <Link passHref href={to}>
-          <a className={classes["resume-social-link"]}>{children}</a>
+        <Link href={to} className={classes["resume-social-link"]}>
+          {children}
         </Link>
       )}
     </span>

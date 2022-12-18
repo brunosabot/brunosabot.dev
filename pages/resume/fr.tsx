@@ -249,8 +249,8 @@ const Resume: React.FC<Props> = ({ jobs, trainings }) => (
     </aside>
 
     <section className={classes["resume-life-experiences"]}>
-      <Link passHref href="/resume/en/">
-        <a className={classes["resume-language-tag"]}>EN</a>
+      <Link href="/resume/en/" className={classes["resume-language-tag"]}>
+        EN
       </Link>
       <article className={classes["resume-professional-experiences"]}>
         <Title>Expériences professionnelles</Title>

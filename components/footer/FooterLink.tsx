@@ -28,10 +28,8 @@ const FooterLink: React.FC<Props> = ({ children, to }) => {
           {children}
         </a>
       ) : (
-        <Link passHref href={to}>
-          <a href="#" className={classes["footer-link__link"]}>
-            {children}
-          </a>
+        <Link href={to} className={classes["footer-link__link"]}>
+          {children}
         </Link>
       )}
     </>

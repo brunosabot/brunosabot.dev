@@ -32,13 +32,11 @@ const HeaderLink: React.FC<Props> = ({ children, to }) => {
           {children}
         </a>
       ) : (
-        <Link passHref href={to}>
-          <a
-            href="#"
-            className={classes["header-link__link"] + " " + activeClassName}
-          >
-            {children}
-          </a>
+        <Link
+          href={to}
+          className={classes["header-link__link"] + " " + activeClassName}
+        >
+          {children}
         </Link>
       )}
     </span>
