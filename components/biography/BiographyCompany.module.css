@@ -26,3 +26,10 @@
 .biography-company:focus-visible::after {
   transform: translateX(0);
 }
+
+.biography-company--ex {
+  opacity: 0.65;
+}
+.biography-company--ex::after {
+  display: none;
+}

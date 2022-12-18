@@ -52,7 +52,15 @@ const About: React.FC<Props> = () => (
         <BiographySkill>Home automation</BiographySkill>
       </BiographyLine>
       <BiographyLine>
-        <BiographyCompany href="https://www.bdx.io/">BDX I/O</BiographyCompany>
+        <BiographyCompany href="https://playplay.com/">
+          PlayPlay
+        </BiographyCompany>
+        <BiographyCompany ex href="https://www.bdx.io/">
+          BDX I/O
+        </BiographyCompany>
+        <BiographyCompany ex href="https://gdgbordeaux.fr/#/">
+          GDG Bordeaux
+        </BiographyCompany>
       </BiographyLine>
       <BiographyLine>
         <Social
