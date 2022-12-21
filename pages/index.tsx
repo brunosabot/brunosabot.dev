@@ -55,7 +55,7 @@ const About: React.FC<Props> = () => (
         <BiographyCompany href="https://playplay.com/">
           PlayPlay
         </BiographyCompany>
-        <BiographyCompany ex href="https://www.bdx.io/">
+        <BiographyCompany ex href="https://www.bdxio.fr/">
           BDX I/O
         </BiographyCompany>
         <BiographyCompany ex href="https://gdgbordeaux.fr/#/">
