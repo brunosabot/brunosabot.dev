@@ -46,6 +46,10 @@ async function getResume(lang: string): Promise<Resume> {
   return res.json();
 }
 
+export async function generateStaticParams() {
+  return [{ lang: "fr" }, { lang: "en" }];
+}
+
 export default async function Page({ params: { lang } }: RouteParams) {
   if (["en", "fr"].includes(lang) === false) {
     notFound();
