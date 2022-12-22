@@ -1,18 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { season } from "../lib/season";
 
-const currentSeason = season(new Date());
-const seasonClass = currentSeason;
-
-let themeColor: string = "#5297ff";
-if (seasonClass === "spring") {
-  themeColor = "#7db936";
-} else if (seasonClass === "summer") {
-  themeColor = "#c2b280";
-} else if (seasonClass === "fall") {
-  themeColor = "#e98604";
-}
-
 class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -24,6 +12,17 @@ class MyDocument extends Document {
     const lang =
       this.props.head?.find((tag) => tag?.props.property === "og:locale")?.props
         .content ?? "en";
+
+    const currentSeason = season(new Date());
+
+    let themeColor: string = "#5297ff";
+    if (currentSeason === "spring") {
+      themeColor = "#7db936";
+    } else if (currentSeason === "summer") {
+      themeColor = "#c2b280";
+    } else if (currentSeason === "fall") {
+      themeColor = "#e98604";
+    }
 
     return (
       <Html lang={lang}>
@@ -43,7 +42,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content={themeColor} />
           <meta name="monetization" content="$ilp.uphold.com/zbywBq9qy3pe" />
         </Head>
-        <body className={seasonClass}>
+        <body className={currentSeason}>
           <Main />
           <NextScript />
           <div id="modal-root" aria-live="assertive"></div>

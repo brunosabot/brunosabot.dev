@@ -24,5 +24,8 @@ module.exports = withBundleAnalyzer(
       minimumCacheTTL: 864000,
       domains: ["storage.googleapis.com"],
     },
+    experimental: {
+      appDir: true,
+    },
   })
 );

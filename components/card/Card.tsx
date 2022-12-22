@@ -41,7 +41,6 @@ const Card: React.FC<Props> = ({
           src={image}
           alt={title}
           className={classes["card__image"]}
-          objectFit="cover"
           priority={priority}
           placeholder={imagePlaceholder ? "blur" : "empty"}
           blurDataURL={imagePlaceholder}

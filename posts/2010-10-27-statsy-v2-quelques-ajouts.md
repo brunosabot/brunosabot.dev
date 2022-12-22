@@ -4,7 +4,7 @@ date: 2010-10-27
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/ben-white-W8Qqn1PmQH0-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@benwhitephotography">Ben White</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2011/statsy-v2-quelques-ajouts
+path: /posts/2010/statsy-v2-quelques-ajouts
 platform: Blog
 subtitle: De nouvelles fonctionnalités pour améliorer le rapport Statsy
 tags: bookmarklet, javascript, statsy, tool, webperf

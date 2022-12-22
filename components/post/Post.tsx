@@ -35,8 +35,6 @@ const Post: React.FC<IPostProps> = ({ source, post }) => {
             priority
             src={post.image}
             alt={post.imageAlt.replace(/<[^>]*>/g, "")}
-            layout="responsive"
-            objectFit="cover"
             height={post.imageHeight}
             width="680"
             placeholder="blur"
