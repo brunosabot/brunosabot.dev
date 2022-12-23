@@ -1,46 +1,127 @@
-import fetch from "node-fetch";
-import visit from "async-unist-util-visit";
+import { marked } from "marked";
+import Prism from "prismjs";
+import "prismjs/components/prism-docker";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-markdown";
+import "prismjs/components/prism-nginx";
+import "prismjs/components/prism-tsx";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-yaml";
+import "prismjs/themes/prism-dark.css";
 
-interface IPosition {
-  line: number;
-  column: number;
-  offset: number;
-}
-
-interface IAST {
-  children?: IAST[];
-  depth?: number;
-  meta?: string | null;
-  lang?: string;
-  type: string;
-  value?: string;
-  name?: string;
-  attributes?: IAST[];
-  position?: {
-    start: IPosition;
-    end: IPosition;
-  };
-}
-
-interface GistJsonResponse {
-  files: string[];
-}
-
-const MAP_LANGUAGE = {
-  yml: "yaml",
-  Dockerfile: "docker",
-  eslintrc: "json",
-  js: "javascript",
-  ts: "typescript",
-  stylelintrc: "json",
-  prettierrc: "json",
-  md: "markdown",
+type GistToken = {
+  type: "gist";
+  raw: string;
+  url: string;
+  data: {
+    file: string;
+    html: string;
+    language: string;
+  }[];
 };
 
-async function loadGist(id: string): Promise<[string[], GistJsonResponse]> {
+const MAP_LANGUAGE = {
+  yml: { name: "yaml", prism: Prism.languages.yaml },
+  Dockerfile: { name: "docker", prism: Prism.languages.docker },
+  eslintrc: { name: "json", prism: Prism.languages.json },
+  js: { name: "javascript", prism: Prism.languages.javascript },
+  ts: { name: "typescript", prism: Prism.languages.typescript },
+  tsx: { name: "tsx", prism: Prism.languages.tsx },
+  stylelintrc: { name: "json", prism: Prism.languages.json },
+  prettierrc: { name: "json", prism: Prism.languages.json },
+  json: { name: "json", prism: Prism.languages.json },
+  md: { name: "markdown", prism: Prism.languages.markdown },
+  nginx: { name: "nginx", prism: Prism.languages.nginx },
+};
+
+export function getLanguage(inputLanguage: string | undefined) {
+  if (inputLanguage === undefined) return "text";
+  if (inputLanguage === "") return "text";
+
+  if (inputLanguage in MAP_LANGUAGE) {
+    return MAP_LANGUAGE[inputLanguage as keyof typeof MAP_LANGUAGE].name;
+  }
+
+  return "text";
+}
+
+const gistPlugin: marked.MarkedExtension = {
+  extensions: [
+    {
+      name: "gist",
+      level: "block",
+      start(src) {
+        return src.indexOf("`gist:");
+      },
+      tokenizer(src) {
+        const rule = /^`gist:\s*([a-z0-9]+\/[0-9a-f]+)`/;
+        const match = rule.exec(src);
+        if (match) {
+          return {
+            type: "gist",
+            raw: match[0],
+            url: match[1],
+            data: [],
+          };
+        }
+      },
+      renderer(token) {
+        return (token as GistToken).data.reduce(
+          (acc, { html, language, file }) => {
+            const grammar = Object.values(MAP_LANGUAGE).find(
+              (l) => l.name === language
+            )?.prism;
+
+            const output = Prism.highlight(
+              html,
+              grammar ?? Prism.languages.text,
+              language
+            );
+
+            let newAcc = acc;
+
+            if (file) {
+              newAcc += `<div class="hljs-filename">${file}</div>`;
+            }
+
+            newAcc += `<pre><code class="language-${language}">${output}</code></pre>`;
+
+            return newAcc;
+          },
+          ""
+        );
+      },
+    },
+  ],
+  async: true,
+  async walkTokens(token: marked.Token | GistToken) {
+    if (token.type === "gist") {
+      const [data, jsonData] = await loadGist(token.url);
+
+      token.data = data.map((d, i) => {
+        const ext = jsonData.files[i].split(".");
+        const language = getLanguage(
+          ext.length ? ext[ext.length - 1] : undefined
+        );
+
+        return {
+          file: jsonData.files[i],
+          html: d.trim(),
+          language: language,
+        };
+      });
+    }
+  },
+};
+
+marked.use(gistPlugin);
+
+async function loadGist(id: string): Promise<[string[], { files: string[] }]> {
   const url = `https://gist.github.com/${id}`;
   const jsonResponse = await fetch(`${url}.json`);
-  const jsonData = await (jsonResponse.json() as Promise<GistJsonResponse>);
+
+  const jsonData = await (jsonResponse.json() as Promise<{ files: string[] }>);
 
   const data = await Promise.all(
     jsonData.files.map((file) =>
@@ -51,88 +132,6 @@ async function loadGist(id: string): Promise<[string[], GistJsonResponse]> {
   return [data, jsonData];
 }
 
-function getLanguage(inputLanguage: string | undefined) {
-  if (inputLanguage === undefined) return "text";
-  if (inputLanguage === "") return "text";
-
-  if (inputLanguage in MAP_LANGUAGE) {
-    return MAP_LANGUAGE[inputLanguage as keyof typeof MAP_LANGUAGE];
-  }
-
-  return "text";
+export default async function getMarkdown(content: string) {
+  return marked.parse(content);
 }
-
-function getGistAST(value: string, type: string, file?: string): IAST {
-  if (file === undefined) return { type };
-
-  const ext = file?.split(".");
-  const language = getLanguage(ext.length ? ext[ext.length - 1] : undefined);
-
-  return {
-    type: "mdxJsxFlowElement",
-    name: "Gist",
-    attributes: [
-      { type: "mdxJsxAttribute", name: "file", value: file },
-      { type: "mdxJsxAttribute", name: "code", value: value.trim() },
-      {
-        type: "mdxJsxAttribute",
-        name: "lang",
-        value: language,
-      },
-    ],
-    children: [],
-  };
-}
-
-async function loadAndTransformGist(parent: IAST, item: IAST): Promise<IAST> {
-  if (item.value === undefined) return item;
-
-  const gist = item.value.substring(5).trim();
-  const [data, jsonData] = await loadGist(gist);
-
-  if (data.length === 1) {
-    return getGistAST(data[0], parent.type, jsonData.files[0]);
-  }
-
-  return {
-    type: parent.type,
-    children: data.map((file, index) =>
-      getGistAST(file, parent.type, jsonData.files[index])
-    ),
-  };
-}
-
-const gist = () => async (ast: IAST) => {
-  const promises: Promise<void>[] = [];
-
-  const createGist = (node: IAST) => {
-    if (node.children === undefined) return;
-    if (node.children.length === 0) return;
-
-    const hasGist = node.children.some(
-      ({ type, value }) =>
-        type === "inlineCode" && value?.startsWith("gist:") && value?.length > 5
-    );
-
-    if (hasGist) {
-      const promise = loadAndTransformGist(node, node.children[0]).then(
-        (newNode) => {
-          Object.assign(node, newNode);
-
-          if (node.children?.length === 0) {
-            delete node.children;
-          }
-        }
-      );
-
-      promises.push(promise);
-    }
-  };
-
-  await visit(ast, "paragraph", createGist);
-  await Promise.all(promises);
-
-  return;
-};
-
-export default gist;

@@ -1,13 +1,16 @@
 import "../styles/globals.css";
 
-export default function RootLayout({
-  children,
-}: {
+interface IRootLayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children }: IRootLayoutProps) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <div id="modal-root"></div>
+      </body>
     </html>
   );
 }

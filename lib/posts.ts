@@ -8,15 +8,11 @@ export interface RelatedPost {
   count: number;
 }
 
-export function getRelatedPosts(
-  posts: any[],
-  path: string,
-  tags: string
-): RelatedPost[] {
+export function getRelatedPosts(post: any, posts: any[]): RelatedPost[] {
   return posts
-    .filter((post) => post.data.path !== path)
+    .filter((p) => p.data.path !== post.data.path)
     .reduce<any[]>((acc, p) => {
-      const commonTags = tags
+      const commonTags = post.data.tags
         .split(",")
         .map((tag: string) => tag.trim())
         .filter((tag: any) =>

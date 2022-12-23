@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import React from "react";
 import classes from "./HeaderLink.module.css";
@@ -7,13 +6,13 @@ import Svg from "../svg/Svg";
 
 interface Props {
   children: React.ReactNode;
+  current: string | null;
   to: string;
 }
 
-const HeaderLink: React.FC<Props> = ({ children, to }) => {
-  const { asPath } = useRouter();
+const HeaderLink: React.FC<Props> = ({ current, children, to }) => {
   const activeClassName =
-    asPath === to ? classes["header-link__link--active"] : "";
+    current === to ? classes["header-link__link--active"] : "";
   const isExternal = to.indexOf("http") === 0;
 
   return (

@@ -1,49 +1,60 @@
-import { MDXRemote } from "next-mdx-remote";
 import React from "react";
 import Image from "next/image";
 import PostAuthor from "../post/PostAuthor";
 import PostSocial from "../post/PostSocial";
 import classes from "./Post.module.css";
-import Gist from "./Gist";
-import { components } from "../../lib/markdown";
+import MatterPost from "../../types/MatterPost";
 
 interface IPostProps {
-  post: any;
-  source: any;
+  readingTime: number;
+  post: MatterPost;
+  heroPlaceholder: string;
+  heroHeight: number;
+  html: string;
 }
 
-const Post: React.FC<IPostProps> = ({ source, post }) => {
+const Post: React.FC<IPostProps> = ({
+  post,
+  readingTime,
+  heroHeight,
+  heroPlaceholder,
+  html,
+}) => {
   return (
     <div className={classes["blog-post-container"]}>
       <div className={classes["blog-post"]}>
-        <h1>{post.title}</h1>
-        <h2>{post.subtitle}</h2>
+        <h1>{post.data.title}</h1>
+        <h2>{post.data.subtitle}</h2>
 
         <div className={classes["blog-post-infos"]}>
           <PostAuthor
-            creator={post.creator}
-            date={post.date}
-            timeToRead={post.timeToRead}
-            canonical={post.canonical}
-            canonicalName={post.platform}
+            creator={post.data.creator}
+            date={post.data.date}
+            timeToRead={readingTime}
+            canonical={post.data.canonical}
+            canonicalName={post.data.platform}
           />
-          <PostSocial title={post.title} path={post.path} />
+          <PostSocial title={post.data.title} path={post.data.path} />
         </div>
 
         <figure>
           <Image
             priority
-            src={post.image}
-            alt={post.imageAlt.replace(/<[^>]*>/g, "")}
-            height={post.imageHeight}
+            src={post.data.originalImage}
+            alt={post.data.originalImageAlt?.replace(/<[^>]*>/g, "")}
+            height={heroHeight}
             width="680"
             placeholder="blur"
-            blurDataURL={post.imagePlaceholder}
+            blurDataURL={heroPlaceholder}
           />
-          <figcaption dangerouslySetInnerHTML={{ __html: post.imageAlt }} />
+          {post.data.originalImageAlt ? (
+            <figcaption
+              dangerouslySetInnerHTML={{ __html: post.data.originalImageAlt }}
+            />
+          ) : null}
         </figure>
 
-        <MDXRemote {...source} components={components} lazy />
+        <div dangerouslySetInnerHTML={{ __html: html }}></div>
       </div>
     </div>
   );

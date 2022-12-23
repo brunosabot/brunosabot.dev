@@ -1,18 +1,15 @@
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import { getPlaiceholder } from "plaiceholder";
-import matter from "gray-matter";
+import React from "react";
 import fs from "fs";
 import path from "path";
-import React from "react";
-import Card from "../../components/card/Card";
-import DefaultLayout from "../../components/layout/DefaultLayout";
-import SEO from "../../components/Seo";
-import PageTitle from "../../components/typography/PageTitle";
-import { MarkdownProvider } from "../../lib/markdown";
+import { getPlaiceholder } from "plaiceholder";
+import matter from "gray-matter";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import Card from "../../../../components/card/Card";
+import PageTitle from "../../../../components/typography/PageTitle";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
 
-export const getStaticProps = async () => {
+export const getPosts = async () => {
   const postPromises = fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path))
@@ -43,22 +40,14 @@ export const getStaticProps = async () => {
       };
     });
 
-  const posts = await Promise.all(postPromises);
-
-  return { props: { posts } };
+  return Promise.all(postPromises);
 };
 
-interface IPostsProps {
-  posts: any[];
-}
+export default async function Page() {
+  const posts = await getPosts();
 
-const Posts: React.FC<IPostsProps> = ({ posts }) => (
-  <MarkdownProvider>
-    <DefaultLayout type="columns">
-      <SEO
-        description="All posts publicated by Bruno Sabot on various plateforms. Check it out!"
-        title="Posts"
-      />
+  return (
+    <>
       <PageTitle>Post list</PageTitle>
       {posts.map((post, index) => (
         <Card
@@ -74,8 +63,6 @@ const Posts: React.FC<IPostsProps> = ({ posts }) => (
           priority={index === 0}
         />
       ))}
-    </DefaultLayout>
-  </MarkdownProvider>
-);
-
-export default Posts;
+    </>
+  );
+}

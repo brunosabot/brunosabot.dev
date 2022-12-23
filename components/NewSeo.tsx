@@ -20,6 +20,7 @@ interface Props {
   title: string;
   image?: string;
   url?: string;
+  canonical?: string;
 }
 
 const NewSeo: React.FC<Props> = ({
@@ -28,6 +29,7 @@ const NewSeo: React.FC<Props> = ({
   image = undefined,
   title,
   url = undefined,
+  canonical = undefined,
 }) => {
   const metaDescription = description || SITE_METADATA.description;
 
@@ -51,6 +53,7 @@ const NewSeo: React.FC<Props> = ({
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:site" content="@brunosabot" />
       {image ? <meta name="twitter:image" content={image} /> : null}
+      {canonical ? <link rel="canonical" href={canonical} /> : null}
     </>
   );
 };

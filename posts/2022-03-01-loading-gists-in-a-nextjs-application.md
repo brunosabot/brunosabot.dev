@@ -126,7 +126,9 @@ With this in mind, we can think about how we are going to include our gist.
 
 I chose to include the gist in an inline block code, with a prefix `gist:` and then the username and ID. It will look like this:
 
-`` `gist:brunosabot/00000000000000000000000000000000` ``
+```
+gist:brunosabot/00000000000000000000000000000000
+```
 
 When rendering this content, the generated AST will be composed of a `paragraph` node with an `inlineCode` child. What we need to do is to replace the paragraph the loaded code from Github.
 

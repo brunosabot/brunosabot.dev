@@ -164,3 +164,13 @@ code {
   top: 0;
   width: 100%;
 }
+
+.hljs-filename {
+  background-color: #282828;
+  border-bottom: 1px solid #1c1c1c;
+  border-radius: 4px 4px 0 0;
+  font-family: var(--sans-serif);
+  font-size: 16px;
+  margin-bottom: -16px;
+  padding: 8px 16px 10px 16px;
+}

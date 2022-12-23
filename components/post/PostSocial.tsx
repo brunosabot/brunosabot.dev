@@ -3,6 +3,7 @@ import classes from "./PostSocial.module.css";
 import Svg from "../svg/Svg";
 import { mdiLinkedin, mdiTwitter } from "@mdi/js";
 import { TooltipPosition, withTooltip } from "../modal/withTooltip";
+import { WithATooltip } from "../modal/WithATooltip";
 
 interface IPostsProps {
   title: string;
@@ -15,20 +16,18 @@ interface ILinkWithTooltip {
   children: React.ReactNode;
 }
 
-const LinkWithTooltip = withTooltip<ILinkWithTooltip>(
-  ({ href, label, children }) => {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={label}
-        className={classes["blog-post-social-item"]}
-      >
-        {children}
-      </a>
-    );
-  }
+const LinkWithTooltip = ({ href, label, children }: ILinkWithTooltip) => (
+  <WithATooltip label={label}>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      className={classes["blog-post-social-item"]}
+    >
+      {children}
+    </a>
+  </WithATooltip>
 );
 
 const Posts: React.FC<IPostsProps> = ({ title, path }) => {
