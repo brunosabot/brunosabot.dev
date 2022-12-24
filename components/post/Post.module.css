@@ -115,6 +115,7 @@
   border-radius: 0 0 4px 4px;
 }
 .blog-post :global(.hljs-filename) + pre code {
+  background-color: #282828;
   border-radius: 0 0 4px 4px;
   padding: 1em;
 }
