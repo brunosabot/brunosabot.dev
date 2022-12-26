@@ -4,13 +4,14 @@ import fs from "fs";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
 const getTemplate = (children: string) =>
-  `<rss xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  `<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title><![CDATA[Bruno Sabot RSS Feed]]></title>
     <description><![CDATA[I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.]]></description>
     <link>https://brunosabot.dev/</link>
     <generator>NextJS</generator>
-    <lastBuildDate>${new Date().toISOString()}</lastBuildDate>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="https://brunosabot.dev/rss.xml" rel="self" type="application/rss+xml" />
     ${children}
   </channel>
 </rss>`;
@@ -34,7 +35,7 @@ function createRss() {
         <description><![CDATA[${page.data.subtitle}]]></description>
         <link>https://brunosabot.dev${page.data.path}</link>
         <guid isPermaLink="false">https://brunosabot.dev${page.data.path}</guid>
-        <pubDate>${page.data.date.toISOString()}</pubDate>
+        <pubDate>${page.data.date.toUTCString()}</pubDate>
         <content:encoded><![CDATA[${encodedStr.trim()}]]></content:encoded>
       </item>
 `;
