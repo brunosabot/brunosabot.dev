@@ -1,8 +1,8 @@
-import NewSeo from "../../../components/NewSeo";
+import Seo from "../../../components/Seo";
 
 export default function ProjectsHead() {
   return (
-    <NewSeo
+    <Seo
       description="Projects imagined and created by Bruno Sabot. Check it out!"
       title="Projects"
     />

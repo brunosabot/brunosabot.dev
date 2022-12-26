@@ -1,8 +1,8 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolUrlEncodeDecodeHead() {
   return (
-    <NewSeo
+    <Seo
       description="URL encode and decode tool by Bruno Sabot"
       title="URL tool"
     />

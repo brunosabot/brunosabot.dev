@@ -1,8 +1,8 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolPhotoshopShadowHead() {
   return (
-    <NewSeo
+    <Seo
       description="Photoshop shadow conversion tool by Bruno Sabot"
       title="Photoshop Shadow"
     />

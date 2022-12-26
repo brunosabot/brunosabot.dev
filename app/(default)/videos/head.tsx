@@ -1,8 +1,8 @@
-import NewSeo from "../../../components/NewSeo";
+import Seo from "../../../components/Seo";
 
 export default function VideosHead() {
   return (
-    <NewSeo
+    <Seo
       description="All the videos made by or with Bruno Sabot"
       title="Videos"
     />

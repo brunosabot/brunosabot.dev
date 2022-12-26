@@ -1,9 +1,9 @@
-import NewSeo from "../../../../components/NewSeo";
+import Seo from "../../../../components/Seo";
 
 export default async function PostsHead() {
   return (
     <>
-      <NewSeo
+      <Seo
         description="All posts publicated by Bruno Sabot on various plateforms. Check it out!"
         title="Posts"
       />

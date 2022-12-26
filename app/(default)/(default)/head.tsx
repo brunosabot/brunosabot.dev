@@ -1,9 +1,9 @@
-import NewSeo from "../../../components/NewSeo";
+import Seo from "../../../components/Seo";
 
 export default async function IndexHead() {
   return (
     <>
-      <NewSeo
+      <Seo
         title="About"
         description="I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France."
       />

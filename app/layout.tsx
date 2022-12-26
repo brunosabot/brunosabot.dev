@@ -37,6 +37,7 @@ export default function RootLayout({ children }: IRootLayoutProps) {
         <link rel="apple-touch-icon" href="/icons/maskable_icon.png" />
         <meta name="theme-color" content={themeColor} />
         <meta name="monetization" content="$ilp.uphold.com/zbywBq9qy3pe" />
+        <meta charSet="utf-8" />
       </head>
       <body className={currentSeason}>
         {children}

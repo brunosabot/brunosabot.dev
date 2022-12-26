@@ -1,8 +1,8 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolAlcoholHead() {
   return (
-    <NewSeo
+    <Seo
       description="Alcohol quantity calculation tool by Bruno Sabot"
       title="Alcohol tool"
     />

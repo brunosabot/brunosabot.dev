@@ -1,8 +1,8 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolCharsCountHead() {
   return (
-    <NewSeo
+    <Seo
       description="Character and word count tool by Bruno Sabot"
       title="Character count tool"
     />

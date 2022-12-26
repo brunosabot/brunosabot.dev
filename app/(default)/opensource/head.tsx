@@ -1,8 +1,8 @@
-import NewSeo from "../../../components/NewSeo";
+import Seo from "../../../components/Seo";
 
 export default function OpensourceHead() {
   return (
-    <NewSeo
+    <Seo
       description="All the open sources project initiated by Bruno Sabot. Check it out!"
       title="Open Source"
     />

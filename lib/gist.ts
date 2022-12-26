@@ -1,5 +1,6 @@
 import { marked } from "marked";
 import Prism from "prismjs";
+import { mdiLinkVariant } from "@mdi/js";
 import "prismjs/components/prism-docker";
 import "prismjs/components/prism-json";
 import "prismjs/components/prism-jsx";
@@ -115,6 +116,21 @@ const gistPlugin: marked.MarkedExtension = {
   },
 };
 
+const renderer = {
+  heading(text: string, level: number) {
+    const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
+
+    return `
+      <h${level + 2} class="anchor-target">
+        <a name="${escapedText}" class="anchor" href="#${escapedText}">
+          <svg viewBox="0 0 24 24" height="24px" width="24px"><path d="${mdiLinkVariant}"/></svg>
+        </a>
+        ${text}
+      </h${level + 2}>`;
+  },
+};
+
+marked.use({ renderer });
 marked.use(gistPlugin);
 
 async function loadGist(id: string): Promise<[string[], { files: string[] }]> {

@@ -1,8 +1,8 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolSpeedConvertorHead() {
   return (
-    <NewSeo
+    <Seo
       description="Speed convertor tool by Bruno Sabot"
       title="Speed convertor tool"
     />

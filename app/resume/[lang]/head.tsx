@@ -1,4 +1,4 @@
-import NewSeo, { SITE_METADATA } from "../../../components/NewSeo";
+import Seo, { SITE_METADATA } from "../../../components/Seo";
 import Resume from "../../../types/Resume";
 import { RouteParams } from "./types";
 
@@ -31,7 +31,7 @@ export default async function ResumeHead({ params: { lang } }: RouteParams) {
         hrefLang="x-default"
         href={`${SITE_METADATA.siteUrl}/resume/en/`}
       />
-      <NewSeo
+      <Seo
         description={resume.seo.description}
         title={resume.seo.title}
         lang={lang}

@@ -1,8 +1,8 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolPrettyHead() {
   return (
-    <NewSeo
+    <Seo
       description="JSON prettifier tool by Bruno Sabot"
       title="JSON pretty tool"
     />

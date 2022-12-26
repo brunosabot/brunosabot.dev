@@ -1,8 +1,8 @@
-import NewSeo from "../../../components/NewSeo";
+import Seo from "../../../components/Seo";
 
 export default function ToolsHead() {
   return (
-    <NewSeo
+    <Seo
       description="Web and developer tools by Bruno Sabot"
       title="Web tools"
     />

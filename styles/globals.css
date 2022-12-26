@@ -175,3 +175,21 @@ code {
   margin-bottom: -16px;
   padding: 8px 16px 10px 16px;
 }
+
+.anchor-target {
+  position: relative;
+}
+.anchor {
+  align-items: center;
+  display: flex;
+  fill: var(--text-medium-color);
+  height: 100%;
+  left: -32px;
+  opacity: 0;
+  padding-right: 8px;
+  position: absolute;
+  transition: 0.2s opacity cubic-bezier(0.4, 0, 0.6, 1);
+}
+.anchor-target:hover .anchor {
+  opacity: 1;
+}

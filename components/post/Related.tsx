@@ -11,7 +11,7 @@ interface IRelatedProps {
 const Related: React.FC<IRelatedProps> = ({ posts = [] }) => {
   return (
     <>
-      <h1 className={classes.RelatedTitle}>You might also like</h1>
+      <h2 className={classes.RelatedTitle}>You might also like</h2>
       <div className={classes.RelatedWrapper}>
         {posts.map((post) => (
           <Card

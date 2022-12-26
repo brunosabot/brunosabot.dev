@@ -5,6 +5,34 @@ import PostSocial from "../post/PostSocial";
 import classes from "./Post.module.css";
 import MatterPost from "../../types/MatterPost";
 
+function getLDJSON(post: MatterPost) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://brunosabot.dev/" + post.data.path,
+    },
+    headline: post.data.title,
+    description: post.data.description,
+    image: post.data.originalImage,
+    author: {
+      "@type": "Person",
+      name: "Bruno Sabot",
+      url: "https://brunosabot.dev/",
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Bruno Sabot",
+      url: "https://brunosabot.dev/",
+    },
+    datePublished: new Date(post.data.date).toISOString().split("T")[0],
+    dateModified: new Date(post.data.updatedDate ?? post.data.date)
+      .toISOString()
+      .split("T")[0],
+  });
+}
+
 interface IPostProps {
   readingTime: number;
   post: MatterPost;
@@ -56,6 +84,8 @@ const Post: React.FC<IPostProps> = ({
 
         <div dangerouslySetInnerHTML={{ __html: html }}></div>
       </div>
+
+      <script type="application/ld+json">{getLDJSON(post)}</script>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 import MatterPost from "../../../../../types/MatterPost";
 import { RouteParams } from "./types";
 import fs from "fs";
@@ -31,10 +31,10 @@ export default async function PostHead({
 
   return (
     <>
-      <NewSeo
+      <Seo
         title={post.data.title}
         description={post.data.subtitle}
-        image={post.data.image}
+        image={post.data.originalImage}
         url={"https://brunosabot.dev/" + post.data.path}
         canonical={post.data.canonical}
       />

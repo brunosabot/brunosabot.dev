@@ -1,7 +1,7 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolShaHead() {
   return (
-    <NewSeo description="Sha Generation tool by Bruno Sabot" title="Sha tool" />
+    <Seo description="Sha Generation tool by Bruno Sabot" title="Sha tool" />
   );
 }

@@ -1,8 +1,8 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolUuidHead() {
   return (
-    <NewSeo
+    <Seo
       description="UUID and Nano ID Generation tool by Bruno Sabot"
       title="UUID tool"
     />

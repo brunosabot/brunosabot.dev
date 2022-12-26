@@ -23,7 +23,7 @@ interface Props {
   canonical?: string;
 }
 
-const NewSeo: React.FC<Props> = ({
+const Seo: React.FC<Props> = ({
   description = "",
   lang = "en",
   image = undefined,
@@ -58,4 +58,4 @@ const NewSeo: React.FC<Props> = ({
   );
 };
 
-export default NewSeo;
+export default Seo;

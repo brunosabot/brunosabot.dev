@@ -1,8 +1,8 @@
-import NewSeo from "../../../../../components/NewSeo";
+import Seo from "../../../../../components/Seo";
 
 export default function ToolShaHead() {
   return (
-    <NewSeo
+    <Seo
       description="Timestamp and date converter tool by Bruno Sabot"
       title="Timestamp converter"
     />
