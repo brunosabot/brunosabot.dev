@@ -4,7 +4,7 @@ date: 2011-06-29
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/pankaj-patel-6JVlSdgMacE-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@pankajpatel">Pankaj Patel</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2011/comprendre-la-minification-des-css
+path: /posts/2011/comprendre-la-minification-des-css/
 platform: Blog
 subtitle: Comment fonctionne la minification réellement et pourquoi est-ce un vrai gain ?
 tags: css, performance, minification

@@ -5,7 +5,7 @@ date: 2020-03-17
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__fOZCyvfBcdHuXOQk.jpg
 originalImageAlt: Photo by <a href="https://unsplash.com/@barnimages">Barn Images</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2020/how-to-debug-a-react-context-api-app
+path: /posts/2020/how-to-debug-a-react-context-api-app/
 platform: Medium
 subtitle: Using the Redux DevTools extension
 tags: React, Redux, Programming, JavaScript, Context API

@@ -4,7 +4,7 @@ date: 2011-02-13
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/robert-stump-pQyTChJwEDI-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@stumpie10">Robert Stump</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2011/laissez-votre-iphone-choisir-pour-vous
+path: /posts/2011/laissez-votre-iphone-choisir-pour-vous/
 platform: Blog
 subtitle: Lorsque vous ne savez pas quoi choisir... Il y a une app pour ça !
 tags: iphone, random, tool

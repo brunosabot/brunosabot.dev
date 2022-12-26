@@ -1,12 +1,16 @@
 import React from "react";
+import LayoutClient from "../../components/LayoutClient";
 import classes from "./index.module.css";
 
-interface Props {
+interface IResumeLayoutProps {
   children: React.ReactNode;
 }
 
-const ResumeLayout: React.FC<Props> = ({ children }) => (
-  <main className={classes.Layout}>{children}</main>
-);
-
-export default ResumeLayout;
+export default function ResumeLayout({ children }: IResumeLayoutProps) {
+  return (
+    <main className={classes.Layout}>
+      {children}
+      <LayoutClient />
+    </main>
+  );
+}

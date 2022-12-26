@@ -4,7 +4,7 @@ date: 2013-06-20
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/yancy-min-842ofHC6MaI-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@yancymin">Yancy Min</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2013/deplacer-un-commit-de-l-historique-git
+path: /posts/2013/deplacer-un-commit-de-l-historique-git/
 platform: Blog
 subtitle: Couper coller des commits d'une branche à une autre
 tags: branch, git, rebase

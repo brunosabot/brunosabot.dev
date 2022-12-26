@@ -14,7 +14,7 @@ async function getResume(lang: string): Promise<Resume | undefined> {
   return res.json();
 }
 
-export default async function Head({ params: { lang } }: RouteParams) {
+export default async function ResumeHead({ params: { lang } }: RouteParams) {
   const resume = await getResume(lang);
 
   if (resume === undefined) return null;

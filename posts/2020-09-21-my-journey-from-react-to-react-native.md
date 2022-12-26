@@ -5,7 +5,7 @@ date: 2020-09-21
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0_LU6uhsVVbB9jS_o5.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@mukukostudio">Mukuko Studio</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2020/my-journey-from-react-to-react-native
+path: /posts/2020/my-journey-from-react-to-react-native/
 platform: Medium
 subtitle: The things that changed for me switching when from web applications to native applications
 tags: Programming, React, React Native, JavaScript

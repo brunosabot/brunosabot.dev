@@ -5,7 +5,7 @@ date: 2021-11-12
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1624571033882-bf93a56b6b2e.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@windows">Windows</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2021/build-an-easy-popup-system-with-react
+path: /posts/2021/build-an-easy-popup-system-with-react/
 platform: Medium
 subtitle: Demystifying the way to create a simple, customisable, and accessible popup system with React
 tags: Programming, React, JavaScript, Web Development, Accessibility

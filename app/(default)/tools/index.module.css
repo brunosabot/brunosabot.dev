@@ -1,0 +1,9 @@
+.Content {
+  min-height: calc(100vh - 92px - 328px);
+  padding: 0 16px 64px 16px;
+  position: relative;
+}
+.ContentShort {
+  margin: auto;
+  max-width: 640px;
+}

@@ -1,18 +1,12 @@
 import React from "react";
 import classes from "./index.module.css";
 
-interface Props {
+interface IPostsLayoutProps {
   children: React.ReactNode;
 }
 
-const ResumeLayout: React.FC<Props> = ({ children }) => {
+export default function PostsLayout({ children }: IPostsLayoutProps) {
   const classNames = [classes.Content, classes.ContentCols].join(" ");
 
-  return (
-    <>
-      <main className={classNames}>{children}</main>
-    </>
-  );
-};
-
-export default ResumeLayout;
+  return <main className={classNames}>{children}</main>;
+}

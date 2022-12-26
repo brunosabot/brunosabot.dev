@@ -1,6 +1,6 @@
 import { mdiYoutube } from "@mdi/js";
 import React from "react";
-import { TooltipPosition } from "../modal/withTooltip";
+import { TooltipPosition } from "../modal/WithATooltip";
 import Svg from "../svg/Svg";
 import Card from "./Card";
 import CardAction from "./CardAction";
@@ -27,15 +27,13 @@ const CardVideo: React.FC<Props> = ({
   priority = false,
 }) => {
   const actions = (
-    <>
-      <CardAction
-        href={`https://www.youtube.com/watch?v=${youtubeId}`}
-        label="View the video on YouTube"
-        position={TooltipPosition.LEFT}
-      >
-        <Svg d={mdiYoutube} className="icon-youtube" />
-      </CardAction>
-    </>
+    <CardAction
+      href={`https://www.youtube.com/watch?v=${youtubeId}`}
+      label="View the video on YouTube"
+      position={TooltipPosition.LEFT}
+    >
+      <Svg d={mdiYoutube} className="icon-youtube" />
+    </CardAction>
   );
 
   return (

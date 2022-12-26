@@ -1,0 +1,70 @@
+import React from "react";
+import PageTitle from "../../../components/typography/PageTitle";
+
+import { getPlaiceholder } from "plaiceholder";
+import DetailCard from "../../../components/card/DetailCard";
+
+export const getProjects = async () => {
+  const projectPromises = [
+    {
+      id: "answwr",
+      url: "https://www.answwr.com",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/answwr.png",
+      title:
+        "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
+      description: [
+        "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
+        "With Answwr you’ll be able to decide between choices in the most elegant ways, meaning you’ll have to fill a bunch of forms, hit a green button and generate a totally fair and unbiased random result.",
+        "It's important to precise the result will be totally fair and unbiased, that's why we made the Redo button.",
+      ],
+    },
+    {
+      id: "afkalc",
+      url: "https://afkalc.com",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/afkalc.png",
+      title:
+        "AFKalc is a tool to help guilds from AFK Arena to improve their organisation and evolution.",
+      description: [
+        "AFKalc is a tool to help guilds from AFK Arena to improve their organisation and evolution.",
+        "Players have access to an interface that allow to manage and show off their accounts or to create and share their favorite teams.",
+        "Guilds can follow players evolutions and organise guild versus guild events by creating tiers lists and give instructions.",
+      ],
+    },
+  ].map(async (post) => {
+    const imageRes = await fetch(post.image);
+    const arrayBuffer = await imageRes.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    const { img, base64 } = await getPlaiceholder(buffer);
+    const imageHeight = (img.height * 680) / img.width;
+
+    return {
+      ...post,
+      imagePlaceholder: base64,
+      imageHeight,
+    };
+  });
+
+  return Promise.all(projectPromises);
+};
+
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+
+  return (
+    <>
+      <PageTitle>Project list</PageTitle>
+
+      {projects.map((project, index) => (
+        <DetailCard
+          image={project.image}
+          title={project.title}
+          description={project.description}
+          url={project.url}
+          key={project.id}
+          priority={index === 0}
+        />
+      ))}
+    </>
+  );
+}

@@ -1,6 +1,6 @@
 import { mdiPodcast } from "@mdi/js";
 import React from "react";
-import { TooltipPosition } from "../modal/withTooltip";
+import { TooltipPosition } from "../modal/WithATooltip";
 import Svg from "../svg/Svg";
 import Card from "./Card";
 import CardAction from "./CardAction";
@@ -18,7 +18,7 @@ interface Props {
   imagePlaceholder: string;
 }
 
-const CardVideo: React.FC<Props> = ({
+const CardPodcast: React.FC<Props> = ({
   date,
   id,
   language,
@@ -58,4 +58,4 @@ const CardVideo: React.FC<Props> = ({
   );
 };
 
-export default CardVideo;
+export default CardPodcast;

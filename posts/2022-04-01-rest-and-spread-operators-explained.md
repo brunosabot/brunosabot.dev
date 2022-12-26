@@ -5,7 +5,7 @@ date: 2022-04-01
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/scott-webb-pdlZrtuy-Dw-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@scottwebb">Scott Webb</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2022/javascript-spread-and-rest-operators-when-to-why-to-and-how-to-use-them
+path: /posts/2022/javascript-spread-and-rest-operators-when-to-why-to-and-how-to-use-them/
 platform: Medium
 subtitle: Understand two of the most useful JavaScript features
 tags: JavaScript, Software Development, Software Engineeering, Web Development, Programming

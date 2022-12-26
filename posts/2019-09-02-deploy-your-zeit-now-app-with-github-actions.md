@@ -4,7 +4,7 @@ creator: Bruno Sabot
 date: 2019-09-02
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
-path: /posts/2019/deploy-your-zeit-now-app-with-github-actions
+path: /posts/2019/deploy-your-zeit-now-app-with-github-actions/
 platform: Medium
 subtitle: Implement custom logic without having to create an app to perform a task
 tags: Github Actions, React, Github, Zeit, Programming, CICD

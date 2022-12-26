@@ -15,6 +15,7 @@
   padding: 0 16px 64px 16px;
 }
 .blog-post img {
+  height: auto;
   max-width: 100%;
 }
 .blog-post h1 {

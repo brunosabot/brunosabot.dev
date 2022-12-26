@@ -4,7 +4,7 @@ creator: Bruno Sabot
 date: 2019-07-25
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/2019-07-25-zle19-0.jpg
-path: /posts/2019/learning-expedition-zenika-ce-qu-en-pensent-les-devs
+path: /posts/2019/learning-expedition-zenika-ce-qu-en-pensent-les-devs/
 platform: Zenika Blog
 subtitle: La Silicon Valley, c’est le rêve américain de beaucoup de développeurs. Zenika y est allé.
 tags: Work, Zenika, Feedback, Improvment

@@ -4,7 +4,7 @@ date: 2013-07-02
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/tomas-sobek-plwud_FPvwU-unsplash.jpg
 originalImageAlt: Photo by <a href="https://unsplash.com/@tomas_nz">Tomas Sobek</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2013/optimisation-des-images-comprendre-la-dirty-transparency
+path: /posts/2013/optimisation-des-images-comprendre-la-dirty-transparency/
 platform: Blog
 subtitle: Lorsque l'on travaille sur une image de type PNG-24, avec de la semi-transparence, on se retrouve confronté à un gros surplus d'informations causés par la transparence, appelé « dirty transparency » par les anglophones.
 tags: Webperf, PNG, PHP, Programming

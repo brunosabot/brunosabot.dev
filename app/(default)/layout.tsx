@@ -1,19 +1,19 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
+import LayoutClient from "../../components/LayoutClient";
 
-interface Props {
+interface IDefaultLayoutProps {
   children: React.ReactNode;
 }
 
-const ResumeLayout: React.FC<Props> = ({ children, ...args }, ...args2) => {
+export default function DefaultLayout({ children }: IDefaultLayoutProps) {
   return (
     <>
       <Header />
       {children}
       <Footer />
+      <LayoutClient />
     </>
   );
-};
-
-export default ResumeLayout;
+}

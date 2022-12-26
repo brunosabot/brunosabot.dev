@@ -27,8 +27,8 @@ const DetailCard: React.FC<Props> = ({
       <Image
         src={image}
         alt={title}
-        height={195}
-        width={400}
+        height={171}
+        width={350}
         priority={priority}
       />
     </div>

@@ -5,7 +5,7 @@ date: 2020-05-05
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/0__maZNyBAhbf1Ol2Uj.jpg
 originalImageAlt: Photo by <a href="https://unsplash.com/@dtopkin1">Dayne Topkin</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2020/an-opinionated-way-to-structure-react-apps
+path: /posts/2020/an-opinionated-way-to-structure-react-apps/
 platform: Medium
 subtitle: Based on my experience acquired building several big projects
 tags: React, Architecture, JavaScript, Programming

@@ -5,7 +5,7 @@ date: 2022-02-01
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1543946602-8496af5aaa53.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@sanderweeteling">Sander Weeteling</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2022/fetching-data-in-react
+path: /posts/2022/fetching-data-in-react/
 platform: Medium
 subtitle: From custom made code to powerful libraries
 tags: Programming, React, JavaScript, Web Development, Software Engineering

@@ -9,7 +9,7 @@ import PageTitle from "../../../../components/typography/PageTitle";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
 
-export const getPosts = async () => {
+const getPosts = async () => {
   const postPromises = fs
     .readdirSync(POSTS_PATH)
     .filter((path) => /\.mdx?$/.test(path))
@@ -43,7 +43,7 @@ export const getPosts = async () => {
   return Promise.all(postPromises);
 };
 
-export default async function Page() {
+export default async function PostsPage() {
   const posts = await getPosts();
 
   return (

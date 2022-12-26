@@ -4,7 +4,7 @@ date: 2009-11-30
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/katie-moum-3FVeCbX6OrY-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@katiemoum">Katie Moum</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2009/rendre-l-url-de-recherche-de-google-plus-lisible
+path: /posts/2009/rendre-l-url-de-recherche-de-google-plus-lisible/
 platform: Blog
 subtitle: Matt Cutts, responsable de la webspam team de google à posté sur son twitter Une méthode pour rendre les URL de recherche de Google plus jolies.
 tags: bookmarklet, javascript, tool

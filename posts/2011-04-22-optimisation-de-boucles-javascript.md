@@ -4,7 +4,7 @@ date: 2011-04-22
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/clay-banks-myomBTc85dI-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@claybanks">Clay Banks</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2011/optimisation-de-boucles-javascript
+path: /posts/2011/optimisation-de-boucles-javascript/
 platform: Blog
 subtitle: Parfois, le code le plus simple n'est pas le plus performant. C'est le cas des boucles JavaScript.
 tags: boucles, dynatrace, javascript, statsy, webperf

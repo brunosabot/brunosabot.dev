@@ -4,7 +4,7 @@ date: 2013-07-11
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/denny-muller-HfWA-Axq6Ek-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@redaquamedia">Denny Müller</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2013/des-webapps-suivant-le-modele-android-ics
+path: /posts/2013/des-webapps-suivant-le-modele-android-ics/
 platform: Blog
 subtitle: Intégration d'un application pour suivre le style Android ICS
 tags: Android, CSS, Github, HTML, JavaScript

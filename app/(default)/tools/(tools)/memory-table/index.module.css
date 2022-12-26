@@ -1,0 +1,14 @@
+.memoryTableGame {
+  margin-top: 32px;
+}
+.memoryTableGameValue {
+  color: var(--accent-color);
+}
+.memoryTableGameSubmit {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+.memoryTableGameError {
+  border-color: var(--error-text-color);
+}

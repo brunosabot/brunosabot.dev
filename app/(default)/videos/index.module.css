@@ -1,0 +1,15 @@
+.Content {
+  min-height: calc(100vh - 92px - 328px);
+  padding: 0 16px 64px 16px;
+  position: relative;
+}
+.ContentCols {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 24px;
+  grid-template-columns: repeat(auto-fill, 350px);
+  justify-content: center;
+  margin: auto;
+  max-width: 1146px;
+  padding: 0 24px 64px 24px;
+}

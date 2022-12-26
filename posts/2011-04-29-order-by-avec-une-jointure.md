@@ -4,7 +4,7 @@ date: 2011-04-29
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/benjamin-lehman-GNyjCePVRs8-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@benjaminlehman">benjamin lehman</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2011/order-by-avec-une-jointure
+path: /posts/2011/order-by-avec-une-jointure/
 platform: Blog
 subtitle: Le saviez-vous ? Le choix de l'ordre du tri a un incidence sur les performance du tri
 tags: index, myisam, mysql, order

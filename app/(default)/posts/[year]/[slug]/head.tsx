@@ -16,10 +16,12 @@ function getPosts(): MatterPost[] {
 }
 
 function getPost(posts: MatterPost[], year: string, slug: string) {
-  return posts.find((p) => p.data.path === `/posts/${year}/${slug}`);
+  return posts.find((p) => p.data.path === `/posts/${year}/${slug}/`);
 }
 
-export default async function Head({ params: { year, slug } }: RouteParams) {
+export default async function PostHead({
+  params: { year, slug },
+}: RouteParams) {
   const posts = getPosts();
   const post = getPost(posts, year, slug);
 

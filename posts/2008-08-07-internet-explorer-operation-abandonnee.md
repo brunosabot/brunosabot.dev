@@ -4,7 +4,7 @@ date: 2008-08-07
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/wonderlane-V_fSbpUQSmQ-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@wonderlane">Wonderlane</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2008/internet-explorer-operation-abandonnee
+path: /posts/2008/internet-explorer-operation-abandonnee/
 platform: Blog
 subtitle: Si l’on prend des navigateurs différents, on n’obtient pas forcement la même chose avec le même code. C’est régulièrement le cas avec Internet Explorer et Mozilla Firefox.
 tags: Javascript

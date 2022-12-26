@@ -5,7 +5,7 @@ date: 2022-03-01
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/roman-synkevych-wX2L8L-fGeA-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@synkevych">Roman Synkevych</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2022/loading-gists-in-a-nextjs-application
+path: /posts/2022/loading-gists-in-a-nextjs-application/
 platform: Medium
 subtitle: A tutorial on how to load GitHub Gists from inside markdown pages of a NextJS blog
 tags: Programming, React, JavaScript, Web Development, NextJS

@@ -1,16 +1,10 @@
 import React from "react";
 import classes from "./index.module.css";
 
-interface Props {
+interface IPostLayoutProps {
   children: React.ReactNode;
 }
 
-const ResumeLayout: React.FC<Props> = ({ children }) => {
-  return (
-    <>
-      <main className={classes.Content}>{children}</main>
-    </>
-  );
-};
-
-export default ResumeLayout;
+export default function PostLayout({ children }: IPostLayoutProps) {
+  return <main className={classes.Content}>{children}</main>;
+}

@@ -4,7 +4,7 @@ date: 2011-03-20
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/erik-odiin-nfQk1YdGoNc-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@odiin">Erik Odiin</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2011/load-average-enorme
+path: /posts/2011/load-average-enorme/
 platform: Blog
 subtitle: Quelles solutions pour détecter, analyser, reporter et corriger les problèmes de charge CPU ?
 tags: cron, linux, load average, monitoring, uptime

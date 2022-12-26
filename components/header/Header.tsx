@@ -57,7 +57,7 @@ const Header: React.FC<{}> = () => {
           <HeaderLink current={path} to="/resume/en/">
             Resume
           </HeaderLink>
-          <HeaderLink current={path} to="/contact">
+          <HeaderLink current={path} to="/contact/">
             Contact
           </HeaderLink>
         </div>

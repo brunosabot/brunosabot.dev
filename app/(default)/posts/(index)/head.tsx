@@ -1,6 +1,6 @@
 import NewSeo from "../../../../components/NewSeo";
 
-export default async function Head() {
+export default async function PostsHead() {
   return (
     <>
       <NewSeo

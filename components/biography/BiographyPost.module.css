@@ -1,0 +1,12 @@
+.biography-post {
+  color: var(--accent-text-color);
+  display: block;
+  line-height: 1.5;
+  margin: 8px 0;
+  outline: 0;
+  text-decoration: none;
+  width: 100%;
+}
+.biography-post:hover {
+  text-decoration: underline;
+}

@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { withTooltip } from "../modal/withTooltip";
+import { TooltipPosition, WithATooltip } from "../modal/WithATooltip";
 import classes from "./CardAction.module.css";
 
 interface Props {
@@ -7,30 +9,34 @@ interface Props {
   href?: string;
   label: string;
   onClick?: () => void;
+  position?: TooltipPosition;
 }
 
 const CardAction: React.FC<Props> = ({
   children,
   href,
   label,
-  onClick = () => undefined,
+  onClick = undefined,
+  position = TooltipPosition.TOP,
 }) => (
-  <a
-    href={href}
-    className={classes["card-action"]}
-    target="_blank"
-    rel="noopener noreferrer"
-    onClick={onClick}
-    tabIndex={0}
-    onKeyPress={(e) => {
-      if (e.key === "Enter") {
-        onClick();
-      }
-    }}
-    aria-label={label}
-  >
-    {children}
-  </a>
+  <WithATooltip label={label} position={position}>
+    <a
+      href={href}
+      className={classes["card-action"]}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={onClick}
+      tabIndex={0}
+      onKeyPress={(e) => {
+        if (e.key === "Enter") {
+          onClick?.();
+        }
+      }}
+      aria-label={label}
+    >
+      {children}
+    </a>
+  </WithATooltip>
 );
 
-export default withTooltip<Props>(CardAction);
+export default CardAction;

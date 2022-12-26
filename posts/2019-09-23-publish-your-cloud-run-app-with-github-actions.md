@@ -5,7 +5,7 @@ date: 2019-09-23
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__HmM__NqNjtCWw36t3Pr1DWA.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@coloradohiker">Allan Nygren</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2019/publish-your-cloud-run-app-with-github-actions
+path: /posts/2019/publish-your-cloud-run-app-with-github-actions/
 platform: Medium
 subtitle: A very fast way to deploy your application with GitHub
 tags: Github Actions, Github, Google Cloud Run, Google Container Registry, Programming, CICD

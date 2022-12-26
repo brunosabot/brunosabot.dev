@@ -15,7 +15,7 @@ interface ICubicBezierProps {
   y2: number;
 }
 
-const CubicBezierBlock: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => {
+const CubicBezierSvg: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => {
   const x0 = 0;
   const y0 = 0;
   const x3 = 1;
@@ -60,4 +60,4 @@ const CubicBezierBlock: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => {
   );
 };
 
-export default CubicBezierBlock;
+export default CubicBezierSvg;

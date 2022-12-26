@@ -4,7 +4,7 @@ date: 2008-08-07
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/markus-spiske-NctO2nqkWCY-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@markusspiske">Markus Spiske</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2008/voilabot-attaque-les-sites
+path: /posts/2008/voilabot-attaque-les-sites/
 platform: Blog
 subtitle: Depuis quelques temps, le robot de Voila, VoilaBot Beta 1.2, se met à crawler les sites Internet... Mais un peu trop.
 tags: sysadmin, iptables

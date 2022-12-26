@@ -5,7 +5,7 @@ date: 2021-12-18
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1599658880436-c61792e70672.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@mjessier">Myriam Jessier</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2021/core-web-vitals-dashboard-on-google-analytics
+path: /posts/2021/core-web-vitals-dashboard-on-google-analytics/
 platform: Web Performance Calendar
 subtitle: Start a Core Web Vital Real User Monitoring on Google Analytics
 tags: Core Web Vital, Performance, Next.JS, Google Analytics, React

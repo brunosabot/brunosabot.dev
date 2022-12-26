@@ -5,7 +5,7 @@ date: 2020-01-31
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__5X15ZdvuMGE9oQ26s6y8EA.jpeg
 originalImageAlt: Congratulations on completed new year resolutions  —  Photo by me
-path: /posts/2020/new-year-resolutions-the-right-way
+path: /posts/2020/new-year-resolutions-the-right-way/
 platform: Medium
 subtitle: My experience on how to succeed them
 tags: New Year Resolution, Lifestyle, Feedback, Health, Improvment

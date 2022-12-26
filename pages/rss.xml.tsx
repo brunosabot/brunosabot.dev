@@ -1,6 +1,5 @@
 import path from "path";
 import matter from "gray-matter";
-import React from "react";
 import fs from "fs";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
@@ -9,8 +8,8 @@ const getTemplate = (children: string) =>
   <channel>
     <title><![CDATA[Bruno Sabot RSS Feed]]></title>
     <description><![CDATA[I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.]]></description>
-    <link>https://brunosabot.dev</link>
-    <generator>GatsbyJS</generator>
+    <link>https://brunosabot.dev/</link>
+    <generator>NextJS</generator>
     <lastBuildDate>${new Date().toISOString()}</lastBuildDate>
     ${children}
   </channel>

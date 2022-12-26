@@ -15,6 +15,7 @@ const BiographyAvatar: React.FC<Props> = () => (
       height={150}
       width={150}
       placeholder="blur"
+      priority
     />
   </div>
 );

@@ -4,7 +4,7 @@ date: 2008-08-11
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/breana-panaguiton-P4vFfdGl_8s-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@bmpanaguiton">Breana Panaguiton</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2008/php-warning-include_once-1
+path: /posts/2008/php-warning-include_once-1/
 platform: Blog
 subtitle: "Lors de la créations de vos sites Internet, vous avez peut-être un jour obtenu l’erreur suivante : Warning: include_once(1)"
 tags: php

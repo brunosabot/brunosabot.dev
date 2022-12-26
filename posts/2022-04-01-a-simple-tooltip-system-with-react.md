@@ -4,7 +4,7 @@ date: 2021-12-09
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/photo-1495508348712-216a17cfbbc4.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@andriklangfield">Andrik Langfield</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2021/a-simple-tooltip-system-with-react
+path: /posts/2021/a-simple-tooltip-system-with-react/
 platform: Medium
 subtitle: Demystifying the way to create a simple, customisable, and accessible popup system with React
 tags: Programming, React, JavaScript, Web Development, Accessibility

@@ -4,7 +4,7 @@ date: 2010-07-18
 lang: fr
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/tim-johnson-20FJ6prKm28-unsplash.jpeg
 originalImageAlt: Photo by <a href="https://unsplash.com/@mangofantasy">Tim Johnson</a> on <a href="https://unsplash.com">Unsplash</a>.
-path: /posts/2010/decompression-de-fichiers-sous-linux
+path: /posts/2010/decompression-de-fichiers-sous-linux/
 platform: Blog
 subtitle: Les formats de décompressions sous Linux sont assez compliqués à retenir, surtout étant donné le nombre de formats de compression existants.
 tags: décompression, linux, shell

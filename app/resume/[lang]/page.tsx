@@ -50,7 +50,7 @@ export async function generateStaticParams() {
   return [{ lang: "fr" }, { lang: "en" }];
 }
 
-export default async function Page({ params: { lang } }: RouteParams) {
+export default async function ResumePage({ params: { lang } }: RouteParams) {
   if (["en", "fr"].includes(lang) === false) {
     notFound();
   }
