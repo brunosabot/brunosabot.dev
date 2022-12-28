@@ -3,7 +3,7 @@ canonical: https://betterprogramming.pub/deploy-your-zeit-now-app-with-github-ac
 creator: Bruno Sabot
 date: 2019-09-02
 lang: en
-originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
 originalImageAlt: Photo by <a href="https://github.com">Github</a>.
 path: /posts/2019/deploy-your-zeit-now-app-with-github-actions/
 platform: Medium
