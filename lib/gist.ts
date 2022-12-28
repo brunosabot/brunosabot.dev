@@ -122,7 +122,7 @@ const renderer = {
 
     return `
       <h${level + 2} class="anchor-target">
-        <a name="${escapedText}" class="anchor" href="#${escapedText}" aria-label="Anchor to this title">
+        <a name="${escapedText}" aria-label="Get an anchor to this title" class="anchor" href="#${escapedText}">
           <svg viewBox="0 0 24 24" height="24px" width="24px"><use xlink:href="#linkVariant" /></svg>
         </a>
         ${text}

@@ -28,9 +28,9 @@
 .card__image {
   background-position: center;
   background-size: cover;
-  /* border-radius: 8px 8px 0 0; */
   height: 195px;
   margin: 0;
+  object-fit: cover;
   opacity: 0.7;
   width: 100%;
 }

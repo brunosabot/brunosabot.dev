@@ -85,7 +85,10 @@ const Post: React.FC<IPostProps> = ({
         <div dangerouslySetInnerHTML={{ __html: html }}></div>
       </div>
 
-      <script type="application/ld+json">{getLDJSON(post)}</script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: getLDJSON(post) }}
+      />
     </div>
   );
 };
