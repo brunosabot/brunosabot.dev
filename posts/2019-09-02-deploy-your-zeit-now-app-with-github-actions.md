@@ -18,7 +18,7 @@ It contains a lot of useful information but, unfortunately, it uses the old work
 
 ## Requirements
 
-- At the time I’m writing this story, GitHub Actions is still in beta. You can ask for access [here](https://github.com/features/actions) and wait for your request to be accepted.
+- At the time I’m writing this story, GitHub Actions is still in beta. [You can ask for access here](https://github.com/features/actions) and wait for your request to be accepted.
 - You will also need an account on [ZEIT](https://zeit.co/home).
 - Of course, you will need a GitHub account and a repository to store your app sources.
 - Last but not least, an application to deploy.
