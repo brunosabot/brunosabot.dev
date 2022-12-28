@@ -4,6 +4,7 @@ creator: Bruno Sabot
 date: 2019-07-25
 lang: en
 originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__NyHpepOw2vFFKVFdeRvzWg.png
+originalImageAlt: From Redux to the Context API
 path: /posts/2019/how-i-dropped-redux-for-the-context-api/
 platform: Medium
 subtitle: React 16 introduced a new Context API to replace the deprecated one… Here is my way to replace Redux with this new API.
@@ -80,7 +81,7 @@ And that’s all, folks! We no longer have Redux in our application and have a c
 ![A new way for my React projects. Photo credit to me.](https://storage.googleapis.com/brunosabot.dev/img/1__ucBcf14roFs8__c4Nc9Dp9Q.jpeg)
 A new way for my React projects. Photo credit to me.
 
-### **References**
+# **References**
 
 <footer>
   <section><a href="https://en.reactjs.org/docs/hooks-reference.html">Hooks API Reference - React</a></section>

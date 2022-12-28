@@ -122,11 +122,14 @@ const renderer = {
 
     return `
       <h${level + 2} class="anchor-target">
-        <a name="${escapedText}" class="anchor" href="#${escapedText}">
-          <svg viewBox="0 0 24 24" height="24px" width="24px"><path d="${mdiLinkVariant}"/></svg>
+        <a name="${escapedText}" class="anchor" href="#${escapedText}" aria-label="Anchor to this title">
+          <svg viewBox="0 0 24 24" height="24px" width="24px"><use xlink:href="#linkVariant" /></svg>
         </a>
         ${text}
       </h${level + 2}>`;
+  },
+  image(href: string, title: string, text: string) {
+    return `<img src="${href}" alt="${text}" decoding="async" loading="lazy" />`;
   },
 };
 

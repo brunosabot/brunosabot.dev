@@ -6,7 +6,7 @@ originalImage: https://storage.googleapis.com/brunosabot.dev/img/michal-balog-ci
 originalImageAlt: Photo by <a href="https://unsplash.com/@mikbutcher">Michal Balog</a> on <a href="https://unsplash.com">Unsplash</a>.
 path: /posts/2010/les-includes-et-les-require-de-php/
 platform: Blog
-subtitle: "Avez-vous déjà utilisé les includes et les require de PHP ? Si oui, vous êtes peut-être déjà tombés sur le problème suivant : lorsque l’on utilise un include, le caractère « null » coupe l’inclusion du fichier."
+subtitle: "Vous êtes peut-être déjà tombés sur le problème suivant : lorsque l’on utilise un include, le caractère « null » coupe l’inclusion du fichier."
 tags: include, php, require, sécurité
 title: Les « includes » et les « require » de PHP
 ---

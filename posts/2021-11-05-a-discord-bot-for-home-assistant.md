@@ -12,7 +12,7 @@ tags: Home Assistant, Discord, Discord Bot, Node Red, Home Automation
 title: A Discord bot for Home Assistant
 ---
 
-### A bit of context
+# A bit of context
 
 I’ve been using [Home Assistant](https://www.home-assistant.io/) for a while to manage my connected home. Home Assistant or _Hass_ is a Python based application I have installed on a Raspberry Pi and which is able to connect. to many services from _Google Assistant_, _Philips Hue_, _The Zigbee Protocol_, and many others -1857 at the time I’m writing this post-.
 
@@ -27,11 +27,11 @@ There are many ways to do this with Home Assistant, but I needed something that 
 
 I made many tests of many Home Assistant integrations, and finally the one that checked all my requirements was Discord -which I’m using for many other things-. Since some points where not trivia, here is a step by step guide to set and get data between a Discord instance and a Home Assistant instance.
 
-### The Software and requirements
+# The Software and requirements
 
 First of all, I need a Home Assistant instance, which in my case is installed on a [Raspberry Pi](https://www.raspberrypi.org/). I will not explain in details how to install it right here since the tutorial on the website are good enough. Also, I think you should play around with your instance before considering connecting it with Discord. To make an installation on your own, you can head to [the documentation](https://www.home-assistant.io/installation/).
 
-### Creation of a Discord Bot
+# Creation of a Discord Bot
 
 To create a bot, you need to go to the [Discord developer dashboard](https://discord.com/developers/applications) and click on the _New Application_ button to create your bot. Choose a name, _Home Assistant_ for example, and click _Create_ .
 
@@ -68,7 +68,7 @@ Once the validation window checked the pop will jump on your server, and you wil
 
 ![Select a server then Authorize it and your bot will jump in.](https://storage.googleapis.com/brunosabot.dev/img/1_zSDdv_ZHnTsKIwii6uYJoQ.png)
 
-### The flow creation
+# The flow creation
 
 The next part of the configuration will take place in the Node Red module on Home Assistant. Once again, I will consider now that you know the software enough to understand the specific notions I might use.
 
@@ -88,7 +88,7 @@ Plugins are located in the Palette tab. Search for _node-red-contrib-discord_ an
 
 ![The node-red-contrib-discord plugin](https://storage.googleapis.com/brunosabot.dev/img/1_FpsD0o0m2nXZD2qlkqck0Q.png)
 
-#### The base workflow
+## The base workflow
 
 ![The base workflow](https://storage.googleapis.com/brunosabot.dev/img/1_fSFOZLyZ_VdpOexxRnOTIQ.png)
 
@@ -109,7 +109,7 @@ You can check the config I set in every of these blocks below
 
 ![Switch to the right flow depending on the requested namespace](https://storage.googleapis.com/brunosabot.dev/img/1_Oo1xwQ32t6utbJ8rV1NE9g.png)
 
-#### First flow: Calling a service
+## First flow: Calling a service
 
 The first scheme I have made is something that allows me to turn on and off lights directly from Discord. It is made of three basic steps.
 
@@ -125,7 +125,7 @@ The first scheme I have made is something that allows me to turn on and off ligh
 
 ![Last block: Calling the Home Assistant service](https://storage.googleapis.com/brunosabot.dev/img/1_KOuniuzjolNRAtAInYpjXA.png)
 
-#### Second scheme: Getting a sensor data
+## Second scheme: Getting a sensor data
 
 I also want to be able to recover informations from a sensor. I have currently implemented two of them, temperature and humidity.
 
@@ -150,7 +150,7 @@ differ.
 
 ![Result shown in Discord](https://storage.googleapis.com/brunosabot.dev/img/1_3zQiTWObeD0wS-7PP8A8dQ.png)
 
-#### Third scheme: A CLI-like help
+## Third scheme: A CLI-like help
 
 Finally, I want to be able to show an help message to whoever can use Home Assistant.
 
@@ -170,7 +170,7 @@ To do so, we are going to need only three types of nodes:
 
 ![Finally sending the message to Discord](https://storage.googleapis.com/brunosabot.dev/img/1_MueLiDyLRzPTSEqItj9GhQ.png)
 
-### Conclusion
+# Conclusion
 
 Home assistant is a very powerful tool and combined with Node Red, it can be absolutely amazing.
 

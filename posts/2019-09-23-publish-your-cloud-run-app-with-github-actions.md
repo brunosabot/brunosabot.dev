@@ -21,9 +21,9 @@ To make this project live, we’ll use the following tools:
 - GitHub Actions to manage the continuous deployment
 - GitHub to store the source code of our project.
 
-### Configure the GCP Project
+# Configure the GCP Project
 
-#### Service account creation
+## Service account creation
 
 The first step is to create a _service account_ which will allow us to connect from GitHub actions. To do so, you can click the “Create Service Account” button in the “IAM & Admin/Service Accounts” menu in the GCP interface. Now fill in the “Service Account Name” field with the value “GitHub-actions” and the “Service Account Description” field with the value “Account used by GitHub Actions to connect with GCP.”
 
@@ -39,7 +39,7 @@ Clicking on the “Create” button brings up the roles configuration stage. We 
 
 The “Continue” button takes us to the third and final step: JSON key creation. To do that, just click the “Create Key” button, choose “JSON” > “Create.” A file will be downloaded, referred to as `key-partition-000000–0123456789ab.json`. Keep it, we’ll use it later.
 
-#### API activation
+## API activation
 
 Now that we have a user with the proper permissions, we need to activate the two services we need.
 
@@ -47,7 +47,7 @@ To enable the container registry, choose the “Container Registry” (obvious, 
 
 To enable Cloud Run, choose the “Cloud Run” (obvious again, right?) menu from the GCP interface and click “Start Using Cloud Run.” Again, we’re done.
 
-### Project Creation
+# Project Creation
 
 To initiate the project, let’s create a GitHub repository and add several files:
 
@@ -57,7 +57,7 @@ To initiate the project, let’s create a GitHub repository and add several file
 - A `Dockerfile` to build Docker images;
 - A `.github/workflows/googlecloudrun.yml` file to configure the continuous deployment.
 
-#### `nginx` configuration
+## `nginx` configuration
 
 `gist:brunosabot/ed052ea7a9a97dca82294438ed913490`
 
@@ -67,7 +67,7 @@ Then, we configure the file location that `nginx` should serve; the `root` key i
 
 Finally, we forward the 50X errors to a special file with the command `error_page` and handle the mapping in `nginx`with `location` to our error HTML file.
 
-#### Dockerfile
+## Dockerfile
 
 `gist:brunosabot/e0fef5aa5865b457bd26f22051c287c8`
 
@@ -77,7 +77,7 @@ Since our application is really simple, we only have three steps in our Docker f
 - We copy the `nginx conf` in its target folder;
 - Finally, we copy our HTML files in the `public` folder of our newly-created container.
 
-#### GitHub actions YAML
+## GitHub actions YAML
 
 `gist:brunosabot/a28b8dd9c7090b66a98427fe56d26047`
 
@@ -113,7 +113,7 @@ The final step is actually two commands. Here, the result of the first is not av
 - Installing the beta components, since Google Cloud Run is still in beta;
 - Deploying the app into Cloud Run. You will need to set the [region](https://cloud.google.com/sdk/gcloud/reference/beta/run/deploy#--region) you prefer and the [platform](https://cloud.google.com/sdk/gcloud/reference/beta/run/deploy#--platform) (managed or [GKE](https://cloud.google.com/kubernetes-engine/)).
 
-#### Declaring GitHub secrets
+## Declaring GitHub secrets
 
 ![Secrets interface for GitHub Actions](https://storage.googleapis.com/brunosabot.dev/img/1__CLhcjP8t9IfEEtwJ1fwH8Q.png)
 Secrets interface for GitHub Actions
@@ -127,7 +127,7 @@ In our YAML file, we reference three secret keys:
 
 And we’re ready to execute our deployment from GitHub Actions!
 
-### Conclusion
+# Conclusion
 
 We can now deploy our project continuously and easily on Google Cloud Run. Our example is pretty simple, but since we’re using a Docker image, we’re free to have any kind of application we want. Just note that the application must listen to the `PORT` environment variable: Cloud Run will only listen to an app on that port!
 

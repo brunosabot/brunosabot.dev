@@ -12,7 +12,7 @@ tags: JavaScript, Git, Hooks, Husky, Programming
 title: A Complete Pre-Commit Workflow
 ---
 
-### What Is This All About?
+# What Is This All About?
 
 I really like making perfect commits, and I particularly hate appending or creating a new commit because of a guideline mistake. So I needed a tool that would bark at me when I was about to make a bad commit.
 
@@ -25,7 +25,7 @@ Using Husky is really simple. We just need to add a new `husky` key into the `pa
 ![Here is a very simple `package.json` file with the husky hooks. For simplicity sake and because the husky version might change, it didn’t include the `devDependencies`.](https://storage.googleapis.com/brunosabot.dev/img/1__JUYFGIOYiHTMvgPzLE72ig.png)
 Here is a very simple `package.json` file with the husky hooks. For simplicity sake and because the husky version might change, it didn’t include the `devDependencies`.
 
-### Clarifying Our Needs
+# Clarifying Our Needs
 
 When I’m working on a React application, I use several tools to keep a consistent code and simplify the teamwork:
 
@@ -49,7 +49,7 @@ Same as before, I have only included the interesting part of my package.json fil
 
 Now, everything just looks so simple. I just need to tell Husky to use lint-staged and tell lint-staged what I need to do on my files.
 
-### The Final Result
+# The Final Result
 
 Putting it all together, this is what my `package.json` file looks like:
 
@@ -70,7 +70,7 @@ There are a lot of other checks we can do before any commits and also other Git 
 ![Ascending to more robust development workflow. Photo credit to me.](https://storage.googleapis.com/brunosabot.dev/img/1__tohTAyB2gOTzOl8mmHm36Q.jpeg)
 Ascending to more robust development workflow. Photo credit to me.
 
-### Bonus
+# Bonus
 
 While writing this post, I realized that my boilerplate application is based on a lot of additional scripts. So here is a listing of what I add to every single new project of mine. Note this example is applied to a React application and I use `yarn` as a package manager.
 

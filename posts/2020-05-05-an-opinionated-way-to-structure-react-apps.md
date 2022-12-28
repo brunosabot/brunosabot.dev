@@ -18,7 +18,7 @@ So how can we handle a bigger project? [Dan Abramov has a way](https://react-fil
 
 Today, I’m introducing the result of my many moves, making a base structure for people seeking a way to improve their own.
 
-### Initial Considerations
+# Initial Considerations
 
 Before we start, I’d like to point out that I’m presenting an opinionated way to structure an app. In some projects, I had to do things differently because the app’s core concept was too different. It might also be the case for you.
 
@@ -30,7 +30,7 @@ Some other components are given a specific behavior to a form field, like an enh
 
 Finally, I’m using the React Context API instead of redux, as I [explained in one of my previous posts](https://medium.com/@brunosabot/how-i-dropped-redux-for-the-context-api-7338d481e179). I create top-level components that I call providers.
 
-### Getting Started With the Root Folder
+# Getting Started With the Root Folder
 
 Working with [create-react-app](https://create-react-app.dev/), the root folder of my application is the `src` folder in which I place several folders:
 
@@ -43,7 +43,7 @@ This is the better ratio I found between simplicity and code splitting for the b
 
 I will not explain in detail the three other folders. You can have a look at the sample tree at the bottom of this post to find out more about the kind of files placed in there.
 
-### The Components Folder
+# The Components Folder
 
 Here we are: the main part of the application. This one is composed of many more subfolders. Keep in mind that if you copy this structure, you do not need to absolutely use them all if it doesn’t make sense in your project. For example, the `ui` folder doesn’t make sense in a [Material-UI](https://material-ui.com/) application.
 
@@ -58,7 +58,7 @@ Here we are: the main part of the application. This one is composed of many more
 
 This is a lot of folders, right? The most difficult part of my perfect folder structure was to keep it simple ([KISS!](https://en.wikipedia.org/wiki/KISS_principle)), but without mixing apples and oranges. This is why I placed atoms and molecules of atomic design in the same folder, but I also often have domain subfolders.
 
-### The Pages Subfolder
+# The Pages Subfolder
 
 Before coming to the folder structure, let’s talk about URLs. I found that cutting every URL in my app in two sections of the path (the domain and the page) is the simpler and more robust way to build the page path.
 
@@ -83,7 +83,7 @@ As I mentioned earlier, the page folder is also recursive. Why? Simply because s
 
 So inside a page folder, you can also find a `components` folder with every folder defined earlier but `pages`.
 
-### Putting It All Together
+# Putting It All Together
 
 That was a lot of words to define the overall structure. But an example is often better than words, so here it is:
 
@@ -141,7 +141,7 @@ src
 
 Even if the example is pretty simple, it contains everything to illustrate the previous explanations.
 
-### Conclusion
+# Conclusion
 
 Even if this folder structure for React is a work of many years on how to organize a project, it might not suit every need. However, as of today, it fits all my projects’ needs and makes me particularly efficient during my work.
 

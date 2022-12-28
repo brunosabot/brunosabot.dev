@@ -12,7 +12,7 @@ tags: Programming, React, JavaScript, Web Development, Accessibility
 title: Build an Easy Popup System With React
 ---
 
-### Concerns About Existing Systems
+# Concerns About Existing Systems
 
 There are plenty of popup systems out there, but they usually don’t meet the high-quality requirement I have on user interfaces and development simplicity.
 
@@ -28,7 +28,7 @@ Even if it might not be intuitive, the last standing option is to create our own
 
 Enough speaking, let’s dive into a popup component system creation.
 
-### What Are We Building
+# What Are We Building
 
 There are a few things we want in this popup system:
 
@@ -42,7 +42,7 @@ There are a few things we want in this popup system:
 
 That’s a lot to do so we better get started.
 
-### Requirements
+# Requirements
 
 The first thing to have a modal system is to have a modal root, where the system will take place. To do so, we just need to have a new `div#modal-root` element in our root document.
 
@@ -56,7 +56,7 @@ The aria live region is set to assertive because we want the readers to have the
 
 `gist:brunosabot/43bc900a8f1b02df53370c69dfe64780`
 
-### The modal components
+# The modal components
 
 The modal component is split into three different components:
 
@@ -64,7 +64,7 @@ The modal component is split into three different components:
 - A `ModalView` component that aims to handle the visible part of the component
 - A `ModalAnimated` component that will handle the popup domain and the CSS appearance effects of the popup system
 
-#### The ModalPortal component
+## The ModalPortal component
 
 The `ModalPortal` component exists to link our popup to the `div#modal-root` element that we have created. Here’s the code:
 
@@ -77,7 +77,7 @@ It is made of four sections:
 - Another `useEffect` hook, to add the previously created `div` in the portal when active, and remove it when inactive. It will prevent the `div#modal-root` element to contain plenty of empty divs.
 - The render part, which is null if neither the `div` element created does not exist or the popup is not currently active.
 
-#### The ModalView component
+## The ModalView component
 
 This one is basically a layout component so we can style the popup the way we want.
 
@@ -101,7 +101,7 @@ For accessibility reasons, both the overlay and the close buttons are native but
 
 In the CSS part, I use various positioning techniques that you are free to adapt depending on your needs.
 
-#### The ModalAnimated component
+## The ModalAnimated component
 
 For the last part of the system, we need a component that will control the modal. Here’s the code:
 
@@ -118,7 +118,7 @@ The CSS has a weird CSS Modules syntax to handle global classes, but it also use
 
 If the last part could be set globally for all elements, it is better illustrated in the component.
 
-#### The useEscape hook
+## The useEscape hook
 
 To improve usability, we can add another great feature to our popup system by adding an escape listener that can close the popup.
 
@@ -131,7 +131,7 @@ The hook is quite simple, and it is made of two blocks:
 - an `onEscape` callback that memoize the keyboard event by listening to the keyCode for the escape key — 27
 - an `useEffect` method to bind it to the window document and unbind it as soon as the modal is unmounted
 
-#### The usage
+## The usage
 
 The usage is pretty straightforward: we need the `ModalAnimated` component with two props if we want a custom ModalView component.
 
@@ -139,7 +139,7 @@ The content of the popup itself is just the children elements passed to `ModalAn
 
 `gist:brunosabot/4ba4b450f769a15e52c5b3de3a078451`
 
-### Conclusion
+# Conclusion
 
 By creating three light components and a simple custom hook, we are able to get a very modulable and customizable popup system.
 

@@ -18,13 +18,13 @@ Even if it is the same framework, using React for native applications is a littl
 
 I’m writing this article to share the main differences I have found between the two platforms along with a few tips I had to figure out to obtain the desired final behavior.
 
-### View or Text — There Is No div
+# View or Text — There Is No div
 
 When working on a web application, we mostly use `div` and `span` tags for many usages. Since we are not on the web, this is no longer a possibility.
 
 Instead, the content is made with `View` and `Text` that we could associate with the two tags above, but they have some additional constraints.
 
-#### The View element
+## The View element
 
 With the `View` element, you can’t add anything else inside other than components. That means it cannot contain text, which the `Text` component is for. As an unfortunate consequence, it has a larger tree in your application, but it helps to separate concerns between layout and text.
 
@@ -59,7 +59,7 @@ Finally, `View` is not clickable. If you need a click behavior on it, you’ll h
 
 <figcaption>Example usage of TouchableHighlight</figcaption>
 
-#### The Text element
+## The Text element
 
 If we can easily compare the `Text` element to a `span` tag on the web, the difference is as noticeable as with views.
 
@@ -75,7 +75,7 @@ Like `View`, the `Text` component is not clickable. If that’s a behavior you n
 
 Finally, `Text` is only meant to contain text and other `Text` components. You should not include layout-related components like `View`, `ScrollView`, or `FlatList`.
 
-### Replace Input With TextInput
+# Replace Input With TextInput
 
 Since the Native API is not DOM, we do not have `input` elements either, but React provides a component for the times when we need a form.
 
@@ -85,7 +85,7 @@ The `InputField` component works the same as `input` but also has a `onChangeTex
 
 <figcaption>TextInput and the onChangeText callback</figcaption>
 
-### The CSS Usage
+# The CSS Usage
 
 If I’m using [CSS Modules](https://github.com/css-modules/css-modules) when I’m working on a web application, it is a bit different on native, where the CSS usage is more the CSS-in-JS way. The stylesheets are created with the `StyleSheet.create` method that is provided by React Native and is a key/value object of class/styles for the component.
 
@@ -107,7 +107,7 @@ After a couple of hours, I had definitely adopted this new way of writing CSS.
 
 <figcaption>dp units and shortcuts</figcaption>
 
-### Scalable Vector Graphics
+# Scalable Vector Graphics
 
 If SVG is used a lot on the web, it is not natively supported in React Native. We need to use it with an external package: `react-native-svg`.
 
@@ -117,7 +117,7 @@ However, the package is made to be used exactly like on the web with just a litt
 
 <figcaption>Simple SVG in React Native</figcaption>
 
-### Overflow
+# Overflow
 
 If you want a scrollable `View`, you need to switch to the `ScrollView` component. It acts the same but has a scrollbar built in.
 
@@ -125,24 +125,24 @@ Since the component has a vertical scroll by default, you can use the `horizonta
 
 For performance reasons, you can also use the`FlatList` component, which is a bit more complicated to use, but it will make your long lists scroll fast. If it is something you need, I encourage you to [look at the official documentation](https://reactnative.dev/docs/flatlist).
 
-### Tips and Tricks
+# Tips and Tricks
 
-#### Touchable components are applied to a single element
+## Touchable components are applied to a single element
 
 If you get the error `Error: React.Children.only expected to receive a single React element child`, then you just need to wrap your elements in a new `View` component.
 
 It seems pretty obvious what to do, but it can be a bit disturbing when coming from the web: When using `Touchable*` components, you need to have a single layout item.
 
-#### Line breaks in `Text`
+## Line breaks in `Text`
 
 On the web, new lines are made with `<br />`, but since native is not DOM, you can simply use `{"\n"}` in your `Text` components or directly in a string (e.g. `<Text>{"Hello\nworld!"}</Text>`).
 
-#### Views in Text
+## Views in Text
 
 You cannot have `View` elements in `Text` elements. This throws the following error: `Cannot add a child that doesn't have a YogaNode to a parent without a measure function!`.
 
 It might make your tree a bit more complex with some code duplication, but you should always find a way to avoid this message.
 
-### Conclusion
+# Conclusion
 
 Even though React Native is based on React, there are plenty of differences. On one hand, we use React on the web and use the DOM API. On the other hand, we use the native layouts for Android, iOS, and others. But it is still very easy to get into. Do not hesitate to give it a try!

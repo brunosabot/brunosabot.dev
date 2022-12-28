@@ -14,6 +14,7 @@ import Related from "../../../../../components/post/Related";
 import { RouteParams } from "./types";
 import Post from "../../../../../components/post/Post";
 import getMarkdown from "../../../../../lib/gist";
+import { mdiLinkVariant } from "@mdi/js";
 
 const POSTS_PATH = path.join(process.cwd(), "posts");
 
@@ -81,6 +82,9 @@ export default async function PostPage({
 
   return (
     <>
+      <svg viewBox="0 0 24 24" style={{ display: "none" }}>
+        <path id="linkVariant" d={mdiLinkVariant} />
+      </svg>
       <Post
         post={{
           ...post,

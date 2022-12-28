@@ -1,7 +1,7 @@
 import React from "react";
 
 export const SITE_METADATA = {
-  title: "Bruno Sabot's website",
+  title: "Bruno Sabot",
   description:
     "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
   author: "@brunosabot",
@@ -33,9 +33,16 @@ const Seo: React.FC<Props> = ({
 }) => {
   const metaDescription = description || SITE_METADATA.description;
 
+  const suffix = ` | ${SITE_METADATA.title}`;
+  const titleMaxLength = 70 - suffix.length;
+  const finalTitle =
+    title.length > titleMaxLength
+      ? `${title.slice(0, titleMaxLength - 3)}...`
+      : title;
+
   return (
     <>
-      <title>{`${title} | ${SITE_METADATA.title}`}</title>
+      <title>{`${finalTitle}${suffix}`}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:locale" content={lang} />
       <meta property="og:title" content={title} />

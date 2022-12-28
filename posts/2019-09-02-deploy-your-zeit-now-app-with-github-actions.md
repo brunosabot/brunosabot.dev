@@ -3,7 +3,8 @@ canonical: https://betterprogramming.pub/deploy-your-zeit-now-app-with-github-ac
 creator: Bruno Sabot
 date: 2019-09-02
 lang: en
-originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ.png
+originalImage: https://storage.googleapis.com/brunosabot.dev/img/1__BZ__jv__xjX__FfJR5fQH__6UQ
+originalImageAlt: Photo by <a href="https://github.com">Github</a>.
 path: /posts/2019/deploy-your-zeit-now-app-with-github-actions/
 platform: Medium
 subtitle: Implement custom logic without having to create an app to perform a task
@@ -15,18 +16,18 @@ I recently got access to [GitHub Actions](https://github.com/features/actions) a
 
 It contains a lot of useful information but, unfortunately, it uses the old workflow syntax, which is now deprecated in favor of [YAML](https://yaml.org/). I spent a lot of time making the conversion, so here is an post on how I achieved it with a `yml` file.
 
-#### Requirements
+## Requirements
 
 - At the time I’m writing this story, GitHub Actions is still in beta. You can ask for access [here](https://github.com/features/actions) and wait for your request to be accepted.
 - You will also need an account on [ZEIT](https://zeit.co/home).
 - Of course, you will need a GitHub account and a repository to store your app sources.
 - Last but not least, an application to deploy.
 
-### Get Started
+# Get Started
 
 As I mainly work with React, I will give you an example with a `create-react-app` application but feel free to use any other library you like.
 
-### ZEIT Now Configuration
+# ZEIT Now Configuration
 
 Now requires a configuration file at the root of the repository, named `now.json`, which contain the app configuration on the hosted environment.
 
@@ -55,7 +56,7 @@ Putting everything together, our `package.json` file will look like this:
 
 Okay, everything is now set for deployment. Our next step is to implement the appropriate GitHub Actions.
 
-### GitHub Actions Configuration
+# GitHub Actions Configuration
 
 To create a new deployment workflow, we need to create a `.github` folder at the root of our repository. You might already be using it if you use the [issue templates](https://help.github.com/en/articles/creating-issue-templates-for-your-repository).
 
@@ -91,13 +92,13 @@ Once again, let’s dive in to see how steps are configured:
 ![With the jobs on the left and the steps on the right](https://storage.googleapis.com/brunosabot.dev/img/1__Tb____ZlqkA42Z6dtscs1cew.png)
 With the jobs on the left and the steps on the right
 
-#### Storing secrets
+## Storing secrets
 
 In the YAML file, we use a `ZEIT_TOKEN` secret. You can set it in the _Settings_ menu, where we can find a _Secrets_ menu. Once you add a secret, you will not be able to get the value again.
 
 ![](https://storage.googleapis.com/brunosabot.dev/img/1__Ix__D9z26HYO0D8Qtt3V99g.png)
 
-### Conclusion
+# Conclusion
 
 Setting up GitHub Actions was a bit complicated at first, especially because the stories you can find on the internet use the old syntax. But, in the end, everything is pretty simple and functional for a beta feature.
 

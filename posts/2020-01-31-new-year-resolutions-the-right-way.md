@@ -22,9 +22,9 @@ How did I achieve this? It was actually pretty simple. Just do not imagine and s
 
 Is that all? Actually no. Also remember the tortoise and the hare.
 
-### So what were the resolutions?
+# So what were the resolutions?
 
-#### Healthier life
+## Healthier life
 
 In November 2018, I had -minor- health issues. It took me until the end of the year to picture what I can do to fix some of my lifestyle issues. By January 1st, I had two ideas :
 
@@ -35,7 +35,7 @@ It was definitely not so much, but a little step forward sounds easier than a sp
 
 _Spoiler alert:_ it worked and it feels great. No more stomach aches thanks to the tea, no more unpleasant alcohol caused state everyday, and running gave me a better breathing.
 
-#### Writing
+## Writing
 
 Another resolution was to start writing blog posts. If you are reading this, you probably guess that it is a success. But it was not that easy to start: I wasn’t ready at all and had no idea.
 
@@ -43,7 +43,7 @@ It took me time, writing down any subject that sounds interesting, remembering m
 
 In August, I wrote and publish my first post and the feedback was amazing. I was so happy that, even if my subject was very basic, a lot of people were actually interested and learn stuff… so I wrote 4 more that had an even better feedback.
 
-### My two cents
+# My two cents
 
 For many years, I made pointless resolutions that I didn’t achieve because they were too hard or things I didn’t believe in.
 

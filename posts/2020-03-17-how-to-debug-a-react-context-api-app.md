@@ -18,7 +18,7 @@ The answer is yes. Actually, if there is something awesome about Redux, it’s t
 
 Let’s now see how it works!
 
-### Redux DevTools API
+# Redux DevTools API
 
 When we have Redux DevTools installed, the extension automatically injects a special object (`__REDUX_DEVTOOLS_EXTENSION__`) in the window. A weird name for sure, but it prevents any conflicts with your existing code.
 
@@ -36,7 +36,7 @@ Basically, it looks like this:
 
 Even if this works, you will still see nothing in the DevTools because the session is closed as soon as we create it.
 
-### A DevTools Provider
+# A DevTools Provider
 
 To make the session permanent when you are developing your app, you will need a `Provider`, which looks like this:
 
@@ -48,7 +48,7 @@ If you add this piece of code at the very top of your application, you will see 
 
 ![The INIT event that pops in.](https://storage.googleapis.com/brunosabot.dev/img/1__1__Ee__Cxvnmx1bAgstmX3jA.png)
 
-### Sending Events to the DevTools
+# Sending Events to the DevTools
 
 Now that we are able to start a session, the next step is to send an event to the DevTools, which is as simple as we can imagine: The `devTools` object that we have created also provides a `send` method, which takes a name and some data to illustrate the change.
 
@@ -58,7 +58,7 @@ Basically, it looks like this:
 
 <figcaption>Simple Redux DevTools connection with a sent event.</figcaption>
 
-### Putting Everything Together
+# Putting Everything Together
 
 We now have everything to make it work. We will just add a few things in our `Provider` to make it truly usable:
 
@@ -78,7 +78,7 @@ The usage is now pretty simple in the application. We need to call the `useRedux
 
 Now when we are calling the `setTheme` method, it pops in the DevTools so you can inspect what is going on!
 
-### Conclusion
+# Conclusion
 
 It is very easy to connect any app to the Redux DevTools, and you can start debugging any app without Redux right now.
 

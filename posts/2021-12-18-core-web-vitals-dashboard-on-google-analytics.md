@@ -16,7 +16,7 @@ title: Core Web Vitals Dashboard On Google Analytics
 
 Some of you (or your clients or employers) might not have the budget to invest into the various existing performance monitoring tools, or maybe no time to test and integrate them to the website, but they have a [Google Analytics](https://analytics.google.com/analytics/web/) tracker set. With a few lines of code added, it is the perfect tool to start monitoring the performance experienced by the users when browsing the various pages of your web site.
 
-### Including the tracking code
+# Including the tracking code
 
 In my example, I will be using [Next.js](https://nextjs.org/) which is a React SSR (server-side rendering) framework with a lot of internal optimizations, plus wonderful components such as `<Image>` and `<Script>` to improve the scripts and images loading and delaying/scheduling.
 
@@ -39,7 +39,7 @@ There are two parts in the file to consider here:
 
 You now just need to add your UA value to the `.env` file or as an environment variable `NEXT_PUBLIC_GOOGLE_ANALYTICS` and you are ready!
 
-### Viewing data directly in Google Analytics
+# Viewing data directly in Google Analytics
 
 After few days collecting, you will see the events (in green on the screenshot) appearing in Google Analytics in the Behavior (in blue) > Events (in purple) > Top Events (in red) > Event action (in orange) menu.
 
@@ -63,7 +63,7 @@ Once in the creation page, we need to update three block on the page:
 
 You now just need to reproduce the previous steps for FID and CLS and you will have 3 custom reports with the Realtime User Monitoring (RUM) for your users!
 
-### Conclusion
+# Conclusion
 
 Adding dashboard for Core Web Vitals in Google Analytics is an easy way to get a Realtime User Monitoring of your website performance.
 
