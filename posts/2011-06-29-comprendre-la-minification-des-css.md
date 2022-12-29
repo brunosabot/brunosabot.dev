@@ -1,4 +1,5 @@
 ---
+color: "#060A0F"
 creator: Bruno Sabot
 date: 2011-06-29
 lang: fr

@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/my-journey-from-react-to-react-native-e876c31a46a4
+color: "#C3A193"
 creator: Bruno Sabot
 date: 2020-09-21
 lang: en

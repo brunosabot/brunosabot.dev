@@ -36,18 +36,10 @@ function getLDJSON(post: MatterPost) {
 interface IPostProps {
   readingTime: number;
   post: MatterPost;
-  heroPlaceholder: string;
-  heroHeight: number;
   html: string;
 }
 
-const Post: React.FC<IPostProps> = ({
-  post,
-  readingTime,
-  heroHeight,
-  heroPlaceholder,
-  html,
-}) => {
+const Post: React.FC<IPostProps> = ({ post, readingTime, html }) => {
   return (
     <div className={classes["blog-post-container"]}>
       <div className={classes["blog-post"]}>
@@ -70,10 +62,10 @@ const Post: React.FC<IPostProps> = ({
             priority
             src={post.data.originalImage}
             alt={post.data.originalImageAlt?.replace(/<[^>]*>/g, "")}
-            height={heroHeight}
+            height="487"
             width="680"
-            placeholder="blur"
-            blurDataURL={heroPlaceholder}
+            style={{ backgroundColor: post.data.color }}
+            className={classes["blog-post-hero-image"]}
           />
           {post.data.originalImageAlt ? (
             <figcaption

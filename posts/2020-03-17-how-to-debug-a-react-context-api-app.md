@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/how-to-debug-a-react-context-api-app-547b75818754
+color: "#8F7351"
 creator: Bruno Sabot
 date: 2020-03-17
 lang: en

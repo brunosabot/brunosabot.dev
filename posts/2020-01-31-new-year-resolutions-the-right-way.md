@@ -1,5 +1,6 @@
 ---
 canonical: https://brunosabot.medium.com/new-year-resolutions-the-right-way-de4ba67627cc
+color: "#552423"
 creator: Bruno Sabot
 date: 2020-01-31
 lang: en

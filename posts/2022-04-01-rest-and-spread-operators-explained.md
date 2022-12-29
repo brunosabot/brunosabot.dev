@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/javascript-spread-and-rest-operators-when-to-why-to-and-how-to-use-them-bfd65436c8f1
+color: "#C7C3BA"
 creator: Bruno Sabot
 date: 2022-04-01
 lang: en

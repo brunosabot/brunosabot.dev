@@ -17,6 +17,7 @@
     "@mdi/js": "^7.1.96",
     "@types/marked": "^4.0.8",
     "@types/prismjs": "^1.26.0",
+    "canvas": "^2.11.0",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
     "marked": "^4.2.5",

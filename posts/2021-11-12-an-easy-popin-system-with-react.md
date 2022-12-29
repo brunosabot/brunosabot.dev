@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/build-an-easy-popup-system-with-react-8858370cf700
+color: "#728897"
 creator: Bruno Sabot
 date: 2021-11-12
 lang: en

@@ -1,5 +1,6 @@
 ---
 canonical: https://brunosabot.medium.com/a-discord-bot-for-home-assistant-407b8c02ffb5
+color: "#202020"
 creator: Bruno Sabot
 date: 2021-11-05
 lang: en

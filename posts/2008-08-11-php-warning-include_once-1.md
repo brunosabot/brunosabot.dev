@@ -1,4 +1,5 @@
 ---
+color: "#E7A54B"
 creator: Bruno Sabot
 date: 2008-08-11
 lang: fr

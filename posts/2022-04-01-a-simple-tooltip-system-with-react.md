@@ -1,4 +1,5 @@
 ---
+color: "#5F6061"
 creator: Bruno Sabot
 date: 2021-12-09
 lang: en

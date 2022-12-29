@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/an-opinionated-way-to-structure-react-apps-10f87bf29952
+color: "#0B0402"
 creator: Bruno Sabot
 date: 2020-05-05
 lang: en

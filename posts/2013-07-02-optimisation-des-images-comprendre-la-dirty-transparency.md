@@ -1,4 +1,5 @@
 ---
+color: "#947C88"
 creator: Bruno Sabot
 date: 2013-07-02
 lang: fr

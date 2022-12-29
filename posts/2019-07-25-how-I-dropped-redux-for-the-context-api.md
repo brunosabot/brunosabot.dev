@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/how-i-dropped-redux-for-the-context-api-7338d481e179
+color: "#414349"
 creator: Bruno Sabot
 date: 2019-07-25
 lang: en

@@ -1,4 +1,5 @@
 ---
+color: "#9CC1C3"
 creator: Bruno Sabot
 date: 2011-02-13
 lang: fr

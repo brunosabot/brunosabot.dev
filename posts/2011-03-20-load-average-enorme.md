@@ -1,4 +1,5 @@
 ---
+color: "#52585A"
 creator: Bruno Sabot
 date: 2011-03-20
 lang: fr

@@ -1,5 +1,6 @@
 ---
 canonical: https://blog.zenika.com/2019/07/30/learning-expedition-zenika-ce-quen-pensent-les-devs/
+color: "#A97C67"
 creator: Bruno Sabot
 date: 2019-07-25
 lang: fr

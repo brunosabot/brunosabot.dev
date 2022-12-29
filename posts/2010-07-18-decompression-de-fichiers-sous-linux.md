@@ -1,4 +1,5 @@
 ---
+color: "#B28F84"
 creator: Bruno Sabot
 date: 2010-07-18
 lang: fr

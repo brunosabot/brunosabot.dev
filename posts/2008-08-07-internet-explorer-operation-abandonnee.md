@@ -1,4 +1,5 @@
 ---
+color: "#816F55"
 creator: Bruno Sabot
 date: 2008-08-07
 lang: fr

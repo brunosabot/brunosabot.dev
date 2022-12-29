@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/loading-gists-in-a-nextjs-application-cb60e3f9d523
+color: "#4B341D"
 creator: Bruno Sabot
 date: 2022-03-01
 lang: en

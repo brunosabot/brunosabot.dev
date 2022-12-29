@@ -1,4 +1,3 @@
-import { getPlaiceholder } from "plaiceholder";
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
@@ -42,17 +41,6 @@ function getReadingTime(post: MatterPost) {
   return Math.round(statMarkdown.minutes);
 }
 
-async function getPlaceholderImage(post: MatterPost) {
-  const imageRes = await fetch(post.data.originalImage);
-  const arrayBuffer = await imageRes.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
-
-  const { img, base64 } = await getPlaiceholder(buffer);
-  const imageHeight = (img.height * 680) / img.width;
-
-  return { base64, height: imageHeight };
-}
-
 export async function generateStaticParams() {
   return getPosts().map((post) => {
     const year = `${new Date(post.data.date).getFullYear()}`;
@@ -72,10 +60,9 @@ export default async function PostPage({
     notFound();
   }
 
-  const [html, relatedPosts, { base64, height }] = await Promise.all([
+  const [html, relatedPosts] = await Promise.all([
     getMarkdown(post.content),
     getRelatedPosts(post, posts),
-    getPlaceholderImage(post),
   ]);
 
   const readingTime = getReadingTime(post);
@@ -92,8 +79,6 @@ export default async function PostPage({
         }}
         html={html}
         readingTime={readingTime}
-        heroPlaceholder={base64}
-        heroHeight={height}
       />
       <PostDonation>
         You liked the post? Consider donating!

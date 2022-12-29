@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/publish-your-cloud-run-app-with-github-actions-6c18ff5c5ee4
+color: "#C0C5D2"
 creator: Bruno Sabot
 date: 2019-09-23
 lang: en

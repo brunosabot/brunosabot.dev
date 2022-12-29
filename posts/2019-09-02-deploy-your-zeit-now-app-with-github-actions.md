@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/deploy-your-zeit-now-app-with-github-actions-ca3977806b40
+color: "#5F8FDC"
 creator: Bruno Sabot
 date: 2019-09-02
 lang: en

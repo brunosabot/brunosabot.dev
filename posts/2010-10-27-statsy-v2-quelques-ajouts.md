@@ -1,4 +1,5 @@
 ---
+color: "#FDFEFF"
 creator: Bruno Sabot
 date: 2010-10-27
 lang: fr

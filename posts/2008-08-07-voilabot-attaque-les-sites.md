@@ -1,4 +1,5 @@
 ---
+color: "#623240"
 creator: Bruno Sabot
 date: 2008-08-07
 lang: fr

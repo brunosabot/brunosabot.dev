@@ -1,4 +1,5 @@
 ---
+color: "#8B7269"
 creator: Bruno Sabot
 date: 2011-05-10
 lang: fr

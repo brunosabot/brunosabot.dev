@@ -1,4 +1,5 @@
 ---
+color: "#CDD3D2"
 creator: Bruno Sabot
 date: 2010-12-29
 lang: fr

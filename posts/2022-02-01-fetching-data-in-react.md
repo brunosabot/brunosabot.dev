@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/fetching-data-with-react-72df95683c70
+color: "#186B9A"
 creator: Bruno Sabot
 date: 2022-02-01
 lang: en

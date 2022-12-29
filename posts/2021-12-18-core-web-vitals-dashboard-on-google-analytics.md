@@ -1,5 +1,6 @@
 ---
 canonical: https://calendar.perfplanet.com/2021/core-web-vitals-dashboard-on-google-analytics/
+color: "#BCE5F4"
 creator: Bruno Sabot
 date: 2021-12-18
 lang: en

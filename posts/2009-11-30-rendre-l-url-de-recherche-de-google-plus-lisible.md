@@ -1,4 +1,5 @@
 ---
+color: "#F2E3E9"
 creator: Bruno Sabot
 date: 2009-11-30
 lang: fr

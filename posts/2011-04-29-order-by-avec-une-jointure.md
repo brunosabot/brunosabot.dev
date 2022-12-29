@@ -1,4 +1,5 @@
 ---
+color: "#899290"
 creator: Bruno Sabot
 date: 2011-04-29
 lang: fr

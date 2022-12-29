@@ -14,6 +14,11 @@
   max-width: 712px;
   padding: 0 16px 64px 16px;
 }
+
+.blog-post-hero-image {
+  object-fit: cover;
+}
+
 .blog-post img {
   height: auto;
   max-width: 100%;

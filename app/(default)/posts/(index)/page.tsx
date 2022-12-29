@@ -1,7 +1,6 @@
 import React from "react";
 import fs from "fs";
 import path from "path";
-import { getPlaiceholder } from "plaiceholder";
 import matter from "gray-matter";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import Card from "../../../../components/card/Card";
@@ -24,21 +23,8 @@ const getPosts = async () => {
       platform: post.data.platform,
       lang: post.data.lang,
       path: post.data.path,
-    }))
-    .map(async (post) => {
-      const imageRes = await fetch(post.image);
-      const arrayBuffer = await imageRes.arrayBuffer();
-      const buffer = Buffer.from(arrayBuffer);
-
-      const { img, base64 } = await getPlaiceholder(buffer);
-      const imageHeight = (img.height * 680) / img.width;
-
-      return {
-        ...post,
-        imagePlaceholder: base64,
-        imageHeight,
-      };
-    });
+      color: post.data.color,
+    }));
 
   return Promise.all(postPromises);
 };
@@ -52,7 +38,7 @@ export default async function PostsPage() {
       {posts.map((post, index) => (
         <Card
           image={post.image}
-          imagePlaceholder={post.imagePlaceholder}
+          color={post.color}
           description={post.subtitle}
           icon={post.lang}
           title={post.title}

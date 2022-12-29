@@ -1,5 +1,6 @@
 ---
 canonical: https://betterprogramming.pub/a-complete-pre-commit-workflow-cea6e34f0032
+color: "#CDDBDD"
 creator: Bruno Sabot
 date: 2019-08-21
 lang: en
