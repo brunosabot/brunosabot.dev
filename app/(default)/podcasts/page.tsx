@@ -30,20 +30,7 @@ export const getPodcasts = async () => {
       image: "https://storage.googleapis.com/brunosabot.dev/img/IFTTD-54.jpeg",
       platform: "IFTTD",
     },
-  ].map(async (post) => {
-    const imageRes = await fetch(post.image);
-    const arrayBuffer = await imageRes.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    const { img, base64 } = await getPlaiceholder(buffer);
-    const imageHeight = (img.height * 680) / img.width;
-
-    return {
-      ...post,
-      imagePlaceholder: base64,
-      imageHeight,
-    };
-  });
+  ];
 
   return Promise.all(podcastPromises);
 };
@@ -67,7 +54,6 @@ export default async function PodcastsPage() {
           url={podcast.url}
           platform={podcast.platform}
           priority={index === 0}
-          imagePlaceholder={podcast.imagePlaceholder}
         />
       ))}
     </>

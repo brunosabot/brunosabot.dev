@@ -58,19 +58,7 @@ export const getTalks = async () => {
       image:
         "https://storage.googleapis.com/brunosabot.dev/img/h0MAi-1GdZQ.jpeg",
     },
-  ].map(async (post) => {
-    const imageRes = await fetch(post.image);
-    const arrayBuffer = await imageRes.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    const { img, base64 } = await getPlaiceholder(buffer);
-    const imageHeight = (img.height * 680) / img.width;
-
-    return {
-      ...post,
-      imagePlaceholder: base64,
-      imageHeight,
-    };
-  });
+  ];
 
   return Promise.all(talkPromises);
 };

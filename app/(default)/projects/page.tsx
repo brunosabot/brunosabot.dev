@@ -30,20 +30,7 @@ export const getProjects = async () => {
         "Guilds can follow players evolutions and organise guild versus guild events by creating tiers lists and give instructions.",
       ],
     },
-  ].map(async (post) => {
-    const imageRes = await fetch(post.image);
-    const arrayBuffer = await imageRes.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    const { img, base64 } = await getPlaiceholder(buffer);
-    const imageHeight = (img.height * 680) / img.width;
-
-    return {
-      ...post,
-      imagePlaceholder: base64,
-      imageHeight,
-    };
-  });
+  ];
 
   return Promise.all(projectPromises);
 };

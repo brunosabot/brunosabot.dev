@@ -15,7 +15,6 @@ interface Props {
   description: string;
   platform: string;
   priority?: boolean;
-  imagePlaceholder: string;
 }
 
 const CardPodcast: React.FC<Props> = ({
@@ -28,7 +27,6 @@ const CardPodcast: React.FC<Props> = ({
   description,
   platform,
   priority = false,
-  imagePlaceholder,
 }) => {
   const actions = (
     <>
@@ -53,7 +51,6 @@ const CardPodcast: React.FC<Props> = ({
       key={id}
       actions={actions}
       priority={priority}
-      imagePlaceholder={imagePlaceholder}
     />
   );
 };
