@@ -1,7 +1,5 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
-
-import { getPlaiceholder } from "plaiceholder";
 import DetailCard from "../../../components/card/DetailCard";
 
 export const getProjects = async () => {

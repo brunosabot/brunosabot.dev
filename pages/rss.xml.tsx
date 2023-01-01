@@ -1,8 +1,5 @@
-import path from "path";
-import matter from "gray-matter";
-import fs from "fs";
+import { getNotionPost, getNotionPosts } from "../lib/notion";
 
-const POSTS_PATH = path.join(process.cwd(), "posts");
 const getTemplate = (children: string) =>
   `<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -16,32 +13,30 @@ const getTemplate = (children: string) =>
   </channel>
 </rss>`;
 
-function createRss() {
-  const items = fs
-    .readdirSync(POSTS_PATH)
-    .filter((path) => /\.mdx?$/.test(path))
-    .map((path) => fs.readFileSync(POSTS_PATH + "/" + path))
-    .map((source) => matter(source))
-    .map((page) => {
-      var encodedStr = page.content.replace(
-        /[\u00A0-\u9999<>\&]/g,
-        function (i) {
-          return "&#" + i.charCodeAt(0) + ";";
-        }
-      );
+async function createRss() {
+  const posts = await getNotionPosts();
 
-      return `<item>
+  const items = posts.map(async (post) => {
+    const page = await getNotionPost(post.path);
+
+    if (page === undefined) return "";
+
+    var encodedStr = page.content.replace(/[\u00A0-\u9999<>\&]/g, function (i) {
+      return "&#" + i.charCodeAt(0) + ";";
+    });
+
+    return `<item>
         <title><![CDATA[${page.data.title}]]></title>
         <description><![CDATA[${page.data.subtitle}]]></description>
         <link>https://brunosabot.dev${page.data.path}</link>
         <guid isPermaLink="false">https://brunosabot.dev${page.data.path}</guid>
-        <pubDate>${page.data.date.toUTCString()}</pubDate>
+        <pubDate>${new Date(page.data.date).toUTCString()}</pubDate>
         <content:encoded><![CDATA[${encodedStr.trim()}]]></content:encoded>
       </item>
 `;
-    });
+  });
 
-  return items.join("");
+  return Promise.all(items).then((rssArray) => rssArray.join(""));
 }
 
 export async function getServerSideProps({ res }: any) {

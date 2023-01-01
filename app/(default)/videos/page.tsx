@@ -1,7 +1,6 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import CardVideo from "../../../components/card/CardVideo";
-import { getPlaiceholder } from "plaiceholder";
 
 export const getVideos = async () => {
   const videoPromises = [

@@ -15,7 +15,7 @@ const Related: React.FC<IRelatedProps> = ({ posts = [] }) => {
       <div className={classes.RelatedWrapper}>
         {posts.map((post) => (
           <Card
-            image={post.image}
+            image={post.originalImage}
             description={post.subtitle}
             icon={post.lang}
             title={post.title}

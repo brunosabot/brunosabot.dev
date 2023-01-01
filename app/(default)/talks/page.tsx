@@ -1,6 +1,5 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
-import { getPlaiceholder } from "plaiceholder";
 import CardTalk from "../../../components/card/CardTalk";
 
 export const getTalks = async () => {

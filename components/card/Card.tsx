@@ -23,7 +23,7 @@ const Card: React.FC<Props> = ({
   date,
   icon,
   image,
-  color,
+  color = undefined,
   priority = false,
   description,
   subtitle,

@@ -1,10 +1,6 @@
-import matter from "gray-matter";
-import fs from "fs";
-import path from "path";
 import readingTime from "reading-time";
 import { getRelatedPosts } from "../../../../../lib/posts";
 import { notFound } from "next/navigation";
-import MatterPost from "../../../../../types/MatterPost";
 import PostDonation from "../../../../../components/post/PostDonation";
 import Paypal from "../../../../../components/donate/Paypal";
 import Patreon from "../../../../../components/donate/Patreon";
@@ -14,37 +10,24 @@ import { RouteParams } from "./types";
 import Post from "../../../../../components/post/Post";
 import getMarkdown from "../../../../../lib/gist";
 import { mdiLinkVariant } from "@mdi/js";
+import {
+  getNotionPosts,
+  getNotionPost,
+  FullPost,
+} from "../../../../../lib/notion";
 
-const POSTS_PATH = path.join(process.cwd(), "posts");
-
-function getPosts(): MatterPost[] {
-  return fs
-    .readdirSync(POSTS_PATH)
-    .filter((path) => /\.mdx?$/.test(path))
-    .map((path) => fs.readFileSync(POSTS_PATH + "/" + path))
-    .map((source) => matter(source))
-    .map((matterPost) => {
-      return {
-        content: matterPost.content,
-        data: { ...matterPost.data },
-      };
-    });
-}
-
-function getPost(posts: MatterPost[], year: string, slug: string) {
-  return posts.find((p) => p.data.path === `/posts/${year}/${slug}/`);
-}
-
-function getReadingTime(post: MatterPost) {
+function getReadingTime(post: FullPost) {
   const statMarkdown = readingTime(post.content);
 
   return Math.round(statMarkdown.minutes);
 }
 
 export async function generateStaticParams() {
-  return getPosts().map((post) => {
-    const year = `${new Date(post.data.date).getFullYear()}`;
-    const slug = post.data.path.replace(`/posts/${year}/`, "");
+  const posts = await getNotionPosts();
+
+  return posts.map((post) => {
+    const year = `${new Date(post.date).getFullYear()}`;
+    const slug = post.path.replace(`/posts/${year}/`, "").replace(/\/$/, "");
 
     return { year, slug };
   });
@@ -53,8 +36,10 @@ export async function generateStaticParams() {
 export default async function PostPage({
   params: { year, slug },
 }: RouteParams) {
-  const posts = getPosts();
-  const post = getPost(posts, year, slug);
+  const [posts, post] = await Promise.all([
+    getNotionPosts(),
+    getNotionPost(`/posts/${year}/${slug}/`),
+  ]);
 
   if (post === undefined) {
     notFound();

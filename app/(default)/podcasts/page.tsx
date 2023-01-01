@@ -1,7 +1,5 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
-import CardVideo from "../../../components/card/CardVideo";
-import { getPlaiceholder } from "plaiceholder";
 import CardPodcast from "../../../components/card/CardPodcast";
 
 export const getPodcasts = async () => {
