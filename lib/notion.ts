@@ -91,6 +91,7 @@ export interface Post {
   subtitle: string;
   tags: string;
   title: string;
+  lastModified: string;
 }
 export interface FullPost {
   content: string;
@@ -144,6 +145,7 @@ export function mapNotionToPost(
     subtitle: getRichTextValue(p.Subtitle),
     tags: getTags(p.Tags),
     title: p.Name.title[0].plain_text,
+    lastModified: notionPost.last_edited_time,
   };
 
   return data;

@@ -7,3 +7,4 @@ Host: https://brunosabot.dev
 
 # Sitemaps
 Sitemap: https://brunosabot.dev/sitemap.xml
+Sitemap: https://brunosabot.dev/server-sitemap.xml
