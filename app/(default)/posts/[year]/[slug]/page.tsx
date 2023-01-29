@@ -8,7 +8,7 @@ import BuyMeACoffee from "../../../../../components/donate/BuyMeACoffee";
 import Related from "../../../../../components/post/Related";
 import { RouteParams } from "./types";
 import Post from "../../../../../components/post/Post";
-import getMarkdown from "../../../../../lib/gist";
+import getMarkdown from "../../../../../lib/markdown";
 import { mdiLinkVariant } from "@mdi/js";
 import {
   getNotionPosts,

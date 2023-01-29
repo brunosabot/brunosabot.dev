@@ -1,6 +1,5 @@
 import { marked } from "marked";
 import Prism from "prismjs";
-import { mdiLinkVariant } from "@mdi/js";
 import "prismjs/components/prism-docker";
 import "prismjs/components/prism-json";
 import "prismjs/components/prism-jsx";
@@ -36,7 +35,22 @@ const MAP_LANGUAGE = {
   nginx: { name: "nginx", prism: Prism.languages.nginx },
 };
 
-export function getLanguage(inputLanguage: string | undefined) {
+async function loadGist(id: string): Promise<[string[], { files: string[] }]> {
+  const url = `https://gist.github.com/${id}`;
+  const jsonResponse = await fetch(`${url}.json`);
+
+  const jsonData = await (jsonResponse.json() as Promise<{ files: string[] }>);
+
+  const data = await Promise.all(
+    jsonData.files.map((file) =>
+      fetch(`${url}/raw/?file=${file}`).then((r) => r.text())
+    )
+  );
+
+  return [data, jsonData];
+}
+
+function getLanguage(inputLanguage: string | undefined) {
   if (inputLanguage === undefined) return "text";
   if (inputLanguage === "") return "text";
 
@@ -73,21 +87,16 @@ const gistPlugin: marked.MarkedExtension = {
             const grammar = Object.values(MAP_LANGUAGE).find(
               (l) => l.name === language
             )?.prism;
-
             const output = Prism.highlight(
               html,
               grammar ?? Prism.languages.text,
               language
             );
-
             let newAcc = acc;
-
             if (file) {
               newAcc += `<div class="hljs-filename">${file}</div>`;
             }
-
             newAcc += `<pre><code class="language-${language}">${output}</code></pre>`;
-
             return newAcc;
           },
           ""
@@ -99,13 +108,11 @@ const gistPlugin: marked.MarkedExtension = {
   async walkTokens(token: marked.Token | GistToken) {
     if (token.type === "gist") {
       const [data, jsonData] = await loadGist(token.url);
-
       token.data = data.map((d, i) => {
         const ext = jsonData.files[i].split(".");
         const language = getLanguage(
           ext.length ? ext[ext.length - 1] : undefined
         );
-
         return {
           file: jsonData.files[i],
           html: d.trim(),
@@ -116,41 +123,4 @@ const gistPlugin: marked.MarkedExtension = {
   },
 };
 
-const renderer = {
-  heading(text: string, level: number) {
-    const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
-
-    return `
-      <h${level + 2} class="anchor-target">
-        <a name="${escapedText}" aria-label="Get an anchor to this title" class="anchor" href="#${escapedText}">
-          <svg viewBox="0 0 24 24" height="24px" width="24px"><use xlink:href="#linkVariant" /></svg>
-        </a>
-        ${text}
-      </h${level + 2}>`;
-  },
-  image(href: string, title: string, text: string) {
-    return `<img src="${href}" alt="${text}" decoding="async" loading="lazy" />`;
-  },
-};
-
-marked.use({ renderer });
-marked.use(gistPlugin);
-
-async function loadGist(id: string): Promise<[string[], { files: string[] }]> {
-  const url = `https://gist.github.com/${id}`;
-  const jsonResponse = await fetch(`${url}.json`);
-
-  const jsonData = await (jsonResponse.json() as Promise<{ files: string[] }>);
-
-  const data = await Promise.all(
-    jsonData.files.map((file) =>
-      fetch(`${url}/raw/?file=${file}`).then((r) => r.text())
-    )
-  );
-
-  return [data, jsonData];
-}
-
-export default async function getMarkdown(content: string) {
-  return marked.parse(content);
-}
+export default gistPlugin;
