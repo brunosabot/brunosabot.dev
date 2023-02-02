@@ -68,11 +68,6 @@ export default function ToolUuidPage() {
     <>
       <PageTitle>UUID Tool</PageTitle>
 
-      <SimpleCard>
-        This tool is aimed to generate ids based on the UUID V1, UUID V4, UUID
-        V5 and Nano ID formats
-      </SimpleCard>
-
       <Label label="Algorithm">
         <Select onChange={onChangeType} value={uuidType}>
           <Option value={UuidType.V1}>UUID Version 1</Option>
@@ -106,6 +101,25 @@ export default function ToolUuidPage() {
       >
         Generate another one
       </Button>
+
+      <SimpleCard>
+        The tool is a unique identifier generator that helps you quickly and
+        easily generate ids based on four different formats: UUID V1, UUID V4,
+        UUID V5, and Nano ID. UUID V1 uses the current time and the
+        device&apos;s MAC address to generate a unique id, while UUID V4 uses
+        random numbers. UUID V5 uses a secure hash function to generate a unique
+        id based on a given namespace and name, and Nano ID uses a secure random
+        number generator to generate a compact and URL-friendly id.
+        <br />
+        The tool provides a simple and intuitive interface for generating ids in
+        each of these formats, allowing you to choose the best format for your
+        needs. The ids are generated in real-time, making it easy to see the
+        results and make any necessary adjustments. Whether you&apos;re a
+        developer, data analyst, or simply need to generate unique ids, this
+        tool is a must-have tool for your toolkit. With its flexible and
+        easy-to-use interface, you can generate ids in any of the four formats
+        with just a few clicks.
+      </SimpleCard>
     </>
   );
 }

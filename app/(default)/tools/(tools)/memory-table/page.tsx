@@ -112,10 +112,6 @@ export default function ToolMemoryTablePage() {
     <>
       <PageTitle>Memory Table Tool</PageTitle>
 
-      <SimpleCard>
-        This tool is aimed to help you work and memorize your memory table
-      </SimpleCard>
-
       {table.every((v) => v === "") ? null : (
         <Button type="button" onClick={() => setPlay(!play)}>
           {play ? "Stop playing" : "Start playing"}
@@ -163,6 +159,19 @@ export default function ToolMemoryTablePage() {
           ) : null}
         </form>
       )}
+
+      <SimpleCard>
+        The tool is a memory association game that creates a table linking
+        numbers with objects. The game allows you to play a guessing game based
+        on the created table by matching a number with an object or vice versa.
+        To play the game, you will be presented with either an object or a
+        number, and your task will be to guess the corresponding match. The game
+        tracks your progress and provides a score based on how many correct
+        matches you make. This tool is a fun and interactive way to improve your
+        memory retention, test your knowledge, or just have a little fun.
+        Whether you&apos;re looking to challenge yourself, improve your memory
+        skills, or simply have a good time, this tool is a great choice.
+      </SimpleCard>
     </>
   );
 }

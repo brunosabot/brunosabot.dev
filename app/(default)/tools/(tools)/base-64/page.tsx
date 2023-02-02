@@ -31,11 +31,6 @@ export default function ToolBase64Page() {
     <>
       <PageTitle>Base 64 Tool</PageTitle>
 
-      <SimpleCard>
-        This tool is aimed to help you converting encoded base 64 strings to
-        regular strings and regular strings to encoded base 64 string
-      </SimpleCard>
-
       <Label label="Encoded String">
         <Textarea
           onChange={onEncodedStringChange}
@@ -50,6 +45,19 @@ export default function ToolBase64Page() {
           value={Buffer.from(string, "base64").toString()}
         />
       </Label>
+
+      <SimpleCard>
+        The tool is a base 64 string converter that helps you convert encoded
+        base 64 strings to regular strings and vice versa. It allows you to
+        encode regular strings into base 64 format for data transfer and storage
+        purposes, as well as decode base 64 strings back into their original
+        form for use in your applications. The tool is easy to use, simply enter
+        the string you wish to convert, and the tool will perform the conversion
+        for you. The resulting output is a precise representation of the
+        original string in either regular or encoded base 64 format. This tool
+        is an essential tool for developers and can save time and effort in
+        working with base 64 encoded strings.
+      </SimpleCard>
     </>
   );
 }

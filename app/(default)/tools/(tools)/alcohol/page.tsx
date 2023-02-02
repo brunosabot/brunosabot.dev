@@ -22,10 +22,6 @@ export default function ToolAlcoholPage() {
     <>
       <PageTitle>Alcohol Tool</PageTitle>
 
-      <SimpleCard>
-        This tools is aimed to help you calculate the quantity of alcohol inside
-        a beverage
-      </SimpleCard>
       <Label label="Quantity (ml)">
         <Input
           onChange={(e) => setQuantity(parseFloat(e.target.value))}
@@ -48,6 +44,18 @@ export default function ToolAlcoholPage() {
           <Dt>Relative drink quantity:</Dt>
           <Dd>{Math.round((100 * pureQuantity) / 12.7) / 100}</Dd>
         </Dl>
+      </SimpleCard>
+
+      <SimpleCard>
+        The tool is a beverage alcohol calculator that determines the quantity
+        of pure alcohol in a drink and calculates the corresponding dose for
+        human consumption. It takes into account the size of the drink and the
+        percentage of alcohol by volume to provide an accurate measurement of
+        the alcohol content. The tool does not factor in the user&apos;s weight,
+        gender, or time elapsed since consuming the drink as it provides a
+        general estimate of the alcohol content. This tool helps individuals to
+        monitor and regulate their alcohol intake for responsible and safe
+        drinking.
       </SimpleCard>
     </>
   );

@@ -26,11 +26,6 @@ export default function ToolPrettyPage() {
     <>
       <PageTitle>JSON pretty Tool</PageTitle>
 
-      <SimpleCard>
-        This tool is aimed to format JSON string into a prettier and readable
-        version of the string
-      </SimpleCard>
-
       <Label label="Unformatted string">
         <Textarea
           onChange={onChange}
@@ -44,6 +39,19 @@ export default function ToolPrettyPage() {
             ? JSON.stringify(JSON.parse(string), null, 2)
             : string}
         </pre>
+      </SimpleCard>
+
+      <SimpleCard>
+        The tool is a JSON formatter that helps you format compact JSON strings
+        into a human-readable format. It is designed to make it easier to read
+        and understand JSON data by transforming compact, unreadable JSON
+        strings into a visually appealing, indented format. The tool takes a
+        compact JSON string as input and generates an indented, easy-to-read
+        format as output. The resulting output is organized and easy to scan,
+        making it ideal for reviewing and debugging JSON data. Whether
+        you&apos;re a developer working with JSON data or simply need to view a
+        JSON string in a more readable format, this tool is a must-have tool for
+        your toolkit.
       </SimpleCard>
     </>
   );

@@ -67,11 +67,6 @@ export default function ToolPhotoshopShadowPage() {
     <>
       <PageTitle>Photoshop Shadow</PageTitle>
 
-      <SimpleCard>
-        This tool is aimed to convert shadows from the photoshop format into CSS
-        shadow, with a live visualization
-      </SimpleCard>
-
       <Columns cols={4}>
         <Label label="R">
           <Input onChange={(e) => setR(+e.target.value)} value={`${r}`} />
@@ -127,6 +122,22 @@ export default function ToolPhotoshopShadowPage() {
       </Columns>
 
       <SimpleCard style={{ boxShadow }}>box-shadow: {boxShadow}</SimpleCard>
+
+      <SimpleCard>
+        The tool is a Photoshop shadow to CSS shadow converter with a
+        visualization guide. It helps you quickly and easily convert Photoshop
+        shadow styles to CSS shadow values and provides a visual representation
+        of the shadow so you can see exactly what it looks like. The tool takes
+        a Photoshop shadow style as input and generates the equivalent CSS
+        shadow value, ready to be used in your CSS code. The generated CSS
+        shadow value is an exact representation of the original shadow style,
+        allowing you to maintain the same look and feel across your designs. In
+        addition to the CSS shadow value, the tool also provides a visual guide
+        to help you understand what the shadow looks like, making it easier to
+        fine-tune your shadow designs. Whether you&apos;re a web developer,
+        designer, or simply looking for an easy way to convert your Photoshop
+        shadow styles to CSS, this tool is a must-have tool for your toolkit.
+      </SimpleCard>
     </>
   );
 }

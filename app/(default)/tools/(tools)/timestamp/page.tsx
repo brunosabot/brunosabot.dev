@@ -117,11 +117,6 @@ export default function ToolShaPage() {
     <>
       <PageTitle>Timestamp converter</PageTitle>
 
-      <SimpleCard>
-        This tool is aimed to convert timestamp into datetime values back and
-        forward
-      </SimpleCard>
-
       <Label label="Timestamp">
         <Input
           type="number"
@@ -181,6 +176,21 @@ export default function ToolShaPage() {
           <Dt>Corresponding Local Date:</Dt>
           <Dd>{toLocaleString(timestamp)}</Dd>
         </Dl>
+      </SimpleCard>
+
+      <SimpleCard>
+        The tool is a timestamp to datetime converter that helps you quickly and
+        easily convert between timestamps and human-readable datetime values. It
+        is designed to make it easy to switch between the two representations,
+        allowing you to choose the best representation for your needs. The tool
+        takes a timestamp or datetime value as input and generates the
+        equivalent representation in the other format. The conversion is done in
+        real-time, making it easy to see the results and make any necessary
+        adjustments. Whether you&apos;re a developer, data analyst, or simply
+        need to work with timestamps and datetime values, this tool is a
+        must-have tool for your toolkit. With its simple and intuitive
+        interface, you can easily convert between timestamps and datetime values
+        with just a few clicks.
       </SimpleCard>
     </>
   );
