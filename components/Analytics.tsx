@@ -8,10 +8,25 @@ function Analytics() {
   if (window.location.hostname === "localhost") return null;
 
   return (
-    <Script
-      strategy="afterInteractive"
-      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-    />
+    <>
+      <Script
+        strategy="afterInteractive"
+        id="url"
+        src="https://www.googletagmanager.com/gtag/js?id=G-C3QX8BNP7P"
+      />
+      <Script
+        id="inline"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-C3QX8BNP7P');
+          `,
+        }}
+      />
+    </>
   );
 }
 export default Analytics;
