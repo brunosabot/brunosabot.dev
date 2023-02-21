@@ -28,7 +28,7 @@ type InputPropsText = InputDefaultProps & {
 };
 
 type InputPropsNumber = InputDefaultProps & {
-  value: string;
+  value: string | number;
   autoFocus?: boolean;
   type: "number";
 };

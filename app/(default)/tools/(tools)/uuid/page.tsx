@@ -8,6 +8,7 @@ import {
   v5 as uuidv5,
   validate as uuidValidate,
 } from "uuid";
+import { ulid } from "ulid";
 import SimpleCard from "../../../../../components/card/SimpleCard";
 import Label from "../../../../../components/form/Label";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -21,6 +22,7 @@ enum UuidType {
   V4 = "v4",
   V5 = "v5",
   NANOID = "nanoid",
+  ULID = "ulid",
 }
 
 export default function ToolUuidPage() {
@@ -28,9 +30,15 @@ export default function ToolUuidPage() {
   const [uuidType, setUuidType] = useState<UuidType>(UuidType.V1);
   const [name, setName] = useState<string>("");
   const [namespace, setNamespace] = useState<string>("");
+  const [length, setLength] = useState<number>(21);
 
   const createUuid = useCallback(
-    (type: UuidType, localName: string, localNamespace: string) => {
+    (
+      type: UuidType,
+      localName: string,
+      localNamespace: string,
+      length: number
+    ) => {
       if (type === UuidType.V1) {
         setUuid(uuidv1());
       } else if (type === UuidType.V4) {
@@ -42,7 +50,9 @@ export default function ToolUuidPage() {
           setUuid("");
         }
       } else if (type === UuidType.NANOID) {
-        setUuid(nanoid());
+        setUuid(nanoid(length));
+      } else if (type === UuidType.ULID) {
+        setUuid(ulid());
       }
     },
     []
@@ -60,9 +70,13 @@ export default function ToolUuidPage() {
     setNamespace(e.target.value);
   };
 
+  const onChangeLength = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLength(e.target.valueAsNumber);
+  };
+
   useEffect(() => {
-    createUuid(uuidType, name, namespace);
-  }, [createUuid, name, namespace, uuidType]);
+    createUuid(uuidType, name, namespace, length);
+  }, [createUuid, name, namespace, uuidType, length]);
 
   return (
     <>
@@ -74,6 +88,7 @@ export default function ToolUuidPage() {
           <Option value={UuidType.V4}>UUID Version 4</Option>
           <Option value={UuidType.V5}>UUID Version 5</Option>
           <Option value={UuidType.NANOID}>Nano ID</Option>
+          <Option value={UuidType.ULID}>ULID</Option>
         </Select>
       </Label>
 
@@ -93,11 +108,17 @@ export default function ToolUuidPage() {
         </Label>
       ) : null}
 
+      {uuidType === UuidType.NANOID ? (
+        <Label label="NanoID length">
+          <Input type="number" onChange={onChangeLength} value={length} />
+        </Label>
+      ) : null}
+
       <SimpleCard>{uuid}</SimpleCard>
 
       <Button
         type="button"
-        onClick={() => createUuid(uuidType, name, namespace)}
+        onClick={() => createUuid(uuidType, name, namespace, length)}
       >
         Generate another one
       </Button>
@@ -105,7 +126,7 @@ export default function ToolUuidPage() {
       <SimpleCard>
         The tool is a unique identifier generator that helps you quickly and
         easily generate ids based on four different formats: UUID V1, UUID V4,
-        UUID V5, and Nano ID. UUID V1 uses the current time and the
+        UUID V5, Nano ID and ULID. UUID V1 uses the current time and the
         device&apos;s MAC address to generate a unique id, while UUID V4 uses
         random numbers. UUID V5 uses a secure hash function to generate a unique
         id based on a given namespace and name, and Nano ID uses a secure random
