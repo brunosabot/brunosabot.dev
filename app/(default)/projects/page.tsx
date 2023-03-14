@@ -1,8 +1,16 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import DetailCard from "../../../components/card/DetailCard";
+import { getMetaData } from "../../../lib/metadata";
 
-export const getProjects = async () => {
+export async function generateMetadata() {
+  return getMetaData({
+    description: "Projects imagined and created by Bruno Sabot. Check it out!",
+    title: "Projects",
+  });
+}
+
+const getProjects = async () => {
   const projectPromises = [
     {
       id: "answwr",

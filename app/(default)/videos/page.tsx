@@ -1,8 +1,16 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import CardVideo from "../../../components/card/CardVideo";
+import { getMetaData } from "../../../lib/metadata";
 
-export const getVideos = async () => {
+export async function generateMetadata() {
+  return getMetaData({
+    description: "All the videos made by or with Bruno Sabot",
+    title: "Videos",
+  });
+}
+
+const getVideos = async () => {
   const videoPromises = [
     {
       id: "1",

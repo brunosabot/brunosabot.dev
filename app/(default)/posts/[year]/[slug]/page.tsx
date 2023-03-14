@@ -15,6 +15,7 @@ import {
   getNotionPost,
   FullPost,
 } from "../../../../../lib/notion";
+import { getMetaData, SITE_METADATA } from "../../../../../lib/metadata";
 
 function getReadingTime(post: FullPost) {
   const statMarkdown = readingTime(post.content);
@@ -30,6 +31,24 @@ export async function generateStaticParams() {
     const slug = post.path.replace(`/posts/${year}/`, "").replace(/\/$/, "");
 
     return { year, slug };
+  });
+}
+
+export async function generateMetadata({
+  params: { year, slug },
+}: RouteParams) {
+  const post = await getNotionPost(`/posts/${year}/${slug}/`);
+
+  if (post === undefined) {
+    return null;
+  }
+
+  return getMetaData({
+    title: post.data.title,
+    description: post.data.subtitle,
+    canonical: post.data.canonical,
+    url: `${SITE_METADATA.siteUrl}/${post.data.path}`,
+    image: post.data.originalImage,
   });
 }
 

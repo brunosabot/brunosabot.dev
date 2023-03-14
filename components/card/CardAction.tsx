@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { TooltipPosition, WithATooltip } from "../modal/WithATooltip";
+import { TooltipPosition } from "../modal/TooltipPosition";
+import { WithATooltip } from "../modal/WithATooltip";
 import classes from "./CardAction.module.css";
 
 interface Props {

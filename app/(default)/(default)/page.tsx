@@ -6,13 +6,22 @@ import BiographyPost from "../../../components/biography/BiographyPost";
 import BiographyTitle from "../../../components/biography/BiographyTitle";
 import BiographySubtitle from "../../../components/biography/BiographySubtitle";
 import { getNotionPosts } from "../../../lib/notion";
+import { getMetaData } from "../../../lib/metadata";
+
+export async function generateMetadata() {
+  return getMetaData({
+    title: "About",
+  });
+}
 
 export const revalidate = 60 * 60;
-export async function getPosts() {
+
+async function getPosts() {
   const posts = await getNotionPosts();
 
   return posts.slice(0, 3);
 }
+
 export default async function IndexPage() {
   const posts = await getPosts();
 

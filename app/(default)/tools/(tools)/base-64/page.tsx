@@ -1,50 +1,22 @@
-"use client";
-
-import React, { useCallback, useState } from "react";
+import React from "react";
 import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
 import PageTitle from "../../../../../components/typography/PageTitle";
-import Textarea from "../../../../../components/form/Textarea";
+import { getMetaData } from "../../../../../lib/metadata";
+import ToolBase64 from "./ToolBase64";
+
+export async function generateMetadata() {
+  return getMetaData({
+    description: "Base 64 encode and decode tool by Bruno Sabot",
+    title: "Base 64 tool",
+  });
+}
 
 export default function ToolBase64Page() {
-  const [valid, setValid] = useState(true);
-  const [string, setString] = useState("");
-
-  const onEncodedStringChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const { value } = e.target;
-
-    const decoded = Buffer.from(string, "base64").toString();
-    const reEncoded = Buffer.from(decoded).toString("base64");
-
-    setString(value);
-    setValid(value === reEncoded);
-  };
-
-  const onDecodedStringChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const { value } = e.target;
-
-    setString(Buffer.from(value).toString("base64"));
-    setValid(true);
-  };
-
   return (
     <>
       <PageTitle>Base 64 Tool</PageTitle>
 
-      <Label label="Encoded String">
-        <Textarea
-          onChange={onEncodedStringChange}
-          value={string}
-          aria-invalid={valid === false}
-        />
-      </Label>
-
-      <Label label="Decoded String">
-        <Textarea
-          onChange={onDecodedStringChange}
-          value={Buffer.from(string, "base64").toString()}
-        />
-      </Label>
+      <ToolBase64 />
 
       <SimpleCard>
         The tool is a base 64 string converter that helps you convert encoded

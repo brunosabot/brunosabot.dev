@@ -3,13 +3,7 @@ import TooltipView from "./TooltipView";
 import ModalPortal from "./ModalPortal";
 import classes from "./Tooltip.module.css";
 import { CSSTransition } from "react-transition-group";
-
-export enum TooltipPosition {
-  TOP = "top",
-  RIGHT = "right",
-  BOTTOM = "bottom",
-  LEFT = "left",
-}
+import { TooltipPosition } from "./TooltipPosition";
 
 interface IRequiredComponentProps {
   label: string;

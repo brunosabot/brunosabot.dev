@@ -1,8 +1,17 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import CardOpensource from "../../../components/card/CardOpenSource";
+import { getMetaData } from "../../../lib/metadata";
 
-export const getProjects = async () => {
+export async function generateMetadata() {
+  return getMetaData({
+    description:
+      "All the open sources project initiated by Bruno Sabot. Check it out!",
+    title: "Open Source",
+  });
+}
+
+const getProjects = async () => {
   const projects = [
     {
       name: "brunosabot/lovelace-nonow-calendar",

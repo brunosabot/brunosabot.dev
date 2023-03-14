@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./PostSocial.module.css";
 import Svg from "../svg/Svg";
 import { mdiLinkedin, mdiTwitter } from "@mdi/js";
-import { TooltipPosition, withTooltip } from "../modal/withTooltip";
 import { WithATooltip } from "../modal/WithATooltip";
+import { SITE_METADATA } from "../../lib/metadata";
 
 interface IPostsProps {
   title: string;
@@ -31,7 +31,7 @@ const LinkWithTooltip = ({ href, label, children }: ILinkWithTooltip) => (
 );
 
 const Posts: React.FC<IPostsProps> = ({ title, path }) => {
-  const encodedUrl = encodeURI(`https://brunosabot.dev${path}`);
+  const encodedUrl = encodeURI(`${SITE_METADATA.siteUrl}${path}`);
   const encodedTitle = encodeURI(`${title} by @brunosabot`);
 
   return (

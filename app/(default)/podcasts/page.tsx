@@ -1,8 +1,16 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import CardPodcast from "../../../components/card/CardPodcast";
+import { getMetaData } from "../../../lib/metadata";
 
-export const getPodcasts = async () => {
+export async function generateMetadata() {
+  return getMetaData({
+    description: "All the podcasts with Bruno Sabot",
+    title: "Podcasts",
+  });
+}
+
+const getPodcasts = async () => {
   const podcastPromises = [
     {
       id: "ifttd-senior",

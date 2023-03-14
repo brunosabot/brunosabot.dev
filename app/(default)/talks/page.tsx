@@ -1,8 +1,16 @@
 import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import CardTalk from "../../../components/card/CardTalk";
+import { getMetaData } from "../../../lib/metadata";
 
-export const getTalks = async () => {
+export async function generateMetadata() {
+  return getMetaData({
+    description: "All the conference talks given by Bruno Sabot. Check it out!",
+    title: "Talks",
+  });
+}
+
+const getTalks = async () => {
   const talkPromises = [
     {
       id: "snowcamp-integration",

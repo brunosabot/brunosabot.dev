@@ -1,45 +1,22 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
 import PageTitle from "../../../../../components/typography/PageTitle";
-import Textarea from "../../../../../components/form/Textarea";
+import { getMetaData } from "../../../../../lib/metadata";
+import ToolPretty from "./ToolPretty";
+
+export async function generateMetadata() {
+  return getMetaData({
+    description: "JSON prettifier tool by Bruno Sabot",
+    title: "JSON pretty tool",
+  });
+}
 
 export default function ToolPrettyPage() {
-  const [valid, setValid] = useState(true);
-  const [string, setString] = useState("");
-
-  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const { value } = e.target;
-    setString(value);
-
-    try {
-      JSON.stringify(JSON.parse(value));
-      setValid(true);
-    } catch (e) {
-      setValid(false);
-    }
-  };
-
   return (
     <>
       <PageTitle>JSON pretty Tool</PageTitle>
 
-      <Label label="Unformatted string">
-        <Textarea
-          onChange={onChange}
-          value={string}
-          aria-invalid={valid === false}
-        />
-      </Label>
-      <SimpleCard>
-        <pre style={{ margin: 0 }}>
-          {string && valid
-            ? JSON.stringify(JSON.parse(string), null, 2)
-            : string}
-        </pre>
-      </SimpleCard>
+      <ToolPretty />
 
       <SimpleCard>
         The tool is a JSON formatter that helps you format compact JSON strings

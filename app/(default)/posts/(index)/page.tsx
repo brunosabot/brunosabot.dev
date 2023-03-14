@@ -3,6 +3,15 @@ import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import Card from "../../../../components/card/Card";
 import PageTitle from "../../../../components/typography/PageTitle";
 import { getNotionPosts } from "../../../../lib/notion";
+import { getMetaData } from "../../../../lib/metadata";
+
+export async function generateMetadata() {
+  return getMetaData({
+    description:
+      "All posts publicated by Bruno Sabot on various plateforms. Check it out!",
+    title: "Posts",
+  });
+}
 
 export default async function PostsPage() {
   const posts = await getNotionPosts();

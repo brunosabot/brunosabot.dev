@@ -18,6 +18,7 @@ import svgHashnode from "../svg/hashnode";
 import svgPatreon from "../svg/patreon";
 import svgDiscord from "../svg/discord";
 import svgBuyMeACoffee from "../svg/buymeacoffee";
+import { SITE_METADATA } from "../../lib/metadata";
 
 const Footer: React.FC<{}> = () => {
   return (
@@ -80,7 +81,7 @@ const Footer: React.FC<{}> = () => {
         <Social href="https://www.strava.com/athletes/15220263" name="Strava">
           <Svg d={svgStrava} />
         </Social>
-        <Social href="https://brunosabot.dev/rss.xml" name="RSS">
+        <Social href={`${SITE_METADATA.siteUrl}/rss.xml`} name="RSS">
           <Svg d={mdiRss} />
         </Social>
       </div>

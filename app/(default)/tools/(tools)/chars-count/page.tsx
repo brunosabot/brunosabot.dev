@@ -1,40 +1,22 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
 import PageTitle from "../../../../../components/typography/PageTitle";
-import Textarea from "../../../../../components/form/Textarea";
-import readingTime from "reading-time";
+import { getMetaData } from "../../../../../lib/metadata";
+import ToolCharsCount from "./ToolCharsCount";
+
+export async function generateMetadata() {
+  return getMetaData({
+    description: "Character and word count tool by Bruno Sabot",
+    title: "Character count tool",
+  });
+}
 
 export default function ToolCharsCountPage() {
-  const [string, setString] = useState("");
-
-  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setString(e.target.value);
-  };
-
-  const wordsLength = string
-    .replace(/\s+/g, " ")
-    .split(" ")
-    .filter((e) => e).length;
-  const stringLength = string.length;
-  const nonWhiteCharsLength = string.replace(/\s+/g, "").length;
-  const timeToRead = readingTime(string);
-
   return (
     <>
       <PageTitle>Chars counter</PageTitle>
 
-      <Label label="Sentence to count">
-        <Textarea onChange={onChange} value={string} />
-      </Label>
-      <SimpleCard>
-        <p>Words: {wordsLength}</p>
-        <p>Chars: {stringLength}</p>
-        <p>Non white chars: {nonWhiteCharsLength}</p>
-        <p>Duration: {timeToRead.text}</p>
-      </SimpleCard>
+      <ToolCharsCount />
 
       <SimpleCard>
         The tool is a text analyzer that counts the number of words and

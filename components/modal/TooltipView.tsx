@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Tooltip.module.css";
-import { TooltipComponentType, TooltipPosition } from "./withTooltip";
+import { TooltipPosition } from "./TooltipPosition";
+import { TooltipComponentType } from "./withTooltip";
 
 const TooltipView: TooltipComponentType = ({
   children,

@@ -9,6 +9,28 @@ import Training from "../../../types/Training";
 import classes from "./resume.module.css";
 import { RouteParams } from "./types";
 import { notFound } from "next/navigation";
+import { getMetaData, SITE_METADATA } from "../../../lib/metadata";
+
+export async function generateMetadata({ params: { lang } }: RouteParams) {
+  const resume = await getResume(lang);
+
+  if (resume === undefined) return null;
+
+  return {
+    ...getMetaData({
+      description: resume.seo.description,
+      title: resume.seo.title,
+      lang,
+    }),
+    alternates: {
+      languages: {
+        [resume.seo
+          .alternate]: `${SITE_METADATA.siteUrl}/resume/${resume.seo.alternate}/`,
+        "x-default": `${SITE_METADATA.siteUrl}/resume/en/`,
+      },
+    },
+  };
+}
 
 async function getJobs(lang: string): Promise<JobType[]> {
   const res = await fetch(

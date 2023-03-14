@@ -6,6 +6,6 @@ module.exports = {
   exclude: ["/rss.xml", "/server-sitemap.xml", "/posts/*"],
   generateRobotsTxt: true,
   robotsTxtOptions: {
-    additionalSitemaps: ["https://brunosabot.dev/server-sitemap.xml"],
+    additionalSitemaps: [`https://brunosabot.dev/server-sitemap.xml`],
   },
 };
