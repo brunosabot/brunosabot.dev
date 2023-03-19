@@ -34,7 +34,7 @@ export async function generateMetadata({ params: { lang } }: RouteParams) {
 
 async function getJobs(lang: string): Promise<JobType[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/jobs?lang=${lang}`
+    `${process.env.NEXT_PUBLIC_URL}/api/jobs/?lang=${lang}`
   );
 
   if (!res.ok) {
@@ -46,7 +46,7 @@ async function getJobs(lang: string): Promise<JobType[]> {
 
 async function getTrainings(lang: string): Promise<Training[]> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/trainings?lang=${lang}`
+    `${process.env.NEXT_PUBLIC_URL}/api/trainings/?lang=${lang}`
   );
 
   if (!res.ok) {
@@ -58,7 +58,7 @@ async function getTrainings(lang: string): Promise<Training[]> {
 
 async function getResume(lang: string): Promise<Resume> {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/resume?lang=${lang}`
+    `${process.env.NEXT_PUBLIC_URL}/api/resume/?lang=${lang}`
   );
 
   if (!res.ok) {
