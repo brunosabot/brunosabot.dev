@@ -1,20 +1,20 @@
-const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
+const {
+  default: withPWAInit,
+  runtimeCaching,
+} = require("@ducanh2912/next-pwa");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
-const withPWAConfig = withPWA({
+/** @type {import('next-pwa').PWAConfig} */
+const withPWA = withPWAInit({
   dest: "public",
   runtimeCaching,
-  exclude: [/googletagmanager/],
-  offlineGoogleAnalytics: false,
-  disable: process.env.NODE_ENV !== "production",
 });
 
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer(
-  withPWAConfig({
+  withPWA({
     poweredByHeader: false,
     generateEtags: false,
     reactStrictMode: true,

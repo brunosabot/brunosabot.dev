@@ -14,6 +14,7 @@
     "start": "next start -p 8080"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^8.4.1",
     "@mdi/js": "^7.2.96",
     "@notionhq/client": "^2.2.3",
     "@types/marked": "^4.0.8",
@@ -22,7 +23,6 @@
     "encoding": "^0.1.13",
     "marked": "^4.3.0",
     "next": "13.3.0",
-    "next-pwa": "^5.6.0",
     "node-fetch": "^3.3.1",
     "notion-to-md": "^2.5.5",
     "prismjs": "^1.29.0",
