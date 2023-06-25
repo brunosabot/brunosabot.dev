@@ -71,7 +71,7 @@ const Footer: React.FC<{}> = () => {
         <Social href="https://codepen.io/brunosabot/" name="Codepen">
           <Svg d={mdiCodepen} />
         </Social>
-        <Social href="https://medium.com/@brunosabot" name="Medium">
+        <Social href="https://medium.brunosabot.dev" name="Medium">
           <Svg d={svgMedium} />
         </Social>
         <Social href="https://dev.to/brunosabot" name="Dev.to">
