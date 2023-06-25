@@ -9,6 +9,7 @@ import {
   mdiGithub,
   mdiInstagram,
   mdiLinkedin,
+  mdiMastodon,
   mdiRss,
   mdiTwitter,
 } from "@mdi/js";
@@ -41,6 +42,13 @@ const Footer: React.FC<{}> = () => {
         </Social>
         <Social href="https://twitter.com/brunosabot" name="Twitter">
           <Svg d={mdiTwitter} />
+        </Social>
+        <Social
+          href="https://mastodon.social/@brunosabot"
+          name="Mastodon"
+          rel="me"
+        >
+          <Svg d={mdiMastodon} />
         </Social>
         <Social href="https://instagram.com/brunosabot" name="Instagram">
           <Svg d={mdiInstagram} />

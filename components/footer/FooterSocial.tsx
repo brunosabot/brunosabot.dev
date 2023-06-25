@@ -5,13 +5,19 @@ interface Props {
   children: React.ReactNode;
   href: string;
   name: string;
+  rel?: string;
 }
 
-const FooterSocial: React.FC<Props> = ({ children, href, name }) => (
+const FooterSocial: React.FC<Props> = ({
+  children,
+  href,
+  name,
+  rel = "noopener noreferrer",
+}) => (
   <a
     className={classes["footer-social"]}
     href={href}
-    rel="noopener noreferrer"
+    rel={rel}
     target="_blank"
     aria-label={`Bruno Sabot on ${name}`}
   >
