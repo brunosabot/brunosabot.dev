@@ -1,15 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, ReactNode, ReactPortal } from "react";
 import { createPortal } from "react-dom";
 
 interface IModalPortalProps {
   active: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function ModalPortal({
   active,
   children,
-}: IModalPortalProps): React.ReactPortal | null {
+}: IModalPortalProps): ReactPortal | null {
   const elRef = useRef<HTMLDivElement>();
 
   useEffect(() => {
@@ -34,7 +34,8 @@ export default function ModalPortal({
   }, [active]);
 
   if (elRef.current && active) {
-    return createPortal(children, elRef.current);
+    // Typing issue in React Dom
+    return createPortal(children as any, elRef.current);
   }
 
   return null;

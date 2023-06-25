@@ -2,6 +2,7 @@ const {
   default: withPWAInit,
   runtimeCaching,
 } = require("@ducanh2912/next-pwa");
+
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });

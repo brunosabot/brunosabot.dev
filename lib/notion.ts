@@ -204,7 +204,7 @@ export async function getNotionPost(path: string) {
   if (data === undefined) return undefined;
 
   const fullPost: FullPost = {
-    content: markdown,
+    content: markdown.parent,
     data,
   };
 
