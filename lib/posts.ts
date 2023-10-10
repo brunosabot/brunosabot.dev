@@ -21,7 +21,7 @@ export function getRelatedPosts(post: FullPost, posts: Post[]): RelatedPost[] {
           p.tags
             .split(",")
             .map((s: string) => s.trim())
-            .includes(tag)
+            .includes(tag),
         );
 
       return [...acc, { ...p, count: commonTags.length }];

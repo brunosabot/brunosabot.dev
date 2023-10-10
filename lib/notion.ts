@@ -1,5 +1,7 @@
 import {
+  DatabaseObjectResponse,
   PageObjectResponse,
+  PartialDatabaseObjectResponse,
   PartialPageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { Client } from "@notionhq/client";
@@ -122,7 +124,7 @@ function getTags(property: NotionMultiSelect) {
 }
 
 export function mapNotionToPost(
-  notionPost: PageObjectResponse | PartialPageObjectResponse
+  notionPost: PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse,
 ): Post | undefined {
   if (notionPost === undefined) return undefined;
   if (!("cover" in notionPost)) return undefined;

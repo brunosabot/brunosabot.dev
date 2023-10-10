@@ -43,8 +43,8 @@ async function loadGist(id: string): Promise<[string[], { files: string[] }]> {
 
   const data = await Promise.all(
     jsonData.files.map((file) =>
-      fetch(`${url}/raw/?file=${file}`).then((r) => r.text())
-    )
+      fetch(`${url}/raw/?file=${file}`).then((r) => r.text()),
+    ),
   );
 
   return [data, jsonData];
@@ -85,12 +85,12 @@ const gistPlugin: marked.MarkedExtension = {
         return (token as GistToken).data.reduce(
           (acc, { html, language, file }) => {
             const grammar = Object.values(MAP_LANGUAGE).find(
-              (l) => l.name === language
+              (l) => l.name === language,
             )?.prism;
             const output = Prism.highlight(
               html,
               grammar ?? Prism.languages.text,
-              language
+              language,
             );
             let newAcc = acc;
             if (file) {
@@ -99,7 +99,7 @@ const gistPlugin: marked.MarkedExtension = {
             newAcc += `<pre><code class="language-${language}">${output}</code></pre>`;
             return newAcc;
           },
-          ""
+          "",
         );
       },
     },
@@ -111,7 +111,7 @@ const gistPlugin: marked.MarkedExtension = {
       token.data = data.map((d, i) => {
         const ext = jsonData.files[i].split(".");
         const language = getLanguage(
-          ext.length ? ext[ext.length - 1] : undefined
+          ext.length ? ext[ext.length - 1] : undefined,
         );
         return {
           file: jsonData.files[i],

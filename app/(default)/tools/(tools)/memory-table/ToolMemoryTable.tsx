@@ -13,13 +13,13 @@ function getDefaultMemoryTable() {
 
 function getFromMemoryTable(
   isNameMode: boolean,
-  memoryTable: string[]
+  memoryTable: string[],
 ): string {
   const firstInvalid = memoryTable.indexOf("");
   const validCount = firstInvalid === -1 ? 100 : firstInvalid - 1;
   const selectedItem = Math.floor(
     (crypto.getRandomValues(new Uint32Array(1))[0] / Math.pow(2, 32)) *
-      validCount
+      validCount,
   );
 
   if (isNameMode === false) return `${selectedItem}`;
@@ -83,7 +83,7 @@ export default function ToolMemoryTable() {
         }
       }
     },
-    [currentPlay, isPlayModeName, pickSomething, table, userValue]
+    [currentPlay, isPlayModeName, pickSomething, table, userValue],
   );
 
   const skipResult = useCallback(() => {
@@ -104,7 +104,7 @@ export default function ToolMemoryTable() {
 
       setTable(newTable);
     },
-    [table]
+    [table],
   );
 
   return (

@@ -26,7 +26,7 @@ const psToBoxShadowValue = (
   blur: number,
   cssSpread: number,
   color: string,
-  inset: string
+  inset: string,
 ) => `${h}px ${v}px ${blur}px ${cssSpread}px ${color}${inset}`;
 
 const getBoxShadow = (
@@ -35,7 +35,7 @@ const getBoxShadow = (
   size: number,
   spread: number,
   inner: boolean,
-  color: string
+  color: string,
 ) => {
   const radiant = psToRadiant(angle);
   const hShadow = round(psToHShadow(radiant, distance), 0);

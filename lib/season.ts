@@ -47,14 +47,14 @@ const after = (monthDayToCheck: MonthDay, monthDayRef: MonthDay) => {
 const between = (
   monthDayX: MonthDay,
   monthDayLow: MonthDay,
-  monthDayHigh: MonthDay
+  monthDayHigh: MonthDay,
 ) => after(monthDayX, monthDayLow) && before(monthDayX, monthDayHigh);
 
 export const season = (date: Date) => {
   const monthDay = toMonthDay(date);
   const seasonKeys = Object.keys(seasons) as Array<Season>;
   const currentSeason = seasonKeys.find((seasonName: Season) =>
-    seasons[seasonName](monthDay)
+    seasons[seasonName](monthDay),
   );
 
   return currentSeason ?? "spring";

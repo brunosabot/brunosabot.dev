@@ -158,13 +158,13 @@ export default function ToolRgbConvertor() {
 
   useEffect(() => {
     setLocalSaves(
-      JSON.parse(window.localStorage.getItem("rgbConvertor") || "[]")
+      JSON.parse(window.localStorage.getItem("rgbConvertor") || "[]"),
     );
   }, []);
 
   const setSave = useCallback(() => {
     const storageSaves = JSON.parse(
-      window.localStorage.getItem("rgbConvertor") || "[]"
+      window.localStorage.getItem("rgbConvertor") || "[]",
     );
     const updatedSaves = new Set<string>(storageSaves);
     updatedSaves.add(state.hex);
@@ -176,7 +176,7 @@ export default function ToolRgbConvertor() {
 
   const setUnsave = useCallback((value: string) => {
     const storageSaves = JSON.parse(
-      window.localStorage.getItem("rgbConvertor") || "[]"
+      window.localStorage.getItem("rgbConvertor") || "[]",
     );
     const updatedSaves = new Set<string>(storageSaves);
     updatedSaves.delete(value);
@@ -189,7 +189,7 @@ export default function ToolRgbConvertor() {
   const onChange = useCallback(
     (type: IAction["type"]) => (e: React.ChangeEvent<HTMLInputElement>) =>
       dispatch({ type, value: e.target.value }),
-    []
+    [],
   );
 
   const colorName = hexToName(state.hex);
