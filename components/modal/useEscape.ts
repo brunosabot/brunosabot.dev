@@ -7,7 +7,7 @@ export default function useEscape(active: boolean, onClose: () => void) {
         onClose();
       }
     },
-    [onClose]
+    [onClose],
   );
 
   useEffect(() => {

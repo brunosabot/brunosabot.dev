@@ -2,7 +2,6 @@ import React, { useRef, useState, ComponentType, useCallback } from "react";
 import TooltipView from "./TooltipView";
 import ModalPortal from "./ModalPortal";
 import classes from "./Tooltip.module.css";
-import { CSSTransition } from "react-transition-group";
 import { TooltipPosition } from "./TooltipPosition";
 
 interface IRequiredComponentProps {
@@ -22,7 +21,7 @@ export type TooltipComponentType = React.FunctionComponent<{
 
 export function withTooltip<P extends IRequiredComponentProps>(
   WrappedComponent: ComponentType<P>,
-  TooltipComponent: TooltipComponentType = TooltipView
+  TooltipComponent: TooltipComponentType = TooltipView,
 ): ComponentType<P & IWithTooltipProps> {
   const WithTooltip: React.FC<P & IWithTooltipProps> = ({
     position = TooltipPosition.TOP,
@@ -69,17 +68,11 @@ export function withTooltip<P extends IRequiredComponentProps>(
         onMouseOverCapture={onMouseOverCapture}
         onMouseOutCapture={onMouseOutCapture}
       >
-        <CSSTransition
-          in={show[0] !== 0 || show[1] !== 0}
-          timeout={300}
-          classNames="modal"
-        >
-          <ModalPortal active={show[0] !== 0 || show[1] !== 0}>
-            <TooltipComponent left={show[0]} top={show[1]} position={position}>
-              {props.label}
-            </TooltipComponent>
-          </ModalPortal>
-        </CSSTransition>
+        <ModalPortal active={show[0] !== 0 || show[1] !== 0}>
+          <TooltipComponent left={show[0]} top={show[1]} position={position}>
+            {props.label}
+          </TooltipComponent>
+        </ModalPortal>
         <WrappedComponent {...(props as P)} />
       </span>
     );

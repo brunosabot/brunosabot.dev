@@ -35,7 +35,8 @@ export default function ModalPortal({
 
   if (elRef.current && active) {
     // Typing issue in React Dom
-    return createPortal(children as any, elRef.current);
+    // @ts-ignore
+    return createPortal(children, elRef.current);
   }
 
   return null;

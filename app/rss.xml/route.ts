@@ -36,8 +36,8 @@ async function createRss() {
         <description><![CDATA[${page.data.subtitle}]]></description>
         <link>${SITE_METADATA.siteUrl}${page.data.path}</link>
         <guid isPermaLink="false">${SITE_METADATA.siteUrl}${
-      page.data.path
-    }</guid>
+          page.data.path
+        }</guid>
         <pubDate>${new Date(page.data.date).toUTCString()}</pubDate>
         <content:encoded><![CDATA[${encodedStr.trim()}]]></content:encoded>
       </item>`;

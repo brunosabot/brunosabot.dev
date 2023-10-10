@@ -36,7 +36,7 @@ export default function ToolUuid() {
       type: UuidType,
       localName: string,
       localNamespace: string,
-      length: number
+      length: number,
     ) => {
       if (type === UuidType.V1) {
         setUuid(uuidv1());
@@ -54,7 +54,7 @@ export default function ToolUuid() {
         setUuid(ulid());
       }
     },
-    []
+    [],
   );
 
   const onChangeType = (e: React.ChangeEvent<HTMLSelectElement>) => {

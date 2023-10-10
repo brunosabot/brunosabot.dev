@@ -1,5 +1,4 @@
 import React from "react";
-import { CSSTransition } from "react-transition-group";
 import classes from "./ModalAnimated.module.css";
 import ModalPortal from "./ModalPortal";
 import ModalView from "./ModalView";
@@ -26,13 +25,11 @@ const ModalAnimated: React.FC<Props> = ({
   useEscape(active, onClose);
 
   return (
-    <CSSTransition in={active} timeout={300} classNames="modal">
-      <ModalPortal active={active}>
-        <div className={classes.ModalAnimated}>
-          <ViewComponent onClose={onClose}>{children}</ViewComponent>
-        </div>
-      </ModalPortal>
-    </CSSTransition>
+    <ModalPortal active={active}>
+      <div className={classes.ModalAnimated}>
+        <ViewComponent onClose={onClose}>{children}</ViewComponent>
+      </div>
+    </ModalPortal>
   );
 };
 
