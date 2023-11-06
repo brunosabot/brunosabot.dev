@@ -40,7 +40,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^14.0.1",
     "@types/gtag.js": "^0.0.17",
-    "@types/react": "18.2.35",
+    "@types/react": "18.2.36",
     "@types/react-dom": "^18.2.14",
     "@types/react-transition-group": "^4.4.8",
     "@types/sha.js": "^2.4.3",
