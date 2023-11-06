@@ -53,6 +53,7 @@ function getMetaDataTwitter(options: MetaDataInput) {
 export function getMetaData(options: MetaDataInput) {
   const { description, title, canonical } = options;
   const metadata: Metadata = {
+    metadataBase: new URL("https://brunosabot.dev"),
     openGraph: getMetaDataOpenGraph(options),
     twitter: getMetaDataTwitter(options),
   };

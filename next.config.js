@@ -23,7 +23,14 @@ module.exports = withBundleAnalyzer(
     images: {
       formats: ["image/avif", "image/webp"],
       minimumCacheTTL: 864000,
-      domains: ["storage.googleapis.com"],
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "storage.googleapis.com",
+          port: "",
+          pathname: "/brunosabot.dev/**",
+        },
+      ],
     },
   }),
 );
