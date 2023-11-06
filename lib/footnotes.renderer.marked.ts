@@ -29,14 +29,14 @@ const interpolateFootnotes = (text: string) => {
   });
 };
 
-const footnotes: Partial<Omit<marked.Renderer<false>, "options">> = {
-  paragraph(text:any) {
+const footnotes = {
+  paragraph(text: any) {
     // @ts-ignore
     return marked.Renderer.prototype.paragraph.apply(null, [
       interpolateReferences(interpolateFootnotes(text)),
     ]);
   },
-  text(text:any) {
+  text(text: any) {
     // @ts-ignore
     return marked.Renderer.prototype.text.apply(null, [
       interpolateReferences(interpolateFootnotes(text)),

@@ -1,4 +1,4 @@
-import { marked } from "marked";
+import { MarkedExtension, marked } from "marked";
 import Prism from "prismjs";
 import "prismjs/components/prism-docker";
 import "prismjs/components/prism-json";
@@ -61,7 +61,7 @@ function getLanguage(inputLanguage: string | undefined) {
   return "text";
 }
 
-const gistPlugin: marked.MarkedExtension = {
+const gistPlugin: MarkedExtension = {
   extensions: [
     {
       name: "gist",
@@ -105,7 +105,7 @@ const gistPlugin: marked.MarkedExtension = {
     },
   ],
   async: true,
-  async walkTokens(token: marked.Token | GistToken) {
+  async walkTokens(token) {
     if (token.type === "gist") {
       const [data, jsonData] = await loadGist(token.url);
       token.data = data.map((d, i) => {
