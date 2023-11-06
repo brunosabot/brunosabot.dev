@@ -1,4 +1,5 @@
 import { SITE_METADATA } from "../lib/metadata";
+import { Viewport } from "next";
 import { season } from "../lib/season";
 import "../styles/globals.css";
 
@@ -6,15 +7,21 @@ interface IRootLayoutProps {
   children: React.ReactNode;
 }
 
-const currentSeason = season(new Date());
+export function generateViewport() {
+  const currentSeason = season(new Date());
 
-let themeColor: string = "#5297ff";
-if (currentSeason === "spring") {
-  themeColor = "#7db936";
-} else if (currentSeason === "summer") {
-  themeColor = "#c2b280";
-} else if (currentSeason === "fall") {
-  themeColor = "#e98604";
+  let themeColor: string = "#5297ff";
+  if (currentSeason === "spring") {
+    themeColor = "#7db936";
+  } else if (currentSeason === "summer") {
+    themeColor = "#c2b280";
+  } else if (currentSeason === "fall") {
+    themeColor = "#e98604";
+  }
+
+  return {
+    themeColor,
+  };
 }
 
 export const metadata = {
@@ -24,7 +31,6 @@ export const metadata = {
   },
   description: SITE_METADATA.description,
   authors: [{ name: "Bruno Sabot", url: "https://brunosabot.dev" }],
-  themeColor,
   manifest: `${SITE_METADATA.siteUrl}/manifest.webmanifest`,
   alternates: {
     types: {
@@ -41,6 +47,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: IRootLayoutProps) {
   // TODO: lang
+  const currentSeason = season(new Date());
 
   return (
     <html lang="en">
