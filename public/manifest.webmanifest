@@ -3,7 +3,7 @@
   "name": "Bruno Sabot's homepage",
   "description": "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
   "lang": "en",
-  "start_url": "/",
+  "start_url": "https://brunosabot.dev/",
   "background_color": "#ffffff",
   "theme_color": "#5297ff",
   "display": "fullscreen",
@@ -92,5 +92,23 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "id": "dev.brunosabot",
+  "dir": "ltr",
+  "scope": "https://brunosabot.dev",
+  "shortcuts": [
+    {
+      "name": "Blog",
+      "url": "https://brunosabot.dev/posts/",
+      "description": "Bruno Sabot's blog posts"
+    },
+    {
+      "name": "Tools",
+      "url": "https://brunosabot.dev/tools/",
+      "description": "Bruno Sabot's tools"
+    }
+  ],
+  "categories": [
+    "utilities"
   ]
 }

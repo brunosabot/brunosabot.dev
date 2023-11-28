@@ -1,7 +1,7 @@
 import { SITE_METADATA } from "../lib/metadata";
-import { Viewport } from "next";
 import { season } from "../lib/season";
 import "../styles/globals.css";
+import Script from "next/script";
 
 interface IRootLayoutProps {
   children: React.ReactNode;
@@ -57,7 +57,14 @@ export default function RootLayout({ children }: IRootLayoutProps) {
       </head>
       <body className={currentSeason}>
         {children}
-        <div id="modal-root" aria-live="assertive"></div>
+        <div id="modal-root" aria-live="assertive"></div>{" "}
+        <Script id="sw">
+          {`
+          if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('/service-worker.js')
+          }
+        `}
+        </Script>
       </body>
     </html>
   );
