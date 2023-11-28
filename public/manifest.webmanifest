@@ -6,7 +6,6 @@
   "start_url": "https://brunosabot.dev/",
   "background_color": "#ffffff",
   "theme_color": "#5297ff",
-  "display": "fullscreen",
   "icons": [
     {
       "purpose": "any",
@@ -110,5 +109,11 @@
   ],
   "categories": [
     "utilities"
-  ]
+  ],
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "display": "standalone",
+  "orientation": "portrait",
+  "prefer_related_applications": false
 }

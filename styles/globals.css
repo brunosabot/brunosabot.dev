@@ -4,7 +4,7 @@ body {
   --accent-reverse-text-color: rgba(0, 80, 199);
   --accent-color-light: rgb(82, 151, 255, 0.15);
   --accent-color-shadow: rgb(255, 255, 255, 0.1);
-  --background: #020202;
+  --background: rgb(3, 3, 3);
   --background-reverse: rgba(255, 255, 255);
   --text-color: rgba(255, 255, 255, 0.87);
   --text-medium-color: rgba(255, 255, 255, 0.6);
