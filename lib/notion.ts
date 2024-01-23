@@ -6,6 +6,7 @@ import {
 } from "@notionhq/client/build/src/api-endpoints";
 import { Client } from "@notionhq/client";
 import { NotionToMarkdown } from "notion-to-md";
+import { unstable_cache } from "next/cache";
 
 interface NotionCoverUrl {
   type: "external";
@@ -123,8 +124,12 @@ function getTags(property: NotionMultiSelect) {
   return property.multi_select.map((tag) => tag.name).join(",");
 }
 
-export function mapNotionToPost(
-  notionPost: PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse,
+function mapNotionToPost(
+  notionPost:
+    | PageObjectResponse
+    | PartialPageObjectResponse
+    | PartialDatabaseObjectResponse
+    | DatabaseObjectResponse,
 ): Post | undefined {
   if (notionPost === undefined) return undefined;
   if (!("cover" in notionPost)) return undefined;
@@ -153,13 +158,13 @@ export function mapNotionToPost(
   return data;
 }
 
-export function getNotionClient() {
+function getNotionClient() {
   return new Client({
     auth: process.env.NOTION_SECRET,
   });
 }
 
-export async function readPostMarkdown(id: string) {
+async function readPostMarkdown(id: string) {
   const notionClient = getNotionClient();
   const n2m = new NotionToMarkdown({ notionClient: notionClient });
 
@@ -174,7 +179,7 @@ export async function readPostMarkdown(id: string) {
   return mdString;
 }
 
-export async function readPost(path: string) {
+async function readPost(path: string) {
   const notionClient = getNotionClient();
   return await notionClient.databases.query({
     database_id: process.env.NOTION_DATABASE ?? "",
@@ -184,7 +189,7 @@ export async function readPost(path: string) {
   });
 }
 
-export async function getNotionPosts() {
+async function fetchNotionPosts() {
   const notionClient = getNotionClient();
 
   const response = await notionClient.databases.query({
@@ -198,7 +203,19 @@ export async function getNotionPosts() {
   return response.results.map(mapNotionToPost).filter(isPost);
 }
 
-export async function getNotionPost(path: string) {
+const cachedFetchNotionPosts = unstable_cache(
+  fetchNotionPosts,
+  ["notion-posts"],
+  {
+    revalidate: 3600,
+  },
+);
+
+export async function getNotionPosts() {
+  return cachedFetchNotionPosts();
+}
+
+async function fetchNotionPost(path: string) {
   const response = await readPost(path);
   const data = mapNotionToPost(response.results[0]);
   const markdown = await readPostMarkdown(response.results[0].id);
@@ -211,4 +228,16 @@ export async function getNotionPost(path: string) {
   };
 
   return fullPost;
+}
+
+const cachedFetchNotionPost = unstable_cache(
+  fetchNotionPost,
+  ["notion-posts"],
+  {
+    revalidate: 3600,
+  },
+);
+
+export async function getNotionPost(path: string) {
+  return cachedFetchNotionPost(path);
 }

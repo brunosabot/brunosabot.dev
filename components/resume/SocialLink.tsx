@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import classes from "./SocialLink.module.css";
 
 interface Props {

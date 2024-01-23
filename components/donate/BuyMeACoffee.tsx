@@ -1,4 +1,3 @@
-import React from "react";
 import Svg from "../svg/Svg";
 import svgBuyMeACoffee from "../svg/buymeacoffee";
 import classes from "./BuyMeACoffee.module.css";

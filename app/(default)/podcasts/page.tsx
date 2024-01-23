@@ -1,4 +1,3 @@
-import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import CardPodcast from "../../../components/card/CardPodcast";
 import { getMetaData } from "../../../lib/metadata";

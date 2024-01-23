@@ -1,5 +1,3 @@
-import React from "react";
-
 import CubicBezierSvg from "./CubicBezierSvg";
 
 import styles from "./CubicBezierBlock.module.css";

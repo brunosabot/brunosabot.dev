@@ -4,6 +4,11 @@ module.exports = {
   generateEtags: false,
   reactStrictMode: true,
   trailingSlash: true,
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 864000,

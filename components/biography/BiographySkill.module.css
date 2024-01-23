@@ -1,4 +1,4 @@
-.biography-skill {
+.BiographySkill {
   display: inline-block;
   line-height: 1.5;
   padding: 3px 11px 3px 11px;
@@ -6,7 +6,7 @@
   white-space: nowrap;
 }
 
-.biography-skill::after {
+.BiographySkill::after {
   color: var(--accent-color);
   content: "·";
   position: absolute;
@@ -15,7 +15,7 @@
   transform: translate3d(50%, -50%, 0);
 }
 
-.biography-skill:first-child:before {
+.BiographySkill:first-child:before {
   color: var(--accent-color);
   content: "·";
   left: 0;

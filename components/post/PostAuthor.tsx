@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import classes from "./PostAuthor.module.css";
 import brunosabot from "../../public/images/brunosabot.jpg";
 import PostDate from "./PostDate";

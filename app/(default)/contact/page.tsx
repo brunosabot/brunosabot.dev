@@ -1,4 +1,3 @@
-import React from "react";
 import { getMetaData } from "../../../lib/metadata";
 import Form from "./Form";
 

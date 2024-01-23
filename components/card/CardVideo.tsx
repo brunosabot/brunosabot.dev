@@ -1,5 +1,4 @@
 import { mdiYoutube } from "@mdi/js";
-import React from "react";
 import { TooltipPosition } from "../modal/TooltipPosition";
 import Svg from "../svg/Svg";
 import Card from "./Card";

@@ -1,4 +1,3 @@
-import React from "react";
 import Svg from "../svg/Svg";
 import svgPatreon from "../svg/patreon";
 import classes from "./Patreon.module.css";

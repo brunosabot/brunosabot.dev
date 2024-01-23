@@ -1,15 +1,14 @@
-import React from "react";
 import classes from "./BiographySkill.module.css";
 
-interface Props {
+interface IBiographySkillProps {
   children: React.ReactNode;
 }
 
-const BiographySkill: React.FC<Props> = ({ children }) => (
-  <span className={classes["biography-skill"]}>
-    {children}
-    &nbsp;
-  </span>
-);
-
-export default BiographySkill;
+export default function BiographySkill({ children }: IBiographySkillProps) {
+  return (
+    <span className={classes.BiographySkill}>
+      {children}
+      &nbsp;
+    </span>
+  );
+}

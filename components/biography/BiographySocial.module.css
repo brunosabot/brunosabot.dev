@@ -1,18 +1,18 @@
-.biography-social {
+.BiographySocial {
   border-radius: 50%;
   fill: var(--text-color);
   margin: 4px;
   padding: 8px;
 }
-.biography-social:hover,
-.biography-social:focus-visible {
+.BiographySocial:hover,
+.BiographySocial:focus-visible {
   background-color: var(--background-dp2);
   fill: var(--accent-color);
   outline: 0;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-.biography-social > * {
+.BiographySocial > * {
   display: block;
   height: 32px;
   width: 32px;

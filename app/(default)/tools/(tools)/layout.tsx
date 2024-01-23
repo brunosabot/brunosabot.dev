@@ -1,4 +1,3 @@
-import React from "react";
 import NavigationBack from "../../../../components/header/NavigationBack";
 
 interface IToolsLayoutProps {

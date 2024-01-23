@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Tooltip.module.css";
 import { TooltipPosition } from "./TooltipPosition";
 import { TooltipComponentType } from "./withTooltip";

@@ -1,5 +1,4 @@
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import React from "react";
+import { formatDistanceToNow } from "date-fns";
 import { RelatedPost } from "../../lib/posts";
 import Card from "../card/Card";
 import classes from "./Related.module.css";

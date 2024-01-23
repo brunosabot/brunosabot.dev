@@ -1,23 +1,27 @@
-import React from "react";
 import classes from "./BiographyCompany.module.css";
 
-interface Props {
+interface IBiographyCompanyProps {
   children: React.ReactNode;
   href: string;
   ex?: boolean;
 }
 
-const BiographyCompany: React.FC<Props> = ({ children, href, ex = false }) => (
-  <a
-    className={`${classes["biography-company"]} ${
-      ex ? classes["biography-company--ex"] : ""
-    }`}
-    href={href}
-  >
-    &nbsp;
-    {children}
-    &nbsp;
-  </a>
-);
+export default function BiographyCompany({
+  children,
+  href,
+  ex = false,
+}: IBiographyCompanyProps) {
+  const classNames = [classes.BiographyCompany];
 
-export default BiographyCompany;
+  if (ex) {
+    classNames.push(classes.BiographyCompanyEx);
+  }
+
+  return (
+    <a className={classNames.join(" ")} href={href}>
+      &nbsp;
+      {children}
+      &nbsp;
+    </a>
+  );
+}

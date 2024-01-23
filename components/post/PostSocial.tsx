@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./PostSocial.module.css";
 import Svg from "../svg/Svg";
 import { mdiLinkedin, mdiTwitter } from "@mdi/js";

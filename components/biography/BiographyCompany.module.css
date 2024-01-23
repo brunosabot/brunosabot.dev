@@ -1,4 +1,4 @@
-.biography-company {
+.BiographyCompany {
   color: var(--accent-text-color);
   display: inline-block;
   font-size: 1.1em;
@@ -11,7 +11,7 @@
   position: relative;
   text-decoration: none;
 }
-.biography-company::after {
+.BiographyCompany::after {
   background-color: var(--accent-text-color);
   bottom: 0;
   content: "";
@@ -22,14 +22,14 @@
   transform: translateX(-100%);
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
-.biography-company:hover::after,
-.biography-company:focus-visible::after {
+.BiographyCompany:hover::after,
+.BiographyCompany:focus-visible::after {
   transform: translateX(0);
 }
 
-.biography-company--ex {
+.BiographyCompanyEx {
   opacity: 0.65;
 }
-.biography-company--ex::after {
+.BiographyCompanyEx::after {
   display: none;
 }

@@ -1,23 +1,22 @@
-import React from "react";
 import Image from "next/image";
 import classes from "./BiographyAvatar.module.css";
-import brunosabot from "../../public/images/brunosabot.jpg";
+import avatarImage from "../../public/images/brunosabot.jpg";
 
-interface Props {
+interface IBiographyAvatarProps {
   [key: string]: never;
 }
 
-const BiographyAvatar: React.FC<Props> = () => (
-  <div className={classes["biography-avatar"]}>
-    <Image
-      src={brunosabot}
-      alt="Bruno Sabot"
-      height={150}
-      width={150}
-      placeholder="blur"
-      priority
-    />
-  </div>
-);
-
-export default BiographyAvatar;
+export default function BiographyAvatar({}: IBiographyAvatarProps) {
+  return (
+    <div className={classes.Avatar}>
+      <Image
+        src={avatarImage}
+        alt="Bruno Sabot"
+        height={250}
+        width={250}
+        placeholder="blur"
+        priority
+      />
+    </div>
+  );
+}

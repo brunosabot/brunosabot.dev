@@ -1,16 +1,16 @@
-.footer-social {
+.FooterSocial {
   border-radius: 50%;
   fill: var(--text-reverse-color);
   margin: 4px;
   padding: 8px;
-}
-.footer-social:hover {
-  background-color: var(--background-dp2);
-  fill: var(--accent-color);
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
+.FooterSocial:hover {
+  background-color: var(--background-dp2);
+  fill: var(--accent-color);
+}
 
-.footer-social > * {
+.FooterSocial > * {
   display: block;
   height: 32px;
   width: 32px;

@@ -1,4 +1,3 @@
-import React from "react";
 import LayoutClient from "../../components/LayoutClient";
 import classes from "./index.module.css";
 

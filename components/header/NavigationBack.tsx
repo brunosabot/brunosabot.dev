@@ -1,10 +1,9 @@
-import React from "react";
 import Link from "next/link";
 import classes from "./NavigationBack.module.css";
 
 export default function NavigationBack() {
   return (
-    <Link href="/tools/" className={classes["NavigationBack"]}>
+    <Link href="/tools/" className={classes.NavigationBack}>
       <svg style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24">
         <path
           fill="currentColor"

@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./FooterSocial.module.css";
 
 interface Props {
@@ -15,7 +14,7 @@ const FooterSocial: React.FC<Props> = ({
   rel = "noopener noreferrer",
 }) => (
   <a
-    className={classes["footer-social"]}
+    className={classes.FooterSocial}
     href={href}
     rel={rel}
     target="_blank"

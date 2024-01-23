@@ -1,5 +1,3 @@
-import React from "react";
-
 interface IOptionProps {
   value: string;
   children: React.ReactNode;

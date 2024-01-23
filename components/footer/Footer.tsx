@@ -1,4 +1,3 @@
-import React from "react";
 import Social from "./FooterSocial";
 import classes from "./Footer.module.css";
 import FooterLink from "./FooterLink";
@@ -23,8 +22,8 @@ import { SITE_METADATA } from "../../lib/metadata";
 
 const Footer: React.FC<{}> = () => {
   return (
-    <footer className={classes["footer"]}>
-      <div className={classes["footer__content"]}>
+    <footer className={classes.Footer}>
+      <div className={classes.FooterContent}>
         <FooterLink to="/">About</FooterLink>
         <FooterLink to="/posts/">Posts</FooterLink>
         <FooterLink to="/talks/">Talks</FooterLink>
@@ -36,7 +35,7 @@ const Footer: React.FC<{}> = () => {
         <FooterLink to="/resume/en/">Resume</FooterLink>
         <FooterLink to="/contact/">Contact</FooterLink>
       </div>
-      <div className={classes["footer__social"]}>
+      <div className={classes.FooterSocial}>
         <Social href="https://github.com/brunosabot" name="Github">
           <Svg d={mdiGithub} />
         </Social>

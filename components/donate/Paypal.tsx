@@ -1,4 +1,3 @@
-import React from "react";
 import Svg from "../svg/Svg";
 import svgPaypal from "../svg/paypal";
 import classes from "./Paypal.module.css";

@@ -1,9 +1,10 @@
-.biography-avatar {
+.Avatar {
   border: 0 solid;
-  border-radius: 80px;
+  border-radius: 32px;
   box-sizing: initial;
-  height: 150px;
+  height: 250px;
   margin: 0 auto 32px auto;
+  margin-bottom: -50px;
   overflow: hidden;
-  width: 150px;
+  width: 250px;
 }

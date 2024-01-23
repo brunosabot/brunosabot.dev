@@ -1,8 +1,8 @@
-.footer {
+.Footer {
   background: var(--background-reverse);
   padding: 60px;
 }
-.footer__content {
+.FooterContent {
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -10,7 +10,7 @@
   margin: auto;
   max-width: 600px;
 }
-.footer__social {
+.FooterSocial {
   align-items: center;
   display: flex;
   flex-wrap: wrap;

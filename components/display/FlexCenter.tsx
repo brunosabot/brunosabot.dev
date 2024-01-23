@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./FlexCenter.module.css";
 
 interface IFlexCenterProps {

@@ -1,5 +1,4 @@
 import { mdiGithub } from "@mdi/js";
-import React from "react";
 import Svg from "../svg/Svg";
 import LineCard from "./LineCard";
 

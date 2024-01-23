@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./ModalAnimated.module.css";
 import ModalPortal from "./ModalPortal";
 import ModalView from "./ModalView";

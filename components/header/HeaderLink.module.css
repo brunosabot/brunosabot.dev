@@ -1,100 +1,43 @@
-.header-link {
-  display: inline-block;
+.HeaderLink {
+  align-items: center;
+  color: var(--text-color);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
   height: 40px;
+  justify-content: center;
+  outline: 0;
+  padding: 0 12px;
   position: relative;
+  text-decoration: none;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
-.header-link:first-child::before {
-  color: var(--accent-color);
+.HeaderLink::before {
+  color: var(--text-color);
   content: "·";
   left: 0;
   position: absolute;
   top: 50%;
   transform: translate3d(-50%, -50%, 0);
 }
-.header-link::after {
-  color: var(--accent-color);
+.HeaderLink::after {
+  color: var(--text-color);
   content: "·";
   position: absolute;
   right: 0;
   top: 50%;
   transform: translate3d(50%, -50%, 0);
 }
-.header-link__link {
-  align-items: center;
-  border-radius: 3px;
-  color: var(--text-color);
-  cursor: pointer;
-  display: inline-flex;
-  font-size: 13px;
-  font-weight: 700;
-  height: 100%;
-  justify-content: center;
-  line-height: 40px;
-  margin: 0 12px;
-  outline: 0;
-  position: relative;
-  text-decoration: none;
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
-}
-.header-link__link:focus {
+
+.HeaderLink:hover,
+.HeaderLink:focus,
+.HeaderLink.Active,
+.HeaderLink.Active::before,
+.HeaderLink.Active::after {
   color: var(--accent-color);
 }
 
-@media (hover: hover) {
-  .header-link__link:hover {
-    color: var(--accent-color);
-  }
-}
-
-.header-link__link.header-link__link--active::after {
-  background-color: var(--accent-color);
-  bottom: 0;
-  color: var(--text-reverse-color);
-  content: "";
-  cursor: initial;
-  height: 3px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-}
-
-.header-link__external-icon {
-  fill: var(--text-color);
-  height: 12px;
-  padding-right: 4px;
-  width: 16px;
-}
-
-@media (max-width: 770px) {
-  .header-link {
-    height: auto;
-    margin: 4px;
-  }
-  .header-link:first-child::before {
-    display: none;
-  }
-  .header-link::after {
-    display: none;
-  }
-  .header-link__link {
-    border-left: 4px solid transparent;
-    justify-content: flex-start;
-    margin: 0;
-    padding-left: 16px;
-    width: 100%;
-  }
-  .header-link__link:hover {
-    height: 100%;
-    margin: 0;
-  }
-  .header-link__link.header-link__link--active {
-    background-color: transparent;
-    border-left: 4px solid var(--accent-color);
-    border-radius: 0;
-    color: var(--accent-text-color);
-    margin: 0px;
-  }
-  .header-link__link.header-link__link--active::after {
-    display: none;
-  }
+.Active {
+  z-index: 1;
 }

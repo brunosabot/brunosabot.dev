@@ -1,4 +1,3 @@
-import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import CardVideo from "../../../components/card/CardVideo";
 import { getMetaData } from "../../../lib/metadata";

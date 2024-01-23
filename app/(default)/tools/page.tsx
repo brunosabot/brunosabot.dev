@@ -1,4 +1,3 @@
-import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import { getMetaData } from "../../../lib/metadata";
 import Tools from "./Tools";

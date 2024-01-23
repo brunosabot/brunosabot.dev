@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import Job from "../../../components/resume/Job";
 import SocialLink from "../../../components/resume/SocialLink";
 import Title from "../../../components/resume/Title";
@@ -24,8 +23,8 @@ export async function generateMetadata({ params: { lang } }: RouteParams) {
     }),
     alternates: {
       languages: {
-        [resume.seo
-          .alternate]: `${SITE_METADATA.siteUrl}/resume/${resume.seo.alternate}/`,
+        [resume.seo.alternate]:
+          `${SITE_METADATA.siteUrl}/resume/${resume.seo.alternate}/`,
         "x-default": `${SITE_METADATA.siteUrl}/resume/en/`,
       },
     },

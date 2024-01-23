@@ -1,15 +1,17 @@
-import React from "react";
 import classes from "./BiographySubtitle.module.css";
 
-interface Props {
+interface IBiographySubtitleProps {
   children: React.ReactNode;
   style?: React.CSSProperties;
 }
 
-const BiographySubtitle: React.FC<Props> = ({ children, style }) => (
-  <h2 className={classes["biography-subtitle"]} style={style}>
-    {children}
-  </h2>
-);
-
-export default BiographySubtitle;
+export default function BiographySubtitle({
+  children,
+  style,
+}: IBiographySubtitleProps) {
+  return (
+    <h2 className={classes.BiographySubtitle} style={style}>
+      {children}
+    </h2>
+  );
+}

@@ -1,15 +1,17 @@
-import React from "react";
 import classes from "./BiographyTitle.module.css";
 
-interface Props {
+interface IBiographyTitleProps {
   children: React.ReactNode;
   style?: React.CSSProperties;
 }
 
-const BiographyTitle: React.FC<Props> = ({ children, style }) => (
-  <h1 className={classes["biography-title"]} style={style}>
-    {children}
-  </h1>
-);
-
-export default BiographyTitle;
+export default function BiographyTitle({
+  children,
+  style,
+}: IBiographyTitleProps) {
+  return (
+    <h1 className={classes.BiographyTitle} style={style}>
+      {children}
+    </h1>
+  );
+}

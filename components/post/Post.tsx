@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import PostAuthor from "../post/PostAuthor";
 import PostSocial from "../post/PostSocial";

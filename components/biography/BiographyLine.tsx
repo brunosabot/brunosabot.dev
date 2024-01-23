@@ -1,15 +1,17 @@
-import React from "react";
 import classes from "./BiographyLine.module.css";
 
-interface Props {
+interface IBiographyLineProps {
   children: React.ReactNode;
   style?: React.CSSProperties;
 }
 
-const BiographyLine: React.FC<Props> = ({ children, style = {} }) => (
-  <div className={classes["biography-line"]} style={style}>
-    {children}
-  </div>
-);
-
-export default BiographyLine;
+export default function BiographyLine({
+  children,
+  style = {},
+}: IBiographyLineProps) {
+  return (
+    <div className={classes.BiographyLine} style={style}>
+      {children}
+    </div>
+  );
+}

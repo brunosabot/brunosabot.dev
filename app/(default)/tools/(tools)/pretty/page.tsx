@@ -1,4 +1,3 @@
-import React from "react";
 import SimpleCard from "../../../../../components/card/SimpleCard";
 import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";

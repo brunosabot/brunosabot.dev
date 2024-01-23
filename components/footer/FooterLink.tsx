@@ -1,39 +1,33 @@
 import Link from "next/link";
-import React from "react";
 import classes from "./FooterLink.module.css";
 import { mdiOpenInNew } from "@mdi/js";
 import Svg from "../svg/Svg";
 
-interface Props {
+interface IFooterLinkProps {
   children: React.ReactNode;
   to: string;
 }
 
-const FooterLink: React.FC<Props> = ({ children, to }) => {
+export default function FooterLink({ children, to }: IFooterLinkProps) {
   const isExternal = to.indexOf("http") === 0;
 
   return (
     <>
       {isExternal ? (
         <a
-          className={classes["footer-link__link"]}
+          className={classes.FooterLink}
           href={to}
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Svg
-            d={mdiOpenInNew}
-            className={classes["footer-link__external-icon"]}
-          />
+          <Svg d={mdiOpenInNew} className={classes.ExternalIcon} />
           {children}
         </a>
       ) : (
-        <Link href={to} className={classes["footer-link__link"]}>
+        <Link href={to} className={classes.FooterLink}>
           {children}
         </Link>
       )}
     </>
   );
-};
-
-export default FooterLink;
+}

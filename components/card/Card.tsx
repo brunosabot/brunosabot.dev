@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import Flag from "../Flag";
 import classes from "./Card.module.css";
 

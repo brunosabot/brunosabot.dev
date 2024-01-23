@@ -1,5 +1,3 @@
-import React from "react";
-
 const getPointX = (width: number, x: number) => x * width;
 
 // In this SVG y = 0 should be at the bottom,

@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Dd.module.css";
 
 interface IDdProps {

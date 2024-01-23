@@ -1,4 +1,3 @@
-import React from "react";
 import PageTitle from "../../../components/typography/PageTitle";
 import SimpleCard from "../../../components/card/SimpleCard";
 import classes from "./index.module.css";

@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Columns.module.css";
 
 interface IColumnsProps {

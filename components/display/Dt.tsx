@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Dt.module.css";
 
 interface IDtProps {

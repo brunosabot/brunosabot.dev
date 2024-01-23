@@ -1,4 +1,4 @@
-.footer-link__link {
+.FooterLink {
   align-items: center;
   color: var(--text-reverse-color);
   display: flex;
@@ -7,11 +7,11 @@
   text-decoration: none;
   width: 200px;
 }
-.footer-link__link:hover {
+.FooterLink:hover {
   text-decoration: underline;
 }
 @media (max-width: 519px) {
-  .footer-link__link {
+  .FooterLink {
     width: 100%;
   }
 }

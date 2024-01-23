@@ -1,15 +1,14 @@
-import React from "react";
 import classes from "./BiographyPost.module.css";
 
-interface Props {
+interface IBiographyPostProps {
   children: React.ReactNode;
   href: string;
 }
 
-const BiographyPost: React.FC<Props> = ({ children, href }) => (
-  <a className={classes["biography-post"]} href={href}>
-    {children}
-  </a>
-);
-
-export default BiographyPost;
+export default function BiographyPost({ children, href }: IBiographyPostProps) {
+  return (
+    <a className={classes.BiographyPost} href={href}>
+      {children}
+    </a>
+  );
+}

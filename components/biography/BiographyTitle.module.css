@@ -1,6 +1,25 @@
-.biography-title {
+.BiographyTitle {
   font-size: 28px;
   font-weight: 700;
   line-height: 36px;
   margin: 0 0 16px 0;
+  padding: 16px 0;
+  position: relative;
+  z-index: 1;
+}
+.BiographyTitle::after {
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    var(--background) 20px,
+    var(--background)
+  );
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
