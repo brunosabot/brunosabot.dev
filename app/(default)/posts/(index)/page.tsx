@@ -1,7 +1,7 @@
 import { formatDistanceToNow } from "date-fns";
 import Card from "../../../../components/card/Card";
 import PageTitle from "../../../../components/typography/PageTitle";
-import { getNotionPosts } from "../../../../lib/notion";
+import { Post, getNotionPosts } from "../../../../lib/notion";
 import { getMetaData } from "../../../../lib/metadata";
 
 export async function generateMetadata() {
@@ -12,8 +12,15 @@ export async function generateMetadata() {
   });
 }
 
+async function getPosts() {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts`);
+  const posts = (await response.json()) as Post[];
+
+  return posts;
+}
+
 export default async function PostsPage() {
-  const posts = await getNotionPosts();
+  const posts = await getPosts();
 
   return (
     <>
