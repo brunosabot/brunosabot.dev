@@ -2,6 +2,8 @@
 
 import useKonami from "../lib/konami";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import Script from "next/script";
 
 function LayoutClient() {
@@ -16,6 +18,7 @@ function LayoutClient() {
         />
       ) : null}
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }
