@@ -1,6 +1,8 @@
 import { getServerSideSitemap } from "next-sitemap";
 import { getNotionPosts } from "../../lib/notion";
 
+const monthly = "monthly" as const;
+
 export async function GET() {
   const posts = await getNotionPosts();
 
@@ -8,12 +10,10 @@ export async function GET() {
     return {
       loc: process.env.NEXT_PUBLIC_URL + post.path,
       lastmod: post.lastModified,
-      changefred: "monthly",
+      changefreq: monthly,
       prioity: 0.7,
     };
   });
-  // Method to source urls from cms
-  // const urls = await fetch('https//example.com/api')
 
   return getServerSideSitemap(fields);
 }

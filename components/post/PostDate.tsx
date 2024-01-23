@@ -8,7 +8,7 @@ interface Props {
 
 const PostDate: React.FC<Props> = ({ label, date }) => (
   <WithATooltip label={label}>
-    <span>{formatDistanceToNow(new Date(date), { addSuffix: true })}</span>
+    {formatDistanceToNow(new Date(date), { addSuffix: true })}
   </WithATooltip>
 );
 

@@ -32,7 +32,6 @@ const PostAuthor: React.FC<IPostAuthorProps> = ({
       <div>
         <div className={classes["blog-post-author-name"]}>{creator}</div>
         <div className={classes["blog-post-author-date"]}>
-          {}
           <PostDate
             date={date}
             label={new Intl.DateTimeFormat("en-US", {
