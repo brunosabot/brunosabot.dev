@@ -13,7 +13,7 @@ export async function generateMetadata() {
 }
 
 async function getPosts() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/`);
   const posts = (await response.json()) as Post[];
 
   return posts;

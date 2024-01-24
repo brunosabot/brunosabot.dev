@@ -54,7 +54,7 @@ export async function generateMetadata({
 }
 
 async function getPosts() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/`);
   const posts = (await response.json()) as Post[];
 
   return posts;
@@ -62,7 +62,7 @@ async function getPosts() {
 
 async function getPost(year: string, slug: string) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/posts/${year}/${slug}`,
+    `${process.env.NEXT_PUBLIC_URL}/api/posts/${year}/${slug}/`,
   );
   const post = (await response.json()) as FullPost;
 
