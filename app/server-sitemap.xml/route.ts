@@ -11,7 +11,7 @@ export async function GET() {
       loc: process.env.NEXT_PUBLIC_URL + post.path,
       lastmod: post.lastModified,
       changefreq: monthly,
-      prioity: 0.7,
+      priority: 0.7,
     };
   });
 
