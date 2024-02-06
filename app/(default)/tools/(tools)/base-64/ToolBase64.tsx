@@ -32,6 +32,7 @@ export default function ToolBase64() {
           onChange={onEncodedStringChange}
           value={string}
           aria-invalid={valid === false}
+          rows={5}
         />
       </Label>
 
@@ -39,6 +40,7 @@ export default function ToolBase64() {
         <Textarea
           onChange={onDecodedStringChange}
           value={Buffer.from(string, "base64").toString()}
+          rows={5}
         />
       </Label>
     </>

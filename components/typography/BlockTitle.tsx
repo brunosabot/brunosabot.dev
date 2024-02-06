@@ -5,7 +5,7 @@ interface Props {
 }
 
 const BlockTitle: React.FC<Props> = ({ children }) => (
-  <h1 className={classes["block-title"]}>{children}</h1>
+  <h2 className={classes["block-title"]}>{children}</h2>
 );
 
 export default BlockTitle;

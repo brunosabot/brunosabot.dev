@@ -3,12 +3,14 @@ import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";
 import ToolAlcohol from "./ToolAlcohol";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
+import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 
 export async function generateMetadata() {
   return getMetaData(
     {
-      description: "Alcohol quantity calculation tool by Bruno Sabot",
-      title: "Alcohol tool",
+      description:
+        "Calculate the Absolute and Relative Amount of Alcohol in Your Drinks",
+      title: "Alcohol quantities tool",
     },
     "/tools/alcohol/",
   );
@@ -23,67 +25,71 @@ export default function ToolAlcoholPage() {
 
       <SimpleCard>
         <BlockTitle>
-          Alcohol Calculator Tool Helps You Drink Responsibly
+          Calculate the Absolute and Relative Amount of Alcohol in Your Drinks
         </BlockTitle>
 
         <p>
-          Our alcohol calculator tool helps you determine the amount of pure
-          alcohol in a drink and calculates the corresponding dose for human
-          consumption. It takes into account the size of the drink and the
-          percentage of alcohol by volume to provide an accurate measurement of
-          the alcohol content. The tool does not factor in the user&apos;s
-          weight, gender, or time elapsed since consuming the drink as it
-          provides a general estimate of the alcohol content.
+          This handy tool allows you to quickly and easily determine the exact
+          amount of alcohol in your beverages, both in absolute terms and
+          relative to the total volume of the drink. Whether you&apos;re a
+          seasoned drinker or simply seeking to make informed choices about your
+          alcohol consumption, this tool is an invaluable resource.
         </p>
 
-        <p>
-          This tool can help individuals to monitor and regulate their alcohol
-          intake for responsible and safe drinking. By knowing how much alcohol
-          you are consuming, you can make informed decisions about your drinking
-          habits and make sure that you are not overdoing it.
-        </p>
-
-        <p>
-          The alcohol calculator tool is easy to use. Simply enter the type of
-          drink, the size of the drink, and the percentage of alcohol by volume.
-          The tool will then calculate the amount of pure alcohol in the drink
-          and the corresponding dose for human consumption.
-        </p>
-
-        <p>
-          The alcohol calculator tool is a valuable resource for anyone who
-          wants to drink responsibly. By using this tool, you can make sure that
-          you are not overdoing it and that you are drinking in a safe and
-          responsible manner.
-        </p>
-
-        <p>
-          <b>
-            Here are some additional benefits of using the alcohol calculator
-            tool:
-          </b>
-        </p>
+        <BlockParagraphTitle>
+          Simply input the volume of your beverage and the alcohol percentage,
+          and this tool will calculate the exact amount of alcohol contained
+          within.
+        </BlockParagraphTitle>
 
         <ul>
           <li>
-            It can help you track your alcohol intake and make sure that you are
-            not overdoing it.
+            <b>Absolute Quantity</b>: Know exactly how many grams of alcohol are
+            in your drink.
           </li>
           <li>
-            It can help you make informed decisions about your drinking habits.
+            <b>Relative Quantity</b>: Understand how many drinks the beverage
+            you had is equivalent to.
           </li>
-          <li>
-            It can help you stay safe and avoid alcohol-related accidents.
-          </li>
-          <li>It can help you improve your overall health and well-being.</li>
         </ul>
+
         <p>
-          <b>
-            If you are looking for a way to drink responsibly, the alcohol
-            calculator tool is a great resource. It is easy to use and it can
-            help you make informed decisions about your drinking habits.
-          </b>
+          This tool is easy to use and provides accurate results, making it a
+          trusted resource for anyone interested in understanding alcohol
+          content.
         </p>
+
+        <BlockParagraphTitle>Use this tool to:</BlockParagraphTitle>
+
+        <ul>
+          <li>
+            Monitor your alcohol intake and make informed choices about your
+            drinks.
+          </li>
+          <li>Compare alcohol content between different beverages.</li>
+          <li>
+            Understand the relationship between alcohol volume and overall drink
+            volume.
+          </li>
+          <li>
+            Empower yourself with knowledge and make informed decisions about
+            your alcohol consumption with this easy-to-use tool.
+          </li>
+        </ul>
+
+        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
+
+        <ul>
+          <li>Accurate calculations</li>
+          <li>Easy-to-use interface</li>
+          <li>Comprehensive results</li>
+          <li>Free to use</li>
+        </ul>
+
+        <BlockParagraphTitle>
+          Embark on a journey of informed alcohol consumption with this simple
+          yet powerful tool!
+        </BlockParagraphTitle>
       </SimpleCard>
     </>
   );

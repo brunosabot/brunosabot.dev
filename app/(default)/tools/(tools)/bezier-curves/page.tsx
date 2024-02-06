@@ -3,11 +3,13 @@ import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";
 import ToolBezierCurves from "./ToolBezierCurves";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
+import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 
 export async function generateMetadata() {
   return getMetaData(
     {
-      description: "Bezier Curves visualisation tool by Bruno Sabot",
+      description:
+        "Craft Stunning Animations with This Cubic-Bezier Curve Generator",
       title: "Bezier Curves",
     },
     "/tools/bezier-curves/",
@@ -23,50 +25,75 @@ export default function ToolBezierCurvesPage() {
 
       <SimpleCard>
         <BlockTitle>
-          Bezier Curve Visualizer Tool Helps You Learn About Bezier Curves
+          Craft Stunning Animations with This Cubic-Bezier Curve Generator
         </BlockTitle>
 
         <p>
-          Our Bezier curve visualizer tool helps you understand and visualize
-          the behavior of Bezier curves. It allows you to see how the curve
-          changes in real-time as you interact with it. By hovering over a card,
-          a live animation of the hovered curve will appear, showing how it
-          moves and changes shape as you manipulate it. The visualizer is
-          designed to provide a hands-on approach to learning about Bezier
-          curves, making it an ideal tool for graphic designers, artists, and
-          students studying computer graphics. With this tool, you can explore
-          the behavior of Bezier curves, experiment with different control
-          points, and gain a deeper understanding of how these curves work.
-          Whether you&apos;re a beginner or an experienced user, this tool
-          offers a fun and interactive way to learn about Bezier curves.
+          Elevate your web design with this intuitive Cubic-Bezier Curve
+          Generator, a powerful tool that simplifies the process of creating
+          captivating animations. This tool empowers you to effortlessly craft
+          smooth and fluid transitions, adding a touch of elegance to your web
+          creations.
         </p>
 
+        <BlockParagraphTitle>
+          Visualize Your Curves with Ease
+        </BlockParagraphTitle>
+
         <p>
-          <b>
-            Here are some of the benefits of using the Bezier curve visualizer
-            tool:
-          </b>
+          This tool features a dynamically interactive graph that lets you
+          visualize the shape and trajectory of your curves in real-time. This
+          visual representation provides a clear understanding of the
+          animation&apos;s behavior, ensuring you achieve the desired motion.
         </p>
+
+        <BlockParagraphTitle>
+          Preview Your Transitions Before Implementing
+        </BlockParagraphTitle>
+
+        <p>
+          Immerse yourself in the actual effect of your Cubic-Bezier curves by
+          previewing them as CSS transitions. This tool seamlessly integrates
+          with CSS, allowing you to instantly see the impact of your curve
+          choices on the animation&apos;s appearance.
+        </p>
+
+        <BlockParagraphTitle>
+          Unlock the Power of Cubic-Bezier Curves
+        </BlockParagraphTitle>
+
+        <p>Utilize this Cubic-Bezier Curve Generator to:</p>
+
         <ul>
-          <li>It can help you understand the behavior of Bezier curves.</li>
-          <li>It can help you experiment with different control points.</li>
-          <li>
-            It can help you gain a deeper understanding of how Bezier curves
-            work.
-          </li>
-          <li>It is a fun and interactive tool.</li>
-          <li>
-            It is an ideal tool for graphic designers, artists, and students
-            studying computer graphics.
-          </li>
+          <li>Create smooth and fluid animations</li>
+          <li>Add life and dynamism to your web elements</li>
+          <li>Enhance user engagement and interaction</li>
+          <li>Master the art of CSS transitions</li>
         </ul>
+
+        <BlockParagraphTitle>
+          Embrace the Simplicity of Curve Creation
+        </BlockParagraphTitle>
+
         <p>
-          <b>
-            If you are looking for a way to learn about Bezier curves, the
-            Bezier curve visualizer tool is a great resource. It is fun,
-            interactive, and easy to use.
-          </b>
+          This tool simplifies the creation of Cubic-Bezier curves, making it
+          accessible to designers of all skill levels. This intuitive interface
+          and real-time feedback ensure a seamless and rewarding experience.
         </p>
+
+        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
+
+        <ul>
+          <li>Interactive curve graph for visual representation</li>
+          <li>Integrated CSS transition preview</li>
+          <li>Easy-to-use interface for effortless curve creation</li>
+          <li>Free to use and accessible online</li>
+        </ul>
+
+        <BlockParagraphTitle>
+          Transform your web designs into masterpieces with this Cubic-Bezier
+          Curve Generator and unleash the power of captivating animations.
+        </BlockParagraphTitle>
       </SimpleCard>
     </>
   );

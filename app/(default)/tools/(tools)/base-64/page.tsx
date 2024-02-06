@@ -3,12 +3,14 @@ import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";
 import ToolBase64 from "./ToolBase64";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
+import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 
 export async function generateMetadata() {
   return getMetaData(
     {
-      description: "Base 64 encode and decode tool by Bruno Sabot",
-      title: "Base 64 tool",
+      description:
+        "Effortlessly Convert Strings Between Text and Base64 Format",
+      title: "Base 64 conversion tool",
     },
     "/tools/base-64/",
   );
@@ -22,55 +24,78 @@ export default function ToolBase64Page() {
       <ToolBase64 />
 
       <SimpleCard>
-        <BlockTitle> Base64 String Converter Tool</BlockTitle>
+        <BlockTitle>
+          Effortlessly Convert Strings Between Text and Base64 Format
+        </BlockTitle>
 
         <p>
-          Our base64 string converter tool helps you convert encoded base64
-          strings to regular strings and vice versa. It allows you to encode
-          regular strings into base64 format for data transfer and storage
-          purposes, as well as decode base64 strings back into their original
-          form for use in your applications.
+          Simplify your data encoding and decoding tasks with this versatile
+          Base64 conversion tool. This user-friendly tool seamlessly converts
+          strings between their original text format and the universally
+          recognized Base64 encoding scheme. Whether you&apos;re working with
+          plain text, binary data, or images, this tool effortlessly handles the
+          transition, ensuring accurate and secure data representation.
         </p>
 
-        <p>
-          The tool is easy to use. Simply enter the string you wish to convert,
-          and the tool will perform the conversion for you. The resulting output
-          is a precise representation of the original string in either regular
-          or encoded base64 format.
-        </p>
+        <BlockParagraphTitle>
+          Efficiently Encode and Decode Data in Base64 Format
+        </BlockParagraphTitle>
 
         <p>
-          This tool is an essential tool for developers and can save time and
-          effort in working with base64 encoded strings.
+          This tool empowers you to seamlessly convert strings between their
+          original text format and Base64 encoding. Whether you need to encode
+          text for secure transmission or decode encoded data for further
+          processing, this tool effortlessly handles the task.
         </p>
 
+        <BlockParagraphTitle>
+          Simplified Conversion for Efficient Data Management
+        </BlockParagraphTitle>
+
         <p>
-          <b>
-            Here are some of the benefits of using the base64 string converter
-            tool:
-          </b>
+          This tool simplifies data conversion, saving you time and effort. With
+          a simple user interface, you can quickly and accurately encode or
+          decode strings, ensuring efficient data management and optimal
+          workflow.
         </p>
+
+        <BlockParagraphTitle>
+          Unleash the Power of Base64 Encoding and Decoding
+        </BlockParagraphTitle>
+
+        <p>Utilize this comprehensive Base64 conversion tool to:</p>
 
         <ul>
-          <li>
-            It can help you encode regular strings into base64 format for data
-            transfer and storage purposes.
-          </li>
-          <li>
-            It can help you decode base64 strings back into their original form
-            for use in your applications.
-          </li>
-          <li>It is easy to use.</li>
-          <li>It is precise and accurate.</li>
-          <li>It is an essential tool for developers.</li>
+          <li>Securely transmit data over networks</li>
+          <li>Implement data integrity checks</li>
+          <li>Store binary data in text files</li>
+          <li>Integrate Base64 encoding into your applications</li>
         </ul>
+
+        <BlockParagraphTitle>
+          Transform Your Data Management with Seamless Base64 Conversion
+        </BlockParagraphTitle>
+
         <p>
-          <b>
-            If you are looking for a way to convert between base64 strings and
-            regular strings, the base64 string converter tool is a great
-            resource. It is easy to use and it can save you time and effort.
-          </b>
+          Embrace the simplicity and efficiency of this Base64 conversion tool
+          and streamline your data management processes. This tool empowers you
+          to effortlessly encode and decode strings, ensuring accurate and
+          secure data representation.
         </p>
+
+        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
+
+        <ul>
+          <li>Effortless encoding and decoding of text strings</li>
+          <li>Support for binary data and images</li>
+          <li>Simple and intuitive user interface</li>
+          <li>Free to use and accessible online</li>
+        </ul>
+
+        <BlockParagraphTitle>
+          Embrace the power of Base64 conversion with this user-friendly tool
+          and transform your data management experience!
+        </BlockParagraphTitle>
       </SimpleCard>
     </>
   );
