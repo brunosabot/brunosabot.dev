@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolPretty from "./ToolPretty";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "JSON prettifier tool by Bruno Sabot",
-    title: "JSON pretty tool",
-  });
+  return getMetaData(
+    {
+      description: "JSON prettifier tool by Bruno Sabot",
+      title: "JSON pretty tool",
+    },
+    "/tools/pretty/",
+  );
 }
 
 export default function ToolPrettyPage() {

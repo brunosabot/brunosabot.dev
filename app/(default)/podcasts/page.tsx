@@ -3,10 +3,13 @@ import CardPodcast from "../../../components/card/CardPodcast";
 import { getMetaData } from "../../../lib/metadata";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "All the podcasts with Bruno Sabot",
-    title: "Podcasts",
-  });
+  return getMetaData(
+    {
+      description: "All the podcasts with Bruno Sabot",
+      title: "Podcasts",
+    },
+    "/podcasts/",
+  );
 }
 
 const getPodcasts = async () => {

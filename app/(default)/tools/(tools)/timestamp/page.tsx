@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolTimestamp from "./ToolTimestamp";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Timestamp and date converter tool by Bruno Sabot",
-    title: "Timestamp converter",
-  });
+  return getMetaData(
+    {
+      description: "Timestamp and date converter tool by Bruno Sabot",
+      title: "Timestamp converter",
+    },
+    "/tools/timestamp/",
+  );
 }
 
 export default function ToolShaPage() {

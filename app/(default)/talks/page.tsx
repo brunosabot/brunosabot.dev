@@ -3,10 +3,14 @@ import CardTalk from "../../../components/card/CardTalk";
 import { getMetaData } from "../../../lib/metadata";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "All the conference talks given by Bruno Sabot. Check it out!",
-    title: "Talks",
-  });
+  return getMetaData(
+    {
+      description:
+        "All the conference talks given by Bruno Sabot. Check it out!",
+      title: "Talks",
+    },
+    "/talks/",
+  );
 }
 
 const getTalks = async () => {

@@ -3,10 +3,14 @@ import DetailCard from "../../../components/card/DetailCard";
 import { getMetaData } from "../../../lib/metadata";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Projects imagined and created by Bruno Sabot. Check it out!",
-    title: "Projects",
-  });
+  return getMetaData(
+    {
+      description:
+        "Projects imagined and created by Bruno Sabot. Check it out!",
+      title: "Projects",
+    },
+    "/projects/",
+  );
 }
 
 const getProjects = async () => {

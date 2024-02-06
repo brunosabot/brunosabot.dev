@@ -5,10 +5,13 @@ import ToolAlcohol from "./ToolAlcohol";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Alcohol quantity calculation tool by Bruno Sabot",
-    title: "Alcohol tool",
-  });
+  return getMetaData(
+    {
+      description: "Alcohol quantity calculation tool by Bruno Sabot",
+      title: "Alcohol tool",
+    },
+    "/tools/alcohol/",
+  );
 }
 
 export default function ToolAlcoholPage() {

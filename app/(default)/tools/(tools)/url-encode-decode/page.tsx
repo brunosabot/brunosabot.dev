@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolUrlEncodeDecode from "./ToolUrlEncodeDecode";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "URL encode and decode tool by Bruno Sabot",
-    title: "URL tool",
-  });
+  return getMetaData(
+    {
+      description: "URL encode and decode tool by Bruno Sabot",
+      title: "URL tool",
+    },
+    "/tools/url-encode-decode/",
+  );
 }
 
 export default function ToolUrlEncodeDecodePage() {

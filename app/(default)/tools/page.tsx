@@ -3,10 +3,13 @@ import { getMetaData } from "../../../lib/metadata";
 import Tools from "./Tools";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Web and developer tools by Bruno Sabot",
-    title: "Web tools",
-  });
+  return getMetaData(
+    {
+      description: "Web and developer tools by Bruno Sabot",
+      title: "Web tools",
+    },
+    "/tools/",
+  );
 }
 
 export default function ToolsPage() {

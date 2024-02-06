@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolUuid from "./ToolUuid";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "UUID and Nano ID Generation tool by Bruno Sabot",
-    title: "UUID tool",
-  });
+  return getMetaData(
+    {
+      description: "UUID and Nano ID Generation tool by Bruno Sabot",
+      title: "UUID tool",
+    },
+    "/tools/uuid/",
+  );
 }
 
 export default function ToolUuidPage() {

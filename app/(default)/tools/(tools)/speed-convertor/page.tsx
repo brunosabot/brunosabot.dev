@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolSpeedConvertor from "./ToolSpeedConvertor";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Speed convertor tool by Bruno Sabot",
-    title: "Speed convertor tool",
-  });
+  return getMetaData(
+    {
+      description: "Speed convertor tool by Bruno Sabot",
+      title: "Speed convertor tool",
+    },
+    "/tools/speed-convertor/",
+  );
 }
 
 export default function ToolSpeedConvertorPage() {

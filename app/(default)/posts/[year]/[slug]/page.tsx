@@ -44,13 +44,16 @@ export async function generateMetadata({
     return null;
   }
 
-  return getMetaData({
-    title: post.data.title,
-    description: post.data.subtitle,
-    canonical: post.data.canonical,
-    url: `${SITE_METADATA.siteUrl}/${post.data.path}`,
-    image: post.data.originalImage,
-  });
+  return getMetaData(
+    {
+      title: post.data.title,
+      description: post.data.subtitle,
+      canonical: post.data.canonical,
+      url: `${SITE_METADATA.siteUrl}/${post.data.path}`,
+      image: post.data.originalImage,
+    },
+    `/posts/${year}/${slug}/`,
+  );
 }
 
 async function getPosts() {

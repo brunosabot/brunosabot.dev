@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolMemoryTable from "./ToolMemoryTable";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Memory Table list and playing tool tool by Bruno Sabot",
-    title: "Memory Table tool",
-  });
+  return getMetaData(
+    {
+      description: "Memory Table list and playing tool tool by Bruno Sabot",
+      title: "Memory Table tool",
+    },
+    "/tools/memory-table/",
+  );
 }
 
 export default function ToolMemoryTablePage() {

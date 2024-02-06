@@ -3,11 +3,14 @@ import CardOpensource from "../../../components/card/CardOpenSource";
 import { getMetaData } from "../../../lib/metadata";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description:
-      "All the open sources project initiated by Bruno Sabot. Check it out!",
-    title: "Open Source",
-  });
+  return getMetaData(
+    {
+      description:
+        "All the open sources project initiated by Bruno Sabot. Check it out!",
+      title: "Open Source",
+    },
+    "/opensource/",
+  );
 }
 
 const getProjects = async () => {

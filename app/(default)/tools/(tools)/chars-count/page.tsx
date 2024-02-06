@@ -5,10 +5,13 @@ import ToolCharsCount from "./ToolCharsCount";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Character and word count tool by Bruno Sabot",
-    title: "Character count tool",
-  });
+  return getMetaData(
+    {
+      description: "Character and word count tool by Bruno Sabot",
+      title: "Character count tool",
+    },
+    "/tools/chars-count/",
+  );
 }
 
 export default function ToolCharsCountPage() {

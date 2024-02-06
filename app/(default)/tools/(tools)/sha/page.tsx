@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolSha from "./ToolSha";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Sha Generation tool by Bruno Sabot",
-    title: "Sha tool",
-  });
+  return getMetaData(
+    {
+      description: "Sha Generation tool by Bruno Sabot",
+      title: "Sha tool",
+    },
+    "/tools/sha/",
+  );
 }
 
 export default function ToolShaPage() {

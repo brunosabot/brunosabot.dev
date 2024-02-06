@@ -50,7 +50,7 @@ function getMetaDataTwitter(options: MetaDataInput) {
   return twitter;
 }
 
-export function getMetaData(options: MetaDataInput) {
+export function getMetaData(options: MetaDataInput, normalizedPage?: string) {
   const { description, title, canonical } = options;
   const metadata: Metadata = {
     metadataBase: new URL("https://brunosabot.dev"),
@@ -60,6 +60,7 @@ export function getMetaData(options: MetaDataInput) {
 
   if (description) metadata.description = description;
   if (title) metadata.title = title;
+  if (normalizedPage) metadata.alternates = { canonical: normalizedPage };
   if (canonical) metadata.alternates = { canonical };
 
   return metadata;

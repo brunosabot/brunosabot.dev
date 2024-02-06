@@ -22,6 +22,7 @@ export async function generateMetadata({ params: { lang } }: RouteParams) {
       lang,
     }),
     alternates: {
+      canonical: "/resume/en/",
       languages: {
         [resume.seo.alternate]:
           `${SITE_METADATA.siteUrl}/resume/${resume.seo.alternate}/`,

@@ -5,10 +5,13 @@ import ToolBezierCurves from "./ToolBezierCurves";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Bezier Curves visualisation tool by Bruno Sabot",
-    title: "Bezier Curves",
-  });
+  return getMetaData(
+    {
+      description: "Bezier Curves visualisation tool by Bruno Sabot",
+      title: "Bezier Curves",
+    },
+    "/tools/bezier-curves/",
+  );
 }
 
 export default function ToolBezierCurvesPage() {

@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolPhotoshopShadow from "./ToolPhotoshopShadow";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Photoshop shadow conversion tool by Bruno Sabot",
-    title: "Photoshop Shadow",
-  });
+  return getMetaData(
+    {
+      description: "Photoshop shadow conversion tool by Bruno Sabot",
+      title: "Photoshop Shadow",
+    },
+    "/tools/photoshop-shadow/",
+  );
 }
 
 export default function ToolPhotoshopShadowPage() {

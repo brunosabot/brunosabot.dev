@@ -5,11 +5,14 @@ import { Post, getNotionPosts } from "../../../../lib/notion";
 import { getMetaData } from "../../../../lib/metadata";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description:
-      "All posts publicated by Bruno Sabot on various plateforms. Check it out!",
-    title: "Posts",
-  });
+  return getMetaData(
+    {
+      description:
+        "All posts publicated by Bruno Sabot on various plateforms. Check it out!",
+      title: "Posts",
+    },
+    "/posts/",
+  );
 }
 
 async function getPosts() {

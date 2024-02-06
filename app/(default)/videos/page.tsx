@@ -3,10 +3,13 @@ import CardVideo from "../../../components/card/CardVideo";
 import { getMetaData } from "../../../lib/metadata";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "All the videos made by or with Bruno Sabot",
-    title: "Videos",
-  });
+  return getMetaData(
+    {
+      description: "All the videos made by or with Bruno Sabot",
+      title: "Videos",
+    },
+    "/videos/",
+  );
 }
 
 const getVideos = async () => {

@@ -4,10 +4,13 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolRgbConvertor from "./ToolRgbConvertor";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "JSON prettifier tool by Bruno Sabot",
-    title: "JSON pretty tool",
-  });
+  return getMetaData(
+    {
+      description: "JSON prettifier tool by Bruno Sabot",
+      title: "JSON pretty tool",
+    },
+    "/tools/rgb-convertor/",
+  );
 }
 
 export default function ToolRgbConvertorPage() {

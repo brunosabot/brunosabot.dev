@@ -5,10 +5,13 @@ import ToolBase64 from "./ToolBase64";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 
 export async function generateMetadata() {
-  return getMetaData({
-    description: "Base 64 encode and decode tool by Bruno Sabot",
-    title: "Base 64 tool",
-  });
+  return getMetaData(
+    {
+      description: "Base 64 encode and decode tool by Bruno Sabot",
+      title: "Base 64 tool",
+    },
+    "/tools/base-64/",
+  );
 }
 
 export default function ToolBase64Page() {

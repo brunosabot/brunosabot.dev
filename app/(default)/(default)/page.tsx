@@ -9,9 +9,7 @@ import { Post, getNotionPosts } from "../../../lib/notion";
 import { getMetaData } from "../../../lib/metadata";
 
 export async function generateMetadata() {
-  return getMetaData({
-    title: "About",
-  });
+  return getMetaData({ title: "About" }, "/");
 }
 
 export const revalidate = 60 * 60;
