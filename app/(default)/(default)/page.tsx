@@ -9,7 +9,14 @@ import { Post, getNotionPosts } from "../../../lib/notion";
 import { getMetaData } from "../../../lib/metadata";
 
 export async function generateMetadata() {
-  return getMetaData({ title: "About" }, "/");
+  return getMetaData(
+    {
+      title: "About",
+      description:
+        "I'm Bruno Sabot, a Front-end developer in Bordeaux. Explore my portfolio and let's build something amazing!",
+    },
+    "/",
+  );
 }
 
 export const revalidate = 60 * 60;

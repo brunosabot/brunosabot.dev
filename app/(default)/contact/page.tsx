@@ -2,7 +2,14 @@ import { getMetaData } from "../../../lib/metadata";
 import Form from "./Form";
 
 export async function generateMetadata() {
-  return getMetaData({ title: "Contact" }, "/contact/");
+  return getMetaData(
+    {
+      title: "Contact",
+      description:
+        "Have questions? Connect with Bruno Sabot! Discuss projects, collaborations, or just say hello.",
+    },
+    "/contact/",
+  );
 }
 
 export default function ContactPage() {

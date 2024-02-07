@@ -9,7 +9,8 @@ interface Resumes {
 const resume = {
   en: {
     seo: {
-      description: "Bruno Sabot, un développeur Front-end",
+      description:
+        "Plongez dans l'univers de Bruno Sabot, développeur front-end ! Mes expériences en consulting et Staff Software Engineer sont l'image de mon expertise, mon dévouement et ma capacité à innover",
       title: "Bruno Sabot, développeur Front-end",
       alternate: "fr",
       alternateLabel: "FR",
@@ -26,7 +27,8 @@ const resume = {
   },
   fr: {
     seo: {
-      description: "Bruno Sabot, a Front-end developer",
+      description:
+        "Your window into Bruno Sabot, front-end developer. Consulting and Staff Software Engineer experience paint a picture of expertise, dedication, and innovation.",
       title: "Bruno Sabot, Front-end developer",
       alternate: "en",
       alternateLabel: "EN",

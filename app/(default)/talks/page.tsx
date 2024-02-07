@@ -6,7 +6,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       description:
-        "All the conference talks given by Bruno Sabot. Check it out!",
+        "Learn with Bruno Sabot! Watch inspiring talks on web tech & gain insights. Connect with this passionate expert!",
       title: "Talks",
     },
     "/talks/",

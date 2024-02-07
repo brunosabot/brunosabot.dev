@@ -8,7 +8,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       description:
-        "All posts publicated by Bruno Sabot on various plateforms. Check it out!",
+        "Learn dev, React, JavaScript, Git, and more! Explore Bruno Sabot's blog for insights on coding, performance, home automation, and more.",
       title: "Posts",
     },
     "/posts/",

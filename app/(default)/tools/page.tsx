@@ -5,7 +5,8 @@ import Tools from "./Tools";
 export async function generateMetadata() {
   return getMetaData(
     {
-      description: "Web and developer tools by Bruno Sabot",
+      description:
+        "Boost your dev/sport/health/memory with Bruno's easy tools. Free and effective!",
       title: "Web tools",
     },
     "/tools/",

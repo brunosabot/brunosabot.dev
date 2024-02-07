@@ -5,7 +5,7 @@ import { getMetaData } from "../../../lib/metadata";
 export async function generateMetadata() {
   return getMetaData(
     {
-      description: "All the videos made by or with Bruno Sabot",
+      description: "See Bruno in action! Learn from his videos on dev topics.",
       title: "Videos",
     },
     "/videos/",

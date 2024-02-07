@@ -6,7 +6,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       description:
-        "All the open sources project initiated by Bruno Sabot. Check it out!",
+        "Open-source your projects with Bruno Sabot! Explore dev, home automation, and more in his code repositories. Contribute and join the community.",
       title: "Open Source",
     },
     "/opensource/",

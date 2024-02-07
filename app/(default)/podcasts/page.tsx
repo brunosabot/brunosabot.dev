@@ -5,7 +5,8 @@ import { getMetaData } from "../../../lib/metadata";
 export async function generateMetadata() {
   return getMetaData(
     {
-      description: "All the podcasts with Bruno Sabot",
+      description:
+        "Hear Bruno Sabot on podcasts! Dive into dev, React, JavaScript, and more with insightful discussions and expert tips.",
       title: "Podcasts",
     },
     "/podcasts/",

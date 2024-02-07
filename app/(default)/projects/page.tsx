@@ -6,7 +6,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       description:
-        "Projects imagined and created by Bruno Sabot. Check it out!",
+        "Play fun and engaging games by Bruno Sabot! Explore and enjoy a variety of casual and exciting apps for everyone.",
       title: "Projects",
     },
     "/projects/",
