@@ -67,7 +67,7 @@ const jobs: Jobs = {
     {
       id: "netinteractive",
       companyName: "NETINTERACTIVE",
-      companyWebsite: "http://www.netinteractive.fr/",
+      companyWebsite: "https://webpublication.fr/",
       details: [
         "Company Front-end product development (Vanilla JS, CSS)",
         "Local and offshore Front-office team management",
@@ -82,7 +82,7 @@ const jobs: Jobs = {
     {
       id: "owlient",
       companyName: "OWLIENT",
-      companyWebsite: "http://owlient.eu/",
+      companyWebsite: "https://www.equideow.com/",
       details: [
         "Webapp implementation and development for the game Equideow (HTML5, CSS3, jQuery, jQuery mobile)",
         "Back-office update to support the webapp needs (PHP)",
@@ -96,7 +96,7 @@ const jobs: Jobs = {
     {
       id: "webedia",
       companyName: "WEBEDIA",
-      companyWebsite: "http://www.webedia.fr/",
+      companyWebsite: "https://webedia-group.com/",
       details: [
         "Integration of the websites Puremedias and Pureshopping",
         "Administration implementation of the websites Puremedias and Pureshopping",
@@ -110,7 +110,7 @@ const jobs: Jobs = {
     {
       id: "ubiqus",
       companyName: "UBIQUS",
-      companyWebsite: "http://www.ubiqus.fr/",
+      companyWebsite: "https://www.acolad.com/",
       details: [
         "Back-office developments for the company (PHP, MySQL)",
         "Front-office developments for the event websites sold by the company (HTML, jQuery)",
@@ -195,7 +195,7 @@ const jobs: Jobs = {
     {
       id: "netinteractive",
       companyName: "NETINTERACTIVE",
-      companyWebsite: "http://www.netinteractive.fr/",
+      companyWebsite: "https://webpublication.fr/",
       details: [
         "Développement de la partie Front-office des produits de la société (Vanilla JS, CSS).",
         "Management des équipes Front-office locales et à l'étranger.",
@@ -210,7 +210,7 @@ const jobs: Jobs = {
     {
       id: "owlient",
       companyName: "OWLIENT",
-      companyWebsite: "http://owlient.eu/",
+      companyWebsite: "https://www.equideow.com/",
       details: [
         "Mise en place et développement de la webapp du jeu Equideow (HTML5, CSS3, jQuery, jQuery mobile)",
         "Mise à jour de la partie Back-office pour supporter la webapp (PHP)..",
@@ -224,7 +224,7 @@ const jobs: Jobs = {
     {
       id: "webedia",
       companyName: "WEBEDIA",
-      companyWebsite: "http://www.webedia.fr/",
+      companyWebsite: "https://webedia-group.com/",
       details: [
         "Intégration des sites Puremedias et Pureshopping",
         "Mise en place de l'administration des sites Puremedias et Pureshopping",
@@ -238,7 +238,7 @@ const jobs: Jobs = {
     {
       id: "ubiqus",
       companyName: "UBIQUS",
-      companyWebsite: "http://www.ubiqus.fr/",
+      companyWebsite: "https://www.acolad.com/",
       details: [
         "Développements Back-office pour la société (PHP, MySQL).",
         "Développements Front-office de sites événementiels pour la société (HTML, jQuery).",

@@ -39,7 +39,7 @@ const resume = {
     subIntro:
       "J'ai eu le privilège de travailler avec des sociétés comme Cdiscount, Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil.",
     about:
-      "Staff Software Engineer chez Zenika, je ne suis page à la recherche de nouvelles opportunités.",
+      "Staff Software Engineer chez Zenika, je ne suis pas à la recherche de nouvelles opportunités.",
     titleJobs: "Expériences professionnelles",
     titleTraining: "Formation",
   },
