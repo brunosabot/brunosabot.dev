@@ -10,8 +10,8 @@ const resume = {
   en: {
     seo: {
       description:
-        "Plongez dans l'univers de Bruno Sabot, développeur front-end ! Mes expériences en consulting et Staff Software Engineer sont l'image de mon expertise, mon dévouement et ma capacité à innover",
-      title: "Bruno Sabot, développeur Front-end",
+        "Front-End Craftsman: Bruno Sabot leverages JS, CSS & webperf expertise to build impactful web experiences.",
+      title: "Bruno Sabot, Front-end developer",
       alternate: "fr",
       alternateLabel: "FR",
     },
@@ -19,7 +19,7 @@ const resume = {
     intro:
       "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
     subIntro:
-      "I had the privilege of working with companies such as Cdiscount, Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil & more.",
+      "I had the privilege of working with companies such as PlayPlay, Cdiscount, Fatec, Webedia Group, Owlient, L’Oréal group, De Beers & more.",
     about:
       "Staff Software Engineer at PlayPlay, I'm not looking for new opportunities.",
     titleJobs: "Professional experiences",
@@ -28,8 +28,8 @@ const resume = {
   fr: {
     seo: {
       description:
-        "Your window into Bruno Sabot, front-end developer. Consulting and Staff Software Engineer experience paint a picture of expertise, dedication, and innovation.",
-      title: "Bruno Sabot, Front-end developer",
+        "Artisan Front-End: L'expertise en JS, CSS et webperf permet à Bruno Sabot de créer des expériences web marquantes.",
+      title: "Bruno Sabot, développeur Front-end",
       alternate: "en",
       alternateLabel: "EN",
     },
@@ -37,9 +37,9 @@ const resume = {
     intro:
       "Je suis Bruno Sabot, un développeur Front-end résidant à Bordeaux, en France.",
     subIntro:
-      "J'ai eu le privilège de travailler avec des sociétés comme Cdiscount, Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil.",
+      "J'ai eu le privilège de travailler avec des sociétés comme PlayPlay, Cdiscount, Fatec, Webedia Group, Owlient, L’Oréal group, De Beers.",
     about:
-      "Staff Software Engineer chez Zenika, je ne suis pas à la recherche de nouvelles opportunités.",
+      "Staff Software Engineer chez PlayPlay, je ne suis pas à la recherche de nouvelles opportunités.",
     titleJobs: "Expériences professionnelles",
     titleTraining: "Formation",
   },
