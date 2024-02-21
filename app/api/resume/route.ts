@@ -19,9 +19,9 @@ const resume = {
     intro:
       "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
     subIntro:
-      "I had the privilege of working with companies such as Cdiscount, Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil &amp; more.",
+      "I had the privilege of working with companies such as Cdiscount, Webedia, Owlient, L’Oréal group, De Beers, Saint Gobain, Natura Brasil & more.",
     about:
-      "Staff Software Engineer at PlayPlay, I&apos;m not looking for new opportunities.",
+      "Staff Software Engineer at PlayPlay, I'm not looking for new opportunities.",
     titleJobs: "Professional experiences",
     titleTraining: "Training",
   },
