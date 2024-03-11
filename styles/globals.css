@@ -175,6 +175,10 @@ code {
   margin-bottom: -16px;
   padding: 8px 16px 10px 16px;
 }
+.hljs-filename:empty {
+  border: 0;
+  padding: 2px;
+}
 
 .anchor-target {
   position: relative;
