@@ -11,7 +11,7 @@ function getLDJSON(post: MatterPost) {
     "@type": "BlogPosting",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${SITE_METADATA.siteUrl}/${post.data.path}`,
+      "@id": `${SITE_METADATA.siteUrl}${post.data.path}`,
     },
     headline: post.data.title,
     description: post.data.description,
@@ -26,10 +26,10 @@ function getLDJSON(post: MatterPost) {
       name: "Bruno Sabot",
       url: `${SITE_METADATA.siteUrl}/`,
     },
-    datePublished: new Date(post.data.date).toISOString().split("T")[0],
-    dateModified: new Date(post.data.updatedDate ?? post.data.date)
-      .toISOString()
-      .split("T")[0],
+    datePublished: new Date(post.data.date).toISOString(),
+    dateModified: new Date(
+      post.data.updatedDate ?? post.data.date,
+    ).toISOString(),
   });
 }
 

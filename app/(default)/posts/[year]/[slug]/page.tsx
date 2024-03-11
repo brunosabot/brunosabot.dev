@@ -49,7 +49,7 @@ export async function generateMetadata({
       title: post.data.title,
       description: post.data.subtitle,
       canonical: post.data.canonical,
-      url: `${SITE_METADATA.siteUrl}/${post.data.path}`,
+      url: `${SITE_METADATA.siteUrl}${post.data.path}`,
       image: post.data.originalImage,
     },
     `/posts/${year}/${slug}/`,
