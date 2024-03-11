@@ -6,6 +6,7 @@ interface Props {
   image: string;
   title: string;
   description: string[];
+  lang: string;
   priority?: boolean;
 }
 
@@ -14,6 +15,7 @@ const DetailCard: React.FC<Props> = ({
   image,
   title,
   description,
+  lang,
   priority = false,
 }) => (
   <a
@@ -31,9 +33,12 @@ const DetailCard: React.FC<Props> = ({
         priority={priority}
       />
     </div>
-    {description.map((d) => (
-      <p key={d}>{d}</p>
-    ))}
+    <div className={classes["detail-card__content"]}>
+      {description.map((d) => (
+        <p key={d}>{d}</p>
+      ))}
+    </div>
+    <div>{lang}</div>
   </a>
 );
 
