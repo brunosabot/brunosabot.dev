@@ -66,7 +66,10 @@ export default function ToolSpeedConvertor() {
         <CardTitle>Percentage from VMA</CardTitle>
         <Table>
           <tbody>
-            {[100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50].map((percentage) => {
+            {[
+              130, 125, 120, 115, 110, 105, 100, 95, 90, 85, 80, 75, 70, 65, 60,
+              55, 50,
+            ].map((percentage) => {
               return (
                 <Tr key={percentage}>
                   <Td>{percentage}%</Td>
