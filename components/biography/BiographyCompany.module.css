@@ -6,8 +6,7 @@
   line-height: 1.5;
   margin: 0 5px;
   outline: 0;
-  overflow: hidden;
-  padding: 3px 3px 3px 3px;
+  padding: 0 3px;
   position: relative;
   text-decoration: none;
 }
@@ -17,14 +16,16 @@
   content: "";
   height: 2px;
   left: -1px;
+  opacity: 0;
   position: absolute;
   right: -1px;
-  transform: translateX(-100%);
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  transform: ScaleX(0);
+  transition: 0.2s transform cubic-bezier(0.4, 0, 0.6, 1);
 }
 .BiographyCompany:hover::after,
 .BiographyCompany:focus-visible::after {
-  transform: translateX(0);
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .BiographyCompanyEx {
@@ -32,4 +33,13 @@
 }
 .BiographyCompanyEx::after {
   display: none;
+}
+
+.BiographyCompanyPrev {
+  font-size: 0.65em;
+  left: 50%;
+  margin-right: 4px;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -100%);
 }

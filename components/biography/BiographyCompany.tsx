@@ -20,6 +20,7 @@ export default function BiographyCompany({
   return (
     <a className={classNames.join(" ")} href={href}>
       &nbsp;
+      {ex ? <span className={classes.BiographyCompanyPrev}>prev.</span> : ""}
       {children}
       &nbsp;
     </a>
