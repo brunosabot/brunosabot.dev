@@ -57,7 +57,7 @@ export default async function IndexPage() {
           <BiographyCompany ex href="https://www.bdxio.fr/">
             BDX I/O
           </BiographyCompany>
-          <BiographyCompany ex href="https://gdgbordeaux.fr/#/">
+          <BiographyCompany ex href="https://gdg.community.dev/gdg-bordeaux/">
             GDG Bordeaux
           </BiographyCompany>
         </BiographyLine>
