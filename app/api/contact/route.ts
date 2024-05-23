@@ -1,5 +1,4 @@
 import { NextRequest } from "next/server";
-import fetch from "node-fetch";
 
 type SMTPData = {
   sender: { name: string; email: string };
