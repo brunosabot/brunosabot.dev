@@ -15,7 +15,9 @@ type GistToken = {
 
 async function loadGist(id: string): Promise<[string[], { files: string[] }]> {
   const url = `https://gist.github.com/${id}`;
-  const jsonResponse = await fetch(`${url}.json`);
+  const jsonResponse = await fetch(`${url}.json`, {
+    next: { revalidate: 3600 },
+  });
 
   const jsonData = await (jsonResponse.json() as Promise<{ files: string[] }>);
 

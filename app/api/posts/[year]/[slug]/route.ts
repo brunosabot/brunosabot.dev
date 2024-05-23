@@ -5,7 +5,7 @@ interface P {
   params: { year: string; slug: string };
 }
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export async function GET(request: NextRequest, { params }: P) {
   const post = await getNotionPost(`/posts/${params.year}/${params.slug}/`);

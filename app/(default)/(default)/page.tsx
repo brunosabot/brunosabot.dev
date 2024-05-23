@@ -5,7 +5,7 @@ import BiographySkill from "../../../components/biography/BiographySkill";
 import BiographyPost from "../../../components/biography/BiographyPost";
 import BiographyTitle from "../../../components/biography/BiographyTitle";
 import BiographySubtitle from "../../../components/biography/BiographySubtitle";
-import { Post, getNotionPosts } from "../../../lib/notion";
+import { Post } from "../../../lib/notion";
 import { getMetaData } from "../../../lib/metadata";
 
 export async function generateMetadata() {
@@ -19,10 +19,10 @@ export async function generateMetadata() {
   );
 }
 
-export const revalidate = 60 * 60;
-
 async function getPosts() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts`, {
+    next: { revalidate: 3600 },
+  });
   const posts = (await response.json()) as Post[];
 
   return posts.slice(0, 3);
