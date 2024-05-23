@@ -165,6 +165,13 @@
   padding: 4px;
 }
 
+.blog-post hr {
+  background-color: currentColor;
+  border: 0;
+  height: 1px;
+  opacity: 0.3;
+}
+
 .blog-post-gist-filename {
   background-color: var(--background-dp1);
   border-radius: 4px;

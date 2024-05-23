@@ -23,7 +23,9 @@ async function loadGist(id: string): Promise<[string[], { files: string[] }]> {
 
   const data = await Promise.all(
     jsonData.files.map((file) =>
-      fetch(`${url}/raw/?file=${file}`).then((r) => r.text()),
+      fetch(`${url}/raw/?file=${file}`, {
+        next: { revalidate: 3600 },
+      }).then((r) => r.text()),
     ),
   );
 
