@@ -30,8 +30,5 @@ workbox.routing.registerRoute(
 );
 
 self.addEventListener('fetch', event => {
-  if (event.request.url.endsWith('.png')) {
-    // Using the previously-initialized strategies will work as expected.
     event.respondWith(new workbox.strategies.StaleWhileRevalidate({ cacheName: CACHE }).handle({ event, request }));
-  }
 });
