@@ -30,5 +30,5 @@ workbox.routing.registerRoute(
 );
 
 self.addEventListener('fetch', event => {
-    event.respondWith(new workbox.strategies.StaleWhileRevalidate({ cacheName: CACHE }).handle({ event, request }));
+    event.respondWith(new workbox.strategies.StaleWhileRevalidate({ cacheName: CACHE }).handle({ event, request: event.request }));
 });
