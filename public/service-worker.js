@@ -24,7 +24,7 @@ if (workbox.navigationPreload.isSupported()) {
 
 workbox.routing.registerRoute(
   new RegExp('/*'),
-  new StaleWhileRevalidate({
+  new workbox.strategies.StaleWhileRevalidate({
     cacheName: CACHE
   })
 );
@@ -32,6 +32,6 @@ workbox.routing.registerRoute(
 self.addEventListener('fetch', event => {
   if (event.request.url.endsWith('.png')) {
     // Using the previously-initialized strategies will work as expected.
-    event.respondWith(new StaleWhileRevalidate({ cacheName: CACHE }).handle({event, request}));
+    event.respondWith(new workbox.strategies.StaleWhileRevalidate({ cacheName: CACHE }).handle({ event, request }));
   }
 });
