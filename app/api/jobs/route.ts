@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import Job from "../../../types/Job";
 
-export const revalidate = 3600 * 6;
+export const revalidate = 21600;
 
 interface Jobs {
   en: Job[];

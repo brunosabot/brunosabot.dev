@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest } from "next/server";
 import Training from "../../../types/Training";
 
-export const revalidate = 3600 * 6;
+export const revalidate = 21600;
 
 interface Trainings {
   en: Training[];

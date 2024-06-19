@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { FullPost, getNotionPost } from "../../../../../lib/notion";
 
-export const revalidate = 3600 * 6;
+export const revalidate = 21600;
 
 interface P {
   params: { year: string; slug: string };

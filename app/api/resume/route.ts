@@ -2,7 +2,7 @@
 import { NextRequest } from "next/server";
 import Resume from "../../../types/Resume";
 
-export const revalidate = 3600 * 6;
+export const revalidate = 21600;
 
 interface Resumes {
   en: Resume[];
