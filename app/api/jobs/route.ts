@@ -1,6 +1,8 @@
 import { NextRequest } from "next/server";
 import Job from "../../../types/Job";
 
+export const revalidate = 3600 * 6;
+
 interface Jobs {
   en: Job[];
   fr: Job[];
@@ -15,6 +17,7 @@ const jobs: Jobs = {
       details: [
         "Front-End community animation",
         "Video edition product development",
+        "Member of the enabling team and the architecture committee",
       ],
       endDate: "Currently",
       startDate: "September 2022",
@@ -143,6 +146,7 @@ const jobs: Jobs = {
       details: [
         "Animation de la communauté Front-End",
         "Développement du produit d'édition vidéo",
+        "Membre de l'enabling team et du comité d'architecture",
       ],
       endDate: "Actuellement",
       startDate: "Septembre 2022",

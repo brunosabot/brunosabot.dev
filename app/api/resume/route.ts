@@ -2,6 +2,8 @@
 import { NextRequest } from "next/server";
 import Resume from "../../../types/Resume";
 
+export const revalidate = 3600 * 6;
+
 interface Resumes {
   en: Resume[];
   fr: Resume[];
