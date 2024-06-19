@@ -166,7 +166,7 @@ function getNotionClient() {
 
 async function readPostMarkdown(id: string) {
   const notionClient = getNotionClient();
-  const n2m = new NotionToMarkdown({ notionClient: notionClient });
+  const n2m = new NotionToMarkdown({ notionClient });
 
   const blockResponse = await notionClient.blocks.children.list({
     block_id: id,
@@ -179,15 +179,7 @@ async function readPostMarkdown(id: string) {
   return mdString;
 }
 
-async function readPost(path: string) {
-  const notionClient = getNotionClient();
-  return await notionClient.databases.query({
-    database_id: process.env.NOTION_DATABASE ?? "",
-    filter: {
-      or: [{ property: "Path", rich_text: { equals: path } }],
-    },
-  });
-}
+// All posts
 
 async function fetchNotionPosts() {
   const notionClient = getNotionClient();
@@ -215,6 +207,8 @@ export async function getNotionPosts() {
   return cachedFetchNotionPosts();
 }
 
+// Tags
+
 export async function fetchNotionTags(): Promise<string[]> {
   const notionClient = getNotionClient();
 
@@ -233,21 +227,12 @@ export async function getNotionTags() {
   return cachedFetchNotionTags();
 }
 
+// Posts for a tag
+
 async function fetchNotionPostsByTag(tag: string) {
-  const notionClient = getNotionClient();
+  const posts = await getNotionPosts();
 
-  const response = await notionClient.databases.query({
-    database_id: process.env.NOTION_DATABASE ?? "",
-    filter: {
-      and: [
-        { property: "Status", status: { equals: "Done" } },
-        { property: "Tags", multi_select: { contains: tag } },
-      ],
-    },
-    sorts: [{ property: "Date", direction: "descending" }],
-  });
-
-  return response.results.map(mapNotionToPost).filter(isPost);
+  return posts.filter((post) => post.tags.split(",").includes(tag));
 }
 
 const cachedFetchNotionPostsByTag = unstable_cache(
@@ -262,16 +247,18 @@ export async function getNotionPostsByTag(tag: string) {
   return cachedFetchNotionPostsByTag(tag);
 }
 
-async function fetchNotionPost(path: string) {
-  const response = await readPost(path);
-  const data = mapNotionToPost(response.results[0]);
-  const markdown = await readPostMarkdown(response.results[0].id);
+// Specific post
 
-  if (data === undefined) return undefined;
+async function fetchNotionPost(path: string) {
+  const posts = await getNotionPosts();
+  const postforPath = posts.filter((post) => post.path === path);
+  const markdown = await readPostMarkdown(postforPath[0].id);
+
+  if (postforPath[0] === undefined) return undefined;
 
   const fullPost: FullPost = {
     content: markdown.parent,
-    data,
+    data: postforPath[0],
   };
 
   return fullPost;

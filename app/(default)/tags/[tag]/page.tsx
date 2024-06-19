@@ -22,15 +22,19 @@ export async function generateMetadata({ params: { tag } }: RouteParams) {
 }
 
 async function getPostsByTag(tag: string) {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/tags/${tag}`,
-    {
-      next: { revalidate: 3600 },
-    },
-  );
-  const posts = (await response.json()) as Post[];
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_URL}/api/tags/${tag}`,
+      {
+        next: { revalidate: 3600 },
+      },
+    );
+    const posts = (await response.json()) as Post[];
 
-  return posts;
+    return posts;
+  } catch {
+    return [];
+  }
 }
 
 export default async function PostsPage({ params: { tag } }: RouteParams) {

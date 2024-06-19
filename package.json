@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "lint:css": "stylelint --fix components/**/*.css styles/**/*.css",
     "lint:format": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx}\"",
     "lint:ts": "eslint --fix \"components/**/*.tsx\" \"lib/**/*.ts\" \"app/**/*.tsx\"",
