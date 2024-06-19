@@ -1,19 +1,25 @@
 import { getServerSideSitemap } from "next-sitemap";
-import { getNotionPosts } from "../../lib/notion";
+import { getNotionPosts, getNotionTags } from "../../lib/notion";
 
 const monthly = "monthly" as const;
 
 export async function GET() {
   const posts = await getNotionPosts();
+  const tags = await getNotionTags();
 
-  const fields = posts.map((post) => {
-    return {
-      loc: process.env.NEXT_PUBLIC_URL + post.path,
-      lastmod: post.lastModified,
-      changefreq: monthly,
-      priority: 0.7,
-    };
-  });
+  const postEntries = posts.map((post) => ({
+    loc: process.env.NEXT_PUBLIC_URL + post.path,
+    lastmod: post.lastModified,
+    changefreq: monthly,
+    priority: 0.7,
+  }));
 
-  return getServerSideSitemap(fields);
+  const tagEntries = tags.map((tag) => ({
+    loc: `${process.env.NEXT_PUBLIC_URL}/tags/${encodeURIComponent(tag)}`,
+    lastmod: new Date().toISOString(),
+    changefreq: monthly,
+    priority: 0.7,
+  }));
+
+  return getServerSideSitemap([...postEntries, ...tagEntries]);
 }

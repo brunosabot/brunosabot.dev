@@ -42,6 +42,7 @@ export default async function PostsPage() {
           to={post.path}
           key={post.path}
           priority={index === 0}
+          tags={post.tags}
         />
       ))}
     </>

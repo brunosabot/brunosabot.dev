@@ -8,6 +8,7 @@ export interface RelatedPost {
   date: string;
   lang: string;
   count: number;
+  tags: string;
 }
 
 export function getRelatedPosts(post: FullPost, posts: Post[]): RelatedPost[] {

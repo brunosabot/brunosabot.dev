@@ -77,6 +77,18 @@ const Post: React.FC<IPostProps> = ({ post, readingTime, html }) => {
         <div dangerouslySetInnerHTML={{ __html: html }}></div>
       </div>
 
+      <div className={classes["blog-post__tags"]}>
+        {post.data.tags.split(",").map((tag: string) => (
+          <a
+            className={classes["blog-post__tag"]}
+            href={`/tags/${tag}`}
+            key={tag}
+          >
+            {tag}
+          </a>
+        ))}
+      </div>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: getLDJSON(post) }}

@@ -6,9 +6,11 @@
   cursor: unset;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   margin: 0 auto 0 auto;
   max-width: 100%;
   outline: 0;
+  padding: 16px 16px 16px 16px;
   text-decoration: none;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   width: 350px;
@@ -30,9 +32,10 @@
   background-size: cover;
   height: 195px;
   margin: 0;
+  margin: -16px -16px 16px -16px;
   object-fit: cover;
   opacity: 0.7;
-  width: 100%;
+  width: calc(100% + 32px);
 }
 @media (prefers-color-scheme: light) {
   .card__image {
@@ -42,14 +45,17 @@
 
 .card__header {
   align-items: flex-start;
+  color: inherit;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   font-size: inherit;
   font-weight: 400;
   justify-content: space-between;
   margin: 0;
-  padding: 16px 16px 16px 16px;
+  text-decoration: none;
+}
+.card__header:hover {
+  text-decoration: underline;
 }
 
 .card__header-actions {
@@ -96,6 +102,24 @@
 .card__footer {
   align-items: center;
   display: flex;
+}
+
+.card__tags {
+  font-size: 0.85em;
+  margin-bottom: 16px;
+}
+.card__tag {
+  color: inherit;
+  margin-right: 8px;
+  text-decoration: none;
+}
+.card__tag:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+}
+.card__tag::before {
+  color: var(--accent-color);
+  content: "#";
 }
 
 .Head {

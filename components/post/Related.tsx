@@ -23,6 +23,7 @@ const Related: React.FC<IRelatedProps> = ({ posts = [] }) => {
             })}
             to={post.path}
             key={post.path}
+            tags={post.tags}
           />
         ))}
       </div>

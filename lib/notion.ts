@@ -215,6 +215,53 @@ export async function getNotionPosts() {
   return cachedFetchNotionPosts();
 }
 
+export async function fetchNotionTags(): Promise<string[]> {
+  const notionClient = getNotionClient();
+
+  const response = await notionClient.databases.retrieve({
+    database_id: process.env.NOTION_DATABASE ?? "",
+  });
+
+  // @ts-ignore Typing issue with notion client
+  return response.properties.Tags.multi_select.options.map(({ name }) => name);
+}
+const cachedFetchNotionTags = unstable_cache(fetchNotionTags, ["notion-tags"], {
+  revalidate: 3600,
+});
+
+export async function getNotionTags() {
+  return cachedFetchNotionTags();
+}
+
+async function fetchNotionPostsByTag(tag: string) {
+  const notionClient = getNotionClient();
+
+  const response = await notionClient.databases.query({
+    database_id: process.env.NOTION_DATABASE ?? "",
+    filter: {
+      and: [
+        { property: "Status", status: { equals: "Done" } },
+        { property: "Tags", multi_select: { contains: tag } },
+      ],
+    },
+    sorts: [{ property: "Date", direction: "descending" }],
+  });
+
+  return response.results.map(mapNotionToPost).filter(isPost);
+}
+
+const cachedFetchNotionPostsByTag = unstable_cache(
+  fetchNotionPostsByTag,
+  ["notion-posts-by-tag"],
+  {
+    revalidate: 3600,
+  },
+);
+
+export async function getNotionPostsByTag(tag: string) {
+  return cachedFetchNotionPostsByTag(tag);
+}
+
 async function fetchNotionPost(path: string) {
   const response = await readPost(path);
   const data = mapNotionToPost(response.results[0]);

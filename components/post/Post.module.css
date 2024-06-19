@@ -65,7 +65,7 @@
 }
 
 .blog-post figure {
-  margin: 56px 0 0 0;
+  margin: 40px 0 0 0;
 }
 .blog-post figure img {
   display: block;
@@ -183,6 +183,23 @@
 
 .blog-post :global(.gist) {
   margin: 32px 0;
+}
+.blog-post__tags {
+  font-size: 0.75em;
+  margin-top: 16px;
+}
+.blog-post__tag {
+  color: inherit;
+  margin-right: 8px;
+  text-decoration: none;
+}
+.blog-post__tag:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+}
+.blog-post__tag::before {
+  color: var(--accent-color);
+  content: "#";
 }
 
 @media (max-width: 750px) {

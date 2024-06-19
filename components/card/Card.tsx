@@ -14,6 +14,7 @@ interface Props {
   title: string;
   description: string;
   to?: string;
+  tags?: string;
 }
 
 const Card: React.FC<Props> = ({
@@ -28,40 +29,51 @@ const Card: React.FC<Props> = ({
   subtitle,
   title,
   to,
+  tags = "",
 }) => {
   const Composant = to ? "a" : "div";
 
   return (
-    <Composant className={classes["card"]} href={to}>
+    <div className={classes["card"]}>
       {image ? (
-        <Image
-          height={195}
-          width={350}
-          src={image}
-          alt={title}
-          className={classes["card__image"]}
-          priority={priority}
-          style={{ backgroundColor: color }}
-        />
+        <Composant href={to}>
+          <Image
+            height={195}
+            width={350}
+            src={image}
+            alt={title}
+            className={classes["card__image"]}
+            priority={priority}
+            style={{ backgroundColor: color }}
+          />
+        </Composant>
       ) : null}
-      <h2 className={classes["card__header"]}>
+      <Composant href={to} className={classes["card__header"]}>
         <div className={classes["card__header-title-wrapper"]}>
           <span className={classes["card__header-title"]}>{title}</span>
         </div>
-        <div className={classes["card__description"]}>{description}</div>
-        <div className={classes["card__footer"]}>
-          <Flag lang={icon} />
-          <span className={classes["card__header-subtitle"]}>{subtitle}</span>
-          <span className={classes["card__header-date"]}>{date}</span>
+      </Composant>
+      <div className={classes["card__description"]}>{description}</div>
+      {tags ? (
+        <div className={classes["card__tags"]}>
+          {tags.split(",").map((tag) => (
+            <a className={classes["card__tag"]} href={`/tags/${tag}`} key={tag}>
+              {tag}
+            </a>
+          ))}
         </div>
-
-        {actions ? (
-          <div className={classes["card__header-actions"]}>{actions}</div>
-        ) : null}
-      </h2>
-
+      ) : null}
       {children}
-    </Composant>
+      <div className={classes["card__footer"]}>
+        <Flag lang={icon} />
+        <span className={classes["card__header-subtitle"]}>{subtitle}</span>
+        <span className={classes["card__header-date"]}>{date}</span>
+      </div>
+
+      {actions ? (
+        <div className={classes["card__header-actions"]}>{actions}</div>
+      ) : null}
+    </div>
   );
 };
 
