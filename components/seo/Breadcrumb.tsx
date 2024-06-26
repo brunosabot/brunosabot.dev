@@ -1,4 +1,5 @@
 import { SITE_METADATA } from "../../lib/metadata";
+import SeoScript from "./Script";
 
 type BreadcrumbEntry = [string, string];
 interface ISeoBreadcrumbProps {
@@ -13,18 +14,13 @@ function getLDJSON(items: BreadcrumbEntry[]) {
     item: `${SITE_METADATA.siteUrl}${item}`,
   }));
 
-  return JSON.stringify({
+  return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement,
-  });
+  };
 }
 
 export default async function SeoBreadcrumb({ items }: ISeoBreadcrumbProps) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: getLDJSON(items) }}
-    />
-  );
+  return <SeoScript data={getLDJSON(items)} />;
 }

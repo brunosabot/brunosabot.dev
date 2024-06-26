@@ -3,35 +3,7 @@ import PostAuthor from "../post/PostAuthor";
 import PostSocial from "../post/PostSocial";
 import classes from "./Post.module.css";
 import MatterPost from "../../types/MatterPost";
-import { SITE_METADATA } from "../../lib/metadata";
-
-function getLDJSON(post: MatterPost) {
-  return JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${SITE_METADATA.siteUrl}${post.data.path}`,
-    },
-    headline: post.data.title,
-    description: post.data.description,
-    image: post.data.originalImage,
-    author: {
-      "@type": "Person",
-      name: "Bruno Sabot",
-      url: `${SITE_METADATA.siteUrl}/`,
-    },
-    publisher: {
-      "@type": "Person",
-      name: "Bruno Sabot",
-      url: `${SITE_METADATA.siteUrl}/`,
-    },
-    datePublished: new Date(post.data.date).toISOString(),
-    dateModified: new Date(
-      post.data.updatedDate ?? post.data.date,
-    ).toISOString(),
-  });
-}
+import SeoBlogPosting from "../seo/BlogPosting";
 
 interface IPostProps {
   readingTime: number;
@@ -89,9 +61,13 @@ const Post: React.FC<IPostProps> = ({ post, readingTime, html }) => {
         ))}
       </div>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: getLDJSON(post) }}
+      <SeoBlogPosting
+        path={post.data.path}
+        title={post.data.title}
+        description={post.data.description}
+        image={post.data.originalImage}
+        datePublished={new Date(post.data.date)}
+        dateModified={new Date(post.data.lastModified)}
       />
     </div>
   );
