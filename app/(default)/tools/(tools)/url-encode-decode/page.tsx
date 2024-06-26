@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";
@@ -9,7 +10,7 @@ export async function generateMetadata() {
     {
       description:
         "Conquer Complex URLs: Effortless Encoding & Decoding with Our Toolq",
-      title: "URL tool",
+      title: "URL Encode And Decode Tool",
     },
     "/tools/url-encode-decode/",
   );
@@ -18,7 +19,7 @@ export async function generateMetadata() {
 export default function ToolUrlEncodeDecodePage() {
   return (
     <>
-      <PageTitle>URL Tool</PageTitle>
+      <PageTitle>URL Encode And Decode Tool</PageTitle>
 
       <ToolUrlEncodeDecode />
 
@@ -117,6 +118,14 @@ export default function ToolUrlEncodeDecodePage() {
           Experience the difference with our Encoding & Decoding Tool today!
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["URL Tool", "/tools/url-encode-decode"],
+        ]}
+      />
     </>
   );
 }

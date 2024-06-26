@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     {
       description:
         "Conquer Chaotic JSON: Indent and Beautify with our Effortless Formatter!",
-      title: "JSON pretty tool",
+      title: "JSON Pretty Tool",
     },
     "/tools/pretty/",
   );
@@ -19,7 +20,7 @@ export async function generateMetadata() {
 export default function ToolPrettyPage() {
   return (
     <>
-      <PageTitle>JSON pretty Tool</PageTitle>
+      <PageTitle>JSON Pretty Tool</PageTitle>
 
       <ToolPretty />
 
@@ -122,6 +123,14 @@ export default function ToolPrettyPage() {
           and unlock a world of understanding!
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["JSON Pretty Tool", "/tools/pretty"],
+        ]}
+      />
     </>
   );
 }

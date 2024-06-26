@@ -4,6 +4,8 @@ import PageTitle from "../../../../components/typography/PageTitle";
 import { Post, getNotionTags } from "../../../../lib/notion";
 import { getMetaData } from "../../../../lib/metadata";
 import { RouteParams } from "./types";
+import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
+import SimpleCard from "../../../../components/card/SimpleCard";
 
 export async function generateStaticParams() {
   const tags = await getNotionTags();
@@ -58,6 +60,14 @@ export default async function PostsPage({ params: { tag } }: RouteParams) {
           tags={post.tags}
         />
       ))}
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tags", "/tags/"],
+          [`#${tag}`, `/tags/${tag}`],
+        ]}
+      />
     </>
   );
 }

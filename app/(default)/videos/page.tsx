@@ -1,6 +1,7 @@
 import PageTitle from "../../../components/typography/PageTitle";
 import CardVideo from "../../../components/card/CardVideo";
 import { getMetaData } from "../../../lib/metadata";
+import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -50,6 +51,13 @@ export default async function VideosPage() {
           priority={index === 0}
         />
       ))}
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Videos", "/videos/"],
+        ]}
+      />
     </>
   );
 }

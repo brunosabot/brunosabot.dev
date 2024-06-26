@@ -4,13 +4,14 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolAlcohol from "./ToolAlcohol";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
     {
       description:
         "Calculate the Absolute and Relative Amount of Alcohol in Your Drinks",
-      title: "Alcohol quantities tool",
+      title: "Alcohol Quantities Tool",
     },
     "/tools/alcohol/",
   );
@@ -90,6 +91,14 @@ export default function ToolAlcoholPage() {
           Embark on a journey of informed alcohol consumption with this simple
           yet powerful tool!
         </BlockParagraphTitle>
+
+        <SeoBreadcrumb
+          items={[
+            ["Home", "/"],
+            ["Tools", "/tools/"],
+            ["Alcohol Quantities Tool", "/tools/alcohol"],
+          ]}
+        />
       </SimpleCard>
     </>
   );

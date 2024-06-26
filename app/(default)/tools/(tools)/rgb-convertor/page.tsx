@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     {
       description:
         "Conquer Color Conversions with Ease: Introducing Your Color Conversion Companion with Favorites",
-      title: "JSON pretty tool",
+      title: "Color Converter Tool",
     },
     "/tools/rgb-convertor/",
   );
@@ -19,7 +20,7 @@ export async function generateMetadata() {
 export default function ToolRgbConvertorPage() {
   return (
     <>
-      <PageTitle>Color converter Tool</PageTitle>
+      <PageTitle>Color Converter Tool</PageTitle>
 
       <ToolRgbConvertor />
 
@@ -123,6 +124,14 @@ export default function ToolRgbConvertorPage() {
           with the perfect color palette!
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Color Converter Tool", "/tools/rgb-convertor"],
+        ]}
+      />
     </>
   );
 }

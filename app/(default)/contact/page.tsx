@@ -1,3 +1,4 @@
+import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 import { getMetaData } from "../../../lib/metadata";
 import Form from "./Form";
 
@@ -13,5 +14,16 @@ export async function generateMetadata() {
 }
 
 export default function ContactPage() {
-  return <Form />;
+  return (
+    <>
+      <Form />
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Contact", "/contact/"],
+        ]}
+      />
+    </>
+  );
 }

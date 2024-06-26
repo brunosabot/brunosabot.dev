@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     {
       description:
         "Conquer Any Speed: Convert & Compare with Our Ultimate Tool!",
-      title: "Speed convertor tool",
+      title: "Speed Convertor Tool",
     },
     "/tools/speed-convertor/",
   );
@@ -19,7 +20,7 @@ export async function generateMetadata() {
 export default function ToolSpeedConvertorPage() {
   return (
     <>
-      <PageTitle>Speed convertor</PageTitle>
+      <PageTitle>Speed Convertor Tool</PageTitle>
 
       <ToolSpeedConvertor />
 
@@ -121,6 +122,14 @@ export default function ToolSpeedConvertorPage() {
           compare, and conquer with our tool today!
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Speed Convertor Tool", "/tools/speed-convertor"],
+        ]}
+      />
     </>
   );
 }

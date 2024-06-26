@@ -1,6 +1,7 @@
 import PageTitle from "../../../components/typography/PageTitle";
 import DetailCard from "../../../components/card/DetailCard";
 import { getMetaData } from "../../../lib/metadata";
+import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -89,6 +90,13 @@ export default async function ProjectsPage() {
           priority={index === 0}
         />
       ))}
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Projects", "/projects/"],
+        ]}
+      />
     </>
   );
 }

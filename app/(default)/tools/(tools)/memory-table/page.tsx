@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     {
       description:
         "Sharpen Your Mind with the Fun and Challenging Number-Object Memory Game!",
-      title: "Memory Table tool",
+      title: "Memory Table Tool",
     },
     "/tools/memory-table/",
   );
@@ -127,6 +128,14 @@ export default function ToolMemoryTablePage() {
         Whether you&apos;re looking to challenge yourself, improve your memory
         skills, or simply have a good time, this tool is a great choice.
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Memory Table Tool", "/tools/memory-table"],
+        ]}
+      />
     </>
   );
 }

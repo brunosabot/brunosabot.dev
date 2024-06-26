@@ -4,6 +4,7 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolBezierCurves from "./ToolBezierCurves";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -94,6 +95,14 @@ export default function ToolBezierCurvesPage() {
           Transform your web designs into masterpieces with this Cubic-Bezier
           Curve Generator and unleash the power of captivating animations.
         </BlockParagraphTitle>
+
+        <SeoBreadcrumb
+          items={[
+            ["Home", "/"],
+            ["Tools", "/tools/"],
+            ["Bezier Curves", "/tools/bezier-curves"],
+          ]}
+        />
       </SimpleCard>
     </>
   );

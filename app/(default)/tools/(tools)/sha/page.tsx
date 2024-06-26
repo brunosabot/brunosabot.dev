@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     {
       description:
         "Fortify Your Data Security: Generate Secure Hashes with Our SHA Hash Calculator",
-      title: "Sha tool",
+      title: "Sha Generation Tool",
     },
     "/tools/sha/",
   );
@@ -19,7 +20,7 @@ export async function generateMetadata() {
 export default function ToolShaPage() {
   return (
     <>
-      <PageTitle>Sha Tool</PageTitle>
+      <PageTitle>Sha Generation Tool</PageTitle>
 
       <ToolSha />
 
@@ -126,6 +127,14 @@ export default function ToolShaPage() {
           Start generating secure hashes today!
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Sha Generation Tool", "/tools/sha"],
+        ]}
+      />
     </>
   );
 }

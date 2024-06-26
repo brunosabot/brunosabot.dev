@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     {
       description:
         "Bridging Design: Effortlessly Convert Photoshop Shadows to CSS with Visualization",
-      title: "Photoshop Shadow",
+      title: "Photoshop Shadow Converter",
     },
     "/tools/photoshop-shadow/",
   );
@@ -19,7 +20,7 @@ export async function generateMetadata() {
 export default function ToolPhotoshopShadowPage() {
   return (
     <>
-      <PageTitle>Photoshop Shadow</PageTitle>
+      <PageTitle>Photoshop Shadow Converter</PageTitle>
 
       <ToolPhotoshopShadow />
 
@@ -127,6 +128,14 @@ export default function ToolPhotoshopShadowPage() {
           a world of creative possibilities!
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Photoshop Shadow Converter", "/tools/photoshop-shadow"],
+        ]}
+      />
     </>
   );
 }

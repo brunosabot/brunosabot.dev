@@ -1,3 +1,4 @@
+import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 import PageTitle from "../../../components/typography/PageTitle";
 import { getMetaData } from "../../../lib/metadata";
 import Tools from "./Tools";
@@ -19,6 +20,13 @@ export default function ToolsPage() {
       <PageTitle>Tool list</PageTitle>
 
       <Tools />
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+        ]}
+      />
     </>
   );
 }

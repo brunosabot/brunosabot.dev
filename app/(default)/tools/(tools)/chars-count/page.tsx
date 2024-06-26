@@ -4,13 +4,14 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolCharsCount from "./ToolCharsCount";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
     {
       description:
         "Craft Compelling Content with Ease: The Ultimate Text Analysis Tool",
-      title: "Character count",
+      title: "Character Count",
     },
     "/tools/chars-count/",
   );
@@ -164,6 +165,14 @@ export default function ToolCharsCountPage() {
           </b>
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Character Count", "/tools/chars-count"],
+        ]}
+      />
     </>
   );
 }

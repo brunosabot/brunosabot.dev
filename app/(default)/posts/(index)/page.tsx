@@ -1,8 +1,9 @@
 import { formatDistanceToNow } from "date-fns";
 import Card from "../../../../components/card/Card";
 import PageTitle from "../../../../components/typography/PageTitle";
-import { Post, getNotionPosts } from "../../../../lib/notion";
+import { Post } from "../../../../lib/notion";
 import { getMetaData } from "../../../../lib/metadata";
+import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -45,6 +46,13 @@ export default async function PostsPage() {
           tags={post.tags}
         />
       ))}
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Posts", "/posts/"],
+        ]}
+      />
     </>
   );
 }

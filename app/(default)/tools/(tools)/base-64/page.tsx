@@ -4,13 +4,14 @@ import { getMetaData } from "../../../../../lib/metadata";
 import ToolBase64 from "./ToolBase64";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
     {
       description:
         "Effortlessly Convert Strings Between Text and Base64 Format",
-      title: "Base 64 conversion tool",
+      title: "Base 64 Conversion Tool",
     },
     "/tools/base-64/",
   );
@@ -96,6 +97,14 @@ export default function ToolBase64Page() {
           Embrace the power of Base64 conversion with this user-friendly tool
           and transform your data management experience!
         </BlockParagraphTitle>
+
+        <SeoBreadcrumb
+          items={[
+            ["Home", "/"],
+            ["Tools", "/tools/"],
+            ["Base 64 Conversion Tool", "/tools/base-64"],
+          ]}
+        />
       </SimpleCard>
     </>
   );

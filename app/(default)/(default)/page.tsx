@@ -7,6 +7,7 @@ import BiographyTitle from "../../../components/biography/BiographyTitle";
 import BiographySubtitle from "../../../components/biography/BiographySubtitle";
 import { Post } from "../../../lib/notion";
 import { getMetaData } from "../../../lib/metadata";
+import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -70,6 +71,8 @@ export default async function IndexPage() {
           ))}
         </BiographyLine>
       </div>
+
+      <SeoBreadcrumb items={[["Home", "/"]]} />
     </>
   );
 }

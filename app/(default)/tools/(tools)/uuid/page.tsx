@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     {
       description:
         "Generate Unique Identifiers with Unmatched Versatility: Introducing the Ultimate ID Generator",
-      title: "UUID tool",
+      title: "UUID Generation Tool",
     },
     "/tools/uuid/",
   );
@@ -19,7 +20,7 @@ export async function generateMetadata() {
 export default function ToolUuidPage() {
   return (
     <>
-      <PageTitle>UUID Tool</PageTitle>
+      <PageTitle>UUID Generation Tool</PageTitle>
 
       <ToolUuid />
 
@@ -139,6 +140,14 @@ export default function ToolUuidPage() {
           exact needs. Start generating today!
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["UUID Generation Tool", "/tools/uuid"],
+        ]}
+      />
     </>
   );
 }

@@ -17,6 +17,7 @@ import {
   Post,
 } from "../../../../../lib/notion";
 import { getMetaData, SITE_METADATA } from "../../../../../lib/metadata";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 
 function getReadingTime(post: FullPost) {
   const statMarkdown = readingTime(post.content);
@@ -109,6 +110,14 @@ export default async function PostPage({
         <BuyMeACoffee />
       </PostDonation>
       <Related posts={relatedPosts} />
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Posts", "/posts/"],
+          [post.data.title, post.data.path],
+        ]}
+      />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import PageTitle from "../../../components/typography/PageTitle";
 import CardOpensource from "../../../components/card/CardOpenSource";
 import { getMetaData } from "../../../lib/metadata";
+import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -60,6 +61,13 @@ export default async function OpensourcePage() {
           />
         ))}
       </div>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Open Source", "/opensource/"],
+        ]}
+      />
     </>
   );
 }

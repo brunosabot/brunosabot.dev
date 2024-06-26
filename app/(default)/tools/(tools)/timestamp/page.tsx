@@ -1,4 +1,5 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
 import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
@@ -10,7 +11,7 @@ export async function generateMetadata() {
     {
       description:
         "Master Time with Ease: Effortlessly Convert Timestamps to Datetimes",
-      title: "Timestamp converter",
+      title: "Timestamp Converter",
     },
     "/tools/timestamp/",
   );
@@ -19,7 +20,7 @@ export async function generateMetadata() {
 export default function ToolShaPage() {
   return (
     <>
-      <PageTitle>Timestamp converter</PageTitle>
+      <PageTitle>Timestamp Converter</PageTitle>
 
       <ToolTimestamp />
 
@@ -122,6 +123,14 @@ export default function ToolShaPage() {
           experience the power of time in its most understandable form!
         </p>
       </SimpleCard>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Timestamp Converter", "/tools/timestamp"],
+        ]}
+      />
     </>
   );
 }

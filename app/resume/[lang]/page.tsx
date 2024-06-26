@@ -9,6 +9,7 @@ import classes from "./resume.module.css";
 import { RouteParams } from "./types";
 import { notFound } from "next/navigation";
 import { getMetaData, SITE_METADATA } from "../../../lib/metadata";
+import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 
 export async function generateMetadata({ params: { lang } }: RouteParams) {
   const resume = await getResume(lang);
@@ -170,6 +171,13 @@ export default async function ResumePage({ params: { lang } }: RouteParams) {
           ))}
         </article>
       </section>
+
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Resume", `/resume/${lang}`],
+        ]}
+      />
     </>
   );
 }
