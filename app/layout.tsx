@@ -1,3 +1,4 @@
+import SeoWebsite from "../components/seo/Website";
 import { SITE_METADATA } from "../lib/metadata";
 import { season } from "../lib/season";
 import "../styles/globals.css";
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: IRootLayoutProps) {
           }
         `}
         </Script>
+        <SeoWebsite />
       </body>
     </html>
   );
