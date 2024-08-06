@@ -141,7 +141,7 @@ function mapNotionToPost(
     id: notionPost.id,
     canonical: p.Canonical.url ?? "",
     color: getRichTextValue(p.Color),
-    creator: p.Creator.people[0].name,
+    creator: p.Creator.people[0]?.name,
     date: getDateValue(p.Date),
     lang: getLang(p.Lang),
     originalImage: getCover(cover),
@@ -181,14 +181,17 @@ async function readPostMarkdown(id: string) {
 
 // All posts
 
-async function fetchNotionPosts() {
+async function fetchNotionPosts(isFull: boolean) {
   const notionClient = getNotionClient();
+
+  const filters: any[] = [{ property: "Date", date: { is_not_empty: true } }];
+  if (isFull === false) {
+    filters.push({ property: "Status", status: { equals: "Done" } });
+  }
 
   const response = await notionClient.databases.query({
     database_id: process.env.NOTION_DATABASE ?? "",
-    filter: {
-      or: [{ property: "Status", status: { equals: "Done" } }],
-    },
+    filter: { and: filters },
     sorts: [{ property: "Date", direction: "descending" }],
   });
 
@@ -203,8 +206,8 @@ const cachedFetchNotionPosts = unstable_cache(
   },
 );
 
-export async function getNotionPosts() {
-  return cachedFetchNotionPosts();
+export async function getNotionPosts(isFull: boolean = false) {
+  return cachedFetchNotionPosts(isFull);
 }
 
 // Tags
@@ -250,7 +253,7 @@ export async function getNotionPostsByTag(tag: string) {
 // Specific post
 
 async function fetchNotionPost(path: string) {
-  const posts = await getNotionPosts();
+  const posts = await getNotionPosts(true);
   const postforPath = posts.filter((post) => post.path === path);
   const markdown = await readPostMarkdown(postforPath[0].id);
 
