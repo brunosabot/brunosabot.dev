@@ -95,7 +95,7 @@ export default async function ResumePage({ params: { lang } }: RouteParams) {
             {resume.follow}
           </div>
           <div className={classes["resume-social__links"]}>
-            <SocialLink to="https://twitter.com/brunosabot">Twitter</SocialLink>
+            <SocialLink to="https://x.com/brunosabot">X</SocialLink>
             <SocialLink to="https://github.com/brunosabot">Github</SocialLink>
             <SocialLink to="https://www.linkedin.com/in/brunosabot">
               LinkedIn

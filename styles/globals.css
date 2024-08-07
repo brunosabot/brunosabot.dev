@@ -127,9 +127,15 @@ code {
   }
 }
 
-*:focus > .icon-twitter,
-*:hover > .icon-twitter {
-  fill: #00acee;
+.icon-x {
+  border-radius: 4px;
+  padding: 3px;
+}
+
+*:focus > .icon-x,
+*:hover > .icon-x {
+  background-color: #ffffff;
+  fill: #000000;
 }
 
 *:focus > .icon-linkedin,

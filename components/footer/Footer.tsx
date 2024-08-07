@@ -10,9 +10,9 @@ import {
   mdiLinkedin,
   mdiMastodon,
   mdiRss,
-  mdiTwitter,
 } from "@mdi/js";
 import svgStrava from "../svg/strava";
+import svgX from "../svg/x";
 import svgMedium from "../svg/medium";
 import svgHashnode from "../svg/hashnode";
 import svgPatreon from "../svg/patreon";
@@ -39,8 +39,8 @@ const Footer: React.FC<{}> = () => {
         <Social href="https://github.com/brunosabot" name="Github">
           <Svg d={mdiGithub} />
         </Social>
-        <Social href="https://twitter.com/brunosabot" name="Twitter">
-          <Svg d={mdiTwitter} />
+        <Social href="https://x.com/brunosabot" name="X">
+          <Svg d={svgX} />
         </Social>
         <Social
           href="https://mastodon.social/@brunosabot"
