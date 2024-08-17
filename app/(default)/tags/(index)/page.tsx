@@ -1,5 +1,5 @@
 import PageTitle from "../../../../components/typography/PageTitle";
-import { getNotionTags } from "../../../../lib/notion";
+import { getNotionTags } from "../../../../lib/notion-posts";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
 import classes from "./index.module.css";
 

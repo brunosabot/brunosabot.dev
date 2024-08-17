@@ -10,14 +10,11 @@ import { RouteParams } from "./types";
 import PostComponent from "../../../../../components/post/Post";
 import getMarkdown from "../../../../../lib/markdown";
 import { mdiLinkVariant } from "@mdi/js";
-import {
-  getNotionPosts,
-  getNotionPost,
-  FullPost,
-} from "../../../../../lib/notion";
+import { getNotionPosts, getNotionPost } from "../../../../../lib/notion-posts";
 import { getMetaData, SITE_METADATA } from "../../../../../lib/metadata";
 import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import { getPost, getPosts } from "../../../../actions/posts";
+import { FullPost } from "../../../../../lib/notion";
 
 function getReadingTime(post: FullPost) {
   const statMarkdown = readingTime(post.content);

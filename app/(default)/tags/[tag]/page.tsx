@@ -1,7 +1,7 @@
 import { formatDistanceToNow } from "date-fns";
 import Card from "../../../../components/card/Card";
 import PageTitle from "../../../../components/typography/PageTitle";
-import { getNotionTags } from "../../../../lib/notion";
+import { getNotionTags } from "../../../../lib/notion-posts";
 import { getMetaData } from "../../../../lib/metadata";
 import { RouteParams } from "./types";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";

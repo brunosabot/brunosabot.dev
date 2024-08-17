@@ -5,7 +5,6 @@ import BiographySkill from "../../../components/biography/BiographySkill";
 import BiographyPost from "../../../components/biography/BiographyPost";
 import BiographyTitle from "../../../components/biography/BiographyTitle";
 import BiographySubtitle from "../../../components/biography/BiographySubtitle";
-import { Post } from "../../../lib/notion";
 import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 import { getPosts } from "../../actions/posts";

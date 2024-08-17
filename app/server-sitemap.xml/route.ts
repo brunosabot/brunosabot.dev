@@ -1,5 +1,5 @@
 import { getServerSideSitemap } from "next-sitemap";
-import { getNotionPosts, getNotionTags } from "../../lib/notion";
+import { getNotionPosts, getNotionTags } from "../../lib/notion-posts";
 
 const monthly = "monthly" as const;
 

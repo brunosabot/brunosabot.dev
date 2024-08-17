@@ -20,6 +20,12 @@ module.exports = {
         port: "",
         pathname: "/brunosabot.dev/**",
       },
+      {
+        protocol: "https",
+        hostname: "prod-files-secure.s3.us-west-2.amazonaws.com",
+        port: "",
+        pathname: "/9d0ee465-6d64-4012-8faf-0525571d0bd5/**",
+      },
     ],
   },
 };

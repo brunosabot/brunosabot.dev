@@ -1,5 +1,5 @@
 import { SITE_METADATA } from "../../lib/metadata";
-import { getNotionPost, getNotionPosts } from "../../lib/notion";
+import { getNotionPost, getNotionPosts } from "../../lib/notion-posts";
 
 function getTemplate(children: string) {
   return `

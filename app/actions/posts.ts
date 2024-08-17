@@ -4,7 +4,7 @@ import {
   getNotionPost,
   getNotionPosts,
   getNotionPostsByTag,
-} from "../../lib/notion";
+} from "../../lib/notion-posts";
 
 export async function getPosts() {
   return getNotionPosts();

@@ -1,0 +1,29 @@
+.Title {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 22px;
+  font-weight: 500;
+  gap: 8px;
+  line-height: 1.25;
+}
+
+.Author {
+  color: var(--text-medium-color);
+  font-family: var(--sans-serif);
+  font-size: 16px;
+  font-weight: 300;
+  margin-right: auto;
+}
+
+.Image {
+  border-radius: 8px;
+  margin-top: 32px;
+  max-width: 100%;
+}
+
+.Code {
+  display: block;
+  margin: 32px 0;
+  white-space: break-spaces !important;
+}
