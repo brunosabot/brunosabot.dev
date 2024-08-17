@@ -1,8 +1,6 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { NextRequest } from "next/server";
-import Resume from "../../../types/Resume";
+"use server";
 
-export const revalidate = 21600;
+import Resume from "../../types/Resume";
 
 interface Resumes {
   en: Resume[];
@@ -47,16 +45,6 @@ const resume = {
   },
 };
 
-export async function GET(request: NextRequest) {
-  const lang = request.nextUrl.searchParams.get("lang") as keyof Resumes;
-
-  if (lang === undefined) return new Response("NOT FOUND", { status: 404 });
-  if (lang === null) return new Response("NOT FOUND", { status: 404 });
-  if (["fr", "en"].includes(lang) === false)
-    return new Response("NOT FOUND", { status: 404 });
-
-  return new Response(JSON.stringify(resume[lang]), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
+export async function getResumeByLang(lang: "fr" | "en") {
+  return resume[lang];
 }

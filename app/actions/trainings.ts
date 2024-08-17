@@ -1,9 +1,6 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next";
-import { NextRequest } from "next/server";
-import Training from "../../../types/Training";
+"use server";
 
-export const revalidate = 21600;
+import Training from "../../types/Training";
 
 interface Trainings {
   en: Training[];
@@ -81,16 +78,6 @@ const trainings: Trainings = {
   ],
 };
 
-export async function GET(request: NextRequest) {
-  const lang = request.nextUrl.searchParams.get("lang") as keyof Trainings;
-
-  if (lang === undefined) return new Response("NOT FOUND", { status: 404 });
-  if (lang === null) return new Response("NOT FOUND", { status: 404 });
-  if (["fr", "en"].includes(lang) === false)
-    return new Response("NOT FOUND", { status: 404 });
-
-  return new Response(JSON.stringify(trainings[lang]), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
+export async function getTrainingsByLang(lang: "fr" | "en") {
+  return trainings[lang];
 }

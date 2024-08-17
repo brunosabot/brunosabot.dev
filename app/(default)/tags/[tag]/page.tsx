@@ -1,11 +1,11 @@
 import { formatDistanceToNow } from "date-fns";
 import Card from "../../../../components/card/Card";
 import PageTitle from "../../../../components/typography/PageTitle";
-import { Post, getNotionTags } from "../../../../lib/notion";
+import { getNotionTags } from "../../../../lib/notion";
 import { getMetaData } from "../../../../lib/metadata";
 import { RouteParams } from "./types";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
-import SimpleCard from "../../../../components/card/SimpleCard";
+import { getPostsByTag } from "../../../actions/posts";
 
 export async function generateStaticParams() {
   const tags = await getNotionTags();
@@ -21,22 +21,6 @@ export async function generateMetadata({ params: { tag } }: RouteParams) {
     },
     "/tags/",
   );
-}
-
-async function getPostsByTag(tag: string) {
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_URL}/api/tags/${tag}`,
-      {
-        next: { revalidate: 3600 },
-      },
-    );
-    const posts = (await response.json()) as Post[];
-
-    return posts;
-  } catch {
-    return [];
-  }
 }
 
 export default async function PostsPage({ params: { tag } }: RouteParams) {

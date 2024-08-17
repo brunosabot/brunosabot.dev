@@ -2,19 +2,26 @@ import Link from "next/link";
 import Job from "../../../components/resume/Job";
 import SocialLink from "../../../components/resume/SocialLink";
 import Title from "../../../components/resume/Title";
-import JobType from "../../../types/Job";
-import Resume from "../../../types/Resume";
-import Training from "../../../types/Training";
 import classes from "./resume.module.css";
 import { RouteParams } from "./types";
 import { notFound } from "next/navigation";
 import { getMetaData, SITE_METADATA } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import { getJobsByLang } from "../../actions/jobs";
+import { getTrainingsByLang } from "../../actions/trainings";
+import { getResumeByLang } from "../../actions/resume";
+
+type Lang = "fr" | "en";
+export function isValidLang(lang: string): lang is Lang {
+  return ["fr", "en"].includes(lang);
+}
 
 export async function generateMetadata({ params: { lang } }: RouteParams) {
-  const resume = await getResume(lang);
+  if (isValidLang(lang) === false) {
+    notFound();
+  }
 
-  if (resume === undefined) return null;
+  const resume = await getResumeByLang(lang);
 
   return {
     ...getMetaData({
@@ -33,58 +40,19 @@ export async function generateMetadata({ params: { lang } }: RouteParams) {
   };
 }
 
-async function getJobs(lang: string): Promise<JobType[]> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/jobs/?lang=${lang}`,
-    { next: { revalidate: 24 * 3600 } },
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
-async function getTrainings(lang: string): Promise<Training[]> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/trainings/?lang=${lang}`,
-    { next: { revalidate: 24 * 3600 } },
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
-async function getResume(lang: string): Promise<Resume> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/resume/?lang=${lang}`,
-    { next: { revalidate: 24 * 3600 } },
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
 export async function generateStaticParams() {
   return [{ lang: "fr" }, { lang: "en" }];
 }
 
 export default async function ResumePage({ params: { lang } }: RouteParams) {
-  if (["en", "fr"].includes(lang) === false) {
+  if (isValidLang(lang) === false) {
     notFound();
   }
 
   const [jobs, trainings, resume] = await Promise.all([
-    getJobs(lang),
-    getTrainings(lang),
-    getResume(lang),
+    getJobsByLang(lang),
+    getTrainingsByLang(lang),
+    getResumeByLang(lang),
   ]);
 
   return (

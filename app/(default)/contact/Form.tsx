@@ -5,6 +5,7 @@ import Input from "../../../components/form/Input";
 import Textarea from "../../../components/form/Textarea";
 import Label from "../../../components/form/Label";
 import Button from "../../../components/form/Button";
+import { sendContactEmail } from "../../actions/contact";
 
 export default function Form() {
   const [name, setName] = useState("");
@@ -14,11 +15,7 @@ export default function Form() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    fetch("/api/contact", {
-      body: JSON.stringify({ name, email, message }),
-      headers: { "Content-Type": "application/json" },
-      method: "POST",
-    });
+    sendContactEmail(email, name, message);
   };
 
   return (

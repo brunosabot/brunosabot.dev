@@ -1,9 +1,9 @@
 import { formatDistanceToNow } from "date-fns";
 import Card from "../../../../components/card/Card";
 import PageTitle from "../../../../components/typography/PageTitle";
-import { Post } from "../../../../lib/notion";
 import { getMetaData } from "../../../../lib/metadata";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
+import { getPosts } from "../../../actions/posts";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -14,15 +14,6 @@ export async function generateMetadata() {
     },
     "/posts/",
   );
-}
-
-async function getPosts() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/`, {
-    next: { revalidate: 3600 },
-  });
-  const posts = (await response.json()) as Post[];
-
-  return posts;
 }
 
 export default async function PostsPage() {

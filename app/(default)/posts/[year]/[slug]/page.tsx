@@ -14,10 +14,10 @@ import {
   getNotionPosts,
   getNotionPost,
   FullPost,
-  Post,
 } from "../../../../../lib/notion";
 import { getMetaData, SITE_METADATA } from "../../../../../lib/metadata";
 import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
+import { getPost, getPosts } from "../../../../actions/posts";
 
 function getReadingTime(post: FullPost) {
   const statMarkdown = readingTime(post.content);
@@ -55,25 +55,6 @@ export async function generateMetadata({
     },
     `/posts/${year}/${slug}/`,
   );
-}
-
-async function getPosts() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/posts/`, {
-    next: { revalidate: 3600 },
-  });
-  const posts = (await response.json()) as Post[];
-
-  return posts;
-}
-
-async function getPost(year: string, slug: string) {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/posts/${year}/${slug}/`,
-    { next: { revalidate: 3600 } },
-  );
-  const post = (await response.json()) as FullPost;
-
-  return post;
 }
 
 export default async function PostPage({

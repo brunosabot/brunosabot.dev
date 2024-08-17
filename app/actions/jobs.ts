@@ -1,7 +1,6 @@
-import { NextRequest } from "next/server";
-import Job from "../../../types/Job";
+"use server";
 
-export const revalidate = 21600;
+import Job from "../../types/Job";
 
 interface Jobs {
   en: Job[];
@@ -269,16 +268,6 @@ const jobs: Jobs = {
   ],
 };
 
-export async function GET(request: NextRequest) {
-  const lang = request.nextUrl.searchParams.get("lang") as keyof Jobs;
-
-  if (lang === undefined) return new Response("NOT FOUND", { status: 404 });
-  if (lang === null) return new Response("NOT FOUND", { status: 404 });
-  if (["fr", "en"].includes(lang) === false)
-    return new Response("NOT FOUND", { status: 404 });
-
-  return new Response(JSON.stringify(jobs[lang]), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
+export async function getJobsByLang(lang: "fr" | "en") {
+  return jobs[lang];
 }
