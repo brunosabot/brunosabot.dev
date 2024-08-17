@@ -12,7 +12,7 @@ import { getTrainingsByLang } from "../../actions/trainings";
 import { getResumeByLang } from "../../actions/resume";
 
 type Lang = "fr" | "en";
-export function isValidLang(lang: string): lang is Lang {
+function isValidLang(lang: string): lang is Lang {
   return ["fr", "en"].includes(lang);
 }
 

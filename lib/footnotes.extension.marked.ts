@@ -1,4 +1,4 @@
-import { marked } from "marked";
+import { marked, MarkedExtension, Tokens } from "marked";
 
 const footnoteMatch = /^\(\^([^\)]+)\):([\s\S]*)$/;
 const referenceMatch = /\[\^([^\]]+)\](?!\()/g;
@@ -8,7 +8,7 @@ const footnotePrefix = "footnotes";
 const footnoteTemplate = (ref: string, text: string) => {
   return `<span id="${footnotePrefix}:${ref}">
     <a href="#${referencePrefix}:${ref}" style="text-decoration: none">${ref}↩</a>
-    ${marked.parseInline(text)}
+    ${text}
   </span>`;
 };
 const referenceTemplate = (ref: string) => {
@@ -29,19 +29,32 @@ const interpolateFootnotes = (text: string) => {
   });
 };
 
-const footnotes = {
-  paragraph(text: any) {
-    // @ts-ignore
-    return marked.Renderer.prototype.paragraph.apply(null, [
-      interpolateReferences(interpolateFootnotes(text)),
-    ]);
-  },
-  text(text: any) {
-    // @ts-ignore
-    return marked.Renderer.prototype.text.apply(null, [
-      interpolateReferences(interpolateFootnotes(text)),
-    ]);
+const footnotesExtension: MarkedExtension = {
+  renderer: {
+    paragraph(token: Tokens.Paragraph) {
+      const text = this.parser.parseInline(token.tokens);
+      const paragraphWithRef = interpolateReferences(
+        interpolateFootnotes(text),
+      );
+
+      return `<p>${paragraphWithRef}</p>`;
+    },
+    text(token: Tokens.Text | Tokens.Escape | Tokens.Tag) {
+      if ("tokens" in token) {
+        if (token.tokens === undefined) {
+          return "";
+        }
+
+        if (token.tokens.length === 0) {
+          return "";
+        }
+        const text = this.parser.parseInline(token.tokens);
+        return interpolateReferences(interpolateFootnotes(text));
+      } else {
+        return interpolateReferences(interpolateFootnotes(token.text));
+      }
+    },
   },
 };
 
-export default footnotes;
+export default footnotesExtension;

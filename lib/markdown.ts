@@ -1,14 +1,14 @@
 import { marked } from "marked";
-import code from "./code.renderer.marked";
-import footnotes from "./footnotes.renderer.marked";
-import image from "./image.renderer.marked";
-import headings from "./headings.renderer.marked";
+import codeExtension from "./code.extension.marked";
+import footnotesExtension from "./footnotes.extension.marked";
+import imageExtension from "./image.extension.marked";
 import gistPlugin from "./gist.plugin.marked";
+import headingsExtension from "./headings.extension.marked";
 
-marked.use({ renderer: code });
-marked.use({ renderer: footnotes });
-marked.use({ renderer: image });
-marked.use({ renderer: headings });
+marked.use(codeExtension);
+marked.use(footnotesExtension);
+marked.use(imageExtension);
+marked.use(headingsExtension);
 marked.use(gistPlugin);
 
 export default async function getMarkdown(content: string) {
