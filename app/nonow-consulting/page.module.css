@@ -1,5 +1,6 @@
 .Page {
   background-color: #011c37;
+  color: white;
   min-height: 100vh;
   padding: 32px;
 }
@@ -10,7 +11,6 @@
 }
 
 .Title {
-  color: white;
   font-size: 4.5rem;
   font-weight: 100;
   letter-spacing: -0.1rem;
@@ -35,7 +35,6 @@
   margin-bottom: 32px;
 }
 .Skill {
-  color: white;
   display: inline;
   font-size: 1.5rem;
   text-align: center;
