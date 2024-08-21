@@ -63,6 +63,7 @@
   margin: auto;
   overflow-x: auto;
   scrollbar-color: #fa4c09 transparent;
+  scrollbar-gutter: stable both-edges;
   scrollbar-width: thin;
   width: 100%;
 }
@@ -82,15 +83,19 @@
   max-width: 600px;
   overflow-y: auto;
   scrollbar-color: #fa4c09 transparent;
+  scrollbar-gutter: stable both-edges;
   scrollbar-width: thin;
-  width: 80%;
+  width: 90%;
 }
 
 .PopUpDescription p:first-child {
   margin-top: 0;
 }
 .PopUpDescription ul {
+  list-style-position: inside;
+  list-style-type: "- ";
   margin: 0;
+  padding: 0;
 }
 .PopUpDescription li {
   margin-bottom: 8px;
