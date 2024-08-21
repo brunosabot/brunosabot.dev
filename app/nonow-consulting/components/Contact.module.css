@@ -1,0 +1,106 @@
+.Title {
+  font-size: 2rem;
+  font-weight: 100;
+  margin-top: 64px;
+  text-align: center;
+}
+
+.Input,
+.AutoGrow::after {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: white;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  grid-area: 1 / 1 / 2 / 2;
+  margin: 0 auto;
+  max-width: 500px;
+  min-height: 48px;
+  padding: 12px 16px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+.Input:focus,
+.Input:hover {
+  border-color: white;
+  outline: none;
+}
+
+.Input:invalid {
+  border-color: red;
+}
+
+/* Change the white to any color */
+.Input:-webkit-autofill,
+.Input:-webkit-autofill:hover,
+.Input:-webkit-autofill:focus,
+.Input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #011c37 inset !important;
+}
+.Input:-webkit-autofill {
+  border: 2px solid #1287e5;
+  -webkit-text-fill-color: white !important;
+}
+
+.NoGrow {
+  display: block;
+  margin: 16px auto;
+}
+
+.AutoGrow {
+  display: grid;
+  margin: 16px auto;
+}
+
+.AutoGrow::after {
+  content: attr(data-replicated-value) " ";
+  visibility: hidden;
+  white-space: pre-wrap;
+}
+
+.AutoGrow > .Input {
+  overflow: hidden;
+  resize: none;
+}
+
+.Submit {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  margin: auto;
+  max-width: 500px;
+  padding: 8px 16px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+.Submit:hover {
+  background-color: white;
+  color: #011c37;
+}
+.Submit:focus {
+  border-color: white;
+  outline: none;
+}
+
+.SubmittedWrapper {
+  left: 0;
+  padding: 16px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+.Submitted {
+  background-color: #006319;
+  border-radius: 8px;
+  color: white;
+  margin: auto;
+  padding: 16px;
+  text-align: center;
+}

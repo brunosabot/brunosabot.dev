@@ -1,0 +1,43 @@
+.Page {
+  background-color: #011c37;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.Logo {
+  display: block;
+  margin: auto;
+}
+
+.Title {
+  color: white;
+  font-size: 4.5rem;
+  font-weight: 100;
+  letter-spacing: -0.1rem;
+  line-height: 3.5rem;
+  margin: auto;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+.TitleAccent {
+  color: #fa4c09;
+  font-weight: 700;
+  letter-spacing: -0.4rem;
+}
+
+.Skills {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.Skill {
+  color: white;
+  display: inline;
+  font-size: 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+}
