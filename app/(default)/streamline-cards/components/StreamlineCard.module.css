@@ -23,7 +23,10 @@
 }
 
 .Code {
+  border: 1px solid var(--border-light-color);
+  border-radius: 8px;
   display: block;
   margin: 32px 0;
+  padding: 16px;
   white-space: break-spaces !important;
 }
