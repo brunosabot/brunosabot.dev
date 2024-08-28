@@ -7,10 +7,13 @@ import Prism from "prismjs";
 import "prismjs/components/prism-yaml";
 import "prismjs/themes/prism-dark.css";
 
+export const revalidate = 21600;
+
 export async function generateMetadata() {
   return getMetaData(
     {
-      description: "TODO",
+      description:
+        "Find your perfect streamline card templates for your Home Assistant configuration.",
       title: "Streamline Cards",
     },
     "/streamline-cards/",
