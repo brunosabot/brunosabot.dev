@@ -33,7 +33,7 @@ export default function Contact() {
       ) : null}
 
       <form onSubmit={handleSubmit}>
-        <div className={classes.Title}>Vous souhaitez me contacter ?</div>
+        <h2 className={classes.Title}>Vous souhaitez me contacter ?</h2>
         <div className={classes.AutoGrow} data-replicated-value={message}>
           <textarea
             placeholder="Votre message"

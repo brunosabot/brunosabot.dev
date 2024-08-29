@@ -17,12 +17,13 @@ export default async function ResumePage() {
         src={logo}
         className={classes.Logo}
         alt=""
+        role="presentation"
         width={200}
         height={200}
       />
-      <div className={classes.Title}>
+      <h1 className={classes.Title}>
         <span className={classes.TitleAccent}>Nonow</span> Consulting
-      </div>
+      </h1>
 
       <div className={classes.Skills}>
         <div className={classes.Skill}>Webperf</div>
@@ -30,7 +31,7 @@ export default async function ResumePage() {
       </div>
 
       <div className={classes.Projects}>
-        <div className={classes.ProjectsTitle}>Mes Réalisations</div>
+        <h2 className={classes.ProjectsTitle}>Mes Réalisations</h2>
         <Galaxie />
         <CharlotteAnnequin />
       </div>
