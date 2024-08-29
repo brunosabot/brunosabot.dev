@@ -38,7 +38,7 @@ async function mapNotionToStreamlineCard(notionPage: any) {
     code: content.code,
     language: content.language,
     author: properties.Author.rich_text[0]?.plain_text,
-    image: properties.Image.files[0].file.url,
+    image: properties.Image.files[0].external.url,
   };
 }
 

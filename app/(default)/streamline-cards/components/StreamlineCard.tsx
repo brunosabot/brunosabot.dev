@@ -1,11 +1,9 @@
 "use client";
 
 import SimpleCard from "../../../../components/card/SimpleCard";
-import CardTitle from "../../../../components/card/CardTitle";
 import CardTag from "../../../../components/card/CardTag";
 import classes from "./StreamlineCard.module.css";
 import { useState } from "react";
-import Image from "next/image";
 
 interface IStreamlineCardProps {
   id: string;
