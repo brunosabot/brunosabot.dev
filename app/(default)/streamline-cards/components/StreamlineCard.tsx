@@ -41,14 +41,17 @@ export default function StreamlineCard({
 
       {isCodeShown ? (
         <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className={classes.Image}
-            src={image}
-            alt={title}
-            loading="lazy"
-            decoding="async"
-          />
+          {/* eslint-disable @next/next/no-img-element */}
+          {image ? (
+            <img
+              className={classes.Image}
+              src={image}
+              alt={title}
+              loading="lazy"
+              decoding="async"
+            />
+          ) : null}
+          {/* eslint-enable @next/next/no-img-element */}
           <pre>
             <code
               className={`language-${language} ${classes.Code}`}
