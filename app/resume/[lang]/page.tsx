@@ -3,7 +3,6 @@ import Job from "../../../components/resume/Job";
 import SocialLink from "../../../components/resume/SocialLink";
 import Title from "../../../components/resume/Title";
 import classes from "./resume.module.css";
-import { RouteParams } from "./types";
 import { notFound } from "next/navigation";
 import { getMetaData, SITE_METADATA } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
@@ -11,12 +10,16 @@ import { getJobsByLang } from "../../actions/jobs";
 import { getTrainingsByLang } from "../../actions/trainings";
 import { getResumeByLang } from "../../actions/resume";
 
+type Params = Promise<{ lang: string }>;
+
 type Lang = "fr" | "en";
 function isValidLang(lang: string): lang is Lang {
   return ["fr", "en"].includes(lang);
 }
 
-export async function generateMetadata({ params: { lang } }: RouteParams) {
+export async function generateMetadata({ params }: { params: Params }) {
+  const { lang } = await params;
+
   if (isValidLang(lang) === false) {
     notFound();
   }
@@ -44,7 +47,9 @@ export async function generateStaticParams() {
   return [{ lang: "fr" }, { lang: "en" }];
 }
 
-export default async function ResumePage({ params: { lang } }: RouteParams) {
+export default async function ResumePage({ params }: { params: Params }) {
+  const { lang } = await params;
+
   if (isValidLang(lang) === false) {
     notFound();
   }

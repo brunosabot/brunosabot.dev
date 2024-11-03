@@ -3,9 +3,10 @@ import Card from "../../../../components/card/Card";
 import PageTitle from "../../../../components/typography/PageTitle";
 import { getNotionTags } from "../../../../lib/notion-posts";
 import { getMetaData } from "../../../../lib/metadata";
-import { RouteParams } from "./types";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
 import { getPostsByTag } from "../../../actions/posts";
+
+type Params = Promise<{ tag: string }>;
 
 export async function generateStaticParams() {
   const tags = await getNotionTags();
@@ -13,7 +14,9 @@ export async function generateStaticParams() {
   return tags.map((tag) => ({ tag }));
 }
 
-export async function generateMetadata({ params: { tag } }: RouteParams) {
+export async function generateMetadata({ params }: { params: Params }) {
+  const { tag } = await params;
+
   return getMetaData(
     {
       description: `Interested with ${decodeURI(tag)}? Check out all the blog posts about this topic!`,
@@ -23,7 +26,9 @@ export async function generateMetadata({ params: { tag } }: RouteParams) {
   );
 }
 
-export default async function PostsPage({ params: { tag } }: RouteParams) {
+export default async function PostsPage({ params }: { params: Params }) {
+  const { tag } = await params;
+
   const posts = await getPostsByTag(tag);
 
   return (

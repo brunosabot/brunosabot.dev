@@ -6,7 +6,6 @@ import Paypal from "../../../../../components/donate/Paypal";
 import Patreon from "../../../../../components/donate/Patreon";
 import BuyMeACoffee from "../../../../../components/donate/BuyMeACoffee";
 import Related from "../../../../../components/post/Related";
-import { RouteParams } from "./types";
 import PostComponent from "../../../../../components/post/Post";
 import getMarkdown from "../../../../../lib/markdown";
 import { mdiLinkVariant } from "@mdi/js";
@@ -15,6 +14,8 @@ import { getMetaData, SITE_METADATA } from "../../../../../lib/metadata";
 import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import { getPost, getPosts } from "../../../../actions/posts";
 import { FullPost } from "../../../../../lib/notion";
+
+type Params = Promise<{ year: string; slug: string }>;
 
 function getReadingTime(post: FullPost) {
   const statMarkdown = readingTime(post.content);
@@ -33,9 +34,9 @@ export async function generateStaticParams() {
   });
 }
 
-export async function generateMetadata({
-  params: { year, slug },
-}: RouteParams) {
+export async function generateMetadata({ params }: { params: Params }) {
+  const { year, slug } = await params;
+
   const post = await getNotionPost(`/posts/${year}/${slug}/`);
 
   if (post === undefined) {
@@ -54,9 +55,9 @@ export async function generateMetadata({
   );
 }
 
-export default async function PostPage({
-  params: { year, slug },
-}: RouteParams) {
+export default async function PostPage({ params }: { params: Params }) {
+  const { year, slug } = await params;
+
   const posts = await getPosts();
   const post = await getPost(year, slug);
 
