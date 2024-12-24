@@ -17,6 +17,8 @@ import { FullPost } from "../../../../../lib/notion";
 
 type Params = Promise<{ year: string; slug: string }>;
 
+export const revalidate = 21600;
+
 function getReadingTime(post: FullPost) {
   const statMarkdown = readingTime(post.content);
 

@@ -8,6 +8,8 @@ import { getPostsByTag } from "../../../actions/posts";
 
 type Params = Promise<{ tag: string }>;
 
+export const revalidate = 21600;
+
 export async function generateStaticParams() {
   const tags = await getNotionTags();
 

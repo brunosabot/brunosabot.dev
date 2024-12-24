@@ -10,7 +10,7 @@ export default function ModalPortal({
   active,
   children,
 }: IModalPortalProps): ReactPortal | null {
-  const elRef = useRef<HTMLDivElement>();
+  const elRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (window) {

@@ -9,6 +9,8 @@ import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 import { getPosts } from "../../actions/posts";
 
+export const revalidate = 21600;
+
 export async function generateMetadata() {
   return getMetaData(
     {
