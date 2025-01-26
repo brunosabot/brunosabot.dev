@@ -3,8 +3,9 @@ import { getMetaData } from "../../../lib/metadata";
 import { getPosts } from "../../actions/posts";
 import Link from "./components/Link";
 import Post from "./components/Post";
-import Title from "../../../generic/typography/Title";
 import Heading from "./components/Heading";
+import Section from "../../../generic/layout/Bloc";
+import Title from "../../../generic/typography/Title";
 
 export const revalidate = 21600;
 
@@ -25,24 +26,30 @@ export default async function IndexPage() {
 
   return (
     <>
-      <Heading />
+      <Section>
+        <Heading />
+      </Section>
 
-      <Title>Latest writings</Title>
-      {posts.slice(0, 3).map((post) => (
-        <Post href={post.path} key={post.path}>
-          {post.title}
-        </Post>
-      ))}
+      <Section>
+        <Title>Latest writings</Title>
+        {posts.slice(0, 3).map((post) => (
+          <Post href={post.path} key={post.path}>
+            {post.title}
+          </Post>
+        ))}
+      </Section>
 
-      <Title>Main skills</Title>
+      <Section>
+        <Title>Main skills</Title>
 
-      <Link href="/tags/Home%20Automation">Home automation</Link>
-      <Link href="/tags/Software%20Engineeering">Software Engineering</Link>
-      <Link href="/tags/React">React</Link>
-      <Link href="/tags/VueJS">Vue.js</Link>
-      <Link href="/tags/Node">Node.js</Link>
-      <Link href="/tags/Webperf">Webperf</Link>
-      <Link href="/tags/UX">User eXperience</Link>
+        <Link href="/tags/Home%20Automation">Home automation</Link>
+        <Link href="/tags/Software%20Engineeering">Software Engineering</Link>
+        <Link href="/tags/React">React</Link>
+        <Link href="/tags/VueJS">Vue.js</Link>
+        <Link href="/tags/Node">Node.js</Link>
+        <Link href="/tags/Webperf">Webperf</Link>
+        <Link href="/tags/UX">User eXperience</Link>
+      </Section>
 
       <SeoBreadcrumb items={[["Home", "/"]]} />
     </>

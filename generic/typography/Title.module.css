@@ -1,7 +1,6 @@
 .Title {
   color: var(--text-color);
   font-size: clamp(1.5rem, 3vw, 3rem);
-  margin-top: 72px;
 }
 .Text {
   position: relative;
