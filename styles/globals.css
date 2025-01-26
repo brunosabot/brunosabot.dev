@@ -19,8 +19,8 @@ body {
   --error-text-color: rgba(255, 0, 0, 0.87);
 
   --sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   --serif: Georgia, Cambria, Times, serif;
   --monospace: Menlo, Monaco, "Courier New", Courier, monospace;
 

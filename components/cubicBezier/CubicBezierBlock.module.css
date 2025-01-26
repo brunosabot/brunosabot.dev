@@ -17,7 +17,7 @@
   transform: scale(0, 1);
   transform-origin: 0 0;
   transition-duration: 1s;
-  transition-property: "all";
+  transition-property: all;
   width: 100%;
 }
 .CubicBezierBlock:hover .Sample {
