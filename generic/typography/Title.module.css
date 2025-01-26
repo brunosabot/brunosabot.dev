@@ -13,12 +13,8 @@
   height: 5px;
   left: 0;
   position: absolute;
-  transform: scaleX(0) skew(-45deg, 0deg);
+  transform: skew(-45deg, -1deg);
   transform-origin: 25%;
-  transition: transform 0.2s ease-in-out;
   width: 100%;
   z-index: -1;
-}
-.Text:hover::before {
-  transform: scaleX(1) skew(-45deg, -1deg);
 }

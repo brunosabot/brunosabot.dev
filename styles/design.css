@@ -75,19 +75,21 @@ html {
 body {
   --color-background: var(--black-1000);
   --color-background-hover: var(--black-950);
+  --color-border: var(--black-900);
+  --color-text: var(--black-0);
 
   --color-accent: var(--cornflower-blue-400);
-  --color-text: var(--cornflower-blue-0);
+  --color-accent-hover: var(--cornflower-blue-500);
 }
 body.spring {
   --color-accent: var(--lima-500);
-  --color-text: var(--lima-0);
+  --color-accent-hover: var(--lima-600);
 }
 body.summer {
   --color-accent: var(--sorrell-brown-400);
-  --color-text: var(--sorrell-brown-0);
+  --color-accent-hover: var(--sorrell-brown-500);
 }
 body.fall {
   --color-accent: var(--zest-600);
-  --color-text: var(--zest-0);
+  --color-accent-hover: var(--zest-700);
 }

@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Input from "../../../components/form/Input";
-import Textarea from "../../../components/form/Textarea";
-import Label from "../../../components/form/Label";
-import Button from "../../../components/form/Button";
 import { sendContactEmail } from "../../actions/contact";
+import InputText from "../../../generic/form/InputText";
+import InputEmail from "../../../generic/form/InputEmail";
+import InputTextarea from "../../../generic/form/InputTextarea";
+import Button from "../../../generic/common/Button";
 
 export default function Form() {
   const [name, setName] = useState("");
@@ -20,40 +20,35 @@ export default function Form() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Label label="Your name">
-        <Input
-          onChange={(e) => setName(e.target.value)}
-          autoComplete="name"
-          id="name"
-          enterKeyHint="done"
-          value={name}
-        />
-      </Label>
+      <InputText
+        label="Your name"
+        onChange={(e) => setName(e.target.value)}
+        autoComplete="name"
+        name="name"
+        enterKeyHint="done"
+        value={name}
+      />
 
-      <Label label="Your email">
-        <Input
-          onChange={(e) => setEmail(e.target.value)}
-          autoComplete="email"
-          type="email"
-          id="email"
-          enterKeyHint="done"
-          value={email}
-        />
-      </Label>
+      <InputEmail
+        label="Your email"
+        onChange={(e) => setEmail(e.target.value)}
+        autoComplete="email"
+        type="email"
+        name="email"
+        enterKeyHint="done"
+        value={email}
+      />
 
-      <Label label="Your message">
-        <Textarea
-          rows={5}
-          id="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-      </Label>
+      <InputTextarea
+        label="Your message"
+        rows={7}
+        id="message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
 
       <div style={{ paddingTop: "32px" }}>
-        <Button type="submit" onClick={() => {}}>
-          Send an email
-        </Button>
+        <Button type="submit">Send an email</Button>
       </div>
     </form>
   );
