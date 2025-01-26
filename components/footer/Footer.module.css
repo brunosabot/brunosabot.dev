@@ -1,11 +1,11 @@
 .Footer {
   background: var(--background-reverse);
-  padding: 60px;
+  padding: 60px 8vw;
 }
 .FooterContent {
   display: grid;
   flex-wrap: wrap;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
   justify-items: center;
   margin: auto;
   max-width: 600px;
@@ -16,4 +16,11 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
+}
+.FooterTheme {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
 }

@@ -4,12 +4,17 @@ import FooterLink from "./FooterLink";
 import Svg from "../svg/Svg";
 import {
   mdiCodepen,
+  mdiCreation,
   mdiDevTo,
+  mdiFlower,
   mdiGithub,
   mdiInstagram,
+  mdiLeafMaple,
   mdiLinkedin,
   mdiMastodon,
   mdiRss,
+  mdiSnowflake,
+  mdiWeatherSunny,
 } from "@mdi/js";
 import svgStrava from "../svg/strava";
 import svgX from "../svg/x";
@@ -19,10 +24,19 @@ import svgPatreon from "../svg/patreon";
 import svgDiscord from "../svg/discord";
 import svgBuyMeACoffee from "../svg/buymeacoffee";
 import { SITE_METADATA } from "../../lib/metadata";
+import FooterTheme from "./FooterTheme";
 
 const Footer: React.FC<{}> = () => {
   return (
     <footer className={classes.Footer}>
+      <div className={classes.FooterTheme}>
+        <FooterTheme name="Auto" theme="" icon={mdiCreation} />
+        <FooterTheme name="Spring" theme="spring" icon={mdiFlower} />
+        <FooterTheme name="Summer" theme="summer" icon={mdiWeatherSunny} />
+        <FooterTheme name="Fall" theme="fall" icon={mdiLeafMaple} />
+        <FooterTheme name="Winter" theme="winter" icon={mdiSnowflake} />
+      </div>
+
       <div className={classes.FooterContent}>
         <FooterLink to="/">About</FooterLink>
         <FooterLink to="/posts/">Posts</FooterLink>

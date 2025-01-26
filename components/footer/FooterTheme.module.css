@@ -1,0 +1,28 @@
+.FooterTheme {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  outline: 0;
+  padding: 0;
+  width: 60px;
+}
+
+.Icon {
+  fill: var(--black-1000);
+}
+[data-theme="spring"] .Icon {
+  fill: var(--lima-500);
+}
+[data-theme="summer"] .Icon {
+  fill: var(--sorrell-brown-400);
+}
+[data-theme="fall"] .Icon {
+  fill: var(--zest-600);
+}
+[data-theme="winter"] .Icon {
+  fill: var(--cornflower-blue-400);
+}

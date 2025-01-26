@@ -19,7 +19,7 @@ const WINTER_SOLSTICE = monthDay(11, 21);
 const END_YEAR = monthDay(11, 32);
 const NEW_YEAR = monthDay(0, 1);
 
-const seasons: Record<Season, any> = {
+export const seasons: Record<Season, any> = {
   spring: (d: MonthDay) => between(d, SPRING_EQUINOX, SUMMER_SOLSTICE),
   summer: (d: MonthDay) => between(d, SUMMER_SOLSTICE, AUTUMN_EQUINOX),
   fall: (d: MonthDay) => between(d, AUTUMN_EQUINOX, WINTER_SOLSTICE),
