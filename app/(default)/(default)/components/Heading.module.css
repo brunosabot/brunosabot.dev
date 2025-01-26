@@ -1,5 +1,5 @@
-.Title {
-  background: linear-gradient(120deg, var(--accent-color), var(--text-color));
+.Heading {
+  background: linear-gradient(120deg, var(--color-accent), var(--color-text));
   background-clip: text;
   font-size: clamp(2rem, 5vw, 4rem);
   -webkit-text-fill-color: transparent;
@@ -7,7 +7,7 @@
 
 .Text {
   background-clip: initial;
-  color: var(--text-color);
+  color: var(--color-text);
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -15,7 +15,7 @@
   z-index: 1;
 }
 .Text::before {
-  background-color: var(--accent-color);
+  background-color: var(--color-accent);
   bottom: -5px;
   content: "";
   height: 10px;

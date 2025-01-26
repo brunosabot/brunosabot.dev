@@ -1,8 +1,8 @@
-import classNames from "./Title.module.css";
+import classNames from "./Heading.module.css";
 
-export default function Title() {
+export default function Heading() {
   return (
-    <h1 className={classNames.Title}>
+    <h1 className={classNames.Heading}>
       Hi, I'm <span className={classNames.Text}>Bruno</span>,<br />a Staff
       Software Engineer at{" "}
       <a

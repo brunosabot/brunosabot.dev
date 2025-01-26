@@ -1,4 +1,4 @@
-.Subtitle {
+.Title {
   color: var(--text-color);
   font-size: clamp(1.5rem, 3vw, 3rem);
   margin-top: 72px;
@@ -8,7 +8,7 @@
   z-index: 1;
 }
 .Text::before {
-  background-color: var(--accent-color);
+  background-color: var(--color-accent);
   bottom: -5px;
   content: "";
   height: 5px;

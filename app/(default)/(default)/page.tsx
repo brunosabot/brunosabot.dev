@@ -3,8 +3,8 @@ import { getMetaData } from "../../../lib/metadata";
 import { getPosts } from "../../actions/posts";
 import Link from "./components/Link";
 import Post from "./components/Post";
-import Subtitle from "./components/Subtitle";
-import Title from "./components/Title";
+import Title from "../../../generic/typography/Title";
+import Heading from "./components/Heading";
 
 export const revalidate = 21600;
 
@@ -25,16 +25,16 @@ export default async function IndexPage() {
 
   return (
     <>
-      <Title />
+      <Heading />
 
-      <Subtitle>Latest writings</Subtitle>
+      <Title>Latest writings</Title>
       {posts.slice(0, 3).map((post) => (
         <Post href={post.path} key={post.path}>
           {post.title}
         </Post>
       ))}
 
-      <Subtitle>Main skills</Subtitle>
+      <Title>Main skills</Title>
 
       <Link href="/tags/Home%20Automation">Home automation</Link>
       <Link href="/tags/Software%20Engineeering">Software Engineering</Link>

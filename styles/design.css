@@ -1,6 +1,20 @@
 html {
   font-size: 16px;
 
+  --black-0: #ffffff;
+  --black-50: #f6f6f6;
+  --black-100: #e7e7e7;
+  --black-200: #d1d1d1;
+  --black-300: #b0b0b0;
+  --black-400: #888888;
+  --black-500: #6d6d6d;
+  --black-600: #5d5d5d;
+  --black-700: #4f4f4f;
+  --black-800: #454545;
+  --black-900: #3d3d3d;
+  --black-950: #111111;
+  --black-1000: #000000;
+
   --cornflower-blue-0: #ffffff;
   --cornflower-blue-50: #eef5ff;
   --cornflower-blue-100: #dae8ff;
@@ -59,22 +73,21 @@ html {
 }
 
 body {
-  --background-color: var(--zest-1000);
-  --accent-color: var(--cornflower-blue-400);
-  --text-color: var(--cornflower-blue-0);
+  --color-background: var(--black-1000);
+  --color-background-hover: var(--black-950);
+
+  --color-accent: var(--cornflower-blue-400);
+  --color-text: var(--cornflower-blue-0);
 }
 body.spring {
-  --background-color: var(--zest-1000);
-  --accent-color: var(--lima-500);
-  --text-color: var(--lima-0);
+  --color-accent: var(--lima-500);
+  --color-text: var(--lima-0);
 }
 body.summer {
-  --background-color: var(--zest-1000);
-  --accent-color: var(--sorrell-brown-400);
-  --text-color: var(--sorrell-brown-0);
+  --color-accent: var(--sorrell-brown-400);
+  --color-text: var(--sorrell-brown-0);
 }
 body.fall {
-  --background-color: var(--zest-1000);
-  --accent-color: var(--zest-600);
-  --text-color: var(--zest-0);
+  --color-accent: var(--zest-600);
+  --color-text: var(--zest-0);
 }

@@ -1,0 +1,50 @@
+.OpenSourceProject {
+  border-radius: 16px;
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 16px;
+  min-height: 154px;
+  overflow: hidden;
+  padding: 16px 16px 16px clamp(16px, calc(13vw + 16px), 186px);
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+.OpenSourceProject:hover {
+  background-color: var(--color-background-hover);
+}
+.Icon {
+  fill: var(--color-text);
+  height: 200px;
+  left: -30px;
+  opacity: 0.1;
+  pointer-events: none;
+  position: absolute;
+  top: -30px;
+  width: 200px;
+}
+.Title {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  margin: 0;
+}
+.Slug {
+  font-size: 0.875rem;
+  margin-right: 16px;
+  opacity: 0.65;
+}
+.Role {
+  font-size: 0.875rem;
+  margin-left: 16px;
+}
+.Role[data-role="Maintainer"] {
+  color: var(--color-accent);
+}
+.Role[data-role="Contributor"] {
+  color: var(--color-text);
+  opacity: 0.65;
+}
+.Description {
+  font-size: 1rem;
+}
