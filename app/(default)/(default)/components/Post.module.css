@@ -1,0 +1,13 @@
+.Post {
+  color: var(--accent-text-color);
+  display: block;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  outline: 0;
+  text-decoration: none;
+  width: 100%;
+}
+.Post:hover {
+  text-decoration: underline;
+}

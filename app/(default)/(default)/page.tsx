@@ -1,22 +1,20 @@
-import BiographyAvatar from "../../../components/biography/BiographyAvatar";
-import BiographyCompany from "../../../components/biography/BiographyCompany";
-import BiographyLine from "../../../components/biography/BiographyLine";
-import BiographySkill from "../../../components/biography/BiographySkill";
-import BiographyPost from "../../../components/biography/BiographyPost";
-import BiographyTitle from "../../../components/biography/BiographyTitle";
-import BiographySubtitle from "../../../components/biography/BiographySubtitle";
-import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import { getMetaData } from "../../../lib/metadata";
 import { getPosts } from "../../actions/posts";
+import Link from "./components/Link";
+import Post from "./components/Post";
+import Subtitle from "./components/Subtitle";
+import Title from "./components/Title";
 
 export const revalidate = 21600;
 
 export async function generateMetadata() {
   return getMetaData(
     {
-      title: "About",
+      title:
+        "Bruno Sabot - Software Engineer | Front-end Development| Home Automation ",
       description:
-        "I'm Bruno Sabot, a Front-end developer in Bordeaux. Explore my portfolio and let's build something amazing!",
+        "Hi, I'm Bruno, a Staff Software Engineer at PlayPlay with a passion for home automation. This page showcases my skills, including React, Vue.js and web performance, and features my latest blog posts.",
     },
     "/",
   );
@@ -27,43 +25,24 @@ export default async function IndexPage() {
 
   return (
     <>
-      <BiographyAvatar />
-      <div>
-        <BiographyTitle>
-          I am Bruno Sabot, a Front-end developer currently living in Bordeaux,
-          France.
-        </BiographyTitle>
-        <BiographyLine>
-          <BiographySkill>FrontEnd Developer</BiographySkill>
-          <BiographySkill>React</BiographySkill>
-          <BiographySkill>Vue.js</BiographySkill>
-          <BiographySkill>Node.js</BiographySkill>
-          <BiographySkill>HTML</BiographySkill>
-          <BiographySkill>CSS</BiographySkill>
-          <BiographySkill>Performance</BiographySkill>
-          <BiographySkill>UX</BiographySkill>
-          <BiographySkill>Home automation</BiographySkill>
-        </BiographyLine>
-        <BiographyLine>
-          <BiographyCompany href="https://playplay.com/">
-            PlayPlay
-          </BiographyCompany>
-          <BiographyCompany ex href="https://www.bdxio.fr/">
-            BDX I/O
-          </BiographyCompany>
-          <BiographyCompany ex href="https://gdg.community.dev/gdg-bordeaux/">
-            GDG Bordeaux
-          </BiographyCompany>
-        </BiographyLine>
-        <BiographyLine>
-          <BiographySubtitle>Latest blog posts</BiographySubtitle>
-          {posts.slice(0, 3).map((post) => (
-            <BiographyPost href={post.path} key={post.path}>
-              {post.title}
-            </BiographyPost>
-          ))}
-        </BiographyLine>
-      </div>
+      <Title />
+
+      <Subtitle>Latest writings</Subtitle>
+      {posts.slice(0, 3).map((post) => (
+        <Post href={post.path} key={post.path}>
+          {post.title}
+        </Post>
+      ))}
+
+      <Subtitle>Main skills</Subtitle>
+
+      <Link href="/tags/Home%20Automation">Home automation</Link>
+      <Link href="/tags/Software%20Engineeering">Software Engineering</Link>
+      <Link href="/tags/React">React</Link>
+      <Link href="/tags/VueJS">Vue.js</Link>
+      <Link href="/tags/Node">Node.js</Link>
+      <Link href="/tags/Webperf">Webperf</Link>
+      <Link href="/tags/UX">User eXperience</Link>
 
       <SeoBreadcrumb items={[["Home", "/"]]} />
     </>

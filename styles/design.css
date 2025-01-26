@@ -1,0 +1,80 @@
+html {
+  font-size: 16px;
+
+  --cornflower-blue-0: #ffffff;
+  --cornflower-blue-50: #eef5ff;
+  --cornflower-blue-100: #dae8ff;
+  --cornflower-blue-200: #bdd8ff;
+  --cornflower-blue-300: #90c0ff;
+  --cornflower-blue-400: #5297ff;
+  --cornflower-blue-500: #3577fc;
+  --cornflower-blue-600: #1f57f1;
+  --cornflower-blue-700: #1741de;
+  --cornflower-blue-800: #1936b4;
+  --cornflower-blue-900: #1a328e;
+  --cornflower-blue-950: #152156;
+  --cornflower-blue-1000: #000000;
+
+  --lima-0: #ffffff;
+  --lima-50: #f5faeb;
+  --lima-100: #e7f4d3;
+  --lima-200: #d1eaac;
+  --lima-300: #b2db7b;
+  --lima-400: #94ca51;
+  --lima-500: #7db936;
+  --lima-600: #5b8b25;
+  --lima-700: #466b20;
+  --lima-800: #3a551f;
+  --lima-900: #32491e;
+  --lima-950: #18270c;
+  --lima-1000: #000000;
+
+  --sorrell-brown-0: #ffffff;
+  --sorrell-brown-50: #f9f8f3;
+  --sorrell-brown-100: #f2f0e2;
+  --sorrell-brown-200: #e3dec5;
+  --sorrell-brown-300: #d2c99f;
+  --sorrell-brown-400: #c2b280;
+  --sorrell-brown-500: #b19a5e;
+  --sorrell-brown-600: #a48752;
+  --sorrell-brown-700: #886d46;
+  --sorrell-brown-800: #6f593d;
+  --sorrell-brown-900: #5a4934;
+  --sorrell-brown-950: #30261a;
+  --sorrell-brown-1000: #000000;
+
+  --zest-0: #ffffff;
+  --zest-50: #fffceb;
+  --zest-100: #fff5c6;
+  --zest-200: #feeb89;
+  --zest-300: #feda4b;
+  --zest-400: #fdc722;
+  --zest-500: #f7a709;
+  --zest-600: #e98604;
+  --zest-700: #b65907;
+  --zest-800: #93440d;
+  --zest-900: #79380e;
+  --zest-950: #461c02;
+  --zest-1000: #000000;
+}
+
+body {
+  --background-color: var(--zest-1000);
+  --accent-color: var(--cornflower-blue-400);
+  --text-color: var(--cornflower-blue-0);
+}
+body.spring {
+  --background-color: var(--zest-1000);
+  --accent-color: var(--lima-500);
+  --text-color: var(--lima-0);
+}
+body.summer {
+  --background-color: var(--zest-1000);
+  --accent-color: var(--sorrell-brown-400);
+  --text-color: var(--sorrell-brown-0);
+}
+body.fall {
+  --background-color: var(--zest-1000);
+  --accent-color: var(--zest-600);
+  --text-color: var(--zest-0);
+}

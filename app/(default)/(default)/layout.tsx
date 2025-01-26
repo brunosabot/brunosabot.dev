@@ -1,9 +1,9 @@
-import classes from "./index.module.css";
+import Content from "./components/Content";
 
-interface IIndexLayoutProps {
+interface ILayoutProps {
   children: React.ReactNode;
 }
 
-export default function IndexLayout({ children }: IIndexLayoutProps) {
-  return <main className={classes.Content}>{children}</main>;
+export default function Layout({ children }: ILayoutProps) {
+  return <Content>{children}</Content>;
 }

@@ -1,6 +1,7 @@
 import SeoWebsite from "../components/seo/Website";
 import { SITE_METADATA } from "../lib/metadata";
 import { season } from "../lib/season";
+import "../styles/design.css";
 import "../styles/globals.css";
 import Script from "next/script";
 

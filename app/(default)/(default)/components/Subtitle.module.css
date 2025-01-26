@@ -1,0 +1,25 @@
+.Subtitle {
+  color: var(--text-color);
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  margin-top: 72px;
+}
+.Text {
+  position: relative;
+  z-index: 1;
+}
+.Text::before {
+  background-color: var(--accent-color);
+  bottom: -5px;
+  content: "";
+  height: 5px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0) skew(-45deg, 0deg);
+  transform-origin: 25%;
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+  z-index: -1;
+}
+.Text:hover::before {
+  transform: scaleX(1) skew(-45deg, -1deg);
+}
