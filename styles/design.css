@@ -93,3 +93,12 @@ body.fall {
   --color-accent: var(--zest-600);
   --color-accent-hover: var(--zest-700);
 }
+
+@media (prefers-color-scheme: light) {
+  body {
+    --color-background: var(--black-0);
+    --color-background-hover: var(--black-50);
+    --color-border: var(--black-200);
+    --color-text: var(--black-900);
+  }
+}
