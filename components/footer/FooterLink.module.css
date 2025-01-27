@@ -1,6 +1,6 @@
 .FooterLink {
   align-items: center;
-  color: var(--text-reverse-color);
+  color: var(--text-color);
   display: flex;
   height: 40px;
   justify-content: center;

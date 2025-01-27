@@ -28,9 +28,9 @@
   }
 }
 .resume-language-tag {
-  border: 1px solid var(--text-reverse-color);
+  border: 1px solid var(--text-color);
   border-radius: 3px;
-  color: var(--text-reverse-color);
+  color: var(--text-color);
   font-size: 14px;
   line-height: 1em;
   margin-top: -3px;
@@ -93,7 +93,6 @@
 }
 
 .resume-life-experiences {
-  background: var(--background-reverse);
   flex-basis: 60%;
   height: 100%;
   overflow: auto;

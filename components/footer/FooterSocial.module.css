@@ -1,6 +1,6 @@
 .FooterSocial {
   border-radius: 50%;
-  fill: var(--text-reverse-color);
+  fill: var(--text-color);
   margin: 4px;
   padding: 8px;
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);

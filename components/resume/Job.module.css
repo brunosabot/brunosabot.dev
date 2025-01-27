@@ -2,7 +2,7 @@
   padding-top: 16px;
 }
 .resume-job__name {
-  color: var(--accent-reverse-text-color);
+  color: var(--accent-text-color);
   font-size: 16px;
   font-weight: 700;
   line-height: 34px;
@@ -12,7 +12,7 @@
   color: inherit;
 }
 .resume-job__subtitle {
-  color: var(--text-reverse-medium-color);
+  color: var(--text-medium-color);
   font-size: 13px;
   line-height: 24px;
 }
@@ -22,19 +22,8 @@
   padding: 0;
 }
 .resume-job__detail-item {
-  color: var(--text-reverse-color);
+  color: var(--text-color);
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
-}
-@media print {
-  .resume-job__name {
-    color: var(--accent-text-color);
-  }
-  .resume-job__subtitle {
-    color: var(--text-medium-color);
-  }
-  .resume-job__detail-item {
-    color: var(--text-color);
-  }
 }
