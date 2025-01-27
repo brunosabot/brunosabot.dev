@@ -2,6 +2,7 @@
   align-items: center;
   background: transparent;
   border: 0;
+  color: var(--text-reverse-color);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -12,7 +13,7 @@
 }
 
 .Icon {
-  fill: var(--black-1000);
+  fill: var(--text-reverse-color);
 }
 [data-theme="spring"] .Icon {
   fill: var(--lima-500);
