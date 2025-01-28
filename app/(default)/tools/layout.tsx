@@ -1,11 +1,9 @@
-import classes from "./index.module.css";
+import Content from "./components/Content";
 
 interface IToolsLayoutProps {
   children: React.ReactNode;
 }
 
 export default function ToolsLayout({ children }: IToolsLayoutProps) {
-  const classNames = [classes.Content, classes.ContentShort].join(" ");
-
-  return <main className={classNames}>{children}</main>;
+  return <Content>{children}</Content>;
 }

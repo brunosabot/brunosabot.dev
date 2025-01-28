@@ -9,7 +9,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       description:
-        "Conquer Complex URLs: Effortless Encoding & Decoding with Our Toolq",
+        "Conquer Complex URLs: Effortless Encoding & Decoding with Our Tool",
       title: "URL Encode And Decode Tool",
     },
     "/tools/url-encode-decode/",
