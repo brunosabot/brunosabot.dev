@@ -51,6 +51,19 @@ export default async function IndexPage() {
         <Link href="/tags/UX">User eXperience</Link>
       </Section>
 
+      <Section>
+        <Title>Worth Exploring</Title>
+
+        <Post href="https://medium.brunosabot.dev/">My Medium home page</Post>
+        <Post href="https://github.com/brunosabot/streamline-card">
+          Streamline Card: A Home Assistant Card
+        </Post>
+        <Post href="/streamline-cards">My Streamline Card templates</Post>
+        <Post href="https://www.answwr.com/">
+          Answwr, my cool decision making Android app
+        </Post>
+      </Section>
+
       <SeoBreadcrumb items={[["Home", "/"]]} />
     </>
   );
