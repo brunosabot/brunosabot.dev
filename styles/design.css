@@ -71,6 +71,8 @@ html {
   --zest-900: #79380e;
   --zest-950: #461c02;
   --zest-1000: #000000;
+
+  --bubble-card-background: #393746;
 }
 
 body {

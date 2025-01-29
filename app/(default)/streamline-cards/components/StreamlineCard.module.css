@@ -1,32 +1,51 @@
-.Title {
-  align-items: center;
-  cursor: pointer;
+.StreamlineCard {
+  border-radius: 16px;
+  color: inherit;
   display: flex;
-  font-size: 22px;
-  font-weight: 500;
-  gap: 8px;
-  line-height: 1.25;
-}
-
-.Author {
-  color: var(--text-medium-color);
-  font-family: var(--sans-serif);
-  font-size: 16px;
-  font-weight: 300;
-  margin-right: auto;
-}
-
-.Image {
-  border-radius: 8px;
-  margin-top: 32px;
-  max-width: 100%;
-}
-
-.Code {
-  border: 1px solid var(--border-light-color);
-  border-radius: 8px;
-  display: block;
-  margin: 32px 0;
+  flex-direction: column;
+  gap: 16px;
   padding: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+}
+.StreamlineCard.isOpened,
+.StreamlineCard:hover {
+  background-color: var(--color-background-hover);
+}
+.Clickable {
+  cursor: pointer;
+}
+.ImageWrapper {
+  background-color: var(--bubble-card-background);
+  border-radius: 8px;
+  flex-shrink: 0;
+  height: 200px;
+  position: relative;
+  width: 100%;
+}
+.Image {
+  object-fit: contain;
+}
+.Title {
+  margin: 0 0 16px 0;
+}
+.Description {
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.Published {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-left: 8px;
+  opacity: 0.65;
+}
+.Code {
   white-space: break-spaces !important;
 }

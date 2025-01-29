@@ -34,6 +34,7 @@ async function mapNotionToStreamlineCard(notionPage: any) {
     id: notionPage.id,
     title: properties.Name.title[0].plain_text,
     status: properties.Status.status.name,
+    description: properties.Description.rich_text[0]?.plain_text ?? "",
     tags: getTags(properties.Tags),
     code: content.code,
     language: content.language,

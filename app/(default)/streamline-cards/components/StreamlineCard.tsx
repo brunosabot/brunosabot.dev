@@ -1,67 +1,67 @@
 "use client";
 
-import SimpleCard from "../../../../components/card/SimpleCard";
-import CardTag from "../../../../components/card/CardTag";
-import classes from "./StreamlineCard.module.css";
+import Image from "next/image";
+import classNames from "./StreamlineCard.module.css";
+import Hashtag from "../../../../generic/common/Hashtag";
 import { useState } from "react";
 
 interface IStreamlineCardProps {
-  id: string;
+  image?: string;
+  description: string;
   title: string;
   tags: string[];
-  author: string;
-  image: string;
-  children: string;
+  children: React.ReactNode;
   language: string;
+  author: string;
 }
 
-export default function StreamlineCard({
-  id,
-  title,
-  tags,
-  author,
-  image,
-  children,
-  language,
-}: IStreamlineCardProps) {
+export default function StreamlineCard(props: IStreamlineCardProps) {
   const [isCodeShown, setIsCodeShown] = useState(false);
+  const classList = [classNames.StreamlineCard];
+
+  if (isCodeShown) classList.push(classNames.isOpened);
 
   return (
-    <SimpleCard key={id}>
+    <div className={classList.join(" ")}>
       <div
+        className={classNames.Clickable}
         onClick={() => setIsCodeShown(!isCodeShown)}
-        className={classes.Title}
       >
-        {title}
-        <span className={classes.Author}>by {author}</span>
-        {tags.map((tag) => (
-          <CardTag tag={tag} key={tag} />
-        ))}
+        <h2 className={classNames.Title}>
+          {props.title}
+          <span className={classNames.Published}>By {props.author}</span>
+        </h2>
+
+        <p className={classNames.Description}>{props.description}</p>
+
+        <div className={classNames.Tags}>
+          {props.tags.map((tag) => (
+            <Hashtag key={tag}>{tag}</Hashtag>
+          ))}
+        </div>
       </div>
 
-      {isCodeShown ? (
-        <>
-          {/* eslint-disable @next/next/no-img-element */}
-          {image ? (
-            <img
-              className={classes.Image}
-              src={image}
-              alt={title}
-              loading="lazy"
-              decoding="async"
-            />
-          ) : null}
-          {/* eslint-enable @next/next/no-img-element */}
-          <pre>
-            <code
-              className={`language-${language} ${classes.Code}`}
-              dangerouslySetInnerHTML={{
-                __html: children,
-              }}
-            />
-          </pre>
-        </>
+      {isCodeShown && props.image ? (
+        <div className={classNames.ImageWrapper}>
+          <Image
+            className={classNames.Image}
+            src={props.image}
+            alt={props.title}
+            fill={true}
+          />
+        </div>
       ) : null}
-    </SimpleCard>
+
+      {isCodeShown && props.children ? (
+        <pre>
+          <code
+            className={`language-${props.language} ${classNames.Code}`}
+            dangerouslySetInnerHTML={{
+              __html: props.children,
+            }}
+          />
+        </pre>
+      ) : null}
+    </div>
   );
 }

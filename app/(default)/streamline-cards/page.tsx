@@ -6,6 +6,7 @@ import StreamlineCard from "./components/StreamlineCard";
 import Prism from "prismjs";
 import "prismjs/components/prism-yaml";
 import "prismjs/themes/prism-dark.css";
+import List from "./components/List";
 
 export const revalidate = 21600;
 
@@ -26,19 +27,21 @@ export default async function StreamlineCardsPage() {
   return (
     <>
       <PageTitle>Streamline Cards</PageTitle>
-      {streamlineCards.map((streamlineCard) => (
-        <StreamlineCard
-          key={streamlineCard.id}
-          id={streamlineCard.id}
-          title={streamlineCard.title}
-          tags={streamlineCard.tags}
-          author={streamlineCard.author}
-          image={streamlineCard.image}
-          language={streamlineCard.language}
-        >
-          {Prism.highlight(streamlineCard.code, Prism.languages.yaml, "yaml")}
-        </StreamlineCard>
-      ))}
+      <List>
+        {streamlineCards.map((streamlineCard) => (
+          <StreamlineCard
+            description={streamlineCard.description}
+            key={streamlineCard.id}
+            title={streamlineCard.title}
+            tags={streamlineCard.tags}
+            author={streamlineCard.author}
+            image={streamlineCard.image}
+            language={streamlineCard.language}
+          >
+            {Prism.highlight(streamlineCard.code, Prism.languages.yaml, "yaml")}
+          </StreamlineCard>
+        ))}
+      </List>
 
       <SeoBreadcrumb
         items={[
