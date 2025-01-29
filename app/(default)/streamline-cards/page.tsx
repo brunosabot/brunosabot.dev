@@ -1,4 +1,3 @@
-import PageTitle from "../../../components/typography/PageTitle";
 import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 import { getStreamlineCards } from "../../actions/streamline";
@@ -7,6 +6,7 @@ import Prism from "prismjs";
 import "prismjs/components/prism-yaml";
 import "prismjs/themes/prism-dark.css";
 import List from "./components/List";
+import Title from "../../../generic/typography/Title";
 
 export const revalidate = 21600;
 
@@ -26,7 +26,7 @@ export default async function StreamlineCardsPage() {
 
   return (
     <>
-      <PageTitle>Streamline Cards</PageTitle>
+      <Title>Streamline Cards</Title>
       <List>
         {streamlineCards.map((streamlineCard) => (
           <StreamlineCard
