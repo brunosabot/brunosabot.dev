@@ -1,14 +1,18 @@
+import { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
 import classNames from "./Hashtag.module.css";
 
-interface IHashtagProps {
-  children: React.ReactNode;
-}
+type IHashtagProps = DetailedHTMLProps<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+>;
 
-export default function Hashtag({ children }: IHashtagProps) {
+export default function Hashtag({ children, ...rest }: IHashtagProps) {
+  const Component = rest.href ? "a" : "span";
+
   return (
-    <span className={classNames.Hashtag}>
+    <Component {...rest} className={classNames.Hashtag}>
       <span className={classNames.Hash}>#</span>
       {children}
-    </span>
+    </Component>
   );
 }

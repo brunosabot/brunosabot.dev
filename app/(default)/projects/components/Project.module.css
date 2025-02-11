@@ -1,0 +1,63 @@
+.Project {
+  border-radius: 16px;
+  color: inherit;
+  display: grid;
+  gap: 16px;
+  grid-template-areas:
+    "title title"
+    "image description";
+  padding: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+}
+.Project:hover {
+  background-color: var(--color-background-hover);
+}
+.ImageWrapper {
+  aspect-ratio: 170 / 83;
+  flex-shrink: 0;
+  grid-area: image;
+  max-width: 100%;
+  position: relative;
+  width: 300px;
+}
+.Image {
+  border-radius: 8px;
+  object-fit: cover;
+}
+.Title {
+  grid-area: title;
+  margin: 0;
+  width: 100%;
+}
+.DescriptionWrapper {
+  grid-area: description;
+}
+.Description {
+  line-height: 1.5;
+  margin: 0 0 8px 0;
+}
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.Published {
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.65;
+}
+
+@media screen and (max-width: 768px) {
+  .Project {
+    grid-template-areas:
+      "title"
+      "image"
+      "description";
+  }
+  .ImageWrapper {
+    width: 100%;
+  }
+}

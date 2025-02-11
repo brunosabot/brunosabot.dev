@@ -27,21 +27,19 @@ export default async function PostsPage() {
       <Title>Post list</Title>
       <List>
         {posts.map((post, index) => (
-          <div key={index}>
-            <Post
-              image={post.originalImage}
-              color={post.color}
-              description={post.subtitle}
-              lang={post.lang}
-              title={post.title}
-              platform={post.platform}
-              date={post.date}
-              to={post.path}
-              key={post.path + "-new"}
-              priority={index === 0}
-              tags={post.tags}
-            />
-          </div>
+          <Post
+            key={index}
+            image={post.originalImage}
+            color={post.color}
+            description={post.subtitle}
+            lang={post.lang}
+            title={post.title}
+            platform={post.platform}
+            date={post.date}
+            to={post.path}
+            priority={index === 0}
+            tags={post.tags}
+          />
         ))}
       </List>
 

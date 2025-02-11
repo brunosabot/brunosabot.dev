@@ -1,10 +1,10 @@
-import { formatDistanceToNow } from "date-fns";
-import Card from "../../../../components/card/Card";
-import PageTitle from "../../../../components/typography/PageTitle";
 import { getNotionTags } from "../../../../lib/notion-posts";
 import { getMetaData } from "../../../../lib/metadata";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
 import { getPostsByTag } from "../../../actions/posts";
+import Post from "./components/Post";
+import Title from "../../../../generic/typography/Title";
+import List from "./components/List";
 
 type Params = Promise<{ tag: string }>;
 
@@ -31,26 +31,29 @@ export async function generateMetadata({ params }: { params: Params }) {
 export default async function PostsPage({ params }: { params: Params }) {
   const { tag } = await params;
 
-  const posts = await getPostsByTag(tag);
+  const posts = await getPostsByTag(decodeURI(tag));
 
   return (
     <>
-      <PageTitle>Blog Posts About {decodeURI(tag)}</PageTitle>
-      {posts.map((post, index) => (
-        <Card
-          image={post.originalImage}
-          color={post.color}
-          description={post.subtitle}
-          icon={post.lang}
-          title={post.title}
-          subtitle={post.platform}
-          date={formatDistanceToNow(new Date(post.date), { addSuffix: true })}
-          to={post.path}
-          key={post.path}
-          priority={index === 0}
-          tags={post.tags}
-        />
-      ))}
+      <Title>Blog Posts About {decodeURI(tag)}</Title>
+
+      <List>
+        {posts.map((post, index) => (
+          <Post
+            key={index}
+            image={post.originalImage}
+            color={post.color}
+            description={post.subtitle}
+            lang={post.lang}
+            title={post.title}
+            platform={post.platform}
+            date={post.date}
+            to={post.path}
+            priority={index === 0}
+            tags={post.tags}
+          />
+        ))}
+      </List>
 
       <SeoBreadcrumb
         items={[

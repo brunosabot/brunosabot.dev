@@ -1,9 +1,9 @@
-import classes from "./index.module.css";
+import Content from "./components/Content";
 
-interface ITagsLayoutProps {
+interface IPostsLayoutProps {
   children: React.ReactNode;
 }
 
-export default function TagsLayout({ children }: ITagsLayoutProps) {
-  return <main className={classes.Content}>{children}</main>;
+export default function PostsLayout({ children }: IPostsLayoutProps) {
+  return <Content>{children}</Content>;
 }

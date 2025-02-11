@@ -1,29 +1,46 @@
-import PageTitle from "../../../../components/typography/PageTitle";
-import { getNotionTags } from "../../../../lib/notion-posts";
+import { getNotionPosts } from "../../../../lib/notion-posts";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
-import classes from "./index.module.css";
+import Hashtag from "../../../../generic/common/Hashtag";
+import Title from "../../../../generic/typography/Title";
+import List from "./components/List";
 
-export default async function PostsPage() {
-  const tags = await getNotionTags();
+export default async function TagsPage() {
+  const posts = await getNotionPosts();
+
+  const tagsCount = posts
+    .map((p) => p.tags.split(","))
+    .flat()
+    .reduce<Record<string, number>>(
+      (acc, val) => ({ ...acc, [val]: (acc[val] ?? 0) + 1 }),
+      {},
+    );
+
+  const maxCount = Object.entries(tagsCount).reduce(
+    (acc, [, value]) => (acc > value ? acc : value),
+    0,
+  );
+
+  const tags = Object.entries(tagsCount).sort((a, b) =>
+    a[0].localeCompare(b[0]),
+  );
 
   return (
     <>
-      <PageTitle>Blog Tags</PageTitle>
+      <Title>Blog Tags</Title>
 
-      <div className={classes["tags"]}>
-        {tags.map((tag) => (
-          <a
-            className={classes["tag"]}
+      <List>
+        {tags.map(([tag, value]) => (
+          <Hashtag
             href={`/tags/${tag}`}
             key={tag}
             style={{
-              fontSize: `${1 + Math.random()}em`,
+              fontSize: `${1 + value / maxCount}rem`,
             }}
           >
             {tag + " "}
-          </a>
+          </Hashtag>
         ))}
-      </div>
+      </List>
 
       <p>
         Discover a wealth of informative articles on your favorite web

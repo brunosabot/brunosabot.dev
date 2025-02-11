@@ -1,7 +1,8 @@
-import PageTitle from "../../../components/typography/PageTitle";
-import DetailCard from "../../../components/card/DetailCard";
 import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import List from "./components/List";
+import Project from "./components/Project";
+import Title from "../../../generic/typography/Title";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -77,19 +78,20 @@ export default async function ProjectsPage() {
 
   return (
     <>
-      <PageTitle>Project list</PageTitle>
+      <Title>Project list</Title>
 
-      {projects.map((project, index) => (
-        <DetailCard
-          image={project.image}
-          title={project.title}
-          description={project.description}
-          url={project.url}
-          key={project.id}
-          lang={project.lang}
-          priority={index === 0}
-        />
-      ))}
+      <List>
+        {projects.map((project, index) => (
+          <Project
+            image={project.image}
+            title={project.title}
+            description={project.description}
+            to={project.url}
+            key={project.id}
+            priority={index === 0}
+          />
+        ))}
+      </List>
 
       <SeoBreadcrumb
         items={[
