@@ -50,9 +50,9 @@
   color: #f4b400;
 }
 .Given {
+  color: var(--color-text-secondary);
   font-size: 0.85rem;
   font-style: italic;
-  opacity: 0.65;
 }
 
 @media screen and (max-width: 768px) {

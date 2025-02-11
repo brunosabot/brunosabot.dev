@@ -80,6 +80,7 @@ body {
   --color-background-hover: var(--black-950);
   --color-border: var(--black-900);
   --color-text: var(--black-0);
+  --color-text-secondary: var(--black-300);
   --color-text-contrast: var(--black-1000);
 
   --color-accent: var(--cornflower-blue-400);
@@ -104,6 +105,7 @@ body.fall {
     --color-background-hover: var(--black-50);
     --color-border: var(--black-200);
     --color-text: var(--black-900);
+    --color-text-secondary: var(--black-700);
     --color-text-contrast: var(--black-0);
   }
 }

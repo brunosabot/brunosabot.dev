@@ -30,9 +30,9 @@
   margin: 0;
 }
 .Slug {
+  color: var(--color-text-secondary);
   font-size: 0.875rem;
   margin-right: 16px;
-  opacity: 0.65;
 }
 .Role {
   font-size: 0.875rem;
@@ -42,8 +42,7 @@
   color: var(--color-accent);
 }
 .Role[data-role="Contributor"] {
-  color: var(--color-text);
-  opacity: 0.65;
+  color: var(--color-text-secondary);
 }
 .Description {
   font-size: 1rem;

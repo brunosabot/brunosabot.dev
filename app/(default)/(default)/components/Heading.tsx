@@ -9,6 +9,7 @@ export default function Heading() {
         className={classNames.Text}
         target="_blank"
         href="https://playplay.com/"
+        rel="noopener noreferrer"
       >
         PlayPlay
       </a>{" "}

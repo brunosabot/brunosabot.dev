@@ -6,8 +6,8 @@
 }
 
 .Label {
+  color: var(--color-text-secondary);
   line-height: 64px;
-  opacity: 0.65;
   pointer-events: none;
   position: absolute;
   top: 0;
@@ -42,5 +42,4 @@
 .Textarea:focus-visible + .Label {
   color: var(--color-accent);
   line-height: 1em;
-  opacity: 1;
 }

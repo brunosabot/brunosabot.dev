@@ -35,6 +35,7 @@ export default function FooterTheme({ name, theme, icon }: IContentProps) {
 
   return (
     <button
+      type="button"
       data-theme={theme}
       onClick={onClick}
       className={classNames.FooterTheme}

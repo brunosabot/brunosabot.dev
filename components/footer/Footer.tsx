@@ -57,11 +57,7 @@ const Footer: React.FC<{}> = () => {
         <Social href="https://x.com/brunosabot" name="X">
           <Svg d={svgX} />
         </Social>
-        <Social
-          href="https://mastodon.social/@brunosabot"
-          name="Mastodon"
-          rel="me"
-        >
+        <Social href="https://mastodon.social/@brunosabot" name="Mastodon">
           <Svg d={mdiMastodon} />
         </Social>
         <Social href="https://instagram.com/brunosabot" name="Instagram">
