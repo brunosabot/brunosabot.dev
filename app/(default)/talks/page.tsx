@@ -1,7 +1,8 @@
-import PageTitle from "../../../components/typography/PageTitle";
-import CardTalk from "../../../components/card/CardTalk";
 import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import Talk from "./components/Talk";
+import List from "./components/List";
+import Title from "../../../generic/typography/Title";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -79,23 +80,24 @@ export default async function ContactPage() {
 
   return (
     <>
-      <PageTitle>Talk list</PageTitle>
+      <Title>Talk list</Title>
 
-      {talks.map((talk, index) => (
-        <CardTalk
-          image={talk.image ? talk.image : undefined}
-          description={talk.description}
-          language={talk.language}
-          title={talk.title}
-          conferenceName={talk.conferenceName}
-          date={talk.date}
-          id={`${talk.id}`}
-          key={talk.id}
-          slides={talk.slides}
-          youtubeId={talk.youtubeId}
-          priority={index === 0}
-        />
-      ))}
+      <List>
+        {talks.map((talk, index) => (
+          <Talk
+            title={talk.title}
+            image={talk.image ? talk.image : undefined}
+            description={talk.description}
+            lang={talk.language}
+            conference={talk.conferenceName}
+            date={talk.date}
+            key={talk.id}
+            slides={talk.slides}
+            youtubeId={talk.youtubeId}
+            priority={index === 0}
+          />
+        ))}
+      </List>
 
       <SeoBreadcrumb
         items={[

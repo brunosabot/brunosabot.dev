@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Hashtag from "../../../../../generic/common/Hashtag";
 import classNames from "./Post.module.css";
+import { getRelativeTime } from "../../../../../lib/time";
 
 interface IPostProps {
   image?: string;
@@ -16,6 +17,8 @@ interface IPostProps {
 }
 
 export default function Post(props: IPostProps) {
+  const date = getRelativeTime(props.date);
+
   return (
     <a className={classNames.Post} href={props.to}>
       <div className={classNames.ImageWrapper}>
@@ -39,8 +42,8 @@ export default function Post(props: IPostProps) {
         </div>
         <div className={classNames.Published}>
           {props.platform
-            ? `First published on ${props.platform} ${props.date}.`
-            : `Published on ${props.date}.`}
+            ? `First published on ${props.platform} ${date}.`
+            : `Published on ${date}.`}
         </div>
       </div>
     </a>

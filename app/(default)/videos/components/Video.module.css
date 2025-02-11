@@ -1,0 +1,69 @@
+.Video {
+  border-radius: 16px;
+  color: inherit;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+}
+.Video:hover {
+  background-color: var(--color-background-hover);
+}
+.ImageWrapper {
+  flex-shrink: 0;
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+.Image {
+  border-radius: 8px;
+  object-fit: cover;
+}
+.Title {
+  margin: 0 0 16px 0;
+}
+.Description {
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.Links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+.Link {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  fill: currentColor;
+  gap: 4px;
+}
+.Link.Youtube:focus,
+.Link.Youtube:hover {
+  color: #ff0000;
+}
+.Link.Slides:focus,
+.Link.Slides:hover {
+  color: #f4b400;
+}
+.Given {
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.65;
+}
+
+@media screen and (max-width: 768px) {
+  .Video {
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  .ImageWrapper {
+    height: 200px;
+    width: 100%;
+  }
+}

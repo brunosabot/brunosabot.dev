@@ -1,7 +1,8 @@
-import PageTitle from "../../../components/typography/PageTitle";
-import CardPodcast from "../../../components/card/CardPodcast";
 import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import Podcast from "./components/Podcast";
+import List from "./components/List";
+import Title from "../../../generic/typography/Title";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -50,22 +51,23 @@ export default async function PodcastsPage() {
 
   return (
     <>
-      <PageTitle>Podcast list</PageTitle>
+      <Title>Podcast list</Title>
 
-      {podcasts.map((podcast, index) => (
-        <CardPodcast
-          image={podcast.image ? podcast.image : undefined}
-          description={podcast.description}
-          language={podcast.language}
-          title={podcast.title}
-          date={podcast.date}
-          id={podcast.id}
-          key={podcast.title}
-          url={podcast.url}
-          platform={podcast.platform}
-          priority={index === 0}
-        />
-      ))}
+      <List>
+        {podcasts.map((podcast, index) => (
+          <Podcast
+            image={podcast.image ? podcast.image : undefined}
+            description={podcast.description}
+            lang={podcast.language}
+            title={podcast.title}
+            date={podcast.date}
+            key={podcast.title}
+            url={podcast.url}
+            platform={podcast.platform}
+            priority={index === 0}
+          />
+        ))}
+      </List>
 
       <SeoBreadcrumb
         items={[

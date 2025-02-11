@@ -1,7 +1,8 @@
 import PageTitle from "../../../components/typography/PageTitle";
-import CardVideo from "../../../components/card/CardVideo";
 import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import Video from "./components/Video";
+import Title from "../../../generic/typography/Title";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -36,16 +37,15 @@ export default async function VideosPage() {
 
   return (
     <>
-      <PageTitle>Video list</PageTitle>
+      <Title>Video list</Title>
 
       {videos.map((video, index) => (
-        <CardVideo
+        <Video
           image={video.image ? video.image : undefined}
           description={video.description}
-          language={video.language}
+          lang={video.language}
           title={video.title}
           date={video.date}
-          id={video.id}
           key={video.id}
           youtubeId={video.youtubeId}
           priority={index === 0}

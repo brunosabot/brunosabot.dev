@@ -1,5 +1,4 @@
 import { formatDistanceToNow } from "date-fns";
-import Card from "../../../../components/card/Card";
 import { getMetaData } from "../../../../lib/metadata";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
 import { getPosts } from "../../../actions/posts";
@@ -36,27 +35,12 @@ export default async function PostsPage() {
               lang={post.lang}
               title={post.title}
               platform={post.platform}
-              date={formatDistanceToNow(new Date(post.date), {
-                addSuffix: true,
-              })}
+              date={post.date}
               to={post.path}
               key={post.path + "-new"}
               priority={index === 0}
               tags={post.tags}
             />
-            {/* <Card
-            image={post.originalImage}
-            color={post.color}
-            description={post.subtitle}
-            icon={post.lang}
-            title={post.title}
-            subtitle={post.platform}
-            date={formatDistanceToNow(new Date(post.date), { addSuffix: true })}
-            to={post.path}
-            key={post.path}
-            priority={index === 0}
-            tags={post.tags}
-          /> */}
           </div>
         ))}
       </List>
