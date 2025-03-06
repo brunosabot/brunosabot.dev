@@ -61,12 +61,28 @@ async function readPostMarkdown(id: string) {
   const notionClient = getNotionClient();
   const n2m = new NotionToMarkdown({ notionClient });
 
-  const blockResponse = await notionClient.blocks.children.list({
-    block_id: id,
-    page_size: 100,
-  });
+  let done = false;
+  let startCursor = undefined;
+  const blocks = [];
 
-  const mdBlocks = await n2m.blocksToMarkdown(blockResponse.results);
+  while (done === false) {
+    const { results, has_more, next_cursor } =
+      await notionClient.blocks.children.list({
+        block_id: id,
+        page_size: 100,
+        start_cursor: startCursor,
+      });
+
+    if (has_more === false) {
+      done = true;
+    } else {
+      startCursor = next_cursor ?? undefined;
+    }
+
+    blocks.push(...results);
+  }
+
+  const mdBlocks = await n2m.blocksToMarkdown(blocks);
   const mdString = n2m.toMarkdownString(mdBlocks);
 
   return mdString;
