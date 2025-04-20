@@ -84,6 +84,13 @@ const getTools = () => {
       description: "Convert between different speed units.",
     },
     {
+      type: "sport",
+      icon: mdiRunFast,
+      href: "/tools/endurance-index/",
+      title: "Endurance Index",
+      description: "Calculate your endurance index or estimate race duration for runners and coaches.",
+    },
+    {
       type: "code",
       icon: mdiCodeTags,
       href: "/tools/url-encode-decode/",
@@ -106,7 +113,7 @@ const getTools = () => {
     },
   ];
 
-  return tools;
+  return tools.sort((a, b) => a.title.localeCompare(b.title));
 };
 
 const getCategories = () => {

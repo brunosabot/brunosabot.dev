@@ -109,9 +109,11 @@ export default function ToolMemoryTablePage() {
         </p>
         <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
         <ul>
-          Memory association game linking numbers with objects Guessing game
-          with object-number matching Vibrant and user-friendly interface Free
-          to play and accessible online
+          <li>
+            Memory association game linking numbers with objects Guessing game
+            with object-number matching Vibrant and user-friendly interface Free
+            to play and accessible online
+          </li>
         </ul>
         <p>
           Ready to challenge your memory and have some fun? Dive into the
