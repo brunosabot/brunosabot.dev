@@ -12,6 +12,7 @@ export async function generateMetadata() {
       description:
         "Fortify Your Data Security: Generate Secure Hashes with Our SHA Hash Calculator",
       title: "Sha Generation Tool",
+      canonical: "https://brunosabot.dev/tools/sha/",
     },
     "/tools/sha/",
   );
@@ -22,112 +23,6 @@ export default function ToolShaPage() {
     <>
       <PageTitle>Sha Generation Tool</PageTitle>
 
-      <ToolSha />
-
-      <SimpleCard>
-        <BlockTitle>
-          Fortify Your Data Security: Generate Secure Hashes with Our SHA Hash
-          Calculator
-        </BlockTitle>
-
-        <p>
-          Safeguard the integrity of your data with our versatile SHA Hash
-          Calculator, a powerful tool designed to generate secure and unique
-          hashes for various string inputs. Protect sensitive information,
-          verify data authenticity, and empower your security measures with this
-          essential tool.
-        </p>
-
-        <BlockParagraphTitle>
-          Generate a Spectrum of Secure Hashes with Ease:
-        </BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Multiple algorithms at your fingertips: Choose from SHA, SHA1,
-            SHA224, SHA256, SHA384, and SHA512 to meet your specific security
-            needs.
-          </li>
-          <li>
-            Seamless generation: Simply input your string, and our calculator
-            instantly produces the corresponding hash values, ensuring data
-            protection.
-          </li>
-          <li>
-            No expert knowledge required: Interact with our user-friendly
-            interface to generate hashes effortlessly, even without extensive
-            technical expertise.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>
-          Unleash the Power of Cryptographic Hashes:
-        </BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Uniqueness guaranteed: Each hash is irreversibly unique, ensuring
-            data integrity and preventing unauthorized modifications.
-          </li>
-          <li>
-            Password protection: Securely store passwords by hashing them,
-            safeguarding sensitive information from potential breaches.
-          </li>
-          <li>
-            Digital signature verification: Ensure the authenticity of messages
-            and documents by verifying their digital signatures with hashes.
-          </li>
-          <li>
-            Data integrity checks: Detect any accidental or intentional
-            alterations to data by comparing original and generated hashes.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>
-          Embrace a Versatile Tool for Diverse Security Applications:
-        </BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Developers, enhance data security: Integrate secure hashing into
-            your applications and protect sensitive user information.
-          </li>
-          <li>
-            Security experts, verify file integrity: Ensure the authenticity and
-            unaltered state of files with reliable hash verification.
-          </li>
-          <li>
-            Individuals, safeguard passwords and data: Protect your personal
-            information and verify the integrity of downloaded files.
-          </li>
-        </ul>
-
-        <p>
-          Take control of your data security with our SHA Hash Calculator.
-          Generate secure hashes with ease, fortify your security measures, and
-          safeguard sensitive information with confidence. Begin protecting your
-          data today!
-        </p>
-
-        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Supports multiple SHA algorithms (SHA, SHA1, SHA224, SHA256, SHA384,
-            SHA512)
-          </li>
-          <li>User-friendly interface for simple hash generation</li>
-          <li>Secure and unique hash values for data protection</li>
-          <li>Free to use and accessible online</li>
-        </ul>
-
-        <p>
-          Don&apos;t leave your data vulnerable. Embrace the power of secure
-          hashing and protect your information with our SHA Hash Calculator.
-          Start generating secure hashes today!
-        </p>
-      </SimpleCard>
-
       <SeoBreadcrumb
         items={[
           ["Home", "/"],
@@ -135,6 +30,66 @@ export default function ToolShaPage() {
           ["Sha Generation Tool", "/tools/sha"],
         ]}
       />
+
+      <ToolSha />
+
+      <SimpleCard>
+        <BlockTitle>
+          SHA Hash Generator: Instantly Secure and Verify Your Data
+        </BlockTitle>
+
+        <p>
+          The SHA Hash Generation Tool empowers you to create secure,
+          cryptographic hashes for any string or file. Instantly generate SHA-1,
+          SHA-256, SHA-384, or SHA-512 hashes to protect sensitive information,
+          verify data integrity, and support security best practices. Whether
+          you’re a developer, IT professional, or security enthusiast, this tool
+          delivers fast, reliable hashing—all within your browser for maximum
+          privacy.
+        </p>
+
+        <BlockParagraphTitle>Key Features</BlockParagraphTitle>
+        <ul>
+          <li>
+            <strong>Multiple SHA Algorithms:</strong> Choose from SHA-1,
+            SHA-224, SHA-256, SHA-384, and SHA-512 for flexible security
+            options.
+          </li>
+          <li>
+            <strong>Instant Hashing:</strong> Input your data and receive
+            cryptographic hashes instantly—no waiting or page reloads.
+          </li>
+          <li>
+            <strong>Copy & Export:</strong> Easily copy your hash values for use
+            in code, documentation, or verification workflows.
+          </li>
+          <li>
+            <strong>Developer-Friendly Interface:</strong> Simple, intuitive
+            design for effortless hashing and quick adoption.
+          </li>
+          <li>
+            <strong>Privacy First:</strong> All hashing is performed locally in
+            your browser—your data never leaves your device.
+          </li>
+        </ul>
+
+        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
+        <ul>
+          <li>Password hashing and secure storage.</li>
+          <li>Verifying file integrity and detecting tampering.</li>
+          <li>Generating digital signatures and authentication tokens.</li>
+          <li>Data verification for APIs, backups, and distributed systems.</li>
+          <li>
+            Educational purposes: teaching cryptography and security concepts.
+          </li>
+        </ul>
+
+        <p>
+          Strengthen your data security and streamline your workflow with the
+          SHA Hash Generation Tool—your trusted solution for fast, private, and
+          reliable cryptographic hashing.
+        </p>
+      </SimpleCard>
     </>
   );
 }

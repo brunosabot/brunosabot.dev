@@ -13,6 +13,7 @@ export async function generateMetadata() {
       description:
         "Calculate your race endurance index or estimate your race duration with this scientific tool for runners and coaches.",
       title: "Endurance Index Tool",
+      canonical: "https://brunosabot.dev/tools/endurance-index/",
     },
     "/tools/endurance-index/",
   );
@@ -23,66 +24,6 @@ export default function Page() {
     <>
       <PageTitle>Endurance Index Tool</PageTitle>
 
-      <ToolEnduranceIndex />
-      <ToolReverseEnduranceIndex />
-
-      <SimpleCard>
-        <BlockTitle>
-          Endurance Index & Race Duration Calculator
-        </BlockTitle>
-        <BlockParagraphTitle>
-          Optimize your training and race strategy with science-backed tools
-        </BlockParagraphTitle>
-        <p>
-          The Endurance Index Tool is designed for runners, endurance athletes, and coaches who want to gain deeper insights into race performance and training effectiveness. Whether you are preparing for a marathon, half-marathon, or any distance event, understanding your endurance index can help tailor your workouts and pacing for optimal results.
-        </p>
-        <p>
-          <strong>What is the Endurance Index?</strong> The Endurance Index is a calculated value that reflects your ability to sustain a high percentage of your maximal aerobic speed (MAS) over a prolonged period. It is especially useful for comparing performances across different race distances and tracking improvements over time.
-        </p>
-        <ul>
-          <li>
-            <strong>Calculate Endurance Index:</strong> Enter your MAS, race distance, and race time to compute your endurance index. This value helps you understand how well you maintain speed as race duration increases, and can be used to benchmark your endurance against other athletes or your past performances.
-          </li>
-          <li>
-            <strong>Estimate Race Duration:</strong> Use the Reverse Endurance Index Tool to predict your expected race time for a given distance, based on your MAS and endurance index. This feature is invaluable for setting realistic race goals and planning pacing strategies.
-          </li>
-        </ul>
-        <BlockParagraphTitle>
-          Why Use These Tools?
-        </BlockParagraphTitle>
-        <ul>
-          <li>
-            <strong>Personalized Training:</strong> Adjust your workouts based on your endurance profile to maximize gains and avoid overtraining.
-          </li>
-          <li>
-            <strong>Scientific Race Planning:</strong> Make data-driven decisions for pacing and goal-setting using your actual physiological metrics.
-          </li>
-          <li>
-            <strong>Progress Tracking:</strong> Monitor your endurance improvements season after season and evaluate the effectiveness of your training plans.
-          </li>
-          <li>
-            <strong>Coach Support:</strong> Coaches can use these tools to analyze athletes&apos; strengths and weaknesses, enabling more precise and individualized coaching.
-          </li>
-        </ul>
-        <BlockParagraphTitle>
-          How to Use:
-        </BlockParagraphTitle>
-        <ol>
-          <li>
-            Enter your Maximal Aerobic Speed (MAS) in km/h. This is typically determined from a lab test or field test.
-          </li>
-          <li>
-            For the Endurance Index calculator, input your race distance (in meters) and your race time (hours, minutes, seconds). The tool will instantly display your endurance index.
-          </li>
-          <li>
-            For the Reverse Endurance Index tool, enter your MAS, race distance, and a target endurance index. The tool will estimate your expected race duration.
-          </li>
-        </ol>
-        <p>
-          These calculators are ideal for athletes of all levels, from beginners seeking to understand their endurance to elite competitors optimizing their race strategy. Try different scenarios to see how changes in MAS or endurance index affect your predicted race times!
-        </p>
-      </SimpleCard>
-
       <SeoBreadcrumb
         items={[
           ["Home", "/"],
@@ -90,6 +31,66 @@ export default function Page() {
           ["Endurance Index Tool", "/tools/endurance-index"],
         ]}
       />
+
+      <ToolEnduranceIndex />
+      <ToolReverseEnduranceIndex />
+
+      <SimpleCard>
+        <BlockTitle>
+          Endurance Index Calculator: Optimize Your Race Strategy
+        </BlockTitle>
+
+        <p>
+          The Endurance Index Tool is built for runners, endurance athletes, and
+          coaches who want to unlock deeper insights into race performance and
+          training. Effortlessly calculate your endurance index or estimate race
+          duration—using science-backed formulas trusted by professionals.
+          Whether you’re training for a marathon, half-marathon, or any
+          distance, this tool helps you plan smarter and perform better.
+        </p>
+
+        <BlockParagraphTitle>Key Features</BlockParagraphTitle>
+        <ul>
+          <li>
+            <strong>Instant Endurance Index Calculation:</strong> Enter your
+            Maximal Aerobic Speed (MAS), race distance, and time to get your
+            endurance index in real time.
+          </li>
+          <li>
+            <strong>Reverse Calculation:</strong> Predict your race duration for
+            any distance based on your MAS and endurance index—perfect for goal
+            setting.
+          </li>
+          <li>
+            <strong>Personalized Insights:</strong> Benchmark your endurance,
+            track progress, and tailor your training plan for maximum results.
+          </li>
+          <li>
+            <strong>Coach-Friendly:</strong> Analyze and compare athletes’
+            endurance profiles for more precise, individualized coaching.
+          </li>
+          <li>
+            <strong>Privacy First:</strong> All calculations are performed
+            locally in your browser—your data never leaves your device.
+          </li>
+        </ul>
+
+        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
+        <ul>
+          <li>Setting realistic race goals and pacing strategies.</li>
+          <li>
+            Tracking endurance improvements over a season or training cycle.
+          </li>
+          <li>Comparing performance across different race distances.</li>
+          <li>Coaches analyzing athletes’ strengths and weaknesses.</li>
+        </ul>
+
+        <p>
+          Take your training to the next level—use the Endurance Index Tool to
+          make data-driven decisions, optimize performance, and achieve your
+          running goals.
+        </p>
+      </SimpleCard>
     </>
   );
 }

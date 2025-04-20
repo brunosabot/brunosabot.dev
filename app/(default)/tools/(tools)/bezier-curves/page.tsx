@@ -12,6 +12,7 @@ export async function generateMetadata() {
       description:
         "Craft Stunning Animations with This Cubic-Bezier Curve Generator",
       title: "Bezier Curves",
+      canonical: "https://brunosabot.dev/tools/bezier-curves/",
     },
     "/tools/bezier-curves/",
   );
@@ -22,87 +23,84 @@ export default function ToolBezierCurvesPage() {
     <>
       <PageTitle>Bezier curves</PageTitle>
 
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Bezier Curves", "/tools/bezier-curves"],
+        ]}
+      />
+
       <ToolBezierCurves />
 
       <SimpleCard>
         <BlockTitle>
-          Craft Stunning Animations with This Cubic-Bezier Curve Generator
+          Cubic-Bezier Curve Generator: Design Smooth CSS Animations
+          Effortlessly
         </BlockTitle>
 
         <p>
-          Elevate your web design with this intuitive Cubic-Bezier Curve
-          Generator, a powerful tool that simplifies the process of creating
-          captivating animations. This tool empowers you to effortlessly craft
-          smooth and fluid transitions, adding a touch of elegance to your web
-          creations.
+          The Bezier Curves Tool empowers designers and developers to craft
+          custom cubic-bezier curves for CSS transitions and animations.
+          Instantly visualize, tweak, and export your perfect timing
+          functions—making your web animations smoother, more engaging, and
+          visually stunning. Whether you&apos;re fine-tuning UI micro-interactions or
+          building complex animation sequences, this tool helps you achieve
+          pixel-perfect motion with ease.
         </p>
 
-        <BlockParagraphTitle>
-          Visualize Your Curves with Ease
-        </BlockParagraphTitle>
-
-        <p>
-          This tool features a dynamically interactive graph that lets you
-          visualize the shape and trajectory of your curves in real-time. This
-          visual representation provides a clear understanding of the
-          animation&apos;s behavior, ensuring you achieve the desired motion.
-        </p>
-
-        <BlockParagraphTitle>
-          Preview Your Transitions Before Implementing
-        </BlockParagraphTitle>
-
-        <p>
-          Immerse yourself in the actual effect of your Cubic-Bezier curves by
-          previewing them as CSS transitions. This tool seamlessly integrates
-          with CSS, allowing you to instantly see the impact of your curve
-          choices on the animation&apos;s appearance.
-        </p>
-
-        <BlockParagraphTitle>
-          Unlock the Power of Cubic-Bezier Curves
-        </BlockParagraphTitle>
-
-        <p>Utilize this Cubic-Bezier Curve Generator to:</p>
-
+        <BlockParagraphTitle>Key Features</BlockParagraphTitle>
         <ul>
-          <li>Create smooth and fluid animations</li>
-          <li>Add life and dynamism to your web elements</li>
-          <li>Enhance user engagement and interaction</li>
-          <li>Master the art of CSS transitions</li>
+          <li>
+            <strong>Live Preview:</strong> See your animation curve in action as
+            you adjust control points in real time.
+          </li>
+          <li>
+            <strong>Easy CSS Export:</strong> Instantly copy the cubic-bezier()
+            function for direct use in your stylesheets.
+          </li>
+          <li>
+            <strong>Intuitive Controls:</strong> Drag-and-drop interface for
+            precise curve manipulation, suitable for beginners and experts.
+          </li>
+          <li>
+            <strong>Developer-Friendly:</strong> Perfect for prototyping,
+            teaching, or debugging animation timing.
+          </li>
+          <li>
+            <strong>Private & Secure:</strong> All calculations and previews run
+            locally in your browser—no data leaves your device.
+          </li>
         </ul>
 
-        <BlockParagraphTitle>
-          Embrace the Simplicity of Curve Creation
-        </BlockParagraphTitle>
-
-        <p>
-          This tool simplifies the creation of Cubic-Bezier curves, making it
-          accessible to designers of all skill levels. This intuitive interface
-          and real-time feedback ensure a seamless and rewarding experience.
-        </p>
-
-        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
-
+        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
         <ul>
-          <li>Interactive curve graph for visual representation</li>
-          <li>Integrated CSS transition preview</li>
-          <li>Easy-to-use interface for effortless curve creation</li>
-          <li>Free to use and accessible online</li>
+          <li>
+            Designing custom CSS transitions and keyframe animations for web
+            apps and websites.
+          </li>
+          <li>
+            Prototyping and previewing animation timing before implementation.
+          </li>
+          <li>
+            Tuning UI micro-interactions for buttons, modals, sliders, and
+            menus.
+          </li>
+          <li>
+            Teaching and learning about cubic-bezier curves and animation
+            principles.
+          </li>
+          <li>
+            Optimizing user experience by creating smooth, natural motion
+            effects.
+          </li>
         </ul>
 
-        <BlockParagraphTitle>
-          Transform your web designs into masterpieces with this Cubic-Bezier
-          Curve Generator and unleash the power of captivating animations.
-        </BlockParagraphTitle>
-
-        <SeoBreadcrumb
-          items={[
-            ["Home", "/"],
-            ["Tools", "/tools/"],
-            ["Bezier Curves", "/tools/bezier-curves"],
-          ]}
-        />
+        <p>
+          Elevate your web animations with the Bezier Curves Tool—your go-to
+          solution for mastering cubic-bezier timing functions and delivering
+          professional-grade motion design.
+        </p>
       </SimpleCard>
     </>
   );

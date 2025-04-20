@@ -10,8 +10,9 @@ export async function generateMetadata() {
   return getMetaData(
     {
       description:
-        "Conquer Chaotic JSON: Indent and Beautify with our Effortless Formatter!",
+        "Effortlessly Format and Beautify Your JSON Data for Enhanced Readability and Debugging",
       title: "JSON Pretty Tool",
+      canonical: "https://brunosabot.dev/tools/pretty/",
     },
     "/tools/pretty/",
   );
@@ -22,108 +23,6 @@ export default function ToolPrettyPage() {
     <>
       <PageTitle>JSON Pretty Tool</PageTitle>
 
-      <ToolPretty />
-
-      <SimpleCard>
-        <BlockTitle>
-          Conquer Chaotic JSON: Indent and Beautify with our Effortless
-          Formatter!
-        </BlockTitle>
-        <p>
-          Unleash the clarity hidden within your compact JSON strings with our
-          powerful JSON Formatter. This intuitive tool effortlessly transforms
-          dense, unreadable data into a visually stunning, well-structured
-          format, empowering you to review, debug, and understand JSON with
-          ease.
-        </p>
-
-        <BlockParagraphTitle>
-          From Compact Chaos to Readable Harmony:
-        </BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Tame the tangle: Simply paste your compact JSON string, and our tool
-            instantly works its magic, presenting you with a beautifully
-            indented, human-friendly format.
-          </li>
-          <li>
-            Farewell, frustration: Bid adieu to squinting at illegible code. Our
-            formatter unravels intricate data structures, presenting them in a
-            clear, organized manner.
-          </li>
-          <li>
-            Effortless understanding: Grasp the meaning behind your JSON
-            effortlessly. Indentation and spacing create a hierarchy that makes
-            comprehension a breeze.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>
-          Review and Debug with Power and Precision:
-        </BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Spot errors swiftly: The clear, structured format highlights
-            potential issues within your JSON data, aiding in rapid debugging
-            and error correction.
-          </li>
-          <li>
-            Simplify complex structures: Nested hierarchies and arrays become
-            easily navigable, allowing you to delve deeper into your data with
-            confidence.
-          </li>
-          <li>
-            Effortless collaboration: Share formatted JSON with colleagues or
-            clients for clear communication and improved understanding.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>For Devs and Non-Devs Alike:</BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Developers, rejoice: Streamline your workflow and enhance your JSON
-            debugging capabilities.
-          </li>
-          <li>
-            Content creators, unite: Make your JSON data easily accessible and
-            understandable for various audiences.
-          </li>
-          <li>
-            Non-technical users, welcome: Gain valuable insights into JSON data
-            without needing expertise.
-          </li>
-        </ul>
-
-        <p>
-          Embrace the power of clarity and unlock the true potential of your
-          JSON data. Start using our JSON Formatter today and experience the joy
-          of well-structured, easily digestible information!
-        </p>
-
-        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Effortless conversion of compact JSON strings to human-readable
-            format
-          </li>
-          <li>Beautiful indentation and spacing for enhanced clarity</li>
-          <li>Ideal for reviewing, debugging, and understanding JSON data</li>
-          <li>
-            User-friendly interface for smooth adoption by all skill levels
-          </li>
-          <li>Free to use and accessible online</li>
-        </ul>
-
-        <p>
-          Don&apos;t let cryptic JSON stand in your way. Format your data today
-          and unlock a world of understanding!
-        </p>
-      </SimpleCard>
-
       <SeoBreadcrumb
         items={[
           ["Home", "/"],
@@ -131,6 +30,72 @@ export default function ToolPrettyPage() {
           ["JSON Pretty Tool", "/tools/pretty"],
         ]}
       />
+
+      <ToolPretty />
+
+      <SimpleCard>
+        <BlockTitle>
+          JSON Formatter & Pretty Print Tool: Instantly Beautify and Debug Your
+          Data
+        </BlockTitle>
+        <p>
+          The JSON Pretty Tool makes it easy to format, beautify, and inspect
+          your JSON data for enhanced readability and error detection. Instantly
+          transform compact or minified JSON into a clean, indented
+          structure—perfect for developers, data analysts, and anyone working
+          with APIs or configuration files. Whether you’re debugging, reviewing,
+          or sharing JSON, this tool ensures your data is always clear and
+          accessible.
+        </p>
+
+        <BlockParagraphTitle>Key Features</BlockParagraphTitle>
+        <ul>
+          <li>
+            <strong>Instant JSON Formatting:</strong> Paste your minified or
+            messy JSON and see it instantly beautified with proper indentation
+            and structure.
+          </li>
+          <li>
+            <strong>Error Highlighting:</strong> Quickly spot syntax errors and
+            invalid JSON with real-time feedback.
+          </li>
+          <li>
+            <strong>Copy & Export:</strong> Easily copy the formatted JSON or
+            export it for use in your projects or documentation.
+          </li>
+          <li>
+            <strong>Developer-Friendly Interface:</strong> Clean, intuitive UI
+            designed for productivity and ease of use.
+          </li>
+          <li>
+            <strong>Privacy First:</strong> All formatting happens locally in
+            your browser—your data never leaves your device.
+          </li>
+        </ul>
+
+        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
+        <ul>
+          <li>Debugging and reviewing API responses in web development.</li>
+          <li>
+            Beautifying configuration files for easier editing and
+            collaboration.
+          </li>
+          <li>
+            Teaching and learning JSON structure in coding classrooms or
+            tutorials.
+          </li>
+          <li>
+            Sharing readable JSON with teammates, clients, or stakeholders.
+          </li>
+          <li>Validating JSON before deploying to production systems.</li>
+        </ul>
+
+        <p>
+          Experience effortless JSON formatting and error detection—streamline
+          your workflow and make your data more readable with the JSON Pretty
+          Tool.
+        </p>
+      </SimpleCard>
     </>
   );
 }

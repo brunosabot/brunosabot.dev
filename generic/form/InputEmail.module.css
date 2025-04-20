@@ -26,10 +26,10 @@
   height: 64px;
   line-height: 1.5em;
   outline: 0;
+  overflow-wrap: anywhere;
   padding: 16px 0 0 0;
   transition: all 0.2s ease-in-out;
   width: 100%;
-  word-break: break-all;
 }
 .Input:focus,
 .Input:focus-visible {

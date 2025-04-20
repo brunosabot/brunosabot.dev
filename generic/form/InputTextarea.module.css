@@ -26,11 +26,11 @@
   line-height: 1.5em;
   min-height: 64px;
   outline: 0;
+  overflow-wrap: anywhere;
   padding: 24px 0 0 0;
   resize: none;
   transition: all 0.2s ease-in-out;
   width: 100%;
-  word-break: break-all;
 }
 .Textarea:focus,
 .Textarea:focus-visible {

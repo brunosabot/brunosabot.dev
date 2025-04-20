@@ -12,6 +12,7 @@ export async function generateMetadata() {
       description:
         "Calculate the Absolute and Relative Amount of Alcohol in Your Drinks",
       title: "Alcohol Quantities Tool",
+      canonical: "https://brunosabot.dev/tools/alcohol/",
     },
     "/tools/alcohol/",
   );
@@ -22,83 +23,73 @@ export default function ToolAlcoholPage() {
     <>
       <PageTitle>Alcohol Tool</PageTitle>
 
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Alcohol Quantities Tool", "/tools/alcohol"],
+        ]}
+      />
+
       <ToolAlcohol />
 
       <SimpleCard>
         <BlockTitle>
-          Calculate the Absolute and Relative Amount of Alcohol in Your Drinks
+          Alcohol Content Calculator: Instantly Know What’s in Your Drink
         </BlockTitle>
 
         <p>
-          This handy tool allows you to quickly and easily determine the exact
-          amount of alcohol in your beverages, both in absolute terms and
-          relative to the total volume of the drink. Whether you&apos;re a
-          seasoned drinker or simply seeking to make informed choices about your
-          alcohol consumption, this tool is an invaluable resource.
+          The Alcohol Content Calculator is your essential companion for making
+          informed decisions about your beverages. Effortlessly determine the
+          absolute and relative amount of alcohol in any drink—whether you’re a
+          mindful drinker, a party planner, or simply curious about what’s in
+          your glass. No more guesswork or manual calculations—get precise
+          results in seconds, right in your browser.
         </p>
 
-        <BlockParagraphTitle>
-          Simply input the volume of your beverage and the alcohol percentage,
-          and this tool will calculate the exact amount of alcohol contained
-          within.
-        </BlockParagraphTitle>
-
+        <BlockParagraphTitle>Key Features</BlockParagraphTitle>
         <ul>
           <li>
-            <b>Absolute Quantity</b>: Know exactly how many grams of alcohol are
-            in your drink.
+            <strong>Instant Calculations:</strong> Enter the volume and alcohol
+            percentage to get immediate results—no waiting or page reloads.
           </li>
           <li>
-            <b>Relative Quantity</b>: Understand how many drinks the beverage
-            you had is equivalent to.
+            <strong>Absolute & Relative Values:</strong> See both the total
+            grams of pure alcohol and how your drink compares to standard
+            servings.
           </li>
+          <li>
+            <strong>User-Friendly Interface:</strong> Clean, intuitive design
+            for anyone—from casual users to health-conscious individuals.
+          </li>
+          <li>
+            <strong>Privacy First:</strong> All calculations are performed
+            locally in your browser—your data never leaves your device.
+          </li>
+          <li>
+            <strong>Free & Accessible:</strong> Use the tool anytime, anywhere,
+            without registration or fees.
+          </li>
+        </ul>
+
+        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
+        <ul>
+          <li>Tracking your alcohol intake for health or fitness goals.</li>
+          <li>
+            Comparing the strength of different beverages at parties or events.
+          </li>
+          <li>
+            Learning about the relationship between drink volume, alcohol
+            percentage, and total intake.
+          </li>
+          <li>Educating friends or clients about responsible drinking.</li>
         </ul>
 
         <p>
-          This tool is easy to use and provides accurate results, making it a
-          trusted resource for anyone interested in understanding alcohol
-          content.
+          Take control of your drinking experience—use the Alcohol Content
+          Calculator to make smarter, safer, and more informed choices every
+          time you pour a drink.
         </p>
-
-        <BlockParagraphTitle>Use this tool to:</BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Monitor your alcohol intake and make informed choices about your
-            drinks.
-          </li>
-          <li>Compare alcohol content between different beverages.</li>
-          <li>
-            Understand the relationship between alcohol volume and overall drink
-            volume.
-          </li>
-          <li>
-            Empower yourself with knowledge and make informed decisions about
-            your alcohol consumption with this easy-to-use tool.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
-
-        <ul>
-          <li>Accurate calculations</li>
-          <li>Easy-to-use interface</li>
-          <li>Comprehensive results</li>
-          <li>Free to use</li>
-        </ul>
-
-        <BlockParagraphTitle>
-          Embark on a journey of informed alcohol consumption with this simple
-          yet powerful tool!
-        </BlockParagraphTitle>
-
-        <SeoBreadcrumb
-          items={[
-            ["Home", "/"],
-            ["Tools", "/tools/"],
-            ["Alcohol Quantities Tool", "/tools/alcohol"],
-          ]}
-        />
       </SimpleCard>
     </>
   );

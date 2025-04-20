@@ -10,8 +10,9 @@ export async function generateMetadata() {
   return getMetaData(
     {
       description:
-        "Conquer Color Conversions with Ease: Introducing Your Color Conversion Companion with Favorites",
+        "Convert Colors Between RGB and HEX Formats with Ease and Precision",
       title: "Color Converter Tool",
+      canonical: "https://brunosabot.dev/tools/rgb-convertor/",
     },
     "/tools/rgb-convertor/",
   );
@@ -22,109 +23,6 @@ export default function ToolRgbConvertorPage() {
     <>
       <PageTitle>Color Converter Tool</PageTitle>
 
-      <ToolRgbConvertor />
-
-      <SimpleCard>
-        <BlockTitle>
-          Conquer Color Conversions with Ease: Introducing Your Color Conversion
-          Companion with Favorites
-        </BlockTitle>
-        <BlockParagraphTitle>
-          Streamline your workflow and conquer color conversions with our
-          intuitive Color Converter, a versatile tool designed to empower
-          designers, developers, and anyone who works with color.
-        </BlockParagraphTitle>
-
-        <BlockParagraphTitle>
-          Effortless Conversion Across Color Models:
-        </BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Bridge the gap seamlessly: Effortlessly convert between RGB, HEX,
-            HSL, and CMYK, choosing the perfect representation for your needs.
-          </li>
-          <li>
-            Real-time results: Witness instant conversions as you adjust values,
-            allowing for precise color selection and fine-tuning.
-          </li>
-          <li>
-            No more calculations: Leave the complex conversions behind! Our tool
-            handles the calculations behind the scenes, delivering accurate
-            results instantly.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>Favorites at Your Fingertips:</BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Never forget your go-to hues: Save your frequently used colors as
-            favorites for instant access, eliminating time spent searching.
-          </li>
-          <li>
-            Organize your palette: Create personalized color groups within your
-            favorites to maintain order and streamline your workflow.
-          </li>
-          <li>
-            Share your palette: Collaborate with ease by sharing your favorite
-            color collections with colleagues or clients.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>
-          Designed for Simplicity, Built for Everyone:
-        </BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Intuitive interface: Navigate effortlessly with a user-friendly
-            design, making color conversion accessible to all skill levels.
-          </li>
-          <li>
-            Accessible online: Use our tool from anywhere, anytime, without the
-            need for software installation.
-          </li>
-          <li>
-            Free to use: Uncover the power of color conversion without any cost
-            barriers.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>
-          Embrace the Power of Color Conversion Today:
-        </BlockParagraphTitle>
-
-        <p>
-          Unleash the efficiency and convenience of our Color Converter!
-          Simplify your workflow, organize your color palette, and access your
-          favorite shades with ease. Start exploring the world of color with
-          confidence and precision today!
-        </p>
-
-        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
-
-        <ul>
-          <li>
-            Real-time conversion between RGB, HEX, HSL, and CMYK color models
-          </li>
-          <li>
-            Intuitive interface for effortless color selection and manipulation
-          </li>
-          <li>
-            Favorites system for storing and accessing frequently used colors
-          </li>
-          <li>User-friendly design suitable for all skill levels</li>
-          <li>Free to use and accessible online</li>
-        </ul>
-
-        <p>
-          Stop juggling calculations and complicated tools. Embrace the ease and
-          efficiency of our Color Converter and let your creativity flourish
-          with the perfect color palette!
-        </p>
-      </SimpleCard>
-
       <SeoBreadcrumb
         items={[
           ["Home", "/"],
@@ -132,6 +30,77 @@ export default function ToolRgbConvertorPage() {
           ["Color Converter Tool", "/tools/rgb-convertor"],
         ]}
       />
+
+      <ToolRgbConvertor />
+
+      <SimpleCard>
+        <BlockTitle>
+          Color Converter Tool: Effortlessly Convert Between RGB, HEX, and More
+        </BlockTitle>
+
+        <p>
+          The Color Converter Tool is your essential resource for converting
+          colors between popular formats such as RGB, HEX, HSL, and CMYK.
+          Perfect for designers, developers, and anyone working with digital
+          color, this tool enables you to seamlessly translate color codes for
+          web design, graphic projects, and application development. Say goodbye
+          to manual calculations and ensure color accuracy every time.
+        </p>
+
+        <BlockParagraphTitle>Why Use a Color Converter?</BlockParagraphTitle>
+        <ul>
+          <li>
+            <strong>Multi-Format Support:</strong> Instantly convert colors
+            between RGB, HEX, HSL, and CMYK, covering all your design and
+            development needs.
+          </li>
+          <li>
+            <strong>Real-Time Conversion:</strong> See your color values update
+            immediately as you enter or adjust inputs, streamlining your
+            workflow.
+          </li>
+          <li>
+            <strong>Precision and Consistency:</strong> Eliminate guesswork and
+            ensure your colors match perfectly across different platforms and
+            tools.
+          </li>
+          <li>
+            <strong>User-Friendly Design:</strong> The intuitive interface makes
+            color conversion accessible for everyone, from professionals to
+            hobbyists.
+          </li>
+          <li>
+            <strong>Privacy and Security:</strong> All conversions are handled
+            locally in your browser, so your color data stays private.
+          </li>
+        </ul>
+
+        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
+        <ul>
+          <li>
+            Web designers converting brand colors between HEX and RGB for
+            consistent site styling.
+          </li>
+          <li>
+            Developers ensuring accurate color representation in CSS, SVG, and
+            graphic assets.
+          </li>
+          <li>
+            Artists and illustrators managing palettes across different digital
+            formats.
+          </li>
+          <li>
+            Anyone needing to quickly check or convert a color value for digital
+            projects.
+          </li>
+        </ul>
+
+        <p>
+          With the Color Converter Tool, you can achieve perfect color
+          consistency and streamline your creative process—no more manual
+          conversions or mismatched hues.
+        </p>
+      </SimpleCard>
     </>
   );
 }

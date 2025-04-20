@@ -12,6 +12,7 @@ export async function generateMetadata() {
       description:
         "Effortlessly Convert Strings Between Text and Base64 Format",
       title: "Base 64 Conversion Tool",
+      canonical: "https://brunosabot.dev/tools/base-64/",
     },
     "/tools/base-64/",
   );
@@ -22,89 +23,68 @@ export default function ToolBase64Page() {
     <>
       <PageTitle>Base 64 Tool</PageTitle>
 
+      <SeoBreadcrumb
+        items={[
+          ["Home", "/"],
+          ["Tools", "/tools/"],
+          ["Base 64 Conversion Tool", "/tools/base-64"],
+        ]}
+      />
+
       <ToolBase64 />
 
       <SimpleCard>
         <BlockTitle>
-          Effortlessly Convert Strings Between Text and Base64 Format
+          Base64 Converter: Instantly Encode & Decode Text and Data
         </BlockTitle>
 
         <p>
-          Simplify your data encoding and decoding tasks with this versatile
-          Base64 conversion tool. This user-friendly tool seamlessly converts
-          strings between their original text format and the universally
-          recognized Base64 encoding scheme. Whether you&apos;re working with
-          plain text, binary data, or images, this tool effortlessly handles the
-          transition, ensuring accurate and secure data representation.
+          The Base64 Converter Tool is your all-in-one solution for encoding and
+          decoding text, files, or images using the Base64 standard. Whether
+          you’re a developer, data analyst, or simply need to convert data for
+          web or email, this tool offers fast, accurate, and secure Base64
+          transformations—right in your browser, with no data ever sent to a
+          server.
         </p>
 
-        <BlockParagraphTitle>
-          Efficiently Encode and Decode Data in Base64 Format
-        </BlockParagraphTitle>
-
-        <p>
-          This tool empowers you to seamlessly convert strings between their
-          original text format and Base64 encoding. Whether you need to encode
-          text for secure transmission or decode encoded data for further
-          processing, this tool effortlessly handles the task.
-        </p>
-
-        <BlockParagraphTitle>
-          Simplified Conversion for Efficient Data Management
-        </BlockParagraphTitle>
-
-        <p>
-          This tool simplifies data conversion, saving you time and effort. With
-          a simple user interface, you can quickly and accurately encode or
-          decode strings, ensuring efficient data management and optimal
-          workflow.
-        </p>
-
-        <BlockParagraphTitle>
-          Unleash the Power of Base64 Encoding and Decoding
-        </BlockParagraphTitle>
-
-        <p>Utilize this comprehensive Base64 conversion tool to:</p>
-
+        <BlockParagraphTitle>Key Features</BlockParagraphTitle>
         <ul>
-          <li>Securely transmit data over networks</li>
-          <li>Implement data integrity checks</li>
-          <li>Store binary data in text files</li>
-          <li>Integrate Base64 encoding into your applications</li>
+          <li>
+            <strong>Instant Encoding & Decoding:</strong> Convert text, files,
+            or binary data to and from Base64 in real time.
+          </li>
+          <li>
+            <strong>Supports All Data Types:</strong> Easily handle plain text,
+            images, and binary files—perfect for developers and power users.
+          </li>
+          <li>
+            <strong>Copy & Export:</strong> Quickly copy results or export
+            encoded/decoded data for use in code, emails, or documentation.
+          </li>
+          <li>
+            <strong>Developer-Friendly Interface:</strong> Clean, intuitive
+            design for productivity and ease of use.
+          </li>
+          <li>
+            <strong>Privacy First:</strong> All operations happen locally in
+            your browser—your data never leaves your device.
+          </li>
         </ul>
 
-        <BlockParagraphTitle>
-          Transform Your Data Management with Seamless Base64 Conversion
-        </BlockParagraphTitle>
-
-        <p>
-          Embrace the simplicity and efficiency of this Base64 conversion tool
-          and streamline your data management processes. This tool empowers you
-          to effortlessly encode and decode strings, ensuring accurate and
-          secure data representation.
-        </p>
-
-        <BlockParagraphTitle>Key Features:</BlockParagraphTitle>
-
+        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
         <ul>
-          <li>Effortless encoding and decoding of text strings</li>
-          <li>Support for binary data and images</li>
-          <li>Simple and intuitive user interface</li>
-          <li>Free to use and accessible online</li>
+          <li>Encoding files or images for web, email, or API transmission.</li>
+          <li>
+            Decoding Base64 data for debugging, analysis, or data recovery.
+          </li>
+          <li>Storing binary data in text-based formats (JSON, XML, etc.).</li>
+          <li>Learning and teaching about data encoding and security.</li>
         </ul>
 
-        <BlockParagraphTitle>
-          Embrace the power of Base64 conversion with this user-friendly tool
-          and transform your data management experience!
-        </BlockParagraphTitle>
-
-        <SeoBreadcrumb
-          items={[
-            ["Home", "/"],
-            ["Tools", "/tools/"],
-            ["Base 64 Conversion Tool", "/tools/base-64"],
-          ]}
-        />
+        <p>
+          Streamline your workflow and ensure safe, efficient data handling with
+          the Base64 Converter Tool—your trusted resource for all things Base64.
+        </p>
       </SimpleCard>
     </>
   );

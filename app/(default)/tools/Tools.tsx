@@ -88,7 +88,8 @@ const getTools = () => {
       icon: mdiRunFast,
       href: "/tools/endurance-index/",
       title: "Endurance Index",
-      description: "Calculate your endurance index or estimate race duration for runners and coaches.",
+      description:
+        "Calculate your endurance index or estimate race duration for runners and coaches.",
     },
     {
       type: "code",

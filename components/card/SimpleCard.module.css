@@ -3,8 +3,7 @@
   border-radius: 8px;
   margin: 16px auto 16px auto;
   max-width: 100%;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   padding: 16px;
   width: 800px;
-  word-break: break-all;
 }
