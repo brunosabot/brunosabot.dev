@@ -1,39 +1,12 @@
 "use client";
 
 import React, { FormEvent, useCallback, useEffect, useState } from "react";
+
 import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
-import Input from "../../../../../components/form/Input";
 import Button from "../../../../../components/form/Button";
+import Input from "../../../../../components/form/Input";
+import Label from "../../../../../components/form/Label";
 import classes from "./ToolMemoryTable.module.css";
-
-function getDefaultMemoryTable() {
-  return [...Array.from(new Array(100)).map(() => "")];
-}
-
-function getFromMemoryTable(
-  isNameMode: boolean,
-  memoryTable: string[],
-): string {
-  const firstInvalid = memoryTable.indexOf("");
-  const validCount = firstInvalid === -1 ? 100 : firstInvalid - 1;
-  const selectedItem = Math.floor(
-    (crypto.getRandomValues(new Uint32Array(1))[0] / Math.pow(2, 32)) *
-      validCount,
-  );
-
-  if (isNameMode === false) return `${selectedItem}`;
-  if (selectedItem in memoryTable) return memoryTable[selectedItem];
-
-  return "";
-}
-
-function normalize(value: string) {
-  return value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-}
 
 export default function ToolMemoryTable() {
   const [table, setTable] = useState<string[]>(getDefaultMemoryTable());
@@ -110,7 +83,7 @@ export default function ToolMemoryTable() {
   return (
     <>
       {table.every((v) => v === "") ? null : (
-        <Button type="button" onClick={() => setPlay(!play)}>
+        <Button onClick={() => setPlay(!play)} type="button">
           {play ? "Stop playing" : "Start playing"}
         </Button>
       )}
@@ -118,7 +91,7 @@ export default function ToolMemoryTable() {
       {play === false &&
         table.map((item, i) => {
           return (
-            <Label label={i} key={i}>
+            <Label key={i} label={i}>
               <Input onChange={(e) => onChange(i, e)} value={item} />
             </Label>
           );
@@ -130,20 +103,20 @@ export default function ToolMemoryTable() {
           <span className={classes.memoryTableGameValue}>{currentPlay}</span>
           <Label label="Answer">
             <Input
-              onChange={(e) => setUserValue(e.target.value)}
-              value={userValue}
               autoFocus
               className={isError ? classes.memoryTableGameError : ""}
+              onChange={(e) => setUserValue(e.target.value)}
+              value={userValue}
             />
           </Label>
           <div className={classes.memoryTableGameSubmit}>
-            <Button type="button" onClick={skipResult} outline>
+            <Button onClick={skipResult} outline type="button">
               Skip
             </Button>
-            <Button type="button" onClick={showResult} outline>
+            <Button onClick={showResult} outline type="button">
               Show Answer
             </Button>
-            <Button type="submit" onClick={() => {}}>
+            <Button onClick={() => {}} type="submit">
               Validate
             </Button>
           </div>
@@ -158,4 +131,32 @@ export default function ToolMemoryTable() {
       )}
     </>
   );
+}
+
+function getDefaultMemoryTable() {
+  return [...Array.from(new Array(100)).map(() => "")];
+}
+
+function getFromMemoryTable(
+  isNameMode: boolean,
+  memoryTable: string[],
+): string {
+  const firstInvalid = memoryTable.indexOf("");
+  const validCount = firstInvalid === -1 ? 100 : firstInvalid - 1;
+  const selectedItem = Math.floor(
+    (crypto.getRandomValues(new Uint32Array(1))[0] / Math.pow(2, 32)) *
+      validCount,
+  );
+
+  if (isNameMode === false) return `${selectedItem}`;
+  if (selectedItem in memoryTable) return memoryTable[selectedItem];
+
+  return "";
+}
+
+function normalize(value: string) {
+  return value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }

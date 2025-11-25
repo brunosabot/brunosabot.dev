@@ -1,12 +1,14 @@
-import { getMetaData } from "../../../lib/metadata";
-import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
-import { getStreamlineCards } from "../../actions/streamline";
-import StreamlineCard from "./components/StreamlineCard";
 import Prism from "prismjs";
+
+import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import Title from "../../../generic/typography/Title";
+import { getMetaData } from "../../../lib/metadata";
+import { getStreamlineCards } from "../../actions/streamline";
 import "prismjs/components/prism-yaml";
 import "prismjs/themes/prism-dark.css";
+
 import List from "./components/List";
-import Title from "../../../generic/typography/Title";
+import StreamlineCard from "./components/StreamlineCard";
 
 export const revalidate = 21600;
 
@@ -30,13 +32,13 @@ export default async function StreamlineCardsPage() {
       <List>
         {streamlineCards.map((streamlineCard) => (
           <StreamlineCard
-            description={streamlineCard.description}
-            key={streamlineCard.id}
-            title={streamlineCard.title}
-            tags={streamlineCard.tags}
             author={streamlineCard.author}
+            description={streamlineCard.description}
             image={streamlineCard.image}
+            key={streamlineCard.id}
             language={streamlineCard.language}
+            tags={streamlineCard.tags}
+            title={streamlineCard.title}
           >
             {Prism.highlight(streamlineCard.code, Prism.languages.yaml, "yaml")}
           </StreamlineCard>

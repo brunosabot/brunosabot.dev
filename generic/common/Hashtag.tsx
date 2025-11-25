@@ -1,4 +1,5 @@
 import { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
+
 import classNames from "./Hashtag.module.css";
 
 type IHashtagProps = DetailedHTMLProps<

@@ -1,10 +1,11 @@
 import { MarkedExtension, Tokens } from "marked";
-import { MAP_LANGUAGE } from "./code";
 import Prism from "prismjs";
+
+import { MAP_LANGUAGE } from "./code";
 
 const codeExtension: MarkedExtension = {
   renderer: {
-    code({ text, lang, escaped }: Tokens.Code) {
+    code({ lang, text }: Tokens.Code) {
       const language = lang ? lang.toLowerCase() : "text";
       const html = text;
 

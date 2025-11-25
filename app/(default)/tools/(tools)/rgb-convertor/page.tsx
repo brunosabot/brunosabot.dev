@@ -9,10 +9,10 @@ import ToolRgbConvertor from "./ToolRgbConvertor";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/rgb-convertor/",
       description:
         "Convert Colors Between RGB and HEX Formats with Ease and Precision",
       title: "Color Converter Tool",
-      canonical: "https://brunosabot.dev/tools/rgb-convertor/",
     },
     "/tools/rgb-convertor/",
   );

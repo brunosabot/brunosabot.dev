@@ -1,10 +1,10 @@
 "use client";
 
-import useKonami from "../lib/konami";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
 import Script from "next/script";
+
+import useKonami from "../lib/konami";
 
 function LayoutClient() {
   useKonami();

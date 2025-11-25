@@ -1,19 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Label from "../../../../../components/form/Label";
+
 import Columns from "../../../../../components/Columns";
-import Input from "../../../../../components/form/Input";
 import CubicBezierBlock from "../../../../../components/cubicBezier/CubicBezierBlock";
-
-function enrich(value: string) {
-  const intValue = parseInt(value, 10);
-  const intNumber = isNaN(intValue) ? 0 : intValue;
-  const withMax = Math.max(0, intNumber);
-  const withMin = Math.min(1, withMax);
-
-  return withMin;
-}
+import Input from "../../../../../components/form/Input";
+import Label from "../../../../../components/form/Label";
 
 export default function ToolBezierCurves() {
   const [x1, setX1] = useState("0.25");
@@ -44,16 +36,25 @@ export default function ToolBezierCurves() {
       <Columns cols={2}>
         <CubicBezierBlock
           x1={enrich(x1)}
-          y1={enrich(y1)}
           x2={enrich(x2)}
+          y1={enrich(y1)}
           y2={enrich(y2)}
         />
-        <CubicBezierBlock x1={0} y1={0} x2={1} y2={1} />
-        <CubicBezierBlock x1={0} y1={0} x2={0.2} y2={1} />
-        <CubicBezierBlock x1={0.4} y1={0} x2={0.6} y2={1} />
-        <CubicBezierBlock x1={0.86} y1={0} x2={0.07} y2={1} />
-        <CubicBezierBlock x1={0.22} y1={0.61} x2={0.36} y2={1} />
+        <CubicBezierBlock x1={0} x2={1} y1={0} y2={1} />
+        <CubicBezierBlock x1={0} x2={0.2} y1={0} y2={1} />
+        <CubicBezierBlock x1={0.4} x2={0.6} y1={0} y2={1} />
+        <CubicBezierBlock x1={0.86} x2={0.07} y1={0} y2={1} />
+        <CubicBezierBlock x1={0.22} x2={0.36} y1={0.61} y2={1} />
       </Columns>
     </>
   );
+}
+
+function enrich(value: string) {
+  const intValue = parseInt(value, 10);
+  const intNumber = isNaN(intValue) ? 0 : intValue;
+  const withMax = Math.max(0, intNumber);
+  const withMin = Math.min(1, withMax);
+
+  return withMin;
 }

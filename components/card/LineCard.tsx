@@ -13,8 +13,8 @@ const LineCard: React.FC<Props> = ({ icon, title, to }) => {
     <Composant
       className={classes["line-card"]}
       href={to}
-      target={to && to.indexOf("http") === 0 ? "_blank" : undefined}
       rel="noopener noreferrer"
+      target={to && to.indexOf("http") === 0 ? "_blank" : undefined}
     >
       {icon}
       {title}

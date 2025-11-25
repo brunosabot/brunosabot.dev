@@ -1,16 +1,17 @@
-import Image from "next/image";
-import classNames from "./Video.module.css";
 import { mdiYoutube } from "@mdi/js";
+import Image from "next/image";
+
 import Svg from "../../../../components/svg/Svg";
 import { getDate } from "../../../../lib/time";
+import classNames from "./Video.module.css";
 
 interface IVideoProps {
-  title: string;
-  image?: string;
-  description: string;
-  lang: string;
   date: string;
+  description: string;
+  image?: string;
+  lang: string;
   priority: boolean;
+  title: string;
   youtubeId: string;
 }
 
@@ -22,11 +23,11 @@ export default function Video(props: IVideoProps) {
       <div className={classNames.ImageWrapper}>
         {props.image ? (
           <Image
-            src={props.image}
             alt=""
-            fill={true}
             className={classNames.Image}
+            fill={true}
             priority={props.priority}
+            src={props.image}
           />
         ) : null}
       </div>
@@ -38,10 +39,10 @@ export default function Video(props: IVideoProps) {
 
         <div className={classNames.Links}>
           <a
-            href={`https://www.youtube.com/watch?v=${props.youtubeId}`}
-            target="_blank"
-            rel="noopener noreferrer"
             className={`${classNames.Link} ${classNames.Youtube}`}
+            href={`https://www.youtube.com/watch?v=${props.youtubeId}`}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <Svg d={mdiYoutube} />
             YouTube video

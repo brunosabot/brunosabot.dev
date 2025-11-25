@@ -10,9 +10,9 @@ export default async function Intro() {
       <p className={classes.IntroDescription}>
         I am an Engineering Manager and Staff Software Engineer at{" "}
         <a
-          target="_blank"
           href="https://playplay.com/"
           rel="noopener noreferrer"
+          target="_blank"
         >
           PlayPlay
         </a>{" "}

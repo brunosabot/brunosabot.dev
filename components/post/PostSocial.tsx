@@ -1,36 +1,37 @@
-import classes from "./PostSocial.module.css";
-import Svg from "../svg/Svg";
 import { mdiLinkedin } from "@mdi/js";
-import { WithATooltip } from "../modal/WithATooltip";
-import { SITE_METADATA } from "../../lib/metadata";
-import svgX from "../svg/x";
 
-interface IPostsProps {
-  title: string;
-  path: string;
-}
+import { SITE_METADATA } from "../../lib/metadata";
+import { WithATooltip } from "../modal/WithATooltip";
+import Svg from "../svg/Svg";
+import svgX from "../svg/x";
+import classes from "./PostSocial.module.css";
 
 interface ILinkWithTooltip {
+  children: React.ReactNode;
   href: string;
   label: string;
-  children: React.ReactNode;
 }
 
-const LinkWithTooltip = ({ href, label, children }: ILinkWithTooltip) => (
+interface IPostsProps {
+  path: string;
+  title: string;
+}
+
+const LinkWithTooltip = ({ children, href, label }: ILinkWithTooltip) => (
   <WithATooltip label={label}>
     <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       aria-label={label}
       className={classes["blog-post-social-item"]}
+      href={href}
+      rel="noopener noreferrer"
+      target="_blank"
     >
       {children}
     </a>
   </WithATooltip>
 );
 
-const Posts: React.FC<IPostsProps> = ({ title, path }) => {
+const Posts: React.FC<IPostsProps> = ({ path, title }) => {
   const encodedUrl = encodeURI(`${SITE_METADATA.siteUrl}${path}`);
   const encodedTitle = encodeURI(`${title} by @brunosabot`);
 
@@ -41,13 +42,13 @@ const Posts: React.FC<IPostsProps> = ({ title, path }) => {
           href={`https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
           label="Share the article on Twitter"
         >
-          <Svg d={svgX} className="icon-x" />
+          <Svg className="icon-x" d={svgX} />
         </LinkWithTooltip>
         <LinkWithTooltip
           href={`http://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&source=brunosabot.dev`}
           label="Share the article on LinkedIn"
         >
-          <Svg d={mdiLinkedin} className="icon-linkedin" />
+          <Svg className="icon-linkedin" d={mdiLinkedin} />
         </LinkWithTooltip>
       </div>
     </>

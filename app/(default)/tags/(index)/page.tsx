@@ -1,7 +1,7 @@
-import { getNotionPosts } from "../../../../lib/notion-posts";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
 import Hashtag from "../../../../generic/common/Hashtag";
 import Title from "../../../../generic/typography/Title";
+import { getNotionPosts } from "../../../../lib/notion-posts";
 import List from "./components/List";
 
 export default async function TagsPage() {

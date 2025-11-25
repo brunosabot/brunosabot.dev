@@ -1,14 +1,14 @@
 import classes from "./SvgButton.module.css";
 
 interface ISvgButtonProps {
-  onClick: () => void;
-  type: "button" | "submit" | "reset" | undefined;
   d: string;
+  onClick: () => void;
+  type: "button" | "reset" | "submit" | undefined;
 }
 
-const SvgButton: React.FC<ISvgButtonProps> = ({ onClick, type, d }) => {
+const SvgButton: React.FC<ISvgButtonProps> = ({ d, onClick, type }) => {
   return (
-    <button type={type} className={classes["SvgButton"]} onClick={onClick}>
+    <button className={classes["SvgButton"]} onClick={onClick} type={type}>
       <svg viewBox="0 0 24 24">
         <path d={d} />
       </svg>

@@ -6,12 +6,16 @@ interface ISeoBreadcrumbProps {
   items: BreadcrumbEntry[];
 }
 
+export default async function SeoBreadcrumb({ items }: ISeoBreadcrumbProps) {
+  return <SeoScript data={getLDJSON(items)} />;
+}
+
 function getLDJSON(items: BreadcrumbEntry[]) {
   const itemListElement = items.map(([name, item], index) => ({
     "@type": "ListItem",
-    position: index + 1,
-    name,
     item: `${SITE_METADATA.siteUrl}${item}`,
+    name,
+    position: index + 1,
   }));
 
   return {
@@ -19,8 +23,4 @@ function getLDJSON(items: BreadcrumbEntry[]) {
     "@type": "BreadcrumbList",
     itemListElement,
   };
-}
-
-export default async function SeoBreadcrumb({ items }: ISeoBreadcrumbProps) {
-  return <SeoScript data={getLDJSON(items)} />;
 }

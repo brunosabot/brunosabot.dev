@@ -1,19 +1,20 @@
-import Image from "next/image";
-import classNames from "./Talk.module.css";
 import { mdiFilePresentationBox, mdiYoutube } from "@mdi/js";
+import Image from "next/image";
+
 import Svg from "../../../../components/svg/Svg";
 import { getDate } from "../../../../lib/time";
+import classNames from "./Talk.module.css";
 
 interface ITalkProps {
-  title: string;
-  image?: string;
-  description: string;
-  lang: string;
   conference: string;
   date: string;
+  description: string;
+  image?: string;
+  lang: string;
   priority: boolean;
-  youtubeId?: string;
   slides: string;
+  title: string;
+  youtubeId?: string;
 }
 
 export default function Talk(props: ITalkProps) {
@@ -24,11 +25,11 @@ export default function Talk(props: ITalkProps) {
       <div className={classNames.ImageWrapper}>
         {props.image ? (
           <Image
-            src={props.image}
             alt=""
-            fill={true}
             className={classNames.Image}
+            fill={true}
             priority={props.priority}
+            src={props.image}
           />
         ) : null}
       </div>
@@ -43,10 +44,10 @@ export default function Talk(props: ITalkProps) {
         <div className={classNames.Links}>
           {props.youtubeId ? (
             <a
-              href={`https://www.youtube.com/watch?v=${props.youtubeId}`}
-              target="_blank"
-              rel="noopener noreferrer"
               className={`${classNames.Link} ${classNames.Youtube}`}
+              href={`https://www.youtube.com/watch?v=${props.youtubeId}`}
+              rel="noopener noreferrer"
+              target="_blank"
             >
               <Svg d={mdiYoutube} />
               YouTube video
@@ -54,10 +55,10 @@ export default function Talk(props: ITalkProps) {
           ) : null}
 
           <a
-            href={props.slides}
-            target="_blank"
-            rel="noopener noreferrer"
             className={`${classNames.Link} ${classNames.Slides}`}
+            href={props.slides}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <Svg d={mdiFilePresentationBox} />
             Slides

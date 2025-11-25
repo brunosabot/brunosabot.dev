@@ -5,20 +5,20 @@ interface ISeoWebsiteProps {
   [key: string]: never;
 }
 
+export default async function SeoWebsite({}: ISeoWebsiteProps) {
+  return <SeoScript data={getLDJSON()} />;
+}
+
 function getLDJSON() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    url: `${SITE_METADATA.siteUrl}/`,
-    name: SITE_METADATA.title,
     author: {
       "@type": "Person",
-      givenName: "Bruno",
       familyName: "Sabot",
+      givenName: "Bruno",
     },
+    name: SITE_METADATA.title,
+    url: `${SITE_METADATA.siteUrl}/`,
   };
-}
-
-export default async function SeoWebsite({}: ISeoWebsiteProps) {
-  return <SeoScript data={getLDJSON()} />;
 }

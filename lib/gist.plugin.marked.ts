@@ -1,17 +1,29 @@
 import { MarkedExtension } from "marked";
-import { MAP_LANGUAGE } from "./code";
 import Prism from "prismjs";
 
+import { MAP_LANGUAGE } from "./code";
+
 type GistToken = {
-  type: "gist";
-  raw: string;
-  url: string;
   data: {
     file: string;
     html: string;
     language: string;
   }[];
+  raw: string;
+  type: "gist";
+  url: string;
 };
+
+function getLanguage(inputLanguage: string | undefined) {
+  if (inputLanguage === undefined) return "text";
+  if (inputLanguage === "") return "text";
+
+  if (inputLanguage in MAP_LANGUAGE) {
+    return MAP_LANGUAGE[inputLanguage as keyof typeof MAP_LANGUAGE].name;
+  }
+
+  return "text";
+}
 
 async function loadGist(id: string): Promise<[string[], { files: string[] }]> {
   const url = `https://gist.github.com/${id}`;
@@ -32,40 +44,15 @@ async function loadGist(id: string): Promise<[string[], { files: string[] }]> {
   return [data, jsonData];
 }
 
-function getLanguage(inputLanguage: string | undefined) {
-  if (inputLanguage === undefined) return "text";
-  if (inputLanguage === "") return "text";
-
-  if (inputLanguage in MAP_LANGUAGE) {
-    return MAP_LANGUAGE[inputLanguage as keyof typeof MAP_LANGUAGE].name;
-  }
-
-  return "text";
-}
-
 const gistPlugin: MarkedExtension = {
+  async: true,
   extensions: [
     {
-      name: "gist",
       level: "block",
-      start(src) {
-        return src.indexOf("`gist:");
-      },
-      tokenizer(src) {
-        const rule = /^`gist:\s*([a-z0-9]+\/[0-9a-f]+)`/;
-        const match = rule.exec(src);
-        if (match) {
-          return {
-            type: "gist",
-            raw: match[0],
-            url: match[1],
-            data: [],
-          };
-        }
-      },
+      name: "gist",
       renderer(token) {
         return (token as GistToken).data.reduce(
-          (acc, { html, language, file }) => {
+          (acc, { file, html, language }) => {
             const grammar = Object.values(MAP_LANGUAGE).find(
               (l) => l.name === language,
             )?.prism;
@@ -84,9 +71,23 @@ const gistPlugin: MarkedExtension = {
           "",
         );
       },
+      start(src) {
+        return src.indexOf("`gist:");
+      },
+      tokenizer(src) {
+        const rule = /^`gist:\s*([a-z0-9]+\/[0-9a-f]+)`/;
+        const match = rule.exec(src);
+        if (match) {
+          return {
+            data: [],
+            raw: match[0],
+            type: "gist",
+            url: match[1],
+          };
+        }
+      },
     },
   ],
-  async: true,
   async walkTokens(token) {
     if (token.type === "gist") {
       const [data, jsonData] = await loadGist(token.url);

@@ -1,8 +1,7 @@
-import PageTitle from "../../../components/typography/PageTitle";
-import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
-import Video from "./components/Video";
 import Title from "../../../generic/typography/Title";
+import { getMetaData } from "../../../lib/metadata";
+import Video from "./components/Video";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -17,15 +16,15 @@ export async function generateMetadata() {
 const getVideos = async () => {
   const videoPromises = [
     {
-      id: "1",
       date: "2020-03-09",
+      description:
+        "Nous avons l'habitude de dire qu'aligner les éléments en CSS s'avère difficile.  Découvrez avec Manuel et Bruno que de nos jours cela est vraiment facile et à la portée de tous ! #flexbox",
+      id: "1",
+      image:
+        "https://storage.googleapis.com/brunosabot.dev/img/t9XFUI_qZ3g.jpeg",
       language: "fr",
       title: "Un Café Avec Bruno & Manuel : CSS Flexbox",
       youtubeId: "t9XFUI_qZ3g",
-      description:
-        "Nous avons l'habitude de dire qu'aligner les éléments en CSS s'avère difficile.  Découvrez avec Manuel et Bruno que de nos jours cela est vraiment facile et à la portée de tous ! #flexbox",
-      image:
-        "https://storage.googleapis.com/brunosabot.dev/img/t9XFUI_qZ3g.jpeg",
     },
   ];
 
@@ -41,14 +40,14 @@ export default async function VideosPage() {
 
       {videos.map((video, index) => (
         <Video
-          image={video.image ? video.image : undefined}
-          description={video.description}
-          lang={video.language}
-          title={video.title}
           date={video.date}
+          description={video.description}
+          image={video.image ? video.image : undefined}
           key={video.id}
-          youtubeId={video.youtubeId}
+          lang={video.language}
           priority={index === 0}
+          title={video.title}
+          youtubeId={video.youtubeId}
         />
       ))}
 

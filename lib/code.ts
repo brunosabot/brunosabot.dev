@@ -10,16 +10,16 @@ import "prismjs/components/prism-yaml";
 import "prismjs/themes/prism-dark.css";
 
 export const MAP_LANGUAGE = {
-  yml: { name: "yaml", prism: Prism.languages.yaml },
-  yaml: { name: "yaml", prism: Prism.languages.yaml },
   Dockerfile: { name: "docker", prism: Prism.languages.docker },
   eslintrc: { name: "json", prism: Prism.languages.json },
   js: { name: "javascript", prism: Prism.languages.javascript },
-  ts: { name: "typescript", prism: Prism.languages.typescript },
-  tsx: { name: "tsx", prism: Prism.languages.tsx },
-  stylelintrc: { name: "json", prism: Prism.languages.json },
-  prettierrc: { name: "json", prism: Prism.languages.json },
   json: { name: "json", prism: Prism.languages.json },
   md: { name: "markdown", prism: Prism.languages.markdown },
   nginx: { name: "nginx", prism: Prism.languages.nginx },
+  prettierrc: { name: "json", prism: Prism.languages.json },
+  stylelintrc: { name: "json", prism: Prism.languages.json },
+  ts: { name: "typescript", prism: Prism.languages.typescript },
+  tsx: { name: "tsx", prism: Prism.languages.tsx },
+  yaml: { name: "yaml", prism: Prism.languages.yaml },
+  yml: { name: "yaml", prism: Prism.languages.yaml },
 };

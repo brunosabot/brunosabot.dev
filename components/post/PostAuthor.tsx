@@ -1,32 +1,33 @@
 import Image from "next/image";
-import classes from "./PostAuthor.module.css";
+
 import brunosabot from "../../public/images/brunosabot.jpg";
+import classes from "./PostAuthor.module.css";
 import PostDate from "./PostDate";
 
 interface IPostAuthorProps {
+  canonical: string;
+  canonicalName: string;
   creator: string;
   date: string;
   timeToRead: number;
-  canonical: string;
-  canonicalName: string;
 }
 
 const PostAuthor: React.FC<IPostAuthorProps> = ({
+  canonical,
+  canonicalName,
   creator,
   date,
   timeToRead,
-  canonical,
-  canonicalName,
 }) => {
   return (
     <div className={classes["blog-post-author"]}>
       <div className={classes["blog-post-author-image"]}>
         <Image
-          height={48}
-          width={48}
-          src={brunosabot}
           alt="Bruno Sabot"
+          height={48}
           placeholder="blur"
+          src={brunosabot}
+          width={48}
         />
       </div>
       <div>

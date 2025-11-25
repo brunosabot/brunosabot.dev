@@ -2,7 +2,7 @@ import { MarkedExtension, Tokens } from "marked";
 
 const headingsExtension: MarkedExtension = {
   renderer: {
-    heading({ text, tokens, depth, ...rest }: Tokens.Heading) {
+    heading({ depth, text }: Tokens.Heading) {
       const escapedText = text.toLowerCase().replace(/[^\w]+/g, "-");
 
       return `

@@ -1,116 +1,117 @@
 "use client";
 
-import React, { useState } from "react";
 import {
   mdiBrain,
   mdiCodeTags,
   mdiHospitalBuilding,
   mdiRunFast,
 } from "@mdi/js";
-import Tool from "./components/Tool";
+import React, { useState } from "react";
+
 import Filter from "./components/Filter";
 import Filters from "./components/Filters";
+import Tool from "./components/Tool";
 
 const getTools = () => {
   const tools = [
     {
-      type: "health",
-      icon: mdiHospitalBuilding,
-      href: "/tools/alcohol/",
-      title: "Alcohol quantity",
       description: "Calculate alcohol content in your drinks.",
+      href: "/tools/alcohol/",
+      icon: mdiHospitalBuilding,
+      title: "Alcohol quantity",
+      type: "health",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/base-64/",
-      title: "Base 64 encode and decode",
       description: "Easily convert text to and from Base64.",
+      href: "/tools/base-64/",
+      icon: mdiCodeTags,
+      title: "Base 64 encode and decode",
+      type: "code",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/bezier-curves/",
-      title: "Bezier curves",
       description: "Create smooth curves for animations.",
+      href: "/tools/bezier-curves/",
+      icon: mdiCodeTags,
+      title: "Bezier curves",
+      type: "code",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/chars-count/",
-      title: "Chars counter",
       description: "Count characters, words, and more in your text.",
+      href: "/tools/chars-count/",
+      icon: mdiCodeTags,
+      title: "Chars counter",
+      type: "code",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/rgb-convertor/",
-      title: "Color converter",
       description: "Convert between different color formats.",
+      href: "/tools/rgb-convertor/",
+      icon: mdiCodeTags,
+      title: "Color converter",
+      type: "code",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/pretty/",
-      title: "JSON prettifier",
       description: "Format JSON for easier reading.",
+      href: "/tools/pretty/",
+      icon: mdiCodeTags,
+      title: "JSON prettifier",
+      type: "code",
     },
     {
-      type: "brain",
-      icon: mdiBrain,
-      href: "/tools/memory-table/",
-      title: "Memory Table",
       description: "Improve your memory with this fun game.",
+      href: "/tools/memory-table/",
+      icon: mdiBrain,
+      title: "Memory Table",
+      type: "brain",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/photoshop-shadow/",
-      title: "Photoshop shadow",
       description: "Create CSS shadows from Photoshop.",
-    },
-    {
-      type: "code",
+      href: "/tools/photoshop-shadow/",
       icon: mdiCodeTags,
-      href: "/tools/sha/",
-      title: "Sha generation",
+      title: "Photoshop shadow",
+      type: "code",
+    },
+    {
       description: "Generate secure hash values.",
+      href: "/tools/sha/",
+      icon: mdiCodeTags,
+      title: "Sha generation",
+      type: "code",
     },
     {
-      type: "sport",
-      icon: mdiRunFast,
-      href: "/tools/speed-convertor/",
-      title: "Speed convertor",
       description: "Convert between different speed units.",
+      href: "/tools/speed-convertor/",
+      icon: mdiRunFast,
+      title: "Speed convertor",
+      type: "sport",
     },
     {
-      type: "sport",
-      icon: mdiRunFast,
-      href: "/tools/endurance-index/",
-      title: "Endurance Index",
       description:
         "Calculate your endurance index or estimate race duration for runners and coaches.",
+      href: "/tools/endurance-index/",
+      icon: mdiRunFast,
+      title: "Endurance Index",
+      type: "sport",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/url-encode-decode/",
-      title: "URL encode and decode",
       description: "Encode and decode URLs easily.",
+      href: "/tools/url-encode-decode/",
+      icon: mdiCodeTags,
+      title: "URL encode and decode",
+      type: "code",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/uuid/",
-      title: "UUID and Nano ID generation",
       description: "Generate unique identifiers.",
+      href: "/tools/uuid/",
+      icon: mdiCodeTags,
+      title: "UUID and Nano ID generation",
+      type: "code",
     },
     {
-      type: "code",
-      icon: mdiCodeTags,
-      href: "/tools/timestamp/",
-      title: "Timestamp converter",
       description: "Convert timestamps to and from dates.",
+      href: "/tools/timestamp/",
+      icon: mdiCodeTags,
+      title: "Timestamp converter",
+      type: "code",
     },
   ];
 
@@ -119,10 +120,10 @@ const getTools = () => {
 
 const getCategories = () => {
   const categories = [
-    { type: "code", icon: mdiCodeTags, title: "Developer" },
-    { type: "health", icon: mdiHospitalBuilding, title: "Health" },
-    { type: "brain", icon: mdiBrain, title: "Brain" },
-    { type: "sport", icon: mdiRunFast, title: "Sport" },
+    { icon: mdiCodeTags, title: "Developer", type: "code" },
+    { icon: mdiHospitalBuilding, title: "Health", type: "health" },
+    { icon: mdiBrain, title: "Brain", type: "brain" },
+    { icon: mdiRunFast, title: "Sport", type: "sport" },
   ];
 
   return categories;
@@ -140,10 +141,10 @@ export default function Tools() {
           <Filter
             active={filter === category.type}
             d={category.icon}
+            key={category.type}
             onClick={() =>
               setFilter(filter !== category.type ? category.type : "")
             }
-            key={category.type}
           >
             {category.title}
           </Filter>
@@ -158,11 +159,11 @@ export default function Tools() {
 
           return (
             <Tool
-              key={tool.href}
+              description={tool.description}
               icon={tool.icon}
+              key={tool.href}
               name={tool.title}
               url={tool.href}
-              description={tool.description}
             />
           );
         })}

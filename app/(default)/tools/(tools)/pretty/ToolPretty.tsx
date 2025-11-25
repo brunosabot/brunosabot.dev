@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+
 import SimpleCard from "../../../../../components/card/SimpleCard";
 import Label from "../../../../../components/form/Label";
 import Textarea from "../../../../../components/form/Textarea";
@@ -16,7 +17,7 @@ export default function ToolPretty() {
     try {
       JSON.stringify(JSON.parse(value));
       setValid(true);
-    } catch (e) {
+    } catch {
       setValid(false);
     }
   };
@@ -25,9 +26,9 @@ export default function ToolPretty() {
     <>
       <Label label="Unformatted string">
         <Textarea
+          aria-invalid={valid === false}
           onChange={onChange}
           value={string}
-          aria-invalid={valid === false}
         />
       </Label>
       <SimpleCard>

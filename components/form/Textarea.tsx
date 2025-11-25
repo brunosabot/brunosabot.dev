@@ -1,11 +1,11 @@
 import classes from "./Textarea.module.css";
 
 interface ITextareaProps {
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  value: string;
   "aria-invalid"?: boolean;
-  rows?: number;
   id?: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  rows?: number;
+  value: string;
 }
 
 const Textarea: React.FC<ITextareaProps> = (props) => {

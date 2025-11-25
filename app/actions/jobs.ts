@@ -10,7 +10,6 @@ interface Jobs {
 const jobs: Jobs = {
   en: [
     {
-      id: "playplay",
       companyName: "PlayPlay",
       companyWebsite: "https://playplay.com/",
       details: [
@@ -19,12 +18,12 @@ const jobs: Jobs = {
         "Member of the enabling team and the architecture committee",
       ],
       endDate: "Currently",
-      startDate: "September 2022",
+      id: "playplay",
       job: "Staff Software Engineer",
+      startDate: "September 2022",
       subtitles: [],
     },
     {
-      id: "cdiscount",
       companyName: "Cdiscount",
       companyWebsite: "https://www.cdiscount.com/",
       details: [
@@ -33,12 +32,12 @@ const jobs: Jobs = {
         "Internal tool development (TypeScript, React)",
       ],
       endDate: "June 2022",
-      startDate: "September 2020",
+      id: "cdiscount",
       job: "Consultant",
+      startDate: "September 2020",
       subtitles: ["Skill delegation for Zenika"],
     },
     {
-      id: "fatec",
       companyName: "FATEC Group",
       companyWebsite: "https://www.fatec-group.com/",
       details: [
@@ -47,12 +46,12 @@ const jobs: Jobs = {
         "Training and helping the dev team on Front-end technologies",
       ],
       endDate: "January 2020",
-      startDate: "December 2018",
+      id: "fatec",
       job: "Consultant",
+      startDate: "December 2018",
       subtitles: ["Skill delegation for Zenika"],
     },
     {
-      id: "zenika",
       companyName: "Zenika (Bordeaux)",
       companyWebsite: "https://zenika.com",
       details: [
@@ -62,12 +61,12 @@ const jobs: Jobs = {
         "JavaScript development, conferences, training, AI.",
       ],
       endDate: "June 2022",
-      startDate: "August 2017",
+      id: "zenika",
       job: "Consultant",
+      startDate: "August 2017",
       subtitles: [],
     },
     {
-      id: "netinteractive",
       companyName: "NETINTERACTIVE",
       companyWebsite: "https://webpublication.fr/",
       details: [
@@ -77,12 +76,12 @@ const jobs: Jobs = {
         "Ergonomy advising, user experience advising",
       ],
       endDate: "February 2017",
-      startDate: "September 2013",
+      id: "netinteractive",
       job: "Front-end Lead",
+      startDate: "September 2013",
       subtitles: [],
     },
     {
-      id: "owlient",
       companyName: "OWLIENT",
       companyWebsite: "https://www.equideow.com/",
       details: [
@@ -91,12 +90,12 @@ const jobs: Jobs = {
         "Adiving and dialogue on the mobile ergonomy",
       ],
       endDate: "June 2013",
-      startDate: "October 2011",
+      id: "owlient",
       job: "Webapp developer",
+      startDate: "October 2011",
       subtitles: ["Skill delegation for GLOBALIS media system"],
     },
     {
-      id: "webedia",
       companyName: "WEBEDIA",
       companyWebsite: "https://webedia-group.com/",
       details: [
@@ -105,12 +104,12 @@ const jobs: Jobs = {
         "Technological advising (prototypeJS to jQuery migration)",
       ],
       endDate: "September 2011",
-      startDate: "March 2011",
+      id: "webedia",
       job: "PHP developer, Integrator",
+      startDate: "March 2011",
       subtitles: ["Skill delegation for GLOBALIS media system"],
     },
     {
-      id: "ubiqus",
       companyName: "UBIQUS",
       companyWebsite: "https://www.acolad.com/",
       details: [
@@ -118,12 +117,12 @@ const jobs: Jobs = {
         "Front-office developments for the event websites sold by the company (HTML, jQuery)",
       ],
       endDate: "October 2010",
-      startDate: "March 2010",
+      id: "ubiqus",
       job: "PHP developer",
+      startDate: "March 2010",
       subtitles: ["Skill delegation for GLOBALIS media system"],
     },
     {
-      id: "globalis",
       companyName: "GLOBALIS media systems",
       companyWebsite: "http://globalis-ms.com/",
       details: [
@@ -132,14 +131,14 @@ const jobs: Jobs = {
         "Performance audits for : Owlient, Smart Agence, Solly Azar, Gaya, Reed Business Information",
       ],
       endDate: "May 2013",
-      startDate: "September 2009",
+      id: "globalis",
       job: "Web developer",
+      startDate: "September 2009",
       subtitles: [],
     },
   ],
   fr: [
     {
-      id: "playplay",
       companyName: "PlayPlay",
       companyWebsite: "https://playplay.com/",
       details: [
@@ -148,12 +147,12 @@ const jobs: Jobs = {
         "Membre de l'enabling team et du comité d'architecture",
       ],
       endDate: "Actuellement",
-      startDate: "Septembre 2022",
+      id: "playplay",
       job: "Staff Software Engineer",
+      startDate: "Septembre 2022",
       subtitles: [],
     },
     {
-      id: "cdiscount",
       companyName: "Cdiscount",
       companyWebsite: "https://www.cdiscount.com/",
       details: [
@@ -162,12 +161,12 @@ const jobs: Jobs = {
         "Développement de produits internes (TypeScript, React)",
       ],
       endDate: "Juin 2022",
-      startDate: "Septembre 2020",
+      id: "cdiscount",
       job: "Consultant",
+      startDate: "Septembre 2020",
       subtitles: ["Régie pour Zenika"],
     },
     {
-      id: "fatec",
       companyName: "FATEC Group",
       companyWebsite: "https://www.fatec-group.com/",
       details: [
@@ -176,12 +175,12 @@ const jobs: Jobs = {
         "Formation et encadrement des équipes de dev sur les technologies Front-end",
       ],
       endDate: "Janvier 2020",
-      startDate: "Décembre 2018",
+      id: "fatec",
       job: "Consultant",
+      startDate: "Décembre 2018",
       subtitles: ["Régie pour Zenika"],
     },
     {
-      id: "zenika",
       companyName: "Zenika (Bordeaux)",
       companyWebsite: "https://zenika.com",
       details: [
@@ -191,12 +190,12 @@ const jobs: Jobs = {
         "Développement JavaScript, Conférences, Formations, IA.",
       ],
       endDate: "Juin 2022",
-      startDate: "Août 2017",
+      id: "zenika",
       job: "Consultant",
+      startDate: "Août 2017",
       subtitles: [],
     },
     {
-      id: "netinteractive",
       companyName: "NETINTERACTIVE",
       companyWebsite: "https://webpublication.fr/",
       details: [
@@ -206,12 +205,12 @@ const jobs: Jobs = {
         "Conseils ergonomiques, Conseils expérience utilisateur.",
       ],
       endDate: "Février 2017",
-      startDate: "Septembre 2013",
+      id: "netinteractive",
       job: "Lead Front-end",
+      startDate: "Septembre 2013",
       subtitles: [],
     },
     {
-      id: "owlient",
       companyName: "OWLIENT",
       companyWebsite: "https://www.equideow.com/",
       details: [
@@ -220,12 +219,12 @@ const jobs: Jobs = {
         "Réflexions et concertation sur l'ergonomie mobile.",
       ],
       endDate: "Juin 2013",
-      startDate: "Octobre 2011",
+      id: "owlient",
       job: "Développeur Webapp",
+      startDate: "Octobre 2011",
       subtitles: ["Régie pour GLOBALIS media system"],
     },
     {
-      id: "webedia",
       companyName: "WEBEDIA",
       companyWebsite: "https://webedia-group.com/",
       details: [
@@ -234,12 +233,12 @@ const jobs: Jobs = {
         "Conseils technologiques (migration prototypeJS vers jQuery).",
       ],
       endDate: "Septembre 2011",
-      startDate: "Mars 2011",
+      id: "webedia",
       job: "Développeur PHP, Intégrateur",
+      startDate: "Mars 2011",
       subtitles: ["Régie pour GLOBALIS media system"],
     },
     {
-      id: "ubiqus",
       companyName: "UBIQUS",
       companyWebsite: "https://www.acolad.com/",
       details: [
@@ -247,12 +246,12 @@ const jobs: Jobs = {
         "Développements Front-office de sites événementiels pour la société (HTML, jQuery).",
       ],
       endDate: "Octobre 2010",
-      startDate: "Mars 2010",
+      id: "ubiqus",
       job: "Développeur PHP",
+      startDate: "Mars 2010",
       subtitles: ["Régie pour GLOBALIS media system"],
     },
     {
-      id: "globalis",
       companyName: "GLOBALIS media systems",
       companyWebsite: "http://globalis-ms.com/",
       details: [
@@ -261,13 +260,14 @@ const jobs: Jobs = {
         "Audits de performance pour : Owlient, Smart Agence, Solly Azar, Gaya, Reed Business Information.",
       ],
       endDate: "Mai 2013",
-      startDate: "Septembre 2009",
+      id: "globalis",
       job: "Développeur web",
+      startDate: "Septembre 2009",
       subtitles: [],
     },
   ],
 };
 
-export async function getJobsByLang(lang: "fr" | "en") {
+export async function getJobsByLang(lang: "en" | "fr") {
   return jobs[lang];
 }

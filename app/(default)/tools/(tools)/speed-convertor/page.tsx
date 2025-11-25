@@ -9,10 +9,10 @@ import ToolSpeedConvertor from "./ToolSpeedConvertor";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/speed-convertor/",
       description:
         "Instantly Convert Speed Units Between Kilometers per Hour, Miles per Hour, and More",
       title: "Speed Converter Tool",
-      canonical: "https://brunosabot.dev/tools/speed-convertor/",
     },
     "/tools/speed-convertor/",
   );

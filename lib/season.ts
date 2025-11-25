@@ -1,16 +1,16 @@
-type MonthDay = {
-  month: number;
-  day: number;
-};
-
 enum Season {
+  FALL = "fall",
   SPRING = "spring",
   SUMMER = "summer",
-  FALL = "fall",
   WINTER = "winter",
 }
 
-const monthDay = (month: number, day: number) => ({ month, day });
+type MonthDay = {
+  day: number;
+  month: number;
+};
+
+const monthDay = (month: number, day: number) => ({ day, month });
 
 const SPRING_EQUINOX = monthDay(2, 20);
 const SUMMER_SOLSTICE = monthDay(5, 21);
@@ -19,10 +19,11 @@ const WINTER_SOLSTICE = monthDay(11, 21);
 const END_YEAR = monthDay(11, 32);
 const NEW_YEAR = monthDay(0, 1);
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const seasons: Record<Season, any> = {
+  fall: (d: MonthDay) => between(d, AUTUMN_EQUINOX, WINTER_SOLSTICE),
   spring: (d: MonthDay) => between(d, SPRING_EQUINOX, SUMMER_SOLSTICE),
   summer: (d: MonthDay) => between(d, SUMMER_SOLSTICE, AUTUMN_EQUINOX),
-  fall: (d: MonthDay) => between(d, AUTUMN_EQUINOX, WINTER_SOLSTICE),
   winter: (d: MonthDay) =>
     between(d, WINTER_SOLSTICE, END_YEAR) ||
     between(d, NEW_YEAR, SPRING_EQUINOX),

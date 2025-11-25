@@ -1,18 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import classNames from "./StreamlineCard.module.css";
-import Hashtag from "../../../../generic/common/Hashtag";
 import { useState } from "react";
 
+import Hashtag from "../../../../generic/common/Hashtag";
+import classNames from "./StreamlineCard.module.css";
+
 interface IStreamlineCardProps {
-  image?: string;
-  description: string;
-  title: string;
-  tags: string[];
-  children: React.ReactNode;
-  language: string;
   author: string;
+  children: React.ReactNode;
+  description: string;
+  image?: string;
+  language: string;
+  tags: string[];
+  title: string;
 }
 
 export default function StreamlineCard(props: IStreamlineCardProps) {
@@ -44,10 +45,10 @@ export default function StreamlineCard(props: IStreamlineCardProps) {
       {isCodeShown && props.image ? (
         <div className={classNames.ImageWrapper}>
           <Image
-            className={classNames.Image}
-            src={props.image}
             alt={props.title}
+            className={classNames.Image}
             fill={true}
+            src={props.image}
           />
         </div>
       ) : null}

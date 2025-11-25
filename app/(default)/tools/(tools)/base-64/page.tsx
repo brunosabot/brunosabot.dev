@@ -1,18 +1,18 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
+import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
+import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";
 import ToolBase64 from "./ToolBase64";
-import BlockTitle from "../../../../../components/typography/BlockTitle";
-import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
-import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/base-64/",
       description:
         "Effortlessly Convert Strings Between Text and Base64 Format",
       title: "Base 64 Conversion Tool",
-      canonical: "https://brunosabot.dev/tools/base-64/",
     },
     "/tools/base-64/",
   );

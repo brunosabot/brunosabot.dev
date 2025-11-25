@@ -1,57 +1,58 @@
 "use client";
 
 import React, { useCallback, useEffect, useReducer, useState } from "react";
-import Label from "../../../../../components/form/Label";
-import {
-  hexToRGB,
-  hexToCMYK,
-  RGBToCMYK,
-  RGBToHex,
-  CMYKToRGB,
-  hexToName,
-  RGBToHSL,
-  hexToHSL,
-  HSLToRGB,
-} from "../../../../../lib/color";
+
+import SvgButton from "../../../../../components/button/SvgButton";
 import Columns from "../../../../../components/Columns";
+import Button from "../../../../../components/form/Button";
 import Input from "../../../../../components/form/Input";
+import Label from "../../../../../components/form/Label";
 import Block from "../../../../../components/rgb/Block";
 import Text from "../../../../../components/rgb/Text";
-import Button from "../../../../../components/form/Button";
 import Table from "../../../../../components/table/Table";
+import Td from "../../../../../components/table/Td";
 import Th from "../../../../../components/table/Th";
 import Tr from "../../../../../components/table/Tr";
-import Td from "../../../../../components/table/Td";
-import SvgButton from "../../../../../components/button/SvgButton";
-
-interface IState {
-  rgb: [number, number, number];
-  cmyk: [number, number, number, number];
-  hsl: [number, number, number];
-  hex: string;
-}
+import {
+  CMYKToRGB,
+  hexToCMYK,
+  hexToHSL,
+  hexToName,
+  hexToRGB,
+  HSLToRGB,
+  RGBToCMYK,
+  RGBToHex,
+  RGBToHSL,
+} from "../../../../../lib/color";
 
 interface IAction {
   type:
-    | "rgb-r"
-    | "rgb-g"
-    | "rgb-b"
     | "cmyk-c"
-    | "cmyk-y"
-    | "cmyk-m"
     | "cmyk-k"
+    | "cmyk-m"
+    | "cmyk-y"
+    | "hex"
     | "hsl-h"
-    | "hsl-s"
     | "hsl-l"
-    | "hex";
+    | "hsl-s"
+    | "rgb-b"
+    | "rgb-g"
+    | "rgb-r";
   value: string;
 }
 
+interface IState {
+  cmyk: [number, number, number, number];
+  hex: string;
+  hsl: [number, number, number];
+  rgb: [number, number, number];
+}
+
 const initialState: IState = {
-  rgb: [0, 0, 0],
   cmyk: [0, 0, 0, 0],
-  hsl: [0, 0, 0],
   hex: "#000000",
+  hsl: [0, 0, 0],
+  rgb: [0, 0, 0],
 };
 
 type Reducer<S, A> = (prevState: S, action: A) => S;
@@ -64,43 +65,8 @@ const reducer: Reducer<IState, IAction> = (state, action) => {
   let hsl: IState["hsl"];
 
   switch (action.type) {
-    case "rgb-r":
-      rgb = [numberValue, state.rgb[1], state.rgb[2]];
-      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
-      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
-      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
-      break;
-
-    case "rgb-g":
-      rgb = [state.rgb[0], numberValue, state.rgb[2]];
-      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
-      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
-      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
-      break;
-
-    case "rgb-b":
-      rgb = [state.rgb[0], state.rgb[1], numberValue];
-      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
-      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
-      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
-      break;
-
     case "cmyk-c":
       cmyk = [numberValue, state.cmyk[1], state.cmyk[2], state.cmyk[3]];
-      rgb = CMYKToRGB(cmyk[0], cmyk[1], cmyk[2], cmyk[3]);
-      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
-      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
-      break;
-
-    case "cmyk-y":
-      cmyk = [state.cmyk[0], numberValue, state.cmyk[2], state.cmyk[3]];
-      rgb = CMYKToRGB(cmyk[0], cmyk[1], cmyk[2], cmyk[3]);
-      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
-      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
-      break;
-
-    case "cmyk-m":
-      cmyk = [state.cmyk[0], state.cmyk[1], numberValue, state.cmyk[3]];
       rgb = CMYKToRGB(cmyk[0], cmyk[1], cmyk[2], cmyk[3]);
       hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
       hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
@@ -113,23 +79,18 @@ const reducer: Reducer<IState, IAction> = (state, action) => {
       hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
       break;
 
-    case "hsl-h":
-      hsl = [numberValue, +state.hsl[1], +state.hsl[2]];
-      rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]);
+    case "cmyk-m":
+      cmyk = [state.cmyk[0], state.cmyk[1], numberValue, state.cmyk[3]];
+      rgb = CMYKToRGB(cmyk[0], cmyk[1], cmyk[2], cmyk[3]);
+      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
       hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
-      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
       break;
-    case "hsl-s":
-      hsl = [+state.hsl[0], numberValue, +state.hsl[2]];
-      rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]);
+
+    case "cmyk-y":
+      cmyk = [state.cmyk[0], numberValue, state.cmyk[2], state.cmyk[3]];
+      rgb = CMYKToRGB(cmyk[0], cmyk[1], cmyk[2], cmyk[3]);
+      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
       hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
-      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
-      break;
-    case "hsl-l":
-      hsl = [+state.hsl[0], +state.hsl[1], numberValue];
-      rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]);
-      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
-      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
       break;
 
     case "hex":
@@ -140,15 +101,55 @@ const reducer: Reducer<IState, IAction> = (state, action) => {
 
       break;
 
+    case "hsl-h":
+      hsl = [numberValue, +state.hsl[1], +state.hsl[2]];
+      rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]);
+      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
+      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
+      break;
+
+    case "hsl-l":
+      hsl = [+state.hsl[0], +state.hsl[1], numberValue];
+      rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]);
+      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
+      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
+      break;
+
+    case "hsl-s":
+      hsl = [+state.hsl[0], numberValue, +state.hsl[2]];
+      rgb = HSLToRGB(hsl[0], hsl[1], hsl[2]);
+      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
+      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
+      break;
+    case "rgb-b":
+      rgb = [state.rgb[0], state.rgb[1], numberValue];
+      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
+      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
+      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
+      break;
+    case "rgb-g":
+      rgb = [state.rgb[0], numberValue, state.rgb[2]];
+      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
+      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
+      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
+      break;
+
+    case "rgb-r":
+      rgb = [numberValue, state.rgb[1], state.rgb[2]];
+      cmyk = RGBToCMYK(rgb[0], rgb[1], rgb[2]);
+      hsl = RGBToHSL(rgb[0], rgb[1], rgb[2]);
+      hex = RGBToHex(rgb[0], rgb[1], rgb[2]);
+      break;
+
     default:
       throw new Error();
   }
 
   return {
-    rgb: rgb,
     cmyk: cmyk,
-    hsl: hsl,
     hex: hex,
+    hsl: hsl,
+    rgb: rgb,
   };
 };
 
@@ -246,7 +247,7 @@ export default function ToolRgbConvertor() {
         <span />
       </Columns>
       <div style={{ margin: "32px 0" }}>
-        <Button type="button" onClick={setSave}>
+        <Button onClick={setSave} type="button">
           Save the color
         </Button>
       </div>
@@ -271,7 +272,7 @@ export default function ToolRgbConvertor() {
               return (
                 <Tr key={h}>
                   <Td>
-                    <Block color={h} noMargin />
+                    <Block color={h} />
                   </Td>
                   <Td>{h}</Td>
                   <Td>
@@ -285,9 +286,9 @@ export default function ToolRgbConvertor() {
                   </Td>
                   <Td>
                     <SvgButton
-                      type="button"
-                      onClick={() => setUnsave(h)}
                       d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+                      onClick={() => setUnsave(h)}
+                      type="button"
                     />
                   </Td>
                 </Tr>

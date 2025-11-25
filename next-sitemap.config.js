@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   siteUrl: "https://brunosabot.dev",
   changefreq: "daily",
   priority: 0.7,

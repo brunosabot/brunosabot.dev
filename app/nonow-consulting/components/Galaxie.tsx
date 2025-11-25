@@ -1,14 +1,15 @@
 "use client";
 
+import { mdiClose } from "@mdi/js";
+import Image from "next/image";
 import { useState } from "react";
-import classes from "./Projects.module.css";
+
+import Svg from "../../../components/svg/Svg";
 import galaxieBadge from "../../../public/nonow-consulting/galaxie-badges.jpg";
 import galaxieDashboard from "../../../public/nonow-consulting/galaxie-dashboard.jpg";
 import galaxieParcours from "../../../public/nonow-consulting/galaxie-parcours.jpg";
 import galaxiePopular from "../../../public/nonow-consulting/galaxie-popular.jpg";
-import Image from "next/image";
-import Svg from "../../../components/svg/Svg";
-import { mdiClose } from "@mdi/js";
+import classes from "./Projects.module.css";
 
 export default function Galaxie() {
   const [isVisible, setIsVisible] = useState(false);
@@ -84,42 +85,42 @@ export default function Galaxie() {
                 </p>
                 <p>
                   <a
-                    href="https://galaxie.les2alpestrail.com/"
-                    target="_blank"
-                    rel="noreferrer"
                     className={classes.Link}
+                    href="https://galaxie.les2alpestrail.com/"
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     Visiter le site
                   </a>
                 </p>
               </div>
               <Image
+                alt=""
                 className={classes.PopUpImage}
+                height={2244}
                 src={galaxieDashboard}
-                alt=""
                 width={1008}
-                height={2244}
               />
               <Image
+                alt=""
                 className={classes.PopUpImage}
+                height={2244}
                 src={galaxiePopular}
-                alt=""
                 width={1008}
-                height={2244}
               />
               <Image
+                alt=""
                 className={classes.PopUpImage}
+                height={2244}
                 src={galaxieBadge}
-                alt=""
                 width={1008}
-                height={2244}
               />
               <Image
-                className={classes.PopUpImage}
-                src={galaxieParcours}
                 alt=""
-                width={1008}
+                className={classes.PopUpImage}
                 height={2244}
+                src={galaxieParcours}
+                width={1008}
               />
             </div>
           </div>

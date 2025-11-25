@@ -5,7 +5,7 @@ interface IColumnsProps {
   cols: React.ReactNode;
 }
 
-const Columns: React.FC<IColumnsProps> = ({ cols, children }) => {
+const Columns: React.FC<IColumnsProps> = ({ children, cols }) => {
   return (
     <div
       className={`${classes.Columns} ${cols === 2 ? classes.Cols2 : ""} ${

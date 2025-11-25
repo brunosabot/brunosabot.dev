@@ -1,17 +1,18 @@
 import Image from "next/image";
+
+import MatterPost from "../../types/MatterPost";
 import PostAuthor from "../post/PostAuthor";
 import PostSocial from "../post/PostSocial";
-import classes from "./Post.module.css";
-import MatterPost from "../../types/MatterPost";
 import SeoBlogPosting from "../seo/BlogPosting";
+import classes from "./Post.module.css";
 
 interface IPostProps {
-  readingTime: number;
-  post: MatterPost;
   html: string;
+  post: MatterPost;
+  readingTime: number;
 }
 
-const Post: React.FC<IPostProps> = ({ post, readingTime, html }) => {
+const Post: React.FC<IPostProps> = ({ html, post, readingTime }) => {
   return (
     <div className={classes["blog-post-container"]}>
       <div className={classes["blog-post"]}>
@@ -20,24 +21,24 @@ const Post: React.FC<IPostProps> = ({ post, readingTime, html }) => {
 
         <div className={classes["blog-post-infos"]}>
           <PostAuthor
+            canonical={post.data.canonical}
+            canonicalName={post.data.platform}
             creator={post.data.creator}
             date={post.data.date}
             timeToRead={readingTime}
-            canonical={post.data.canonical}
-            canonicalName={post.data.platform}
           />
-          <PostSocial title={post.data.title} path={post.data.path} />
+          <PostSocial path={post.data.path} title={post.data.title} />
         </div>
 
         <figure>
           <Image
+            alt={post.data.originalImageAlt?.replace(/<[^>]*>/g, "")}
+            className={classes["blog-post-hero-image"]}
+            height="487"
             priority
             src={post.data.originalImage}
-            alt={post.data.originalImageAlt?.replace(/<[^>]*>/g, "")}
-            height="487"
-            width="680"
             style={{ backgroundColor: post.data.color }}
-            className={classes["blog-post-hero-image"]}
+            width="680"
           />
           {post.data.originalImageAlt ? (
             <figcaption
@@ -62,12 +63,12 @@ const Post: React.FC<IPostProps> = ({ post, readingTime, html }) => {
       </div>
 
       <SeoBlogPosting
-        path={post.data.path}
-        title={post.data.title}
+        dateModified={new Date(post.data.lastModified)}
+        datePublished={new Date(post.data.date)}
         description={post.data.description}
         image={post.data.originalImage}
-        datePublished={new Date(post.data.date)}
-        dateModified={new Date(post.data.lastModified)}
+        path={post.data.path}
+        title={post.data.title}
       />
     </div>
   );

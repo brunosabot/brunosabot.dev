@@ -1,13 +1,3 @@
-import LayoutClient from "../../components/LayoutClient";
-import Header from "./_components/Header";
-import HeaderLogo from "./_components/HeaderLogo";
-import HeaderLink from "./_components/HeaderLink";
-import HeaderLinks from "./_components/HeaderLinks";
-import Footer from "./_components/Footer";
-import FooterSocial from "./_components/FooterSocial";
-import FooterCopyright from "./_components/FooterCopyright";
-import FooterSocialLink from "./_components/FooterSocialLink";
-import Svg from "./_components/Svg";
 import {
   mdiCreation,
   mdiFlower,
@@ -18,11 +8,22 @@ import {
   mdiSnowflake,
   mdiWeatherSunny,
 } from "@mdi/js";
+
+import LayoutClient from "../../components/LayoutClient";
 import svgMedium from "../../components/svg/medium";
 import { SITE_METADATA } from "../../lib/metadata";
-import HeaderLinksDropdown from "./_components/HeaderLinksDropdown";
+import Footer from "./_components/Footer";
+import FooterCopyright from "./_components/FooterCopyright";
+import FooterSocial from "./_components/FooterSocial";
+import FooterSocialLink from "./_components/FooterSocialLink";
 import FooterTheme from "./_components/FooterTheme";
 import FooterThemes from "./_components/FooterThemes";
+import Header from "./_components/Header";
+import HeaderLink from "./_components/HeaderLink";
+import HeaderLinks from "./_components/HeaderLinks";
+import HeaderLinksDropdown from "./_components/HeaderLinksDropdown";
+import HeaderLogo from "./_components/HeaderLogo";
+import Svg from "./_components/Svg";
 
 interface IDefaultLayoutProps {
   children: React.ReactNode;
@@ -34,24 +35,24 @@ export default function DefaultLayout({ children }: IDefaultLayoutProps) {
       <Header>
         <HeaderLogo />
         <HeaderLinks>
-          <HeaderLink isMain href="/">
+          <HeaderLink href="/" isMain>
             Home
           </HeaderLink>
-          <HeaderLink isMain href="/posts/">
+          <HeaderLink href="/posts/" isMain>
             Blog
           </HeaderLink>
-          <HeaderLink isMain href="/tools/">
+          <HeaderLink href="/tools/" isMain>
             Tools
           </HeaderLink>
-          <HeaderLink isMain href="/contact/">
+          <HeaderLink href="/contact/" isMain>
             Contact
           </HeaderLink>
 
           <HeaderLinksDropdown>
-            <HeaderLink isSecondary href="/">
+            <HeaderLink href="/" isSecondary>
               Home
             </HeaderLink>
-            <HeaderLink isSecondary href="/posts/">
+            <HeaderLink href="/posts/" isSecondary>
               Posts
             </HeaderLink>
             <HeaderLink href="/talks/">Talks</HeaderLink>
@@ -59,11 +60,11 @@ export default function DefaultLayout({ children }: IDefaultLayoutProps) {
             <HeaderLink href="/projects/">Projects</HeaderLink>
             <HeaderLink href="/podcasts/">Podcasts</HeaderLink>
             <HeaderLink href="/videos/">Videos</HeaderLink>
-            <HeaderLink isSecondary href="/tools/">
+            <HeaderLink href="/tools/" isSecondary>
               Tools
             </HeaderLink>
             <HeaderLink href="/resume/en/">Resume</HeaderLink>
-            <HeaderLink isSecondary href="/contact/">
+            <HeaderLink href="/contact/" isSecondary>
               Contact
             </HeaderLink>
             <HeaderLink href="/nonow-consulting/">Nonow Consulting</HeaderLink>
@@ -75,30 +76,30 @@ export default function DefaultLayout({ children }: IDefaultLayoutProps) {
 
       <Footer>
         <FooterThemes>
-          <FooterTheme name="Auto" theme="" icon={mdiCreation} />
-          <FooterTheme name="Spring" theme="spring" icon={mdiFlower} />
-          <FooterTheme name="Summer" theme="summer" icon={mdiWeatherSunny} />
-          <FooterTheme name="Fall" theme="fall" icon={mdiLeafMaple} />
-          <FooterTheme name="Winter" theme="winter" icon={mdiSnowflake} />
+          <FooterTheme icon={mdiCreation} theme="" />
+          <FooterTheme icon={mdiFlower} theme="spring" />
+          <FooterTheme icon={mdiWeatherSunny} theme="summer" />
+          <FooterTheme icon={mdiLeafMaple} theme="fall" />
+          <FooterTheme icon={mdiSnowflake} theme="winter" />
         </FooterThemes>
         <FooterSocial>
           <FooterSocialLink href="https://github.com/brunosabot" name="Github">
-            <Svg size={32} d={mdiGithub} />
+            <Svg d={mdiGithub} size={32} />
           </FooterSocialLink>
           <FooterSocialLink
             href="https://linkedin.com/in/brunosabot"
             name="LinkedIn"
           >
-            <Svg size={32} d={mdiLinkedin} />
+            <Svg d={mdiLinkedin} size={32} />
           </FooterSocialLink>
           <FooterSocialLink href="https://medium.brunosabot.dev" name="Medium">
-            <Svg size={32} d={svgMedium} />
+            <Svg d={svgMedium} size={32} />
           </FooterSocialLink>
           <FooterSocialLink
             href={`${SITE_METADATA.siteUrl}/rss.xml`}
             name="RSS"
           >
-            <Svg size={32} d={mdiRss} />
+            <Svg d={mdiRss} size={32} />
           </FooterSocialLink>
         </FooterSocial>
         <FooterCopyright />

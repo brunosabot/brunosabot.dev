@@ -2,11 +2,12 @@
 
 import React, { useState } from "react";
 import shajs from "sha.js";
+
 import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
 import Input from "../../../../../components/form/Input";
-import Select from "../../../../../components/form/Select";
+import Label from "../../../../../components/form/Label";
 import Option from "../../../../../components/form/Option";
+import Select from "../../../../../components/form/Select";
 
 enum ShaType {
   SHA = "sha",

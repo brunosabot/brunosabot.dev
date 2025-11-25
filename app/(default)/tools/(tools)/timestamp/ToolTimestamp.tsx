@@ -1,53 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
+
 import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
-import Input from "../../../../../components/form/Input";
 import Columns from "../../../../../components/Columns";
+import Dd from "../../../../../components/display/Dd";
 import Dl from "../../../../../components/display/Dl";
 import Dt from "../../../../../components/display/Dt";
-import Dd from "../../../../../components/display/Dd";
+import Input from "../../../../../components/form/Input";
+import Label from "../../../../../components/form/Label";
 import { getMetaData } from "../../../../../lib/metadata";
 
 export async function generateMetadata() {
   return getMetaData({
     description: "Timestamp and date converter tool by Bruno Sabot",
     title: "Timestamp converter",
-  });
-}
-
-function getDate(timestamp: number) {
-  const date = new Date(timestamp);
-
-  return {
-    year: date.getUTCFullYear(),
-    month: date.getUTCMonth() + 1,
-    day: date.getUTCDate(),
-    hours: date.getUTCHours(),
-    minutes: date.getUTCMinutes(),
-    seconds: date.getUTCSeconds(),
-    milliseconds: date.getUTCMilliseconds(),
-  };
-}
-
-function getUtcDate(timestamp: number) {
-  return new Date(timestamp).toUTCString();
-}
-
-function getIsoDate(timestamp: number) {
-  return new Date(timestamp).toISOString();
-}
-
-function toLocaleString(timestamp: number) {
-  return new Date(timestamp).toLocaleString(undefined, {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
   });
 }
 
@@ -117,56 +84,56 @@ export default function ToolTimestamp() {
     setTimestamp(d.getTime());
   };
 
-  const { year, month, day, hours, minutes, seconds, milliseconds } =
+  const { day, hours, milliseconds, minutes, month, seconds, year } =
     getDate(timestamp);
 
   return (
     <>
       <Label label="Timestamp">
         <Input
-          type="number"
           onChange={onTimestampChange}
+          type="number"
           value={`${timestamp}`}
         />
       </Label>
 
       <Columns cols={3}>
         <Label label="Year">
-          <Input type="number" onChange={onYearChange} value={`${year}`} />
+          <Input onChange={onYearChange} type="number" value={`${year}`} />
         </Label>
 
         <Label label="Month">
-          <Input type="number" onChange={onMonthChange} value={`${month}`} />
+          <Input onChange={onMonthChange} type="number" value={`${month}`} />
         </Label>
 
         <Label label="Day">
-          <Input type="number" onChange={onDayChange} value={`${day}`} />
+          <Input onChange={onDayChange} type="number" value={`${day}`} />
         </Label>
 
         <Label label="Hours">
-          <Input type="number" onChange={onHoursChange} value={`${hours}`} />
+          <Input onChange={onHoursChange} type="number" value={`${hours}`} />
         </Label>
 
         <Label label="Minutes">
           <Input
-            type="number"
             onChange={onMinutesChange}
+            type="number"
             value={`${minutes}`}
           />
         </Label>
 
         <Label label="Seconds">
           <Input
-            type="number"
             onChange={onSecondsChange}
+            type="number"
             value={`${seconds}`}
           />
         </Label>
 
         <Label label="Milliseconds">
           <Input
-            type="number"
             onChange={onMillisecondsChange}
+            type="number"
             value={`${milliseconds}`}
           />
         </Label>
@@ -184,4 +151,38 @@ export default function ToolTimestamp() {
       </SimpleCard>
     </>
   );
+}
+
+function getDate(timestamp: number) {
+  const date = new Date(timestamp);
+
+  return {
+    day: date.getUTCDate(),
+    hours: date.getUTCHours(),
+    milliseconds: date.getUTCMilliseconds(),
+    minutes: date.getUTCMinutes(),
+    month: date.getUTCMonth() + 1,
+    seconds: date.getUTCSeconds(),
+    year: date.getUTCFullYear(),
+  };
+}
+
+function getIsoDate(timestamp: number) {
+  return new Date(timestamp).toISOString();
+}
+
+function getUtcDate(timestamp: number) {
+  return new Date(timestamp).toUTCString();
+}
+
+function toLocaleString(timestamp: number) {
+  return new Date(timestamp).toLocaleString(undefined, {
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    month: "long",
+    second: "numeric",
+    weekday: "long",
+    year: "numeric",
+  });
 }

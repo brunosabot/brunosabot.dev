@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import Input from "../../../../../components/form/Input";
-import Label from "../../../../../components/form/Label";
+
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import Dd from "../../../../../components/display/Dd";
 import Dl from "../../../../../components/display/Dl";
 import Dt from "../../../../../components/display/Dt";
-import Dd from "../../../../../components/display/Dd";
-
+import Input from "../../../../../components/form/Input";
+import Label from "../../../../../components/form/Label";
 import { calculateEnduranceIndex } from "./enduranceIndexUtils";
 
 const ToolEnduranceIndex: React.FC = () => {
@@ -37,16 +37,16 @@ const ToolEnduranceIndex: React.FC = () => {
       <form>
         <Label label="MAS (km/h):">
           <Input
+            onChange={(e) => setMas(e.target.value)}
             type="number"
             value={mas}
-            onChange={(e) => setMas(e.target.value)}
           />
         </Label>
         <Label label="Race Distance (meters):">
           <Input
+            onChange={(e) => setDistance(e.target.value)}
             type="number"
             value={distance}
-            onChange={(e) => setDistance(e.target.value)}
           />
         </Label>
         <Label label="Race Time:">
@@ -54,22 +54,22 @@ const ToolEnduranceIndex: React.FC = () => {
             style={{ display: "flex", flexDirection: "column", gap: "0.5em" }}
           >
             <Input
-              type="number"
-              placeholder="hours"
-              value={hours}
               onChange={(e) => setHours(e.target.value)}
+              placeholder="hours"
+              type="number"
+              value={hours}
             />
             <Input
-              type="number"
-              placeholder="minutes"
-              value={minutes}
               onChange={(e) => setMinutes(e.target.value)}
+              placeholder="minutes"
+              type="number"
+              value={minutes}
             />
             <Input
-              type="number"
-              placeholder="seconds"
-              value={seconds}
               onChange={(e) => setSeconds(e.target.value)}
+              placeholder="seconds"
+              type="number"
+              value={seconds}
             />
           </div>
         </Label>

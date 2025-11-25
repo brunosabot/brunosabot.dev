@@ -1,13 +1,15 @@
-import SeoWebsite from "../components/seo/Website";
-import { SITE_METADATA } from "../lib/metadata";
-import { season } from "../lib/season";
+import { Space_Grotesk } from "next/font/google";
+import { Sora } from "next/font/google";
+import { Gochi_Hand } from "next/font/google";
+
 import "../styles/design.css";
 import "../styles/design-v2.css";
 import "../styles/globals.css";
 import Script from "next/script";
-import { Space_Grotesk } from "next/font/google";
-import { Sora } from "next/font/google";
-import { Gochi_Hand } from "next/font/google";
+
+import SeoWebsite from "../components/seo/Website";
+import { SITE_METADATA } from "../lib/metadata";
+import { season } from "../lib/season";
 
 const sora = Sora({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const spaceGrotesk = Space_Grotesk({
@@ -17,9 +19,9 @@ const spaceGrotesk = Space_Grotesk({
 const gochiHand = Gochi_Hand({ subsets: ["latin"], weight: ["400"] });
 
 const style = {
-  "--primitive-font-space-grotesk": spaceGrotesk.style.fontFamily,
-  "--primitive-font-sora": sora.style.fontFamily,
   "--primitive-font-gochi-hand": gochiHand.style.fontFamily,
+  "--primitive-font-sora": sora.style.fontFamily,
+  "--primitive-font-space-grotesk": spaceGrotesk.style.fontFamily,
 } as React.CSSProperties;
 
 interface IRootLayoutProps {
@@ -44,23 +46,23 @@ export function generateViewport() {
 }
 
 export const metadata = {
-  title: {
-    default: SITE_METADATA.title,
-    template: `%s | ${SITE_METADATA.title}`,
-  },
-  description: SITE_METADATA.description,
-  authors: [{ name: "Bruno Sabot", url: "https://brunosabot.dev" }],
-  manifest: `${SITE_METADATA.siteUrl}/manifest.webmanifest`,
   alternates: {
     types: {
       "application/rss+xml": `${SITE_METADATA.siteUrl}/rss.xml`,
     },
   },
+  authors: [{ name: "Bruno Sabot", url: "https://brunosabot.dev" }],
+  description: SITE_METADATA.description,
+  icons: {
+    apple: "/icons/maskable_icon.png",
+  },
+  manifest: `${SITE_METADATA.siteUrl}/manifest.webmanifest`,
   other: {
     monetization: "$ilp.uphold.com/zbywBq9qy3pe",
   },
-  icons: {
-    apple: "/icons/maskable_icon.png",
+  title: {
+    default: SITE_METADATA.title,
+    template: `%s | ${SITE_METADATA.title}`,
   },
 };
 
@@ -71,12 +73,12 @@ export default function RootLayout({ children }: IRootLayoutProps) {
   return (
     <html lang="en" prefix="og: https://ogp.me/ns#" style={style}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta charSet="utf-8" />
       </head>
       <body className={currentSeason}>
         {children}
-        <div id="modal-root" aria-live="assertive"></div>{" "}
+        <div aria-live="assertive" id="modal-root"></div>{" "}
         <Script id="sw">
           {`
           if (typeof navigator.serviceWorker !== 'undefined') {

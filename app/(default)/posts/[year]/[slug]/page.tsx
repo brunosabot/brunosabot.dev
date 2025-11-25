@@ -1,43 +1,27 @@
-import readingTime from "reading-time";
-import { getRelatedPosts } from "../../../../../lib/posts";
-import { notFound } from "next/navigation";
-import PostDonation from "../../../../../components/post/PostDonation";
-import Paypal from "../../../../../components/donate/Paypal";
-import Patreon from "../../../../../components/donate/Patreon";
-import BuyMeACoffee from "../../../../../components/donate/BuyMeACoffee";
-import Related from "../../../../../components/post/Related";
-import PostComponent from "../../../../../components/post/Post";
-import getMarkdown from "../../../../../lib/markdown";
 import { mdiLinkVariant } from "@mdi/js";
-import { getNotionPosts, getNotionPost } from "../../../../../lib/notion-posts";
-import { getMetaData, SITE_METADATA } from "../../../../../lib/metadata";
-import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
-import { getPost, getPosts } from "../../../../actions/posts";
-import { FullPost } from "../../../../../lib/notion";
+import { notFound } from "next/navigation";
+import readingTime from "reading-time";
 
-type Params = Promise<{ year: string; slug: string }>;
+import BuyMeACoffee from "../../../../../components/donate/BuyMeACoffee";
+import Patreon from "../../../../../components/donate/Patreon";
+import Paypal from "../../../../../components/donate/Paypal";
+import PostComponent from "../../../../../components/post/Post";
+import PostDonation from "../../../../../components/post/PostDonation";
+import Related from "../../../../../components/post/Related";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
+import getMarkdown from "../../../../../lib/markdown";
+import { getMetaData, SITE_METADATA } from "../../../../../lib/metadata";
+import { FullPost } from "../../../../../lib/notion";
+import { getNotionPost, getNotionPosts } from "../../../../../lib/notion-posts";
+import { getRelatedPosts } from "../../../../../lib/posts";
+import { getPost, getPosts } from "../../../../actions/posts";
+
+type Params = Promise<{ slug: string; year: string }>;
 
 export const revalidate = 21600;
 
-function getReadingTime(post: FullPost) {
-  const statMarkdown = readingTime(post.content);
-
-  return Math.round(statMarkdown.minutes);
-}
-
-export async function generateStaticParams() {
-  const posts = await getNotionPosts();
-
-  return posts.map((post) => {
-    const year = `${new Date(post.date).getFullYear()}`;
-    const slug = post.path.replace(`/posts/${year}/`, "").replace(/\/$/, "");
-
-    return { year, slug };
-  });
-}
-
 export async function generateMetadata({ params }: { params: Params }) {
-  const { year, slug } = await params;
+  const { slug, year } = await params;
 
   const post = await getNotionPost(`/posts/${year}/${slug}/`);
 
@@ -47,18 +31,29 @@ export async function generateMetadata({ params }: { params: Params }) {
 
   return getMetaData(
     {
-      title: post.data.title,
-      description: post.data.subtitle,
       canonical: post.data.canonical,
-      url: `${SITE_METADATA.siteUrl}${post.data.path}`,
+      description: post.data.subtitle,
       image: post.data.originalImage,
+      title: post.data.title,
+      url: `${SITE_METADATA.siteUrl}${post.data.path}`,
     },
     `/posts/${year}/${slug}/`,
   );
 }
 
+export async function generateStaticParams() {
+  const posts = await getNotionPosts();
+
+  return posts.map((post) => {
+    const year = `${new Date(post.date).getFullYear()}`;
+    const slug = post.path.replace(`/posts/${year}/`, "").replace(/\/$/, "");
+
+    return { slug, year };
+  });
+}
+
 export default async function PostPage({ params }: { params: Params }) {
-  const { year, slug } = await params;
+  const { slug, year } = await params;
 
   const posts = await getPosts();
   const post = await getPost(year, slug);
@@ -73,15 +68,15 @@ export default async function PostPage({ params }: { params: Params }) {
 
   return (
     <>
-      <svg viewBox="0 0 24 24" style={{ display: "none" }}>
-        <path id="linkVariant" d={mdiLinkVariant} />
+      <svg style={{ display: "none" }} viewBox="0 0 24 24">
+        <path d={mdiLinkVariant} id="linkVariant" />
       </svg>
       <PostComponent
+        html={html}
         post={{
           ...post,
           data: { ...post.data, date: post.data.date.toString() },
         }}
-        html={html}
         readingTime={readingTime}
       />
       <PostDonation>
@@ -101,4 +96,10 @@ export default async function PostPage({ params }: { params: Params }) {
       />
     </>
   );
+}
+
+function getReadingTime(post: FullPost) {
+  const statMarkdown = readingTime(post.content);
+
+  return Math.round(statMarkdown.minutes);
 }

@@ -1,6 +1,6 @@
 interface IOptionProps {
-  value: string;
   children: React.ReactNode;
+  value: string;
 }
 
 const Option: React.FC<IOptionProps> = (props) => {

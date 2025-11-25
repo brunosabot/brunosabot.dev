@@ -3,10 +3,10 @@ import classes from "./Job.module.css";
 interface Props {
   companyName: string;
   companyWebsite: string;
+  details: string[];
+  endDate?: string;
   job: string;
   startDate?: string;
-  endDate?: string;
-  details: string[];
   subtitles?: string[];
 }
 
@@ -20,10 +20,10 @@ function getDate(startDate: string, endDate: string) {
 const Job: React.FC<Props> = ({
   companyName,
   companyWebsite,
+  details = [],
+  endDate,
   job,
   startDate,
-  endDate,
-  details = [],
   subtitles = [],
 }) => (
   <section className={classes["resume-job"]}>
@@ -31,9 +31,9 @@ const Job: React.FC<Props> = ({
       {job}&nbsp;@&nbsp;
       <a
         className={classes["resume-job__name-link"]}
-        target="_blank"
-        rel="noopener noreferrer"
         href={companyWebsite}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         {getCompany(companyName)}
       </a>

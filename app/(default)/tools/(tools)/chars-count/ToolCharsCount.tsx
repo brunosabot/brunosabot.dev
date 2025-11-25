@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+import readingTime from "reading-time";
+
 import SimpleCard from "../../../../../components/card/SimpleCard";
 import Label from "../../../../../components/form/Label";
 import Textarea from "../../../../../components/form/Textarea";
-import readingTime from "reading-time";
 
 export default function ToolCharsCount() {
   const [string, setString] = useState("");

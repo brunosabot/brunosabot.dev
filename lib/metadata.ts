@@ -1,25 +1,41 @@
 import type { Metadata } from "next";
 
 export const SITE_METADATA = {
-  title: "Bruno Sabot",
   description:
     "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
+  siteUrl: "https://brunosabot.dev",
+  title: "Bruno Sabot",
   twitterAuthor: "@brunosabot",
   twitterId: "39219387",
-  siteUrl: "https://brunosabot.dev",
 };
 
 interface MetaDataInput {
-  description?: string;
-  title?: string;
   canonical?: string;
-  url?: string;
+  description?: string;
   image?: string;
   lang?: string;
+  title?: string;
+  url?: string;
+}
+
+export function getMetaData(options: MetaDataInput, normalizedPage?: string) {
+  const { canonical, description, title } = options;
+  const metadata: Metadata = {
+    metadataBase: new URL("https://brunosabot.dev"),
+    openGraph: getMetaDataOpenGraph(options),
+    twitter: getMetaDataTwitter(options),
+  };
+
+  if (description) metadata.description = description;
+  if (title) metadata.title = title;
+  if (normalizedPage) metadata.alternates = { canonical: normalizedPage };
+  if (canonical) metadata.alternates = { canonical };
+
+  return metadata;
 }
 
 function getMetaDataOpenGraph(options: MetaDataInput) {
-  const { description, title, url, image, lang } = options;
+  const { description, image, lang, title, url } = options;
   const openGraph: Metadata["openGraph"] = {
     siteName: SITE_METADATA.title,
     type: "website",
@@ -35,12 +51,12 @@ function getMetaDataOpenGraph(options: MetaDataInput) {
 }
 
 function getMetaDataTwitter(options: MetaDataInput) {
-  const { description, title, image } = options;
+  const { description, image, title } = options;
   const twitter: Metadata["twitter"] = {
     card: "summary_large_image",
     creator: SITE_METADATA.twitterAuthor,
-    siteId: SITE_METADATA.twitterId,
     creatorId: SITE_METADATA.twitterId,
+    siteId: SITE_METADATA.twitterId,
   };
 
   if (title) twitter.title = title;
@@ -48,20 +64,4 @@ function getMetaDataTwitter(options: MetaDataInput) {
   if (image) twitter.images = [image];
 
   return twitter;
-}
-
-export function getMetaData(options: MetaDataInput, normalizedPage?: string) {
-  const { description, title, canonical } = options;
-  const metadata: Metadata = {
-    metadataBase: new URL("https://brunosabot.dev"),
-    openGraph: getMetaDataOpenGraph(options),
-    twitter: getMetaDataTwitter(options),
-  };
-
-  if (description) metadata.description = description;
-  if (title) metadata.title = title;
-  if (normalizedPage) metadata.alternates = { canonical: normalizedPage };
-  if (canonical) metadata.alternates = { canonical };
-
-  return metadata;
 }

@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, TextareaHTMLAttributes } from "react";
+
 import classNames from "./InputTextarea.module.css";
 
 type IInputTextareaProps = DetailedHTMLProps<
@@ -9,8 +10,8 @@ type IInputTextareaProps = DetailedHTMLProps<
 };
 
 export default function InputTextarea({
-  label,
   className,
+  label,
   name,
   value,
   ...props
@@ -20,12 +21,12 @@ export default function InputTextarea({
   if (value) classList.push(classNames.HasValue);
 
   return (
-    <label htmlFor={name} className={classNames.InputTextarea}>
+    <label className={classNames.InputTextarea} htmlFor={name}>
       <textarea
         {...props}
-        value={value}
-        name={name}
         className={classList.join(" ")}
+        name={name}
+        value={value}
       />
       <div className={classNames.Label}>{label}</div>
     </label>

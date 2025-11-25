@@ -1,12 +1,13 @@
 import Image from "next/image";
+
 import classNames from "./Project.module.css";
 
 interface IProjectProps {
-  to: string;
-  image?: string;
   description: string[];
-  title: string;
+  image?: string;
   priority: boolean;
+  title: string;
+  to: string;
 }
 
 export default function Project(props: IProjectProps) {
@@ -16,17 +17,17 @@ export default function Project(props: IProjectProps) {
       <div className={classNames.ImageWrapper}>
         {props.image ? (
           <Image
-            src={props.image}
             alt=""
-            fill={true}
             className={classNames.Image}
+            fill={true}
             priority={props.priority}
+            src={props.image}
           />
         ) : null}
       </div>
       <div className={classNames.DescriptionWrapper}>
         {props.description.map((p) => (
-          <p key={p} className={classNames.Description}>
+          <p className={classNames.Description} key={p}>
             {p}
           </p>
         ))}

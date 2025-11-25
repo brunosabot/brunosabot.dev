@@ -1,30 +1,31 @@
 "use client";
 
-import React, { useRef, useState, ComponentType, useCallback } from "react";
-import TooltipView from "./TooltipView";
+import React, { useCallback, useRef, useState } from "react";
+
 import ModalPortal from "./ModalPortal";
 import classes from "./Tooltip.module.css";
 import { TooltipPosition } from "./TooltipPosition";
+import TooltipView from "./TooltipView";
 
 export type TooltipComponentType = React.FunctionComponent<{
-  left: number;
-  top: number;
-  position?: TooltipPosition;
   children: React.ReactNode;
+  left: number;
+  position?: TooltipPosition;
+  top: number;
 }>;
 
 interface IWithATooltipProps {
   children: React.ReactNode;
-  TooltipComponent?: TooltipComponentType;
-  position?: TooltipPosition;
   label: string;
+  position?: TooltipPosition;
+  TooltipComponent?: TooltipComponentType;
 }
 
 export function WithATooltip({
   children,
-  TooltipComponent = TooltipView,
-  position = TooltipPosition.TOP,
   label,
+  position = TooltipPosition.TOP,
+  TooltipComponent = TooltipView,
 }: IWithATooltipProps) {
   const [show, setShow] = useState<[number, number]>([0, 0]);
   const refSpan = useRef<HTMLSpanElement>(null);
@@ -60,15 +61,15 @@ export function WithATooltip({
 
   return (
     <span
-      ref={refSpan}
       className={classes.WithTooltip}
-      onFocusCapture={onMouseOverCapture}
       onBlurCapture={onMouseOutCapture}
-      onMouseOverCapture={onMouseOverCapture}
+      onFocusCapture={onMouseOverCapture}
       onMouseOutCapture={onMouseOutCapture}
+      onMouseOverCapture={onMouseOverCapture}
+      ref={refSpan}
     >
       <ModalPortal active={show[0] !== 0 || show[1] !== 0}>
-        <TooltipComponent left={show[0]} top={show[1]} position={position}>
+        <TooltipComponent left={show[0]} position={position} top={show[1]}>
           {label}
         </TooltipComponent>
       </ModalPortal>

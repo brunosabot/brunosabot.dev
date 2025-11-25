@@ -1,8 +1,8 @@
-import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
-import Talk from "./components/Talk";
-import List from "./components/List";
 import Title from "../../../generic/typography/Title";
+import { getMetaData } from "../../../lib/metadata";
+import List from "./components/List";
+import Talk from "./components/Talk";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -18,57 +18,57 @@ export async function generateMetadata() {
 const getTalks = async () => {
   const talkPromises = [
     {
-      id: "snowcamp-integration",
       conferenceName: "Snowcamp",
-      language: "fr",
-      title: "L'intégration, ce purgatoire",
       date: "2020-01-23",
-      slides:
-        "https://drive.google.com/open?id=18gLNemp9mcsmx-RIh2RMHWFjiv4uvXu54ouW05BjGQE",
       description:
         "Vous avez déjà connu cette situation où vous commencez à travailler sur votre CSS, vous vous sentez en totale maitrise et le chef de projet arrive avec plein d'écrans à intégrer avec son lot de…",
+      id: "snowcamp-integration",
       image: "https://storage.googleapis.com/brunosabot.dev/img/DSC_0887.jpeg",
+      language: "fr",
+      slides:
+        "https://drive.google.com/open?id=18gLNemp9mcsmx-RIh2RMHWFjiv4uvXu54ouW05BjGQE",
+      title: "L'intégration, ce purgatoire",
     },
     {
-      id: "breizhcamp-ux-formulaire",
-      youtubeId: "jnxkdHo8OEk",
       conferenceName: "Breizh Camp",
-      language: "fr",
-      title: "UX : les formulaires (Breizh Camp)",
       date: "2019-03-21",
+      description:
+        "Et si on parlait d'UX ? Nos pages sont truffées de formulaires, pourtant, connaissons-nous les erreurs à éviter lorsque nous ajoutons un formulaire à une page ? La validation de mot de passes, les…",
+      id: "breizhcamp-ux-formulaire",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/Ketchup.png",
+      language: "fr",
       slides:
         "https://drive.google.com/open?id=1tCwdzIdwu8jYX4Y0dej_u6pmc1oUx9Y4NPUaTBSWluA",
-      description:
-        "Et si on parlait d'UX ? Nos pages sont truffées de formulaires, pourtant, connaissons-nous les erreurs à éviter lorsque nous ajoutons un formulaire à une page ? La validation de mot de passes, les…",
-      image: "https://storage.googleapis.com/brunosabot.dev/img/Ketchup.png",
+      title: "UX : les formulaires (Breizh Camp)",
+      youtubeId: "jnxkdHo8OEk",
     },
     {
-      id: "jugsummercamp-ux-formulaire",
-      youtubeId: "H2KWVDH64EY",
       conferenceName: "Jug Summer Camp",
-      language: "fr",
-      title: "UX : les formulaires (Jug Summer Camp)",
       date: "2018-09-14",
-      slides:
-        "https://drive.google.com/open?id=1S2RmcMKZ74Bhc4IQUMm7-xDjVwD-_UCFc5iWCEdy5S8",
       description:
         "Et si on parlait d'UX ? Nos pages sont truffées de formulaires, pourtant, connaissons-nous les erreurs à éviter lorsque nous ajoutons un formulaire à une page ? La validation de mot de passes, les…",
+      id: "jugsummercamp-ux-formulaire",
       image:
         "https://storage.googleapis.com/brunosabot.dev/img/6i8oiq3iyxd41.jpeg",
+      language: "fr",
+      slides:
+        "https://drive.google.com/open?id=1S2RmcMKZ74Bhc4IQUMm7-xDjVwD-_UCFc5iWCEdy5S8",
+      title: "UX : les formulaires (Jug Summer Camp)",
+      youtubeId: "H2KWVDH64EY",
     },
     {
-      id: "bdxio-react16",
-      youtubeId: "h0MAi-1GdZQ",
       conferenceName: "BDX I/O",
-      language: "fr",
-      title: "Les nouveautés de React 16 - Fiber",
       date: "2017-11-10",
-      slides:
-        "https://drive.google.com/open?id=1aMy3Szz-A-6hoTFuGvdVqoTZOEhc07W6j8emIcNb3Po",
       description:
         "Tout le monde connait React, ce framework est de plus en plus utilisé dans le domaine professionnel. Après de longs mois, bloqués à la version 15, une nouvelle version majeure va bientôt arriver que…",
+      id: "bdxio-react16",
       image:
         "https://storage.googleapis.com/brunosabot.dev/img/h0MAi-1GdZQ.jpeg",
+      language: "fr",
+      slides:
+        "https://drive.google.com/open?id=1aMy3Szz-A-6hoTFuGvdVqoTZOEhc07W6j8emIcNb3Po",
+      title: "Les nouveautés de React 16 - Fiber",
+      youtubeId: "h0MAi-1GdZQ",
     },
   ];
 
@@ -85,16 +85,16 @@ export default async function ContactPage() {
       <List>
         {talks.map((talk, index) => (
           <Talk
-            title={talk.title}
-            image={talk.image ? talk.image : undefined}
-            description={talk.description}
-            lang={talk.language}
             conference={talk.conferenceName}
             date={talk.date}
+            description={talk.description}
+            image={talk.image ? talk.image : undefined}
             key={talk.id}
-            slides={talk.slides}
-            youtubeId={talk.youtubeId}
+            lang={talk.language}
             priority={index === 0}
+            slides={talk.slides}
+            title={talk.title}
+            youtubeId={talk.youtubeId}
           />
         ))}
       </List>

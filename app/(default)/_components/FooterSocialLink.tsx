@@ -7,17 +7,17 @@ interface IFooterSocialProps {
 }
 
 export default function FooterSocialLink({
+  children,
   href,
   name,
-  children,
 }: IFooterSocialProps) {
   return (
     <a
+      aria-label={`Bruno Sabot on ${name}`}
       className={classes.FooterSocialLink}
       href={href}
       rel="noopener noreferrer"
       target="_blank"
-      aria-label={`Bruno Sabot on ${name}`}
     >
       {children}
     </a>

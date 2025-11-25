@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { sendContactEmail } from "../../actions/contact";
-import InputText from "../../../generic/form/InputText";
-import InputEmail from "../../../generic/form/InputEmail";
-import InputTextarea from "../../../generic/form/InputTextarea";
+
 import Button from "../../../generic/common/Button";
+import InputEmail from "../../../generic/form/InputEmail";
+import InputText from "../../../generic/form/InputText";
+import InputTextarea from "../../../generic/form/InputTextarea";
+import { sendContactEmail } from "../../actions/contact";
 
 export default function Form() {
   const [name, setName] = useState("");
@@ -21,30 +22,30 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit}>
       <InputText
-        label="Your name"
-        onChange={(e) => setName(e.target.value)}
         autoComplete="name"
-        name="name"
         enterKeyHint="done"
+        label="Your name"
+        name="name"
+        onChange={(e) => setName(e.target.value)}
         value={name}
       />
 
       <InputEmail
-        label="Your email"
-        onChange={(e) => setEmail(e.target.value)}
         autoComplete="email"
-        type="email"
-        name="email"
         enterKeyHint="done"
+        label="Your email"
+        name="email"
+        onChange={(e) => setEmail(e.target.value)}
+        type="email"
         value={email}
       />
 
       <InputTextarea
-        label="Your message"
-        rows={7}
         id="message"
-        value={message}
+        label="Your message"
         onChange={(e) => setMessage(e.target.value)}
+        rows={7}
+        value={message}
       />
 
       <div style={{ paddingTop: "32px" }}>

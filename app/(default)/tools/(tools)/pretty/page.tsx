@@ -9,10 +9,10 @@ import ToolPretty from "./ToolPretty";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/pretty/",
       description:
         "Effortlessly Format and Beautify Your JSON Data for Enhanced Readability and Debugging",
       title: "JSON Pretty Tool",
-      canonical: "https://brunosabot.dev/tools/pretty/",
     },
     "/tools/pretty/",
   );

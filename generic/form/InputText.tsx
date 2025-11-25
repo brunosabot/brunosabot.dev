@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from "react";
+
 import classNames from "./InputText.module.css";
 
 type IInputTextProps = InputHTMLAttributes<HTMLInputElement> & {
@@ -6,8 +7,8 @@ type IInputTextProps = InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export default function InputText({
-  label,
   className,
+  label,
   name,
   value,
   ...props
@@ -17,13 +18,13 @@ export default function InputText({
   if (value) classList.push(classNames.HasValue);
 
   return (
-    <label htmlFor={name} className={classNames.InputText}>
+    <label className={classNames.InputText} htmlFor={name}>
       <input
         {...props}
-        value={value}
+        className={classList.join(" ")}
         name={name}
         type="email"
-        className={classList.join(" ")}
+        value={value}
       />
       <div className={classNames.Label}>{label}</div>
     </label>

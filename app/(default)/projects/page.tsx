@@ -1,8 +1,8 @@
-import { getMetaData } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import Title from "../../../generic/typography/Title";
+import { getMetaData } from "../../../lib/metadata";
 import List from "./components/List";
 import Project from "./components/Project";
-import Title from "../../../generic/typography/Title";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -18,43 +18,43 @@ export async function generateMetadata() {
 const getProjects = async () => {
   const projectPromises = [
     {
-      id: "answwr",
-      url: "https://www.answwr.com",
-      image: "https://storage.googleapis.com/brunosabot.dev/img/answwr.png",
-      title:
-        "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
       description: [
         "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
         "With Answwr you’ll be able to decide between choices in the most elegant ways, meaning you’ll have to fill a bunch of forms, hit a green button and generate a totally fair and unbiased random result.",
         "It's important to precise the result will be totally fair and unbiased, that's why we made the Redo button.",
       ],
+      id: "answwr",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/answwr.png",
       lang: "🇺🇸 🇫🇷",
+      title:
+        "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
+      url: "https://www.answwr.com",
     },
     {
-      id: "afkalc",
-      url: "https://afkalc.com",
-      image: "https://storage.googleapis.com/brunosabot.dev/img/afkalc.png",
-      title:
-        "AFKalc is a tool to help guilds from AFK Arena to improve their organisation and evolution.",
       description: [
         "AFKalc is a tool to help guilds from AFK Arena to improve their organisation and evolution.",
         "Players have access to an interface that allow to manage and show off their accounts or to create and share their favorite teams.",
         "Guilds can follow players evolutions and organise guild versus guild events by creating tiers lists and give instructions.",
       ],
+      id: "afkalc",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/afkalc.png",
       lang: "🇩🇪 🇺🇸‍ 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇺🇦",
+      title:
+        "AFKalc is a tool to help guilds from AFK Arena to improve their organisation and evolution.",
+      url: "https://afkalc.com",
     },
     {
-      id: "charlotteannequin",
-      url: "https://charlotteannequin.com/",
-      image:
-        "https://storage.googleapis.com/brunosabot.dev/img/projects/charlotteannequin.png",
-      title: "Charlotte Annequin - Photographe",
       description: [
         "Charlotte Annequin, photographe depuis 2015, spécialisée dans le portrait artistique. Son coeur d'activité s'étend du mariage à la naissance, en passant par la grossesse",
         "Elle réalise également des séances photo de famille, des portraits artistiques, ou des photographies boudoir",
         "En somme, une photographe des beaux évènements de la vie.",
       ],
+      id: "charlotteannequin",
+      image:
+        "https://storage.googleapis.com/brunosabot.dev/img/projects/charlotteannequin.png",
       lang: "🇫🇷",
+      title: "Charlotte Annequin - Photographe",
+      url: "https://charlotteannequin.com/",
     },
     // {
     //   id: "latelierdeliz",
@@ -83,12 +83,12 @@ export default async function ProjectsPage() {
       <List>
         {projects.map((project, index) => (
           <Project
-            image={project.image}
-            title={project.title}
             description={project.description}
-            to={project.url}
+            image={project.image}
             key={project.id}
             priority={index === 0}
+            title={project.title}
+            to={project.url}
           />
         ))}
       </List>

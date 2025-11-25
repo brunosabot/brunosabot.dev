@@ -1,18 +1,18 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
+import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
+import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";
 import ToolBezierCurves from "./ToolBezierCurves";
-import BlockTitle from "../../../../../components/typography/BlockTitle";
-import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
-import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/bezier-curves/",
       description:
         "Craft Stunning Animations with This Cubic-Bezier Curve Generator",
       title: "Bezier Curves",
-      canonical: "https://brunosabot.dev/tools/bezier-curves/",
     },
     "/tools/bezier-curves/",
   );
@@ -44,9 +44,9 @@ export default function ToolBezierCurvesPage() {
           custom cubic-bezier curves for CSS transitions and animations.
           Instantly visualize, tweak, and export your perfect timing
           functions—making your web animations smoother, more engaging, and
-          visually stunning. Whether you&apos;re fine-tuning UI micro-interactions or
-          building complex animation sequences, this tool helps you achieve
-          pixel-perfect motion with ease.
+          visually stunning. Whether you&apos;re fine-tuning UI
+          micro-interactions or building complex animation sequences, this tool
+          helps you achieve pixel-perfect motion with ease.
         </p>
 
         <BlockParagraphTitle>Key Features</BlockParagraphTitle>

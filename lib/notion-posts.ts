@@ -1,11 +1,12 @@
 import {
-  DatabaseObjectResponse,
+  DataSourceObjectResponse,
   PageObjectResponse,
-  PartialDatabaseObjectResponse,
+  PartialDataSourceObjectResponse,
   PartialPageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
-import { NotionToMarkdown } from "notion-to-md";
 import { unstable_cache } from "next/cache";
+import { NotionToMarkdown } from "notion-to-md";
+
 import {
   FullPost,
   getCover,
@@ -23,12 +24,30 @@ const isPost = (item: Post | undefined): item is Post => {
   return item !== undefined;
 };
 
+async function fetchNotionPosts(isFull: boolean) {
+  const notionClient = getNotionClient();
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const filters: any[] = [{ date: { is_not_empty: true }, property: "Date" }];
+  if (isFull === false) {
+    filters.push({ property: "Status", status: { equals: "Done" } });
+  }
+
+  const response = await notionClient.dataSources.query({
+    data_source_id: process.env.NOTION_DATABASE ?? "",
+    filter: { and: filters },
+    sorts: [{ direction: "descending", property: "Date" }],
+  });
+
+  return response.results.map(mapNotionToPost).filter(isPost);
+}
+
 function mapNotionToPost(
   notionPost:
+    | DataSourceObjectResponse
     | PageObjectResponse
-    | PartialPageObjectResponse
-    | PartialDatabaseObjectResponse
-    | DatabaseObjectResponse,
+    | PartialDataSourceObjectResponse
+    | PartialPageObjectResponse,
 ): Post | undefined {
   if (notionPost === undefined) return undefined;
   if (!("cover" in notionPost)) return undefined;
@@ -37,12 +56,13 @@ function mapNotionToPost(
   const p = notionPost.properties as unknown as NotionPost;
 
   const data: Post = {
-    id: notionPost.id,
     canonical: p.Canonical.url ?? "",
     color: getRichTextValue(p.Color),
     creator: p.Creator.people[0]?.name,
     date: getDateValue(p.Date),
+    id: notionPost.id,
     lang: getLang(p.Lang),
+    lastModified: notionPost.last_edited_time,
     originalImage: getCover(cover),
     originalImageAlt: getRichTextValue(p.OriginalImageAlt),
     path: getRichTextValue(p.Path),
@@ -51,11 +71,12 @@ function mapNotionToPost(
     subtitle: getRichTextValue(p.Subtitle),
     tags: getTags(p.Tags).join(","),
     title: p.Name.title[0].plain_text,
-    lastModified: notionPost.last_edited_time,
   };
 
   return data;
 }
+
+// All posts
 
 async function readPostMarkdown(id: string) {
   const notionClient = getNotionClient();
@@ -66,7 +87,7 @@ async function readPostMarkdown(id: string) {
   const blocks = [];
 
   while (done === false) {
-    const { results, has_more, next_cursor } =
+    const { has_more, next_cursor, results } =
       await notionClient.blocks.children.list({
         block_id: id,
         page_size: 100,
@@ -88,25 +109,6 @@ async function readPostMarkdown(id: string) {
   return mdString;
 }
 
-// All posts
-
-async function fetchNotionPosts(isFull: boolean) {
-  const notionClient = getNotionClient();
-
-  const filters: any[] = [{ property: "Date", date: { is_not_empty: true } }];
-  if (isFull === false) {
-    filters.push({ property: "Status", status: { equals: "Done" } });
-  }
-
-  const response = await notionClient.databases.query({
-    database_id: process.env.NOTION_DATABASE ?? "",
-    filter: { and: filters },
-    sorts: [{ property: "Date", direction: "descending" }],
-  });
-
-  return response.results.map(mapNotionToPost).filter(isPost);
-}
-
 const cachedFetchNotionPosts = unstable_cache(
   fetchNotionPosts,
   ["notion-posts"],
@@ -115,21 +117,21 @@ const cachedFetchNotionPosts = unstable_cache(
   },
 );
 
-export async function getNotionPosts(isFull: boolean = false) {
-  return cachedFetchNotionPosts(isFull);
+export async function fetchNotionTags(): Promise<string[]> {
+  const notionClient = getNotionClient();
+
+  const response = await notionClient.dataSources.retrieve({
+    data_source_id: process.env.NOTION_DATABASE ?? "",
+  });
+
+  // @ts-expect-error Typing issue with notion client
+  return response.properties.Tags.multi_select.options.map(({ name }) => name);
 }
 
 // Tags
 
-export async function fetchNotionTags(): Promise<string[]> {
-  const notionClient = getNotionClient();
-
-  const response = await notionClient.databases.retrieve({
-    database_id: process.env.NOTION_DATABASE ?? "",
-  });
-
-  // @ts-ignore Typing issue with notion client
-  return response.properties.Tags.multi_select.options.map(({ name }) => name);
+export async function getNotionPosts(isFull: boolean = false) {
+  return cachedFetchNotionPosts(isFull);
 }
 const cachedFetchNotionTags = unstable_cache(fetchNotionTags, ["notion-tags"], {
   revalidate: 3600,

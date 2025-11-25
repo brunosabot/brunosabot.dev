@@ -1,10 +1,11 @@
 import Image from "next/image";
+
 import { getMetaData } from "../../lib/metadata";
 import logo from "../../public/images/nonow-consulting.jpg";
-import classes from "./page.module.css";
+import CharlotteAnnequin from "./components/CharlotteAnnequin";
 import Contact from "./components/Contact";
 import Galaxie from "./components/Galaxie";
-import CharlotteAnnequin from "./components/CharlotteAnnequin";
+import classes from "./page.module.css";
 
 export async function generateMetadata() {
   return getMetaData({ description: "Nonow Consulting Webperf, Development" });
@@ -14,12 +15,12 @@ export default async function ResumePage() {
   return (
     <div className={classes.Page}>
       <Image
-        src={logo}
-        className={classes.Logo}
         alt=""
-        role="presentation"
-        width={200}
+        className={classes.Logo}
         height={200}
+        role="presentation"
+        src={logo}
+        width={200}
       />
       <h1 className={classes.Title}>
         <span className={classes.TitleAccent}>Nonow</span> Consulting

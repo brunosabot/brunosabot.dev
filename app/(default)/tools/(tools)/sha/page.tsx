@@ -9,10 +9,10 @@ import ToolSha from "./ToolSha";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/sha/",
       description:
         "Fortify Your Data Security: Generate Secure Hashes with Our SHA Hash Calculator",
       title: "Sha Generation Tool",
-      canonical: "https://brunosabot.dev/tools/sha/",
     },
     "/tools/sha/",
   );

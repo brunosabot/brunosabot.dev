@@ -1,14 +1,15 @@
 "use client";
 
+import { mdiClose } from "@mdi/js";
+import Image from "next/image";
 import { useState } from "react";
-import classes from "./Projects.module.css";
+
+import Svg from "../../../components/svg/Svg";
+import charlotteAnnequinGrossesse from "../../../public/nonow-consulting/charlotte-annequin-grossesse.jpg";
 import charlotteAnnequinHome from "../../../public/nonow-consulting/charlotte-annequin-home.jpg";
 import charlotteAnnequinMariage from "../../../public/nonow-consulting/charlotte-annequin-mariage.jpg";
-import charlotteAnnequinGrossesse from "../../../public/nonow-consulting/charlotte-annequin-grossesse.jpg";
 import charlotteAnnequinMenu from "../../../public/nonow-consulting/charlotte-annequin-menu.jpg";
-import Image from "next/image";
-import Svg from "../../../components/svg/Svg";
-import { mdiClose } from "@mdi/js";
+import classes from "./Projects.module.css";
 
 export default function CharlotteAnnequin() {
   const [isVisible, setIsVisible] = useState(false);
@@ -74,42 +75,42 @@ export default function CharlotteAnnequin() {
 
                 <p>
                   <a
-                    href="https://charlotteannequin.com/"
-                    target="_blank"
-                    rel="noreferrer"
                     className={classes.Link}
+                    href="https://charlotteannequin.com/"
+                    rel="noreferrer"
+                    target="_blank"
                   >
                     Visiter le site
                   </a>
                 </p>
               </div>
               <Image
+                alt=""
                 className={classes.PopUpImage}
+                height={2244}
                 src={charlotteAnnequinHome}
-                alt=""
                 width={1008}
-                height={2244}
               />
               <Image
+                alt=""
                 className={classes.PopUpImage}
+                height={2244}
                 src={charlotteAnnequinMariage}
-                alt=""
                 width={1008}
-                height={2244}
               />
               <Image
+                alt=""
                 className={classes.PopUpImage}
+                height={2244}
                 src={charlotteAnnequinGrossesse}
-                alt=""
                 width={1008}
-                height={2244}
               />
               <Image
-                className={classes.PopUpImage}
-                src={charlotteAnnequinMenu}
                 alt=""
-                width={1008}
+                className={classes.PopUpImage}
                 height={2244}
+                src={charlotteAnnequinMenu}
+                width={1008}
               />
             </div>
           </div>

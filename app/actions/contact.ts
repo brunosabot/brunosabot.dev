@@ -1,31 +1,11 @@
 "use server";
 
 type SMTPData = {
-  sender: { name: string; email: string };
-  to: { email: string; name: string }[];
-  subject: string;
   htmlContent: string;
+  sender: { email: string; name: string };
+  subject: string;
+  to: { email: string; name: string }[];
 };
-
-async function sendMail(sendSmtpEmail: SMTPData) {
-  const apiKey = process.env.NEXT_SENDINBLUE_API_KEY;
-
-  if (apiKey === undefined) {
-    throw new Error("SENDINBLUE_API_KEY is not defined");
-  }
-
-  const res = await fetch("https://api.sendinblue.com/v3/smtp/email", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "api-key": apiKey,
-    },
-    body: JSON.stringify(sendSmtpEmail),
-  });
-
-  return res.json();
-}
 
 export async function sendContactEmail(
   email: string,
@@ -40,9 +20,29 @@ export async function sendContactEmail(
   }
 
   await sendMail({
-    sender: { name, email },
-    to: [{ email: contactEmail, name: "Bruno Sabot" }],
-    subject,
     htmlContent: message,
+    sender: { email, name },
+    subject,
+    to: [{ email: contactEmail, name: "Bruno Sabot" }],
   });
+}
+
+async function sendMail(sendSmtpEmail: SMTPData) {
+  const apiKey = process.env.NEXT_SENDINBLUE_API_KEY;
+
+  if (apiKey === undefined) {
+    throw new Error("SENDINBLUE_API_KEY is not defined");
+  }
+
+  const res = await fetch("https://api.sendinblue.com/v3/smtp/email", {
+    body: JSON.stringify(sendSmtpEmail),
+    headers: {
+      Accept: "application/json",
+      "api-key": apiKey,
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+  });
+
+  return res.json();
 }

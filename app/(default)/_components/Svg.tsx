@@ -1,25 +1,25 @@
 interface ISvgProps {
   className?: string;
   d: string;
-  pathAttributes?: Record<string, string>;
   onClick?: () => void;
+  pathAttributes?: Record<string, string>;
   size?: number;
 }
 
 export default function Svg({
   className,
   d,
-  pathAttributes,
   onClick,
+  pathAttributes,
   size,
 }: ISvgProps) {
   return (
     <svg
-      onClick={onClick}
       className={className}
       height={size ?? 24}
-      width={size ?? 24}
+      onClick={onClick}
       viewBox="0 0 24 24"
+      width={size ?? 24}
     >
       <path {...pathAttributes} d={d} />
     </svg>

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import classes from "./Contact.module.css";
+
 import { sendNonowConsultingEmail } from "../../actions/nonow-consulting";
+import classes from "./Contact.module.css";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -36,37 +37,37 @@ export default function Contact() {
         <h2 className={classes.Title}>Vous souhaitez me contacter ?</h2>
         <div className={classes.AutoGrow} data-replicated-value={message}>
           <textarea
-            placeholder="Votre message"
             className={classes.Input}
-            value={message}
             onChange={(e) => setMessage(e.target.value)}
+            placeholder="Votre message"
+            value={message}
           />
         </div>
         {message !== "" ? (
           <div className={classes.NoGrow}>
             <input
-              type="text"
-              placeholder="Votre nom"
               className={classes.Input}
-              value={name}
               onChange={(e) => setName(e.target.value)}
+              placeholder="Votre nom"
+              type="text"
+              value={name}
             />
           </div>
         ) : null}
         {message !== "" && name !== "" ? (
           <div className={classes.NoGrow}>
             <input
-              type="email"
-              placeholder="Votre email"
               className={classes.Input}
-              value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="Votre email"
+              type="email"
+              value={email}
             />
           </div>
         ) : null}
         {message !== "" && name !== "" && email !== "" ? (
           <div className={classes.NoGrow}>
-            <button type="submit" className={classes.Submit}>
+            <button className={classes.Submit} type="submit">
               Envoyer le message
             </button>
           </div>

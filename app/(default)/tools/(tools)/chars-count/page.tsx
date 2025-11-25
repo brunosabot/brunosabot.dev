@@ -1,18 +1,18 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
+import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
+import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
+import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";
 import ToolCharsCount from "./ToolCharsCount";
-import BlockTitle from "../../../../../components/typography/BlockTitle";
-import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
-import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/chars-count/",
       description:
         "Craft Compelling Content with Ease: The Ultimate Text Analysis Tool",
       title: "Character Count",
-      canonical: "https://brunosabot.dev/tools/chars-count/",
     },
     "/tools/chars-count/",
   );

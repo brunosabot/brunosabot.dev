@@ -1,14 +1,14 @@
 export default interface Resume {
-  seo: {
-    description: string;
-    title: string;
-    alternate: string;
-    alternateLabel: string;
-  };
+  about: string;
   follow: string;
   intro: string;
+  seo: {
+    alternate: string;
+    alternateLabel: string;
+    description: string;
+    title: string;
+  };
   subIntro: string;
-  about: string;
   titleJobs: string;
   titleTraining: string;
 }

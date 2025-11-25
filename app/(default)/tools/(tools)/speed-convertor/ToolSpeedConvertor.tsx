@@ -1,34 +1,19 @@
 "use client";
 
 import React, { useCallback, useState } from "react";
-import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
-import Input from "../../../../../components/form/Input";
-import Table from "../../../../../components/table/Table";
-import Tr from "../../../../../components/table/Tr";
-import Td from "../../../../../components/table/Td";
+
 import CardTitle from "../../../../../components/card/CardTitle";
+import SimpleCard from "../../../../../components/card/SimpleCard";
+import Input from "../../../../../components/form/Input";
+import Label from "../../../../../components/form/Label";
+import Table from "../../../../../components/table/Table";
+import Td from "../../../../../components/table/Td";
+import Tr from "../../../../../components/table/Tr";
 
 const round = (value: number, fix = 0) => {
   const fixFactor = 10 ** fix;
   return Math.round(value * fixFactor) / fixFactor;
 };
-
-function speedToPace(value: number) {
-  const pace = (1 / value) * 60;
-
-  const paceMinute = Math.floor(pace);
-  const paceSeconds = Math.floor((pace - paceMinute) * 60);
-
-  return `${paceMinute}'${paceSeconds > 0 ? ` ${paceSeconds}"` : ""}`;
-}
-
-function paceToSpeed(paceMinute: number, paceSeconds: number) {
-  const pace = paceMinute + paceSeconds / 60;
-  const speed = 60 / pace;
-
-  return speed;
-}
 
 export default function ToolSpeedConvertor() {
   const [speed, setSpeed] = useState<number>(10);
@@ -55,7 +40,7 @@ export default function ToolSpeedConvertor() {
   return (
     <>
       <Label label="Speed">
-        <Input onChange={onChangeSpeed} value={`${speed}`} type="number" />
+        <Input onChange={onChangeSpeed} type="number" value={`${speed}`} />
       </Label>
 
       <Label label={"Pace (format: x' y\" or x')"}>
@@ -99,4 +84,20 @@ export default function ToolSpeedConvertor() {
       </SimpleCard>
     </>
   );
+}
+
+function paceToSpeed(paceMinute: number, paceSeconds: number) {
+  const pace = paceMinute + paceSeconds / 60;
+  const speed = 60 / pace;
+
+  return speed;
+}
+
+function speedToPace(value: number) {
+  const pace = (1 / value) * 60;
+
+  const paceMinute = Math.floor(pace);
+  const paceSeconds = Math.floor((pace - paceMinute) * 60);
+
+  return `${paceMinute}'${paceSeconds > 0 ? ` ${paceSeconds}"` : ""}`;
 }

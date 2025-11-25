@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+
 import Label from "../../../../../components/form/Label";
 import Textarea from "../../../../../components/form/Textarea";
 
@@ -29,18 +30,18 @@ export default function ToolBase64() {
     <>
       <Label label="Encoded String">
         <Textarea
-          onChange={onEncodedStringChange}
-          value={string}
           aria-invalid={valid === false}
+          onChange={onEncodedStringChange}
           rows={5}
+          value={string}
         />
       </Label>
 
       <Label label="Decoded String">
         <Textarea
           onChange={onDecodedStringChange}
-          value={Buffer.from(string, "base64").toString()}
           rows={5}
+          value={Buffer.from(string, "base64").toString()}
         />
       </Label>
     </>

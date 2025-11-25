@@ -1,4 +1,4 @@
-import { marked, MarkedExtension, Tokens } from "marked";
+import { MarkedExtension, Tokens } from "marked";
 
 const footnoteMatch = /^\(\^([^\)]+)\):([\s\S]*)$/;
 const referenceMatch = /\[\^([^\]]+)\](?!\()/g;
@@ -39,7 +39,7 @@ const footnotesExtension: MarkedExtension = {
 
       return `<p>${paragraphWithRef}</p>`;
     },
-    text(token: Tokens.Text | Tokens.Escape | Tokens.Tag) {
+    text(token: Tokens.Escape | Tokens.Tag | Tokens.Text) {
       if ("tokens" in token) {
         if (token.tokens === undefined) {
           return "";

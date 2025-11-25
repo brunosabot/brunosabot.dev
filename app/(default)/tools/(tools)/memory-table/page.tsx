@@ -9,10 +9,10 @@ import ToolMemoryTable from "./ToolMemoryTable";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/memory-table/",
       description:
         "Sharpen Your Mind with the Fun and Challenging Number-Object Memory Game!",
       title: "Memory Table Tool",
-      canonical: "https://brunosabot.dev/tools/memory-table/",
     },
     "/tools/memory-table/",
   );

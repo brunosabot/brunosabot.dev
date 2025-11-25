@@ -1,27 +1,28 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
 import { nanoid } from "nanoid";
+import React, { useCallback, useEffect, useState } from "react";
+import { ulid } from "ulid";
 import {
   v1 as uuidv1,
   v4 as uuidv4,
   v5 as uuidv5,
   validate as uuidValidate,
 } from "uuid";
-import { ulid } from "ulid";
+
 import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
-import Input from "../../../../../components/form/Input";
-import Select from "../../../../../components/form/Select";
-import Option from "../../../../../components/form/Option";
 import Button from "../../../../../components/form/Button";
+import Input from "../../../../../components/form/Input";
+import Label from "../../../../../components/form/Label";
+import Option from "../../../../../components/form/Option";
+import Select from "../../../../../components/form/Select";
 
 enum UuidType {
+  NANOID = "nanoid",
+  ULID = "ulid",
   V1 = "v1",
   V4 = "v4",
   V5 = "v5",
-  NANOID = "nanoid",
-  ULID = "ulid",
 }
 
 export default function ToolUuid() {
@@ -98,24 +99,24 @@ export default function ToolUuid() {
       {uuidType === UuidType.V5 ? (
         <Label label="Namespace">
           <Input
+            aria-invalid={uuidValidate(namespace) === false}
             onChange={onChangeNamespace}
             value={namespace}
-            aria-invalid={uuidValidate(namespace) === false}
           />
         </Label>
       ) : null}
 
       {uuidType === UuidType.NANOID ? (
         <Label label="NanoID length">
-          <Input type="number" onChange={onChangeLength} value={length} />
+          <Input onChange={onChangeLength} type="number" value={length} />
         </Label>
       ) : null}
 
       <SimpleCard>{uuid}</SimpleCard>
 
       <Button
-        type="button"
         onClick={() => createUuid(uuidType, name, namespace, length)}
+        type="button"
       >
         Generate another one
       </Button>

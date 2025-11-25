@@ -1,5 +1,5 @@
-import Svg from "../svg/Svg";
 import svgPatreon from "../svg/patreon";
+import Svg from "../svg/Svg";
 import classes from "./Patreon.module.css";
 
 interface IPatreonProps {
@@ -10,11 +10,11 @@ const Patreon: React.FC<IPatreonProps> = () => {
   return (
     <div>
       <a
-        href="https://www.patreon.com/brunosabot?fan_landing=true"
-        title="Become a patron"
         className={classes.Pateron}
-        target="_blank"
+        href="https://www.patreon.com/brunosabot?fan_landing=true"
         rel="noopener noreferrer"
+        target="_blank"
+        title="Become a patron"
       >
         <Svg d={svgPatreon} />
         Become a patron

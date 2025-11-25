@@ -1,19 +1,20 @@
 import Image from "next/image";
+
 import Hashtag from "../../../../../generic/common/Hashtag";
-import classNames from "./Post.module.css";
 import { getRelativeTime } from "../../../../../lib/time";
+import classNames from "./Post.module.css";
 
 interface IPostProps {
-  image?: string;
   color: string;
-  description: string;
-  lang: string;
-  title: string;
-  platform: string;
   date: string;
-  to: string;
+  description: string;
+  image?: string;
+  lang: string;
+  platform: string;
   priority: boolean;
   tags: string;
+  title: string;
+  to: string;
 }
 
 export default function Post(props: IPostProps) {
@@ -24,10 +25,10 @@ export default function Post(props: IPostProps) {
       <div className={classNames.ImageWrapper}>
         {props.image ? (
           <Image
-            src={props.image}
             alt=""
-            fill={true}
             className={classNames.Image}
+            fill={true}
+            src={props.image}
           />
         ) : null}
       </div>

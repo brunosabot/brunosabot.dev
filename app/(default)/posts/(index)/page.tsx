@@ -1,10 +1,9 @@
-import { formatDistanceToNow } from "date-fns";
-import { getMetaData } from "../../../../lib/metadata";
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
-import { getPosts } from "../../../actions/posts";
 import Title from "../../../../generic/typography/Title";
-import Post from "./components/Post";
+import { getMetaData } from "../../../../lib/metadata";
+import { getPosts } from "../../../actions/posts";
 import List from "./components/List";
+import Post from "./components/Post";
 
 export const revalidate = 21600;
 
@@ -28,17 +27,17 @@ export default async function PostsPage() {
       <List>
         {posts.map((post, index) => (
           <Post
-            key={index}
-            image={post.originalImage}
             color={post.color}
-            description={post.subtitle}
-            lang={post.lang}
-            title={post.title}
-            platform={post.platform}
             date={post.date}
-            to={post.path}
+            description={post.subtitle}
+            image={post.originalImage}
+            key={index}
+            lang={post.lang}
+            platform={post.platform}
             priority={index === 0}
             tags={post.tags}
+            title={post.title}
+            to={post.path}
           />
         ))}
       </List>

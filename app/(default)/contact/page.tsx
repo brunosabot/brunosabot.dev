@@ -1,20 +1,8 @@
-import SimpleCard from "../../../components/card/SimpleCard";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 import Paragraph from "../../../generic/typography/Paragraph";
 import Title from "../../../generic/typography/Title";
 import { getMetaData } from "../../../lib/metadata";
 import Form from "./Form";
-
-export async function generateMetadata() {
-  return getMetaData(
-    {
-      title: "Contact",
-      description:
-        "Have questions? Connect with Bruno Sabot! Discuss projects, collaborations, or just say hello.",
-    },
-    "/contact/",
-  );
-}
 
 export default function ContactPage() {
   return (
@@ -35,5 +23,16 @@ export default function ContactPage() {
         ]}
       />
     </>
+  );
+}
+
+export async function generateMetadata() {
+  return getMetaData(
+    {
+      description:
+        "Have questions? Connect with Bruno Sabot! Discuss projects, collaborations, or just say hello.",
+      title: "Contact",
+    },
+    "/contact/",
   );
 }

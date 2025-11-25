@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+export default {
   poweredByHeader: false,
   generateEtags: false,
   reactStrictMode: true,

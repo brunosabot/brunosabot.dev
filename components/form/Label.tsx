@@ -1,11 +1,11 @@
 import classes from "./Label.module.css";
 
 interface Props {
-  label: React.ReactNode;
   children: React.ReactNode;
+  label: React.ReactNode;
 }
 
-const Label: React.FC<Props> = ({ label, children }) => {
+const Label: React.FC<Props> = ({ children, label }) => {
   return (
     <label className={classes.Label}>
       <span className={classes.Text}>{label}</span>

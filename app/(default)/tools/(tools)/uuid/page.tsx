@@ -9,10 +9,10 @@ import ToolUuid from "./ToolUuid";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/uuid/",
       description:
         "Generate Universally Unique Identifiers (UUIDs) Instantly for Your Applications",
       title: "UUID Generation Tool",
-      canonical: "https://brunosabot.dev/tools/uuid/",
     },
     "/tools/uuid/",
   );

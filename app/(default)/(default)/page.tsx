@@ -1,30 +1,30 @@
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
 import { getMetaData } from "../../../lib/metadata";
 import { getPosts } from "../../actions/posts";
-import Post from "./_components/Post";
-import Section from "./_components/Section";
-import Picture from "./_components/Picture";
-import Intro from "./_components/Intro";
 import CallToAction from "./_components/CallToAction";
 import HeroSection from "./_components/HeroSection";
-import SectionTitle from "./_components/SectionTitle";
-import PostContainer from "./_components/PostContainer";
+import Intro from "./_components/Intro";
 import LinkTag from "./_components/LinkTag";
-import TagGroup from "./_components/TagGroup";
-import ToolkitContainer from "./_components/ToolkitContainer";
-import ToolkitAbstract from "./_components/ToolkitAbstract";
+import Picture from "./_components/Picture";
+import Post from "./_components/Post";
+import PostContainer from "./_components/PostContainer";
 import Project from "./_components/Project";
 import ProjectContainer from "./_components/ProjectContainer";
+import Section from "./_components/Section";
+import SectionTitle from "./_components/SectionTitle";
+import TagGroup from "./_components/TagGroup";
+import ToolkitAbstract from "./_components/ToolkitAbstract";
+import ToolkitContainer from "./_components/ToolkitContainer";
 
 export const revalidate = 21600;
 
 export async function generateMetadata() {
   return getMetaData(
     {
-      title:
-        "Bruno Sabot - Software Engineer | Front-end Development| Home Automation ",
       description:
         "Hi, I'm Bruno, a Staff Software Engineer at PlayPlay with a passion for home automation. This page showcases my skills, including React, Vue.js and web performance, and features my latest blog posts.",
+      title:
+        "Bruno Sabot - Software Engineer | Front-end Development| Home Automation ",
     },
     "/",
   );
@@ -46,12 +46,12 @@ export default async function IndexPage() {
         <PostContainer>
           {posts.slice(0, 3).map((post) => (
             <Post
-              href={post.path}
-              key={post.path}
-              title={post.title}
               date={new Date(post.date)}
               description={post.subtitle}
+              href={post.path}
               image={post.originalImage}
+              key={post.path}
+              title={post.title}
             />
           ))}
         </PostContainer>
@@ -85,19 +85,19 @@ export default async function IndexPage() {
         <SectionTitle>Things to check out</SectionTitle>
         <ProjectContainer>
           <Project
-            title="Streamline Card"
             description="A Home Assistant card for to streamline your configuration."
             href="https://github.com/brunosabot/streamline-card"
+            title="Streamline Card"
           />
           <Project
-            title="Streamline Templates"
             description="A collection of Home Assistant templates to streamline your configuration."
             href="/streamline-cards"
+            title="Streamline Templates"
           />
           <Project
-            title="Answwr"
             description="An Android app to help you make decisions."
             href="https://www.answwr.com/"
+            title="Answwr"
           />
         </ProjectContainer>
       </Section>

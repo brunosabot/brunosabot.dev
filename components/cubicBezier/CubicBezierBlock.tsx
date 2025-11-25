@@ -1,7 +1,6 @@
-import CubicBezierSvg from "./CubicBezierSvg";
-
-import styles from "./CubicBezierBlock.module.css";
 import SimpleCard from "../card/SimpleCard";
+import styles from "./CubicBezierBlock.module.css";
+import CubicBezierSvg from "./CubicBezierSvg";
 
 interface ICubicBezierProps {
   x1: number;
@@ -12,7 +11,7 @@ interface ICubicBezierProps {
 
 const CubicBezierBlock: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => (
   <SimpleCard className={styles.CubicBezierBlock}>
-    <CubicBezierSvg x1={x1} y1={y1} x2={x2} y2={y2} />
+    <CubicBezierSvg x1={x1} x2={x2} y1={y1} y2={y2} />
     <div className={styles.Legend}>
       cubic-bezier(
       {x1},&nbsp;

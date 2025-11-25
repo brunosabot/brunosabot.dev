@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
+
 import SimpleCard from "../../../../../components/card/SimpleCard";
-import Label from "../../../../../components/form/Label";
-import Input from "../../../../../components/form/Input";
 import Columns from "../../../../../components/Columns";
+import Input from "../../../../../components/form/Input";
+import Label from "../../../../../components/form/Label";
 
 const round = (value: number, fix = 0) => {
   const fixFactor = 10 ** fix;
@@ -111,9 +112,9 @@ export default function ToolPhotoshopShadow() {
 
         <Label label="Inner Shadow">
           <Input
-            type="checkbox"
-            onChange={(e) => setInner(e.target.checked)}
             checked={inner}
+            onChange={(e) => setInner(e.target.checked)}
+            type="checkbox"
           />
         </Label>
       </Columns>

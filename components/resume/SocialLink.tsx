@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import classes from "./SocialLink.module.css";
 
 interface Props {
@@ -14,14 +15,14 @@ const SocialLink: React.FC<Props> = ({ children, to }) => {
       {isExternal ? (
         <a
           className={classes["resume-social-link"]}
-          target="_blank"
-          rel="noopener noreferrer"
           href={to}
+          rel="noopener noreferrer"
+          target="_blank"
         >
           {children}
         </a>
       ) : (
-        <Link href={to} className={classes["resume-social-link"]}>
+        <Link className={classes["resume-social-link"]} href={to}>
           {children}
         </Link>
       )}

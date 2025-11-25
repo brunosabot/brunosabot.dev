@@ -1,17 +1,18 @@
+import { mdiPodcast } from "@mdi/js";
 import Image from "next/image";
-import classNames from "./Podcast.module.css";
-import { mdiFilePresentationBox, mdiPodcast, mdiYoutube } from "@mdi/js";
+
 import Svg from "../../../../components/svg/Svg";
 import { getDate } from "../../../../lib/time";
+import classNames from "./Podcast.module.css";
 
 interface IPodcastProps {
-  title: string;
-  image?: string;
+  date: string;
   description: string;
+  image?: string;
   lang: string;
   platform: string;
-  date: string;
   priority: boolean;
+  title: string;
   url: string;
 }
 
@@ -23,11 +24,11 @@ export default function Podcast(props: IPodcastProps) {
       <div className={classNames.ImageWrapper}>
         {props.image ? (
           <Image
-            src={props.image}
             alt=""
-            fill={true}
             className={classNames.Image}
+            fill={true}
             priority={props.priority}
+            src={props.image}
           />
         ) : null}
       </div>
@@ -41,10 +42,10 @@ export default function Podcast(props: IPodcastProps) {
 
         <div className={classNames.Links}>
           <a
-            href={props.url}
-            target="_blank"
-            rel="noopener noreferrer"
             className={classNames.Link}
+            href={props.url}
+            rel="noopener noreferrer"
+            target="_blank"
           >
             <Svg d={mdiPodcast} />
             Listen

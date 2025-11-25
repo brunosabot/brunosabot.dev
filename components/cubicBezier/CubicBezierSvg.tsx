@@ -43,16 +43,16 @@ const CubicBezierSvg: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => {
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={`0 0 ${vwidth} ${vheight}`}
       height={`${height}px`}
+      viewBox={`0 0 ${vwidth} ${vheight}`}
       width={`${width}px`}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
+        d={`M${p0x} ${p0y} C ${p1x} ${p1y}, ${p2x} ${p2y}, ${p3x} ${p3y}`}
+        fill="none"
         stroke="var(--accent-color)"
         strokeWidth="4"
-        fill="none"
-        d={`M${p0x} ${p0y} C ${p1x} ${p1y}, ${p2x} ${p2y}, ${p3x} ${p3y}`}
       />
     </svg>
   );

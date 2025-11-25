@@ -9,10 +9,10 @@ import ToolUrlEncodeDecode from "./ToolUrlEncodeDecode";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/url-encode-decode/",
       description:
         "Easily Encode or Decode URLs for Safe Web Transmission and Readability",
       title: "URL Encode and Decode Tool",
-      canonical: "https://brunosabot.dev/tools/url-encode-decode/",
     },
     "/tools/url-encode-decode/",
   );

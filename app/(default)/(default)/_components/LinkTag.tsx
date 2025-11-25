@@ -1,14 +1,15 @@
 import Link from "next/link";
+
 import classes from "./LinkTag.module.css";
 
 interface ILinkTagProps {
-  href: string;
   children: React.ReactNode;
+  href: string;
 }
 
-export default async function LinkTag({ href, children }: ILinkTagProps) {
+export default async function LinkTag({ children, href }: ILinkTagProps) {
   return (
-    <Link href={href} className={classes.LinkTag}>
+    <Link className={classes.LinkTag} href={href}>
       {children}
     </Link>
   );

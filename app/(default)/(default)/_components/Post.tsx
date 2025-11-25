@@ -1,29 +1,30 @@
-import classes from "./Post.module.css";
 import Image from "next/image";
+
+import classes from "./Post.module.css";
 
 const dateFormatter = new Intl.DateTimeFormat("en-US", {
   dateStyle: "medium",
 });
 
 interface IPostProps {
-  href: string;
-  title: string;
   date: Date;
   description: string;
+  href: string;
   image?: string;
+  title: string;
 }
 export default async function Post({
-  href,
-  title,
   date,
   description,
+  href,
   image,
+  title,
 }: IPostProps) {
   return (
     <a className={classes.Post} href={href}>
       <div className={classes.PostImageContainer}>
         {image ? (
-          <Image src={image} alt={title} fill className={classes.PostImage} />
+          <Image alt={title} className={classes.PostImage} fill src={image} />
         ) : null}
       </div>
       <div>

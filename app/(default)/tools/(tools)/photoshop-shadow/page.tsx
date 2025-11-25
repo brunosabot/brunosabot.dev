@@ -1,7 +1,6 @@
 import SimpleCard from "../../../../../components/card/SimpleCard";
 import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
-import BlockTitle from "../../../../../components/typography/BlockTitle";
 import PageTitle from "../../../../../components/typography/PageTitle";
 import { getMetaData } from "../../../../../lib/metadata";
 import ToolPhotoshopShadow from "./ToolPhotoshopShadow";
@@ -9,10 +8,10 @@ import ToolPhotoshopShadow from "./ToolPhotoshopShadow";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/photoshop-shadow/",
       description:
         "Bridging Design: Effortlessly Convert Photoshop Shadows to CSS with Visualization",
       title: "Photoshop Shadow Converter",
-      canonical: "https://brunosabot.dev/tools/photoshop-shadow/",
     },
     "/tools/photoshop-shadow/",
   );

@@ -1,8 +1,16 @@
-import React, { useRef, useState, ComponentType, useCallback } from "react";
-import TooltipView from "./TooltipView";
+import React, { ComponentType, useCallback, useRef, useState } from "react";
+
 import ModalPortal from "./ModalPortal";
 import classes from "./Tooltip.module.css";
 import { TooltipPosition } from "./TooltipPosition";
+import TooltipView from "./TooltipView";
+
+export type TooltipComponentType = React.FunctionComponent<{
+  children: React.ReactNode;
+  left: number;
+  position?: TooltipPosition;
+  top: number;
+}>;
 
 interface IRequiredComponentProps {
   label: string;
@@ -12,18 +20,11 @@ interface IWithTooltipProps {
   position?: TooltipPosition;
 }
 
-export type TooltipComponentType = React.FunctionComponent<{
-  left: number;
-  top: number;
-  position?: TooltipPosition;
-  children: React.ReactNode;
-}>;
-
 export function withTooltip<P extends IRequiredComponentProps>(
   WrappedComponent: ComponentType<P>,
   TooltipComponent: TooltipComponentType = TooltipView,
-): ComponentType<P & IWithTooltipProps> {
-  const WithTooltip: React.FC<P & IWithTooltipProps> = ({
+): ComponentType<IWithTooltipProps & P> {
+  const WithTooltip: React.FC<IWithTooltipProps & P> = ({
     position = TooltipPosition.TOP,
     ...props
   }) => {
@@ -61,15 +62,15 @@ export function withTooltip<P extends IRequiredComponentProps>(
 
     return (
       <span
-        ref={refSpan}
         className={classes.WithTooltip}
-        onFocusCapture={onMouseOverCapture}
         onBlurCapture={onMouseOutCapture}
-        onMouseOverCapture={onMouseOverCapture}
+        onFocusCapture={onMouseOverCapture}
         onMouseOutCapture={onMouseOutCapture}
+        onMouseOverCapture={onMouseOverCapture}
+        ref={refSpan}
       >
         <ModalPortal active={show[0] !== 0 || show[1] !== 0}>
-          <TooltipComponent left={show[0]} top={show[1]} position={position}>
+          <TooltipComponent left={show[0]} position={position} top={show[1]}>
             {props.label}
           </TooltipComponent>
         </ModalPortal>

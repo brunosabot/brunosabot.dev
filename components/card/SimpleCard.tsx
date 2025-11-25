@@ -1,13 +1,14 @@
 import React, { CSSProperties } from "react";
+
 import classes from "./SimpleCard.module.css";
 
 interface Props {
-  className?: string;
   children?: React.ReactNode;
+  className?: string;
   style?: CSSProperties;
 }
 
-const SimpleCard: React.FC<Props> = ({ className, style, children = null }) => {
+const SimpleCard: React.FC<Props> = ({ children = null, className, style }) => {
   return (
     <div className={`${classes["card"]} ${className}`} style={style}>
       {children}

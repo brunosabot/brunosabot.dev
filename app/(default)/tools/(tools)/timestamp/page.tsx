@@ -9,10 +9,10 @@ import ToolTimestamp from "./ToolTimestamp";
 export async function generateMetadata() {
   return getMetaData(
     {
+      canonical: "https://brunosabot.dev/tools/timestamp/",
       description:
         "Effortlessly Convert Timestamps to Readable Dates and Vice Versa with This Handy Tool",
       title: "Timestamp Converter",
-      canonical: "https://brunosabot.dev/tools/timestamp/",
     },
     "/tools/timestamp/",
   );

@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect } from "react";
-import Svg from "./Svg";
-import classNames from "./FooterTheme.module.css";
+
 import { season, seasons } from "../../../lib/season";
+import classNames from "./FooterTheme.module.css";
+import Svg from "./Svg";
 
 interface IContentProps {
-  theme: string;
   icon: string;
-  name: string;
+  theme: string;
 }
 
-export default function FooterTheme({ name, theme, icon }: IContentProps) {
+export default function FooterTheme({ icon, theme }: IContentProps) {
   const onClick = () => {
     localStorage.setItem("theme", theme);
     updateTheme();
@@ -35,12 +35,12 @@ export default function FooterTheme({ name, theme, icon }: IContentProps) {
 
   return (
     <button
-      type="button"
+      className={classNames.FooterTheme}
       data-theme={theme}
       onClick={onClick}
-      className={classNames.FooterTheme}
+      type="button"
     >
-      <Svg d={icon} className={classNames.Icon} size={24} />
+      <Svg className={classNames.Icon} d={icon} size={24} />
     </button>
   );
 }

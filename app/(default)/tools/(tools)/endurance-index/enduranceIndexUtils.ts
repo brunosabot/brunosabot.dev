@@ -6,7 +6,7 @@ export function calculateEnduranceIndex(
   hours: number,
   minutes: number,
   seconds: number,
-): number | null {
+): null | number {
   // Convert race time to seconds and minutes
   const totalSeconds = hours * 3600 + minutes * 60 + seconds;
   const timeInHours = totalSeconds / 3600;
@@ -27,7 +27,7 @@ export function calculateRaceDuration(
   mas: number,
   distance: number,
   enduranceIndex: number,
-): { hours: number; minutes: number; seconds: number } | null {
+): null | { hours: number; minutes: number; seconds: number } {
   if (mas <= 0 || distance <= 0 || enduranceIndex === 0) return null;
   // Define f(x) as the difference between the two sides of the equation
   // f(x) = (distance * 60) / (mas * 1000 * x) * 100 - (enduranceIndex * ln(x/6) + 100)

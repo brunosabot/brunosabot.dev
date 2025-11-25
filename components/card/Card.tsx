@@ -1,35 +1,36 @@
 import Image from "next/image";
+
 import Flag from "../Flag";
 import classes from "./Card.module.css";
 
 interface Props {
   actions?: React.ReactNode;
   children?: React.ReactNode;
+  color?: string;
   date: string;
+  description: string;
   icon: string;
   image?: string;
-  color?: string;
   priority?: boolean;
   subtitle?: string;
-  title: string;
-  description: string;
-  to?: string;
   tags?: string;
+  title: string;
+  to?: string;
 }
 
 const Card: React.FC<Props> = ({
   actions = null,
   children = null,
+  color = undefined,
   date,
+  description,
   icon,
   image,
-  color = undefined,
   priority = false,
-  description,
   subtitle,
+  tags = "",
   title,
   to,
-  tags = "",
 }) => {
   const Composant = to ? "a" : "div";
 
@@ -38,17 +39,17 @@ const Card: React.FC<Props> = ({
       {image ? (
         <Composant href={to}>
           <Image
-            height={195}
-            width={350}
-            src={image}
             alt={title}
             className={classes["card__image"]}
+            height={195}
             priority={priority}
+            src={image}
             style={{ backgroundColor: color }}
+            width={350}
           />
         </Composant>
       ) : null}
-      <Composant href={to} className={classes["card__header"]}>
+      <Composant className={classes["card__header"]} href={to}>
         <div className={classes["card__header-title-wrapper"]}>
           <span className={classes["card__header-title"]}>{title}</span>
         </div>

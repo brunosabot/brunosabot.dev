@@ -1,22 +1,19 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
 import Job from "../../../components/resume/Job";
 import SocialLink from "../../../components/resume/SocialLink";
 import Title from "../../../components/resume/Title";
-import classes from "./resume.module.css";
-import { notFound } from "next/navigation";
-import { getMetaData, SITE_METADATA } from "../../../lib/metadata";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import { getMetaData, SITE_METADATA } from "../../../lib/metadata";
 import { getJobsByLang } from "../../actions/jobs";
-import { getTrainingsByLang } from "../../actions/trainings";
 import { getResumeByLang } from "../../actions/resume";
+import { getTrainingsByLang } from "../../actions/trainings";
+import classes from "./resume.module.css";
+
+type Lang = "en" | "fr";
 
 type Params = Promise<{ lang: string }>;
-
-type Lang = "fr" | "en";
-function isValidLang(lang: string): lang is Lang {
-  return ["fr", "en"].includes(lang);
-}
-
 export async function generateMetadata({ params }: { params: Params }) {
   const { lang } = await params;
 
@@ -29,8 +26,8 @@ export async function generateMetadata({ params }: { params: Params }) {
   return {
     ...getMetaData({
       description: resume.seo.description,
-      title: resume.seo.title,
       lang,
+      title: resume.seo.title,
     }),
     alternates: {
       canonical: "/resume/en/",
@@ -105,8 +102,8 @@ export default async function ResumePage({ params }: { params: Params }) {
 
       <section className={classes["resume-life-experiences"]}>
         <Link
-          href={`/resume/${resume.seo.alternate}/`}
           className={classes["resume-language-tag"]}
+          href={`/resume/${resume.seo.alternate}/`}
         >
           {resume.seo.alternateLabel}
         </Link>
@@ -119,10 +116,10 @@ export default async function ResumePage({ params }: { params: Params }) {
               companyWebsite={job.companyWebsite}
               details={job.details}
               endDate={job.endDate}
-              startDate={job.startDate}
               job={job.job}
-              subtitles={job.subtitles}
               key={job.companyName}
+              startDate={job.startDate}
+              subtitles={job.subtitles}
             />
           ))}
         </article>
@@ -136,10 +133,10 @@ export default async function ResumePage({ params }: { params: Params }) {
               companyWebsite={training.schoolWebsite}
               details={training.details}
               endDate={training.endDate}
-              startDate={training.startDate}
               job={training.diploma}
-              subtitles={training.subtitles}
               key={training.diploma}
+              startDate={training.startDate}
+              subtitles={training.subtitles}
             />
           ))}
         </article>
@@ -153,4 +150,8 @@ export default async function ResumePage({ params }: { params: Params }) {
       />
     </>
   );
+}
+
+function isValidLang(lang: string): lang is Lang {
+  return ["en", "fr"].includes(lang);
 }
