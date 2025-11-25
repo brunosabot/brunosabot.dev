@@ -54,17 +54,6 @@ body.fall {
   --accent-color-light: rgb(233, 134, 4, 0.15);
 }
 
-body::after {
-  background-color: var(--background);
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
-
 @media (prefers-color-scheme: light) {
   body {
     --accent-color: rgba(0, 80, 199);
