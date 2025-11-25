@@ -12,7 +12,11 @@ export default function HeaderLinksDropdown({
   return (
     <div className={classes.HeaderLinksDropdown}>
       <button className={classes.HeaderLinksDropdownButton}>
-        <Plus size={16} strokeWidth={2} />
+        <Plus
+          size={16}
+          strokeWidth={2}
+          className={classes.HeaderLinksDropdownButtonIcon}
+        />
       </button>
       <div className={classes.HeaderLinksDropdownContent}>{children}</div>
     </div>

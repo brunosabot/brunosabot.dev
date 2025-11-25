@@ -15,6 +15,10 @@
   width: 100%;
 }
 
+.HeaderLinksDropdownButtonIcon {
+  color: var(--token-v2-color-accent);
+}
+
 .HeaderLinksDropdownContent {
   display: none;
   position: absolute;
