@@ -1,20 +1,10 @@
 .Title {
-  color: var(--text-color);
-  font-size: clamp(1.5rem, 3vw, 3rem);
-}
-.Text {
-  position: relative;
-  z-index: 1;
-}
-.Text::before {
-  background-color: var(--color-accent);
-  bottom: -5px;
-  content: "";
-  height: 5px;
-  left: 0;
-  position: absolute;
-  transform: skew(-45deg, -1deg);
-  transform-origin: 25%;
-  width: 100%;
-  z-index: -1;
+  color: var(--token-v2-color-accent);
+  font-family: var(--token-v2-font-handwritten);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin: 0;
+  transform: rotate(-2deg);
 }

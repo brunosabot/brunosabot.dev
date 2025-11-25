@@ -1,0 +1,41 @@
+.PostSearch {
+  border-bottom: 1px solid var(--token-v2-color-border);
+  border-top: 1px solid var(--token-v2-color-border);
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  padding: 16px 0;
+  width: 100%;
+}
+
+.PostSearchInputWrapper {
+  align-items: center;
+  background-color: var(--token-v2-color-background-alternative);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  height: 40px;
+  padding: 8px 16px;
+}
+
+.PostSearchInputWrapper:focus-within {
+  border-color: var(--token-v2-color-accent);
+}
+
+.PostSearchInput {
+  background: transparent;
+  border: none;
+  color: var(--token-v2-color-text-primary);
+  width: 100%;
+}
+
+.PostSearchInput:focus {
+  outline: none;
+}
+
+.PostSearchInput::placeholder {
+  color: var(--token-v2-color-text-secondary);
+  font-size: 0.875rem;
+}

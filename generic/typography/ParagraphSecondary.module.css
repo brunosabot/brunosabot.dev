@@ -1,0 +1,5 @@
+.ParagraphSecondary {
+  color: var(--token-v2-color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}

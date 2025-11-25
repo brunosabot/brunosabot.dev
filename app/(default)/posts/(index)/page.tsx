@@ -1,9 +1,9 @@
 import SeoBreadcrumb from "../../../../components/seo/Breadcrumb";
+import ParagraphSecondary from "../../../../generic/typography/ParagraphSecondary";
 import Title from "../../../../generic/typography/Title";
 import { getMetaData } from "../../../../lib/metadata";
 import { getPosts } from "../../../actions/posts";
-import List from "./components/List";
-import Post from "./components/Post";
+import Posts from "./_components/Posts";
 
 export const revalidate = 21600;
 
@@ -23,24 +23,12 @@ export default async function PostsPage() {
 
   return (
     <>
-      <Title>Post list</Title>
-      <List>
-        {posts.map((post, index) => (
-          <Post
-            color={post.color}
-            date={post.date}
-            description={post.subtitle}
-            image={post.originalImage}
-            key={index}
-            lang={post.lang}
-            platform={post.platform}
-            priority={index === 0}
-            tags={post.tags}
-            title={post.title}
-            to={post.path}
-          />
-        ))}
-      </List>
+      <Title>Musings & Code</Title>
+      <ParagraphSecondary>
+        A collection of thoughts on software engineering, leadership, and random
+        discoveries.
+      </ParagraphSecondary>
+      <Posts posts={posts} />
 
       <SeoBreadcrumb
         items={[

@@ -5,9 +5,5 @@ interface ITitleProps {
 }
 
 export default function Title({ children }: ITitleProps) {
-  return (
-    <h1 className={classNames.Title}>
-      <span className={classNames.Text}>{children}</span>
-    </h1>
-  );
+  return <h1 className={classNames.Title}>{children}</h1>;
 }

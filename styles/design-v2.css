@@ -76,7 +76,8 @@ html body {
   --token-v2-color-background: var(--primitive-color-woodsmoke-950);
   --token-v2-color-background-hover: var(--primitive-color-woodsmoke-900);
   --token-v2-color-background-alternative: var(--primitive-color-woodsmoke-900);
-  --token-v2-color-border: var(--primitive-color-woodsmoke-800);
+  --token-v2-color-border: var(--primitive-color-woodsmoke-900);
+  --token-v2-color-border-alternative: var(--primitive-color-woodsmoke-800);
   --token-v2-color-text: var(--primitive-color-woodsmoke-100);
   --token-v2-color-text-hover: var(--primitive-color-woodsmoke-200);
   --token-v2-color-text-secondary: var(--primitive-color-woodsmoke-300);
@@ -125,7 +126,8 @@ html body.winter {
     --token-v2-color-background-alternative: var(
       --primitive-color-woodsmoke-100
     );
-    --token-v2-color-border: var(--primitive-color-woodsmoke-200);
+    --token-v2-color-border: var(--primitive-color-woodsmoke-100);
+    --token-v2-color-border-alternative: var(--primitive-color-woodsmoke-200);
     --token-v2-color-text: var(--primitive-color-woodsmoke-950);
     --token-v2-color-text-hover: var(--primitive-color-woodsmoke-800);
     --token-v2-color-text-secondary: var(--primitive-color-woodsmoke-700);
