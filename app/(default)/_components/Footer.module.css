@@ -1,0 +1,18 @@
+.Footer {
+  border-top: 1px solid var(--token-v2-color-border);
+}
+
+.FooterContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: space-between;
+  padding: 48px 16px;
+}
+
+@media (min-width: 768px) {
+  .FooterContent {
+    flex-direction: row;
+  }
+}

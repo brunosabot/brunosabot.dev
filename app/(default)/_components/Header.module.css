@@ -1,0 +1,16 @@
+.Header {
+  align-items: center;
+  backdrop-filter: blur(8px);
+  background-color: color-mix(
+    in srgb,
+    var(--token-v2-color-background) 95%,
+    transparent
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  white-space: nowrap;
+  z-index: 10;
+}

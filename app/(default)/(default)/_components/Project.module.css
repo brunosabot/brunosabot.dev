@@ -1,0 +1,62 @@
+.Project {
+  background-color: var(--token-v2-color-background);
+  border: solid 2px var(--token-v2-color-border);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  text-decoration: none;
+}
+
+.Project:hover {
+  border-color: var(--token-v2-color-accent);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.ProjectIcon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Project:hover .ProjectIcon {
+  transform: rotate(45deg);
+}
+
+.ProjectTitle {
+  color: inherit;
+  font-family: var(--token-v2-font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.ProjectDescription {
+  color: var(--token-v2-color-text-secondary);
+}
+
+/*
+export default async function Project() {
+  return (
+    <a
+      className="relative block p-6 bg-background-light dark:bg-background-dark border-2 border-gray-200 dark:border-white/20 rounded-xl hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 group overflow-hidden hover:-translate-y-1 hover:-rotate-1"
+      href="#"
+    >
+      <span className="absolute top-4 right-4 text-gray-300 dark:text-gray-600 group-hover:text-primary transition-colors duration-300 -rotate-45">
+        <span className="material-symbols-outlined text-3xl">
+          arrow_outward
+        </span>
+      </span>
+      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 font-heading">
+        Nova UI Kit
+      </h3>
+      <p className="text-base text-gray-600 dark:text-gray-400">
+        An open-source component library for React, focused on accessibility and
+        DX.
+      </p>
+    </a>
+  );
+}
+*/

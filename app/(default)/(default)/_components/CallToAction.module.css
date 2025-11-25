@@ -1,0 +1,51 @@
+.CallToAction {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.CallToActionMain {
+  align-items: center;
+  background: var(--token-v2-color-accent);
+  border-radius: 9999px;
+  color: var(--token-v2-color-text-contrast);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+  gap: 8px;
+  height: 44px;
+  justify-content: center;
+  line-height: 1.2;
+  overflow: hidden;
+  padding: 0 24px;
+  text-decoration: none;
+}
+
+.CallToActionIcon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.CallToActionMain:hover .CallToActionIcon {
+  transform: rotate(-15deg);
+}
+
+.CallToActionSecondary {
+  align-items: center;
+  background-color: var(--token-v2-color-accent-contrast);
+  border-radius: 9999px;
+  color: var(--token-v2-color-accent-light-contrast);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+  gap: 8px;
+  height: 44px;
+  justify-content: center;
+  line-height: 1.2;
+  overflow: hidden;
+  padding: 0 24px;
+  text-decoration: none;
+}

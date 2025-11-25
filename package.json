@@ -20,6 +20,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "date-fns": "^4.1.0",
     "encoding": "^0.1.13",
+    "lucide-react": "^0.554.0",
     "marked": "^15.0.7",
     "nanoid": "^5.0.9",
     "next": "15.1.7",

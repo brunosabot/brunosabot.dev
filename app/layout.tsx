@@ -2,8 +2,25 @@ import SeoWebsite from "../components/seo/Website";
 import { SITE_METADATA } from "../lib/metadata";
 import { season } from "../lib/season";
 import "../styles/design.css";
+import "../styles/design-v2.css";
 import "../styles/globals.css";
 import Script from "next/script";
+import { Space_Grotesk } from "next/font/google";
+import { Sora } from "next/font/google";
+import { Gochi_Hand } from "next/font/google";
+
+const sora = Sora({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+const gochiHand = Gochi_Hand({ subsets: ["latin"], weight: ["400"] });
+
+const style = {
+  "--primitive-font-space-grotesk": spaceGrotesk.style.fontFamily,
+  "--primitive-font-sora": sora.style.fontFamily,
+  "--primitive-font-gochi-hand": gochiHand.style.fontFamily,
+} as React.CSSProperties;
 
 interface IRootLayoutProps {
   children: React.ReactNode;
@@ -52,7 +69,7 @@ export default function RootLayout({ children }: IRootLayoutProps) {
   const currentSeason = season(new Date());
 
   return (
-    <html lang="en" prefix="og: https://ogp.me/ns#">
+    <html lang="en" prefix="og: https://ogp.me/ns#" style={style}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />

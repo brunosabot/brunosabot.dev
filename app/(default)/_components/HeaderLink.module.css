@@ -1,0 +1,30 @@
+.HeaderLink {
+  border-radius: 8px;
+  color: var(--token-v2-color-text);
+  font-weight: 500;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.HeaderLink:hover {
+  color: var(--token-v2-color-accent);
+}
+
+.HeaderLinkMain {
+  display: block;
+}
+
+.HeaderLinkSecondary {
+  display: none;
+}
+
+@media (max-width: 644px) {
+  .HeaderLinkMain {
+    display: none;
+  }
+
+  .HeaderLinkSecondary {
+    display: block;
+  }
+}

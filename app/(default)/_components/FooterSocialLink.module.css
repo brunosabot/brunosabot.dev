@@ -1,0 +1,16 @@
+.FooterSocialLink {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+
+  /* text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors */
+}
+
+.FooterSocialLink svg {
+  fill: var(--token-v2-color-text-secondary);
+  transition: fill 0.2s ease-in-out;
+}
+
+.FooterSocialLink:hover svg {
+  fill: var(--token-v2-color-accent);
+}

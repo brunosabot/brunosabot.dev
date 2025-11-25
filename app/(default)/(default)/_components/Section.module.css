@@ -1,0 +1,16 @@
+.Section {
+  padding: 64px 16px;
+}
+
+.SectionContent {
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.Even {
+  background-color: var(--token-v2-color-background-alternative);
+}
+
+.Odd {
+  background-color: var(--token-v2-color-background);
+}

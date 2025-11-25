@@ -1,0 +1,9 @@
+.SectionTitle {
+  color: var(--token-v2-color-accent);
+  font-family: var(--token-v2-font-handwritten);
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 40px 0;
+  transform: rotate(-2deg);
+}

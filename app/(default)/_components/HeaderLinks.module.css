@@ -1,0 +1,11 @@
+.HeaderLinks {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.HeaderLinksContent {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}

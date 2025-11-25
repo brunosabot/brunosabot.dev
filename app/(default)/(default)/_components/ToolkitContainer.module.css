@@ -1,0 +1,23 @@
+.ToolkitContainer {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 2fr;
+}
+
+.ToolkitContainerAbstract {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ToolkitContainerTags {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .ToolkitContainer {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,9 @@
+.HeroSection {
+  padding: 80px 16px;
+  text-align: center;
+}
+
+.HeroSectionContent {
+  margin: 0 auto;
+  max-width: 36rem;
+}

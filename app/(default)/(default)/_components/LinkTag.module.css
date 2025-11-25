@@ -1,0 +1,13 @@
+.LinkTag {
+  background-color: var(--token-v2-color-accent-contrast);
+  border-radius: 8px;
+  color: var(--token-v2-color-accent-light-contrast);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+.LinkTag:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,11 @@
+.ToolkitAbstractTitle {
+  font-family: var(--token-v2-font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ToolkitAbstractContent {
+  color: var(--token-v2-color-text-secondary);
+  line-height: 1.5;
+}

@@ -1,0 +1,12 @@
+.TagGroupTitle {
+  font-family: var(--token-v2-font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.TagGroupTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
