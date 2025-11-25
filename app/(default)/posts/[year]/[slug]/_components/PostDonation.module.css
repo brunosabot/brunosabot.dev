@@ -3,5 +3,6 @@
   flex-direction: column;
   font-family: var(--serif);
   gap: 8px;
+  margin-top: 32px;
   text-align: center;
 }

@@ -1,9 +1,9 @@
 import { mdiLinkedin } from "@mdi/js";
 
-import { SITE_METADATA } from "../../lib/metadata";
-import { WithATooltip } from "../modal/WithATooltip";
-import Svg from "../svg/Svg";
-import svgX from "../svg/x";
+import { WithATooltip } from "../../../../../../components/modal/WithATooltip";
+import Svg from "../../../../../../components/svg/Svg";
+import svgX from "../../../../../../components/svg/x";
+import { SITE_METADATA } from "../../../../../../lib/metadata";
 import classes from "./PostSocial.module.css";
 
 interface ILinkWithTooltip {

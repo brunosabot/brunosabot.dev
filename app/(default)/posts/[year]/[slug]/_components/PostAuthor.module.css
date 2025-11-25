@@ -1,0 +1,27 @@
+.PostAuthor {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+.PostAuthorImage {
+  border-radius: 9999px;
+  height: 48px;
+  width: 48px;
+}
+.PostAuthorName {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.PostAuthorDate {
+  color: var(--token-v2-color-text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 2px;
+}
+.PostAuthorCanonical {
+  color: var(--token-v2-color-text-secondary);
+  display: block;
+  font-size: 0.875rem;
+}
+.PostAuthorCanonicalLink {
+  text-decoration: none;
+}

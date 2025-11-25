@@ -13,9 +13,9 @@ export default function HeaderLinksDropdown({
     <div className={classes.HeaderLinksDropdown}>
       <button className={classes.HeaderLinksDropdownButton}>
         <Plus
+          className={classes.HeaderLinksDropdownButtonIcon}
           size={16}
           strokeWidth={2}
-          className={classes.HeaderLinksDropdownButtonIcon}
         />
       </button>
       <div className={classes.HeaderLinksDropdownContent}>{children}</div>

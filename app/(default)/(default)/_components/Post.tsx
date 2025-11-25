@@ -27,7 +27,7 @@ export default async function Post({
           <Image alt={title} className={classes.PostImage} fill src={image} />
         ) : null}
       </div>
-      <div>
+      <div className={classes.PostContent}>
         <p className={classes.PostDate}>{dateFormatter.format(date)}</p>
         <p className={classes.PostTitle}>{title}</p>
         <p className={classes.PostDescription}>{description}</p>

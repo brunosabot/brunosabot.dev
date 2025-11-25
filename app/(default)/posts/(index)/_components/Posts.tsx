@@ -50,7 +50,7 @@ export default function Posts({ posts }: IPostsProps) {
             date={post.item.date}
             description={post.item.subtitle}
             image={post.item.originalImage}
-            key={index}
+            key={post.item.path}
             lang={post.item.lang}
             platform={post.item.platform}
             priority={index === 0}

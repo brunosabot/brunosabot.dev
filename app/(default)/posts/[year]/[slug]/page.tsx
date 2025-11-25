@@ -5,9 +5,6 @@ import readingTime from "reading-time";
 import BuyMeACoffee from "../../../../../components/donate/BuyMeACoffee";
 import Patreon from "../../../../../components/donate/Patreon";
 import Paypal from "../../../../../components/donate/Paypal";
-import PostComponent from "../../../../../components/post/Post";
-import PostDonation from "../../../../../components/post/PostDonation";
-import Related from "../../../../../components/post/Related";
 import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
 import getMarkdown from "../../../../../lib/markdown";
 import { getMetaData, SITE_METADATA } from "../../../../../lib/metadata";
@@ -15,6 +12,9 @@ import { FullPost } from "../../../../../lib/notion";
 import { getNotionPost, getNotionPosts } from "../../../../../lib/notion-posts";
 import { getRelatedPosts } from "../../../../../lib/posts";
 import { getPost, getPosts } from "../../../../actions/posts";
+import PostComponent from "./_components/Post";
+import PostDonation from "./_components/PostDonation";
+import Related from "./_components/Related";
 
 type Params = Promise<{ slug: string; year: string }>;
 

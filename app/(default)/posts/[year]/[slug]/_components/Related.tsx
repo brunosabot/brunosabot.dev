@@ -1,11 +1,9 @@
-import { formatDistanceToNow } from "date-fns";
-
-import { RelatedPost } from "../../lib/posts";
-import Card from "../card/Card";
+import Post from "../../../(index)/_components/Post";
+import { PostWithCount } from "../../../../../../lib/posts";
 import classes from "./Related.module.css";
 
 interface IRelatedProps {
-  posts: RelatedPost[];
+  posts: PostWithCount[];
 }
 
 const Related: React.FC<IRelatedProps> = ({ posts = [] }) => {
@@ -14,14 +12,15 @@ const Related: React.FC<IRelatedProps> = ({ posts = [] }) => {
       <h2 className={classes.RelatedTitle}>You might also like</h2>
       <div className={classes.RelatedWrapper}>
         {posts.map((post) => (
-          <Card
-            date={formatDistanceToNow(new Date(post.date), {
-              addSuffix: true,
-            })}
+          <Post
+            canonical={post.canonical}
+            color={post.color}
+            date={post.date}
             description={post.subtitle}
-            icon={post.lang}
             image={post.originalImage}
             key={post.path}
+            lang={post.lang}
+            platform={post.platform}
             tags={post.tags}
             title={post.title}
             to={post.path}

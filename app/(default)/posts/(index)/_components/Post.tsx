@@ -15,7 +15,7 @@ interface IPostProps {
   image?: string;
   lang: string;
   platform: string;
-  priority: boolean;
+  priority?: boolean;
   tags: string;
   title: string;
   to: string;
@@ -28,7 +28,7 @@ export default function Post({
   description,
   image,
   platform,
-  priority,
+  priority = false,
   tags,
   title,
   to,

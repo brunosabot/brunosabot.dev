@@ -37,6 +37,7 @@
   opacity: 0.7;
   width: calc(100% + 32px);
 }
+
 @media (prefers-color-scheme: light) {
   .card__image {
     opacity: 1;

@@ -1,0 +1,16 @@
+.RelatedTitle {
+  color: var(--token-v2-color-accent);
+  font-family: var(--token-v2-font-handwritten);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin: 32px 0;
+  text-align: center;
+  transform: rotate(-1deg);
+}
+.RelatedWrapper {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}

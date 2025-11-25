@@ -1,4 +1,6 @@
 .Post {
+  background-color: var(--token-v2-color-background);
+  border-radius: 16px;
   color: inherit;
   display: flex;
   flex-direction: column;
@@ -7,8 +9,8 @@
 }
 
 .PostImageContainer {
-  aspect-ratio: 4 / 3;
-  border-radius: 16px;
+  aspect-ratio: 5 / 3;
+  border-radius: 16px 16px 0 0;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -16,6 +18,10 @@
 
 .PostImage {
   object-fit: cover;
+}
+
+.PostContent {
+  padding: 0 24px 24px 24px;
 }
 
 .PostTitle {

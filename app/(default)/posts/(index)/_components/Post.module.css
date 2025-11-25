@@ -19,6 +19,7 @@
 .PostContent {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   padding: 24px;
 }
 
@@ -84,31 +85,3 @@
 .PostCanonicalLink:hover {
   color: var(--token-v2-color-text-accent);
 }
-
-/*
-<article class="group flex flex-col overflow-hidden rounded-xl bg-card-light dark:bg-card-dark shadow-md hover:shadow-xl transition-shadow duration-300">
-<a class="block overflow-hidden" href="#">
-<img alt="Abstract Go programming code" class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiBNPLbwHySS8gd2ewWwKyVAwoTgfJnoPtCv-brIj17a1dPTVUnvuV3JTPgT42EGVVkPQmlKGdXv4Z9xlkVJ02ZA2c4TnXul27ID-E_tUd0W8WRD3pJDonTNpnAPse-ZNzT0NfTXaVVu-QoLz0oxVA4GQSHz4Zv3hT9UhUpoZjZFFMzXl6_2Ca5E7_9f5wmOk3799NAitEuaEC_58QhMmb1begBoq2sVIpDEkb_F0a8-8mrEwwPhFnEbXEBWW_yNrm5WWOdBaCuOM"/>
-</a>
-<div class="flex flex-1 flex-col p-6">
-<p class="text-sm text-text-light-secondary dark:text-text-dark-secondary">Oct 26, 2023</p>
-<h3 class="mt-2 text-xl font-bold text-text-light-primary dark:text-text-dark-primary group-hover:text-primary transition-colors">
-<a href="#">Demystifying Go's Concurrency Model</a>
-</h3>
-<p class="mt-2 text-sm text-text-light-secondary dark:text-text-dark-secondary flex-grow">A deep dive into goroutines and channels, and how they make concurrent programming in Go both simple and powerful.</p>
-<div class="mt-4 flex items-center gap-2">
-<span class="rounded-full bg-primary/20 px-3 py-1 text-xs font-medium text-primary">Go</span>
-<span class="rounded-full bg-gray-100 dark:bg-background-dark px-3 py-1 text-xs font-medium text-text-light-secondary dark:text-text-dark-secondary">Concurrency</span>
-</div>
-          <div className="mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
-            <a
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary hover:text-primary dark:hover:text-primary transition-colors"
-              href="#"
-            >
-              <span className="material-symbols-outlined text-base">link</span>
-              Originally on {platform}
-            </a>
-          </div>
-</div>
-</article>
-*/
