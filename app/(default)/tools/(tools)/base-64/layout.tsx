@@ -1,5 +1,5 @@
 import NavigationBack from "../../../../../components/header/NavigationBack";
-import Content from "./_components/Content";
+import ToolContent from "../../../../../generic/layout/ToolContent";
 
 interface IToolsLayoutProps {
   children: React.ReactNode;
@@ -7,9 +7,9 @@ interface IToolsLayoutProps {
 
 export default function ToolsLayout({ children }: IToolsLayoutProps) {
   return (
-    <Content>
+    <ToolContent>
       <NavigationBack />
       {children}
-    </Content>
+    </ToolContent>
   );
 }
