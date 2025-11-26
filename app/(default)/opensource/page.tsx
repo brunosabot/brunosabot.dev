@@ -1,6 +1,8 @@
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import ParagraphSecondary from "../../../generic/typography/ParagraphSecondary";
 import Title from "../../../generic/typography/Title";
 import { getMetaData } from "../../../lib/metadata";
+import List from "./components/List";
 import OpenSourceProject from "./components/OpenSourceProject";
 
 export async function generateMetadata() {
@@ -58,9 +60,13 @@ export default async function OpensourcePage() {
 
   return (
     <>
-      <Title>My open source projects</Title>
+      <Title>Open Source & Community</Title>
+      <ParagraphSecondary>
+        A collection of projects I maintain and contributions to the open source
+        ecosystem.
+      </ParagraphSecondary>
 
-      <div style={{ paddingTop: "24px" }}>
+      <List>
         {projects.map((project) => (
           <OpenSourceProject
             description={project.description}
@@ -71,7 +77,7 @@ export default async function OpensourcePage() {
             url={project.url}
           />
         ))}
-      </div>
+      </List>
 
       <SeoBreadcrumb
         items={[

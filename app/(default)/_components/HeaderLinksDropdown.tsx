@@ -1,4 +1,4 @@
-import { Plus } from "lucide-react";
+import { CircleChevronDown } from "lucide-react";
 
 import classes from "./HeaderLinksDropdown.module.css";
 
@@ -12,9 +12,9 @@ export default function HeaderLinksDropdown({
   return (
     <div className={classes.HeaderLinksDropdown}>
       <button className={classes.HeaderLinksDropdownButton}>
-        <Plus
+        <CircleChevronDown
           className={classes.HeaderLinksDropdownButtonIcon}
-          size={16}
+          size={20}
           strokeWidth={2}
         />
       </button>

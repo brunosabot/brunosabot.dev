@@ -1,49 +1,98 @@
 .OpenSourceProject {
+  background-color: var(--token-v2-color-background-alternative);
   border-radius: 16px;
-  color: var(--color-text);
-  display: block;
-  margin-bottom: 16px;
-  min-height: 154px;
-  overflow: hidden;
-  padding: 16px 16px 16px clamp(16px, calc(13vw + 16px), 186px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: background-color 0.2s ease-in-out;
 }
-.OpenSourceProject:hover {
-  background-color: var(--color-background-hover);
-}
-.Icon {
-  fill: var(--color-text);
-  height: 200px;
-  left: -30px;
-  opacity: 0.1;
-  pointer-events: none;
+
+.OpenSourceProjectImageWrapper {
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+  bottom: 0;
+  color: var(--token-v2-color-text-secondary);
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 24px 24px 24px 24px;
   position: absolute;
-  top: -30px;
-  width: 200px;
+  right: 0;
 }
-.Title {
-  color: var(--color-accent);
+
+.OpenSourceProjectContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+  padding: 24px;
+}
+
+.OpenSourceProjectTitle {
+  color: var(--token-v2-color-text-primary);
   font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
   margin: 0;
 }
-.Slug {
-  color: var(--color-text-secondary);
+
+.OpenSourceProjectHeader {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.OpenSourceProjectRole {
+  background-color: var(--token-v2-color-background);
+  border-radius: 9999px;
+  color: var(--token-v2-color-text-secondary);
+  font-size: 0.75rem;
+  padding: 4px 12px;
+}
+
+.OpenSourceProjectRole[data-role="maintainer"] {
+  background-color: var(--token-v2-color-accent);
+  color: var(--token-v2-color-accent-light);
+}
+
+.OpenSourceProjectDescription {
+  color: var(--token-v2-color-text-secondary);
+  flex-grow: 1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.OpenSourceProjectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.OpenSourceProjectLink {
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
   font-size: 0.875rem;
-  margin-right: 16px;
+  font-weight: 700;
+  gap: 8px;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: -0.015em;
+  padding: 0 16px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
 }
-.Role {
-  font-size: 0.875rem;
-  margin-left: 16px;
+
+.OpenSourceProjectLink:hover {
+  transform: scale(1.05);
 }
-.Role[data-role="Maintainer"] {
-  color: var(--color-accent);
-}
-.Role[data-role="Contributor"] {
-  color: var(--color-text-secondary);
-}
-.Description {
-  font-size: 1rem;
+
+.OpenSourceProjectVisit {
+  background-color: var(--token-v2-color-accent);
+  color: var(--token-v2-color-accent-light);
 }
