@@ -14,8 +14,8 @@
 .Value {
   color: var(--token-v2-color-text-primary);
   font-family: var(--token-v2-font-handwritten);
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 500;
   line-height: 1;
   transform: rotate(-1deg);
 }
