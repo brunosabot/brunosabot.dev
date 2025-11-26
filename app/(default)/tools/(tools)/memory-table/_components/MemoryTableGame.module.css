@@ -1,0 +1,31 @@
+.MemoryTableGame {
+  margin-top: 32px;
+}
+
+.MemoryTableGameValue {
+  color: var(--accent-color);
+  margin-bottom: 32px;
+}
+
+.MemoryTableGameSubmit {
+  display: flex;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.MemoryTableGameField {
+  margin-top: 32px;
+}
+
+.MemoryTableGameField > div {
+  background-color: var(--token-v2-color-background);
+}
+
+.MemoryTableGameError {
+  color: var(--token-v2-color-text-error);
+  margin-top: 32px;
+}
+
+.MemoryTableGameError > div {
+  border: 2px solid var(--token-v2-color-text-error);
+}

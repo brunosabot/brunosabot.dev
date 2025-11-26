@@ -11,5 +11,5 @@
   transition: all 0.2s ease-in-out;
 }
 .Button:hover {
-  background-color: var(--token-v2-color-accent-hover);
+  transform: scale(1.05);
 }

@@ -1,0 +1,15 @@
+.ButtonSecondary {
+  background-color: var(--token-v2-color-background);
+  border: 2px solid var(--token-v2-color-accent);
+  border-radius: 16px;
+  color: var(--token-v2-color-accent);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 40px;
+  padding: 0 24px;
+  transition: all 0.2s ease-in-out;
+}
+.ButtonSecondary:hover {
+  transform: scale(1.05);
+}

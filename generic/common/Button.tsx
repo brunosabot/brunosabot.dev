@@ -6,12 +6,14 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export default function Button({ children, type = "button" }: IButtonProps) {
+export default function Button({
+  children,
+  type = "button",
+  ...rest
+}: IButtonProps) {
   return (
-    <div className={classNames.ButtonWrapper}>
-      <button className={classNames.Button} type={type}>
-        {children}
-      </button>
-    </div>
+    <button className={classNames.Button} type={type} {...rest}>
+      {children}
+    </button>
   );
 }

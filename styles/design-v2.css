@@ -70,6 +70,18 @@
   --primitive-color-woodsmoke-800: #454545;
   --primitive-color-woodsmoke-900: #3d3d3d;
   --primitive-color-woodsmoke-950: #1c1c1c;
+
+  --primitive-color-torch-red-50: #fff1f2;
+  --primitive-color-torch-red-100: #ffe0e1;
+  --primitive-color-torch-red-200: #ffc6c9;
+  --primitive-color-torch-red-300: #ff9fa4;
+  --primitive-color-torch-red-400: #ff676e;
+  --primitive-color-torch-red-500: #fb2c36;
+  --primitive-color-torch-red-600: #e91923;
+  --primitive-color-torch-red-700: #c4111a;
+  --primitive-color-torch-red-800: #a21219;
+  --primitive-color-torch-red-900: #86161b;
+  --primitive-color-torch-red-950: #490609;
 }
 
 html body {
@@ -82,6 +94,7 @@ html body {
   --token-v2-color-text-hover: var(--primitive-color-woodsmoke-200);
   --token-v2-color-text-secondary: var(--primitive-color-woodsmoke-300);
   --token-v2-color-text-contrast: var(--primitive-color-woodsmoke-950);
+  --token-v2-color-text-error: var(--primitive-color-torch-red-500);
 
   --token-v2-font-body: var(--primitive-font-sora);
   --token-v2-font-heading: var(--primitive-font-space-grotesk);
