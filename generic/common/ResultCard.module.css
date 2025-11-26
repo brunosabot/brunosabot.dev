@@ -1,0 +1,8 @@
+.Wrapper {
+  background-color: var(--token-v2-color-background-alternative);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+}

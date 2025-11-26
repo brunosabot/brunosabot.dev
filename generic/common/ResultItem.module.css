@@ -1,0 +1,29 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Label {
+  color: var(--token-v2-color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.Value {
+  color: var(--token-v2-color-text-primary);
+  font-family: var(--token-v2-font-handwritten);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(-1deg);
+}
+
+.Unit {
+  color: var(--token-v2-color-text-tertiary);
+  font-family: var(--token-v2-font-sans);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 4px;
+}

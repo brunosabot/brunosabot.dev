@@ -1,0 +1,10 @@
+.ListItem {
+  line-height: 32px;
+  list-style-type: disc;
+  margin: 8px 0 8px 32px;
+  padding: 0;
+}
+
+.ListItem strong {
+  font-weight: 700;
+}

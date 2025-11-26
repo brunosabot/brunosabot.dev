@@ -1,0 +1,8 @@
+.Subtitle {
+  color: var(--token-v2-color-text-primary);
+  font-family: var(--token-v2-font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1;
+  margin: 32px 0;
+}
