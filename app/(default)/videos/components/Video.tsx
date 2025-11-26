@@ -1,12 +1,14 @@
-import { mdiYoutube } from "@mdi/js";
+import { SquarePlay } from "lucide-react";
 import Image from "next/image";
 
-import Svg from "../../../../components/svg/Svg";
-import { getDate } from "../../../../lib/time";
 import classNames from "./Video.module.css";
 
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  dateStyle: "medium",
+});
+
 interface IVideoProps {
-  date: string;
+  date: Date;
   description: string;
   image?: string;
   lang: string;
@@ -16,36 +18,37 @@ interface IVideoProps {
 }
 
 export default function Video(props: IVideoProps) {
-  const date = getDate(props.date);
-
   return (
     <div className={classNames.Video}>
-      <div className={classNames.ImageWrapper}>
+      <div className={classNames.VideoImageWrapper}>
         {props.image ? (
           <Image
             alt=""
-            className={classNames.Image}
-            fill={true}
+            className={classNames.VideoImage}
+            fill
             priority={props.priority}
             src={props.image}
           />
         ) : null}
       </div>
-      <div>
-        <h2 className={classNames.Title}>{props.title}</h2>
+      <div className={classNames.VideoContent}>
+        <div className={classNames.VideoGiven}>
+          Video published on {dateFormatter.format(props.date)}
+        </div>
 
-        <p className={classNames.Description}>{props.description}</p>
-        <div className={classNames.Given}>Video published on {date}</div>
+        <h2 className={classNames.VideoTitle}>{props.title}</h2>
 
-        <div className={classNames.Links}>
+        <p className={classNames.VideoDescription}>{props.description}</p>
+
+        <div className={classNames.VideoLinks}>
           <a
-            className={`${classNames.Link} ${classNames.Youtube}`}
+            className={`${classNames.VideoLink} ${classNames.VideoYoutube}`}
             href={`https://www.youtube.com/watch?v=${props.youtubeId}`}
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Svg d={mdiYoutube} />
-            YouTube video
+            <SquarePlay size={20} strokeWidth={1.25} />
+            Watch video
           </a>
         </div>
       </div>

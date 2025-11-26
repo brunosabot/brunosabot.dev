@@ -1,6 +1,8 @@
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import ParagraphSecondary from "../../../generic/typography/ParagraphSecondary";
 import Title from "../../../generic/typography/Title";
 import { getMetaData } from "../../../lib/metadata";
+import List from "./components/List";
 import Video from "./components/Video";
 
 export async function generateMetadata() {
@@ -36,20 +38,26 @@ export default async function VideosPage() {
 
   return (
     <>
-      <Title>Video list</Title>
+      <Title>Screen Time</Title>
+      <ParagraphSecondary>
+        A collection of video explorations, tutorials, and casual coding
+        sessions.
+      </ParagraphSecondary>
 
-      {videos.map((video, index) => (
-        <Video
-          date={video.date}
-          description={video.description}
-          image={video.image ? video.image : undefined}
-          key={video.id}
-          lang={video.language}
-          priority={index === 0}
-          title={video.title}
-          youtubeId={video.youtubeId}
-        />
-      ))}
+      <List>
+        {videos.map((video, index) => (
+          <Video
+            date={new Date(video.date)}
+            description={video.description}
+            image={video.image ? video.image : undefined}
+            key={video.id}
+            lang={video.language}
+            priority={index === 0}
+            title={video.title}
+            youtubeId={video.youtubeId}
+          />
+        ))}
+      </List>
 
       <SeoBreadcrumb
         items={[

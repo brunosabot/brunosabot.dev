@@ -28,6 +28,7 @@ export default async function PostsPage() {
         A collection of thoughts on software engineering, leadership, and random
         discoveries.
       </ParagraphSecondary>
+
       <Posts posts={posts} />
 
       <SeoBreadcrumb
