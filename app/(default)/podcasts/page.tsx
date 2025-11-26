@@ -1,4 +1,5 @@
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import ParagraphSecondary from "../../../generic/typography/ParagraphSecondary";
 import Title from "../../../generic/typography/Title";
 import { getMetaData } from "../../../lib/metadata";
 import List from "./components/List";
@@ -51,12 +52,15 @@ export default async function PodcastsPage() {
 
   return (
     <>
-      <Title>Podcast list</Title>
+      <Title>On Air</Title>
+      <ParagraphSecondary>
+        Discussions, interviews, and audio explorations.
+      </ParagraphSecondary>
 
       <List>
         {podcasts.map((podcast, index) => (
           <Podcast
-            date={podcast.date}
+            date={new Date(podcast.date)}
             description={podcast.description}
             image={podcast.image ? podcast.image : undefined}
             key={podcast.title}

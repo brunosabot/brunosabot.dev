@@ -1,12 +1,14 @@
-import { mdiPodcast } from "@mdi/js";
+import { AudioLines } from "lucide-react";
 import Image from "next/image";
 
-import Svg from "../../../../components/svg/Svg";
-import { getDate } from "../../../../lib/time";
 import classNames from "./Podcast.module.css";
 
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  dateStyle: "medium",
+});
+
 interface IPodcastProps {
-  date: string;
+  date: Date;
   description: string;
   image?: string;
   lang: string;
@@ -17,37 +19,36 @@ interface IPodcastProps {
 }
 
 export default function Podcast(props: IPodcastProps) {
-  const date = getDate(props.date);
-
   return (
     <div className={classNames.Podcast}>
-      <div className={classNames.ImageWrapper}>
+      <div className={classNames.PodcastImageWrapper}>
         {props.image ? (
           <Image
             alt=""
-            className={classNames.Image}
-            fill={true}
+            className={classNames.PodcastImage}
+            fill
             priority={props.priority}
             src={props.image}
           />
         ) : null}
       </div>
-      <div>
-        <h2 className={classNames.Title}>{props.title}</h2>
-
-        <p className={classNames.Description}>{props.description}</p>
-        <div className={classNames.Given}>
-          Published at {props.platform} on {date}
+      <div className={classNames.PodcastContent}>
+        <div className={classNames.PodcastGiven}>
+          {props.platform} | {dateFormatter.format(props.date)}
         </div>
 
-        <div className={classNames.Links}>
+        <h2 className={classNames.PodcastTitle}>{props.title}</h2>
+
+        <p className={classNames.PodcastDescription}>{props.description}</p>
+
+        <div className={classNames.PodcastLinks}>
           <a
-            className={classNames.Link}
+            className={`${classNames.PodcastLink} ${classNames.PodcastListen}`}
             href={props.url}
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Svg d={mdiPodcast} />
+            <AudioLines size={20} strokeWidth={1.25} />
             Listen
           </a>
         </div>

@@ -1,65 +1,77 @@
 .Podcast {
+  background-color: var(--token-v2-color-background-alternative);
   border-radius: 16px;
-  color: inherit;
   display: flex;
-  gap: 16px;
-  padding: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-}
-.Podcast:hover {
-  background-color: var(--color-background-hover);
-}
-.ImageWrapper {
-  flex-shrink: 0;
-  height: 200px;
-  position: relative;
-  width: 200px;
-}
-.Image {
-  border-radius: 8px;
-  object-fit: cover;
-}
-.Title {
-  margin: 0 0 16px 0;
-}
-.Description {
-  line-height: 1.5;
-  margin-bottom: 16px;
-}
-.Links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 16px;
-}
-.Link {
-  align-items: center;
-  color: inherit;
-  display: inline-flex;
-  fill: currentColor;
-  gap: 4px;
-}
-.Link:focus,
-.Link:hover {
-  color: var(--color-accent);
-}
-.Given {
-  color: var(--color-text-secondary);
-  font-size: 0.85rem;
-  font-style: italic;
+  flex-direction: column;
+  gap: 24px;
 }
 
-@media screen and (max-width: 768px) {
-  .Podcast {
-    align-items: center;
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-  }
-  .ImageWrapper {
-    height: 200px;
-    width: 100%;
-  }
+.PodcastImageWrapper {
+  aspect-ratio: 16 / 9;
+  border-radius: 16px 16px 0 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.PodcastImage {
+  object-fit: cover;
+}
+
+.PodcastContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+  padding: 0 24px 24px 24px;
+}
+
+.PodcastGiven {
+  color: var(--token-v2-color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.PodcastTitle {
+  color: var(--token-v2-color-text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin: 0;
+}
+.PodcastDescription {
+  color: var(--token-v2-color-text-secondary);
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.PodcastLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.PodcastLink {
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+  gap: 8px;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: -0.015em;
+  padding: 0 16px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.PodcastLink:hover {
+  transform: scale(1.05);
+}
+
+.PodcastListen {
+  background-color: var(--token-v2-color-accent);
+  color: var(--token-v2-color-accent-light);
 }
