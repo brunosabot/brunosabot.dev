@@ -1,15 +1,13 @@
 .CubicBezierBlock {
-  margin: 16px 0 0 0;
-  overflow: hidden;
-  padding: 24px;
   position: relative;
-  text-align: center;
 }
+
 .Legend {
   margin-top: 16px;
+  text-align: center;
 }
 .Sample {
-  background: var(--accent-color);
+  background: var(--token-v2-color-accent);
   bottom: 0;
   height: 5px;
   left: 0;

@@ -1,0 +1,25 @@
+.Form {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 32px;
+}
+
+@media (max-width: 600px) {
+  .Form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.CubicBezierBlocks {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 32px;
+}
+
+@media (max-width: 600px) {
+  .CubicBezierBlocks {
+    grid-template-columns: 1fr;
+  }
+}

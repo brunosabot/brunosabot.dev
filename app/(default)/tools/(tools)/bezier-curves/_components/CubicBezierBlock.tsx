@@ -1,4 +1,4 @@
-import SimpleCard from "../card/SimpleCard";
+import ResultCard from "../../../../../../generic/common/ResultCard";
 import styles from "./CubicBezierBlock.module.css";
 import CubicBezierSvg from "./CubicBezierSvg";
 
@@ -10,7 +10,7 @@ interface ICubicBezierProps {
 }
 
 const CubicBezierBlock: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => (
-  <SimpleCard className={styles.CubicBezierBlock}>
+  <ResultCard className={styles.CubicBezierBlock}>
     <CubicBezierSvg x1={x1} x2={x2} y1={y1} y2={y2} />
     <div className={styles.Legend}>
       cubic-bezier(
@@ -25,7 +25,7 @@ const CubicBezierBlock: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => (
         transitionTimingFunction: `cubic-bezier(${x1}, ${y1}, ${x2}, ${y2})`,
       }}
     />
-  </SimpleCard>
+  </ResultCard>
 );
 
 export default CubicBezierBlock;

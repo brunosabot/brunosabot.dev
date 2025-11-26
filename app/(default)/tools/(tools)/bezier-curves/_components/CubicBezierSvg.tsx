@@ -1,3 +1,5 @@
+import classes from "./CubicBezierSvg.module.css";
+
 const getPointX = (width: number, x: number) => x * width;
 
 // In this SVG y = 0 should be at the bottom,
@@ -43,6 +45,7 @@ const CubicBezierSvg: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => {
 
   return (
     <svg
+      className={classes.CubicBezierSvg}
       height={`${height}px`}
       viewBox={`0 0 ${vwidth} ${vheight}`}
       width={`${width}px`}
@@ -51,7 +54,7 @@ const CubicBezierSvg: React.FC<ICubicBezierProps> = ({ x1, x2, y1, y2 }) => {
       <path
         d={`M${p0x} ${p0y} C ${p1x} ${p1y}, ${p2x} ${p2y}, ${p3x} ${p3y}`}
         fill="none"
-        stroke="var(--accent-color)"
+        stroke="var(--token-v2-color-accent)"
         strokeWidth="4"
       />
     </svg>

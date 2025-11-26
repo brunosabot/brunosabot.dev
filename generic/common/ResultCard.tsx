@@ -4,8 +4,11 @@ import classes from "./ResultCard.module.css";
 
 interface IResultCardProps {
   children: ReactNode;
+  className?: string;
 }
 
-export default function ResultCard({ children }: IResultCardProps) {
-  return <div className={classes.Wrapper}>{children}</div>;
+export default function ResultCard({ children, className }: IResultCardProps) {
+  const classList = [classes.Wrapper, className].join(" ");
+
+  return <div className={classList}>{children}</div>;
 }
