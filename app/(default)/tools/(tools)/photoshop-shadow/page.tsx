@@ -1,9 +1,9 @@
-import SimpleCard from "../../../../../components/card/SimpleCard";
 import SeoBreadcrumb from "../../../../../components/seo/Breadcrumb";
-import BlockParagraphTitle from "../../../../../components/typography/BlockParagraphTitle";
-import PageTitle from "../../../../../components/typography/PageTitle";
+import ParagraphSecondary from "../../../../../generic/typography/ParagraphSecondary";
+import Title from "../../../../../generic/typography/Title";
 import { getMetaData } from "../../../../../lib/metadata";
-import ToolPhotoshopShadow from "./ToolPhotoshopShadow";
+import About from "./_components/About";
+import ToolPhotoshopShadow from "./_components/ToolPhotoshopShadow";
 
 export async function generateMetadata() {
   return getMetaData(
@@ -20,7 +20,15 @@ export async function generateMetadata() {
 export default function ToolPhotoshopShadowPage() {
   return (
     <>
-      <PageTitle>Photoshop Shadow Converter</PageTitle>
+      <Title>Photoshop Shadow Converter</Title>
+      <ParagraphSecondary>
+        Bridging Design: Effortlessly Convert Photoshop Shadows to CSS with
+        Visualization
+      </ParagraphSecondary>
+
+      <ToolPhotoshopShadow />
+
+      <About />
 
       <SeoBreadcrumb
         items={[
@@ -29,103 +37,6 @@ export default function ToolPhotoshopShadowPage() {
           ["Photoshop Shadow Converter", "/tools/photoshop-shadow"],
         ]}
       />
-
-      <ToolPhotoshopShadow />
-
-      <SimpleCard>
-        <p>
-          The Photoshop Shadow Tool empowers designers and developers to create
-          stunning, realistic drop shadows for web projects—no Photoshop
-          required! Instantly preview, customize, and copy CSS shadow code that
-          mimics the look and feel of professional design tools. Perfect for
-          buttons, cards, images, and UI elements, all in your browser with zero
-          hassle.
-        </p>
-        <BlockParagraphTitle>Key Features</BlockParagraphTitle>
-        <ul>
-          <li>
-            <strong>Live Shadow Preview:</strong> See your shadow updates in
-            real time as you tweak parameters.
-          </li>
-          <li>
-            <strong>Full Customization:</strong> Adjust offset, blur, spread,
-            color, and opacity for pixel-perfect results.
-          </li>
-          <li>
-            <strong>Copy-Ready CSS:</strong> Instantly copy the generated CSS
-            code for use in any project.
-          </li>
-          <li>
-            <strong>Designer & Developer Friendly:</strong> Intuitive interface
-            for rapid prototyping and handoff.
-          </li>
-          <li>
-            <strong>Privacy First:</strong> All calculations and previews happen
-            locally—your designs stay private.
-          </li>
-        </ul>
-        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
-        <ul>
-          <li>
-            Designing beautiful buttons, cards, and UI elements with
-            professional shadows.
-          </li>
-          <li>Enhancing web layouts with subtle or dramatic shadow effects.</li>
-          <li>Quickly generating and sharing CSS with teammates or clients.</li>
-          <li>Learning about shadow properties and CSS best practices.</li>
-        </ul>
-        <p>
-          Elevate your web design instantly—use the Photoshop Shadow Tool to
-          create eye-catching, professional shadows with ease.
-        </p>
-        <p>
-          The Photoshop Shadow Tool empowers designers and developers to create
-          stunning, realistic drop shadows for web projects—no Photoshop
-          required! Instantly preview, customize, and copy CSS shadow code that
-          mimics the look and feel of professional design tools. Perfect for
-          buttons, cards, images, and UI elements, all in your browser with zero
-          hassle.
-        </p>
-        <BlockParagraphTitle>Key Features</BlockParagraphTitle>
-        <ul>
-          <li>
-            <strong>Live Shadow Preview:</strong> See your shadow updates in
-            real time as you tweak parameters.
-          </li>
-          <li>
-            <strong>Full Customization:</strong> Adjust offset, blur, spread,
-            color, and opacity for pixel-perfect results.
-          </li>
-          <li>
-            <strong>Copy-Ready CSS:</strong> Instantly copy the generated CSS
-            code for use in any project.
-          </li>
-          <li>
-            <strong>Designer & Developer Friendly:</strong> Intuitive interface
-            for rapid prototyping and handoff.
-          </li>
-          <li>
-            <strong>Privacy First:</strong> All calculations and previews happen
-            locally—your designs stay private.
-          </li>
-        </ul>
-
-        <BlockParagraphTitle>Common Use Cases</BlockParagraphTitle>
-        <ul>
-          <li>
-            Designing beautiful buttons, cards, and UI elements with
-            professional shadows.
-          </li>
-          <li>Enhancing web layouts with subtle or dramatic shadow effects.</li>
-          <li>Quickly generating and sharing CSS with teammates or clients.</li>
-          <li>Learning about shadow properties and CSS best practices.</li>
-        </ul>
-
-        <p>
-          Elevate your web design instantly—use the Photoshop Shadow Tool to
-          create eye-catching, professional shadows with ease.
-        </p>
-      </SimpleCard>
     </>
   );
 }

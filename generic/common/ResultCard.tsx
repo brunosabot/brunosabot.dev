@@ -1,14 +1,11 @@
-import { ReactNode } from "react";
+import { HTMLAttributes } from "react";
 
 import classes from "./ResultCard.module.css";
 
-interface IResultCardProps {
-  children: ReactNode;
-  className?: string;
-}
+type IResultCardProps = HTMLAttributes<HTMLDivElement>;
 
-export default function ResultCard({ children, className }: IResultCardProps) {
+export default function ResultCard({ className, ...props }: IResultCardProps) {
   const classList = [classes.Wrapper, className].join(" ");
 
-  return <div className={classList}>{children}</div>;
+  return <div className={classList} {...props}></div>;
 }

@@ -1,0 +1,38 @@
+.CheckboxWithIcon {
+  color: var(--token-v2-color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+}
+
+.CheckboxWithIconWrapper {
+  align-items: center;
+  background-color: var(--token-v2-color-background-alternative);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.CheckboxWithIconWrapper:hover {
+  background-color: var(--token-v2-color-background-hover);
+}
+
+.CheckboxWithIconWrapper:focus-within {
+  background-color: var(--token-v2-color-background);
+  border-color: var(--token-v2-color-accent);
+  box-shadow: 0 0 0 4px var(--token-v2-color-accent-transparent);
+}
+
+.CheckboxWithIconField {
+  accent-color: var(--token-v2-color-accent);
+  cursor: pointer;
+  height: 20px;
+  margin: 0;
+  width: 20px;
+}

@@ -1,0 +1,10 @@
+.Wrapper {
+  margin-top: 32px;
+}
+
+.Form {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(174px, 1fr));
+  margin-bottom: 32px;
+}
