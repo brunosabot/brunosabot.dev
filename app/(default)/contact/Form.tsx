@@ -1,12 +1,11 @@
 "use client";
 
+import { Mail, MessageSquare, User } from "lucide-react";
 import React, { useState } from "react";
 
 import Button from "../../../generic/common/Button";
-import InputEmail from "../../../generic/form/InputEmail";
-import InputText from "../../../generic/form/InputText";
-import InputTextarea from "../../../generic/form/InputTextarea";
 import { sendContactEmail } from "../../actions/contact";
+import classes from "./Form.module.css";
 
 export default function Form() {
   const [name, setName] = useState("");
@@ -20,36 +19,53 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputText
-        autoComplete="name"
-        enterKeyHint="done"
-        label="Your name"
-        name="name"
-        onChange={(e) => setName(e.target.value)}
-        value={name}
-      />
+    <form className={classes.Form} onSubmit={handleSubmit}>
+      <label className={classes.InputWrapper}>
+        <User size={20} strokeWidth={1.5} />
+        <input
+          autoComplete="name"
+          className={classes.Input}
+          enterKeyHint="next"
+          name="name"
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Your name"
+          required
+          type="text"
+          value={name}
+        />
+      </label>
 
-      <InputEmail
-        autoComplete="email"
-        enterKeyHint="done"
-        label="Your email"
-        name="email"
-        onChange={(e) => setEmail(e.target.value)}
-        type="email"
-        value={email}
-      />
+      <label className={classes.InputWrapper}>
+        <Mail size={20} strokeWidth={1.5} />
+        <input
+          autoComplete="email"
+          className={classes.Input}
+          enterKeyHint="next"
+          name="email"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Your email"
+          required
+          type="email"
+          value={email}
+        />
+      </label>
 
-      <InputTextarea
-        id="message"
-        label="Your message"
-        onChange={(e) => setMessage(e.target.value)}
-        rows={7}
-        value={message}
-      />
+      <label
+        className={`${classes.InputWrapper} ${classes.InputWrapperHasTextarea}`}
+      >
+        <MessageSquare size={20} strokeWidth={1.5} style={{ marginTop: 4 }} />
+        <textarea
+          className={`${classes.Input} ${classes.Textarea}`}
+          id="message"
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Your message"
+          required
+          value={message}
+        />
+      </label>
 
-      <div style={{ paddingTop: "32px" }}>
-        <Button type="submit">Send an email</Button>
+      <div className={classes.ButtonWrapper}>
+        <Button type="submit">Send Message</Button>
       </div>
     </form>
   );

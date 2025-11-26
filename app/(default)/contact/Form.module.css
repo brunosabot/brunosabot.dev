@@ -1,0 +1,55 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.InputWrapper {
+  align-items: center;
+  background-color: var(--token-v2-color-background-alternative);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px 16px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.InputWrapper:focus-within {
+  border-color: var(--token-v2-color-accent);
+}
+
+.InputWrapperHasTextarea {
+  align-items: flex-start;
+}
+
+.Input {
+  background: transparent;
+  border: none;
+  color: var(--token-v2-color-text-primary);
+  flex-grow: 1;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.Input:focus {
+  outline: none;
+}
+
+.Input::placeholder {
+  color: var(--token-v2-color-text-secondary);
+}
+
+.Textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.ButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+}

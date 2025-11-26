@@ -1,6 +1,8 @@
 .Content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin: auto;
-  max-width: 500px;
-  padding: 16px 16px 72px 16px;
-  text-align: center;
+  max-width: 576px;
+  padding: 40px 16px;
 }
