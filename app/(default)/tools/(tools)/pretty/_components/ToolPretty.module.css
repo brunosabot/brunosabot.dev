@@ -1,0 +1,14 @@
+.Wrapper {
+  margin-top: 32px;
+}
+
+.Form {
+  margin-bottom: 32px;
+}
+
+.Result {
+  font-size: 0.875rem;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
