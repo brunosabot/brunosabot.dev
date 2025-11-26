@@ -1,4 +1,5 @@
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import ParagraphSecondary from "../../../generic/typography/ParagraphSecondary";
 import Title from "../../../generic/typography/Title";
 import { getMetaData } from "../../../lib/metadata";
 import List from "./components/List";
@@ -80,13 +81,17 @@ export default async function ContactPage() {
 
   return (
     <>
-      <Title>Talk list</Title>
+      <Title>My Speaking Gigs</Title>
+      <ParagraphSecondary>
+        Sharing what I've learned about software, design, and building cool
+        things, one conference at a time.
+      </ParagraphSecondary>
 
       <List>
         {talks.map((talk, index) => (
           <Talk
             conference={talk.conferenceName}
-            date={talk.date}
+            date={new Date(talk.date)}
             description={talk.description}
             image={talk.image ? talk.image : undefined}
             key={talk.id}

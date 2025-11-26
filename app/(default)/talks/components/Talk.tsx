@@ -1,13 +1,15 @@
-import { mdiFilePresentationBox, mdiYoutube } from "@mdi/js";
+import { Presentation, SquarePlay } from "lucide-react";
 import Image from "next/image";
 
-import Svg from "../../../../components/svg/Svg";
-import { getDate } from "../../../../lib/time";
 import classNames from "./Talk.module.css";
+
+const dateFormatter = new Intl.DateTimeFormat("en-US", {
+  dateStyle: "medium",
+});
 
 interface ITalkProps {
   conference: string;
-  date: string;
+  date: Date;
   description: string;
   image?: string;
   lang: string;
@@ -18,50 +20,49 @@ interface ITalkProps {
 }
 
 export default function Talk(props: ITalkProps) {
-  const date = getDate(props.date);
-
   return (
     <div className={classNames.Talk}>
-      <div className={classNames.ImageWrapper}>
+      <div className={classNames.TalkImageWrapper}>
         {props.image ? (
           <Image
             alt=""
-            className={classNames.Image}
-            fill={true}
+            className={classNames.TalkImage}
+            fill
             priority={props.priority}
             src={props.image}
           />
         ) : null}
       </div>
-      <div>
-        <h2 className={classNames.Title}>{props.title}</h2>
-
-        <p className={classNames.Description}>{props.description}</p>
-        <div className={classNames.Given}>
-          Talk given at {props.conference} on {date}
+      <div className={classNames.TalkContent}>
+        <div className={classNames.TalkGiven}>
+          {props.conference} | {dateFormatter.format(props.date)}
         </div>
 
-        <div className={classNames.Links}>
+        <h2 className={classNames.TalkTitle}>{props.title}</h2>
+
+        <p className={classNames.TalkDescription}>{props.description}</p>
+
+        <div className={classNames.TalkLinks}>
           {props.youtubeId ? (
             <a
-              className={`${classNames.Link} ${classNames.Youtube}`}
+              className={`${classNames.TalkLink} ${classNames.TalkVideo}`}
               href={`https://www.youtube.com/watch?v=${props.youtubeId}`}
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Svg d={mdiYoutube} />
-              YouTube video
+              <SquarePlay size={20} strokeWidth={1.25} />
+              Watch video
             </a>
           ) : null}
 
           <a
-            className={`${classNames.Link} ${classNames.Slides}`}
+            className={`${classNames.TalkLink} ${classNames.TalkSlides}`}
             href={props.slides}
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Svg d={mdiFilePresentationBox} />
-            Slides
+            <Presentation size={20} strokeWidth={1.25} />
+            View Slides
           </a>
         </div>
       </div>
