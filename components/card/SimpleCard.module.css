@@ -1,9 +1,0 @@
-.card {
-  background-color: var(--background-dp1);
-  border-radius: 8px;
-  margin: 16px auto 16px auto;
-  max-width: 100%;
-  overflow-wrap: anywhere;
-  padding: 16px;
-  width: 800px;
-}

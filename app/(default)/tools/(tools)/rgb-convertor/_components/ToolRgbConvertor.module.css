@@ -28,6 +28,7 @@
 
 .ResultCard {
   display: block;
+  max-width: 100%;
   overflow: auto;
   position: relative;
   width: calc(100vw - 32px);

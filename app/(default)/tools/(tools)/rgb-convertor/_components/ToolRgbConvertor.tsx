@@ -1,10 +1,8 @@
 "use client";
 
-import { Hash, Palette, Percent, RotateCw } from "lucide-react";
+import { Hash, Palette, Percent, RotateCw, Trash } from "lucide-react";
 import React, { useCallback, useEffect, useReducer, useState } from "react";
 
-import SvgButton from "../../../../../../components/button/SvgButton";
-import Block from "../../../../../../components/rgb/Block";
 import Table from "../../../../../../components/table/Table";
 import Td from "../../../../../../components/table/Td";
 import Th from "../../../../../../components/table/Th";
@@ -23,6 +21,7 @@ import {
   RGBToHex,
   RGBToHSL,
 } from "../../../../../../lib/color";
+import Block from "./Block";
 import classes from "./ToolRgbConvertor.module.css";
 
 interface IAction {
@@ -327,11 +326,9 @@ export default function ToolRgbConvertor() {
                       hsl({hsl[0]}, {hsl[1]}%, {hsl[2]}%)
                     </Td>
                     <Td>
-                      <SvgButton
-                        d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
-                        onClick={() => setUnsave(h)}
-                        type="button"
-                      />
+                      <Button onClick={() => setUnsave(h)}>
+                        <Trash size={20} />
+                      </Button>
                     </Td>
                   </Tr>
                 );
