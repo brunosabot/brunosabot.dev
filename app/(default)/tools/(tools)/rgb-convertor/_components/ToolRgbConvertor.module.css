@@ -1,0 +1,40 @@
+.Wrapper {
+  margin-top: 32px;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.Grid {
+  align-items: flex-end;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .Grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.Actions {
+  margin: 32px 0;
+}
+
+.ResultCard {
+  display: block;
+  overflow: auto;
+  position: relative;
+  width: calc(100vw - 32px);
+}
+
+.ColorName {
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+}

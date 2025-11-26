@@ -1,0 +1,14 @@
+.Wrapper {
+  margin-top: 32px;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.Actions {
+  margin: 32px 0;
+}

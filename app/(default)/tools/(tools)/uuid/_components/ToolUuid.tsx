@@ -1,5 +1,6 @@
 "use client";
 
+import { Box, Hash, Settings, User } from "lucide-react";
 import { nanoid } from "nanoid";
 import React, { useCallback, useEffect, useState } from "react";
 import { ulid } from "ulid";
@@ -10,12 +11,11 @@ import {
   validate as uuidValidate,
 } from "uuid";
 
-import SimpleCard from "../../../../../components/card/SimpleCard";
-import Button from "../../../../../components/form/Button";
-import Input from "../../../../../components/form/Input";
-import Label from "../../../../../components/form/Label";
-import Option from "../../../../../components/form/Option";
-import Select from "../../../../../components/form/Select";
+import Button from "../../../../../../generic/common/Button";
+import ResultCard from "../../../../../../generic/common/ResultCard";
+import InputWithIcon from "../../../../../../generic/form/InputWithIcon";
+import SelectWithIcon from "../../../../../../generic/form/SelectWithIcon";
+import classes from "./ToolUuid.module.css";
 
 enum UuidType {
   NANOID = "nanoid",
@@ -79,47 +79,61 @@ export default function ToolUuid() {
   }, [createUuid, name, namespace, uuidType, length]);
 
   return (
-    <>
-      <Label label="Algorithm">
-        <Select onChange={onChangeType} value={uuidType}>
-          <Option value={UuidType.V1}>UUID Version 1</Option>
-          <Option value={UuidType.V4}>UUID Version 4</Option>
-          <Option value={UuidType.V5}>UUID Version 5</Option>
-          <Option value={UuidType.NANOID}>Nano ID</Option>
-          <Option value={UuidType.ULID}>ULID</Option>
-        </Select>
-      </Label>
+    <div className={classes.Wrapper}>
+      <div className={classes.Form}>
+        <SelectWithIcon
+          Icon={Settings}
+          label="Algorithm"
+          onChange={onChangeType}
+          value={uuidType}
+        >
+          <option value={UuidType.V1}>UUID Version 1</option>
+          <option value={UuidType.V4}>UUID Version 4</option>
+          <option value={UuidType.V5}>UUID Version 5</option>
+          <option value={UuidType.NANOID}>Nano ID</option>
+          <option value={UuidType.ULID}>ULID</option>
+        </SelectWithIcon>
 
-      {uuidType === UuidType.V5 ? (
-        <Label label="Name">
-          <Input onChange={onChangeName} value={name} />
-        </Label>
-      ) : null}
+        {uuidType === UuidType.V5 ? (
+          <InputWithIcon
+            Icon={User}
+            label="Name"
+            onChange={onChangeName}
+            value={name}
+          />
+        ) : null}
 
-      {uuidType === UuidType.V5 ? (
-        <Label label="Namespace">
-          <Input
+        {uuidType === UuidType.V5 ? (
+          <InputWithIcon
             aria-invalid={uuidValidate(namespace) === false}
+            Icon={Box}
+            label="Namespace"
             onChange={onChangeNamespace}
             value={namespace}
           />
-        </Label>
-      ) : null}
+        ) : null}
 
-      {uuidType === UuidType.NANOID ? (
-        <Label label="NanoID length">
-          <Input onChange={onChangeLength} type="number" value={length} />
-        </Label>
-      ) : null}
+        {uuidType === UuidType.NANOID ? (
+          <InputWithIcon
+            Icon={Hash}
+            label="NanoID length"
+            onChange={onChangeLength}
+            type="number"
+            value={length}
+          />
+        ) : null}
+      </div>
 
-      <SimpleCard>{uuid}</SimpleCard>
+      <ResultCard>{uuid}</ResultCard>
 
-      <Button
-        onClick={() => createUuid(uuidType, name, namespace, length)}
-        type="button"
-      >
-        Generate another one
-      </Button>
-    </>
+      <div className={classes.Actions}>
+        <Button
+          onClick={() => createUuid(uuidType, name, namespace, length)}
+          type="button"
+        >
+          Generate another one
+        </Button>
+      </div>
+    </div>
   );
 }

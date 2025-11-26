@@ -1,18 +1,17 @@
 "use client";
 
+import { Hash, Palette, Percent, RotateCw } from "lucide-react";
 import React, { useCallback, useEffect, useReducer, useState } from "react";
 
-import SvgButton from "../../../../../components/button/SvgButton";
-import Columns from "../../../../../components/Columns";
-import Button from "../../../../../components/form/Button";
-import Input from "../../../../../components/form/Input";
-import Label from "../../../../../components/form/Label";
-import Block from "../../../../../components/rgb/Block";
-import Text from "../../../../../components/rgb/Text";
-import Table from "../../../../../components/table/Table";
-import Td from "../../../../../components/table/Td";
-import Th from "../../../../../components/table/Th";
-import Tr from "../../../../../components/table/Tr";
+import SvgButton from "../../../../../../components/button/SvgButton";
+import Block from "../../../../../../components/rgb/Block";
+import Table from "../../../../../../components/table/Table";
+import Td from "../../../../../../components/table/Td";
+import Th from "../../../../../../components/table/Th";
+import Tr from "../../../../../../components/table/Tr";
+import Button from "../../../../../../generic/common/Button";
+import ResultCard from "../../../../../../generic/common/ResultCard";
+import InputWithIcon from "../../../../../../generic/form/InputWithIcon";
 import {
   CMYKToRGB,
   hexToCMYK,
@@ -23,7 +22,8 @@ import {
   RGBToCMYK,
   RGBToHex,
   RGBToHSL,
-} from "../../../../../lib/color";
+} from "../../../../../../lib/color";
+import classes from "./ToolRgbConvertor.module.css";
 
 interface IAction {
   type:
@@ -196,107 +196,150 @@ export default function ToolRgbConvertor() {
   const colorName = hexToName(state.hex);
 
   return (
-    <>
-      <Columns cols={4}>
-        <Label label="R">
-          <Input onChange={onChange("rgb-r")} value={`${state.rgb[0]}`} />
-        </Label>
-        <Label label="G">
-          <Input onChange={onChange("rgb-g")} value={`${state.rgb[1]}`} />
-        </Label>
-        <Label label="B">
-          <Input onChange={onChange("rgb-b")} value={`${state.rgb[2]}`} />
-        </Label>
-        <span />
-      </Columns>
+    <div className={classes.Wrapper}>
+      <div className={classes.Form}>
+        <div className={classes.Grid}>
+          <InputWithIcon
+            Icon={Palette}
+            label="R"
+            onChange={onChange("rgb-r")}
+            value={`${state.rgb[0]}`}
+          />
+          <InputWithIcon
+            Icon={Palette}
+            label="G"
+            onChange={onChange("rgb-g")}
+            value={`${state.rgb[1]}`}
+          />
+          <InputWithIcon
+            Icon={Palette}
+            label="B"
+            onChange={onChange("rgb-b")}
+            value={`${state.rgb[2]}`}
+          />
+          <span />
+        </div>
 
-      <Columns cols={4}>
-        <Label label="C">
-          <Input onChange={onChange("cmyk-c")} value={`${state.cmyk[0]}`} />
-        </Label>
-        <Label label="M">
-          <Input onChange={onChange("cmyk-m")} value={`${state.cmyk[1]}`} />
-        </Label>
-        <Label label="Y">
-          <Input onChange={onChange("cmyk-y")} value={`${state.cmyk[2]}`} />
-        </Label>
-        <Label label="K">
-          <Input onChange={onChange("cmyk-k")} value={`${state.cmyk[3]}`} />
-        </Label>
-      </Columns>
+        <div className={classes.Grid}>
+          <InputWithIcon
+            Icon={Percent}
+            label="C"
+            onChange={onChange("cmyk-c")}
+            value={`${state.cmyk[0]}`}
+          />
+          <InputWithIcon
+            Icon={Percent}
+            label="M"
+            onChange={onChange("cmyk-m")}
+            value={`${state.cmyk[1]}`}
+          />
+          <InputWithIcon
+            Icon={Percent}
+            label="Y"
+            onChange={onChange("cmyk-y")}
+            value={`${state.cmyk[2]}`}
+          />
+          <InputWithIcon
+            Icon={Percent}
+            label="K"
+            onChange={onChange("cmyk-k")}
+            value={`${state.cmyk[3]}`}
+          />
+        </div>
 
-      <Columns cols={4}>
-        <Label label="H">
-          <Input onChange={onChange("hsl-h")} value={`${state.hsl[0]}`} />
-        </Label>
-        <Label label="S">
-          <Input onChange={onChange("hsl-s")} value={`${state.hsl[1]}`} />
-        </Label>
-        <Label label="L">
-          <Input onChange={onChange("hsl-l")} value={`${state.hsl[2]}`} />
-        </Label>
-        <span />
-      </Columns>
+        <div className={classes.Grid}>
+          <InputWithIcon
+            Icon={RotateCw}
+            label="H"
+            onChange={onChange("hsl-h")}
+            value={`${state.hsl[0]}`}
+          />
+          <InputWithIcon
+            Icon={Percent}
+            label="S"
+            onChange={onChange("hsl-s")}
+            value={`${state.hsl[1]}`}
+          />
+          <InputWithIcon
+            Icon={Percent}
+            label="L"
+            onChange={onChange("hsl-l")}
+            value={`${state.hsl[2]}`}
+          />
+          <span />
+        </div>
 
-      <Columns cols={4}>
-        <Label label="Hex">
-          <Input onChange={onChange("hex")} value={state.hex} />
-        </Label>
-        <Block color={state.hex} />
-        {colorName ? <Text>{colorName}</Text> : <span />}
-        <span />
-      </Columns>
-      <div style={{ margin: "32px 0" }}>
+        <div className={classes.Grid}>
+          <InputWithIcon
+            Icon={Hash}
+            label="Hex"
+            onChange={onChange("hex")}
+            value={state.hex}
+          />
+          <Block color={state.hex} />
+          {colorName ? (
+            <div className={classes.ColorName}>{colorName}</div>
+          ) : (
+            <span />
+          )}
+          <span />
+        </div>
+      </div>
+
+      <div className={classes.Actions}>
         <Button onClick={setSave} type="button">
           Save the color
         </Button>
       </div>
-      {saves.length > 0 ? (
-        <Table>
-          <thead>
-            <tr>
-              <Th>&nbsp;</Th>
-              <Th>Hex</Th>
-              <Th>RGB</Th>
-              <Th>CMYK</Th>
-              <Th>HSL</Th>
-              <Th>&nbsp;</Th>
-            </tr>
-          </thead>
-          <tbody>
-            {saves.map((h) => {
-              const rgb = hexToRGB(h);
-              const cmyk = hexToCMYK(h);
-              const hsl = hexToHSL(h);
 
-              return (
-                <Tr key={h}>
-                  <Td>
-                    <Block color={h} />
-                  </Td>
-                  <Td>{h}</Td>
-                  <Td>
-                    rgb({rgb[0]}, {rgb[1]}, {rgb[2]})
-                  </Td>
-                  <Td>
-                    cmyk({cmyk[0]}, {cmyk[1]}, {cmyk[2]}, {cmyk[3]})
-                  </Td>
-                  <Td>
-                    hsl({hsl[0]}, {hsl[1]}%, {hsl[2]}%)
-                  </Td>
-                  <Td>
-                    <SvgButton
-                      d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
-                      onClick={() => setUnsave(h)}
-                      type="button"
-                    />
-                  </Td>
-                </Tr>
-              );
-            })}
-          </tbody>
-        </Table>
+      {saves.length > 0 ? (
+        <ResultCard className={classes.ResultCard}>
+          <Table>
+            <thead>
+              <tr>
+                <Th>&nbsp;</Th>
+                <Th>Hex</Th>
+                <Th>RGB</Th>
+                <Th>CMYK</Th>
+                <Th>HSL</Th>
+                <Th>&nbsp;</Th>
+              </tr>
+            </thead>
+            <tbody>
+              {saves.map((h) => {
+                const rgb = hexToRGB(h);
+                const cmyk = hexToCMYK(h);
+                const hsl = hexToHSL(h);
+
+                return (
+                  <Tr key={h}>
+                    <Td>
+                      <Block color={h} />
+                    </Td>
+                    <Td>{h}</Td>
+                    <Td>
+                      rgb({rgb[0]}, {rgb[1]}, {rgb[2]})
+                    </Td>
+                    <Td>
+                      cmyk({cmyk[0]}, {cmyk[1]}, {cmyk[2]}, {cmyk[3]})
+                    </Td>
+                    <Td>
+                      hsl({hsl[0]}, {hsl[1]}%, {hsl[2]}%)
+                    </Td>
+                    <Td>
+                      <SvgButton
+                        d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+                        onClick={() => setUnsave(h)}
+                        type="button"
+                      />
+                    </Td>
+                  </Tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        </ResultCard>
       ) : null}
-    </>
+    </div>
   );
 }
