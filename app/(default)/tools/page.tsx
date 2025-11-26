@@ -1,4 +1,5 @@
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import ParagraphSecondary from "../../../generic/typography/ParagraphSecondary";
 import Title from "../../../generic/typography/Title";
 import { getMetaData } from "../../../lib/metadata";
 import Tools from "./Tools";
@@ -17,7 +18,10 @@ export async function generateMetadata() {
 export default function ToolsPage() {
   return (
     <>
-      <Title>Tool list</Title>
+      <Title>Web Tools</Title>
+      <ParagraphSecondary>
+        A collection of utilities to help with development, health, and more.
+      </ParagraphSecondary>
 
       <Tools />
 

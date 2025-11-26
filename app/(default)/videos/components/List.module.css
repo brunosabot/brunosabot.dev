@@ -4,3 +4,9 @@
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   padding-top: 32px;
 }
+
+@media (max-width: 432px) {
+  .List {
+    grid-template-columns: 1fr;
+  }
+}

@@ -79,5 +79,5 @@
 
 .ProjectVisit {
   background-color: var(--token-v2-color-accent);
-  color: var(--token-v2-color-accent-light);
+  color: var(--token-v2-color-text-contrast);
 }

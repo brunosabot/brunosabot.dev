@@ -1,39 +1,82 @@
 .Tool {
+  background-color: var(--token-v2-color-background-alternative);
   border-radius: 16px;
-  color: var(--color-text);
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 16px;
-  min-height: 90px;
-  overflow: hidden;
-  padding: 16px 16px 16px clamp(32px, calc(13vw + 32px), 132px);
+  gap: 24px;
   position: relative;
-  text-align: left;
   text-decoration: none;
-  transition: background-color 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
+
 .Tool:hover {
-  background-color: var(--color-background-hover);
+  transform: scale(1.02);
 }
-.Icon {
-  fill: var(--color-text);
-  height: clamp(16px, 13vw, 100px);
-  left: 16px;
-  opacity: 0.1;
-  pointer-events: none;
+
+.ToolImageWrapper {
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+  bottom: 0;
+  color: var(--token-v2-color-text-secondary);
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 24px 24px 24px 24px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(16px, 13vw, 100px);
+  right: 0;
 }
-.Title {
-  color: var(--color-accent);
+
+.ToolContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8px;
+  padding: 24px;
+}
+
+.ToolTitle {
+  color: var(--token-v2-color-text-primary);
   font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
   margin: 0;
 }
-.Description {
-  font-size: 1rem;
+
+.ToolDescription {
+  color: var(--token-v2-color-text-secondary);
+  flex-grow: 1;
+  line-height: 1.5;
   margin: 0;
+}
+
+.ToolLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ToolLink {
+  align-items: center;
+  background-color: var(--token-v2-color-accent);
+  border: 0;
+  border-radius: 8px;
+  color: var(--token-v2-color-text-contrast);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+  gap: 8px;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: -0.015em;
+  padding: 0 16px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.ToolLink:hover {
+  transform: scale(1.05);
 }
