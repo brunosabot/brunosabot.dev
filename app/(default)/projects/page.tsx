@@ -1,4 +1,5 @@
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import ParagraphSecondary from "../../../generic/typography/ParagraphSecondary";
 import Title from "../../../generic/typography/Title";
 import { getMetaData } from "../../../lib/metadata";
 import List from "./components/List";
@@ -19,6 +20,19 @@ const getProjects = async () => {
   const projectPromises = [
     {
       description: [
+        "The Les 2 Alpes Trail association offers a multitude of routes and segments around the resort to help you discover the mountains' sumptuous landscapes.",
+        "The Galaxy is a digital passport that allows you to connect your Strava account to automatically validate your achievements and visualize your exploration progress.",
+        "In addition to segments, you can collect badges by participating in association events, whether racing or volunteering.",
+      ],
+      id: "galaxieles2alpestrail",
+      image:
+        "https://storage.googleapis.com/brunosabot.dev/img/projects/galaxieles2alpestrail.png",
+      lang: "🇫🇷",
+      title: "Galaxie Les 2 Alpes Trail: Digital Passport.",
+      url: "https://galaxie.les2alpestrail.com/",
+    },
+    {
+      description: [
         "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
         "With Answwr you’ll be able to decide between choices in the most elegant ways, meaning you’ll have to fill a bunch of forms, hit a green button and generate a totally fair and unbiased random result.",
         "It's important to precise the result will be totally fair and unbiased, that's why we made the Redo button.",
@@ -26,8 +40,7 @@ const getProjects = async () => {
       id: "answwr",
       image: "https://storage.googleapis.com/brunosabot.dev/img/answwr.png",
       lang: "🇺🇸 🇫🇷",
-      title:
-        "Answwr is a cool and modern decision maker, so cool that you’d think there is an AI managing the thing.",
+      title: "Answwr is a cool and modern decision maker.",
       url: "https://www.answwr.com",
     },
     {
@@ -39,8 +52,7 @@ const getProjects = async () => {
       id: "afkalc",
       image: "https://storage.googleapis.com/brunosabot.dev/img/afkalc.png",
       lang: "🇩🇪 🇺🇸‍ 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇺🇦",
-      title:
-        "AFKalc is a tool to help guilds from AFK Arena to improve their organisation and evolution.",
+      title: "AFKalc: toolkit for AFK Arena.",
       url: "https://afkalc.com",
     },
     {
@@ -78,7 +90,10 @@ export default async function ProjectsPage() {
 
   return (
     <>
-      <Title>Project list</Title>
+      <Title>Experiments & Ventures</Title>
+      <ParagraphSecondary>
+        A playground for side projects, tools, and fun apps.
+      </ParagraphSecondary>
 
       <List>
         {projects.map((project, index) => (
