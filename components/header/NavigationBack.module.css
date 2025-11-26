@@ -3,8 +3,8 @@
   color: inherit;
   display: flex;
   gap: 4px;
-  left: 12px;
-  position: absolute;
+  justify-content: flex-start;
+  position: relative;
   text-decoration: none;
-  top: -24px;
+  top: -32px;
 }
