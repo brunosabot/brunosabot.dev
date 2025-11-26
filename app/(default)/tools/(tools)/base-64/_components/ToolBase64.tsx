@@ -1,9 +1,10 @@
 "use client";
 
+import { FileText, VenetianMask } from "lucide-react";
 import React, { useState } from "react";
 
-import Label from "../../../../../components/form/Label";
-import Textarea from "../../../../../components/form/Textarea";
+import TextareaWithIcon from "../../../../../../generic/form/TextareaWithIcon";
+import classes from "./ToolBase64.module.css";
 
 export default function ToolBase64() {
   const [valid, setValid] = useState(true);
@@ -27,23 +28,23 @@ export default function ToolBase64() {
   };
 
   return (
-    <>
-      <Label label="Encoded String">
-        <Textarea
-          aria-invalid={valid === false}
-          onChange={onEncodedStringChange}
-          rows={5}
-          value={string}
-        />
-      </Label>
+    <div className={classes.Wrapper}>
+      <TextareaWithIcon
+        aria-invalid={valid === false}
+        Icon={VenetianMask}
+        label="Encoded String"
+        onChange={onEncodedStringChange}
+        rows={5}
+        value={string}
+      />
 
-      <Label label="Decoded String">
-        <Textarea
-          onChange={onDecodedStringChange}
-          rows={5}
-          value={Buffer.from(string, "base64").toString()}
-        />
-      </Label>
-    </>
+      <TextareaWithIcon
+        Icon={FileText}
+        label="Decoded String"
+        onChange={onDecodedStringChange}
+        rows={5}
+        value={Buffer.from(string, "base64").toString()}
+      />
+    </div>
   );
 }
