@@ -1,0 +1,10 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.Form {
+  display: grid;
+  gap: 24px;
+}

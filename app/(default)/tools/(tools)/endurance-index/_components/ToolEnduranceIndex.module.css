@@ -1,0 +1,16 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.Form {
+  display: grid;
+  gap: 24px;
+}
+
+.TimeInputs {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
