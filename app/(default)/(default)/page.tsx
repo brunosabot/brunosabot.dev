@@ -22,7 +22,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       description:
-        "Hi, I'm Bruno, a Staff Software Engineer at PlayPlay with a passion for home automation. This page showcases my skills, including React, Vue.js and web performance, and features my latest blog posts.",
+        "Hi, I'm Bruno, a Engineering Manager at PlayPlay with a passion for home automation. This page showcases my skills, including React, Vue.js and web performance, and features my latest blog posts.",
       title:
         "Bruno Sabot - Software Engineer | Front-end Development| Home Automation ",
     },
