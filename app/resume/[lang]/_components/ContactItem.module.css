@@ -1,0 +1,22 @@
+.ContactItem {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: 8px;
+  height: 2rem;
+  justify-content: center;
+  min-width: 2rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.ContactItem:hover {
+  background-color: var(--token-v2-color-background-hover);
+}
+
+@media print {
+  .ContactItemWihChildren {
+    display: none;
+  }
+}

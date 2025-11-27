@@ -1,0 +1,15 @@
+.HeaderLogo {
+  align-items: center;
+  color: var(--token-v2-color-text);
+  display: flex;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.HeaderLogoText {
+  font-family: var(--token-v2-font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1;
+}

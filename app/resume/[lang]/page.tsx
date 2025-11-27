@@ -1,15 +1,25 @@
-import Link from "next/link";
+import { Github, Linkedin, Mail, Phone, X } from "lucide-react";
 import { notFound } from "next/navigation";
 
-import Job from "../../../components/resume/Job";
-import SocialLink from "../../../components/resume/SocialLink";
-import Title from "../../../components/resume/Title";
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
+import ParagraphAccent from "../../../generic/typography/ParagraphAccent";
+import ParagraphSecondary from "../../../generic/typography/ParagraphSecondary";
+import Title from "../../../generic/typography/Title";
+import TitleSecondary from "../../../generic/typography/TitleSecondary";
 import { getMetaData, SITE_METADATA } from "../../../lib/metadata";
 import { getJobsByLang } from "../../actions/jobs";
 import { getResumeByLang } from "../../actions/resume";
 import { getTrainingsByLang } from "../../actions/trainings";
-import classes from "./resume.module.css";
+import BlockList from "./_components/BlockList";
+import Contact from "./_components/Contact";
+import ContactItem from "./_components/ContactItem";
+import Content from "./_components/Content";
+import Header from "./_components/Header";
+import HeaderLinks from "./_components/HeaderLinks";
+import HeaderLogo from "./_components/HeaderLogo";
+import Hello from "./_components/Hello";
+import Job from "./_components/Job";
+import Lang from "./_components/Lang";
 
 type Lang = "en" | "fr";
 
@@ -47,9 +57,7 @@ export async function generateStaticParams() {
 export default async function ResumePage({ params }: { params: Params }) {
   const { lang } = await params;
 
-  if (isValidLang(lang) === false) {
-    notFound();
-  }
+  if (isValidLang(lang) === false) notFound();
 
   const [jobs, trainings, resume] = await Promise.all([
     getJobsByLang(lang),
@@ -59,88 +67,76 @@ export default async function ResumePage({ params }: { params: Params }) {
 
   return (
     <>
-      <aside className={classes["resume"]}>
-        <section className={classes["resume-social"]}>
-          <div className={classes["resume-social__heading"]}>
-            {resume.follow}
-          </div>
-          <div className={classes["resume-social__links"]}>
-            <SocialLink to="https://x.com/brunosabot">X</SocialLink>
-            <SocialLink to="https://github.com/brunosabot">Github</SocialLink>
-            <SocialLink to="https://www.linkedin.com/in/brunosabot">
-              LinkedIn
-            </SocialLink>
-            <SocialLink to="/">Web</SocialLink>
-          </div>
-        </section>
+      <Header>
+        <HeaderLogo />
+        <HeaderLinks>
+          <Lang label={resume.seo.alternateLabel} lang={resume.seo.alternate} />
+          <Hello />
+        </HeaderLinks>
+      </Header>
 
-        <h1 className={classes["resume-heading__1"]}>{resume.intro}</h1>
+      <Content>
+        <Title>{resume.intro}</Title>
 
-        <section className={classes["resume-heading__2"]}>
-          {resume.subIntro}
-        </section>
+        <ParagraphSecondary>{resume.subIntro}</ParagraphSecondary>
 
-        <section className={classes["resume-heading__3"]}>
-          {resume.about}
-        </section>
+        <ParagraphAccent>{resume.about}</ParagraphAccent>
 
-        <section className={classes["resume-contact"]}>
-          <a
-            className={classes["resume-contact__phone"]}
-            href="tel:+33627918922"
-          >
-            (+33) 6 27 91 89 22
-          </a>
-          <a
-            className={classes["resume-contact__mail"]}
-            href="mailto:bruno@sabot.me"
-          >
+        <Contact>
+          <ContactItem href="mailto:bruno@sabot.me" Icon={Mail}>
             bruno@sabot.me
-          </a>
-        </section>
-      </aside>
+          </ContactItem>
+          <ContactItem href="tel:+33627918922" Icon={Phone}>
+            +33 (0) 6 27 91 89 22
+          </ContactItem>
+          <ContactItem href="https://x.com/brunosabot" Icon={X} />
+          <ContactItem href="https://github.com/brunosabot" Icon={Github} />
+          <ContactItem
+            href="https://www.linkedin.com/in/brunosabot"
+            Icon={Linkedin}
+          />
+        </Contact>
 
-      <section className={classes["resume-life-experiences"]}>
-        <Link
-          className={classes["resume-language-tag"]}
-          href={`/resume/${resume.seo.alternate}/`}
-        >
-          {resume.seo.alternateLabel}
-        </Link>
-        <article className={classes["resume-professional-experiences"]}>
-          <Title>{resume.titleJobs}</Title>
+        <article>
+          <TitleSecondary>{resume.titleJobs}</TitleSecondary>
+          <ParagraphSecondary>{resume.subtitleJobs}</ParagraphSecondary>
 
-          {jobs.map((job) => (
-            <Job
-              companyName={job.companyName}
-              companyWebsite={job.companyWebsite}
-              details={job.details}
-              endDate={job.endDate}
-              job={job.job}
-              key={job.companyName}
-              startDate={job.startDate}
-              subtitles={job.subtitles}
-            />
-          ))}
+          <BlockList>
+            {jobs.map((job) => (
+              <Job
+                companyName={job.companyName}
+                companyWebsite={job.companyWebsite}
+                details={job.details}
+                endDate={job.endDate}
+                job={job.job}
+                key={job.companyName}
+                startDate={job.startDate}
+                subtitles={job.subtitles}
+              />
+            ))}
+          </BlockList>
         </article>
 
-        <article className={classes["training"]}>
-          <Title>{resume.titleTraining}</Title>
+        <article>
+          <TitleSecondary>{resume.titleTraining}</TitleSecondary>
+          <ParagraphSecondary>{resume.subtitleTraining}</ParagraphSecondary>
 
-          {trainings.map((training) => (
-            <Job
-              companyName={training.schoolName}
-              companyWebsite={training.schoolWebsite}
-              details={training.details}
-              endDate={training.endDate}
-              job={training.diploma}
-              key={training.diploma}
-              startDate={training.startDate}
-              subtitles={training.subtitles}
-            />
-          ))}
+          <BlockList>
+            {trainings.map((training) => (
+              <Job
+                companyName={training.schoolName}
+                companyWebsite={training.schoolWebsite}
+                details={training.details}
+                endDate={training.endDate}
+                job={training.diploma}
+                key={training.diploma}
+                startDate={training.startDate}
+                subtitles={training.subtitles}
+              />
+            ))}
+          </BlockList>
         </article>
-      </section>
+      </Content>
 
       <SeoBreadcrumb
         items={[

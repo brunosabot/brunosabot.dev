@@ -1,0 +1,8 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: auto;
+  max-width: 864px;
+  padding: 2.5rem 1rem;
+}

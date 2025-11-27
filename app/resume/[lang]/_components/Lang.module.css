@@ -1,0 +1,18 @@
+.Lang {
+  align-items: center;
+  background-color: var(--token-v2-color-background-alternative);
+  border: 0;
+  border-radius: 6px;
+  color: var(--token-v2-color-text-primary);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  justify-content: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.Lang:hover {
+  transform: scale(1.05);
+}

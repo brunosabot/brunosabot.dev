@@ -16,6 +16,10 @@ const resume = {
     },
     subIntro:
       "I had the privilege of working with companies such as PlayPlay, Cdiscount, Fatec, Webedia Group, Owlient, L’Oréal group, De Beers & more.",
+    subtitleJobs:
+      "A timeline of my career, showcasing the companies I've worked with and the roles I've held.",
+    subtitleTraining:
+      "A timeline of my education, showcasing the schools I've attended and the diplomas I've obtained.",
     titleJobs: "Professional experiences",
     titleTraining: "Training",
   },
@@ -34,6 +38,10 @@ const resume = {
     },
     subIntro:
       "J'ai eu le privilège de travailler avec des sociétés comme PlayPlay, Cdiscount, Fatec, Webedia Group, Owlient, L’Oréal group, De Beers.",
+    subtitleJobs:
+      "Une chronologie de ma carrière, présentant les entreprises avec lesquelles j'ai travaillé et les rôles que j'ai occupés.",
+    subtitleTraining:
+      "Une chronologie de mon éducation, présentant les écoles que j'ai fréquentées et les diplômes que j'ai obtenus.",
     titleJobs: "Expériences professionnelles",
     titleTraining: "Formation",
   },

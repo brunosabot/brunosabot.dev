@@ -1,0 +1,59 @@
+.Job {
+  background-color: var(--token-v2-color-background-alternative);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.JobTitle {
+  font-family: var(--token-v2-font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.JobTitleLink {
+  color: var(--token-v2-color-accent);
+  text-decoration: none;
+}
+
+.JobTitleLink:hover {
+  text-decoration: underline;
+}
+
+.JobSubtitle {
+  border-radius: 8px;
+  color: var(--token-v2-color-accent-light-contrast);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.JobDates {
+  color: var(--token-v2-color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.JobDetail {
+  list-style-position: inside;
+  list-style-type: disc;
+  margin: 0;
+  padding: 0;
+}
+
+.JobDetailItem {
+  color: var(--token-v2-color-text);
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+}
+
+@media print {
+  .Job {
+    background-color: transparent;
+    break-inside: avoid;
+    padding: 0;
+  }
+}

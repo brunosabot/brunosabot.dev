@@ -1,0 +1,18 @@
+.BlockList {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .BlockList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .BlockList {
+    grid-template-columns: 1fr;
+  }
+}

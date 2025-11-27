@@ -26,36 +26,33 @@ const Job: React.FC<Props> = ({
   startDate,
   subtitles = [],
 }) => (
-  <section className={classes["resume-job"]}>
-    <h3 className={classes["resume-job__name"]}>
+  <section className={classes.Job}>
+    <h3 className={classes.JobTitle}>
       {job}&nbsp;@&nbsp;
       <a
-        className={classes["resume-job__name-link"]}
+        className={classes.JobTitleLink}
         href={companyWebsite}
         rel="noopener noreferrer"
         target="_blank"
       >
         {getCompany(companyName)}
       </a>
+      {subtitles &&
+        subtitles.map((subtitle) => (
+          <span className={classes.JobSubtitle} key={subtitle}>
+            &nbsp;-&nbsp;{subtitle}
+          </span>
+        ))}
     </h3>
 
-    {subtitles &&
-      subtitles.map((subtitle) => (
-        <div className={classes["resume-job__subtitle"]} key={subtitle}>
-          {subtitle}
-        </div>
-      ))}
-
     {startDate && endDate ? (
-      <div className={classes["resume-job__subtitle"]}>
-        {getDate(startDate, endDate)}
-      </div>
+      <div className={classes.JobDates}>{getDate(startDate, endDate)}</div>
     ) : null}
 
     {details && details.length > 0 ? (
-      <ul className={classes["resume-job__detail"]}>
+      <ul className={classes.JobDetail}>
         {details.map((detail) => (
-          <li className={classes["resume-job__detail-item"]} key={detail}>
+          <li className={classes.JobDetailItem} key={detail}>
             {detail}
           </li>
         ))}
