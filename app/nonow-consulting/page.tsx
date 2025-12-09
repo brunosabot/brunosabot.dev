@@ -17,10 +17,10 @@ export default async function ResumePage() {
       <Image
         alt=""
         className={classes.Logo}
-        height={200}
+        height={150}
         role="presentation"
         src={logo}
-        width={200}
+        width={150}
       />
       <h1 className={classes.Title}>
         <span className={classes.TitleAccent}>Nonow</span> Consulting

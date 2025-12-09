@@ -1,5 +1,5 @@
 .Page {
-  background-color: #011c37;
+  background-color: #0a213a;
   color: white;
   min-height: 100vh;
   padding: 32px;
@@ -7,11 +7,11 @@
 
 .Logo {
   display: block;
-  margin: auto;
+  margin: 64px auto;
 }
 
 .Title {
-  color: #57dff8;
+  color: #09acd1;
   font-size: 4.5rem;
   font-weight: 100;
   letter-spacing: -0.1rem;
@@ -22,7 +22,7 @@
   text-align: center;
 }
 .TitleAccent {
-  color: #fa4c09;
+  color: #ef5e23;
   font-weight: 700;
   letter-spacing: -0.4rem;
 }

@@ -1,7 +1,7 @@
 .Button {
   background-color: transparent;
   border: none;
-  color: #fa4c09;
+  color: #ef5e23;
   cursor: pointer;
   font-family: inherit;
   font-size: 1.2rem;
@@ -19,7 +19,7 @@
   top: 0;
 }
 .PopUp {
-  background-color: #011c37;
+  background-color: #0a213a;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -36,6 +36,7 @@
   border-radius: 50%;
   cursor: pointer;
   display: flex;
+  fill: white;
   height: 48px;
   justify-content: center;
   padding: 8px;
@@ -62,7 +63,7 @@
   height: 80%;
   margin: auto;
   overflow-x: auto;
-  scrollbar-color: #fa4c09 transparent;
+  scrollbar-color: #ef5e23 transparent;
   scrollbar-gutter: stable both-edges;
   scrollbar-width: thin;
   width: 100%;
@@ -82,7 +83,7 @@
   line-height: 1.5;
   max-width: 600px;
   overflow-y: auto;
-  scrollbar-color: #fa4c09 transparent;
+  scrollbar-color: #ef5e23 transparent;
   scrollbar-gutter: stable both-edges;
   scrollbar-width: thin;
   width: 90%;
@@ -102,16 +103,15 @@
 }
 
 .Link {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: white;
   border-radius: 8px;
-  color: white;
+  color: #0a213a;
   cursor: pointer;
   display: block;
   font-family: inherit;
   font-size: inherit;
-  margin: auto;
-  max-width: 500px;
+  margin: 32px auto;
+  max-width: calc(100% - 64px);
   padding: 8px 16px;
   text-align: center;
   text-decoration: none;
@@ -120,6 +120,6 @@
 }
 .Link:focus,
 .Link:hover {
-  background-color: white;
-  color: #011c37;
+  box-shadow: 0 0 8px 2px #ef5e23;
+  color: #ef5e23;
 }
