@@ -123,6 +123,13 @@ const getTools = () => {
       title: "Timestamp converter",
       type: "code",
     },
+    {
+      description: "Calculate your heart rate training zones.",
+      href: "/tools/heart-rate-zones/",
+      icon: Activity,
+      title: "Heart rate zones",
+      type: "sport",
+    },
   ];
 
   return tools.sort((a, b) => a.title.localeCompare(b.title));
