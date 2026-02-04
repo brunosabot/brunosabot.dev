@@ -11,6 +11,7 @@ interface IPostProps {
   description: string;
   href: string;
   image?: string;
+  index: number;
   title: string;
 }
 export default async function Post({
@@ -18,13 +19,20 @@ export default async function Post({
   description,
   href,
   image,
+  index,
   title,
 }: IPostProps) {
   return (
     <a className={classes.Post} href={href}>
       <div className={classes.PostImageContainer}>
         {image ? (
-          <Image alt={title} className={classes.PostImage} fill src={image} />
+          <Image
+            alt={title}
+            className={classes.PostImage}
+            fill
+            priority={index === 0}
+            src={image}
+          />
         ) : null}
       </div>
       <div className={classes.PostContent}>

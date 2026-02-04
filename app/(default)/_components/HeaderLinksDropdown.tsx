@@ -11,7 +11,7 @@ export default function HeaderLinksDropdown({
 }: IHeaderLinksDropdownProps) {
   return (
     <div className={classes.HeaderLinksDropdown}>
-      <button className={classes.HeaderLinksDropdownButton}>
+      <button aria-label="Menu" className={classes.HeaderLinksDropdownButton}>
         <CircleChevronDown
           className={classes.HeaderLinksDropdownButtonIcon}
           size={20}

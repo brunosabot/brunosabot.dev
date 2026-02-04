@@ -8,10 +8,11 @@ import Svg from "./Svg";
 
 interface IContentProps {
   icon: string;
+  name: string;
   theme: string;
 }
 
-export default function FooterTheme({ icon, theme }: IContentProps) {
+export default function FooterTheme({ icon, name, theme }: IContentProps) {
   const onClick = () => {
     localStorage.setItem("theme", theme);
     updateTheme();
@@ -35,6 +36,7 @@ export default function FooterTheme({ icon, theme }: IContentProps) {
 
   return (
     <button
+      aria-label={name}
       className={classNames.FooterTheme}
       data-theme={theme}
       onClick={onClick}

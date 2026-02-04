@@ -132,6 +132,35 @@ html body.winter {
   );
 }
 
+@media (prefers-contrast: more) {
+  html body.spring {
+    --token-v2-color-accent: var(--primitive-color-shamrock-200);
+    --token-v2-color-accent-hover: var(--primitive-color-shamrock-300);
+    --token-v2-color-accent-contrast: var(--primitive-color-shamrock-950);
+    --token-v2-color-accent-light-contrast: var(--primitive-color-shamrock-50);
+  }
+  html body.summer {
+    --token-v2-color-accent: var(--primitive-color-my-sin-200);
+    --token-v2-color-accent-hover: var(--primitive-color-my-sin-300);
+    --token-v2-color-accent-contrast: var(--primitive-color-my-sin-950);
+    --token-v2-color-accent-light-contrast: var(--primitive-color-my-sin-50);
+  }
+  html body.fall {
+    --token-v2-color-accent: var(--primitive-color-ecstasy-200);
+    --token-v2-color-accent-hover: var(--primitive-color-ecstasy-300);
+    --token-v2-color-accent-contrast: var(--primitive-color-ecstasy-950);
+    --token-v2-color-accent-light-contrast: var(--primitive-color-ecstasy-100);
+  }
+  html body.winter {
+    --token-v2-color-accent: var(--primitive-color-azure-radiance-200);
+    --token-v2-color-accent-hover: var(--primitive-color-azure-radiance-300);
+    --token-v2-color-accent-contrast: var(--primitive-color-azure-radiance-950);
+    --token-v2-color-accent-light-contrast: var(
+      --primitive-color-azure-radiance-100
+    );
+  }
+}
+
 @media (prefers-color-scheme: light) {
   html body {
     --token-v2-color-background: var(--primitive-color-woodsmoke-50);
@@ -164,6 +193,36 @@ html body.winter {
     --token-v2-color-accent-contrast: var(--primitive-color-azure-radiance-200);
     --token-v2-color-accent-light-contrast: var(
       --primitive-color-azure-radiance-700
+    );
+  }
+}
+
+@media (prefers-color-scheme: light) and (prefers-contrast: more) {
+  html body.spring {
+    --token-v2-color-accent: var(--primitive-color-shamrock-600);
+    --token-v2-color-accent-hover: var(--primitive-color-shamrock-700);
+    --token-v2-color-accent-contrast: var(--primitive-color-shamrock-50);
+    --token-v2-color-accent-light-contrast: var(--primitive-color-shamrock-900);
+  }
+  html body.summer {
+    --token-v2-color-accent: var(--primitive-color-my-sin-700);
+    --token-v2-color-accent-hover: var(--primitive-color-my-sin-800);
+    --token-v2-color-accent-contrast: var(--primitive-color-my-sin-50);
+    --token-v2-color-accent-light-contrast: var(--primitive-color-my-sin-900);
+    --token-v2-color-text-contrast: var(--primitive-color-woodsmoke-950);
+  }
+  html body.fall {
+    --token-v2-color-accent: var(--primitive-color-ecstasy-700);
+    --token-v2-color-accent-hover: var(--primitive-color-ecstasy-800);
+    --token-v2-color-accent-contrast: var(--primitive-color-ecstasy-50);
+    --token-v2-color-accent-light-contrast: var(--primitive-color-ecstasy-900);
+  }
+  html body.winter {
+    --token-v2-color-accent: var(--primitive-color-azure-radiance-700);
+    --token-v2-color-accent-hover: var(--primitive-color-azure-radiance-800);
+    --token-v2-color-accent-contrast: var(--primitive-color-azure-radiance-50);
+    --token-v2-color-accent-light-contrast: var(
+      --primitive-color-azure-radiance-900
     );
   }
 }

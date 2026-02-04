@@ -72,15 +72,15 @@ export default function DefaultLayout({ children }: IDefaultLayoutProps) {
         </HeaderLinks>
       </Header>
 
-      {children}
+      <main>{children}</main>
 
       <Footer>
         <FooterThemes>
-          <FooterTheme icon={mdiCreation} theme="" />
-          <FooterTheme icon={mdiFlower} theme="spring" />
-          <FooterTheme icon={mdiWeatherSunny} theme="summer" />
-          <FooterTheme icon={mdiLeafMaple} theme="fall" />
-          <FooterTheme icon={mdiSnowflake} theme="winter" />
+          <FooterTheme icon={mdiCreation} name="Automatic" theme="" />
+          <FooterTheme icon={mdiFlower} name="Spring" theme="spring" />
+          <FooterTheme icon={mdiWeatherSunny} name="Summer" theme="summer" />
+          <FooterTheme icon={mdiLeafMaple} name="Fall" theme="fall" />
+          <FooterTheme icon={mdiSnowflake} name="Winter" theme="winter" />
         </FooterThemes>
         <FooterSocial>
           <FooterSocialLink href="https://github.com/brunosabot" name="Github">

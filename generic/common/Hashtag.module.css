@@ -3,5 +3,5 @@
   text-decoration: none;
 }
 .Hash {
-  color: var(--color-accent);
+  color: var(--token-v2-color-accent);
 }

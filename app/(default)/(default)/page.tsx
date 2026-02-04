@@ -44,12 +44,13 @@ export default async function IndexPage() {
       <Section index={0}>
         <SectionTitle>Latest scribbles</SectionTitle>
         <PostContainer>
-          {posts.slice(0, 3).map((post) => (
+          {posts.slice(0, 3).map((post, i) => (
             <Post
               date={new Date(post.date)}
               description={post.subtitle}
               href={post.path}
               image={post.originalImage}
+              index={i}
               key={post.path}
               title={post.title}
             />

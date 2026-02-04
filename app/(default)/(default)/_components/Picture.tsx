@@ -10,6 +10,7 @@ export default async function Picture() {
         alt="A portrait of Bruno Sabot, staff software engineer & engineering manager."
         className={classes.PictureImage}
         height={128}
+        priority
         src={bruno}
         width={128}
       />
