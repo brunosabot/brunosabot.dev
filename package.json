@@ -8,7 +8,7 @@
     "dev": "next dev",
     "lint:css": "stylelint --fix components/**/*.css styles/**/*.css",
     "lint:format": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx}\"",
-    "lint:ts": "eslint --fix \"components/**/*.tsx\" \"lib/**/*.ts\" \"app/**/*.tsx\"",
+    "lint:ts": "eslint --fix \"components/**/*.tsx\" \"lib/**/*.ts\" \"app/**/*.{ts,tsx}\"",
     "lint": "eslint",
     "postbuild": "next-sitemap",
     "start": "next start -p 8080",

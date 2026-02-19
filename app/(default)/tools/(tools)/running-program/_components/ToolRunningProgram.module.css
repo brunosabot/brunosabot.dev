@@ -1,0 +1,9 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.Table {
+  margin-top: 1rem;
+}

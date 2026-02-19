@@ -2,8 +2,7 @@ import { ButtonHTMLAttributes } from "react";
 
 import classNames from "./ButtonSecondary.module.css";
 
-interface IButtonSecondaryProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IButtonSecondaryProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 

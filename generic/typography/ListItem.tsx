@@ -1,7 +1,9 @@
+import { ReactNode } from "react";
+
 import classNames from "./ListItem.module.css";
 
 interface IListItemProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function ListItem({ children }: IListItemProps) {

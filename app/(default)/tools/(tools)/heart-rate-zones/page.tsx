@@ -23,7 +23,8 @@ export default function ToolHeartRateZonesPage() {
       <Title>Heart Rate Zones</Title>
 
       <ParagraphSecondary>
-        Calculate your heart rate training zones using Max HR or Karvonen formula.
+        Calculate your heart rate training zones using Max HR or Karvonen
+        formula.
       </ParagraphSecondary>
 
       <ToolHeartRateZones />

@@ -7,6 +7,7 @@ import {
   Code2,
   FileJson,
   Fingerprint,
+  Footprints,
   Hash,
   Hourglass,
   Link,
@@ -128,6 +129,14 @@ const getTools = () => {
       href: "/tools/heart-rate-zones/",
       icon: Activity,
       title: "Heart rate zones",
+      type: "sport",
+    },
+    {
+      description:
+        "Calculate distance, duration, and pace for your running program.",
+      href: "/tools/running-program/",
+      icon: Footprints,
+      title: "Running Program Calculator",
       type: "sport",
     },
   ];

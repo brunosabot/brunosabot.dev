@@ -20,6 +20,10 @@
   transform: rotate(-1deg);
 }
 
+.Value:has(ul) {
+  transform: none;
+}
+
 .Unit {
   color: var(--token-v2-color-text-tertiary);
   font-family: var(--token-v2-font-sans);
