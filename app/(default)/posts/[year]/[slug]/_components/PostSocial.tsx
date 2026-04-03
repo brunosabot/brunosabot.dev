@@ -1,14 +1,9 @@
-import { mdiLinkedin } from "@mdi/js";
-
-import Svg from "../../../../../../components/svg/Svg";
-import svgX from "../../../../../../components/svg/x";
 import { SITE_METADATA } from "../../../../../../lib/metadata";
 import classes from "./PostSocial.module.css";
 
 interface ILinkWithTooltip {
   children: React.ReactNode;
   href: string;
-  label: string;
 }
 
 interface IPostsProps {
@@ -16,10 +11,9 @@ interface IPostsProps {
   title: string;
 }
 
-const Link = ({ children, href, label }: ILinkWithTooltip) => (
+const Link = ({ children, href }: ILinkWithTooltip) => (
   <a
-    aria-label={label}
-    className={classes["blog-post-social-item"]}
+    className={classes.BlogPostSocialLink}
     href={href}
     rel="noopener noreferrer"
     target="_blank"
@@ -34,18 +28,16 @@ const Posts: React.FC<IPostsProps> = ({ path, title }) => {
 
   return (
     <>
-      <div className={classes["blog-post-social"]}>
+      <div className={classes.BlogPostSocial}>
         <Link
           href={`https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
-          label="Share the article on Twitter"
         >
-          <Svg className="icon-x" d={svgX} />
+          Share on X
         </Link>
         <Link
           href={`http://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}&source=brunosabot.dev`}
-          label="Share the article on LinkedIn"
         >
-          <Svg className="icon-linkedin" d={mdiLinkedin} />
+          Share on LinkedIn
         </Link>
       </div>
     </>

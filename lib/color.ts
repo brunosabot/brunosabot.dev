@@ -1,4 +1,4 @@
-export const round = (value: number, fix = 0) => {
+const round = (value: number, fix = 0) => {
   const fixFactor = 10 ** fix;
   return Math.round(value * fixFactor) / fixFactor;
 };

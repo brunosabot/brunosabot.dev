@@ -12,7 +12,7 @@ export interface ProgramStep {
   type: "rest" | "run";
 }
 
-export function parseDuration(durationStr: string): number {
+function parseDuration(durationStr: string): number {
   let totalSeconds = 0;
   const minutesMatch = durationStr.match(/(\d+)'(?!')/);
   if (minutesMatch) {
@@ -25,7 +25,7 @@ export function parseDuration(durationStr: string): number {
   return totalSeconds;
 }
 
-export function parsePace(paceStr: string): number {
+function parsePace(paceStr: string): number {
   const parts = paceStr.split(":");
   if (parts.length !== 2) return 0;
   const minutes = parseInt(parts[0], 10);

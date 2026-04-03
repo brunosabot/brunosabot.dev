@@ -1,16 +1,6 @@
-import {
-  mdiCreation,
-  mdiFlower,
-  mdiGithub,
-  mdiLeafMaple,
-  mdiLinkedin,
-  mdiRss,
-  mdiSnowflake,
-  mdiWeatherSunny,
-} from "@mdi/js";
+import { Flower, LeafyGreen, Snowflake, Sparkles, Sun } from "lucide-react";
 
 import LayoutClient from "../../components/LayoutClient";
-import svgMedium from "../../components/svg/medium";
 import { SITE_METADATA } from "../../lib/metadata";
 import Footer from "./_components/Footer";
 import FooterCopyright from "./_components/FooterCopyright";
@@ -23,7 +13,6 @@ import HeaderLink from "./_components/HeaderLink";
 import HeaderLinks from "./_components/HeaderLinks";
 import HeaderLinksDropdown from "./_components/HeaderLinksDropdown";
 import HeaderLogo from "./_components/HeaderLogo";
-import Svg from "./_components/Svg";
 
 interface IDefaultLayoutProps {
   children: React.ReactNode;
@@ -76,30 +65,40 @@ export default function DefaultLayout({ children }: IDefaultLayoutProps) {
 
       <Footer>
         <FooterThemes>
-          <FooterTheme icon={mdiCreation} name="Automatic" theme="" />
-          <FooterTheme icon={mdiFlower} name="Spring" theme="spring" />
-          <FooterTheme icon={mdiWeatherSunny} name="Summer" theme="summer" />
-          <FooterTheme icon={mdiLeafMaple} name="Fall" theme="fall" />
-          <FooterTheme icon={mdiSnowflake} name="Winter" theme="winter" />
+          <FooterTheme name="Automatic" theme="">
+            <Sparkles size={24} strokeWidth={2} />
+          </FooterTheme>
+          <FooterTheme name="Spring" theme="spring">
+            <Flower size={24} strokeWidth={2} />
+          </FooterTheme>
+          <FooterTheme name="Summer" theme="summer">
+            <Sun size={24} strokeWidth={2} />
+          </FooterTheme>
+          <FooterTheme name="Fall" theme="fall">
+            <LeafyGreen size={24} strokeWidth={2} />
+          </FooterTheme>
+          <FooterTheme name="Winter" theme="winter">
+            <Snowflake size={24} strokeWidth={2} />
+          </FooterTheme>
         </FooterThemes>
         <FooterSocial>
           <FooterSocialLink href="https://github.com/brunosabot" name="Github">
-            <Svg d={mdiGithub} size={32} />
+            GitHub
           </FooterSocialLink>
           <FooterSocialLink
             href="https://linkedin.com/in/brunosabot"
             name="LinkedIn"
           >
-            <Svg d={mdiLinkedin} size={32} />
+            LinkedIn
           </FooterSocialLink>
           <FooterSocialLink href="https://medium.brunosabot.dev" name="Medium">
-            <Svg d={svgMedium} size={32} />
+            Medium
           </FooterSocialLink>
           <FooterSocialLink
             href={`${SITE_METADATA.siteUrl}/rss.xml`}
             name="RSS"
           >
-            <Svg d={mdiRss} size={32} />
+            RSS
           </FooterSocialLink>
         </FooterSocial>
         <FooterCopyright />

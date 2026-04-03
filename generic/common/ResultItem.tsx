@@ -12,10 +12,10 @@ export default function ResultItem({ label, unit, value }: IResultItemProps) {
   return (
     <div className={classes.Wrapper}>
       <span className={classes.Label}>{label}</span>
-      <div className={classes.Value}>
+      <span className={classes.Value}>
         {value}
         {unit && <span className={classes.Unit}>{unit}</span>}
-      </div>
+      </span>
     </div>
   );
 }

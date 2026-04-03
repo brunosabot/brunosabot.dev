@@ -1,10 +1,9 @@
 "use client";
 
-import { mdiClose } from "@mdi/js";
+import { X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-import Svg from "../../../components/svg/Svg";
 import charlotteAnnequinGrossesse from "../../../public/nonow-consulting/charlotte-annequin-grossesse.jpg";
 import charlotteAnnequinHome from "../../../public/nonow-consulting/charlotte-annequin-home.jpg";
 import charlotteAnnequinMariage from "../../../public/nonow-consulting/charlotte-annequin-mariage.jpg";
@@ -30,7 +29,7 @@ export default function CharlotteAnnequin() {
               className={classes.PopUpCloseButton}
               onClick={() => setIsVisible(false)}
             >
-              <Svg className={classes.PopUpClose} d={mdiClose} />
+              <X size={24} />
             </button>
             <div className={classes.PopUpTitle}>
               Charlotte Annequin Photographe

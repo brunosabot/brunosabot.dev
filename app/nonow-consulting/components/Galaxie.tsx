@@ -1,10 +1,9 @@
 "use client";
 
-import { mdiClose } from "@mdi/js";
+import { X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-import Svg from "../../../components/svg/Svg";
 import galaxieBadge from "../../../public/nonow-consulting/galaxie-badges.jpg";
 import galaxieDashboard from "../../../public/nonow-consulting/galaxie-dashboard.jpg";
 import galaxieParcours from "../../../public/nonow-consulting/galaxie-parcours.jpg";
@@ -30,7 +29,7 @@ export default function Galaxie() {
               className={classes.PopUpCloseButton}
               onClick={() => setIsVisible(false)}
             >
-              <Svg className={classes.PopUpClose} d={mdiClose} />
+              <X size={24} />
             </button>
             <div className={classes.PopUpTitle}>Galaxie Les 2 Alpes Trail</div>
             <div className={classes.PopUpContent}>

@@ -1,10 +1,16 @@
-.blog-post-social {
-  align-items: center;
+.BlogPostSocial {
+  align-items: flex-end;
   display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  gap: 8px;
   justify-content: space-between;
-  width: 56px;
+  text-transform: uppercase;
 }
 
-.blog-post-social-item svg {
-  display: block;
+.BlogPostSocialLink {
+  text-decoration: none;
+}
+.BlogPostSocialLink:hover {
+  text-decoration: underline;
 }

@@ -1,4 +1,4 @@
-import { Github, SquareArrowOutUpRight } from "lucide-react";
+import { Binary, SquareArrowOutUpRight } from "lucide-react";
 
 import classNames from "./OpenSourceProject.module.css";
 
@@ -19,7 +19,7 @@ export default function OpenSourceProject({
   return (
     <div className={classNames.OpenSourceProject}>
       <div className={classNames.OpenSourceProjectImageWrapper}>
-        <Github size={40} strokeWidth={1} />
+        <Binary size={40} strokeWidth={1} />
       </div>
       <div className={classNames.OpenSourceProjectContent}>
         <div className={classNames.OpenSourceProjectHeader}>

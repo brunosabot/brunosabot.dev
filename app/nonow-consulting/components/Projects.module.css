@@ -34,9 +34,9 @@
   background-color: transparent;
   border: none;
   border-radius: 50%;
+  color: white;
   cursor: pointer;
   display: flex;
-  fill: white;
   height: 48px;
   justify-content: center;
   padding: 8px;

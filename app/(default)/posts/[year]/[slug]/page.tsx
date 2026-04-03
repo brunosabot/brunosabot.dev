@@ -1,4 +1,4 @@
-import { mdiLinkVariant } from "@mdi/js";
+import { Link } from "lucide-react";
 import { notFound } from "next/navigation";
 import readingTime from "reading-time";
 
@@ -68,9 +68,7 @@ export default async function PostPage({ params }: { params: Params }) {
 
   return (
     <>
-      <svg style={{ display: "none" }} viewBox="0 0 24 24">
-        <path d={mdiLinkVariant} id="linkVariant" />
-      </svg>
+      <Link id="linkVariant" style={{ display: "none" }} />
       <PostComponent
         html={html}
         post={{

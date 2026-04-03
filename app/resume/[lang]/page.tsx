@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Phone, X } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import SeoBreadcrumb from "../../../components/seo/Breadcrumb";
@@ -89,12 +89,11 @@ export default async function ResumePage({ params }: { params: Params }) {
           <ContactItem href="tel:+33627918922" Icon={Phone}>
             +33 (0) 6 27 91 89 22
           </ContactItem>
-          <ContactItem href="https://x.com/brunosabot" Icon={X} />
-          <ContactItem href="https://github.com/brunosabot" Icon={Github} />
-          <ContactItem
-            href="https://www.linkedin.com/in/brunosabot"
-            Icon={Linkedin}
-          />
+          <ContactItem href="https://x.com/brunosabot">X</ContactItem>
+          <ContactItem href="https://github.com/brunosabot">GitHub</ContactItem>
+          <ContactItem href="https://www.linkedin.com/in/brunosabot">
+            LinkedIn
+          </ContactItem>
         </Contact>
 
         <article>

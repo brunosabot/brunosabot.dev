@@ -9,19 +9,15 @@
   outline: 0;
   padding: 4px;
 }
-
-.Icon {
-  fill: var(--text-color);
+.spring {
+  color: var(--primitive-color-shamrock-400);
 }
-[data-theme="spring"] .Icon {
-  fill: var(--primitive-color-shamrock-400);
+.summer {
+  color: var(--primitive-color-my-sin-500);
 }
-[data-theme="summer"] .Icon {
-  fill: var(--primitive-color-my-sin-500);
+.fall {
+  color: var(--primitive-color-ecstasy-500);
 }
-[data-theme="fall"] .Icon {
-  fill: var(--primitive-color-ecstasy-500);
-}
-[data-theme="winter"] .Icon {
-  fill: var(--primitive-color-azure-radiance-500);
+.winter {
+  color: var(--primitive-color-azure-radiance-500);
 }

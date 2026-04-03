@@ -4,15 +4,14 @@ import { useEffect } from "react";
 
 import { season, seasons } from "../../../lib/season";
 import classNames from "./FooterTheme.module.css";
-import Svg from "./Svg";
 
 interface IContentProps {
-  icon: string;
+  children: React.ReactNode;
   name: string;
   theme: string;
 }
 
-export default function FooterTheme({ icon, name, theme }: IContentProps) {
+export default function FooterTheme({ children, name, theme }: IContentProps) {
   const onClick = () => {
     localStorage.setItem("theme", theme);
     updateTheme();
@@ -34,15 +33,20 @@ export default function FooterTheme({ icon, name, theme }: IContentProps) {
 
   useEffect(updateTheme);
 
+  const classes = [classNames.FooterTheme];
+
+  if (theme) {
+    classes.push(classNames[theme]);
+  }
+
   return (
     <button
       aria-label={name}
-      className={classNames.FooterTheme}
-      data-theme={theme}
+      className={classes.join(" ")}
       onClick={onClick}
       type="button"
     >
-      <Svg className={classNames.Icon} d={icon} size={24} />
+      {children}
     </button>
   );
 }

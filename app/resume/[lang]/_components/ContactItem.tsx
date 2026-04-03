@@ -6,7 +6,7 @@ import classes from "./ContactItem.module.css";
 interface IContactItemProps {
   children?: React.ReactNode;
   href: string;
-  Icon: LucideIcon;
+  Icon?: LucideIcon;
 }
 
 export default function ContactItem({
@@ -23,7 +23,7 @@ export default function ContactItem({
 
   return (
     <Link className={classList.join(" ")} href={href}>
-      <Icon size={16} strokeWidth={2} />
+      {Icon ? <Icon size={16} strokeWidth={2} /> : null}
       {children}
     </Link>
   );
