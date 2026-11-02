@@ -1,0 +1,6 @@
+overrides:
+  csstype: 3.2.3
+
+onlyBuiltDependencies:
+  - "@vercel/speed-insights"
+  - sharp
