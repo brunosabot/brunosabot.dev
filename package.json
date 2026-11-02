@@ -7,7 +7,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint:css": "stylelint --fix components/**/*.css styles/**/*.css",
-    "lint:format": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx}\"",
+    "lint:format": "oxfmt \"**/*.{css,js,jsx,json,md,ts,tsx}\"",
     "lint:ts": "oxlint --fix components lib app",
     "lint": "oxlint",
     "postbuild": "next-sitemap",
@@ -53,25 +53,24 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "next-sitemap": "^4.2.3",
+    "oxfmt": "^0.75.0",
     "oxlint": "^1.90.0",
-    "prettier": "^3.8.1",
     "stylelint": "^17.6.0",
     "stylelint-config-css-modules": "^4.6.0",
     "stylelint-config-recommended": "^18.0.0",
-    "stylelint-order": "^8.1.1",
-    "stylelint-prettier": "^5.0.3"
+    "stylelint-order": "^8.1.1"
   },
   "lint-staged": {
     "*.css": [
-      "prettier --write",
+      "oxfmt",
       "stylelint --fix"
     ],
     "*.{js,jsx,ts,tsx}": [
       "oxlint --fix",
-      "prettier --write"
+      "oxfmt"
     ],
     "*.{json,md}": [
-      "prettier --write"
+      "oxfmt"
     ]
   }
 }
