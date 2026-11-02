@@ -51,7 +51,7 @@
     "@types/sha.js": "^2.4.4",
     "eslint-plugin-perfectionist": "^5.13.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
+    "lint-staged": "^17.6.0",
     "next-sitemap": "^4.2.3",
     "oxfmt": "^0.75.0",
     "oxlint": "^1.90.0",
