@@ -19,16 +19,7 @@ export default async function SeoBlogPosting({
   title,
 }: ISeoBlogPostingProps) {
   return (
-    <SeoScript
-      data={getLDJSON(
-        path,
-        title,
-        description,
-        image,
-        datePublished,
-        dateModified,
-      )}
-    />
+    <SeoScript data={getLDJSON(path, title, description, image, datePublished, dateModified)} />
   );
 }
 

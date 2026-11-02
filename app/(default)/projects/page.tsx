@@ -25,8 +25,7 @@ const getProjects = async () => {
         "In addition to segments, you can collect badges by participating in association events, whether racing or volunteering.",
       ],
       id: "galaxieles2alpestrail",
-      image:
-        "https://storage.googleapis.com/brunosabot.dev/img/projects/galaxieles2alpestrail.png",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/projects/galaxieles2alpestrail.png",
       lang: "🇫🇷",
       title: "Galaxie Les 2 Alpes Trail: Digital Passport.",
       url: "https://galaxie.les2alpestrail.com/",
@@ -62,8 +61,7 @@ const getProjects = async () => {
         "En somme, une photographe des beaux évènements de la vie.",
       ],
       id: "charlotteannequin",
-      image:
-        "https://storage.googleapis.com/brunosabot.dev/img/projects/charlotteannequin.png",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/projects/charlotteannequin.png",
       lang: "🇫🇷",
       title: "Charlotte Annequin - Photographe",
       url: "https://charlotteannequin.com/",
@@ -91,9 +89,7 @@ export default async function ProjectsPage() {
   return (
     <>
       <Title>Experiments & Ventures</Title>
-      <ParagraphSecondary>
-        A playground for side projects, tools, and fun apps.
-      </ParagraphSecondary>
+      <ParagraphSecondary>A playground for side projects, tools, and fun apps.</ParagraphSecondary>
 
       <List>
         {projects.map((project, index) => (

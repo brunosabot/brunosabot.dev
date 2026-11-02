@@ -27,9 +27,7 @@ export default function Contact() {
     <>
       {submitted ? (
         <div className={classes.SubmittedWrapper}>
-          <div className={classes.Submitted}>
-            Merci, votre message a bien été envoyé !
-          </div>
+          <div className={classes.Submitted}>Merci, votre message a bien été envoyé !</div>
         </div>
       ) : null}
 

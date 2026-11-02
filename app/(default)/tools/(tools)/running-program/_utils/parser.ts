@@ -66,8 +66,7 @@ export function parseProgram(input: string): ProgramStats {
     totalDuration += s.duration;
   });
 
-  const avgPace =
-    totalDistance > 0 ? totalDuration / (totalDistance / 1000) : 0;
+  const avgPace = totalDistance > 0 ? totalDuration / (totalDistance / 1000) : 0;
 
   return {
     avgPace,
@@ -88,9 +87,7 @@ function parseSequence(sequence: string): ProgramStep[] {
     let betweenRest: null | ProgramStep = null;
     let endRest: null | ProgramStep = null;
 
-    const rOuterMatch = workStr.match(
-      /\s+R\s?(\d+'?\s*\d*"?)(\s*@\s*(\d+:\d+))?$/,
-    );
+    const rOuterMatch = workStr.match(/\s+R\s?(\d+'?\s*\d*"?)(\s*@\s*(\d+:\d+))?$/);
     if (rOuterMatch) {
       const duration = parseDuration(rOuterMatch[1]);
       const pace = rOuterMatch[3] ? parsePace(rOuterMatch[3]) : 0;
@@ -110,9 +107,7 @@ function parseSequence(sequence: string): ProgramStep[] {
     const isNested = RE_MULTIPLIER.test(workStr);
 
     if (!isNested) {
-      const rInnerMatch = workStr.match(
-        /\s+r\s?(\d+'?\s*\d*"?)(\s*@\s*(\d+:\d+))?$/,
-      );
+      const rInnerMatch = workStr.match(/\s+r\s?(\d+'?\s*\d*"?)(\s*@\s*(\d+:\d+))?$/);
       if (rInnerMatch) {
         const duration = parseDuration(rInnerMatch[1]);
         const pace = rInnerMatch[3] ? parsePace(rInnerMatch[3]) : 0;

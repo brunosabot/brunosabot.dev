@@ -50,9 +50,7 @@ export default function Form() {
         />
       </label>
 
-      <label
-        className={`${classes.InputWrapper} ${classes.InputWrapperHasTextarea}`}
-      >
+      <label className={`${classes.InputWrapper} ${classes.InputWrapperHasTextarea}`}>
         <MessageSquare size={20} strokeWidth={1.5} style={{ marginTop: 4 }} />
         <textarea
           className={`${classes.Input} ${classes.Textarea}`}

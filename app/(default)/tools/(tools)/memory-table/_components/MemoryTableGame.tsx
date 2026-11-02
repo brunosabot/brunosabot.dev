@@ -68,11 +68,7 @@ export default function MemoryTableGame({ table }: IMemoryTableGameProps) {
         <span className={classes.MemoryTableGameValue}>{currentPlay}</span>
         <InputWithIcon
           autoFocus
-          className={
-            isError
-              ? classes.MemoryTableGameError
-              : classes.MemoryTableGameField
-          }
+          className={isError ? classes.MemoryTableGameError : classes.MemoryTableGameField}
           Icon={HelpCircle}
           label="Answer"
           onChange={(e) => setUserValue(e.target.value)}
@@ -91,9 +87,7 @@ export default function MemoryTableGame({ table }: IMemoryTableGameProps) {
         </div>
         {isShowResult ? (
           <ResultItem
-            label={
-              isPlayModeName ? `${table.indexOf(currentPlay)}` : currentPlay
-            }
+            label={isPlayModeName ? `${table.indexOf(currentPlay)}` : currentPlay}
             value={isPlayModeName ? currentPlay : table[+currentPlay]}
           />
         ) : null}
@@ -102,15 +96,11 @@ export default function MemoryTableGame({ table }: IMemoryTableGameProps) {
   );
 }
 
-function getFromMemoryTable(
-  isNameMode: boolean,
-  memoryTable: string[],
-): string {
+function getFromMemoryTable(isNameMode: boolean, memoryTable: string[]): string {
   const firstInvalid = memoryTable.indexOf("");
   const validCount = firstInvalid === -1 ? 100 : firstInvalid - 1;
   const selectedItem = Math.floor(
-    (crypto.getRandomValues(new Uint32Array(1))[0] / Math.pow(2, 32)) *
-      validCount,
+    (crypto.getRandomValues(new Uint32Array(1))[0] / Math.pow(2, 32)) * validCount,
   );
 
   if (isNameMode === false) return `${selectedItem}`;

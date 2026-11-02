@@ -15,61 +15,48 @@ export default function CharlotteAnnequin() {
 
   return (
     <>
-      <button
-        className={classes.Button}
-        onClick={() => setIsVisible(!isVisible)}
-      >
+      <button className={classes.Button} onClick={() => setIsVisible(!isVisible)}>
         Charlotte Annequin Photographe
       </button>
 
       {isVisible ? (
         <div className={classes.PopUpWrapper}>
           <div className={classes.PopUp}>
-            <button
-              className={classes.PopUpCloseButton}
-              onClick={() => setIsVisible(false)}
-            >
+            <button className={classes.PopUpCloseButton} onClick={() => setIsVisible(false)}>
               <X size={24} />
             </button>
-            <div className={classes.PopUpTitle}>
-              Charlotte Annequin Photographe
-            </div>
+            <div className={classes.PopUpTitle}>Charlotte Annequin Photographe</div>
             <div className={classes.PopUpContent}>
               <div className={classes.PopUpDescription}>
                 <p>
-                  J&apos;ai conçu et développé un site web sur mesure pour
-                  Charlotte Annequin, Photographe, en utilisant les technologies
-                  Next.js pour la partie frontend et Strapi pour la gestion de
-                  contenu.
+                  J&apos;ai conçu et développé un site web sur mesure pour Charlotte Annequin,
+                  Photographe, en utilisant les technologies Next.js pour la partie frontend et
+                  Strapi pour la gestion de contenu.
                 </p>
 
                 <p>Techniquement, ce projet a impliqué :</p>
 
                 <ul>
                   <li>
-                    <b>Création d&apos;une architecture robuste:</b> Séparation
-                    nette entre la couche présentation (Next.js) et la couche
-                    données (Strapi).
+                    <b>Création d&apos;une architecture robuste:</b> Séparation nette entre la
+                    couche présentation (Next.js) et la couche données (Strapi).
                   </li>
                   <li>
-                    <b>Développement d&apos;un connecteur automatisé:</b> Pour
-                    permettre une personnalisation avancée du contenu des pages,
-                    des textes et des images
+                    <b>Développement d&apos;un connecteur automatisé:</b> Pour permettre une
+                    personnalisation avancée du contenu des pages, des textes et des images
                   </li>
                   <li>
-                    <b>Optimisation des performances:</b> Chargement rapide des
-                    pages pour une expérience utilisateur fluide.
+                    <b>Optimisation des performances:</b> Chargement rapide des pages pour une
+                    expérience utilisateur fluide.
                   </li>
                   <li>
-                    <b>Personnalisation de l&apos;interface:</b> Création
-                    d&apos;un design unique et intuitif reflétant l&apos;univers
-                    de la photographe.
+                    <b>Personnalisation de l&apos;interface:</b> Création d&apos;un design unique et
+                    intuitif reflétant l&apos;univers de la photographe.
                   </li>
                 </ul>
                 <p>
-                  Le choix de Next.js et Strapi a permis de gagner en
-                  productivité et de bénéficier d&apos;une solution évolutive et
-                  maintenable.
+                  Le choix de Next.js et Strapi a permis de gagner en productivité et de bénéficier
+                  d&apos;une solution évolutive et maintenable.
                 </p>
 
                 <p>

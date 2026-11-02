@@ -9,8 +9,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       canonical: "https://brunosabot.dev/tools/base-64/",
-      description:
-        "Effortlessly Convert Strings Between Text and Base64 Format",
+      description: "Effortlessly Convert Strings Between Text and Base64 Format",
       title: "Base 64 Conversion Tool",
     },
     "/tools/base-64/",

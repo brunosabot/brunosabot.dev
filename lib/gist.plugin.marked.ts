@@ -51,25 +51,16 @@ const gistPlugin: MarkedExtension = {
       level: "block",
       name: "gist",
       renderer(token) {
-        return (token as GistToken).data.reduce(
-          (acc, { file, html, language }) => {
-            const grammar = Object.values(MAP_LANGUAGE).find(
-              (l) => l.name === language,
-            )?.prism;
-            const output = Prism.highlight(
-              html,
-              grammar ?? Prism.languages.text,
-              language,
-            );
-            let newAcc = acc;
-            if (file) {
-              newAcc += `<div class="hljs-filename">${file}</div>`;
-            }
-            newAcc += `<pre><code class="language-${language}">${output}</code></pre>`;
-            return newAcc;
-          },
-          "",
-        );
+        return (token as GistToken).data.reduce((acc, { file, html, language }) => {
+          const grammar = Object.values(MAP_LANGUAGE).find((l) => l.name === language)?.prism;
+          const output = Prism.highlight(html, grammar ?? Prism.languages.text, language);
+          let newAcc = acc;
+          if (file) {
+            newAcc += `<div class="hljs-filename">${file}</div>`;
+          }
+          newAcc += `<pre><code class="language-${language}">${output}</code></pre>`;
+          return newAcc;
+        }, "");
       },
       start(src) {
         return src.indexOf("`gist:");
@@ -93,9 +84,7 @@ const gistPlugin: MarkedExtension = {
       const [data, jsonData] = await loadGist(token.url);
       token.data = data.map((d, i) => {
         const ext = jsonData.files[i].split(".");
-        const language = getLanguage(
-          ext.length ? ext[ext.length - 1] : undefined,
-        );
+        const language = getLanguage(ext.length ? ext[ext.length - 1] : undefined);
         return {
           file: jsonData.files[i],
           html: d.trim(),

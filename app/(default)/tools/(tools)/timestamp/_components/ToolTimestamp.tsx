@@ -21,8 +21,7 @@ export default function ToolTimestamp() {
   const onTimestampChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
 
-    const { day, hours, milliseconds, minutes, month, seconds, year } =
-      getDate(value);
+    const { day, hours, milliseconds, minutes, month, seconds, year } = getDate(value);
 
     setYear(`${year}`);
     setMonth(`${month}`);
@@ -36,9 +35,7 @@ export default function ToolTimestamp() {
 
   useEffect(() => {
     const timestamp = Date.now();
-    const { day, hours, milliseconds, minutes, month, seconds, year } = getDate(
-      `${timestamp}`,
-    );
+    const { day, hours, milliseconds, minutes, month, seconds, year } = getDate(`${timestamp}`);
 
     setYear(`${year}`);
     setMonth(`${month}`);
@@ -199,22 +196,13 @@ export default function ToolTimestamp() {
 
       <div className={classes.Results}>
         <ResultCard>
-          <ResultItem
-            label="Corresponding ISO Date"
-            value={getIsoDate(timestamp)}
-          />
+          <ResultItem label="Corresponding ISO Date" value={getIsoDate(timestamp)} />
         </ResultCard>
         <ResultCard>
-          <ResultItem
-            label="Corresponding UTC Date"
-            value={getUtcDate(timestamp)}
-          />
+          <ResultItem label="Corresponding UTC Date" value={getUtcDate(timestamp)} />
         </ResultCard>
         <ResultCard>
-          <ResultItem
-            label="Corresponding Local Date"
-            value={toLocaleString(timestamp)}
-          />
+          <ResultItem label="Corresponding Local Date" value={toLocaleString(timestamp)} />
         </ResultCard>
       </div>
     </div>

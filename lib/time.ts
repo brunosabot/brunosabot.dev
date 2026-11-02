@@ -1,22 +1,6 @@
-const unitsInSec = [
-  60,
-  3600,
-  86400,
-  86400 * 7,
-  86400 * 30,
-  86400 * 365,
-  Infinity,
-];
+const unitsInSec = [60, 3600, 86400, 86400 * 7, 86400 * 30, 86400 * 365, Infinity];
 
-const unitStrings = [
-  "second",
-  "minute",
-  "hour",
-  "day",
-  "week",
-  "month",
-  "year",
-] as const;
+const unitStrings = ["second", "minute", "hour", "day", "week", "month", "year"] as const;
 
 const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
 

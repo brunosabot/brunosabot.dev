@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 export const SITE_METADATA = {
-  description:
-    "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
+  description: "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
   siteUrl: "https://brunosabot.dev",
   title: "Bruno Sabot",
   twitterAuthor: "@brunosabot",

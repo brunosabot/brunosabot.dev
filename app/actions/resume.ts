@@ -2,11 +2,9 @@
 
 const resume = {
   en: {
-    about:
-      "Engineering Manager at PlayPlay, I'm not looking for new opportunities.",
+    about: "Engineering Manager at PlayPlay, I'm not looking for new opportunities.",
     follow: "Subscribe to these social medias for updates",
-    intro:
-      "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
+    intro: "I am Bruno Sabot, a Front-end developer currently living in Bordeaux, France.",
     seo: {
       alternate: "fr",
       alternateLabel: "FR",
@@ -27,8 +25,7 @@ const resume = {
     about:
       "Engineering Manager chez PlayPlay, je ne suis pas à la recherche de nouvelles opportunités.",
     follow: "Suivez-moi sur ces réseaux sociaux",
-    intro:
-      "Je suis Bruno Sabot, un développeur Front-end résidant à Bordeaux, en France.",
+    intro: "Je suis Bruno Sabot, un développeur Front-end résidant à Bordeaux, en France.",
     seo: {
       alternate: "en",
       alternateLabel: "EN",

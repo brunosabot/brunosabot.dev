@@ -23,8 +23,7 @@ export default function ToolTimestampPage() {
       <Title>Timestamp Converter</Title>
 
       <ParagraphSecondary>
-        Effortlessly Convert Timestamps to Readable Dates and Vice Versa with
-        This Handy Tool
+        Effortlessly Convert Timestamps to Readable Dates and Vice Versa with This Handy Tool
       </ParagraphSecondary>
 
       <ToolTimestamp />

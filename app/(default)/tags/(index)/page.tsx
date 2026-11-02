@@ -10,19 +10,14 @@ export default async function TagsPage() {
   const tagsCount = posts
     .map((p) => p.tags.split(","))
     .flat()
-    .reduce<Record<string, number>>(
-      (acc, val) => ({ ...acc, [val]: (acc[val] ?? 0) + 1 }),
-      {},
-    );
+    .reduce<Record<string, number>>((acc, val) => ({ ...acc, [val]: (acc[val] ?? 0) + 1 }), {});
 
   const maxCount = Object.entries(tagsCount).reduce(
     (acc, [, value]) => (acc > value ? acc : value),
     0,
   );
 
-  const tags = Object.entries(tagsCount).sort((a, b) =>
-    a[0].localeCompare(b[0]),
-  );
+  const tags = Object.entries(tagsCount).sort((a, b) => a[0].localeCompare(b[0]));
 
   return (
     <>
@@ -43,13 +38,13 @@ export default async function TagsPage() {
       </List>
 
       <p>
-        Discover a wealth of informative articles on your favorite web
-        development subjects! Here, you&apos;ll find all our blog posts topics,
-        making it easy to find content that sparks your coding curiosity.
+        Discover a wealth of informative articles on your favorite web development subjects! Here,
+        you&apos;ll find all our blog posts topics, making it easy to find content that sparks your
+        coding curiosity.
       </p>
       <p>
-        Whether you&apos;re a JavaScript enthusiast, a React pro, or just
-        looking for some non-dev content, we have something for you.
+        Whether you&apos;re a JavaScript enthusiast, a React pro, or just looking for some non-dev
+        content, we have something for you.
       </p>
       <p>Dive in and explore!</p>
 

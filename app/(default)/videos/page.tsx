@@ -22,8 +22,7 @@ const getVideos = async () => {
       description:
         "Nous avons l'habitude de dire qu'aligner les éléments en CSS s'avère difficile.  Découvrez avec Manuel et Bruno que de nos jours cela est vraiment facile et à la portée de tous ! #flexbox",
       id: "1",
-      image:
-        "https://storage.googleapis.com/brunosabot.dev/img/t9XFUI_qZ3g.jpeg",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/t9XFUI_qZ3g.jpeg",
       language: "fr",
       title: "Un Café Avec Bruno & Manuel : CSS Flexbox",
       youtubeId: "t9XFUI_qZ3g",
@@ -40,8 +39,7 @@ export default async function VideosPage() {
     <>
       <Title>Screen Time</Title>
       <ParagraphSecondary>
-        A collection of video explorations, tutorials, and casual coding
-        sessions.
+        A collection of video explorations, tutorials, and casual coding sessions.
       </ParagraphSecondary>
 
       <List>

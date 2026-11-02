@@ -35,25 +35,13 @@ export default function Post({
 }: IPostProps) {
   return (
     <article className={classes.Post}>
-      <a
-        className={classes.PostImageWrapper}
-        href="#"
-        style={{ backgroundColor: color }}
-      >
+      <a className={classes.PostImageWrapper} href="#" style={{ backgroundColor: color }}>
         {image !== undefined ? (
-          <Image
-            alt=""
-            className={classes.PostImage}
-            fill
-            priority={priority}
-            src={image}
-          />
+          <Image alt="" className={classes.PostImage} fill priority={priority} src={image} />
         ) : null}
       </a>
       <div className={classes.PostContent}>
-        <p className={classes.PostPublishedAt}>
-          {dateFormatter.format(new Date(date))}
-        </p>
+        <p className={classes.PostPublishedAt}>{dateFormatter.format(new Date(date))}</p>
         <h3 className={classes.PostTitle}>
           <a className={classes.PostTitleLink} href={to}>
             {title}

@@ -14,14 +14,7 @@ interface IPostProps {
   index: number;
   title: string;
 }
-export default async function Post({
-  date,
-  description,
-  href,
-  image,
-  index,
-  title,
-}: IPostProps) {
+export default async function Post({ date, description, href, image, index, title }: IPostProps) {
   return (
     <a className={classes.Post} href={href}>
       <div className={classes.PostImageContainer}>

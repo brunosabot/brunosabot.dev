@@ -5,10 +5,7 @@ interface IToolkitContainerProps {
   children: React.ReactNode;
 }
 
-export default async function ToolkitContainer({
-  abstract,
-  children,
-}: IToolkitContainerProps) {
+export default async function ToolkitContainer({ abstract, children }: IToolkitContainerProps) {
   return (
     <div className={classes.ToolkitContainer}>
       <div className={classes.ToolkitContainerAbstract}>{abstract}</div>

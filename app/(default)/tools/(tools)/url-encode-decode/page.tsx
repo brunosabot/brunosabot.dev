@@ -9,8 +9,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       canonical: "https://brunosabot.dev/tools/url-encode-decode/",
-      description:
-        "Easily Encode or Decode URLs for Safe Web Transmission and Readability",
+      description: "Easily Encode or Decode URLs for Safe Web Transmission and Readability",
       title: "URL Encode and Decode Tool",
     },
     "/tools/url-encode-decode/",

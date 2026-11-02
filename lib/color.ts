@@ -20,10 +20,7 @@ const intToHex = (h: number) => {
   h = Math.min(h, 255);
   h = round(h);
 
-  return (
-    "0123456789ABCDEF".charAt((h - (h % 16)) / 16) +
-    "0123456789ABCDEF".charAt(h % 16)
-  );
+  return "0123456789ABCDEF".charAt((h - (h % 16)) / 16) + "0123456789ABCDEF".charAt(h % 16);
 };
 const hexToR = (h: string) => parseInt(h.substring(0, 2) || "0", 16);
 const hexToG = (h: string) => parseInt(h.substring(2, 4) || "0", 16);

@@ -46,12 +46,7 @@ export default function ToolBezierCurves() {
       </div>
 
       <div className={classes.CubicBezierBlocks}>
-        <CubicBezierBlock
-          x1={enrich(x1)}
-          x2={enrich(x2)}
-          y1={enrich(y1)}
-          y2={enrich(y2)}
-        />
+        <CubicBezierBlock x1={enrich(x1)} x2={enrich(x2)} y1={enrich(y1)} y2={enrich(y2)} />
         <CubicBezierBlock x1={0} x2={1} y1={0} y2={1} />
         <CubicBezierBlock x1={0} x2={0.2} y1={0} y2={1} />
         <CubicBezierBlock x1={0.4} x2={0.6} y1={0} y2={1} />

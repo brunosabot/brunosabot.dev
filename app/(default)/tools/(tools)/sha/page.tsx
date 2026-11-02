@@ -23,8 +23,7 @@ export default function ToolShaPage() {
       <Title>Sha Generation Tool</Title>
 
       <ParagraphSecondary>
-        Fortify Your Data Security: Generate Secure Hashes with Our SHA Hash
-        Calculator
+        Fortify Your Data Security: Generate Secure Hashes with Our SHA Hash Calculator
       </ParagraphSecondary>
 
       <ToolSha />

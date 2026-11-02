@@ -24,10 +24,7 @@ export default function StreamlineCard(props: IStreamlineCardProps) {
 
   return (
     <div className={classList.join(" ")}>
-      <div
-        className={classNames.Clickable}
-        onClick={() => setIsCodeShown(!isCodeShown)}
-      >
+      <div className={classNames.Clickable} onClick={() => setIsCodeShown(!isCodeShown)}>
         <h2 className={classNames.Title}>
           {props.title}
           <span className={classNames.Published}>By {props.author}</span>
@@ -44,12 +41,7 @@ export default function StreamlineCard(props: IStreamlineCardProps) {
 
       {isCodeShown && props.image ? (
         <div className={classNames.ImageWrapper}>
-          <Image
-            alt={props.title}
-            className={classNames.Image}
-            fill={true}
-            src={props.image}
-          />
+          <Image alt={props.title} className={classNames.Image} fill={true} src={props.image} />
         </div>
       ) : null}
 

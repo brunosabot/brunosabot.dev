@@ -8,19 +8,11 @@ export default async function IndexPage() {
     <div className={classes.CallToAction}>
       <Link className={classes.CallToActionMain} href="/projects/">
         See My Stuff
-        <MoveRight
-          className={classes.CallToActionIcon}
-          size={16}
-          strokeWidth={1.5}
-        />
+        <MoveRight className={classes.CallToActionIcon} size={16} strokeWidth={1.5} />
       </Link>
       <Link className={classes.CallToActionSecondary} href="/contact">
         Say Hello
-        <Handshake
-          className={classes.CallToActionIcon}
-          size={16}
-          strokeWidth={1.5}
-        />
+        <Handshake className={classes.CallToActionIcon} size={16} strokeWidth={1.5} />
       </Link>
     </div>
   );

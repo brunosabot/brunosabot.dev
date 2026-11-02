@@ -22,8 +22,7 @@ export default function ToolPhotoshopShadowPage() {
     <>
       <Title>Photoshop Shadow Converter</Title>
       <ParagraphSecondary>
-        Bridging Design: Effortlessly Convert Photoshop Shadows to CSS with
-        Visualization
+        Bridging Design: Effortlessly Convert Photoshop Shadows to CSS with Visualization
       </ParagraphSecondary>
 
       <ToolPhotoshopShadow />

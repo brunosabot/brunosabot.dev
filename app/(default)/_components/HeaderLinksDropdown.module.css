@@ -27,11 +27,7 @@
 .HeaderLinksDropdown:focus-within .HeaderLinksDropdownContent,
 .HeaderLinksDropdown:hover .HeaderLinksDropdownContent {
   backdrop-filter: blur(8px);
-  background-color: color-mix(
-    in srgb,
-    var(--token-v2-color-background) 95%,
-    transparent
-  );
+  background-color: color-mix(in srgb, var(--token-v2-color-background) 95%, transparent);
   border-radius: 16px;
   box-shadow:
     0 20px 25px -5px rgb(0 0 0 / 0.1),

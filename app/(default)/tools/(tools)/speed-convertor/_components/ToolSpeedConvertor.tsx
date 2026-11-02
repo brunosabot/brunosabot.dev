@@ -65,16 +65,15 @@ export default function ToolSpeedConvertor() {
           value={
             <Table>
               <tbody>
-                {[
-                  130, 125, 120, 115, 110, 105, 100, 95, 90, 85, 80, 75, 70, 65,
-                  60, 55, 50,
-                ].map((percentage) => (
-                  <Tr key={percentage}>
-                    <Td>{percentage}%</Td>
-                    <Td>{round((finalSpeed * percentage) / 100, 2)} km/h</Td>
-                    <Td>{speedToPace((finalSpeed * percentage) / 100)}</Td>
-                  </Tr>
-                ))}
+                {[130, 125, 120, 115, 110, 105, 100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50].map(
+                  (percentage) => (
+                    <Tr key={percentage}>
+                      <Td>{percentage}%</Td>
+                      <Td>{round((finalSpeed * percentage) / 100, 2)} km/h</Td>
+                      <Td>{speedToPace((finalSpeed * percentage) / 100)}</Td>
+                    </Tr>
+                  ),
+                )}
               </tbody>
             </Table>
           }
@@ -86,15 +85,13 @@ export default function ToolSpeedConvertor() {
           value={
             <Table>
               <tbody>
-                {[50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100].map(
-                  (percentage) => (
-                    <Tr key={percentage}>
-                      <Td>{percentage}%</Td>
-                      <Td>{round((finalSpeed * 100) / percentage, 2)} km/h</Td>
-                      <Td>{speedToPace((finalSpeed * 100) / percentage)}</Td>
-                    </Tr>
-                  ),
-                )}
+                {[50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100].map((percentage) => (
+                  <Tr key={percentage}>
+                    <Td>{percentage}%</Td>
+                    <Td>{round((finalSpeed * 100) / percentage, 2)} km/h</Td>
+                    <Td>{speedToPace((finalSpeed * 100) / percentage)}</Td>
+                  </Tr>
+                ))}
               </tbody>
             </Table>
           }

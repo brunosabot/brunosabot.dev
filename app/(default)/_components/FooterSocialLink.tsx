@@ -6,11 +6,7 @@ interface IFooterSocialProps {
   name: string;
 }
 
-export default function FooterSocialLink({
-  children,
-  href,
-  name,
-}: IFooterSocialProps) {
+export default function FooterSocialLink({ children, href, name }: IFooterSocialProps) {
   return (
     <a
       aria-label={`Bruno Sabot on ${name}`}

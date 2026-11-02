@@ -6,10 +6,7 @@ interface ISectionProps {
 }
 
 export default async function Section({ children, index }: ISectionProps) {
-  const className = [
-    classes.Section,
-    index % 2 === 0 ? classes.Even : classes.Odd,
-  ];
+  const className = [classes.Section, index % 2 === 0 ? classes.Even : classes.Odd];
 
   return (
     <section className={className.join(" ")}>

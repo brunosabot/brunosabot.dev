@@ -20,8 +20,7 @@ export default function ToolHeartRateZones() {
   const maxHr = parseInt(maxHeartRate, 10);
   const restingHr = parseInt(restingHeartRate, 10);
   const isValidMax = !isNaN(maxHr) && maxHr > 0;
-  const isValidResting =
-    !isNaN(restingHr) && restingHr > 0 && restingHr < maxHr;
+  const isValidResting = !isNaN(restingHr) && restingHr > 0 && restingHr < maxHr;
 
   const percentages = Array.from({ length: 17 }, (_, i) => 100 - i * 5); // 100, 95, ..., 20
 
@@ -48,9 +47,7 @@ export default function ToolHeartRateZones() {
 
       <ResultCard className={classes.Table}>
         <ResultItem
-          label={
-            isValidResting ? "Zones (Karvonen Formula)" : "Zones (% of Max HR)"
-          }
+          label={isValidResting ? "Zones (Karvonen Formula)" : "Zones (% of Max HR)"}
           value={
             <div style={{ overflowX: "auto" }}>
               <Table>
@@ -73,8 +70,7 @@ export default function ToolHeartRateZones() {
                       let bpm = 0;
                       if (isValidResting) {
                         // Karvonen: ((Max - Rest) * % / 100) + Rest
-                        bpm =
-                          ((maxHr - restingHr) * percentage) / 100 + restingHr;
+                        bpm = ((maxHr - restingHr) * percentage) / 100 + restingHr;
                       } else {
                         // Standard: Max * % / 100
                         bpm = (maxHr * percentage) / 100;

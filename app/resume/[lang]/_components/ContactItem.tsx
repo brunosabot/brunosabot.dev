@@ -9,11 +9,7 @@ interface IContactItemProps {
   Icon?: LucideIcon;
 }
 
-export default function ContactItem({
-  children,
-  href,
-  Icon,
-}: IContactItemProps) {
+export default function ContactItem({ children, href, Icon }: IContactItemProps) {
   const hasChildren = children !== undefined;
   const classList = [classes.ContactItem];
 

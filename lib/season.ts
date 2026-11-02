@@ -25,8 +25,7 @@ export const seasons: Record<Season, any> = {
   spring: (d: MonthDay) => between(d, SPRING_EQUINOX, SUMMER_SOLSTICE),
   summer: (d: MonthDay) => between(d, SUMMER_SOLSTICE, AUTUMN_EQUINOX),
   winter: (d: MonthDay) =>
-    between(d, WINTER_SOLSTICE, END_YEAR) ||
-    between(d, NEW_YEAR, SPRING_EQUINOX),
+    between(d, WINTER_SOLSTICE, END_YEAR) || between(d, NEW_YEAR, SPRING_EQUINOX),
 };
 
 const toMonthDay = (date: Date) => monthDay(date.getMonth(), date.getDate());
@@ -45,18 +44,13 @@ const after = (monthDayToCheck: MonthDay, monthDayRef: MonthDay) => {
   return monthDayToCheck.day >= monthDayRef.day;
 };
 
-const between = (
-  monthDayX: MonthDay,
-  monthDayLow: MonthDay,
-  monthDayHigh: MonthDay,
-) => after(monthDayX, monthDayLow) && before(monthDayX, monthDayHigh);
+const between = (monthDayX: MonthDay, monthDayLow: MonthDay, monthDayHigh: MonthDay) =>
+  after(monthDayX, monthDayLow) && before(monthDayX, monthDayHigh);
 
 export const season = (date: Date) => {
   const monthDay = toMonthDay(date);
   const seasonKeys = Object.keys(seasons) as Array<Season>;
-  const currentSeason = seasonKeys.find((seasonName: Season) =>
-    seasons[seasonName](monthDay),
-  );
+  const currentSeason = seasonKeys.find((seasonName: Season) => seasons[seasonName](monthDay));
 
   return currentSeason ?? "spring";
 };

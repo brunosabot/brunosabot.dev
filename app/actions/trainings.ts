@@ -34,12 +34,7 @@ const trainings: Trainings = {
       subtitles: [],
     },
     {
-      details: [
-        "Scientific Baccalauréat",
-        "Engineering option",
-        "Maths field",
-        "With honors",
-      ],
+      details: ["Scientific Baccalauréat", "Engineering option", "Maths field", "With honors"],
       diploma: "Baccalauréat",
       endDate: "2005",
       id: "boissy",

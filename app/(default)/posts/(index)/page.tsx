@@ -25,8 +25,7 @@ export default async function PostsPage() {
     <>
       <Title>Musings & Code</Title>
       <ParagraphSecondary>
-        A collection of thoughts on software engineering, leadership, and random
-        discoveries.
+        A collection of thoughts on software engineering, leadership, and random discoveries.
       </ParagraphSecondary>
 
       <Posts posts={posts} />

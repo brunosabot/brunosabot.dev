@@ -9,12 +9,7 @@ interface IFilterProps {
   onClick: () => void;
 }
 
-export default function Filter({
-  active,
-  children,
-  Icon,
-  onClick,
-}: IFilterProps) {
+export default function Filter({ active, children, Icon, onClick }: IFilterProps) {
   return (
     <button
       className={`${classes.Filter} ${active ? classes.Active : ""}`}

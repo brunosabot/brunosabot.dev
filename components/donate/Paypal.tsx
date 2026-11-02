@@ -12,10 +12,7 @@ const Paypal: React.FC<IPaypalProps> = () => {
       <input name="business" type="hidden" value="33NU8P6VVDHUN" />
       <input name="no_recurring" type="hidden" value="0" />
       <input name="currency_code" type="hidden" value="EUR" />
-      <button
-        className={classes.Paypal}
-        title="PayPal - The safer, easier way to pay online!"
-      >
+      <button className={classes.Paypal} title="PayPal - The safer, easier way to pay online!">
         <Svg d={svgPaypal} />
         Donate with PayPal
       </button>

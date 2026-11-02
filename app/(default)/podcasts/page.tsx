@@ -23,8 +23,7 @@ const getPodcasts = async () => {
       description:
         "Compilé de l'épisode 50 du podcast IFTTD, Etre dev sénior et sénior par Jacques Ducloy. Si vous avez peu de temps, je résume le contenu de l'épisodes en 10 minutes.",
       id: "ifttd-senior",
-      image:
-        "https://storage.googleapis.com/brunosabot.dev/img/11-2-1200x690.jpeg",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/11-2-1200x690.jpeg",
       language: "fr",
       platform: "IFTTD",
       title: "Compilé - Etre dev sénior et sénior",
@@ -38,8 +37,7 @@ const getPodcasts = async () => {
       image: "https://storage.googleapis.com/brunosabot.dev/img/IFTTD-54.jpeg",
       language: "fr",
       platform: "IFTTD",
-      title:
-        "Arrêter le “script” de javascript pour améliorer les performances",
+      title: "Arrêter le “script” de javascript pour améliorer les performances",
       url: "https://ifttd.io/54-arreter-le-script-de-javascript-pour-ameliorer-les-performances-anthony-le-goas-et-bruno-sabot/",
     },
   ];
@@ -53,9 +51,7 @@ export default async function PodcastsPage() {
   return (
     <>
       <Title>On Air</Title>
-      <ParagraphSecondary>
-        Discussions, interviews, and audio explorations.
-      </ParagraphSecondary>
+      <ParagraphSecondary>Discussions, interviews, and audio explorations.</ParagraphSecondary>
 
       <List>
         {podcasts.map((podcast, index) => (

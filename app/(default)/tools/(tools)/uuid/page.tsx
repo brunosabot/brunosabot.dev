@@ -23,8 +23,7 @@ export default function ToolUuidPage() {
       <Title>UUID Generation Tool</Title>
 
       <ParagraphSecondary>
-        Generate Universally Unique Identifiers (UUIDs) Instantly for Your
-        Applications
+        Generate Universally Unique Identifiers (UUIDs) Instantly for Your Applications
       </ParagraphSecondary>
 
       <ToolUuid />

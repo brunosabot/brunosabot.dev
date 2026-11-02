@@ -42,8 +42,7 @@ export async function generateMetadata({ params }: { params: Params }) {
     alternates: {
       canonical: "/resume/en/",
       languages: {
-        [resume.seo.alternate]:
-          `${SITE_METADATA.siteUrl}/resume/${resume.seo.alternate}/`,
+        [resume.seo.alternate]: `${SITE_METADATA.siteUrl}/resume/${resume.seo.alternate}/`,
         "x-default": `${SITE_METADATA.siteUrl}/resume/en/`,
       },
     },
@@ -91,9 +90,7 @@ export default async function ResumePage({ params }: { params: Params }) {
           </ContactItem>
           <ContactItem href="https://x.com/brunosabot">X</ContactItem>
           <ContactItem href="https://github.com/brunosabot">GitHub</ContactItem>
-          <ContactItem href="https://www.linkedin.com/in/brunosabot">
-            LinkedIn
-          </ContactItem>
+          <ContactItem href="https://www.linkedin.com/in/brunosabot">LinkedIn</ContactItem>
         </Contact>
 
         <article>

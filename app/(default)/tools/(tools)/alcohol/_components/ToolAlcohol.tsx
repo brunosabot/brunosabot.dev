@@ -20,11 +20,7 @@ export default function ToolAlcohol() {
 
     if (isNaN(quantityNumber) || isNaN(strengthNumber)) return 0;
 
-    return (
-      Math.round(
-        (10 * quantityNumber * strengthNumber * ALCOHOL_DENSITY) / 100,
-      ) / 10
-    );
+    return Math.round((10 * quantityNumber * strengthNumber * ALCOHOL_DENSITY) / 100) / 10;
   }, [quantity, strength]);
 
   return (
@@ -48,11 +44,7 @@ export default function ToolAlcohol() {
       </div>
 
       <ResultCard>
-        <ResultItem
-          label="Pure alcohol quantity"
-          unit="ml"
-          value={pureQuantity}
-        />
+        <ResultItem label="Pure alcohol quantity" unit="ml" value={pureQuantity} />
 
         <ResultItem
           label="Relative drink quantity"
