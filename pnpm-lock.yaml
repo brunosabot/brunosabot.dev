@@ -27,8 +27,8 @@ importers:
         specifier: ^1.66.0
         version: 1.66.0(@types/react@19.2.14)(react@19.2.4)
       marked:
-        specifier: ^17.0.6
-        version: 17.0.6
+        specifier: ^18.1.2
+        version: 18.1.2
       nanoid:
         specifier: ^5.1.16
         version: 5.1.16
@@ -1491,8 +1491,8 @@ packages:
   markdown-table@2.0.0:
     resolution: {integrity: sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==}
 
-  marked@17.0.6:
-    resolution: {integrity: sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==}
+  marked@18.1.2:
+    resolution: {integrity: sha512-DfOnvLAQ6WYeWxWO1u4RyFOeqyHup6dks5PPqnoFiooU7ipRvidO/2j8plhAHIiZg574E9ZlzSjUiPMLAzFkgg==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -3038,7 +3038,7 @@ snapshots:
     dependencies:
       repeat-string: 1.6.1
 
-  marked@17.0.6: {}
+  marked@18.1.2: {}
 
   math-intrinsics@1.1.0: {}
 
