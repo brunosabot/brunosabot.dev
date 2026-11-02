@@ -24,10 +24,7 @@ export default function OpenSourceProject({
       <div className={classNames.OpenSourceProjectContent}>
         <div className={classNames.OpenSourceProjectHeader}>
           <h2 className={classNames.OpenSourceProjectTitle}>{name}</h2>
-          <span
-            className={classNames.OpenSourceProjectRole}
-            data-role={role.toLowerCase()}
-          >
+          <span className={classNames.OpenSourceProjectRole} data-role={role.toLowerCase()}>
             {role}
           </span>
         </div>

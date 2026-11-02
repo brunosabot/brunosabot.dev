@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Expand,
-  Eye,
-  Layers,
-  Maximize,
-  MoveDiagonal,
-  Palette,
-  RotateCw,
-} from "lucide-react";
+import { Expand, Eye, Layers, Maximize, MoveDiagonal, Palette, RotateCw } from "lucide-react";
 import { useState } from "react";
 
 import ResultCard from "../../../../../../generic/common/ResultCard";
@@ -23,10 +15,8 @@ const round = (value: number, fix = 0) => {
 const getRGBA = (r: number, g: number, b: number, a: number) =>
   `rgba(${r}, ${g}, ${b}, ${a / 100})`;
 const psToRadiant = (angle: number) => ((180 - angle) * Math.PI) / 180;
-const psToHShadow = (angle: number, distance: number) =>
-  Math.cos(angle) * distance;
-const psToVShadow = (angle: number, distance: number) =>
-  Math.sin(angle) * distance;
+const psToHShadow = (angle: number, distance: number) => Math.cos(angle) * distance;
+const psToVShadow = (angle: number, distance: number) => Math.sin(angle) * distance;
 const psToCssSpread = (size: number, spread: number) => size * (spread / 100);
 const psToBlur = (size: number, cssSpread: number) => size - cssSpread;
 const psToInset = (inner: boolean) => (inner ? " inset" : "");

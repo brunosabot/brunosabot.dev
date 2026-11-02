@@ -157,15 +157,11 @@ export default function ToolRgbConvertor() {
   const [saves, setLocalSaves] = useState<string[]>([]);
 
   useEffect(() => {
-    setLocalSaves(
-      JSON.parse(window.localStorage.getItem("rgbConvertor") || "[]"),
-    );
+    setLocalSaves(JSON.parse(window.localStorage.getItem("rgbConvertor") || "[]"));
   }, []);
 
   const setSave = useCallback(() => {
-    const storageSaves = JSON.parse(
-      window.localStorage.getItem("rgbConvertor") || "[]",
-    );
+    const storageSaves = JSON.parse(window.localStorage.getItem("rgbConvertor") || "[]");
     const updatedSaves = new Set<string>(storageSaves);
     updatedSaves.add(state.hex);
     const newArray = Array.from(updatedSaves);
@@ -175,9 +171,7 @@ export default function ToolRgbConvertor() {
   }, [state.hex]);
 
   const setUnsave = useCallback((value: string) => {
-    const storageSaves = JSON.parse(
-      window.localStorage.getItem("rgbConvertor") || "[]",
-    );
+    const storageSaves = JSON.parse(window.localStorage.getItem("rgbConvertor") || "[]");
     const updatedSaves = new Set<string>(storageSaves);
     updatedSaves.delete(value);
     const newArray = Array.from(updatedSaves);
@@ -269,18 +263,9 @@ export default function ToolRgbConvertor() {
         </div>
 
         <div className={classes.Grid}>
-          <InputWithIcon
-            Icon={Hash}
-            label="Hex"
-            onChange={onChange("hex")}
-            value={state.hex}
-          />
+          <InputWithIcon Icon={Hash} label="Hex" onChange={onChange("hex")} value={state.hex} />
           <Block color={state.hex} />
-          {colorName ? (
-            <div className={classes.ColorName}>{colorName}</div>
-          ) : (
-            <span />
-          )}
+          {colorName ? <div className={classes.ColorName}>{colorName}</div> : <span />}
           <span />
         </div>
       </div>

@@ -24,12 +24,7 @@ export default function Post(props: IPostProps) {
     <a className={classNames.Post} href={props.to}>
       <div className={classNames.ImageWrapper}>
         {props.image ? (
-          <Image
-            alt=""
-            className={classNames.Image}
-            fill={true}
-            src={props.image}
-          />
+          <Image alt="" className={classNames.Image} fill={true} src={props.image} />
         ) : null}
       </div>
       <div>

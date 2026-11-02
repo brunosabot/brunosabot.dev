@@ -23,8 +23,7 @@ export default function ToolSpeedConvertorPage() {
       <Title>Speed Convertor Tool</Title>
 
       <ParagraphSecondary>
-        Instantly Convert Speed Units Between Kilometers per Hour, Miles per
-        Hour, and More
+        Instantly Convert Speed Units Between Kilometers per Hour, Miles per Hour, and More
       </ParagraphSecondary>
 
       <ToolSpeedConvertor />

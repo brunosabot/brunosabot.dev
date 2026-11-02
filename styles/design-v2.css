@@ -127,9 +127,7 @@ html body.winter {
   --token-v2-color-accent: var(--primitive-color-azure-radiance-500);
   --token-v2-color-accent-hover: var(--primitive-color-azure-radiance-600);
   --token-v2-color-accent-contrast: var(--primitive-color-azure-radiance-950);
-  --token-v2-color-accent-light-contrast: var(
-    --primitive-color-azure-radiance-200
-  );
+  --token-v2-color-accent-light-contrast: var(--primitive-color-azure-radiance-200);
 }
 
 @media (prefers-contrast: more) {
@@ -155,9 +153,7 @@ html body.winter {
     --token-v2-color-accent: var(--primitive-color-azure-radiance-200);
     --token-v2-color-accent-hover: var(--primitive-color-azure-radiance-300);
     --token-v2-color-accent-contrast: var(--primitive-color-azure-radiance-950);
-    --token-v2-color-accent-light-contrast: var(
-      --primitive-color-azure-radiance-100
-    );
+    --token-v2-color-accent-light-contrast: var(--primitive-color-azure-radiance-100);
   }
 }
 
@@ -165,9 +161,7 @@ html body.winter {
   html body {
     --token-v2-color-background: var(--primitive-color-woodsmoke-50);
     --token-v2-color-background-hover: var(--primitive-color-woodsmoke-100);
-    --token-v2-color-background-alternative: var(
-      --primitive-color-woodsmoke-100
-    );
+    --token-v2-color-background-alternative: var(--primitive-color-woodsmoke-100);
     --token-v2-color-border: var(--primitive-color-woodsmoke-100);
     --token-v2-color-border-alternative: var(--primitive-color-woodsmoke-200);
     --token-v2-color-text: var(--primitive-color-woodsmoke-950);
@@ -191,9 +185,7 @@ html body.winter {
   }
   html body.winter {
     --token-v2-color-accent-contrast: var(--primitive-color-azure-radiance-200);
-    --token-v2-color-accent-light-contrast: var(
-      --primitive-color-azure-radiance-700
-    );
+    --token-v2-color-accent-light-contrast: var(--primitive-color-azure-radiance-700);
   }
 }
 
@@ -221,9 +213,7 @@ html body.winter {
     --token-v2-color-accent: var(--primitive-color-azure-radiance-700);
     --token-v2-color-accent-hover: var(--primitive-color-azure-radiance-800);
     --token-v2-color-accent-contrast: var(--primitive-color-azure-radiance-50);
-    --token-v2-color-accent-light-contrast: var(
-      --primitive-color-azure-radiance-900
-    );
+    --token-v2-color-accent-light-contrast: var(--primitive-color-azure-radiance-900);
   }
 }
 

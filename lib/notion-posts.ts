@@ -87,12 +87,11 @@ async function readPostMarkdown(id: string) {
   const blocks = [];
 
   while (done === false) {
-    const { has_more, next_cursor, results } =
-      await notionClient.blocks.children.list({
-        block_id: id,
-        page_size: 100,
-        start_cursor: startCursor,
-      });
+    const { has_more, next_cursor, results } = await notionClient.blocks.children.list({
+      block_id: id,
+      page_size: 100,
+      start_cursor: startCursor,
+    });
 
     if (has_more === false) {
       done = true;
@@ -109,13 +108,9 @@ async function readPostMarkdown(id: string) {
   return mdString;
 }
 
-const cachedFetchNotionPosts = unstable_cache(
-  fetchNotionPosts,
-  ["notion-posts"],
-  {
-    revalidate: 3600,
-  },
-);
+const cachedFetchNotionPosts = unstable_cache(fetchNotionPosts, ["notion-posts"], {
+  revalidate: 3600,
+});
 
 export async function fetchNotionTags(): Promise<string[]> {
   const notionClient = getNotionClient();
@@ -149,13 +144,9 @@ async function fetchNotionPostsByTag(tag: string) {
   return posts.filter((post) => post.tags.split(",").includes(tag));
 }
 
-const cachedFetchNotionPostsByTag = unstable_cache(
-  fetchNotionPostsByTag,
-  ["notion-posts-by-tag"],
-  {
-    revalidate: 3600,
-  },
-);
+const cachedFetchNotionPostsByTag = unstable_cache(fetchNotionPostsByTag, ["notion-posts-by-tag"], {
+  revalidate: 3600,
+});
 
 export async function getNotionPostsByTag(tag: string) {
   return cachedFetchNotionPostsByTag(tag);
@@ -178,13 +169,9 @@ async function fetchNotionPost(path: string) {
   return fullPost;
 }
 
-const cachedFetchNotionPost = unstable_cache(
-  fetchNotionPost,
-  ["notion-posts"],
-  {
-    revalidate: 3600,
-  },
-);
+const cachedFetchNotionPost = unstable_cache(fetchNotionPost, ["notion-posts"], {
+  revalidate: 3600,
+});
 
 export async function getNotionPost(path: string) {
   return cachedFetchNotionPost(path);

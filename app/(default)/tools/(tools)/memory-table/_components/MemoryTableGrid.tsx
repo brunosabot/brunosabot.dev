@@ -9,10 +9,7 @@ interface IMemoryTableGridProps {
   table: string[];
 }
 
-export default function MemoryTableGrid({
-  onChange,
-  table,
-}: IMemoryTableGridProps) {
+export default function MemoryTableGrid({ onChange, table }: IMemoryTableGridProps) {
   return (
     <div className={classes.MemoryTableGrid}>
       {table.map((item, i) => {

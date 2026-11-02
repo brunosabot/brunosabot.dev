@@ -4,12 +4,7 @@ import { Box, Hash, Settings, User } from "lucide-react";
 import { nanoid } from "nanoid";
 import React, { useCallback, useEffect, useState } from "react";
 import { ulid } from "ulid";
-import {
-  v1 as uuidv1,
-  v4 as uuidv4,
-  v5 as uuidv5,
-  validate as uuidValidate,
-} from "uuid";
+import { v1 as uuidv1, v4 as uuidv4, v5 as uuidv5, validate as uuidValidate } from "uuid";
 
 import Button from "../../../../../../generic/common/Button";
 import ResultCard from "../../../../../../generic/common/ResultCard";
@@ -33,12 +28,7 @@ export default function ToolUuid() {
   const [length, setLength] = useState<number>(21);
 
   const createUuid = useCallback(
-    (
-      type: UuidType,
-      localName: string,
-      localNamespace: string,
-      length: number,
-    ) => {
+    (type: UuidType, localName: string, localNamespace: string, length: number) => {
       if (type === UuidType.V1) {
         setUuid(uuidv1());
       } else if (type === UuidType.V4) {
@@ -81,12 +71,7 @@ export default function ToolUuid() {
   return (
     <div className={classes.Wrapper}>
       <div className={classes.Form}>
-        <SelectWithIcon
-          Icon={Settings}
-          label="Algorithm"
-          onChange={onChangeType}
-          value={uuidType}
-        >
+        <SelectWithIcon Icon={Settings} label="Algorithm" onChange={onChangeType} value={uuidType}>
           <option value={UuidType.V1}>UUID Version 1</option>
           <option value={UuidType.V4}>UUID Version 4</option>
           <option value={UuidType.V5}>UUID Version 5</option>
@@ -95,12 +80,7 @@ export default function ToolUuid() {
         </SelectWithIcon>
 
         {uuidType === UuidType.V5 ? (
-          <InputWithIcon
-            Icon={User}
-            label="Name"
-            onChange={onChangeName}
-            value={name}
-          />
+          <InputWithIcon Icon={User} label="Name" onChange={onChangeName} value={name} />
         ) : null}
 
         {uuidType === UuidType.V5 ? (
@@ -127,10 +107,7 @@ export default function ToolUuid() {
       <ResultCard>{uuid}</ResultCard>
 
       <div className={classes.Actions}>
-        <Button
-          onClick={() => createUuid(uuidType, name, namespace, length)}
-          type="button"
-        >
+        <Button onClick={() => createUuid(uuidType, name, namespace, length)} type="button">
           Generate another one
         </Button>
       </div>

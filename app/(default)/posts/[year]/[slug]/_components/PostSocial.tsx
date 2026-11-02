@@ -12,12 +12,7 @@ interface IPostsProps {
 }
 
 const Link = ({ children, href }: ILinkWithTooltip) => (
-  <a
-    className={classes.BlogPostSocialLink}
-    href={href}
-    rel="noopener noreferrer"
-    target="_blank"
-  >
+  <a className={classes.BlogPostSocialLink} href={href} rel="noopener noreferrer" target="_blank">
     {children}
   </a>
 );
@@ -29,9 +24,7 @@ const Posts: React.FC<IPostsProps> = ({ path, title }) => {
   return (
     <>
       <div className={classes.BlogPostSocial}>
-        <Link
-          href={`https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
-        >
+        <Link href={`https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}>
           Share on X
         </Link>
         <Link

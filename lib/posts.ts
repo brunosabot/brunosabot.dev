@@ -4,10 +4,7 @@ export interface PostWithCount extends Post {
   count: number;
 }
 
-export function getRelatedPosts(
-  post: FullPost,
-  posts: Post[],
-): PostWithCount[] {
+export function getRelatedPosts(post: FullPost, posts: Post[]): PostWithCount[] {
   return posts
     .filter((p) => p.path !== post.data.path)
     .reduce<PostWithCount[]>((acc, p) => {

@@ -9,8 +9,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       canonical: "https://brunosabot.dev/tools/alcohol/",
-      description:
-        "Calculate the Absolute and Relative Amount of Alcohol in Your Drinks",
+      description: "Calculate the Absolute and Relative Amount of Alcohol in Your Drinks",
       title: "Alcohol Quantities Tool",
     },
     "/tools/alcohol/",

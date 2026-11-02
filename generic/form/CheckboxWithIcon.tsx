@@ -22,11 +22,7 @@ export default function CheckboxWithIcon({
       {label}
       <div className={classes.CheckboxWithIconWrapper}>
         <Icon className="text-secondary" size={20} />
-        <input
-          className={classes.CheckboxWithIconField}
-          type="checkbox"
-          {...props}
-        />
+        <input className={classes.CheckboxWithIconField} type="checkbox" {...props} />
       </div>
     </label>
   );

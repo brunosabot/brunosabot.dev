@@ -33,9 +33,7 @@ const footnotesExtension: MarkedExtension = {
   renderer: {
     paragraph(token: Tokens.Paragraph) {
       const text = this.parser.parseInline(token.tokens);
-      const paragraphWithRef = interpolateReferences(
-        interpolateFootnotes(text),
-      );
+      const paragraphWithRef = interpolateReferences(interpolateFootnotes(text));
 
       return `<p>${paragraphWithRef}</p>`;
     },

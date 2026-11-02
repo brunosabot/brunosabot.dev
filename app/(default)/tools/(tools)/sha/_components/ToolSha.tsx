@@ -33,19 +33,9 @@ export default function ToolSha() {
   return (
     <div className={classes.Wrapper}>
       <div className={classes.Form}>
-        <InputWithIcon
-          Icon={Hash}
-          label="Input"
-          onChange={onChangeInput}
-          value={input}
-        />
+        <InputWithIcon Icon={Hash} label="Input" onChange={onChangeInput} value={input} />
 
-        <SelectWithIcon
-          Icon={Settings}
-          label="Algorithm"
-          onChange={onChangeType}
-          value={type}
-        >
+        <SelectWithIcon Icon={Settings} label="Algorithm" onChange={onChangeType} value={type}>
           <option value={ShaType.SHA}>SHA</option>
           <option value={ShaType.SHA1}>SHA-1</option>
           <option value={ShaType.SHA224}>SHA-224</option>

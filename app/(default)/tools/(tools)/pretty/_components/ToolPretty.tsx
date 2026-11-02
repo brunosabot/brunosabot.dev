@@ -38,9 +38,7 @@ export default function ToolPretty() {
       {string !== "" ? (
         <ResultCard>
           <pre className={classes.Result}>
-            {string && valid
-              ? JSON.stringify(JSON.parse(string), null, 2)
-              : string}
+            {string && valid ? JSON.stringify(JSON.parse(string), null, 2) : string}
           </pre>
         </ResultCard>
       ) : null}

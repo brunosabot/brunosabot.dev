@@ -85,19 +85,13 @@ export default function DefaultLayout({ children }: IDefaultLayoutProps) {
           <FooterSocialLink href="https://github.com/brunosabot" name="Github">
             GitHub
           </FooterSocialLink>
-          <FooterSocialLink
-            href="https://linkedin.com/in/brunosabot"
-            name="LinkedIn"
-          >
+          <FooterSocialLink href="https://linkedin.com/in/brunosabot" name="LinkedIn">
             LinkedIn
           </FooterSocialLink>
           <FooterSocialLink href="https://medium.brunosabot.dev" name="Medium">
             Medium
           </FooterSocialLink>
-          <FooterSocialLink
-            href={`${SITE_METADATA.siteUrl}/rss.xml`}
-            name="RSS"
-          >
+          <FooterSocialLink href={`${SITE_METADATA.siteUrl}/rss.xml`} name="RSS">
             RSS
           </FooterSocialLink>
         </FooterSocial>

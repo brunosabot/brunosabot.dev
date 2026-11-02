@@ -8,11 +8,7 @@ type ITextareaWithIconProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label: string;
 };
 
-export default function TextareaWithIcon({
-  Icon,
-  label,
-  ...props
-}: ITextareaWithIconProps) {
+export default function TextareaWithIcon({ Icon, label, ...props }: ITextareaWithIconProps) {
   return (
     <label className={classes.Label}>
       {label}

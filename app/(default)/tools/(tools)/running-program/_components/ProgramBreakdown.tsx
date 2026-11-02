@@ -1,11 +1,7 @@
 import Table from "../../../../../../components/table/Table";
 import Td from "../../../../../../components/table/Td";
 import Tr from "../../../../../../components/table/Tr";
-import {
-  formatDistance,
-  formatDuration,
-  formatPace,
-} from "../_utils/formatters";
+import { formatDistance, formatDuration, formatPace } from "../_utils/formatters";
 import { ProgramStats } from "../_utils/parser";
 import classes from "./ProgramBreakdown.module.css";
 

@@ -9,8 +9,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       canonical: "https://brunosabot.dev/tools/bezier-curves/",
-      description:
-        "Craft Stunning Animations with This Cubic-Bezier Curve Generator",
+      description: "Craft Stunning Animations with This Cubic-Bezier Curve Generator",
       title: "Bezier Curves",
     },
     "/tools/bezier-curves/",

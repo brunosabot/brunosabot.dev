@@ -19,21 +19,16 @@ async function createRss() {
 
     if (page === undefined) return "";
 
-    const encodedStr = page.content.replace(
-      /[\u00A0-\u9999<>\&]/g,
-      function (i) {
-        return "&#" + i.charCodeAt(0) + ";";
-      },
-    );
+    const encodedStr = page.content.replace(/[\u00A0-\u9999<>\&]/g, function (i) {
+      return "&#" + i.charCodeAt(0) + ";";
+    });
 
     return `
       <item>
         <title><![CDATA[${page.data.title}]]></title>
         <description><![CDATA[${page.data.subtitle}]]></description>
         <link>${SITE_METADATA.siteUrl}${page.data.path}</link>
-        <guid isPermaLink="false">${SITE_METADATA.siteUrl}${
-          page.data.path
-        }</guid>
+        <guid isPermaLink="false">${SITE_METADATA.siteUrl}${page.data.path}</guid>
         <pubDate>${new Date(page.data.date).toUTCString()}</pubDate>
         <content:encoded><![CDATA[${encodedStr.trim()}]]></content:encoded>
       </item>`;
@@ -51,9 +46,7 @@ function getTemplate(children: string) {
     <link>${SITE_METADATA.siteUrl}/</link>
     <generator>NextJS</generator>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="${
-      SITE_METADATA.siteUrl
-    }/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="${SITE_METADATA.siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
     ${children}
   </channel>
   </rss>`;

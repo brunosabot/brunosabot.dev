@@ -14,9 +14,7 @@ async function fetchNotionStreamlineCards() {
     sorts: [{ direction: "ascending", property: "Name" }],
   });
 
-  const promises = await Promise.all(
-    response.results.map(mapNotionToStreamlineCard),
-  );
+  const promises = await Promise.all(response.results.map(mapNotionToStreamlineCard));
 
   return promises.filter(isDefined);
 }

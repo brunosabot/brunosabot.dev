@@ -40,12 +40,7 @@ export default function FooterTheme({ children, name, theme }: IContentProps) {
   }
 
   return (
-    <button
-      aria-label={name}
-      className={classes.join(" ")}
-      onClick={onClick}
-      type="button"
-    >
+    <button aria-label={name} className={classes.join(" ")} onClick={onClick} type="button">
       {children}
     </button>
   );

@@ -23,8 +23,7 @@ export async function generateMetadata() {
     {
       description:
         "Hi, I'm Bruno, a Engineering Manager at PlayPlay with a passion for home automation. This page showcases my skills, including React, Vue.js and web performance, and features my latest blog posts.",
-      title:
-        "Bruno Sabot - Software Engineer | Front-end Development| Home Automation ",
+      title: "Bruno Sabot - Software Engineer | Front-end Development| Home Automation ",
     },
     "/",
   );
@@ -71,9 +70,7 @@ export default async function IndexPage() {
           </TagGroup>
           <TagGroup title="Others">
             <LinkTag href="/tags/Home%20Automation">Home automation</LinkTag>
-            <LinkTag href="/tags/Software%20Engineeering">
-              Software Engineering
-            </LinkTag>
+            <LinkTag href="/tags/Software%20Engineeering">Software Engineering</LinkTag>
             <LinkTag href="/tags/Webperf">Webperf</LinkTag>
             <LinkTag href="/tags/UX">UX</LinkTag>
             <LinkTag href="/tags/Testing">Testing</LinkTag>

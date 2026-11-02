@@ -1,11 +1,7 @@
 .Header {
   align-items: center;
   backdrop-filter: blur(8px);
-  background-color: color-mix(
-    in srgb,
-    var(--token-v2-color-background) 95%,
-    transparent
-  );
+  background-color: color-mix(in srgb, var(--token-v2-color-background) 95%, transparent);
   display: flex;
   height: 80px;
   justify-content: space-between;

@@ -62,8 +62,7 @@ export default async function OpensourcePage() {
     <>
       <Title>Open Source & Community</Title>
       <ParagraphSecondary>
-        A collection of projects I maintain and contributions to the open source
-        ecosystem.
+        A collection of projects I maintain and contributions to the open source ecosystem.
       </ParagraphSecondary>
 
       <List>

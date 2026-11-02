@@ -26,8 +26,7 @@ const getTalks = async () => {
       id: "snowcamp-integration",
       image: "https://storage.googleapis.com/brunosabot.dev/img/DSC_0887.jpeg",
       language: "fr",
-      slides:
-        "https://drive.google.com/open?id=18gLNemp9mcsmx-RIh2RMHWFjiv4uvXu54ouW05BjGQE",
+      slides: "https://drive.google.com/open?id=18gLNemp9mcsmx-RIh2RMHWFjiv4uvXu54ouW05BjGQE",
       title: "L'intégration, ce purgatoire",
     },
     {
@@ -38,8 +37,7 @@ const getTalks = async () => {
       id: "breizhcamp-ux-formulaire",
       image: "https://storage.googleapis.com/brunosabot.dev/img/Ketchup.png",
       language: "fr",
-      slides:
-        "https://drive.google.com/open?id=1tCwdzIdwu8jYX4Y0dej_u6pmc1oUx9Y4NPUaTBSWluA",
+      slides: "https://drive.google.com/open?id=1tCwdzIdwu8jYX4Y0dej_u6pmc1oUx9Y4NPUaTBSWluA",
       title: "UX : les formulaires (Breizh Camp)",
       youtubeId: "jnxkdHo8OEk",
     },
@@ -49,11 +47,9 @@ const getTalks = async () => {
       description:
         "Et si on parlait d'UX ? Nos pages sont truffées de formulaires, pourtant, connaissons-nous les erreurs à éviter lorsque nous ajoutons un formulaire à une page ? La validation de mot de passes, les…",
       id: "jugsummercamp-ux-formulaire",
-      image:
-        "https://storage.googleapis.com/brunosabot.dev/img/6i8oiq3iyxd41.jpeg",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/6i8oiq3iyxd41.jpeg",
       language: "fr",
-      slides:
-        "https://drive.google.com/open?id=1S2RmcMKZ74Bhc4IQUMm7-xDjVwD-_UCFc5iWCEdy5S8",
+      slides: "https://drive.google.com/open?id=1S2RmcMKZ74Bhc4IQUMm7-xDjVwD-_UCFc5iWCEdy5S8",
       title: "UX : les formulaires (Jug Summer Camp)",
       youtubeId: "H2KWVDH64EY",
     },
@@ -63,11 +59,9 @@ const getTalks = async () => {
       description:
         "Tout le monde connait React, ce framework est de plus en plus utilisé dans le domaine professionnel. Après de longs mois, bloqués à la version 15, une nouvelle version majeure va bientôt arriver que…",
       id: "bdxio-react16",
-      image:
-        "https://storage.googleapis.com/brunosabot.dev/img/h0MAi-1GdZQ.jpeg",
+      image: "https://storage.googleapis.com/brunosabot.dev/img/h0MAi-1GdZQ.jpeg",
       language: "fr",
-      slides:
-        "https://drive.google.com/open?id=1aMy3Szz-A-6hoTFuGvdVqoTZOEhc07W6j8emIcNb3Po",
+      slides: "https://drive.google.com/open?id=1aMy3Szz-A-6hoTFuGvdVqoTZOEhc07W6j8emIcNb3Po",
       title: "Les nouveautés de React 16 - Fiber",
       youtubeId: "h0MAi-1GdZQ",
     },
@@ -83,8 +77,8 @@ export default async function ContactPage() {
     <>
       <Title>My Speaking Gigs</Title>
       <ParagraphSecondary>
-        Sharing what I've learned about software, design, and building cool
-        things, one conference at a time.
+        Sharing what I've learned about software, design, and building cool things, one conference
+        at a time.
       </ParagraphSecondary>
 
       <List>

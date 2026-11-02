@@ -9,8 +9,7 @@ export async function generateMetadata() {
   return getMetaData(
     {
       canonical: "https://brunosabot.dev/tools/chars-count/",
-      description:
-        "Craft Compelling Content with Ease: The Ultimate Text Analysis Tool",
+      description: "Craft Compelling Content with Ease: The Ultimate Text Analysis Tool",
       title: "Character Count",
     },
     "/tools/chars-count/",

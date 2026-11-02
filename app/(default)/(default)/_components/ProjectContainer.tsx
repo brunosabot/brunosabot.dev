@@ -4,8 +4,6 @@ interface IProjectContainerProps {
   children: React.ReactNode;
 }
 
-export default async function ProjectContainer({
-  children,
-}: IProjectContainerProps) {
+export default async function ProjectContainer({ children }: IProjectContainerProps) {
   return <div className={classes.ProjectContainer}>{children}</div>;
 }

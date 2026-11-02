@@ -8,11 +8,7 @@ interface IProjectProps {
   title: string;
 }
 
-export default async function Project({
-  description,
-  href,
-  title,
-}: IProjectProps) {
+export default async function Project({ description, href, title }: IProjectProps) {
   return (
     <a className={classes.Project} href={href}>
       <ArrowUp className={classes.ProjectIcon} size={24} strokeWidth={1.5} />

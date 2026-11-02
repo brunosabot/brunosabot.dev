@@ -6,9 +6,7 @@ interface IHeaderLinksDropdownProps {
   children: React.ReactNode;
 }
 
-export default function HeaderLinksDropdown({
-  children,
-}: IHeaderLinksDropdownProps) {
+export default function HeaderLinksDropdown({ children }: IHeaderLinksDropdownProps) {
   return (
     <div className={classes.HeaderLinksDropdown}>
       <button aria-label="Menu" className={classes.HeaderLinksDropdownButton}>

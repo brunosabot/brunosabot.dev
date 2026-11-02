@@ -21,13 +21,7 @@ const ToolEnduranceIndex: React.FC = () => {
   const hoursNum = hours === "" ? 0 : parseInt(hours, 10);
   const minutesNum = minutes === "" ? 0 : parseInt(minutes, 10);
   const secondsNum = seconds === "" ? 0 : parseInt(seconds, 10);
-  const result = calculateEnduranceIndex(
-    masNum,
-    distanceNum,
-    hoursNum,
-    minutesNum,
-    secondsNum,
-  );
+  const result = calculateEnduranceIndex(masNum, distanceNum, hoursNum, minutesNum, secondsNum);
   const showResult = result !== null && !isNaN(result);
 
   return (

@@ -7,11 +7,7 @@ type SMTPData = {
   to: { email: string; name: string }[];
 };
 
-export async function sendContactEmail(
-  email: string,
-  name: string,
-  message: string,
-) {
+export async function sendContactEmail(email: string, name: string, message: string) {
   const contactEmail = process.env.NEXT_CONTACT_EMAIL;
   const subject = "Contact from brunosabot.dev";
 

@@ -15,20 +15,17 @@ export default function SyntaxGuide() {
               <strong>Run:</strong> <code>50' @ 6:30</code> (50 mins at 6:30/km)
             </ListItem>
             <ListItem>
-              <strong>Format:</strong> <code>MM:SS</code> for pace,{" "}
-              <code>X' Y"</code> for duration.
+              <strong>Format:</strong> <code>MM:SS</code> for pace, <code>X' Y"</code> for duration.
             </ListItem>
             <ListItem>
-              <strong>Separator:</strong> Uses <code>+</code> or{" "}
-              <code>newline</code> to join blocks.
+              <strong>Separator:</strong> Uses <code>+</code> or <code>newline</code> to join
+              blocks.
             </ListItem>
             <ListItem>
-              <strong>Repeats:</strong> <code>Nx ...</code> (e.g.{" "}
-              <code>5x 1' @ 4:00 r1'</code>)
+              <strong>Repeats:</strong> <code>Nx ...</code> (e.g. <code>5x 1' @ 4:00 r1'</code>)
             </ListItem>
             <ListItem>
-              <strong>Recovery:</strong> <code>r</code> (reps) and{" "}
-              <code>R</code> (series).
+              <strong>Recovery:</strong> <code>r</code> (reps) and <code>R</code> (series).
             </ListItem>
             <ListItem>
               <strong>Nested:</strong> <code>2x 5x ...</code> supported.

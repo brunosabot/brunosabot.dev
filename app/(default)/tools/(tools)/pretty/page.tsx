@@ -23,8 +23,7 @@ export default function ToolPrettyPage() {
       <Title>JSON Pretty Tool</Title>
 
       <ParagraphSecondary>
-        Effortlessly Format and Beautify Your JSON Data for Enhanced Readability
-        and Debugging
+        Effortlessly Format and Beautify Your JSON Data for Enhanced Readability and Debugging
       </ParagraphSecondary>
 
       <ToolPretty />

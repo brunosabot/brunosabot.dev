@@ -24,8 +24,8 @@ export default function Page() {
     <>
       <Title>Endurance Index Tool</Title>
       <ParagraphSecondary>
-        Calculate your race endurance index or estimate your race duration with
-        this scientific tool for runners and coaches.
+        Calculate your race endurance index or estimate your race duration with this scientific tool
+        for runners and coaches.
       </ParagraphSecondary>
 
       <TitleSecondary>Endurance Index Calculator</TitleSecondary>

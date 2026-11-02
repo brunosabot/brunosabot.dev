@@ -4,9 +4,6 @@ interface ISeoScriptProps {
 
 export default async function SeoScript({ data }: ISeoScriptProps) {
   return (
-    <script
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-      type="application/ld+json"
-    />
+    <script dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} type="application/ld+json" />
   );
 }

@@ -132,8 +132,7 @@ const getTools = () => {
       type: "sport",
     },
     {
-      description:
-        "Calculate distance, duration, and pace for your running program.",
+      description: "Calculate distance, duration, and pace for your running program.",
       href: "/tools/running-program/",
       icon: Footprints,
       title: "Running Program Calculator",
@@ -166,9 +165,7 @@ export default function Tools() {
             active={filter === category.type}
             Icon={category.icon}
             key={category.type}
-            onClick={() =>
-              setFilter(filter !== category.type ? category.type : "")
-            }
+            onClick={() => setFilter(filter !== category.type ? category.type : "")}
           >
             {category.title}
           </Filter>
