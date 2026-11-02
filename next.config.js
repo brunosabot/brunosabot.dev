@@ -3,6 +3,9 @@ export default {
   poweredByHeader: false,
   generateEtags: false,
   reactStrictMode: true,
+  experimental: {
+    useTypeScriptCli: true,
+  },
   trailingSlash: true,
   logging: {
     fetches: {
